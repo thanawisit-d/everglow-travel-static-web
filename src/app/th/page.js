@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import toursData from '@/data/tours.json';
+import { assetPath } from '@/lib/utils';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -82,6 +83,9 @@ export default function ThaiPage() {
 
       {page === 'domestic' && (
         <section className="page tour-list-page active">
+          <button className="back-btn" onClick={() => setPage('home')}>
+            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> กลับ
+          </button>
           <h2>ทัวร์ในประเทศ</h2>
           <div className="tour-grid">
             {(filteredDomestic || domesticTours).map((t, i) => (
@@ -105,6 +109,9 @@ export default function ThaiPage() {
 
       {page === 'outbound' && (
         <section className="page tour-list-page active">
+          <button className="back-btn" onClick={() => setPage('home')}>
+            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> กลับ
+          </button>
           <h2>ทัวร์ต่างประเทศ</h2>
           <div className="tour-grid">
             {(filteredOutbound || outboundTours).map((t, i) => (
@@ -128,6 +135,9 @@ export default function ThaiPage() {
 
       {page === 'search' && (
         <section className="page search-results-page active">
+          <button className="back-btn" onClick={() => setPage('home')}>
+            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> กลับ
+          </button>
           <h2>ผลการค้นหา ({searchResults?.length || 0} รายการ)</h2>
           <div className="tour-grid">
             {(searchResults || []).map((t, i) => (

@@ -1134,6 +1134,20 @@ nav ul li a:hover::after {
   font-size: 14px;
 }
 
+.province-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+}
+
 footer {
   background: linear-gradient(135deg, #0e6cde, #0d3f91);
   padding: 30px 6% 20px;

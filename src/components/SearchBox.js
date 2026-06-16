@@ -1,26 +1,31 @@
 'use client';
 
-import { useState } from 'react';
-import { assetPath, formatPrice } from '@/lib/utils';
-import toursData from '@/data/tours.json';
-
-const thaiCountries = [
-  'ญี่ปุ่น', 'เกาหลีใต้', 'จีน', 'ไต้หวัน', 'ฝรั่งเศส', 'อิตาลี',
-  'สวิตเซอร์แลนด์', 'เยอรมนี', 'อังกฤษ', 'สเปน', 'เนเธอร์แลนด์',
-  'สหรัฐอเมริกา', 'แคนาดา', 'สิงคโปร์', 'มาเลเซีย', 'เวียดนาม',
-  'อินโดนีเซีย', 'ดูไบ (UAE)', 'ฮ่องกง',
-];
+import { useState, useMemo } from 'react';
+import { assetPath } from '@/lib/utils';
 
 export default function SearchBox({ locale, tours, onResult }) {
-  const [country, setCountry] = useState('');
-  const [code, setCode] = useState('');
+  const [keyword, setKeyword] = useState('');
+  const [location, setLocation] = useState('');
+
+  const locations = useMemo(() => {
+    const set = new Set();
+    tours.forEach((t) => {
+      if (t.country) set.add(t.country);
+      if (t.province) set.add(t.province);
+    });
+    return [...set].sort();
+  }, [tours]);
 
   const handleSearch = (e) => {
     e.preventDefault();
     const filtered = tours.filter((tour) => {
-      const matchCountry = !country || (tour.country || '').includes(country);
-      const matchCode = !code || (tour.id || '').toLowerCase().includes(code.toLowerCase());
-      return matchCountry && matchCode;
+      const matchLocation = !location ||
+        (tour.country || '').includes(location) ||
+        (tour.province || '').includes(location);
+      const matchKeyword = !keyword ||
+        (tour.id || '').toLowerCase().includes(keyword.toLowerCase()) ||
+        (tour.desc || '').toLowerCase().includes(keyword.toLowerCase());
+      return matchLocation && matchKeyword;
     });
     onResult(filtered);
   };
@@ -32,26 +37,17 @@ export default function SearchBox({ locale, tours, onResult }) {
         {locale === 'th' ? 'ค้นหาโปรแกรมทัวร์' : 'Search Tour Programs'}
       </h2>
       <form onSubmit={handleSearch}>
-        {locale === 'th' ? (
-          <select value={country} onChange={(e) => setCountry(e.target.value)}>
-            <option value="">เลือกประเทศ</option>
-            {thaiCountries.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </select>
-        ) : (
-          <select id="city">
-            <option value="">Destination</option>
-            {['Bangkok','Krabi','Kanchanaburi','Chiang Mai','Chiang Rai','Phuket','Pattaya'].map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </select>
-        )}
+        <select value={location} onChange={(e) => setLocation(e.target.value)}>
+          <option value="">{locale === 'th' ? 'เลือกประเทศ/จังหวัด' : 'Destination'}</option>
+          {locations.map((loc) => (
+            <option key={loc} value={loc}>{loc}</option>
+          ))}
+        </select>
         <input
           type="text"
-          placeholder={locale === 'th' ? 'รหัสทัวร์ / โปรแกรม' : 'Tour ID'}
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
+          placeholder={locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
         />
         <input type="text" placeholder={locale === 'th' ? 'ช่วงวันเดินทาง' : 'Travel Date'} onFocus={(e) => { e.target.type = 'date'; }} />
         <button type="submit">{locale === 'th' ? 'ค้นหา' : 'Search'}</button>

@@ -5,13 +5,13 @@ export default function ProvinceSelector({ tours, onSelect, locale }) {
 
   return (
     <section className="province-section">
-      <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#333' }}>
+      <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>
         {locale === 'th' ? 'เลือกจังหวัดที่ต้องการเดินทาง' : 'Select Province'}
       </h2>
       <div className="province-grid">
         {provinces.map((p, i) => (
           <div key={i} className="province-card" onClick={() => onSelect(p)}>
-            <img src={assetPath(`thumbnails/${p}.jpg`)} alt={p} onError={(e) => { e.target.style.display = 'none'; }} />
+            <div className="province-placeholder">{p.charAt(0)}</div>
             <span>{p}</span>
           </div>
         ))}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import toursData from '@/data/tours.json';
+import { translateCountry, assetPath } from '@/lib/utils';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -30,7 +31,8 @@ export default function EnglishPage() {
   };
 
   const handleShowOutbound = (country) => {
-    const filtered = outboundTours.filter((t) => t.country === country);
+    const thaiName = translateCountry(country);
+    const filtered = outboundTours.filter((t) => t.country === thaiName);
     setFilteredOutbound(filtered);
     setPage('outbound');
   };
@@ -73,6 +75,9 @@ export default function EnglishPage() {
 
       {page === 'domestic' && (
         <section className="page tour-list-page active">
+          <button className="back-btn" onClick={() => setPage('home')}>
+            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> Back
+          </button>
           <h2>Thailand Tours</h2>
           <div className="tour-grid">
             {(filteredDomestic || domesticTours).map((t, i) => (
@@ -96,6 +101,9 @@ export default function EnglishPage() {
 
       {page === 'outbound' && (
         <section className="page tour-list-page active">
+          <button className="back-btn" onClick={() => setPage('home')}>
+            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> Back
+          </button>
           <h2>Outbound Tours</h2>
           <div className="tour-grid">
             {(filteredOutbound || outboundTours).map((t, i) => (
@@ -119,6 +127,9 @@ export default function EnglishPage() {
 
       {page === 'search' && (
         <section className="page search-results-page active">
+          <button className="back-btn" onClick={() => setPage('home')}>
+            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> Back
+          </button>
           <h2>Search Results ({searchResults?.length || 0})</h2>
           <div className="tour-grid">
             {(searchResults || []).map((t, i) => (

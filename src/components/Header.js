@@ -161,8 +161,8 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
             <li className="dropdown">
               <a onClick={() => onNavigate('outbound')}>{text.outbound} ▾</a>
               <ul className="dropdown-menu">
-                {['1 day', '2 days 1 night', '3 days 2 night', '4 days 3 night'].map((d, i) => (
-                  <li key={i}><a onClick={() => onShowDomestic(d)}>{d}</a></li>
+                {['Japan','Korea','China','Taiwan','Hong Kong','Singapore','Malaysia','Vietnam','India','Europe','Turkey'].map((c, i) => (
+                  <li key={i}><a onClick={() => onShowOutbound(c)}>{c}</a></li>
                 ))}
               </ul>
             </li>
