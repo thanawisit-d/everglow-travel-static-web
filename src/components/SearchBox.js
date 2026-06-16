@@ -6,6 +6,7 @@ import { assetPath } from '@/lib/utils';
 export default function SearchBox({ locale, tours, onResult }) {
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
+  const [date, setDate] = useState('');
 
   const locations = useMemo(() => {
     const set = new Set();
@@ -18,6 +19,7 @@ export default function SearchBox({ locale, tours, onResult }) {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    const selectedMonth = date ? date.substring(0, 7) : '';
     const filtered = tours.filter((tour) => {
       const matchLocation = !location ||
         (tour.country || '').includes(location) ||
@@ -25,7 +27,9 @@ export default function SearchBox({ locale, tours, onResult }) {
       const matchKeyword = !keyword ||
         (tour.id || '').toLowerCase().includes(keyword.toLowerCase()) ||
         (tour.desc || '').toLowerCase().includes(keyword.toLowerCase());
-      return matchLocation && matchKeyword;
+      const matchDate = !selectedMonth || !tour.startMonth ||
+        (selectedMonth >= tour.startMonth && selectedMonth <= tour.endMonth);
+      return matchLocation && matchKeyword && matchDate;
     });
     onResult(filtered);
   };
@@ -49,7 +53,11 @@ export default function SearchBox({ locale, tours, onResult }) {
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <input type="text" placeholder={locale === 'th' ? 'ช่วงวันเดินทาง' : 'Travel Date'} onFocus={(e) => { e.target.type = 'date'; }} />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
         <button type="submit">{locale === 'th' ? 'ค้นหา' : 'Search'}</button>
       </form>
     </section>

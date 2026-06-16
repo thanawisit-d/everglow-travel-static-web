@@ -25,6 +25,7 @@ export default function Footer({ locale }) {
 
   return (
     <footer className="site-footer">
+      <div className="footer-wave"></div>
       <div className="footer-container">
         <div className="footer-col footer-brand">
           <img src={assetPath('assets/images/whitelogo.png')} className="footer-logo" alt="" />
