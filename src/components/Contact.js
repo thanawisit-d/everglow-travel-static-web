@@ -1,29 +1,13 @@
 import { assetPath } from '@/lib/utils';
+import config from '@/data/site-config.json';
 
 export default function Contact({ locale }) {
-  const t = locale === 'th' ? {
-    title: 'ติดต่อ',
-    phone: '099-632-6146',
-    email: 'everglowtravel@gmail.com',
-    hours: 'จันทร์ - ศุกร์ 9:00 - 18:00 น.',
-    phoneLabel: 'เบอร์ติดต่อ',
-    emailLabel: 'Email',
-    hoursLabel: 'วันเวลาเปิดทำการ',
-  } : {
-    title: 'Contact',
-    phone: '099-632-6146',
-    email: 'everglowtravel@gmail.com',
-    hours: 'Mon - Fri 9:00 - 18:00',
-    phoneLabel: 'Phone',
-    emailLabel: 'Email',
-    hoursLabel: 'Business Hours',
-  };
-
+  const t = config[locale];
   return (
     <section className="page contact-page">
       <div className="overlay">
         <div className="contact-card">
-          <h2>{t.title}</h2>
+          <h2>{t.contactTitle}</h2>
           <a href="tel:0996326146" className="item" style={{ textDecoration: 'none' }}>
             <img src={assetPath('icons/phone-call.png')} alt="" />
             <div>

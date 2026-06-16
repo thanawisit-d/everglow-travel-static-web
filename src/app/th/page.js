@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import toursData from '@/data/tours.json';
-import { assetPath, formatPrice, cityData } from '@/lib/utils';
+import { assetPath, formatPrice } from '@/lib/utils';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -93,8 +93,8 @@ export default function ThaiPage() {
           <Slider />
           <SearchBox locale="th" tours={toursData} onResult={handleSearchResult} />
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="th" />
-          <TourGrid showBadge="popular" tours={toursData} />
-          <TourGrid showBadge="monthly" tours={toursData} />
+          <TourGrid showBadge="popular" />
+          <TourGrid showBadge="monthly" />
           <About locale="th" />
           <Contact locale="th" />
           <Reviews locale="th" />

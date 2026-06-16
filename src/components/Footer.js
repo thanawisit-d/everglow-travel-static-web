@@ -1,27 +1,9 @@
 import { assetPath } from '@/lib/utils';
+import config from '@/data/site-config.json';
 
 export default function Footer({ locale }) {
-  const t = locale === 'th' ? {
-    company: 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด',
-    license: 'ใบอนุญาตเลขที่ 11/13400',
-    addr: 'กรุงเทพมหานคร ประเทศไทย',
-    contactTitle: 'ช่องทางการติดต่อ',
-    hours: 'จันทร์–ศุกร์ : 09.00–18.00 น.',
-    phone: '099-632-6146',
-    fb: 'Facebook : Everglow Travel',
-    line: 'Line : @Everglowtravel',
-    follow: 'ติดตามเรา',
-  } : {
-    company: 'Everglow Global Co., Ltd.',
-    license: 'License No. 11/13400',
-    addr: 'Bangkok, Thailand',
-    contactTitle: 'Contact Us',
-    hours: 'Mon–Fri : 09.00–18.00',
-    phone: '099-632-6146',
-    fb: 'Facebook : Everglow Travel',
-    line: 'Line : @Everglowtravel',
-    follow: 'Follow Us',
-  };
+  const t = config[locale];
+  const s = config.social;
 
   return (
     <footer className="site-footer">
@@ -31,8 +13,7 @@ export default function Footer({ locale }) {
           <img src={assetPath('assets/images/whitelogo.png')} className="footer-logo" alt="" />
           <div className="footer-company">{t.company}</div>
           <div className="footer-license">
-            {t.license}<br />
-            {t.addr}
+            {t.license}<br />{t.addr}
           </div>
         </div>
         <div className="footer-col footer-contact">
@@ -59,16 +40,16 @@ export default function Footer({ locale }) {
           <img src={assetPath('assets/images/qr.png')} className="qr-img" alt="" />
           <div className="line-id">@Everglowtravel</div>
           <div className="social-row">
-            <a href="https://www.facebook.com/people/Everglow-Travel/61580670863894/" target="_blank" rel="noopener noreferrer">
+            <a href={s.facebook} target="_blank" rel="noopener noreferrer">
               <img src={assetPath('assets/images/Facebook.png')} alt="fb" />
             </a>
-            <a href="https://www.instagram.com/everglow_travel" target="_blank" rel="noopener noreferrer">
+            <a href={s.instagram} target="_blank" rel="noopener noreferrer">
               <img src={assetPath('assets/images/ig.png')} alt="ig" />
             </a>
-            <a href="https://www.tiktok.com/@everglow.travel" target="_blank" rel="noopener noreferrer">
+            <a href={s.tiktok} target="_blank" rel="noopener noreferrer">
               <img src={assetPath('assets/images/tiktok.webp')} alt="tiktok" />
             </a>
-            <a href="https://lin.ee/xXcNI1w" target="_blank" rel="noopener noreferrer">
+            <a href={s.line} target="_blank" rel="noopener noreferrer">
               <img src={assetPath('assets/images/LINE.png')} alt="line" />
             </a>
           </div>

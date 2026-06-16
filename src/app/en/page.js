@@ -94,8 +94,8 @@ export default function EnglishPage() {
           <Slider />
           <SearchBox locale="en" tours={toursData} onResult={handleSearchResult} />
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="en" />
-          <TourGrid showBadge="popular" tours={toursData} />
-          <TourGrid showBadge="monthly" tours={toursData} />
+          <TourGrid showBadge="popular" />
+          <TourGrid showBadge="monthly" />
           <About locale="en" />
           <Contact locale="en" />
           <Reviews locale="en" />
