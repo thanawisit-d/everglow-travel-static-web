@@ -15,7 +15,7 @@ export default function TourDetail({ tour, onBack }) {
           <img src={assetPath(tour.image)} alt={tour.id} />
         </div>
         <div className="tour-detail-right">
-          <h2>{tour.shortDesc || tour.desc?.split(' เที่ยว')[0]}</h2>
+          <h2>{tour.desc?.split(' เที่ยว')[0] || tour.id}</h2>
           <p>{tour.desc}</p>
           <div className="detail-info-grid">
             <div className="detail-item">

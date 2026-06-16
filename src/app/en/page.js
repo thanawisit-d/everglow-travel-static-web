@@ -67,7 +67,7 @@ export default function EnglishPage() {
           <TourGrid tours={toursData} />
           <About locale="en" />
           <Contact locale="en" />
-          <Reviews />
+          <Reviews locale="en" />
         </>
       )}
 
@@ -147,7 +147,7 @@ export default function EnglishPage() {
         <TourDetail tour={selectedTour} onBack={handleBack} />
       )}
 
-      <Footer />
+      <Footer locale="en" />
     </div>
   );
 }

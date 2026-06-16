@@ -76,7 +76,7 @@ export default function ThaiPage() {
           <TourGrid showBadge="monthly" tours={toursData} />
           <About locale="th" />
           <Contact locale="th" />
-          <Reviews />
+          <Reviews locale="th" />
         </>
       )}
 
@@ -156,7 +156,7 @@ export default function ThaiPage() {
         <TourDetail tour={selectedTour} onBack={handleBack} />
       )}
 
-      <Footer />
+      <Footer locale="th" />
     </div>
   );
 }

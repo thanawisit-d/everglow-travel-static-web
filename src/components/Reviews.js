@@ -1,26 +1,31 @@
 import { assetPath } from '@/lib/utils';
 
 const reviews = [
-  { name: 'คุณสมชาย', stars: 5, text: 'บริการดีมาก ทัวร์สนุก ตรงตามโปรแกรม', image: 'reviews_pic/review1.jpg' },
-  { name: 'คุณวันดี', stars: 5, text: 'ประทับใจการบริการของไกด์มาก', image: 'reviews_pic/review2.jpg' },
-  { name: 'คุณวิชัย', stars: 4, text: 'คุ้มค่า คุ้มราคา', image: 'reviews_pic/review3.jpg' },
-  { name: 'คุณมานี', stars: 5, text: 'ทัวร์ญี่ปุ่นประทับใจมาก', image: 'reviews_pic/review4.jpg' },
+  { image: 'reviews_pic/เขาใหญ่.png', tag: '1 DAY TRIP : เขาใหญ่', text: 'ภาพบรรยากาศความประทับใจจากทริปท่องเที่ยวเขาใหญ่แบบไปเช้า-เย็นกลับ (ONE DAY TRIP) กลุ่มลูกค้าจำนวน 12 ท่าน ทริปนี้เน้นการเดินทางที่สะดวกพาเช็คอินจุดไฮไลท์และสัมผัสธรรมชาติอย่างใกล้ชิด พร้อมทีมงานดูแลตลอดการเดินทางเพื่อให้ลูกค้าได้พักผ่อนอย่างเต็มที่' },
+  { image: 'reviews_pic/วังน้ำเขียว.png', tag: '1 DAY 1 TRIP : วังน้ำเขียว', text: 'โปรแกรมพักผ่อนชมสวนดอกไม้ ไหว้สิ่งศักดิ์สิทธิ์ใกล้กรุงเทพ ที่ได้รับความไว้วางใจจากผู้ร่วมเดินทางมากมาย โปรแกรมนี้ออกแบบมาเพื่อคนที่ต้องการหนีความวุ่นวายไปสูดอากาศบริสุทธิ์ แวะชมทุ่งดอกไม้ตามฤดูกาล และขอพร เพื่อความเป็นสิริมงคล' },
+  { image: 'reviews_pic/แก่นมะกูด.png', tag: '1 DAY 1 TRIP : แก่นมะกูด', text: 'เส้นทางสัมผัสวิถีชุมชนเชิงเกษตรที่ จ.อุทัยธานี พาไปเดินเล่นสวนสตรอเบอร์รี่อุดหนุนผลผลิตจากชาวบ้าน และเรียนรู้วัฒนธรรมท้องถิ่น เป็นทริปที่ได้ทั้งความสนุกและได้ซึมซับเสน่ห์ของความเรียบง่าย' },
+  { image: 'reviews_pic/ตาก.png', tag: '2 DAY 1 NIGHT TRIP : ตาก', text: 'โปรแกรมท่องเที่ยวค้างคืน ชมธรรมชาติที่จังหวัดตาก แวะสักการะสิ่งศักดิ์สิทธิ์ที่วัดสวยงาม ถ่ายรูปเช็คอินกับทุ่งดอกไม้ และพักผ่อนหย่อนใจริมน้ำตกตอบโจทย์การท่องเที่ยวแบบครอบครัวและกลุ่มเพื่อนได้อย่างลงตัว' },
+  { image: 'reviews_pic/อุทัยธานี.png', tag: '2 DAY 1 NIGHT TRIP : อุทัยธานี', text: 'ค้างคืนแบบสบายๆ สัมผัสเสน่ห์วิถีชีวิตริมแม่น้ำสะแกกรัง แวะสักการะวัดท่าซุงเพิ่มความเป็นสิริมงคล และเดินชมตลาดท้องถิ่น 2 วัน 1 คืน กับบรรยากาศแห่งความสงบและเรียบง่ายของเมืองรองอย่าง อุทัยธานี' },
+  { image: 'reviews_pic/ภูลมโล.png', tag: '2 DAY 1 NIGHT TRIP : ภูลมโล', text: 'สัมผัสอากาศหนาวและทะเลหมอกที่ภูลมโล จ.เลย จุดชมวิวทิวทัศน์สวยงาม พักโฮมสเตย์บรรยากาศอบอุ่น กิจกรรมดูพระอาทิตย์ขึ้นและเดินชมธรรมชาติ เหมาะสำหรับคนรักการผจญภัยและความสงบ' },
+  { image: 'reviews_pic/กำแพงเพชร.png', tag: '2 DAY 1 NIGHT TRIP : กำแพงเพชร', text: 'ทริปท่องเที่ยวเชิงประวัติศาสตร์และธรรมชาติที่จังหวัดกำแพงเพชร เยี่ยมชมอุทยานประวัติศาสตร์ เรียนรู้เรื่องราวของเมืองโบราณ และสัมผัสธรรมชาติริมน้ำปิง' },
 ];
 
-export default function Reviews() {
+export default function Reviews({ locale }) {
+  const title = locale === 'en' ? 'Reviews' : 'รีวิว';
   return (
-    <section className="page reviews-page">
-      <h2>รีวิวจากลูกค้า</h2>
-      <div className="reviews-grid">
-        {reviews.map((r, i) => (
-          <div className="review-card" key={i}>
-            <img src={assetPath(r.image)} alt={r.name} />
-            <h4>{r.name}</h4>
-            <div className="stars">{'★'.repeat(r.stars)}{'☆'.repeat(5 - r.stars)}</div>
+    <section className="reviews-section page">
+      <h2>{title}</h2>
+      {reviews.map((r, i) => (
+        <div className="review-card" key={i}>
+          <div className="review-img">
+            <img src={assetPath(r.image)} alt="" />
+          </div>
+          <div className="review-content">
+            <div className="tag">{r.tag}</div>
             <p>{r.text}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 }
