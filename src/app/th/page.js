@@ -88,11 +88,13 @@ export default function ThaiPage() {
       {page === 'home' && (
         <>
           <Hero locale="th" />
-          <Slider />
-          <SearchBox locale="th" tours={toursData} onResult={handleSearchResult} />
+          <section className="search-box">
+            <SearchBox locale="th" tours={toursData} onResult={handleSearchResult} />
+            <Slider />
+            <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
+            <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
+          </section>
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="th" />
-          <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
-          <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           <About locale="th" />
           <Contact locale="th" />
           <Reviews locale="th" />

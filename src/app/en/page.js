@@ -88,11 +88,13 @@ export default function EnglishPage() {
       {page === 'home' && (
         <>
           <Hero locale="en" />
-          <Slider />
-          <SearchBox locale="en" tours={toursData} onResult={handleSearchResult} />
+          <section className="search-box">
+            <SearchBox locale="en" tours={toursData} onResult={handleSearchResult} />
+            <Slider />
+            <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
+            <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
+          </section>
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="en" />
-          <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
-          <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           <About locale="en" />
           <Contact locale="en" />
           <Reviews locale="en" />
