@@ -658,6 +658,7 @@ nav ul li button:hover::after {
   border: none;
   outline: none;
   color: #000;
+  background: #fff;
 }
 
 .search-box button {
@@ -1083,18 +1084,10 @@ nav ul li button:hover::after {
 }
 
 .site-footer {
-  background: linear-gradient(135deg, #0e6cde, #0d3f91);
+  background: linear-gradient(180deg, #0e6cde1f, #0d3f91);
   padding: 30px 0 0;
   margin-top: 50px;
   position: relative;
-}
-
-.footer-wave {
-  position: relative;
-  top: -2px;
-  height: 50px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C300,80 600,0 1200,40 L1200,120 L0,120 Z' fill='%230e6cde' opacity='0.3'/%3E%3Cpath d='M0,20 C400,0 800,60 1200,20 L1200,120 L0,120 Z' fill='%230d3f91'/%3E%3C/svg%3E") no-repeat bottom;
-  background-size: cover;
 }
 
 .footer-container {
@@ -1113,7 +1106,14 @@ nav ul li button:hover::after {
   }
 }
 
-.footer-col { padding: 10px 0; }
+.footer-col {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 10px 0;
+  height: auto;
+  min-height: auto;
+}
 
 .qr-box {
   background: rgba(255, 255, 255, 0.12);
@@ -1257,7 +1257,6 @@ nav ul li button:hover::after {
   height: 500px;
   overflow: hidden;
   position: relative;
-  margin-top: 10px;
 }
 
 .slides {
@@ -1272,6 +1271,39 @@ nav ul li button:hover::after {
   height: 500px;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  backdrop-filter: blur(4px);
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #1e3cff;
+}
+
+.slider-btn.prev {
+  left: 16px;
+}
+
+.slider-btn.next {
+  right: 16px;
 }
 
 .province-section {

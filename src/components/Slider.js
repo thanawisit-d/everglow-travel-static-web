@@ -7,15 +7,17 @@ export default function Slider() {
   const slidesRef = useRef(null);
   const indexRef = useRef(0);
 
-  useEffect(() => {
+  const goTo = (i) => {
     const el = slidesRef.current;
     if (!el) return;
     const total = el.children.length;
-    const interval = setInterval(() => {
-      indexRef.current = (indexRef.current + 1) % total;
-      el.style.transform = `translateX(-${indexRef.current * 100}%)`;
-    }, 3000);
-    return () => clearInterval(interval);
+    indexRef.current = ((i % total) + total) % total;
+    el.style.transform = `translateX(-${indexRef.current * 100}%)`;
+  };
+
+  useEffect(() => {
+    const el = slidesRef.current;
+    if (!el) return;
   }, []);
 
   return (
@@ -26,6 +28,8 @@ export default function Slider() {
         <Image src="/assets/images/slide1 (3).jpg" width={1920} height={500} className="slide" alt="Tour slide 3" />
         <Image src="/assets/images/slide1 (4).jpg" width={1920} height={500} className="slide" alt="Tour slide 4" />
       </div>
+      <button className="slider-btn prev" onClick={() => goTo(indexRef.current - 1)} aria-label="Previous slide">&#10094;</button>
+      <button className="slider-btn next" onClick={() => goTo(indexRef.current + 1)} aria-label="Next slide">&#10095;</button>
     </section>
   );
 }
