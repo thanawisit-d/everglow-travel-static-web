@@ -657,6 +657,7 @@ nav ul li button:hover::after {
   border-radius: 10px;
   border: none;
   outline: none;
+  color: #000;
 }
 
 .search-box button {
@@ -1187,7 +1188,8 @@ nav ul li button:hover::after {
   border-radius: 18px;
   background: white;
   padding: 10px;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
+  display: block;
 }
 
 .line-id {
@@ -1201,6 +1203,10 @@ nav ul li button:hover::after {
   display: flex;
   justify-content: center;
   gap: 14px;
+}
+
+.social-row a {
+  display: block;
 }
 
 .social-row img {
