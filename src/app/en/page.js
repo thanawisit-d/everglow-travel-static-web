@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
 import { translateCountry, assetPath } from '@/lib/utils';
@@ -24,20 +24,12 @@ export default function EnglishPage() {
   const [filteredDomestic, setFilteredDomestic] = useState(null);
   const [filteredOutbound, setFilteredOutbound] = useState(null);
   const [cityFilter, setCityFilter] = useState('');
-  const prevPageRef = useRef('home');
 
   const domesticTours = toursData.filter((t) => t.type === 'domestic');
   const outboundTours = toursData.filter((t) => t.type === 'outbound');
 
   const navigate = (to) => {
-    prevPageRef.current = page;
     setPage(to);
-  };
-
-  const goBack = () => {
-    const prev = prevPageRef.current;
-    prevPageRef.current = page;
-    setPage(prev);
   };
 
   const handleShowDomestic = (duration) => {
@@ -70,11 +62,6 @@ export default function EnglishPage() {
     if (full) setSelectedTour(full);
     else setSelectedTour(promo);
     navigate('detail');
-  };
-
-  const handleBack = () => {
-    setSelectedTour(null);
-    goBack();
   };
 
   const handleProvinceSelect = (province) => {
@@ -114,9 +101,6 @@ export default function EnglishPage() {
 
       {page === 'domestic' && (
         <section className="page tour-list-page active">
-          <button className="back-btn" onClick={() => { setFilteredDomestic(null); goBack(); }}>
-            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="Back" /> Back
-          </button>
           <h2>Thailand Tours</h2>
           <div className="tour-grid">
             {renderCards(filteredDomestic || domesticTours, true)}
@@ -126,9 +110,6 @@ export default function EnglishPage() {
 
       {page === 'outbound' && (
         <section className="page tour-list-page active">
-          <button className="back-btn" onClick={() => { setFilteredOutbound(null); goBack(); }}>
-            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="Back" /> Back
-          </button>
           <h2>Outbound Tours</h2>
           <div style={{ maxWidth: 400, margin: '0 auto 30px' }}>
             <label htmlFor="city-filter" className="sr-only">Search city</label>
@@ -145,9 +126,6 @@ export default function EnglishPage() {
 
       {page === 'search' && (
         <section className="page search-results-page active">
-          <button className="back-btn" onClick={() => goBack()}>
-            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="Back" /> Back
-          </button>
           <h2>Search Results ({searchResults?.length || 0})</h2>
           {searchResults?.length === 0 && (
             <div className="no-result">
@@ -165,7 +143,7 @@ export default function EnglishPage() {
       {page === 'reviews' && <Reviews locale="en" />}
 
       {page === 'detail' && (
-        <TourDetail tour={selectedTour} onBack={handleBack} />
+        <TourDetail tour={selectedTour} />
       )}
 
       <Footer locale="en" />

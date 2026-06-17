@@ -1,16 +1,12 @@
 import Image from 'next/image';
 import { formatPrice, assetPath } from '@/lib/utils';
 
-export default function TourDetail({ tour, onBack }) {
+export default function TourDetail({ tour }) {
   if (!tour) return null;
   const isOutbound = tour.type === 'outbound';
 
   return (
     <div className="tour-detail-page page active">
-      <button className="back-btn" onClick={onBack}>
-        <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" />
-        กลับ
-      </button>
       <div className="tour-detail-container">
         <div className="tour-detail-left" style={{ position: 'relative', minHeight: 400 }}>
           <Image src={assetPath(tour.image)} fill alt={tour.desc || tour.id} style={{ objectFit: 'contain', borderRadius: 8 }} />

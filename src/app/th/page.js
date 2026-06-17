@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
 import { assetPath } from '@/lib/utils';
@@ -24,20 +24,12 @@ export default function ThaiPage() {
   const [filteredDomestic, setFilteredDomestic] = useState(null);
   const [filteredOutbound, setFilteredOutbound] = useState(null);
   const [cityFilter, setCityFilter] = useState('');
-  const prevPageRef = useRef('home');
 
   const domesticTours = toursData.filter((t) => t.type === 'domestic');
   const outboundTours = toursData.filter((t) => t.type === 'outbound');
 
   const navigate = (to) => {
-    prevPageRef.current = page;
     setPage(to);
-  };
-
-  const goBack = () => {
-    const prev = prevPageRef.current;
-    prevPageRef.current = page;
-    setPage(prev);
   };
 
   const handleShowDomestic = (duration) => {
@@ -71,11 +63,6 @@ export default function ThaiPage() {
     navigate('detail');
   };
 
-  const handleBack = () => {
-    setSelectedTour(null);
-    goBack();
-  };
-
   const handleProvinceSelect = (province) => {
     const filtered = domesticTours.filter((t) => t.province === province);
     setFilteredDomestic(filtered);
@@ -85,6 +72,7 @@ export default function ThaiPage() {
   const renderCards = (tours, isDomestic) => (
     tours.map((t, i) => (
       <TourCard key={t.id || i} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
+      
     ))
   );
 
@@ -113,9 +101,6 @@ export default function ThaiPage() {
 
       {page === 'domestic' && (
         <section className="page tour-list-page active">
-          <button className="back-btn" onClick={() => { setFilteredDomestic(null); goBack(); }}>
-            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" /> กลับ
-          </button>
           <h2>ทัวร์ในประเทศ</h2>
           <div className="tour-grid">
             {renderCards(filteredDomestic || domesticTours, true)}
@@ -125,9 +110,6 @@ export default function ThaiPage() {
 
       {page === 'outbound' && (
         <section className="page tour-list-page active">
-          <button className="back-btn" onClick={() => { setFilteredOutbound(null); goBack(); }}>
-            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" /> กลับ
-          </button>
           <h2>ทัวร์ต่างประเทศ</h2>
           <div style={{ maxWidth: 400, margin: '0 auto 30px' }}>
             <label htmlFor="city-filter" className="sr-only">ค้นหาเมือง</label>
@@ -144,9 +126,6 @@ export default function ThaiPage() {
 
       {page === 'search' && (
         <section className="page search-results-page active">
-          <button className="back-btn" onClick={() => goBack()}>
-            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" /> กลับ
-          </button>
           <h2>ผลการค้นหา ({searchResults?.length || 0} รายการ)</h2>
           {searchResults?.length === 0 && (
             <div className="no-result">
@@ -164,7 +143,7 @@ export default function ThaiPage() {
       {page === 'reviews' && <Reviews locale="th" />}
 
       {page === 'detail' && (
-        <TourDetail tour={selectedTour} onBack={handleBack} />
+        <TourDetail tour={selectedTour} />
       )}
 
       <Footer locale="th" />

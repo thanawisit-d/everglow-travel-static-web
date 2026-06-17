@@ -13,7 +13,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
   return (
     <div className="header-sticky">
       <div className="topbar">
-        <div className="left">
+        <div className="left" style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>
           <Image src={assetPath('assets/images/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
           <div className="company">
             <h3>{text.company}</h3>
