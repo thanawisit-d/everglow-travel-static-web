@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 
 export default function Slider() {
@@ -14,12 +14,7 @@ export default function Slider() {
     indexRef.current = ((i % total) + total) % total;
     el.style.transform = `translateX(-${indexRef.current * 100}%)`;
   };
-
-  useEffect(() => {
-    const el = slidesRef.current;
-    if (!el) return;
-  }, []);
-
+  
   return (
     <section className="slider" style={{ marginTop: 30 }}>
       <div className="slides" ref={slidesRef}>
