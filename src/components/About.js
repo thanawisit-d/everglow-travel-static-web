@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 
 export default function About({ locale }) {
@@ -35,8 +36,8 @@ export default function About({ locale }) {
     <section className="page about-page">
       <h2>{t.title}</h2>
       <div className="about-container">
-        <div className="about-img">
-          <img src={assetPath('company/companydetail.jpg')} alt="Everglow Travel" />
+        <div className="about-img" style={{ position: 'relative', width: 420, maxWidth: '100%', height: 315 }}>
+          <Image src={assetPath('company/companydetail.jpg')} fill alt="Everglow Travel" style={{ objectFit: 'cover', borderRadius: 20 }} />
         </div>
         <div className="about-text">
           <h1>{t.company}</h1>

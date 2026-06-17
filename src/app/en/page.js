@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import toursData from '@/data/tours.json';
-import { translateCountry, assetPath, formatPrice } from '@/lib/utils';
+import { translateCountry, assetPath } from '@/lib/utils';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -40,12 +41,14 @@ export default function EnglishPage() {
   };
 
   const handleShowDomestic = (duration) => {
+    setSearchResults(null);
     const filtered = domesticTours.filter((t) => t.duration === duration);
     setFilteredDomestic(filtered);
     navigate('domestic');
   };
 
   const handleShowOutbound = (country) => {
+    setSearchResults(null);
     const thaiName = translateCountry(country);
     const filtered = outboundTours.filter((t) => t.country === thaiName);
     setFilteredOutbound(filtered);
@@ -62,6 +65,13 @@ export default function EnglishPage() {
     navigate('detail');
   };
 
+  const handlePromoClick = (promo) => {
+    const full = toursData.find((t) => t.id === promo.id);
+    if (full) setSelectedTour(full);
+    else setSelectedTour(promo);
+    navigate('detail');
+  };
+
   const handleBack = () => {
     setSelectedTour(null);
     goBack();
@@ -75,7 +85,7 @@ export default function EnglishPage() {
 
   const renderCards = (tours, isDomestic) => (
     tours.map((t, i) => (
-      <TourCard key={i} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
+      <TourCard key={t.id || i} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
     ))
   );
 
@@ -94,8 +104,8 @@ export default function EnglishPage() {
           <Slider />
           <SearchBox locale="en" tours={toursData} onResult={handleSearchResult} />
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="en" />
-          <TourGrid showBadge="popular" />
-          <TourGrid showBadge="monthly" />
+          <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
+          <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           <About locale="en" />
           <Contact locale="en" />
           <Reviews locale="en" />
@@ -105,14 +115,9 @@ export default function EnglishPage() {
       {page === 'domestic' && (
         <section className="page tour-list-page active">
           <button className="back-btn" onClick={() => { setFilteredDomestic(null); goBack(); }}>
-            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> Back
+            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="Back" /> Back
           </button>
           <h2>Thailand Tours</h2>
-          {searchResults?.length === 0 && (
-            <div className="no-result">
-              <img src={assetPath('assets/images/iconNo.png')} alt="" /> No tours found
-            </div>
-          )}
           <div className="tour-grid">
             {renderCards(filteredDomestic || domesticTours, true)}
           </div>
@@ -122,11 +127,12 @@ export default function EnglishPage() {
       {page === 'outbound' && (
         <section className="page tour-list-page active">
           <button className="back-btn" onClick={() => { setFilteredOutbound(null); goBack(); }}>
-            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> Back
+            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="Back" /> Back
           </button>
           <h2>Outbound Tours</h2>
           <div style={{ maxWidth: 400, margin: '0 auto 30px' }}>
-            <input type="text" placeholder="Search city..." value={cityFilter} onChange={(e) => setCityFilter(e.target.value)}
+            <label htmlFor="city-filter" className="sr-only">Search city</label>
+            <input id="city-filter" type="text" placeholder="Search city..." value={cityFilter} onChange={(e) => setCityFilter(e.target.value)}
               style={{ width: '100%', padding: 12, borderRadius: 10, border: 'none', outline: 'none', fontSize: 15 }} />
           </div>
           <div className="tour-grid">
@@ -140,12 +146,12 @@ export default function EnglishPage() {
       {page === 'search' && (
         <section className="page search-results-page active">
           <button className="back-btn" onClick={() => goBack()}>
-            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> Back
+            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="Back" /> Back
           </button>
           <h2>Search Results ({searchResults?.length || 0})</h2>
           {searchResults?.length === 0 && (
             <div className="no-result">
-              <img src={assetPath('assets/images/iconNo.png')} alt="" /> No tours found
+              <Image src={assetPath('assets/images/iconNo.png')} width={30} height={30} alt="" /> No tours found
             </div>
           )}
           <div className="tour-grid">

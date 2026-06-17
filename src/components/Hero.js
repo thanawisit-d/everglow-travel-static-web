@@ -1,7 +1,6 @@
 export default function Hero({ locale }) {
   return (
     <section className="hero">
-      <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet" />
       {locale === 'th' ? (
         <>
           <h1>ยินดีต้อนรับสู่ Everglow Travel</h1>

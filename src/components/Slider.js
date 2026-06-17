@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function Slider() {
   const slidesRef = useRef(null);
@@ -20,10 +21,10 @@ export default function Slider() {
   return (
     <section className="slider" style={{ marginTop: 30 }}>
       <div className="slides" ref={slidesRef}>
-        <img src="/assets/images/slide1 (1).jpg" className="slide" alt="slide1" />
-        <img src="/assets/images/slide1 (2).jpg" className="slide" alt="slide2" />
-        <img src="/assets/images/slide1 (3).jpg" className="slide" alt="slide3" />
-        <img src="/assets/images/slide1 (4).jpg" className="slide" alt="slide4" />
+        <Image src="/assets/images/slide1 (1).jpg" width={1920} height={500} className="slide" alt="Tour slide 1" />
+        <Image src="/assets/images/slide1 (2).jpg" width={1920} height={500} className="slide" alt="Tour slide 2" />
+        <Image src="/assets/images/slide1 (3).jpg" width={1920} height={500} className="slide" alt="Tour slide 3" />
+        <Image src="/assets/images/slide1 (4).jpg" width={1920} height={500} className="slide" alt="Tour slide 4" />
       </div>
     </section>
   );

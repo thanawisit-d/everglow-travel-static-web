@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import toursData from '@/data/tours.json';
-import { assetPath, formatPrice } from '@/lib/utils';
+import { assetPath } from '@/lib/utils';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -40,12 +41,14 @@ export default function ThaiPage() {
   };
 
   const handleShowDomestic = (duration) => {
+    setSearchResults(null);
     const filtered = domesticTours.filter((t) => t.duration === duration);
     setFilteredDomestic(filtered);
     navigate('domestic');
   };
 
   const handleShowOutbound = (country) => {
+    setSearchResults(null);
     const filtered = outboundTours.filter((t) => t.country === country);
     setFilteredOutbound(filtered);
     navigate('outbound');
@@ -58,6 +61,13 @@ export default function ThaiPage() {
 
   const handleTourClick = (tour) => {
     setSelectedTour(tour);
+    navigate('detail');
+  };
+
+  const handlePromoClick = (promo) => {
+    const full = toursData.find((t) => t.id === promo.id);
+    if (full) setSelectedTour(full);
+    else setSelectedTour(promo);
     navigate('detail');
   };
 
@@ -74,7 +84,7 @@ export default function ThaiPage() {
 
   const renderCards = (tours, isDomestic) => (
     tours.map((t, i) => (
-      <TourCard key={i} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
+      <TourCard key={t.id || i} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
     ))
   );
 
@@ -93,8 +103,8 @@ export default function ThaiPage() {
           <Slider />
           <SearchBox locale="th" tours={toursData} onResult={handleSearchResult} />
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="th" />
-          <TourGrid showBadge="popular" />
-          <TourGrid showBadge="monthly" />
+          <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
+          <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           <About locale="th" />
           <Contact locale="th" />
           <Reviews locale="th" />
@@ -104,14 +114,9 @@ export default function ThaiPage() {
       {page === 'domestic' && (
         <section className="page tour-list-page active">
           <button className="back-btn" onClick={() => { setFilteredDomestic(null); goBack(); }}>
-            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> กลับ
+            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" /> กลับ
           </button>
           <h2>ทัวร์ในประเทศ</h2>
-          {searchResults?.length === 0 && (
-            <div className="no-result">
-              <img src={assetPath('assets/images/iconNo.png')} alt="" /> ไม่พบโปรแกรมทัวร์
-            </div>
-          )}
           <div className="tour-grid">
             {renderCards(filteredDomestic || domesticTours, true)}
           </div>
@@ -121,11 +126,12 @@ export default function ThaiPage() {
       {page === 'outbound' && (
         <section className="page tour-list-page active">
           <button className="back-btn" onClick={() => { setFilteredOutbound(null); goBack(); }}>
-            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> กลับ
+            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" /> กลับ
           </button>
           <h2>ทัวร์ต่างประเทศ</h2>
           <div style={{ maxWidth: 400, margin: '0 auto 30px' }}>
-            <input type="text" placeholder="ค้นหาเมือง..." value={cityFilter} onChange={(e) => setCityFilter(e.target.value)}
+            <label htmlFor="city-filter" className="sr-only">ค้นหาเมือง</label>
+            <input id="city-filter" type="text" placeholder="ค้นหาเมือง..." value={cityFilter} onChange={(e) => setCityFilter(e.target.value)}
               style={{ width: '100%', padding: 12, borderRadius: 10, border: 'none', outline: 'none', fontSize: 15 }} />
           </div>
           <div className="tour-grid">
@@ -139,12 +145,12 @@ export default function ThaiPage() {
       {page === 'search' && (
         <section className="page search-results-page active">
           <button className="back-btn" onClick={() => goBack()}>
-            <img src={assetPath('assets/images/go-back.png')} className="back-icon" alt="" /> กลับ
+            <Image src={assetPath('assets/images/go-back.png')} width={20} height={20} alt="กลับ" /> กลับ
           </button>
           <h2>ผลการค้นหา ({searchResults?.length || 0} รายการ)</h2>
           {searchResults?.length === 0 && (
             <div className="no-result">
-              <img src={assetPath('assets/images/iconNo.png')} alt="" /> ไม่พบโปรแกรมทัวร์
+              <Image src={assetPath('assets/images/iconNo.png')} width={30} height={30} alt="" /> ไม่พบโปรแกรมทัวร์
             </div>
           )}
           <div className="tour-grid">

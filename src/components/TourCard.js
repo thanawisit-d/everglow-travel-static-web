@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { formatPrice, assetPath } from '@/lib/utils';
 
 export default function TourCard({ tour, onClick, showBadge, isDomestic }) {
@@ -6,15 +7,15 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic }) {
 
   return (
     <div className={isDomestic ? 'tour-card domestic-tour-card' : 'tour-card'} onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
-      <img src={assetPath(tour.image)} className="tour-img" alt={tour.id} />
+      <Image src={assetPath(tour.image)} fill alt={tour.desc || tour.id} className="tour-img" style={{ objectFit: 'cover' }} />
       <p className="tour-desc">{tour.desc}</p>
       <div className="tour-info">
-        <p><img src={assetPath('assets/images/pin.png')} alt="" /> รหัสทัวร์: {tour.id}</p>
-        <p><img src={assetPath('assets/images/stopwatch.png')} alt="" /> {tour.duration}</p>
-        <p><img src={assetPath('assets/images/clock_13819249.png')} alt="" /> เดินทาง: {tour.periodText}</p>
+        <p><Image src={assetPath('assets/images/pin.png')} width={16} height={16} alt="รหัสทัวร์" /> รหัสทัวร์: {tour.id}</p>
+        <p><Image src={assetPath('assets/images/stopwatch.png')} width={16} height={16} alt="ระยะเวลา" /> {tour.duration}</p>
+        <p><Image src={assetPath('assets/images/clock_13819249.png')} width={16} height={16} alt="เดินทาง" /> เดินทาง: {tour.periodText}</p>
       </div>
       <div className="tour-bottom">
-        <img src={assetPath(tour.transport?.icon || (tour.airline ? `plane logo/${tour.airline}` : 'Logo.jpg'))} className="airline" alt="" />
+        <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane logo/${tour.airline}` : 'Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || 'ขนส่ง'} />
         <div className="price">
           <span className="price-start">{isMultiNight ? 'เริ่มต้นเพียง' : 'ราคาเพียง'}</span>
           <span className="price-main">{formatPrice(tour.price)}.-</span>

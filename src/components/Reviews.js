@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 import reviews from '@/data/reviews.json';
 
@@ -8,8 +9,8 @@ export default function Reviews({ locale }) {
       <h2>{title}</h2>
       {reviews.map((r, i) => (
         <div className="review-card" key={i}>
-          <div className="review-img">
-            <img src={assetPath(r.image)} alt="" />
+          <div className="review-img" style={{ position: 'relative', width: 400, maxWidth: '100%', height: 300, flexShrink: 0 }}>
+            <Image src={assetPath(r.image)} fill alt={r.tag} style={{ objectFit: 'cover', borderRadius: 10 }} />
           </div>
           <div className="review-content">
             <div className="tag">{r.tag}</div>

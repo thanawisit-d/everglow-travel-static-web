@@ -28,7 +28,9 @@ export default function ProvinceSelector({ tours, onSelect, locale }) {
         {locale === 'th' ? 'เลือกจังหวัดที่ต้องการเดินทาง' : 'Select Province'}
       </h2>
       <div className="province-search-wrapper" ref={wrapperRef}>
+        <label htmlFor="province-search" className="sr-only">{locale === 'th' ? 'ค้นหาจังหวัด' : 'Search province'}</label>
         <input
+          id="province-search"
           type="text"
           placeholder={locale === 'th' ? 'ค้นหาหรือเลือกจังหวัด' : 'Search province'}
           value={query}
@@ -42,9 +44,9 @@ export default function ProvinceSelector({ tours, onSelect, locale }) {
             </div>
           ) : (
             filtered.map((p) => (
-              <div key={p} onClick={() => { setQuery(p); setOpen(false); onSelect(p); }}>
+              <button key={p} type="button" onClick={() => { setQuery(p); setOpen(false); onSelect(p); }}>
                 {p}
-              </div>
+              </button>
             ))
           )}
         </div>

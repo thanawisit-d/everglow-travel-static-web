@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
@@ -13,26 +14,26 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
     <div className="header-sticky">
       <div className="topbar">
         <div className="left">
-          <img src={assetPath('assets/images/Logo.jpg')} className="logo" alt="logo" />
+          <Image src={assetPath('assets/images/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
           <div className="company">
             <h3>{text.company}</h3>
             <p>{text.license}</p>
           </div>
         </div>
         <div className="right contact-icons">
-          <a href={`tel:${s.phone}`}><img src={assetPath('assets/images/phone.png')} alt="phone" /></a>
-          <a href={s.line}><img src={assetPath('assets/images/LINE.png')} alt="line" /></a>
+          <a href={`tel:${s.phone}`}><Image src={assetPath('assets/images/phone.png')} width={42} height={42} alt="โทร" /></a>
+          <a href={s.line}><Image src={assetPath('assets/images/LINE.png')} width={42} height={42} alt="LINE" /></a>
           <a href={s.facebook} target="_blank" rel="noopener noreferrer">
-            <img src={assetPath('assets/images/facebook.png')} alt="fb" />
+            <Image src={assetPath('assets/images/facebook.png')} width={42} height={42} alt="Facebook" />
           </a>
           <a href={s.instagram} target="_blank" rel="noopener noreferrer">
-            <img src={assetPath('assets/images/ig.png')} alt="ig" />
+            <Image src={assetPath('assets/images/ig.png')} width={42} height={42} alt="Instagram" />
           </a>
           <a href={s.whatsapp} target="_blank" rel="noopener noreferrer">
-            <img src={assetPath('assets/images/whatsapp.webp')} alt="wa" />
+            <Image src={assetPath('assets/images/whatsapp.webp')} width={42} height={42} alt="WhatsApp" />
           </a>
           <a href={s.tiktok} target="_blank" rel="noopener noreferrer">
-            <img src={assetPath('assets/images/tiktok.png')} alt="tiktok" />
+            <Image src={assetPath('assets/images/tiktok.png')} width={42} height={42} alt="TikTok" />
           </a>
         </div>
       </div>
@@ -40,27 +41,27 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
       <nav>
         <h2>{text.brand}</h2>
         <ul>
-          <li><a onClick={() => onNavigate('home')}>{text.home}</a></li>
+          <li><button type="button" onClick={() => onNavigate('home')}>{text.home}</button></li>
           <li className="dropdown">
-            <a>{text.domestic} ▾</a>
+            <button type="button">{text.domestic} ▾</button>
             <ul className="dropdown-menu">
               {text.durations.map((d, i) => (
-                <li key={i}><a onClick={() => onShowDomestic(d)}>{d}</a></li>
+                <li key={i}><button type="button" onClick={() => onShowDomestic(d)}>{d}</button></li>
               ))}
             </ul>
           </li>
           {locale === 'th' ? (
             <li className="dropdown">
-              <a onClick={() => onNavigate('outbound')}>{text.outbound} ▾</a>
+              <button type="button" onClick={() => onNavigate('outbound')}>{text.outbound} ▾</button>
               <ul className="country-menu">
                 {config.countryGroups.map((group, gi) => (
                   <div className="col" key={gi}>
                     {group.items.map((c, ci) => (
                       <li key={ci}>
-                        <a onClick={() => onShowOutbound(c.name)}>
-                          <img src={assetPath(`flag_country/${c.flag}`)} alt={c.name} />
+                        <button type="button" onClick={() => onShowOutbound(c.name)}>
+                          <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={c.name} />
                           ทัวร์{c.name}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </div>
@@ -69,20 +70,20 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
             </li>
           ) : (
             <li className="dropdown">
-              <a onClick={() => onNavigate('outbound')}>{text.outbound} ▾</a>
+              <button type="button" onClick={() => onNavigate('outbound')}>{text.outbound} ▾</button>
               <ul className="dropdown-menu">
                 {config.enCountries.map((c, i) => (
-                  <li key={i}><a onClick={() => onShowOutbound(c)}>{c}</a></li>
+                  <li key={i}><button type="button" onClick={() => onShowOutbound(c)}>{c}</button></li>
                 ))}
               </ul>
             </li>
           )}
-          <li><a onClick={() => onNavigate('about')}>{text.about}</a></li>
-          <li><a onClick={() => onNavigate('contact')}>{text.contact}</a></li>
-          <li><a onClick={() => onNavigate('reviews')}>{text.reviews}</a></li>
+          <li><button type="button" onClick={() => onNavigate('about')}>{text.about}</button></li>
+          <li><button type="button" onClick={() => onNavigate('contact')}>{text.contact}</button></li>
+          <li><button type="button" onClick={() => onNavigate('reviews')}>{text.reviews}</button></li>
           {locale === 'en' && (
             <li>
-              <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)}>
+              <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)} aria-label="Language">
                 <option value="en">🇬🇧 English</option>
                 <option value="zh">🇨🇳 中文</option>
                 <option value="ja">🇯🇵 日本語</option>

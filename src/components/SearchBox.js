@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 
 export default function SearchBox({ locale, tours, onResult }) {
@@ -37,23 +38,28 @@ export default function SearchBox({ locale, tours, onResult }) {
   return (
     <section className="search-box">
       <h2>
-        <img src={assetPath('assets/images/search.png')} className="search-icon" alt="" />
+        <Image src={assetPath('assets/images/search.png')} width={22} height={22} className="search-icon" alt="" />
         {locale === 'th' ? 'ค้นหาโปรแกรมทัวร์' : 'Search Tour Programs'}
       </h2>
       <form onSubmit={handleSearch}>
-        <select value={location} onChange={(e) => setLocation(e.target.value)}>
+        <label htmlFor="search-destination" className="sr-only">{locale === 'th' ? 'เลือกประเทศ/จังหวัด' : 'Destination'}</label>
+        <select id="search-destination" value={location} onChange={(e) => setLocation(e.target.value)}>
           <option value="">{locale === 'th' ? 'เลือกประเทศ/จังหวัด' : 'Destination'}</option>
           {locations.map((loc) => (
             <option key={loc} value={loc}>{loc}</option>
           ))}
         </select>
+        <label htmlFor="search-keyword" className="sr-only">{locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}</label>
         <input
+          id="search-keyword"
           type="text"
           placeholder={locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
+        <label htmlFor="search-date" className="sr-only">{locale === 'th' ? 'เลือกวันที่' : 'Select date'}</label>
         <input
+          id="search-date"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
