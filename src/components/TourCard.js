@@ -7,7 +7,9 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic }) {
 
   return (
     <div className={isDomestic ? 'tour-card domestic-tour-card' : 'tour-card'} onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
-      <Image src={assetPath(tour.image)} fill alt={tour.desc || tour.id} className="tour-img" style={{ objectFit: 'cover' }} />
+      <div className="tour-img-wrapper">
+        <Image src={assetPath(tour.image)} fill alt={tour.desc || tour.id} className="tour-img" style={{ objectFit: 'cover' }} />
+      </div>
       <p className="tour-desc">{tour.desc}</p>
       <div className="tour-info">
         <p><Image src={assetPath('assets/images/pin.png')} width={16} height={16} alt="รหัสทัวร์" /> รหัสทัวร์: {tour.id}</p>

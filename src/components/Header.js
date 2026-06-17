@@ -52,7 +52,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
           </li>
           {locale === 'th' ? (
             <li className="dropdown">
-              <button type="button" onClick={() => onNavigate('outbound')}>{text.outbound} ▾</button>
+              <button type="button">{text.outbound} ▾</button>
               <ul className="country-menu">
                 {config.countryGroups.map((group, gi) => (
                   <div className="col" key={gi}>
@@ -70,7 +70,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
             </li>
           ) : (
             <li className="dropdown">
-              <button type="button" onClick={() => onNavigate('outbound')}>{text.outbound} ▾</button>
+              <button type="button">{text.outbound} ▾</button>
               <ul className="dropdown-menu">
                 {config.enCountries.map((c, i) => (
                   <li key={i}><button type="button" onClick={() => onShowOutbound(c)}>{c}</button></li>
@@ -83,7 +83,13 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
           <li><button type="button" onClick={() => onNavigate('reviews')}>{text.reviews}</button></li>
           {locale === 'en' && (
             <li>
-              <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)} aria-label="Language">
+              <select className="lang-select" value={lang} onChange={(e) => {
+                setLang(e.target.value);
+                if (e.target.value !== 'en') {
+                  const paths = { zh: '/zh', ja: '/ja', ko: '/ko' };
+                  window.location.href = paths[e.target.value] || '/';
+                }
+              }} aria-label="Language">
                 <option value="en">🇬🇧 English</option>
                 <option value="zh">🇨🇳 中文</option>
                 <option value="ja">🇯🇵 日本語</option>

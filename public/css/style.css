@@ -1,0 +1,1880 @@
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+h1,
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    color: #fffefdf0;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tour-section {
+    padding: 60px 6%;
+    /* 👈 desktop สวยอยู่แล้ว */
+}
+
+/* GRID FIX */
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 👇 เพิ่ม */
+@media (max-width: 768px) {
+    .tour-card {
+        margin: 0 4px;
+        /* 👈 กันติดขอบอีกนิด */
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* CARD */
+.tour-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s ease;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    /* 👈 สำคัญ */
+}
+
+.tour-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.tour-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    /* 🔥 กำหนดสัดส่วนแทน height */
+    object-fit: cover;
+    /* เต็มกรอบ */
+    object-position: center;
+}
+
+.tour-card:hover .tour-img {
+    transform: scale(1.05);
+}
+
+/* DESC */
+.tour-desc {
+    padding: 14px 16px 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #14156e;
+}
+
+/* INFO */
+.tour-info {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #555;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 👈 จัดกลางทั้งกล่อง */
+    text-align: center;
+    /* 👈 ตัวหนังสือกลาง */
+}
+
+.tour-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 👈 ไอคอน + ข้อความอยู่กลาง */
+    gap: 8px;
+
+    margin: 6px 0;
+}
+
+.tour-info p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 6px 0;
+
+    min-height: 22px;
+    /* 👈 ทำให้แต่ละบรรทัดสูงเท่ากัน */
+}
+
+.tour-info img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+}
+
+/* BOTTOM */
+.tour-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 16px;
+    border-top: 1px solid #eee;
+
+    margin-top: auto;
+    /* 👈 ตัวสำคัญสุด */
+}
+
+.airline {
+    width: 70px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    line-height: 1.2;
+}
+
+.price-start {
+    font-size: 12px;
+    color: #777;
+}
+
+.price-main {
+    font-size: 22px;
+    font-weight: 800;
+    color: #cc0303;
+}
+
+.price-sub {
+    font-size: 12px;
+    color: #777;
+}
+
+/* BADGE */
+.tour-card::before {
+    content: "HOT DEAL";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff2121;
+    color: #fff;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   🌊 BACKGROUND
+========================= */
+body {
+    background: url('../assets/images/Home4.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    color: white;
+}
+
+/* =========================
+   🔵 TOP BAR (GLASS STYLE)
+========================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 6%;
+    background: rgb(14, 43, 140);
+    backdrop-filter: blur(12px);
+}
+
+.topbar .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.company h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.company p {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.topbar .right a {
+    color: white;
+    margin-left: 12px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.topbar .right a:hover {
+    color: #00d4ff;
+    transform: scale(1.2);
+}
+
+/* =========================
+   🔵 NAV (MODERN CLEAN)
+========================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: rgba(2, 98, 215, 0.872);
+    backdrop-filter: blur(10px);
+}
+
+nav h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00d4ff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   🌟 HERO (CLEAN + SHADOW)
+========================= */
+.hero {
+    text-align: center;
+    padding: 120px 20px 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* =========================
+   🔍 SEARCH BOX (GLASS CARD PRO)
+========================= */
+.search-box {
+    width: 90%;
+    max-width: 1000px;
+    margin: -40px auto 50px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+
+    padding: 25px;
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.search-box h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.search-box form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 12px;
+}
+
+.search-box select,
+.search-box input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    background: linear-gradient(45deg, #1e3cff, #00c6ff);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* 🔵 วงกลม + ใส่โลโก้ */
+.contact-icons a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: white;
+    /* 👈 ทำให้โลโก้เด่น */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+/* 🖼️ โลโก้ในวงกลม */
+.contact-icons a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 👈 สำคัญมาก ให้เต็มวง */
+}
+
+/* ✨ hover */
+.contact-icons a:hover {
+    transform: scale(1.15);
+}
+
+.tour-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+
+    font-size: 24px;
+    font-weight: 800;
+    color: #fffcfc;
+}
+
+.search-icon {
+    width: 22px;
+    height: 22px;
+
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.tour-section h2 {
+    text-align: center;
+    /* 👈 สำคัญ */
+    font-size: 34px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.tour-section {
+    padding-top: 60px;
+
+}
+
+/* 🔥 HOT MONTHLY BADGE */
+.tour-card.hot-monthly::before {
+    content: "HOT MONTHLY";
+    background: linear-gradient(45deg, #d4af37, #f9e79f);
+    color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   NAV BAR
+========================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 6%;
+    background: rgba(0, 40, 90, 0.55);
+    backdrop-filter: blur(10px);
+}
+
+nav h2 {
+    color: #fff;
+    font-size: 22px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* =========================
+   DROPDOWN (FIXED)
+========================= */
+.dropdown {
+    position: relative;
+}
+
+/* กล่อง dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 240px;
+    background: #fff;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+    /* ซ่อน */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: all 0.25s ease;
+
+    z-index: 999;
+
+    display: block;
+    /* 🔥 สำคัญ */
+}
+
+/* เปิด dropdown */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* =========================
+   ITEMS (เรียงแนวตั้ง)
+========================= */
+.dropdown-menu li {
+    list-style: none;
+    width: 100%;
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    width: 100%;
+
+    padding: 14px 16px;
+    font-size: 14px;
+
+    color: #333;
+    text-decoration: none;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    transition: 0.2s;
+}
+
+/* hover */
+.dropdown-menu li a:hover {
+    background: #f5f7ff;
+    color: #1e3cff;
+    padding-left: 22px;
+}
+
+/* เส้นท้ายสุด */
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+#resultTitle {
+    text-align: left;
+    margin: 20px 0 10px 20px;
+}
+
+#resultBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
+    #resultBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #resultBox {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tour-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+
+.tour-desc {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+
+    display: block;
+    overflow: visible;
+
+    min-height: auto;
+}
+
+.tour-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.no-result {
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.no-result img {
+    width: 30px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+.tour-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tour-bottom {
+    margin-top: auto;
+}
+
+.tour-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tour-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tour-info img {
+    width: 16px;
+    height: 16px;
+}
+
+.back-btn {
+    position: fixed;
+    top: 140px;
+    left: 25px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    /* 🔥 โปร่งแสงจริง */
+    background: rgba(255, 255, 255, 0);
+
+    /* 🔥 glass effect */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+
+    /* เงานุ่ม */
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+
+    transition: all 0.25s ease;
+}
+
+.back-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 8px 18px rgb(255, 255, 255);
+}
+
+.back-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+
+.contact-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.outbound-filter {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.outbound-filter select {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+#about {
+    padding: 80px 6%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    color: #fff;
+}
+
+/* TOP LAYOUT */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+/* IMAGE */
+.about-img img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.03);
+}
+
+/* TEXT */
+.about-text h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.about-text h2 {
+    font-size: 20px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   SERVICE BOX GRID
+========================= */
+.about-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* BOX */
+.section-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    padding: 20px;
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.section-box:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* TITLE */
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* TEXT */
+.section-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .about-main {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* =========================
+   ดรอปดาว ทัวร์ต่างประเทศ
+========================= */
+/* dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* mega dropdown */
+.country-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 700px;
+
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+
+    display: flex !important;
+    gap: 10px;
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: 0.25s ease;
+
+    z-index: 999;
+}
+
+/* show on hover */
+.dropdown:hover .country-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* column */
+.country-menu .col {
+    flex: 1;
+}
+
+/* list */
+.country-menu li {
+    list-style: none;
+}
+
+/* item */
+.country-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 8px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.country-menu li a:hover {
+    background: #eef4ff;
+    transform: translateX(3px);
+}
+
+/* flag */
+.country-menu img {
+    width: 26px;
+    height: 26px;
+    /* 👈 ต้องเท่ากันเป๊ะ */
+
+    min-width: 26px;
+    min-height: 26px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    display: block;
+}
+
+.country-menu {
+    position: absolute;
+    top: 100%;
+    left: -200px;
+    width: 500px;
+
+}
+
+nav {
+    position: relative;
+    z-index: 1000;
+}
+
+/* =========================
+   CONTACT SECTION (LUXURY)
+========================= */
+.contact-section {
+    background: url("images/bg-contact.jpg") center/cover no-repeat;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    /* 🔥 กลางแนวตั้ง */
+    justify-content: center;
+    /* 🔥 กลางแนวนอน */
+}
+
+/* 🌫 overlay ไล่เฉดหรู */
+.overlay {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 🔥 กลางจริง */
+
+    padding: 20px;
+    /* 🔥 ไม่เอียงแล้ว */
+
+    background: linear-gradient(to right,
+            rgba(10, 30, 60, 0.85) 0%,
+            rgba(10, 30, 60, 0.6) 40%,
+            rgba(10, 30, 60, 0.2) 70%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+/* 💎 กล่องแบบ glass + glow */
+.contact-card {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 35px;
+    border-radius: 20px;
+    width: 360px;
+    margin-top: 40px;
+    /* 👈 ขยับลง */
+
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(255, 255, 255, 0.08);
+
+    color: white;
+    animation: fadeUp 1s ease;
+}
+
+/* ✨ animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔥 หัวข้อ */
+.contact-card h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #fff;
+    position: relative;
+}
+
+/* เส้นใต้สวยๆ */
+.contact-card h2::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #4da3ff;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    border-radius: 10px;
+}
+
+/* 📦 item */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    padding: 10px;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+/* hover effect */
+.item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* 🔵 icon */
+.item img {
+    width: 48px;
+    height: 48px;
+
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    padding: 10px;
+    border-radius: 50%;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* 📝 text */
+.title {
+    font-weight: 600;
+    color: #e0eaff;
+    font-size: 14px;
+}
+
+.text {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+
+    .contact-section {
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0;
+        /* 🔥 มีช่องว่างบนล่าง */
+    }
+
+    .overlay {
+        justify-content: center;
+        /* 🔥 จัดกลาง */
+        align-items: center;
+        padding: 20px;
+        transform: none;
+        /* 🔥 เอาการขยับออก */
+        background: rgba(10, 30, 60, 0.7);
+        /* เรียบขึ้น */
+    }
+
+    .contact-card {
+        width: 100%;
+        height: 100vh;
+        /* 🔥 เต็มจอแนวตั้ง */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* 🔥 เนื้อหากลาง */
+
+        padding: 40px;
+        border-radius: 20px;
+
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.4),
+            0 0 40px rgba(255, 255, 255, 0.08);
+
+        color: white;
+    }
+
+    .contact-card h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews-section {
+    background: url("images/bg-review.jpg") center/cover no-repeat;
+    padding: 80px 8%;
+}
+
+.reviews-section h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: rgb(0, 32, 161);
+    display: block;
+    margin: 12px 0 0;
+    /* ✅ ชิดซ้าย */
+    border-radius: 5px;
+
+}
+
+.reviews-section h2 {
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    /* 🔥 ต้องมีอันนี้ด้วย */
+}
+
+/* การ์ด */
+.review-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    /* 👈 เพิ่มตรงนี้ */
+    transition: 0.3s;
+    margin-top: 20px;
+    /* 👈 เพิ่มตัวนี้ */
+
+
+    background: rgba(255, 255, 255, 0.35);
+    /* 👈 โปร่งมากขึ้น */
+    backdrop-filter: blur(12px);
+    /* 👈 เบลอชัดขึ้น */
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 25px;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* 👈 เงาเบาลง */
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* 👈 ขอบบาง ๆ */
+
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.75) 35%,
+            rgba(255, 255, 255, 0.4) 60%);
+
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+/* รูป */
+.review-img img {
+    width: 400px;
+    border-radius: 10px;
+}
+
+/* เนื้อหา */
+.review-content {
+    flex: 1;
+}
+
+/* tag */
+.tag {
+    display: inline-block;
+    background: #1f3c88;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ข้อความ */
+.review-content p {
+    background: #f5f7fb;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.6;
+    color: #333;
+    border-left: 4px solid #1f3c88;
+    padding-left: 15px;
+}
+
+/* หน้าทัวร์ 1 วัน 2 วัน 3 วัน 4 วัน 5 วัน  */
+.domestic-tour-page {
+    min-height: 100vh;
+    padding: 40px 55px;
+    background:
+        linear-gradient(rgba(20, 40, 70, 0.45), rgba(20, 40, 70, 0.45)),
+        url("../images/bg-thailand.jpg") center/cover no-repeat;
+}
+
+.domestic-wrapper {
+    width: 100%;
+}
+
+.province-sidebar {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.province-sidebar select {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+}
+
+.province-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.province-sidebar li {
+    padding: 10px 0;
+    font-size: 18px;
+    color: #111;
+    cursor: pointer;
+}
+
+.province-sidebar li:hover {
+    color: #0056d6;
+    font-weight: 600;
+}
+
+.tour-list-content h1 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.domestic-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.domestic-card {
+    position: relative;
+    height: 390px;
+    background: rgba(255, 255, 255, 0.93);
+    border-radius: 18px;
+    border: 2px dashed rgba(120, 120, 120, 0.25);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.domestic-card p {
+    font-size: 22px;
+    color: #555;
+}
+
+.badge {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    background: #ff2525;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+.province-search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.province-search-box input {
+    width: 550px;
+    max-width: 90%;
+    padding: 16px 22px;
+    border: none;
+    border-radius: 40px;
+    font-size: 17px;
+    background: rgba(133, 25, 25, 0.92);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.province-search-box input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.province-search-wrapper {
+    position: relative;
+    width: 550px;
+    margin: 0 auto 35px;
+}
+
+.province-search-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.province-dropdown {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.295);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.province-dropdown div {
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.province-dropdown div:hover {
+    background: #f2f6ff;
+    color: #0056d6;
+}
+
+.domestic-tour-page {
+    min-height: 100vh;
+    padding: 50px 60px;
+    background:
+        linear-gradient(rgba(15, 40, 70, 0.45), rgba(15, 40, 70, 0.45)),
+        url("../assets/images/slide1 (1).jpg") center/cover no-repeat;
+}
+
+.tour-list-content h1 {
+    text-align: center;
+    color: white;
+    font-size: 42px;
+    margin-bottom: 30px;
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, .35);
+}
+
+.province-search-wrapper {
+    position: relative;
+    width: 550px;
+    margin: 0 auto 45px;
+}
+
+.province-search-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.province-dropdown {
+    display: none;
+    position: absolute;
+    top: 65px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.443);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.province-dropdown div {
+    padding: 14px 18px;
+    cursor: pointer;
+}
+
+.province-dropdown div:hover {
+    background: #f2f6ff79;
+    color: #0056d6;
+}
+
+.domestic-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.domestic-tour-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    transition: 0.3s;
+}
+
+.domestic-tour-card:hover {
+    transform: translateY(-8px);
+}
+
+.tour-image-placeholder {
+    height: 250px;
+    background: #e9eef5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 20px;
+}
+
+.tour-card-body {
+    padding: 20px;
+}
+
+.tour-card-body h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.tour-meta {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.tour-price {
+    margin-top: 18px;
+    font-size: 24px;
+    color: #e60000;
+    font-weight: bold;
+}
+
+/* Detail DOMESTIC */
+
+.tour-detail-page {
+    min-height: 100vh;
+    padding: 45px 55px;
+    background: #eef4ff;
+}
+
+.tour-detail-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 34px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 35px;
+    border-radius: 0;
+    box-shadow: 0 8px 28px rgba(255, 255, 255, 0.584);
+}
+
+.tour-detail-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.tour-detail-left img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+
+.tour-detail-right h2 {
+    font-size: 30px;
+    line-height: 1.35;
+    color: #06408b;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.tour-detail-right p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 22px;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: 240px 200px;
+    width: 480px;
+    gap: 22px 35px;
+    justify-content: start;
+}
+
+.detail-info-grid .detail-item:nth-child(even) {
+    transform: none;
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    align-items: start;
+    gap: 12px;
+}
+
+.detail-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.detail-item strong {
+    display: block;
+    font-size: 15px;
+    color: #06408b;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.detail-item span {
+    display: block;
+    font-size: 15px;
+    color: #333;
+}
+
+#detailPrice {
+    color: #e60000;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.detail-buttons {
+    margin-top: 28px;
+    display: flex;
+    gap: 18px;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: none;
+}
+
+.detail-buttons button {
+    height: 54px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: white;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.detail-buttons a {
+    width: 190px;
+    height: 54px;
+    flex: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 8px;
+    background: white;
+    white-space: nowrap;
+}
+
+.detail-buttons a img {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px;
+    max-height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.call-btn {
+    border: 2px solid #0059b8;
+    color: #0059b8;
+}
+
+.line-btn {
+    border: 2px solid #27c84a;
+    color: #27c84a;
+}
+
+.pdf-btn {
+    border: 2px solid #ff2020;
+    color: #ff2020;
+}
+
+.domestic-tour-page .tour-card::before {
+    content: none !important;
+    display: none !important;
+}
+
+.province-dropdown {
+    background: rgba(255, 255, 255, 0.96) !important;
+    color: #111 !important;
+    border: 1px solid #ddd;
+    backdrop-filter: blur(8px);
+}
+
+.province-dropdown div {
+    color: #111 !important;
+    font-weight: 500;
+    background: transparent;
+}
+
+.province-dropdown div:hover {
+    background: #eef4ff !important;
+    color: #0056d6 !important;
+}
+
+.site-footer {
+    background: linear-gradient(135deg, #0e6cde1f, #0d3f91);
+    padding: 30px 0 0;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 45px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.9fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* เอากรอบออกจาก 2 อันแรก */
+.footer-col {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px 0;
+    height: auto;
+    min-height: auto;
+}
+
+/* ให้มีกรอบเฉพาะกล่อง LINE / QR */
+.qr-box {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    padding: 30px;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.footer-logo {
+    width: 190px;
+    margin-bottom: 28px;
+}
+
+.footer-company {
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.footer-license {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+}
+
+.footer-col h3 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 28px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-col h3::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: white;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.qr-box h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 17px;
+    color: white;
+    margin-bottom: 18px;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.qr-img {
+    width: 180px;
+    border-radius: 18px;
+    background: white;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.line-id {
+    font-size: 18px;
+    font-weight: 800;
+    color: #8cff7e;
+    margin-bottom: 22px;
+}
+
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.social-row a {
+    display: block;
+}
+
+.social-row img {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: white;
+    padding: 10px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.social-row img:hover {
+    transform: translateY(-4px);
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 15px;
+}
+
+.detail-airline-logo {
+    width: 180px;
+    max-width: none;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+    margin-top: 8px;
+}
+
+body.en-page {
+    background: url('../assets/images/Home8.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+}

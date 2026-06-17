@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta name="viewport" content="width=1210">
+    <title>Everglow Travel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- 🎨 SLIDER STYLE -->
+    <style>
+        .slider {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔵 TOP BAR -->
+    <div class="topbar">
+
+        <div class="left">
+            <img src="assets/images/Logo.jpg" class="logo">
+
+            <div class="company">
+                <h3>Everglow Global Co., Ltd.</h3>
+                <p>ใบอนุญาตเลขที่ 11/13400</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="right contact-icons">
+
+                <a href="tel:+66 99 632 6146">
+                    <img src="assets/images/phone.png">
+                </a>
+                <a href=" https://lin.ee/xXcNI1w">
+                    <img src="assets/images/LINE.png">
+                </a>
+
+                <a href=" https://www.facebook.com/people/Everglow-Travel/61580670863894/" target="_blank">
+                    <img src="assets/images/facebook.png">
+                </a>
+
+                <a href="https://www.instagram.com/everglow_travel?igsh=MWJ0NnM2anIwYWV1Mw==" target="_blank">
+                    <img src="assets/images/ig.png">
+                </a>
+
+                <a href="https://wa.me/66996326146" target="_blank">
+                    <img src="assets/images/whatsapp.webp">
+                </a>
+
+                <a href="https://www.tiktok.com/@everglow.travel">
+                    <img src="assets/images/tiktok.png">
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+    <nav>
+        <h2>Everglow Travel</h2>
+
+        <ul>
+            <li><a href="home-th.html">หน้าแรก</a></li>
+            <li class="dropdown">
+                <a href="#">ทัวร์ในประเทศ ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="showDomesticTourPage('1 วัน')">1 วัน</a></li>
+                    <li><a href="#" onclick="showDomesticTourPage('2 วัน 1 คืน')">2 วัน 1 คืน</a></li>
+                    <li><a href="#" onclick="showDomesticTourPage('3 วัน 2 คืน')">3 วัน 2 คืน</a></li>
+                    <li><a href="#" onclick="showDomesticTourPage('4 วัน 3 คืน')">4 วัน 3 คืน</a></li>
+                    <li><a href="#" onclick="showDomesticTourPage('5 วัน 4 คืน')">5 วัน 4 คืน</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" onclick="showPage('outbound')">
+                    ทัวร์ต่างประเทศ ▾
+                </a>
+
+                <ul class="dropdown-menu country-menu">
+
+                    <div class="col">
+                        <li><a href="#" onclick="showOutboundTourPage('ญี่ปุ่น')"><img src="flag_country/japan.png">
+                                ทัวร์ญี่ปุ่น</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เกาหลีใต้')"><img
+                                    src="flag_country/SouthKorea.png"> ทัวร์เกาหลีใต้</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('จีน')"><img src="flag_country/china.png">
+                                ทัวร์จีน</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ไต้หวัน')"><img src="flag_country/taiwan.png">
+                                ทัวร์ไต้หวัน</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ฮ่องกง')"><img src="flag_country/HongKong.png">
+                                ทัวร์ฮ่องกง</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('สิงคโปร์')"><img
+                                    src="flag_country/singapore.png"> ทัวร์สิงคโปร์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('มาเลเซีย')"><img src="flag_country/Malaysia.png">
+                                ทัวร์มาเลเซีย</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เวียดนาม')"><img src="flag_country/vietnam.png">
+                                ทัวร์เวียดนาม</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ดูไบ')"><img src="flag_country/dubai.png">
+                                ทัวร์ดูไบ</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('อินโดนีเซีย')"><img
+                                    src="flag_country/indonesia.png"> ทัวร์อินโดนีเซีย</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('มาเก๊า')"><img src="flag_country/macau.png">
+                                ทัวร์มาเก๊า</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ลาว')"><img src="flag_country/laos.png">
+                                ทัวร์ลาว</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เมียนมา')"><img src="flag_country/myanmar.png">
+                                ทัวร์เมียนมา</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ฟิลิปปินส์')"><img
+                                    src="flag_country/philippines.png"> ทัวร์ฟิลิปปินส์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('โมร็อกโก')"><img src="flag_country/morocco.png">
+                                ทัวร์โมร็อกโก</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ลักเซมเบิร์ก')"><img
+                                    src="flag_country/luxembourg.png">
+                                ทัวร์ลักเซมเบิร์ก</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('สโลวาเกีย')"><img
+                                    src="flag_country/slovakia.png">
+                                ทัวร์สโลวาเกีย
+                            </a></li>
+                    </div>
+
+                    <div class="col">
+                        <li><a href="#" onclick="showOutboundTourPage('ฝรั่งเศส')"><img src="flag_country/france.png">
+                                ทัวร์ฝรั่งเศส</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('อิตาลี')"><img src="flag_country/italy.png">
+                                ทัวร์อิตาลี</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เยอรมนี')"><img src="flag_country/germany.png">
+                                ทัวร์เยอรมนี</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('สวิตเซอร์แลนด์')"><img
+                                    src="flag_country/switzerland.png"> ทัวร์สวิตเซอร์แลนด์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ออสเตรีย')"><img src="flag_country/austria.png">
+                                ทัวร์ออสเตรีย</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('สเปน')"><img src="flag_country/spain.png">
+                                ทัวร์สเปน</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เนเธอร์แลนด์')"><img
+                                    src="flag_country/netherlands.png"> ทัวร์เนเธอร์แลนด์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('อังกฤษ')"><img src="flag_country/uk.png">
+                                ทัวร์อังกฤษ</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('โปรตุเกส')"><img src="flag_country/portugal.png">
+                                ทัวร์โปรตุเกส</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('กรีซ')"><img src="flag_country/greece.png">
+                                ทัวร์กรีซ</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('เช็ก')"><img src="flag_country/czech.png">
+                                ทัวร์เช็ก</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ฮังการี')"><img src="flag_country/hungary.png">
+                                ทัวร์ฮังการี</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('โปแลนด์')"><img src="flag_country/poland.png">
+                                ทัวร์โปแลนด์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('นอร์เวย์')"><img src="flag_country/norway.png">
+                                ทัวร์นอร์เวย์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('สวีเดน')"><img src="flag_country/sweden.png">
+                                ทัวร์สวีเดน</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เบลเยียม')"><img src="flag_country/belgium.png">
+                                ทัวร์เบลเยียม</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('มองโกเลีย')"><img
+                                    src="flag_country/Mongolia.png">
+                                ทัวร์มองโกเลีย</a></li>
+                    </div>
+
+                    <div class="col">
+                        <li><a href="#" onclick="showOutboundTourPage('อเมริกา')"><img src="flag_country/usa.png">
+                                ทัวร์อเมริกา</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('แคนาดา')"><img src="flag_country/canada.png">
+                                ทัวร์แคนาดา</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เม็กซิโก')"><img src="flag_country/mexico.png">
+                                ทัวร์เม็กซิโก</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('จอร์เจีย')"><img src="flag_country/georgia.png">
+                                ทัวร์จอร์เจีย</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('อาร์เจนตินา')"><img
+                                    src="flag_country/argentina.png"> ทัวร์อาร์เจนตินา</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('มัลดีฟส์')"><img src="flag_country/maldives.png">
+                                ทัวร์มัลดีฟส์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('กาตาร์')"><img src="flag_country/qatar.png">
+                                ทัวร์กาตาร์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('อียิปต์')"><img src="flag_country/egypt.png">
+                                ทัวร์อียิปต์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เปรู')"><img src="flag_country/peru.png">
+                                ทัวร์เปรู</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ตุรกี')"><img src="flag_country/turkey.png">
+                                ทัวร์ตุรกี</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('ออสเตรเลีย')"><img
+                                    src="flag_country/australia.png"> ทัวร์ออสเตรเลีย</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('นิวซีแลนด์')"><img
+                                    src="flag_country/newzealand.png"> ทัวร์นิวซีแลนด์</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('อินเดีย')"><img src="flag_country/india.png">
+                                ทัวร์อินเดีย</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('ศรีลังกา')"><img src="flag_country/srilanka.gif">
+                                ทัวร์ศรีลังกา</a></li>
+                        <li><a href="#" onclick="showOutboundTourPage('เนปาล')"><img src="flag_country/nepal.png">
+                                ทัวร์เนปาล</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('เดนมาร์ก')"><img src="flag_country/denmark.png">
+                                ทัวร์เดนมาร์ก</a></li>
+
+                        <li><a href="#" onclick="showOutboundTourPage('ภูฏาน')"><img src="flag_country/Bhutan.png">
+                                ทัวร์ภูฏาน</a></li>
+
+
+
+                    </div>
+
+                </ul>
+            </li>
+
+            <li><a href=" #" onclick="showPage('about')">เกี่ยวกับเรา</a></li>
+            <li><a href="#" onclick="showPage('contact')">ติดต่อ</a></li>
+            <li><a href="#" onclick="showPage('reviews')">รีวิว</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="home" class="page active">
+        <!-- HERO -->
+        <section class="hero">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap"
+                rel="stylesheet">
+            <h1>ยินดีต้อนรับสู่ Everglow Travel</h1>
+            <p>ค้นหาทัวร์ที่ใช่สำหรับคุณ</p>
+        </section>
+
+        <!-- SEARCH -->
+        <section class="search-box">
+
+            <h2>
+                <img src="assets/images/search.png" class="search-icon">
+                ค้นหาโปรแกรมทัวร์
+            </h2>
+
+            <form onsubmit="event.preventDefault(); searchTour();">
+
+                <select id="country">
+                    <option value="">เลือกประเทศ</option>
+                    <option value="ญี่ปุ่น">ญี่ปุ่น</option>
+                    <option value="เกาหลีใต้">เกาหลีใต้</option>
+                    <option value="จีน">จีน</option>
+                    <option value="ไต้หวัน">ไต้หวัน</option>
+                    <option value="ฝรั่งเศส">ฝรั่งเศส</option>
+                    <option value="อิตาลี">อิตาลี</option>
+                    <option value="สวิตเซอร์แลนด์">สวิตเซอร์แลนด์</option>
+                    <option value="เยอรมนี">เยอรมนี</option>
+                    <option value="อังกฤษ">อังกฤษ</option>
+                    <option value="สเปน">สเปน</option>
+                    <option value="เนเธอร์แลนด์">เนเธอร์แลนด์</option>
+                    <option value="สหรัฐอเมริกา">อเมริกา</option>
+                    <option value="แคนาดา">แคนาดา</option>
+                    <option value="สิงคโปร์">สิงคโปร์</option>
+                    <option value="มาเลเซีย">มาเลเซีย</option>
+                    <option value="เวียดนาม">เวียดนาม</option>
+                    <option value="อินโดนีเซีย">อินโดนีเซีย</option>
+                    <option value="ดูไบ (UAE)">ดูไบ</option>
+                    <option value="ฮ่องกง">ฮ่องกง</option>
+
+                </select>
+
+                <input id="code" type="text" placeholder="รหัสทัวร์ / โปรแกรม">
+                <input id="travelDate" type="text" placeholder="ช่วงวันเดินทาง" onfocus="this.type='date'">
+
+                <button type="submit">ค้นหา</button>
+
+            </form>
+
+            <h2 id="resultTitle" style="display:none; text-align:center;">
+                ผลการค้นหา
+            </h2>
+            </form>
+
+            <!-- 🎞️ SLIDER (ล่างสุด + เลื่อนซ้ายขวา) -->
+            <section class="slider" id="sliderSection">
+                <div class="slides" id="slides">
+                    <img src="assets/images/slide1 (1).jpg" class="slide">
+                    <img src="assets/images/slide1 (2).jpg" class="slide">
+                    <img src="assets/images/slide1 (3).jpg" class="slide">
+                    <img src="assets/images/slide1 (4).jpg" class="slide">
+                </div>
+
+            </section>
+
+            <!-- ⚙️ JS SLIDER -->
+            <script>
+                let index = 0;
+                const slides = document.getElementById("slides");
+                const total = document.querySelectorAll(".slide").length;
+
+                function moveSlide() {
+                    index++;
+
+                    if (index >= total) {
+                        index = 0;
+                    }
+
+                    slides.style.transform = `translateX(-${index * 100}%)`;
+                }
+
+                setInterval(moveSlide, 3000);
+            </script>
+
+            <!-- ⭐ POPULAR TOURS -->
+            <section id="popularSection" class="tour-section">
+
+                <h2 class="tour-title">
+                    โปรแกรมทัวร์ยอดนิยม
+                </h2>
+
+                <div class="tour-grid">
+
+                    <!-- CARD 1 -->
+                    <div class="tour-card">
+                        <img src="Populartours/HongkongBT-HKG61_CX.jpg" class="tour-img">
+                        <p class="tour-desc">ทัวร์ฮ่องกงและจูไห่ เที่ยว 2 เมือง บินไปมูํที่เกาะฮ่องกง เที่ยวจูไห่
+                            สวนสนุกและอควาเรียมที่ใหญ่ที่สุดในเอเชีย</p>
+
+                        <div class="tour-info">
+                            <p><img src="assets/images/pin.png"> รหัสทัวร์: BT-HKG61_CX</p>
+                            <p><img src="assets/images/stopwatch.png"> 3 วัน 2 คืน</p>
+                            <p><img src="assets/images/clock_13819249.png"> เดินทาง: เม.ย. - ต.ค. 2569</p>
+                        </div>
+
+                        <div class="tour-bottom">
+                            <img src="plane logo/Cathaylogo.jpg" class="airline">
+
+                            <div class="price">
+                                <span class="price-start">เริ่มต้น</span>
+                                <span class="price-main">19,999.-</span>
+                                <span class="price-sub">บาท/ท่าน</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="tour-card">
+                        <img src="Populartours/JapanBT-KIX-NRT_S02_XJ.jpg" class="tour-img">
+
+                        <p class="tour-desc">ทัวร์ญี่ปุ่น มหัศจรรย์ Osaka โทยามะ เกียวโต มัตสึโมโต้ ฟูจิ
+                            ชมทิวทัสน์อันสวยงาม
+                            ณ ฮาคุบะ เยือน "คามิคูจิ" มนตร์เสน่ห์แห่งสายน้ำกลางเขา</p>
+
+                        <div class="tour-info">
+                            <p><img src="assets/images/pin.png"> รหัสทัวร์: BT-KIX-NRT_S02_XJ</p>
+                            <p><img src="assets/images/stopwatch.png"> 6 วัน 4 คืน</p>
+                            <p><img src="assets/images/clock_13819249.png"> เดินทาง: เม.ย. - พ.ค. 2569</p>
+                        </div>
+
+                        <div class="tour-bottom">
+                            <img src="plane logo/airasia.png" class="airline">
+
+                            <div class="price">
+                                <span class="price-start">เริ่มต้น</span>
+                                <span class="price-main">36,999.-</span>
+                                <span class="price-sub">บาท/ท่าน</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="tour-card">
+                        <img src="Populartours/JapanZGKIX-2619VZ.jpg" class="tour-img">
+
+                        <p class="tour-desc">ทัวร์ญี่ปุ่น เที่ยวเมืองเก่าสุดคลาสสิกที่เกียวโต
+                            เช็คอินวัดคิโยมิสึ กินช้อปฟินตลาดปลาคุโรมง ช้อปปิ้งย่านดังชินไซบาชิ</p>
+
+                        <div class="tour-info">
+                            <p><img src="assets/images/pin.png"> รหัสทัวร์: ZGKIX-2619VZ</p>
+                            <p><img src="assets/images/stopwatch.png"> 5 วัน 3 คืน</p>
+                            <p><img src="assets/images/clock_13819249.png"> เดินทาง: เม.ย. - มิ.ย. 2569</p>
+                        </div>
+
+                        <div class="tour-bottom">
+                            <img src="plane logo/VietJet.png" class="airline">
+
+                            <div class="price">
+                                <span class="price-start">เริ่มต้น</span>
+                                <span class="price-main">23,990.-</span>
+                                <span class="price-sub">บาท/ท่าน</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 🔥Hot Monthly Tour -->
+            <section id="monthlySection" class="tour-section">
+
+                <h2>โปรแกรมทัวร์แนะนำประจำเดือน</h2>
+
+                <div class="tour-grid">
+
+                    <!-- CARD 1 -->
+                    <div class="tour-card hot-monthly">
+                        <img src="HotMonthly/China_BT-XIY19_9C.jpg" class="tour-img">
+                        <p class="tour-desc">ทัวร์จีน Xian "มรดกโลกพันปี สุสานทหารดินเผา" แต่งชุดจีนโบราณ
+                            เดินถนนวัฒนธรรมต้าถัง
+                        </p>
+
+                        <div class="tour-info">
+                            <p><img src="assets/images/pin.png"> รหัสทัวร์: BT-XIY19_9C</p>
+                            <p><img src="assets/images/stopwatch.png"> 4 วัน 2 คืน</p>
+                            <p><img src="assets/images/clock_13819249.png"> เดินทาง: เม.ย. - มิ.ย. 2569</p>
+                        </div>
+
+                        <div class="tour-bottom">
+                            <img src="plane logo/spring.png" class="airline">
+
+                            <div class="price">
+                                <span class="price-start">เริ่มต้น</span>
+                                <span class="price-main">10,999.-</span>
+                                <span class="price-sub">บาท/ท่าน</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 2 -->
+                    <div class="tour-card hot-monthly">
+                        <img src="HotMonthly/Vietnam_2UPQC-VZ106.jpg" class="tour-img">
+
+                        <p class="tour-desc">ทัวร์เวียดนามใต้ 2 สวนสนุก สวนน้ำ AQUATOPIA & สวนสนุก VIN WONDER</p>
+
+                        <div class="tour-info">
+                            <p><img src="assets/images/pin.png"> รหัสทัวร์: 2UPQC-VZ106</p>
+                            <p><img src="assets/images/stopwatch.png"> 3 วัน 2 คืน</p>
+                            <p><img src="assets/images/clock_13819249.png"> เดินทาง: เม.ย. - ต.ค. 2569</p>
+                        </div>
+
+                        <div class="tour-bottom">
+                            <img src="plane logo/VietJet.png" class="airline">
+
+                            <div class="price">
+                                <span class="price-start">เริ่มต้น</span>
+                                <span class="price-main">11,800.-</span>
+                                <span class="price-sub">บาท/ท่าน</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="tour-card hot-monthly">
+                        <img src="HotMonthly/Vietnam_VZ-BANA01.jpg" class="tour-img">
+
+                        <p class="tour-desc">ทัวร์เวียดนาม ดานัง ฮอยอัน พักบานาฮิลล์ 1 คืน เที่ยวครบทุกไฮไลท์</p>
+
+                        <div class="tour-info">
+                            <p><img src="assets/images/pin.png"> รหัสทัวร์: VZ-BANA01</p>
+                            <p><img src="assets/images/stopwatch.png"> 3 วัน 2 คืน</p>
+                            <p><img src="assets/images/clock_13819249.png"> เดินทาง: เม.ย. - ต.ค. 2569</p>
+                        </div>
+
+                        <div class="tour-bottom">
+                            <img src="plane logo/VietJet.png" class="airline">
+
+                            <div class="price">
+                                <span class="price-start">เริ่มต้น</span>
+                                <span class="price-main">11,999.-</span>
+                                <span class="price-sub">บาท/ท่าน</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <script src="webapp.js" defer></script>
+
+            <div id="resultBox"></div>
+        </section>
+    </section>
+    </section>
+
+
+    <!-- tour-1day-page-->
+    <section id="domestic-tour-page" class="page domestic-tour-page">
+
+        <main class="tour-list-content">
+
+            <h1 id="domesticTourTitle">โปรแกรมทัวร์</h1>
+
+            <div class="province-search-wrapper">
+                <input type="text" id="provinceSearch" placeholder="ค้นหาหรือเลือกจังหวัด" onclick="toggleDropdown()"
+                    onkeyup="filterProvince()">
+
+                <div id="provinceDropdown" class="province-dropdown">
+                    <div onclick="selectProvince('กรุงเทพมหานคร')">กรุงเทพมหานคร</div>
+                    <div onclick="selectProvince('กระบี่')">กระบี่</div>
+                    <div onclick="selectProvince('กาญจนบุรี')">กาญจนบุรี</div>
+                    <div onclick="selectProvince('กาฬสินธุ์')">กาฬสินธุ์</div>
+                    <div onclick="selectProvince('กำแพงเพชร')">กำแพงเพชร</div>
+                    <div onclick="selectProvince('ขอนแก่น')">ขอนแก่น</div>
+                    <div onclick="selectProvince('จันทบุรี')">จันทบุรี</div>
+                    <div onclick="selectProvince('ฉะเชิงเทรา')">ฉะเชิงเทรา</div>
+                    <div onclick="selectProvince('ชลบุรี')">ชลบุรี</div>
+                    <div onclick="selectProvince('ชัยนาท')">ชัยนาท</div>
+                    <div onclick="selectProvince('ชัยภูมิ')">ชัยภูมิ</div>
+                    <div onclick="selectProvince('ชุมพร')">ชุมพร</div>
+                    <div onclick="selectProvince('เชียงราย')">เชียงราย</div>
+                    <div onclick="selectProvince('เชียงใหม่')">เชียงใหม่</div>
+                    <div onclick="selectProvince('ตรัง')">ตรัง</div>
+                    <div onclick="selectProvince('ตราด')">ตราด</div>
+                    <div onclick="selectProvince('ตาก')">ตาก</div>
+                    <div onclick="selectProvince('นครนายก')">นครนายก</div>
+                    <div onclick="selectProvince('นครปฐม')">นครปฐม</div>
+                    <div onclick="selectProvince('นครพนม')">นครพนม</div>
+                    <div onclick="selectProvince('นครราชสีมา')">นครราชสีมา</div>
+                    <div onclick="selectProvince('นครศรีธรรมราช')">นครศรีธรรมราช</div>
+                    <div onclick="selectProvince('นครสวรรค์')">นครสวรรค์</div>
+                    <div onclick="selectProvince('นนทบุรี')">นนทบุรี</div>
+                    <div onclick="selectProvince('นราธิวาส')">นราธิวาส</div>
+                    <div onclick="selectProvince('น่าน')">น่าน</div>
+                    <div onclick="selectProvince('บึงกาฬ')">บึงกาฬ</div>
+                    <div onclick="selectProvince('บุรีรัมย์')">บุรีรัมย์</div>
+                    <div onclick="selectProvince('ปทุมธานี')">ปทุมธานี</div>
+                    <div onclick="selectProvince('ประจวบคีรีขันธ์')">ประจวบคีรีขันธ์</div>
+                    <div onclick="selectProvince('ปราจีนบุรี')">ปราจีนบุรี</div>
+                    <div onclick="selectProvince('ปัตตานี')">ปัตตานี</div>
+                    <div onclick="selectProvince('พระนครศรีอยุธยา')">พระนครศรีอยุธยา</div>
+                    <div onclick="selectProvince('พะเยา')">พะเยา</div>
+                    <div onclick="selectProvince('พังงา')">พังงา</div>
+                    <div onclick="selectProvince('พัทลุง')">พัทลุง</div>
+                    <div onclick="selectProvince('พิจิตร')">พิจิตร</div>
+                    <div onclick="selectProvince('พิษณุโลก')">พิษณุโลก</div>
+                    <div onclick="selectProvince('เพชรบุรี')">เพชรบุรี</div>
+                    <div onclick="selectProvince('เพชรบูรณ์')">เพชรบูรณ์</div>
+                    <div onclick="selectProvince('แพร่')">แพร่</div>
+                    <div onclick="selectProvince('ภูเก็ต')">ภูเก็ต</div>
+                    <div onclick="selectProvince('มหาสารคาม')">มหาสารคาม</div>
+                    <div onclick="selectProvince('มุกดาหาร')">มุกดาหาร</div>
+                    <div onclick="selectProvince('แม่ฮ่องสอน')">แม่ฮ่องสอน</div>
+                    <div onclick="selectProvince('ยโสธร')">ยโสธร</div>
+                    <div onclick="selectProvince('ยะลา')">ยะลา</div>
+                    <div onclick="selectProvince('ร้อยเอ็ด')">ร้อยเอ็ด</div>
+                    <div onclick="selectProvince('ระนอง')">ระนอง</div>
+                    <div onclick="selectProvince('ระยอง')">ระยอง</div>
+                    <div onclick="selectProvince('ราชบุรี')">ราชบุรี</div>
+                    <div onclick="selectProvince('ลพบุรี')">ลพบุรี</div>
+                    <div onclick="selectProvince('ลำปาง')">ลำปาง</div>
+                    <div onclick="selectProvince('ลำพูน')">ลำพูน</div>
+                    <div onclick="selectProvince('เลย')">เลย</div>
+                    <div onclick="selectProvince('ศรีสะเกษ')">ศรีสะเกษ</div>
+                    <div onclick="selectProvince('สกลนคร')">สกลนคร</div>
+                    <div onclick="selectProvince('สงขลา')">สงขลา</div>
+                    <div onclick="selectProvince('สตูล')">สตูล</div>
+                    <div onclick="selectProvince('สมุทรปราการ')">สมุทรปราการ</div>
+                    <div onclick="selectProvince('สมุทรสงคราม')">สมุทรสงคราม</div>
+                    <div onclick="selectProvince('สมุทรสาคร')">สมุทรสาคร</div>
+                    <div onclick="selectProvince('สระแก้ว')">สระแก้ว</div>
+                    <div onclick="selectProvince('สระบุรี')">สระบุรี</div>
+                    <div onclick="selectProvince('สิงห์บุรี')">สิงห์บุรี</div>
+                    <div onclick="selectProvince('สุโขทัย')">สุโขทัย</div>
+                    <div onclick="selectProvince('สุพรรณบุรี')">สุพรรณบุรี</div>
+                    <div onclick="selectProvince('สุราษฎร์ธานี')">สุราษฎร์ธานี</div>
+                    <div onclick="selectProvince('สุรินทร์')">สุรินทร์</div>
+                    <div onclick="selectProvince('หนองคาย')">หนองคาย</div>
+                    <div onclick="selectProvince('หนองบัวลำภู')">หนองบัวลำภู</div>
+                    <div onclick="selectProvince('อ่างทอง')">อ่างทอง</div>
+                    <div onclick="selectProvince('อำนาจเจริญ')">อำนาจเจริญ</div>
+                    <div onclick="selectProvince('อุดรธานี')">อุดรธานี</div>
+                    <div onclick="selectProvince('อุตรดิตถ์')">อุตรดิตถ์</div>
+                    <div onclick="selectProvince('อุทัยธานี')">อุทัยธานี</div>
+                    <div onclick="selectProvince('อุบลราชธานี')">อุบลราชธานี</div>
+                </div>
+            </div>
+            </div>
+
+            <div class="tour-grid" id="domesticTourGrid"></div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- "tour-detail-page" -->
+    <section id="tour-detail-page" class="page tour-detail-page">
+
+        <div class="tour-detail-container">
+
+            <div class="tour-detail-left">
+                <img id="detailImage" src="">
+            </div>
+
+            <div class="tour-detail-right">
+
+                <h2 id="detailTitle"></h2>
+                <p id="detailDesc"></p>
+
+                <div class="detail-info-grid">
+
+                    <div class="detail-item">
+                        <img src="assets/images/pin.png">
+                        <div>
+                            <strong>รหัสทัวร์</strong>
+                            <span id="detailId"></span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <img src="icons/location.png">
+                        <div>
+                            <strong>จังหวัด</strong>
+                            <span id="detailProvince"></span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <img src="assets/images/clock_13819249.png">
+                        <div>
+                            <strong>กำหนดการเดินทาง</strong>
+                            <span id="detailPeriod"></span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <img src="assets/images/stopwatch.png">
+                        <div>
+                            <strong>จำนวนวัน</strong>
+                            <span id="detailDuration"></span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <img src="icons/price.png">
+                        <div>
+                            <strong>ราคาเริ่มต้น</strong>
+                            <span id="detailPrice"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <img id="detailTransportIcon" src="">
+                        <div>
+                            <strong>การเดินทาง</strong>
+                            <span id="detailTransport"></span>
+                        </div>
+                    </div>
+                    <div class="detail-buttons">
+
+                        <a href="tel:0996326146" class="call-btn">
+                            <img src="assets/images/phone2 (1).png">
+                            โทรจอง
+                        </a>
+
+                        <a href="https://lin.ee/xXcNI1w" target="_blank" class="line-btn">
+                            <img src="assets/images/LINE.png">
+                            จองไลน์
+                        </a>
+
+                        <a id="pdfDownloadBtn" href="" target="_blank" class="pdf-btn">
+                            <img src="assets/images/pdf.png">
+                            ดูโปรแกรมทัวร์
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- "outbound page-ต่างประเทศ" -->
+    </section>
+    <section id="outbound-tour-page" class="page domestic-tour-page">
+
+        <main class="tour-list-content">
+
+            <h1 id="outboundTourTitle">โปรแกรมทัวร์ต่างประเทศ</h1>
+
+            <div class="province-search-wrapper">
+                <input type="text" id="citySearch" list="cityList" placeholder="เลือกเมือง"
+                    oninput="renderOutboundTours()">
+                <datalist id="cityList">
+                    <option value="เฉิงตู">
+                    <option value="ปักกิ่ง">
+                    <option value="เซี่ยงไฮ้">
+                    <option value="กวางโจว">
+                    <option value="เซินเจิ้น">
+                    <option value="ฉงชิ่ง">
+                    <option value="คุนหมิง">
+                    <option value="ซีอาน">
+                    <option value="จางเจียเจี้ย">
+                    <option value="ฮาร์บิน">
+                    <option value="ลี่เจียง">
+                    <option value="แชงกรีล่า">
+                    <option value="กุ้ยหลิน">
+                    <option value="หนานหนิง">
+                    <option value="อู่ฮั่น">
+                    <option value="หางโจว">
+                    <option value="ซูโจว">
+                    <option value="หนานจิง">
+                    <option value="ชิงเต่า">
+                    <option value="เทียนจิน">
+                </datalist>
+
+            </div>
+
+            <div class="tour-grid" id="outboundTourGrid"></div>
+
+        </main>
+
+    </section>
+
+    <!-- 🟦 about -->
+    <section id="about" class="page">
+        <div class="about-container">
+
+            <div class="about-img">
+                <img src="company/companydetail.jpg" alt="Everglow Travel">
+            </div>
+
+            <div class="about-text">
+                <h1>บริษัท เอเวอร์โกลว์ โกลบอล จำกัด</h1>
+                <h2>Everglow Travel</h2>
+
+                <p>
+                    Everglow Travel คือผู้ให้บริการด้านการท่องเที่ยวแบบครบวงจร
+                    ที่มุ่งมั่นส่งมอบประสบการณ์การเดินทางเหนือระดับ ทั้งในประเทศและต่างประเทศ
+                </p>
+
+                <p>
+                    เราเชี่ยวชาญการจัดกรุ๊ปทัวร์เหมา (Incentive Group) ทริปส่วนตัว
+                    และบริการท่องเที่ยวแบบครบจบในที่เดียว
+                </p>
+            </div>
+
+        </div>
+
+        <!-- 🟦 SERVICES -->
+        <div class="about-container about-main">
+            <div class="section-box">
+                <div class="section-title">DOMESTIC TOURS</div>
+                <p>ทัวร์ภายในประเทศ ทัวร์คุณภาพสำหรับลูกค้าชาวไทยและ ต่างชาติ เน้นความคุ้มค่าและราคาที่เหมาะสม
+                    มีให้บริการทั้ง ONE DAY TRIP, 2 DAYS 1 NIGHT TRIP, 3 DAYS 2 NIGHTS TRIP, 4 DAYS 3 NIGHTS TRIP
+                    และ
+                    WEEKEND TRIP</p>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">INBOUND TOURS</div>
+                <p>ทัวร์อินบาวด์ บริการนำเที่ยวสำหรับนักท่องเที่ยวต่างชาติสู่ประเทศไทย
+                    พร้อมทีมไกด์และพนักงานมากประสบการณ์และเชี่ยวชาญ ด้านภาษา คอยดูแลตลอดการเดินทางทัวร์ต่างประเทศ
+                    บริการนำเกี่ยวต่างประเทศสำหรับลูกค้าชาวไทย ครอบคลุมเส้นทางยอดฮิตทั่วโลก
+                    มีให้เลือกทั้งรูปแบบแพ็กเกจ
+                    ทัวร์มาตราฐานและกรุ๊ปเหมาส่วนตัวพร้อมดูแลและอำนวยความสะดวกแบบครบวงจรตลอดการเดินทาง</p>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">OUTBOUND TOURS</div>
+                <p>ทัวร์ต่างประเทศ บริการนำเกี่ยวต่างประเทศสำหรับลูกค้าชาวไทย ครอบคลุมเส้นทางยอดฮิตทั่วโลก
+                    มีให้เลือกทั้งรูปแบบแพ็กเกจ
+                    ทัวร์มาตราฐานและกรุ๊ปเหมาส่วนตัวพร้อมดูแลและอำนวยความสะดวกแบบครบวงจรตลอดการเดินทาง</p>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">CUSTOMIZED TOURS</div>
+                <p>ทัวร์ส่วนตัวออกแบบได้ออกแบบแพ็กเกจทัวร์แบบ PRIVATE GROUP
+                    ที่สามารถปรับแต่งโปรแกรมได้ตามงบประมาณและความต้องการเฉพาะของลูกค้า</p>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">ONE-STOP SERVICE</div>
+                <p>บริการครบวงจรดูแลและบริหารจัดการแบบครอบคลมทั้ง ที่พัก รถรับส่ง บริการจองตัวเครื่องบิน,รถไฟ,
+                    รถโดยสาร,
+                    เรือโดยสาร, รถรับส่งสนามบิน, บริการยื่นขอวีซ่า, และกิจกรรม ต่างๆ
+                    เพื่อให้ทุกการเดินทางสะดวกสบายและสมบูรณ์แบบที่สุด</p>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">CORPORATE & INCENTIVE</div>
+                <p>ทัวรองค์กร บริการจัดกรุบหมา OUTING, การจัดสับบนา, จัดประชุบ, EVENT TEAM BUILDING, ศึกษาดูงาน,
+                    ทัศนศึกษา,
+                    และการท่องเที่ยวประจำปีสำหรับองค์กร หรือหน่วยงาน ด้วยมาตรฐานการดูแลระดับมืออาชีพ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🟦 CONTACT -->
+    <section id="contact" class="page">
+        <div class="overlay">
+            <div class="contact-card">
+
+                <h2>ติดต่อ</h2>
+
+                <div class="item">
+                    <img src="icons/phone-call.png">
+                    <div>
+                        <p class="title">เบอร์ติดต่อ</p>
+                        <p class="text">099-632-6146</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="icons/email.png">
+                    <div>
+                        <p class="title">Email</p>
+                        <p class="text">everglowtravel@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="icons/time.png">
+                    <div>
+                        <p class="title">วันเวลาเปิดทำการ</p>
+                        <p class="text">จันทร์ - ศุกร์ 9:00 - 18:00 น.</p>
+                    </div>
+                </div>
+
+            </div> <!-- ✅ ปิด contact-card -->
+        </div> <!-- ✅ ปิด overlay -->
+    </section> <!-- ✅ ปิด contact -->
+
+
+    <!-- 🟦 review -->
+    <section id="reviews" class="reviews-section page">
+        <h2>รีวิว</h2>
+
+        <div class="review-card">
+            <!-- รีวิวที่ 1 -->
+            <div class="review-img">
+                <img src="reviews_pic/เขาใหญ่.png">
+            </div>
+
+            <!-- เนื้อหา -->
+            <div class="review-content">
+
+                <div class="tag">1 DAY TRIP : เขาใหญ่</div>
+
+                <p>
+                    ภาพบรรยากาศความประทับใจจากทริปท่องเที่ยวเขาใหญ่แบบไปเช้า-เย็นกลับ (ONE DAY TRIP) กลุ่มลูกค้าจำนวน 12
+                    ท่าน ทริปนี้เน้นการเดินทางที่สะดวกพาเช็คอินจุดไฮไลท์และสัมผัสธรรมชาติอย่างใกล้ชิด
+                    พร้อมทีมงานดูแลตลอดการเดินทางเพื่อให้ลูกค้าได้พักผ่อนอย่างเต็มที่
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- รีวิวที่ 2 -->
+        <div class="review-card">
+
+            <div class="review-img">
+                <img src="reviews_pic/วังน้ำเขียว.png">
+            </div>
+
+            <div class="review-content">
+                <div class="tag">1 DAY 1 TRIP : วังน้ำเขียว</div>
+                <p>
+                    โปรแกรมพักผ่อนชมสวนดอกไม้ ไหว้สิ่งศักดิ์สิทธิ์ใกล้กรุงเทพ
+                    ที่ได้รับความไว้วางใจจากผู้ร่วมเดินทางมากมาย
+                    โปรแกรมนี้ออกแบบมาเพื่อคนที่ต้องการหนีความวุ่นวายไปสูดอากาศบริสุทธิ์ แวะชมทุ่งดอกไม้ตามฤดูกาล
+                    และขอพร เพื่อความเป็นสิริมงคลโดยไม่ต้องเหนื่อยกับการเดินทางมากจนเกินไป
+
+                </p>
+            </div>
+
+        </div>
+
+        <!-- รีวิวที่ 3 -->
+        <div class="review-card">
+
+            <div class="review-img">
+                <img src="reviews_pic/แก่นมะกูด.png">
+            </div>
+
+            <div class="review-content">
+                <div class="tag">1 DAY 1 TRIP : แก่นมะกูด</div>
+                <p>
+                    เส้นทางสัมผัสวิถีชุมชนเชิงเกษตรที่ จ.อุทัยธานี พาไปเดินเล่นสวนสตรอเบอร์รี่อุดหนุนผลผลิตจากชาวบ้าน
+                    และเรียนรู้วัฒนธรรมท้องถิ่น เป็นทริปที่ได้ทั้งความสนุกและได้ซึมซับเสน่ห์ของความเรียบง่าย
+
+
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- รีวิวที่ 4 -->
+        <div class="review-card">
+
+            <div class="review-img">
+                <img src="reviews_pic/ตาก.png">
+            </div>
+
+            <div class="review-content">
+                <div class="tag">2 DAY 1 NIGHT TRIP : ตาก</div>
+                <p>
+                    โปรแกรมท่องเที่ยวค้างคืน ชมธรรมชาติที่จังหวัดตาก แวะสักการะสิ่งศักดิ์สิทธิ์ที่วัดสวยงาม
+                    ถ่ายรูปเช็คอินกับทุ่งดอกไม้
+                    และพักผ่อนหย่อนใจริมน้ำตกตอบโจทย์การท่องเที่ยวแบบครอบครัวและกลุ่มเพื่อนได้อย่างลงตัว
+
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- รีวิวที่ 5-->
+        <div class="review-card">
+
+            <div class="review-img">
+                <img src="reviews_pic/อุทัยธานี.png">
+            </div>
+
+            <div class="review-content">
+                <div class="tag">2 DAY 1 NIGHT TRIP : อุทัยธานี</div>
+                <p>
+                    ค้างคืนแบบสบายๆ สัมผัสเสน่ห์วิถีชีวิตริมแม่น้ำสะแกกรัง แวะสักการะวัดท่าซุงเพิ่มความเป็นสิริมงคล
+                    และเดินชมตลาดท้องถิ่น 2 วัน 1 คืน กับบรรยากาศแห่งความสงบและเรียบง่ายของเมืองรองอย่าง อุทัยธานี
+
+
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- รีวิวที่ 6-->
+        <div class="review-card">
+
+            <div class="review-img">
+                <img src="reviews_pic/กำแพงเพชร.png">
+            </div>
+
+            <div class="review-content">
+                <div class="tag">2 DAY 1 NIGHT TRIP : กำแพงเพชร</div>
+                <p>
+                    ย้อนรอยอดีตมนต์ขลังของเมืองมรดกโลก กำแพงเพชร
+                    ค้างคืนที่ชมความงดงามของอุทยานประวัติศาสตร์กลางธรรมชาติที่เงียบสงบ ซึมซับเรื่องราวทาง
+                    วัฒนธรรมเก่าแก่
+                    และบรรยากาศเมืองรองที่เปี่ยมไปด้วยเสน่ห์ เป็น 2 วัน 1 คืน ที่แสนประทับใจ
+
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- รีวิวที่ 7-->
+        <div class="review-card">
+
+            <div class="review-img">
+                <img src="reviews_pic/ภูลมโล.png">
+            </div>
+
+            <div class="review-content">
+                <div class="tag">2 DAY 1 NIGHT TRIP : ภูลมโล</div>
+                <p>
+                    ค้างคืนรับลมหนาวและชมทุ่งดอกนางพญาเสือโคร่งบานสะพรั่ง (ชากุระเมืองไทย)
+                    พร้อมรับแสงแรกชมหมอกบนจุดชมวิวยามเช้า
+                    โปรแกรมเด่นช่วงฤดูหนาวที่ได้เสียงตอบรับและความไว้วางใจอย่างล้นหลาม
+
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+
+            console.log("คลิกแล้ว:", pageId);
+
+            document.querySelectorAll(".page").forEach(page => {
+                page.classList.remove("active");
+            });
+
+            const target = document.getElementById(pageId);
+
+            console.log("เจอ section:", target);
+
+            if (target) {
+                target.classList.add("active");
+            }
+        }
+    </script>
+
+
+
+    <!-- ตัวกรอง 1 วัน ทริปในไทย -->
+    <script>
+        let tours = [];
+        let currentDuration = "1 วัน";
+        let currentProvince = "";
+
+        async function loadTours() {
+            try {
+                const response = await fetch("tours.json");
+                tours = await response.json();
+            } catch (error) {
+                console.error("โหลด tours.json ไม่ได้", error);
+            }
+        }
+
+        function showDomesticTourPage(duration) {
+            currentDuration = duration;
+            currentProvince = "";
+
+            document.getElementById("provinceSearch").value = "";
+            document.getElementById("domesticTourTitle").textContent = `โปรแกรมทัวร์ ${duration}`;
+
+            showPage("domestic-tour-page");
+            renderDomesticTours();
+        }
+        function formatPrice(price) {
+            return Number(String(price).replace(/,/g, "")).toLocaleString();
+        }
+        function renderDomesticTours() {
+            const container = document.getElementById("domesticTourGrid");
+            const filteredTours = tours.filter(tour => {
+                const matchType = tour.type === "domestic";
+                const matchDuration = tour.duration === currentDuration;
+                const matchProvince =
+                    currentProvince === "" || (tour.province || "").includes(currentProvince);
+                return matchType && matchDuration && matchProvince;
+            });
+
+            if (filteredTours.length === 0) {
+                container.innerHTML = `<p class="no-tour">ไม่พบโปรแกรมทัวร์ ${currentDuration}</p>`;
+                return;
+            }
+
+            container.innerHTML = filteredTours.map(tour => `
+        <div class="tour-card domestic-tour-card" onclick="showTourDetail('${tour.id}')">
+            <img src="${tour.image}" class="tour-img">
+
+            <p class="tour-desc">${tour.desc}</p>
+
+            <div class="tour-info">
+                <p><img src="assets/images/pin.png"> รหัสทัวร์: ${tour.id}</p>
+                <p><img src="assets/images/stopwatch.png"> ${tour.duration}</p>
+                <p><img src="assets/images/clock_13819249.png"> เดินทาง: ${tour.periodText}</p>
+            </div>
+
+            <div class="tour-bottom">
+             <img src="${tour.transport?.icon || 'Logo.jpg'}" class="airline">
+
+                <div class="price">
+            <span class="price-start">${['2 วัน 1 คืน', '3 วัน 2 คืน', '4 วัน 3 คืน'].includes(tour.duration)
+                    ? 'เริ่มต้นเพียง' : 'ราคาเพียง'}</span>            
+            <span class="price-main">${formatPrice(tour.price)}.-</span>
+            <span class="price-sub">บาท/ท่าน</span>
+                </div>
+            </div>
+        </div>
+    `).join("");
+        }
+
+        function selectProvince(name) {
+            currentProvince = name;
+
+            document.getElementById("provinceSearch").value = name;
+            document.getElementById("provinceDropdown").style.display = "none";
+
+            renderDomesticTours();
+        }
+
+        function toggleDropdown() {
+            document.getElementById("provinceDropdown").style.display = "block";
+        }
+
+        function filterProvince() {
+            const input = document.getElementById("provinceSearch").value.toLowerCase();
+            const items = document.querySelectorAll("#provinceDropdown div");
+
+            items.forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(input)
+                    ? "block"
+                    : "none";
+            });
+        }
+
+        window.addEventListener("click", function (e) {
+            if (!e.target.matches("#provinceSearch")) {
+                document.getElementById("provinceDropdown").style.display = "none";
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", loadTours);
+
+        function showTourDetail(tourId) {
+            const tour = tours.find(t => t.id === tourId);
+            if (!tour) return;
+
+            const isOutbound = tour.type === "outbound";
+
+            document.getElementById("detailImage").src = tour.image;
+
+            document.getElementById("detailTitle").textContent =
+                tour.shortDesc || tour.desc.split(" เที่ยว")[0];
+
+            document.getElementById("detailDesc").textContent = tour.desc;
+            document.getElementById("detailId").textContent = tour.id;
+
+            document.querySelector("#detailProvince").previousElementSibling.textContent =
+                isOutbound ? "ประเทศ" : "จังหวัด";
+
+            document.getElementById("detailProvince").textContent =
+                isOutbound ? tour.country : (tour.province || "-");
+
+            document.getElementById("detailPeriod").textContent = tour.periodText;
+            document.getElementById("detailDuration").textContent = tour.duration;
+
+            document.getElementById("detailPrice").textContent =
+                formatPrice(tour.price) + " บาท";
+
+            document.querySelector("#detailTransport").previousElementSibling.textContent =
+                isOutbound ? "เดินทางโดย" : "การเดินทาง";
+
+            if (isOutbound) {
+                document.getElementById("detailTransportIcon").src = "icons/plane.png";
+                document.getElementById("detailTransport").innerHTML =
+                    `<img src="plane logo/${tour.airline}" class="detail-airline-logo" style="width:80px; height:auto; max-width:none;">`;
+            } else {
+                document.getElementById("detailTransportIcon").src =
+                    tour.transport?.icon || "icons/transport.png";
+
+                document.getElementById("detailTransport").textContent =
+                    tour.transport?.name || "-";
+            }
+
+            document.getElementById("pdfDownloadBtn").href = tour.pdf || "#";
+
+            showPage("tour-detail-page");
+        } 
+    </script>
+
+
+
+    <!-- ตัวกรองทริปต่างประเทศ-->
+
+    <script>
+        let currentCountry = "";
+        function updateCityList(country) {
+            const cityList = document.getElementById("cityList");
+
+            const cityData = {
+
+                "จีน": [
+                    "เฉิงตู",
+                    "ปักกิ่ง",
+                    "เซี่ยงไฮ้",
+                    "กวางโจว",
+                    "เซินเจิ้น",
+                    "ฉงชิ่ง",
+                    "คุนหมิง",
+                    "ซีอาน",
+                    "จางเจียเจี้ย",
+                    "ฮาร์บิน",
+                    "ชิงเต่า",
+                    "ออร์ดอส",
+                    "ลี่เจียง",
+                    "แชงกรีล่า",
+                    "ต้าหลี่",
+                    "ฝูหรงเจิ้น",
+                    "ตูเจียงเอี้ยน",
+                    "เทียนเหมินซาน",
+                    "หยานไถ",
+                    "เวยไห่",
+                    "หางโจว",
+                    "ซูโจว",
+                    "อู่ฮั่น",
+                    "หนานหนิง",
+                    "กุ้ยหลิน",
+                    "มาเก๊า",
+                    "จูไห่"
+                ],
+
+                "ญี่ปุ่น": [
+                    "โตเกียว",
+                    "โอซาก้า",
+                    "เกียวโต",
+                    "ฟุกุโอกะ",
+                    "นาโกย่า",
+                    "ซัปโปโร",
+                    "ฮอกไกโด",
+                    "นาริตะ",
+                    "ฟูจิ",
+                    "คาวากุจิโกะ",
+                    "ฮาโกเน่",
+                    "คาวาโกเอะ",
+                    "ทาคายาม่า",
+                    "คามิโคจิ",
+                    "คุมาโมโตะ",
+                    "ทาคาชิโฮะ",
+                    "เบปปุ",
+                    "ยูฟูอิน",
+                    "คามาคุระ",
+                    "เอโนชิมะ",
+                    "อาราชิยาม่า",
+                    "โอชิโนะฮักไก",
+                    "ยามานากาโกะ",
+                    "ชิราคาวาโกะ",
+                    "มัตสึโมโต้",
+                    "ชินจูกุ",
+                    "ชินไซบาชิ"
+                ],
+
+                "เกาหลีใต้": [
+                    "โซล",
+                    "ปูซาน",
+                    "เชจู",
+                    "อินชอน",
+                    "แทกู",
+                    "ซูวอน",
+                    "คังนึง",
+                    "ยงอิน",
+                    "ซอรัค",
+                    "ซกโช",
+                    "เกาะนามิ",
+                    "อึนพยอง",
+                    "ยออิโด"
+                ],
+
+                "ฮ่องกง": [
+                    "ฮ่องกง",
+                    "มาเก๊า",
+                    "จูไห่",
+                    "ดิสนีย์แลนด์",
+                    "นองปิง",
+                    "เกาะลันเตา"
+                ],
+
+                "ไต้หวัน": [
+                    "ไทเป",
+                    "เกาสง",
+                    "ไถจง",
+                    "จิ่วเฟิ่น",
+                    "เถาหยวน",
+                    "หนานโถว",
+                    "อาลีซาน",
+                    "ทะเลสาบสุริยันจันทรา"
+                ],
+
+                "เวียดนาม": [
+                    "ดานัง",
+                    "ฮอยอัน",
+                    "เว้",
+                    "ฟูก๊วก",
+                    "ฮานอย",
+                    "ซาปา",
+                    "ฮาลอง",
+                    "ญาจาง",
+                    "โฮจิมินห์",
+                    "ดาลัด",
+                    "มุยเน่",
+                    "ตามด่าว",
+                    "บานาฮิลล์",
+                    "ฮอยอัน",
+                    "นิงห์บิงห์",
+                    "ฟานเที้ยต"
+                ],
+
+                "สิงคโปร์": [
+                    "สิงคโปร์",
+                    "มารีน่าเบย์",
+                    "เซ็นโตซ่า"
+                ],
+
+                "มาเลเซีย": [
+                    "กัวลาลัมเปอร์",
+                    "เก็นติ้ง",
+                    "มะละกา",
+                    "ปุตราจายา",
+                    "ปีนัง",
+                    "ยะโฮร์บาห์รู"
+                ],
+
+                "อินเดีย": [
+                    "เดลี",
+                    "อัครา",
+                    "ชัยปุระ",
+                    "เลห์",
+                    "ลาดักห์",
+                    "มุมไบ",
+                    "ปูเน่",
+                    "ออรังกาบัด",
+                    "แคชเมียร์"
+                ],
+
+                "ภูฏาน": [
+                    "พาโร",
+                    "ทิมพู",
+                    "พูนาคา"
+                ],
+
+                "มองโกเลีย": [
+                    "อูลานบาตอร์",
+                    "ทะเลทรายโกบี"
+                ],
+
+                "เมียนมา": [
+                    "ย่างกุ้ง",
+                    "สิเรียม",
+                    "หงสาวดี",
+                    "อินทร์แขวน",
+                    "พุกาม",
+                    "มัณฑะเลย์"
+                ],
+
+                "ฟิลิปปินส์": [
+                    "เซบู",
+                    "โบโฮล",
+                    "มะนิลา",
+                    "โบราไกย์"
+                ],
+
+                "ออสเตรเลีย": [
+                    "ซิดนีย์",
+                    "เมลเบิร์น",
+                    "แทสมาเนีย",
+                    "โกลด์โคสต์",
+                    "บริสเบน"
+                ],
+
+                "ตุรกี": [
+                    "อิสตันบูล",
+                    "คัปปาโดเกีย",
+                    "ปามุคคาเล",
+                    "คูซาดาซี"
+                ],
+
+                "อียิปต์": [
+                    "ไคโร",
+                    "กีซ่า",
+                    "อเล็กซานเดรีย",
+                    "ลักซอร์",
+                    "อัสวาน"
+                ],
+
+                "จอร์แดน": [
+                    "อัมมาน",
+                    "เพตรา",
+                    "วาดิรัม",
+                    "ทะเลเดดซี"
+                ],
+
+                "อิตาลี": [
+                    "โรม",
+                    "มิลาน",
+                    "เวนิส",
+                    "ฟลอเรนซ์",
+                    "ปิซ่า",
+                    "นาโปลี",
+                    "ปอมเปอี",
+                    "ซิซิลี",
+                    "ปาแลร์โม",
+                    "โพสิตาโน",
+                    "อามาลฟี",
+                    "มาเตรา",
+                    "อัลเบโรเบลโล"
+                ],
+
+                "ฝรั่งเศส": [
+                    "ปารีส",
+                    "นีซ",
+                    "คานส์",
+                    "มาร์กเซย",
+                    "ลียง"
+                ],
+
+                "สวิตเซอร์แลนด์": [
+                    "ซูริค",
+                    "ลูเซิร์น",
+                    "อินเทอร์ลาเคน",
+                    "เซอร์แมท",
+                    "โลซานน์",
+                    "เจนีวา"
+                ],
+
+                "สเปน": [
+                    "บาร์เซโลนา",
+                    "มาดริด",
+                    "ซาราโกซา",
+                    "เซบียา",
+                    "โทเลโด",
+                    "บาเลนเซีย"
+                ],
+
+                "โปรตุเกส": [
+                    "ลิสบอน",
+                    "ปอร์โต",
+                    "ซินตรา"
+                ],
+
+                "เยอรมนี": [
+                    "มิวนิค",
+                    "แฟรงก์เฟิร์ต",
+                    "เบอร์ลิน",
+                    "โคโลญ",
+                    "ฟุสเซ่น"
+                ],
+
+                "ออสเตรีย": [
+                    "เวียนนา",
+                    "ซาลซ์บวร์ก",
+                    "ฮัลล์สตัทท์",
+                    "อินส์บรุค"
+                ],
+
+                "เช็ก": [
+                    "ปราก"
+                ],
+
+                "ฮังการี": [
+                    "บูดาเปสต์"
+                ],
+
+                "สโลวาเกีย": [
+                    "บราติสลาวา"
+                ],
+
+                "เดนมาร์ก": [
+                    "โคเปนเฮเกน"
+                ],
+
+                "นอร์เวย์": [
+                    "ออสโล",
+                    "ฟลอม",
+                    "เบอร์เกน"
+                ],
+
+                "สวีเดน": [
+                    "สตอกโฮล์ม"
+                ],
+
+                "ฟินแลนด์": [
+                    "เฮลซิงกิ"
+                ],
+
+                "เนเธอร์แลนด์": [
+                    "อัมสเตอร์ดัม",
+                    "ซานส์สคันส์"
+                ],
+
+                "เบลเยียม": [
+                    "บรัสเซลส์",
+                    "บรูจส์"
+                ]
+            };
+
+            const cities = cityData[country] || [];
+
+            cityList.innerHTML = cities.map(city =>
+                `<option value="${city}">`
+            ).join("");
+        }
+        function showOutboundTourPage(country) {
+            currentCountry = country;
+
+            document.getElementById("outboundTourTitle").textContent =
+                `โปรแกรมทัวร์${country}`;
+
+            document.getElementById("citySearch").value = "";
+            updateCityList(country);
+
+            showPage("outbound-tour-page");
+            renderOutboundTours();
+        }
+
+        function renderOutboundTours() {
+
+            const container = document.getElementById("outboundTourGrid");
+
+            const cityKeyword =
+                document.getElementById("citySearch")?.value.toLowerCase() || "";
+
+            const filteredTours = tours.filter(tour => {
+
+                // filter ประเทศ
+                const matchCountry =
+                    currentCountry === "" ||
+                    (tour.country || "").includes(currentCountry);
+
+                // filter เมือง / keyword
+                const matchCity =
+                    cityKeyword === "" ||
+                    (tour.city || "").toLowerCase().includes(cityKeyword) ||
+                    (tour.desc || "").toLowerCase().includes(cityKeyword) ||
+                    (tour.shortDesc || "").toLowerCase().includes(cityKeyword);
+
+                return matchCountry && matchCity;
+            });
+
+            // ไม่พบข้อมูล
+            if (filteredTours.length === 0) {
+                container.innerHTML =
+                    `<p class="no-tour">ไม่พบโปรแกรมทัวร์${currentCountry}</p>`;
+                return;
+            }
+
+            // render card
+            container.innerHTML = filteredTours.map(tour => `
+        <div class="tour-card domestic-tour-card"
+            onclick="showTourDetail('${tour.id}')">
+
+            <img src="${tour.image}" class="tour-img">
+
+            <p class="tour-desc">
+                ${tour.shortDesc || tour.desc}
+            </p>
+
+            <div class="tour-info">
+                <p>
+                    <img src="assets/images/pin.png">
+                    รหัสทัวร์: ${tour.id}
+                </p>
+
+                <p>
+                    <img src="assets/images/stopwatch.png">
+                    ${tour.duration}
+                </p>
+
+                <p>
+                    <img src="assets/images/clock_13819249.png">
+                    เดินทาง: ${tour.periodText}
+                </p>
+            </div>
+
+            <div class="tour-bottom">
+
+                <img src="plane logo/${tour.airline}"
+                    class="airline">
+
+                <div class="price">
+                    <span class="price-start">เริ่มต้น</span>
+
+                    <span class="price-main">
+                        ${formatPrice(tour.price)}.-
+                    </span>
+
+                    <span class="price-sub">
+                        บาท/ท่าน
+                    </span>
+                </div>
+
+            </div>
+        </div>
+   `).join("");
+        }
+    </script>
+
+    <!-- ส่วนล่างเว็บ ข้อมูลติดต่อ -->
+    <footer class="site-footer">
+        <!-- ส่วนล่างเว็บ ข้อมูลติดต่อ -->
+        <footer class="site-footer">
+
+            <div class="footer-wave"></div>
+
+            <div class="footer-container">
+
+                <!-- Company -->
+                <div class="footer-col footer-brand">
+
+                    <img src="assets/images/whitelogo.png" class="footer-logo">
+
+                    <div class="footer-company">
+                        บริษัท เอเวอร์โกลว์ โกลบอล จำกัด
+                    </div>
+
+                    <div class="footer-license">
+                        ใบอนุญาตเลขที่ 11/13400<br>
+                        กรุงเทพมหานคร ประเทศไทย
+                    </div>
+
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col footer-contact">
+
+                    <h3>ช่องทางการติดต่อ</h3>
+
+                    <div class="contact-item">
+                        <img src="icons/clock.png">
+                        <span>จันทร์–ศุกร์ : 09.00–18.00 น.</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="assets/images/phone3.png">
+                        <span>099-632-6146</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="assets/images/Facebook.png">
+                        <span>Facebook : Everglow Travel</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="assets/images/LINE.png">
+                        <span>Line : @Everglowtravel</span>
+                    </div>
+
+                </div>
+
+                <!-- QR + Social -->
+                <div class="footer-col qr-box">
+
+                    <h3>ติดตามเรา</h3>
+
+                    <img src="assets/images/qr.png" class="qr-img">
+
+                    <div class="line-id">
+                        @Everglowtravel
+                    </div>
+
+                    <div class="social-row">
+
+                        <a href="https://www.facebook.com/people/Everglow-Travel/61580670863894/" target="_blank">
+                            <img src="assets/images/Facebook.png">
+                        </a>
+
+                        <a href="https://www.instagram.com/everglow_travel?igsh=MWJ0NnM2anIwYWV1Mw==" target="_blank">
+                            <img src="assets/images/ig.png">
+                        </a>
+
+                        <a href="https://www.tiktok.com/@everglow.travel" target="_blank">
+                            <img src="assets/images/tiktok.webp">
+                        </a>
+
+                        <a href="https://lin.ee/xXcNI1w" target="_blank">
+                            <img src="assets/images/LINE.png">
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                ©2026 Everglow Global Co.,Ltd. All rights reserved.
+            </div>
+
+        </footer>
+
+</body>
+
+</html>
