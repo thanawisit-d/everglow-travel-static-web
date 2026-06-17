@@ -112,6 +112,8 @@ export const countryNameMap = {
   'USA': 'สหรัฐอเมริกา',
   'แคนาดา': 'Canada',
   'Canada': 'แคนาดา',
+  'ยุโรป': 'Europe',
+  'Europe': 'ยุโรป',
 };
 
 export function translateCountry(name) {

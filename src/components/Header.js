@@ -10,7 +10,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
   const s = config.social;
 
   return (
-    <>
+    <div className="header-sticky">
       <div className="topbar">
         <div className="left">
           <img src={assetPath('assets/images/Logo.jpg')} className="logo" alt="logo" />
@@ -92,6 +92,6 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
           )}
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
