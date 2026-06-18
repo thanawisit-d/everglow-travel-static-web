@@ -95,6 +95,41 @@ export default function EnglishPage() {
             <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           </section>
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="en" />
+
+          {/* Why Choose Us */}
+          <section className="why-choose-us">
+            <h2>Why Choose Everglow Travel</h2>
+            <p className="subtitle">We deliver premium travel experiences with professional service</p>
+            <div className="why-grid">
+              {[
+                { icon: '★', title: 'Expert Guides', desc: 'Professional multilingual guides with deep local knowledge' },
+                { icon: '✓', title: 'Best Price Guarantee', desc: 'Competitive pricing with no hidden fees' },
+                { icon: '☎', title: '24/7 Support', desc: 'Round-the-clock customer service during your trip' },
+                { icon: '✈', title: 'Tailored Packages', desc: 'Customizable itineraries to match your needs' },
+              ].map((item, i) => (
+                <div className="why-card" key={i}>
+                  <div className="why-icon">{item.icon}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Gallery */}
+          <section className="gallery-section">
+            <h2>Travel Gallery</h2>
+            <p className="subtitle">Moments captured from our journeys</p>
+            <div className="gallery-grid">
+              {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
+                <div className="gallery-item" key={i}>
+                  <Image src={assetPath(`assets/images/${img}`)} alt={`Travel ${i + 1}`} fill style={{ objectFit: 'cover' }} />
+                  <div className="overlay"><span>View Photo</span></div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <About locale="en" />
           <Contact locale="en" />
           <Reviews locale="en" />

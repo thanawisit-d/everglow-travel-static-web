@@ -95,6 +95,41 @@ export default function ThaiPage() {
             <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           </section>
           <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="th" />
+
+          {/* Why Choose Us */}
+          <section className="why-choose-us">
+            <h2>ทำไมต้องเลือก Everglow Travel</h2>
+            <p className="subtitle">เรามอบประสบการณ์การเดินทางระดับพรีเมียมด้วยบริการมืออาชีพ</p>
+            <div className="why-grid">
+              {[
+                { icon: '★', title: 'ไกด์มืออาชีพ', desc: 'ไกด์มากประสบการณ์พร้อมบริการหลายภาษา' },
+                { icon: '✓', title: 'ราคาดีที่สุด', desc: 'ราคาคุ้มค่า ไม่มีค่าใช้จ่ายแอบแฝง' },
+                { icon: '☎', title: 'ดูแล 24/7', desc: 'บริการลูกค้าตลอด 24 ชั่วโมงระหว่างเดินทาง' },
+                { icon: '✈', title: 'แพ็กเกจปรับแต่งได้', desc: 'โปรแกรมทัวร์ปรับตามความต้องการของคุณ' },
+              ].map((item, i) => (
+                <div className="why-card" key={i}>
+                  <div className="why-icon">{item.icon}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Gallery */}
+          <section className="gallery-section">
+            <h2>แกลเลอรีการเดินทาง</h2>
+            <p className="subtitle">ภาพความประทับใจจากการเดินทางของเรา</p>
+            <div className="gallery-grid">
+              {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
+                <div className="gallery-item" key={i}>
+                  <Image src={assetPath(`assets/images/${img}`)} alt={`Travel ${i + 1}`} fill style={{ objectFit: 'cover' }} />
+                  <div className="overlay"><span>ดูรูป</span></div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <About locale="th" />
           <Contact locale="th" />
           <Reviews locale="th" />
