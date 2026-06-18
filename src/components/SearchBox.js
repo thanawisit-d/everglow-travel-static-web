@@ -36,7 +36,7 @@ export default function SearchBox({ locale, tours, onResult }) {
   };
 
   return (
-    <>
+    <div className="search-panel">
       <h2>
         <Image src={assetPath('assets/images/search.png')} width={22} height={22} className="search-icon" alt="" />
         {locale === 'th' ? 'ค้นหาโปรแกรมทัวร์' : 'Search Tour Programs'}
@@ -66,6 +66,6 @@ export default function SearchBox({ locale, tours, onResult }) {
         />
         <button type="submit">{locale === 'th' ? 'ค้นหา' : 'Search'}</button>
       </form>
-    </>
+    </div>
   );
 }
