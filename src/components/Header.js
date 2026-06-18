@@ -24,7 +24,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
           <a href={`tel:${s.phone}`}><Image src={assetPath('assets/images/phone.png')} width={42} height={42} alt="โทร" /></a>
           <a href={s.line}><Image src={assetPath('assets/images/LINE.png')} width={42} height={42} alt="LINE" /></a>
           <a href={s.facebook} target="_blank" rel="noopener noreferrer">
-            <Image src={assetPath('assets/images/facebook.png')} width={42} height={42} alt="Facebook" />
+            <Image src={assetPath('assets/images/Facebook.png')} width={42} height={42} alt="Facebook" />
           </a>
           <a href={s.instagram} target="_blank" rel="noopener noreferrer">
             <Image src={assetPath('assets/images/ig.png')} width={42} height={42} alt="Instagram" />

@@ -16,7 +16,7 @@ export default function Contact({ locale }) {
               <p className="text">{t.phone}</p>
             </div>
           </a>
-          <a href={`mailto:${config.social.email}`} className="item" style={{ textDecoration: 'none' }}>
+          <a href={`mailto:${t.email}`} className="item" style={{ textDecoration: 'none' }}>
             <Image src={assetPath('icons/email.png')} width={48} height={48} alt="อีเมล" />
             <div>
               <p className="title">{t.emailLabel}</p>
