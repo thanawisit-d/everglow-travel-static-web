@@ -11,9 +11,10 @@ export default function Footer({ locale }) {
       <div className="footer-container">
         <div className="footer-col footer-brand">
           <Image src={assetPath('assets/images/whitelogo.png')} width={190} height={60} className="footer-logo" alt="Everglow Travel" />
-          <div className="footer-company">{t.company}</div>
-          <div className="footer-license">
-            {t.license}<br />{t.addr}
+          <div className="footer-company">{t.company.split('(')[0].trim()}<br />({t.company.split('(')[1]}</div>
+          <div className="footer-license">{t.license}</div>
+          <div className="footer-address">
+            <span>{t.addr}</span>
           </div>
         </div>
         <div className="footer-col footer-contact">

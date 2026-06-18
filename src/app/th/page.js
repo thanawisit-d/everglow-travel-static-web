@@ -10,7 +10,6 @@ import Slider from '@/components/Slider';
 import SearchBox from '@/components/SearchBox';
 import TourGrid from '@/components/TourGrid';
 import TourCard from '@/components/TourCard';
-import ProvinceSelector from '@/components/ProvinceSelector';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Reviews from '@/components/Reviews';
@@ -63,12 +62,6 @@ export default function ThaiPage() {
     navigate('detail');
   };
 
-  const handleProvinceSelect = (province) => {
-    const filtered = domesticTours.filter((t) => t.province === province);
-    setFilteredDomestic(filtered);
-    navigate('domestic');
-  };
-
   const renderCards = (tours, isDomestic) => (
     tours.map((t, i) => (
       <TourCard key={t.id || i} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
@@ -94,9 +87,6 @@ export default function ThaiPage() {
             <TourGrid showBadge="popular" onTourClick={handlePromoClick} />
             <TourGrid showBadge="monthly" onTourClick={handlePromoClick} />
           </section>
-          <ProvinceSelector tours={domesticTours} onSelect={handleProvinceSelect} locale="th" />
-
-          {/* Why Choose Us */}
           <section className="why-choose-us">
             <h2>ทำไมต้องเลือก Everglow Travel</h2>
             <p className="subtitle">เรามอบประสบการณ์การเดินทางระดับพรีเมียมด้วยบริการมืออาชีพ</p>

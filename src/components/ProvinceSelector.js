@@ -24,7 +24,7 @@ export default function ProvinceSelector({ tours, onSelect, locale }) {
 
   return (
     <section className="province-section">
-      <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>
+      <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#1a2a4a' }}>
         {locale === 'th' ? 'เลือกจังหวัดที่ต้องการเดินทาง' : 'Select Province'}
       </h2>
       <div className="province-search-wrapper" ref={wrapperRef}>

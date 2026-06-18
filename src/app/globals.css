@@ -1640,23 +1640,24 @@ nav ul li button:hover::after {
 /* ========== FOOTER ========== */
 .site-footer {
   background: linear-gradient(135deg, var(--navy), var(--navy-dark));
-  padding: 30px 0 0;
+  padding: 50px 0 0;
   position: relative;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px 45px;
+  padding: 0 20px 40px;
   display: grid;
-  grid-template-columns: 1.3fr 1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 50px;
   align-items: start;
 }
 
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
 
@@ -1664,24 +1665,19 @@ nav ul li button:hover::after {
   background: transparent;
   border: none;
   box-shadow: none;
-  padding: 10px 0;
-  height: auto;
-  min-height: auto;
+  padding: 0;
 }
 
-.qr-box {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  padding: 30px;
-  backdrop-filter: blur(12px);
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 40px;
 }
 
-.footer-logo {
-  width: 190px;
-  margin-bottom: 28px;
+.footer-brand .footer-logo {
+  margin-top: -8px;
+  margin-bottom: 20px;
 }
 
 .footer-company {
@@ -1689,33 +1685,73 @@ nav ul li button:hover::after {
   font-weight: 800;
   color: var(--white);
   line-height: 1.5;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .footer-license {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.footer-address {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.footer-address-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.footer-contact {
+  padding-top: 66px;
+}
+
+.qr-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.footer-logo {
+  width: 170px;
+  margin-bottom: 24px;
 }
 
 .footer-col h3 {
-  font-size: 28px;
+  font-size: 20px;
   color: var(--white);
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   position: relative;
-  padding-bottom: 12px;
-  font-weight: 600;
+  padding-bottom: 10px;
+  font-weight: 700;
 }
 
 .footer-col h3::after {
   content: "";
-  width: 70px;
-  height: 4px;
+  width: 50px;
+  height: 3px;
   background: var(--cyan);
   border-radius: 20px;
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+.qr-box h3 {
+  font-size: 18px;
 }
 
 .qr-box h3::after {
@@ -1726,38 +1762,44 @@ nav ul li button:hover::after {
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 17px;
+  gap: 12px;
+  font-size: 15px;
   color: var(--white);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+  transition: 0.2s;
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
 }
 
 .contact-item img {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .qr-img {
-  width: 180px;
-  border-radius: 18px;
+  width: 150px;
+  border-radius: 14px;
   background: var(--white);
-  padding: 10px;
-  margin: 0 auto 16px;
+  padding: 8px;
+  margin: 0 auto 14px;
   display: block;
 }
 
 .line-id {
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 700;
   color: #8cff7e;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .social-row {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .social-row a {
@@ -1765,48 +1807,26 @@ nav ul li button:hover::after {
 }
 
 .social-row img {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   background: var(--white);
-  padding: 10px;
+  padding: 8px;
   object-fit: contain;
   transition: 0.3s;
 }
 
 .social-row img:hover {
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .footer-bottom {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding: 20px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
-}
-
-footer {
-  background: linear-gradient(135deg, var(--navy), var(--navy-dark));
-  padding: 30px 6% 20px;
-  text-align: center;
-  color: var(--white);
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.footer-links a img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: var(--white);
-  padding: 8px;
+  padding: 18px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
 }
 
 /* ========== TOUR LIST PAGE ========== */
