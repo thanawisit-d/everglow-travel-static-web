@@ -4,7 +4,6 @@ import Link from 'next/link';
 export default function LandingPage() {
   return (
     <div className="landing-page">
-      <div className="overlay"></div>
       <div className="box">
         <Image src="/assets/images/White_Logo.png" width={180} height={180} className="logo" alt="Everglow Travel" />
         <h1 className="title">
@@ -21,8 +20,8 @@ export default function LandingPage() {
           <div>
             <Link href="/en" className="btn eng">ENG English</Link>
             <small>For Foreigners</small>
-          </div>
         </div>
+    </div>
       </div>
     </div>
   );

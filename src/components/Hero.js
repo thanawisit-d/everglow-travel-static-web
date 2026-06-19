@@ -12,7 +12,6 @@ export default function Hero({ locale }) {
           <p>Discover Thailand with us — unforgettable travel experiences await</p>
         </>
       )}
-      <div className="scroll-indicator">⌄</div>
     </section>
   );
 }
