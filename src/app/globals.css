@@ -913,14 +913,14 @@ nav ul li button:hover::after {
 }
 
 .about-page {
-  padding: 110px 6% 60px;
+  padding: 160px 6% 60px;
   color: var(--text-dark);
 }
 
 .about-container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
   max-width: 1200px;
   margin: 0 auto 50px;
 }
@@ -954,7 +954,7 @@ nav ul li button:hover::after {
 
 .about-text h2 {
   font-size: 20px;
-  color: var(--cyan);
+  color: #003478;
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -962,7 +962,7 @@ nav ul li button:hover::after {
 .about-text p {
   font-size: 15px;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: #000;
   margin-bottom: 12px;
 }
 
@@ -981,15 +981,15 @@ nav ul li button:hover::after {
 
 .section-box {
   background: var(--white);
-  padding: 24px;
+  padding: 28px 24px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 25px rgba(0, 52, 120, 0.1);
   transition: 0.3s ease;
 }
 
 .section-box:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 14px 40px rgba(0, 52, 120, 0.18);
 }
 
 .section-title {
@@ -1003,12 +1003,20 @@ nav ul li button:hover::after {
 .section-box p {
   font-size: 14px;
   line-height: 1.7;
-  color: var(--text-muted);
+  color: #000;
 }
 
 /* ========== REVIEWS ========== */
 .reviews-section {
   padding: 80px 8%;
+}
+
+.reviews-page {
+  padding: 160px 0 0;
+}
+
+.reviews-page .reviews-section {
+  padding-top: 0;
 }
 
 .reviews-section h2 {
@@ -1078,7 +1086,7 @@ nav ul li button:hover::after {
 
 /* ========== CONTACT ========== */
 .contact-page {
-  padding: 110px 6% 60px;
+  padding: 160px 6% 60px;
   color: var(--text-dark);
 }
 

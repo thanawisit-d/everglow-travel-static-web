@@ -171,7 +171,7 @@ export default function ThaiPage() {
 
       {page === 'about' && <About locale="th" />}
       {page === 'contact' && <Contact locale="th" />}
-      {page === 'reviews' && <Reviews locale="th" />}
+      {page === 'reviews' && <div className="reviews-page"><Reviews locale="th" /></div>}
 
       {page === 'detail' && (
         <TourDetail tour={selectedTour} />

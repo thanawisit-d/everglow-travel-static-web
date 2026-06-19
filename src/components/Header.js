@@ -21,19 +21,19 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
           </div>
         </div>
         <div className="right contact-icons">
-          <a href={`tel:${s.phone}`}><Image src={assetPath('assets/images/phone.png')} width={42} height={42} alt="โทร" /></a>
-          <a href={s.line}><Image src={assetPath('assets/images/LINE.png')} width={42} height={42} alt="LINE" /></a>
+          <a href={`tel:${s.phone}`}><Image src={assetPath('assets/images/phone.png')} width={36} height={36} alt="โทร" /></a>
+          <a href={s.line}><Image src={assetPath('assets/images/LINE.png')} width={36} height={36} alt="LINE" /></a>
           <a href={s.facebook} target="_blank" rel="noopener noreferrer">
-            <Image src={assetPath('assets/images/Facebook.png')} width={42} height={42} alt="Facebook" />
+            <Image src={assetPath('assets/images/Facebook.png')} width={36} height={36} alt="Facebook" />
           </a>
           <a href={s.instagram} target="_blank" rel="noopener noreferrer">
-            <Image src={assetPath('assets/images/ig.png')} width={42} height={42} alt="Instagram" />
+            <Image src={assetPath('assets/images/ig.png')} width={36} height={36} alt="Instagram" />
           </a>
           <a href={s.whatsapp} target="_blank" rel="noopener noreferrer">
-            <Image src={assetPath('assets/images/whatsapp.webp')} width={42} height={42} alt="WhatsApp" />
+            <Image src={assetPath('assets/images/whatsapp.webp')} width={36} height={36} alt="WhatsApp" />
           </a>
           <a href={s.tiktok} target="_blank" rel="noopener noreferrer">
-            <Image src={assetPath('assets/images/tiktok.png')} width={42} height={42} alt="TikTok" />
+            <Image src={assetPath('assets/images/tiktok.png')} width={36} height={36} alt="TikTok" />
           </a>
         </div>
       </div>

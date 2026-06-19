@@ -171,7 +171,7 @@ export default function EnglishPage() {
 
       {page === 'about' && <About locale="en" />}
       {page === 'contact' && <Contact locale="en" />}
-      {page === 'reviews' && <Reviews locale="en" />}
+      {page === 'reviews' && <div className="reviews-page"><Reviews locale="en" /></div>}
 
       {page === 'detail' && (
         <TourDetail tour={selectedTour} />
