@@ -65,16 +65,9 @@ h1, h2 {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
+  background: linear-gradient(135deg, var(--navy), var(--navy-dark));
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   transition: 0.3s;
-}
-
-.header-sticky:hover,
-.header-sticky:has(.topbar:hover),
-.header-sticky:has(nav:hover) {
-  background: rgba(255, 255, 255, 0.18);
 }
 
 .topbar {
@@ -145,6 +138,7 @@ nav {
   padding: 12px 6%;
   position: relative;
   z-index: 1000;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 nav h2 {
@@ -766,7 +760,6 @@ nav ul li button:hover::after {
 /* ========== WHY CHOOSE US ========== */
 .why-choose-us {
   padding: 80px 6%;
-  background: var(--white);
   text-align: center;
 }
 
@@ -803,7 +796,6 @@ nav ul li button:hover::after {
   text-align: center;
   padding: 35px 20px;
   border-radius: var(--radius-lg);
-  background: var(--bg-page);
   transition: 0.35s;
   border: 1px solid transparent;
 }
@@ -922,7 +914,6 @@ nav ul li button:hover::after {
 
 .about-page {
   padding: 110px 6% 60px;
-  background: var(--bg-page);
   color: var(--text-dark);
 }
 
@@ -1018,7 +1009,6 @@ nav ul li button:hover::after {
 /* ========== REVIEWS ========== */
 .reviews-section {
   padding: 80px 8%;
-  background: var(--bg-page);
 }
 
 .reviews-section h2 {
@@ -1089,7 +1079,6 @@ nav ul li button:hover::after {
 /* ========== CONTACT ========== */
 .contact-page {
   padding: 110px 6% 60px;
-  background: var(--bg-page);
   color: var(--text-dark);
 }
 
@@ -1392,7 +1381,6 @@ nav ul li button:hover::after {
 .domestic-tour-page {
   min-height: 100vh;
   padding: 110px 60px 50px;
-  background: var(--bg-page);
 }
 
 .tour-list-content h1 {
@@ -1485,7 +1473,6 @@ nav ul li button:hover::after {
 .tour-detail-page {
   min-height: 100vh;
   padding: 110px 55px 45px;
-  background: var(--bg-page);
 }
 
 .tour-detail-container {
@@ -1819,7 +1806,6 @@ nav ul li button:hover::after {
 .tour-list-page {
   min-height: 100vh;
   padding: 110px 6% 50px;
-  background: var(--bg-page);
 }
 
 .tour-list-page h2 {
@@ -1834,7 +1820,6 @@ nav ul li button:hover::after {
 .search-results-page {
   min-height: 100vh;
   padding: 110px 6% 50px;
-  background: var(--bg-page);
 }
 
 .search-results-page h2 {
@@ -1976,6 +1961,14 @@ nav ul li button:hover::after {
   width: 100%;
   position: relative;
   z-index: 1;
+  background: url('/assets/images/Home2.jpg') center/cover no-repeat;
+}
+
+.landing-page .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 40, 90, 0.55);
 }
 
 .landing-page .box {
@@ -2021,7 +2014,7 @@ nav ul li button:hover::after {
 }
 
 .landing-page .blue {
-  color: var(--cyan);
+  color: #0d6efd;
   margin-left: 12px;
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
@@ -2070,13 +2063,13 @@ nav ul li button:hover::after {
 }
 
 .landing-page .thai {
-  background: linear-gradient(45deg, var(--navy-secondary), var(--navy));
+  background: linear-gradient(45deg, #0d6efd, #3a8bff);
   color: white;
 }
 
 .landing-page .eng {
   background: white;
-  color: var(--navy);
+  color: #0d6efd;
 }
 
 .landing-page .btn:hover {

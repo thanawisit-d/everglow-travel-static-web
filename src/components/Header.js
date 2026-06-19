@@ -6,7 +6,7 @@ import { assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
 export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbound }) {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(locale === 'en' ? 'en' : locale);
   const text = config[locale];
   const s = config.social;
 
