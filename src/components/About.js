@@ -37,7 +37,7 @@ export default function About({ locale }) {
       <h2>{t.title}</h2>
       <div className="about-container">
         <div className="about-img" style={{ position: 'relative', width: 420, maxWidth: '100%', height: 315 }}>
-          <Image src={assetPath('company/companydetail.jpg')} fill alt="Everglow Travel" style={{ objectFit: 'cover', borderRadius: 20 }} />
+          <Image src={assetPath('company/companydetail.jpg')} fill sizes="(max-width: 992px) 100vw, 420px" alt="Everglow Travel" style={{ objectFit: 'cover', borderRadius: 20 }} />
         </div>
         <div className="about-text">
           <h1>{t.company}</h1>

@@ -41,7 +41,7 @@ html, body {
 body {
   background: transparent;
   color: var(--text-dark);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   min-height: 100vh;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 h1, h2 {
-  font-family: 'Kanit', sans-serif;
+  font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-size: 30px;
   font-weight: 100;
   color: var(--navy);
@@ -651,26 +651,6 @@ nav ul li button:hover::after {
   box-shadow: var(--shadow-lg);
 }
 
-.tour-card::before {
-  content: "HOT DEAL";
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: var(--white);
-  font-size: 11px;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-weight: 600;
-  z-index: 1;
-}
-
-.tour-card.hot-monthly::before {
-  content: "HOT MONTHLY";
-  background: linear-gradient(135deg, #d4af37, #f9e79f);
-  color: #333;
-}
-
 .tour-img-wrapper {
   width: 100%;
   aspect-ratio: 4/5;
@@ -680,6 +660,27 @@ nav ul li button:hover::after {
 
 .tour-img-wrapper:hover .tour-img {
   transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  z-index: 2;
+  color: var(--white);
+}
+
+.badge.hot {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.badge.monthly {
+  background: linear-gradient(135deg, #d4af37, #f9e79f);
+  color: #333;
 }
 
 .tour-img {
@@ -1473,11 +1474,6 @@ nav ul li button:hover::after {
   box-shadow: var(--shadow-lg);
 }
 
-.domestic-tour-page .tour-card::before {
-  content: none !important;
-  display: none !important;
-}
-
 .tour-detail-page {
   min-height: 100vh;
   padding: 110px 55px 45px;
@@ -2008,7 +2004,7 @@ nav ul li button:hover::after {
 }
 
 .landing-page .title {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-cinzel), 'Cinzel', serif;
   font-size: 48px;
   font-weight: 700;
   letter-spacing: 8px;

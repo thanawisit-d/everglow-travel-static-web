@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
 export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbound }) {
+  const router = useRouter();
   const [lang, setLang] = useState(locale === 'en' ? 'en' : locale);
   const text = config[locale];
   const s = config.social;
@@ -86,8 +88,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
               <select className="lang-select" value={lang} onChange={(e) => {
                 setLang(e.target.value);
                 if (e.target.value !== 'en') {
-                  const paths = { zh: '/zh', ja: '/ja', ko: '/ko' };
-                  window.location.href = paths[e.target.value] || '/';
+                  router.push('/');
                 }
               }} aria-label="Language">
                 <option value="en">🇬🇧 English</option>

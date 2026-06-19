@@ -1,4 +1,29 @@
+import { Kanit, Poppins, Cinzel, Caveat } from 'next/font/google';
 import "./globals.css";
+
+const kanit = Kanit({
+  subsets: ['thai', 'latin'],
+  weight: ['300', '400', '600', '700'],
+  variable: '--font-kanit',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '500', '700'],
+  variable: '--font-poppins',
+});
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['500', '700'],
+  variable: '--font-cinzel',
+});
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-caveat',
+});
 
 export const metadata = {
   title: "Everglow Travel",
@@ -8,20 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="th">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Poppins:wght@300;500;700&family=Cinzel:wght@500;700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            document.documentElement.lang = location.pathname.startsWith('/en') ? 'en' : 'th';
-            if (location.pathname.startsWith('/en')) {
-              document.body.classList.add('en-page');
-            }
-          `
-        }} />
-      </head>
-      <body>
+      <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable} ${caveat.variable}`}>
         <div className="min-h-screen w-full relative">
           <div
             className="absolute inset-0 z-0"
