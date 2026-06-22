@@ -11,7 +11,10 @@ export default function Footer({ locale }) {
       <div className="footer-container">
         <div className="footer-col footer-brand">
           <Image src={assetPath('assets/images/whitelogo.png')} width={190} height={60} className="footer-logo" alt="Everglow Travel" />
-          <div className="footer-company">{t.company.split('(')[0].trim()}<br />({t.company.split('(')[1]}</div>
+          <div className="footer-company">
+            {t.company.replace(/\s*\(.*?\)/g, '').trim()}
+            {t.company.includes('(') && <><br />({t.company.match(/\(([^)]+)\)/)?.[1]})</>}
+          </div>
           <div className="footer-license">{t.license}</div>
           <div className="footer-address">
             <span>{t.addr}</span>

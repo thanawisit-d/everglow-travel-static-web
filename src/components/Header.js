@@ -93,6 +93,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
             </li>
           )}
           <li><button type="button" onClick={() => { onNavigate('about'); closeMenu(); }}>{text.about}</button></li>
+          
           <li><button type="button" onClick={() => { onNavigate('contact'); closeMenu(); }}>{text.contact}</button></li>
           <li><button type="button" onClick={() => { onNavigate('reviews'); closeMenu(); }}>{text.reviews}</button></li>
           {locale === 'en' && (
