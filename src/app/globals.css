@@ -1295,7 +1295,7 @@ nav ul li button:hover::after {
 }
 
 .slider-section {
-  margin: 20px 6%;
+  padding: 80px 6% 20px;
 }
 
 /* ========== SLIDER ========== */

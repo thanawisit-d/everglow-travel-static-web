@@ -29,7 +29,7 @@ export default function Slider() {
   }, [current]);
 
   return (
-    <section className="slider" style={{ marginTop: 30 }}>
+    <section className="slider">
       <div className="slides" ref={slidesRef}>
         {IMAGES.map((src, i) => (
           <Image key={i} src={src} width={1920} height={500} className="slide" alt={`Tour slide ${i + 1}`} />
