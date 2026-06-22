@@ -7,8 +7,8 @@ export default function Reviews({ locale }) {
   return (
     <section className="reviews-section page">
       <h2>{title}</h2>
-      {reviews.map((r, i) => (
-        <div className="review-card" key={i}>
+      {reviews.map((r) => (
+        <div className="review-card" key={r.image}>
           <div className="review-img" style={{ position: 'relative', width: 400, maxWidth: '100%', height: 300, flexShrink: 0 }}>
             <Image src={assetPath(r.image)} fill sizes="(max-width: 992px) 100vw, 400px" alt={r.tag} style={{ objectFit: 'cover', borderRadius: 10 }} />
           </div>

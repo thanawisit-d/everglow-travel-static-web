@@ -12,7 +12,7 @@ export default function TourGrid({ showBadge, onTourClick, locale }) {
 
   return (
     <section className="tour-section">
-      <h2 className="tour-title" style={{ textAlign: 'center', width: '100%', display: 'block', marginTop: 30, fontSize: 24, fontWeight: 800, color: '#003478' }}>
+      <h2 className="tour-section-title">
         {title}
       </h2>
       <div className="tour-grid">

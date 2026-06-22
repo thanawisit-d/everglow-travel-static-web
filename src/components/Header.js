@@ -9,8 +9,11 @@ import config from '@/data/site-config.json';
 export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbound }) {
   const router = useRouter();
   const [lang, setLang] = useState(locale === 'en' ? 'en' : locale);
+  const [menuOpen, setMenuOpen] = useState(false);
   const text = config[locale];
   const s = config.social;
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div className="header-sticky">
@@ -42,13 +45,22 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
 
       <nav>
         <h2>{text.brand}</h2>
-        <ul>
-          <li><button type="button" onClick={() => onNavigate('home')}>{text.home}</button></li>
+        <button
+          className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul className={menuOpen ? 'nav-open' : ''}>
+          <li><button type="button" onClick={() => { onNavigate('home'); closeMenu(); }}>{text.home}</button></li>
           <li className="dropdown">
             <button type="button">{text.domestic} ▾</button>
             <ul className="dropdown-menu">
               {text.durations.map((d, i) => (
-                <li key={i}><button type="button" onClick={() => onShowDomestic(d)}>{d}</button></li>
+                <li key={i}><button type="button" onClick={() => { onShowDomestic(d); closeMenu(); }}>{d}</button></li>
               ))}
             </ul>
           </li>
@@ -60,7 +72,7 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
                   <div className="col" key={gi}>
                     {group.items.map((c, ci) => (
                       <li key={ci}>
-                        <button type="button" onClick={() => onShowOutbound(c.name)}>
+                        <button type="button" onClick={() => { onShowOutbound(c.name); closeMenu(); }}>
                           <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={c.name} />
                           ทัวร์{c.name}
                         </button>
@@ -75,26 +87,24 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
               <button type="button">{text.outbound} ▾</button>
               <ul className="dropdown-menu">
                 {config.enCountries.map((c, i) => (
-                  <li key={i}><button type="button" onClick={() => onShowOutbound(c)}>{c}</button></li>
+                  <li key={i}><button type="button" onClick={() => { onShowOutbound(c); closeMenu(); }}>{c}</button></li>
                 ))}
               </ul>
             </li>
           )}
-          <li><button type="button" onClick={() => onNavigate('about')}>{text.about}</button></li>
-          <li><button type="button" onClick={() => onNavigate('contact')}>{text.contact}</button></li>
-          <li><button type="button" onClick={() => onNavigate('reviews')}>{text.reviews}</button></li>
+          <li><button type="button" onClick={() => { onNavigate('about'); closeMenu(); }}>{text.about}</button></li>
+          <li><button type="button" onClick={() => { onNavigate('contact'); closeMenu(); }}>{text.contact}</button></li>
+          <li><button type="button" onClick={() => { onNavigate('reviews'); closeMenu(); }}>{text.reviews}</button></li>
           {locale === 'en' && (
             <li>
               <select className="lang-select" value={lang} onChange={(e) => {
                 setLang(e.target.value);
-                if (e.target.value !== 'en') {
+                if (e.target.value === 'th') {
                   router.push('/');
                 }
               }} aria-label="Language">
                 <option value="en">🇬🇧 English</option>
-                <option value="zh">🇨🇳 中文</option>
-                <option value="ja">🇯🇵 日本語</option>
-                <option value="ko">🇰🇷 한국어</option>
+                <option value="th">🇹🇭 ไทย</option>
               </select>
             </li>
           )}

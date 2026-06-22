@@ -100,23 +100,49 @@ export default function LocaleClient() {
             <h2>{isEn ? 'Why Choose Everglow Travel' : 'ทำไมต้องเลือก Everglow Travel'}</h2>
             <p className="subtitle">{isEn ? 'We deliver premium travel experiences with professional service' : 'เรามอบประสบการณ์การเดินทางระดับพรีเมียมด้วยบริการมืออาชีพ'}</p>
             <div className="why-grid">
-              {(
-                isEn
-                  ? [
-                      { icon: '★', title: 'Expert Guides', desc: 'Professional multilingual guides with deep local knowledge' },
-                      { icon: '✓', title: 'Best Price Guarantee', desc: 'Competitive pricing with no hidden fees' },
-                      { icon: '☎', title: '24/7 Support', desc: 'Round-the-clock customer service during your trip' },
-                      { icon: '✈', title: 'Tailored Packages', desc: 'Customizable itineraries to match your needs' },
-                    ]
-                  : [
-                      { icon: '★', title: 'ไกด์มืออาชีพ', desc: 'ไกด์มากประสบการณ์พร้อมบริการหลายภาษา' },
-                      { icon: '✓', title: 'ราคาดีที่สุด', desc: 'ราคาคุ้มค่า ไม่มีค่าใช้จ่ายแอบแฝง' },
-                      { icon: '☎', title: 'ดูแล 24/7', desc: 'บริการลูกค้าตลอด 24 ชั่วโมงระหว่างเดินทาง' },
-                      { icon: '✈', title: 'แพ็กเกจปรับแต่งได้', desc: 'โปรแกรมทัวร์ปรับตามความต้องการของคุณ' },
-                    ]
-              ).map((item, i) => (
+              {(isEn ? [
+                { icon: 'guide', title: 'Expert Guides', desc: 'Professional multilingual guides with deep local knowledge' },
+                { icon: 'price', title: 'Best Price Guarantee', desc: 'Competitive pricing with no hidden fees' },
+                { icon: 'support', title: '24/7 Support', desc: 'Round-the-clock customer service during your trip' },
+                { icon: 'package', title: 'Tailored Packages', desc: 'Customizable itineraries to match your needs' },
+              ] : [
+                { icon: 'guide', title: 'ไกด์มืออาชีพ', desc: 'ไกด์มากประสบการณ์พร้อมบริการหลายภาษา' },
+                { icon: 'price', title: 'ราคาดีที่สุด', desc: 'ราคาคุ้มค่า ไม่มีค่าใช้จ่ายแอบแฝง' },
+                { icon: 'support', title: 'ดูแล 24/7', desc: 'บริการลูกค้าตลอด 24 ชั่วโมงระหว่างเดินทาง' },
+                { icon: 'package', title: 'แพ็กเกจปรับแต่งได้', desc: 'โปรแกรมทัวร์ปรับตามความต้องการของคุณ' },
+              ]).map((item, i) => (
                 <div className="why-card" key={i}>
-                  <div className="why-icon">{item.icon}</div>
+                  <div className="why-icon">
+                    {item.icon === 'guide' && (
+                      <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
+                        <circle cx="32" cy="20" r="8" stroke="white" strokeWidth="2.5" fill="none" />
+                        <path d="M16 52c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                        <circle cx="32" cy="32" r="18" stroke="white" strokeWidth="2" fill="none" />
+                      </svg>
+                    )}
+                    {item.icon === 'price' && (
+                      <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
+                        <circle cx="32" cy="32" r="18" stroke="white" strokeWidth="2" />
+                        <path d="M22 30h20M32 22v20" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                      </svg>
+                    )}
+                    {item.icon === 'support' && (
+                      <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
+                        <path d="M18 38h-4a6 6 0 0 1-6-6v-4a6 6 0 0 1 6-6h4" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                        <path d="M46 22h4a6 6 0 0 1 6 6v4a6 6 0 0 1-6 6h-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                        <path d="M18 22v16a14 14 0 0 0 28 0V22" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                        <path d="M32 34a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="white" strokeWidth="2" fill="none" />
+                      </svg>
+                    )}
+                    {item.icon === 'package' && (
+                      <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
+                        <path d="M20 20L44 8M44 20L20 8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M10 44l18 10 18-10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        <path d="M10 44V24l18-10 18 10v20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        <path d="M28 54V34" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                      </svg>
+                    )}
+                  </div>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
                 </div>
@@ -155,10 +181,9 @@ export default function LocaleClient() {
       {page === 'outbound' && (
         <section className="page tour-list-page active">
           <h2>{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</h2>
-          <div style={{ maxWidth: 400, margin: '0 auto 30px' }}>
+          <div className="city-filter-wrap">
             <label htmlFor="city-filter" className="sr-only">{isEn ? 'Search city' : 'ค้นหาเมือง'}</label>
-            <input id="city-filter" type="text" placeholder={isEn ? 'Search city...' : 'ค้นหาเมือง...'} value={cityFilter} onChange={(e) => setCityFilter(e.target.value)}
-              style={{ width: '100%', padding: 12, borderRadius: 10, border: 'none', outline: 'none', fontSize: 15 }} />
+            <input id="city-filter" type="text" placeholder={isEn ? 'Search city...' : 'ค้นหาเมือง...'} value={cityFilter} onChange={(e) => setCityFilter(e.target.value)} />
           </div>
           <div className="tour-grid">
             {renderCards((filteredOutbound || outboundTours).filter((t) =>
