@@ -41,7 +41,7 @@ html, body {
 body {
   background: transparent;
   color: var(--text-dark);
-  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif;
   min-height: 100vh;
 }
 
@@ -535,8 +535,9 @@ nav ul li button:hover::after {
 .hero h1 {
   margin: 0;
   font-size: 56px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--white);
+  font-family: var(--font-playfair), 'Playfair Display', serif;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
   text-align: center;
@@ -2080,7 +2081,7 @@ nav ul li button:hover::after {
 }
 
 .landing-page .title {
-  font-family: var(--font-cinzel), 'Cinzel', serif;
+  font-family: var(--font-playfair), 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 700;
   letter-spacing: 8px;
