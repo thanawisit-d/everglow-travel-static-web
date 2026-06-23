@@ -432,7 +432,7 @@
         "airline": "SichuanAirlines.png",
         "shortDesc": "ทัวร์จีน เฉิงตู อุทยานปี้เผิงโกว",
         "desc": "ทัวร์จีน เฉิงตู อุทยานปี้เผิงโกว ถนนชุนซีลู่ แพนด้ายักษ์ น้ำพุไม้ไผ่ เที่ยวครบไฮไลท์เฉิงตู",
-        "pdf": "Outbound/China/pdf/BT-TFU62_3U.pdf"
+        "pdf": "Outbound/China/pdf/BT-TFU623U.pdf"
     },
     {
         "id": "ZGTFU-26113U",
@@ -509,7 +509,7 @@
         "image": "Outbound/China/banner/BT-XIY19_9C.png",
         "price": "10,999",
         "duration": "4 วัน 2 คืน",
-        "airline": "Spring.png",
+        "airline": "spring.png",
         "shortDesc": "ทัวร์จีน ซีอาน สุสานทหารดินเผา",
         "desc": "ทัวร์จีน ซีอาน ชมสุสานทหารดินเผา มรดกโลกชื่อดัง เที่ยวกำแพงเมืองซีอาน ถนนวัฒนธรรมย่านดัง ชมสถาปัตยกรรมจีนโบราณและแลนด์มาร์กสำคัญของเมือง",
         "pdf": "Outbound/China/pdf/BT-XIY19_9C.pdf"
@@ -525,7 +525,7 @@
         "image": "Outbound/China/banner/ZGCKQ-2615FD.png",
         "price": "12,990",
         "duration": "4 วัน 3 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์จีน ฉงชิ่ง หมู่บ้านโบราณสือป้าจ่ง",
         "desc": "ทัวร์จีน ฉงชิ่ง หงหยาต้ง หมู่บ้านโบราณสือป้าจ่ง ชมเมืองกลางคืนสุดอลังการ เที่ยวครบแลนด์มาร์กดังของฉงชิ่ง",
         "pdf": "Outbound/China/pdf/ZGCKQ-2615FD.pdf"
@@ -541,7 +541,7 @@
         "image": "Outbound/China/banner/BT-DYG25_FD.png",
         "price": "14,999",
         "duration": "6 วัน 5 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น",
         "desc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น เมืองโบราณริมน้ำ นั่งกระเช้าขึ้นอุทยานภูเขาเจ็ดดาว เที่ยว ICE SNOW WORLD",
         "pdf": "Outbound/China/pdf/BT-DYG25_FD.pdf"
@@ -557,7 +557,7 @@
         "image": "Outbound/China/banner/BT-DYG31_FD.png",
         "price": "18,999",
         "duration": "5 วัน 4 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฉงชิ่ง",
         "desc": "ทัวร์จีน จางเจียเจี้ย ฉงชิ่ง เที่ยวเทียนเหมินซาน ช่องสวรรค์ สะพานกระจก และแลนด์มาร์กดัง",
         "pdf": "Outbound/China/pdf/BT-DYG31_FD.pdf"
@@ -573,7 +573,7 @@
         "image": "Outbound/China/banner/BT-KMG50_FD.png",
         "price": "19,999",
         "duration": "6 วัน 5 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์จีน คุนหมิง ลี่เจียง แชงกรีล่า",
         "desc": "ทัวร์จีน คุนหมิง ลี่เจียง แชงกรีล่า พิชิตภูเขาหิมะมังกรหยก เที่ยวครบแลนด์มาร์กดังของยูนนาน",
         "pdf": "Outbound/China/pdf/BT-KMG50_FD.pdf"
@@ -608,7 +608,7 @@
         "airline": "VietJet.png",
         "shortDesc": "ทัวร์จีน เฉิงตู อุทยานแพนด้า",
         "desc": "ทัวร์จีน เฉิงตู อุทยานแพนด้า ถนนโบราณชื่อดัง เที่ยวธรรมชาติสุดอลังการ พร้อมแลนด์มาร์กสำคัญ",
-        "pdf": "Outbound/China/pdf/BT-TFU67_VZ.pdf"
+        "pdf": "Outbound/China/pdf/BT-TFU67VZ.pdf"
     },
     {
         "id": "BT-PVG50_VZ",
@@ -624,7 +624,7 @@
         "airline": "VietJet.png",
         "shortDesc": "ทัวร์จีน เซี่ยงไฮ้ ดิสนีย์แลนด์",
         "desc": "ทัวร์จีน เซี่ยงไฮ้ ดิสนีย์แลนด์ Shanghai Wild Animal Park ชมการแสดงสุดสนุก เช็คอินย่านดังและแลนด์มาร์กเซี่ยงไฮ้",
-        "pdf": "Outbound/China/pdf/BT-PVG50_VZ.pdf"
+        "pdf": "Outbound/China/pdf/BT-PVG50VZ.pdf"
     },
     {
         "id": "BT-TAO02_SC",
@@ -640,7 +640,7 @@
         "airline": "ShandongAirlines.png",
         "shortDesc": "ทัวร์จีน ชิงเต่า หยานไถ เวยไห่",
         "desc": "ทัวร์จีน ชิงเต่า หยานไถ เวยไห่ สายเมืองชายฝั่งทะเลจีน ชมวิวสวย ฟีลยุโรป เที่ยวจัตุรัส 54 หาดไซเบอร์พังค์ และโรงงานเบียร์ชิงเต่า",
-        "pdf": "Outbound/China/pdf/BT-TAO02_SC.pdf"
+        "pdf": "Outbound/China/pdf/BT-TAO02SC.pdf"
     },
     {
         "id": "ZGTFU-26203U",
@@ -685,10 +685,10 @@
         "image": "Outbound/japan/banner/BT_NRT_S15_XJ.png",
         "price": "18,999",
         "duration": "5 วัน 3 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์ญี่ปุ่น โตเกียว อิสระเต็มวัน 2 วัน",
         "desc": "ทัวร์ญี่ปุ่น โตเกียว อิสระเต็มวัน 2 วันเต็ม เที่ยวชมแลนด์มาร์กยอดฮิตของโตเกียว สนุกกับการช้อปปิ้งย่านดัง สัมผัสบรรยากาศมหานครญี่ปุ่น พร้อมเช็คอินจุดท่องเที่ยวยอดนิยม เช่น วัดอาซากุสะ ชินจูกุ และย่านเมืองทันสมัย",
-        "pdf": "Outbound/japan/pdf/BT_NRT_S15_XJ.pdf"
+        "pdf": "Outbound/japan/pdf/BT-NRT_S15_XJ.pdf"
     },
     {
         "id": "CVZFUK3",
@@ -829,7 +829,7 @@
         "image": "Outbound/japan/banner/BT-KIX_S04_XJ.png",
         "price": "24,999",
         "duration": "5 วัน 3 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์ญี่ปุ่น โอซาก้า เกียวโต อาราชิยาม่า",
         "desc": "ทัวร์ญี่ปุ่น โอซาก้า เกียวโต อาราชิยาม่า เดินชมป่าไผ่อาราชิยาม่า เที่ยวอิสระหรือเลือกซื้อ Universal Studios Japan ชมปราสาทโอซาก้า และวัดคินคะคุจิ",
         "pdf": "Outbound/japan/pdf/BT-KIX_S04_XJ.pdf"
@@ -893,10 +893,10 @@
         "image": "Outbound/japan/banner/BT-KIX_NRT_S02_XJ.png",
         "price": "36,999",
         "duration": "6 วัน 4 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์ญี่ปุ่น โอซาก้า ทาคายาม่า คามิโคจิ",
         "desc": "ทัวร์ญี่ปุ่น โอซาก้า ทาคายาม่า คามิโคจิ ชมความงดงามของธรรมชาติที่คามิโคจิ เที่ยวหมู่บ้านมรดกโลกชิราคาวาโกะ แช่ออนเซ็นธรรมชาติ ชมปราสาทมัตสึโมโต้ และช้อปปิ้งย่านชินไซบาชิ",
-        "pdf": "Outbound/japan/pdf/BT-KIX_NRT_S02_XJ.pdf"
+        "pdf": "Outbound/japan/pdf/BT-KIX-NRT_S02XJ.pdf"
     },
     {
         "id": "BT-NRT_A01_XJ",
@@ -909,7 +909,7 @@
         "image": "Outbound/japan/banner/BT-NRT_A01_XJ.png",
         "price": "29,999",
         "duration": "5 วัน 3 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์ญี่ปุ่น โตเกียว คาวากุจิโกะ ฮาโกเน่",
         "desc": "ทัวร์ญี่ปุ่น โตเกียว คาวากุจิโกะ ฮาโกเน่ เที่ยวชมวิวภูเขาไฟฟูจิ แวะ AO Lakeside Cafe ชมฮาโกเน่และโอวาคุดานิ ช้อปปิ้งชินจูกุ พร้อมอิสระเที่ยวตามสไตล์",
         "pdf": "Outbound/japan/pdf/BT-NRT_A01_XJ.pdf"
@@ -1151,8 +1151,7 @@
         "duration": "4 วัน 3 คืน",
         "airline": "VietnamAirlines.png",
         "shortDesc": "ทัวร์เวียดนาม ดานัง ฮอยอัน พักบานาฮิลล์",
-        "desc": "ทัวร์เวียดนาม ดานัง ฮอยอัน พักบานาฮิลล์ 1 คืน สัมผัสเมืองแห่งเทพนิยาย เช็คอิน Golden Bridge ล่องเรือกระด้ง ชมโชว์ Charming Danang พร้อมอาหารพิเศษซีฟู้ด",
-        "pdf": "Outbound/Vietnam/pdf/ZGDAD-2602VN.pdf"
+        "desc": "ทัวร์เวียดนาม ดานัง ฮอยอัน พักบานาฮิลล์ 1 คืน สัมผัสเมืองแห่งเทพนิยาย เช็คอิน Golden Bridge ล่องเรือกระด้ง ชมโชว์ Charming Danang พร้อมอาหารพิเศษซีฟู้ด"
     },
     {
         "id": "VZ-BANA01",
@@ -1229,7 +1228,7 @@
         "image": "Outbound/Vietnam/banner/BT-HAN47_FD.png",
         "price": "17,999",
         "duration": "4 วัน 3 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์เวียดนาม ฮานอย ซาปา ฟานซิปัน",
         "desc": "ทัวร์เวียดนาม ฮานอย ซาปา ฟานซิปัน เที่ยวเมืองซาปา นั่งรถไฟฟ้าโมโนเรล พิชิตยอดฟานซิปัน ล่องเรือ Cat Cat Village และเที่ยวแลนด์มาร์กเวียดนามเหนือ",
         "pdf": "Outbound/Vietnam/pdf/BT-HAN47_FD.pdf"
@@ -1245,7 +1244,7 @@
         "image": "Outbound/Vietnam/banner/BT-HAN01_FD.png",
         "price": "17,999",
         "duration": "4 วัน 3 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์เวียดนาม ฮานอย ตามด่าว",
         "desc": "ทัวร์เวียดนาม ฮานอย ตามด่าว เช็กอินเมืองตามด่าว เวียดนามฟีลยุโรป ล่องเรือชม Ma Pi Leng Pass คาเฟ่ Gio Cafe Tam Dao และชม Tam Dao Stone Church",
         "pdf": "Outbound/Vietnam/pdf/BT-HAN01_FD.pdf"
@@ -1312,7 +1311,7 @@
         "airline": "ThaiLionAir.png",
         "shortDesc": "ทัวร์ฮ่องกง สายมู ไหว้ครบ 3 วัด",
         "desc": "ทัวร์ฮ่องกง สายมู ขอความรัก ขอเงิน ขอสุขภาพ ไหว้ครบ 3 วัดดัง ชมแลนด์มาร์กสำคัญของฮ่องกง พร้อมช้อปปิ้งและเมนูพิเศษ",
-        "pdf": "Outbound/HongKong/pdf/PHKG01-SL.pdf"
+        "pdf": "Outbound/HongKong/pdf/PHK01-SL.pdf"
     },
     {
         "id": "PMFMZHU01-SL",
@@ -1485,7 +1484,7 @@
         "image": "Outbound/HongKong/banner/ZGHKG-2633HB.png",
         "price": "19,990",
         "duration": "4 วัน 2 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์ฮ่องกง ดิสนีย์แลนด์ รีพลัสเบย์",
         "desc": "ทัวร์ฮ่องกง เที่ยว Hong Kong Disneyland รีพลัสเบย์ ไหว้พระ ขอพรเรื่องความรัก การงาน การเงิน พร้อมชมวิวอ่าววิคตอเรีย",
         "pdf": "Outbound/HongKong/pdf/ZGHKG-2633HB.pdf"
@@ -1520,7 +1519,7 @@
         "airline": "ThaiAirways.png",
         "shortDesc": "ทัวร์ฮ่องกง ไหว้พระ ขอพร นั่งกระเช้านองปิง แซกงหมิว",
         "desc": "ทัวร์ฮ่องกง นั่งกระเช้านองปิง ไหว้พระใหญ่เทียนถาน วัดหวังต้าเซียน วัดแชกงหมิว และวัดเจ้าแม่กวนอิมพันมือ พร้อมช้อปปิ้ง Citygate Outlets",
-        "pdf": "Outbound/HongKong/pdf/GO1-HKG-TG014.pdf"
+        "pdf": "Outbound/HongKong/pdf/GO1HKG-TG014.pdf"
     },
     {
         "id": "2UMXP-EK031",
@@ -1568,7 +1567,7 @@
         "airline": "OmanAir.png",
         "shortDesc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย อิตาลี",
         "desc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย อิตาลี เที่ยวโดโลไมท์ เวนิส อินส์บรุค มิวนิก ชมเมืองสวยริมทะเลสาบและแลนด์มาร์กชื่อดังของยุโรป",
-        "pdf": "Outbound/Europe/pdf/VMJUCMXP75WY-26.pdf"
+        "pdf": "Outbound/Europe/pdf/VMUCMXP75WY-26.pdf"
     },
     {
         "id": "ZGMUC-2604SQ",
@@ -1583,8 +1582,7 @@
         "duration": "7 วัน 4 คืน",
         "airline": "SingaporeAirlines.png",
         "shortDesc": "ทัวร์เยอรมนี ออสเตรีย สวิตเซอร์แลนด์",
-        "desc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย สวิตเซอร์แลนด์ เที่ยวฮัลล์สตัทท์ ซาลส์บวร์ก ซูริค มิวนิก ชมทะเลสาบและหมู่บ้านสวยระดับโลก",
-        "pdf": "Outbound/Europe/pdf/ZGMUC-2604SQ.pdf"
+        "desc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย สวิตเซอร์แลนด์ เที่ยวฮัลล์สตัทท์ ซาลส์บวร์ก ซูริค มิวนิก ชมทะเลสาบและหมู่บ้านสวยระดับโลก"
     },
     {
         "id": "VARNCPH85TK-5",
@@ -1853,10 +1851,10 @@
         "image": "Outbound/India/banner/BT-JAI23_FD.png",
         "price": "18,999",
         "duration": "4 วัน 2 คืน",
-        "airline": "AirAsia.png",
+        "airline": "airasia.png",
         "shortDesc": "ทัวร์อินเดีย ชัยปุระ อัครา",
         "desc": "ทัวร์อินเดีย เที่ยวชัยปุระ อัครา ชมทัชมาฮาล พระราชวังสายลม City Palace และนั่งรถจี๊ปขึ้นแอมเบอร์ฟอร์ต",
-        "pdf": "Outbound/India/pdf/BT-JAI23_FD.pdf"
+        "pdf": "Outbound/Mongolia/pdf/BT-JAI23_FD.pdf"
     },
     {
         "id": "MRT-MNVZ01",
@@ -1872,7 +1870,7 @@
         "airline": "VietJet.png",
         "shortDesc": "ทัวร์มองโกเลีย ทุ่งหญ้าและทะเลทราย",
         "desc": "ทัวร์มองโกเลีย เที่ยวทุ่งหญ้ามองโกเลีย สัมผัสวิถีชีวิตชนเผ่า ชมทะเลทรายโกบี ขี่อูฐ และชมการแสดงวัฒนธรรมพื้นเมือง",
-        "pdf": "Outbound/Mongolia/pdf/MRT-MNVZ01.pdf"
+        "pdf": "Outbound/India/pdf/MRT-MNVZ01.pdf"
     },
     {
         "id": "GO1CEB-5J102",
@@ -1920,7 +1918,7 @@
         "airline": "ThaiAirways.png",
         "shortDesc": "ทัวร์อินเดีย ถ้ำอชันตา เอลโลรา",
         "desc": "ทัวร์อินเดีย มุมไบ ปูเน่ ออรังกาบัด ชมถ้ำอชันตา เอลโลรา มรดกโลกยูเนสโก วัดสิทธิวินายัก และสถานที่ศักดิ์สิทธิ์ชื่อดัง",
-        "pdf": "Outbound/India/pdf/GOBOM-TG001.pdf"
+        "pdf": "Outbound/India/pdf/GO1BOM-TG001.pdf"
     },
     {
         "id": "TF-PBHB302",

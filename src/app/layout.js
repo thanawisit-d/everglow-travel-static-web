@@ -1,4 +1,4 @@
-import { Kanit, Poppins, Cinzel, Caveat } from 'next/font/google';
+import { Kanit, Poppins, Cinzel } from 'next/font/google';
 import "./globals.css";
 
 const kanit = Kanit({
@@ -19,13 +19,8 @@ const cinzel = Cinzel({
   variable: '--font-cinzel',
 });
 
-const caveat = Caveat({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-caveat',
-});
-
 export const metadata = {
+  
   title: "Everglow Travel",
   description: "Everglow Travel - บริษัท เอเวอร์โกลว์ โกลบอล จำกัด",
 };
@@ -33,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="th">
-      <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable} ${caveat.variable}`}>
+      <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
         <div className="min-h-screen w-full relative">
           <div
             className="absolute inset-0 z-0"

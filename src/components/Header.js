@@ -6,10 +6,15 @@ import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
-export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbound }) {
+export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbound, onShowAllDomestic, onShowAllOutbound }) {
   const router = useRouter();
-  const [lang, setLang] = useState(locale === 'en' ? 'en' : locale);
+  const isEn = locale === 'en';
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
   const text = config[locale];
   const s = config.social;
 
@@ -56,23 +61,40 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
         </button>
         <ul className={menuOpen ? 'nav-open' : ''}>
           <li><button type="button" onClick={() => { onNavigate('home'); closeMenu(); }}>{text.home}</button></li>
-          <li className="dropdown">
-            <button type="button">{text.domestic} ▾</button>
+          <li className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`}>
+            <button type="button" onClick={(e) => {
+              if (window.innerWidth > 992) { onShowAllDomestic(); closeMenu(); }
+              else { e.stopPropagation(); toggleDropdown('domestic'); }
+            }}>{text.domestic}</button>
+            <button className="dropdown-arrow" onClick={() => toggleDropdown('domestic')} aria-label="Open submenu">▾</button>
             <ul className="dropdown-menu">
+              <li><button type="button" onClick={() => { onShowAllDomestic(); closeMenu(); setOpenDropdown(null); }}>{isEn ? 'All Domestic Tours' : 'ทัวร์ในประเทศทั้งหมด'}</button></li>
               {text.durations.map((d, i) => (
-                <li key={i}><button type="button" onClick={() => { onShowDomestic(d); closeMenu(); }}>{d}</button></li>
+                <li key={i}><button type="button" onClick={() => { onShowDomestic(d); closeMenu(); setOpenDropdown(null); }}>{d}</button></li>
               ))}
             </ul>
           </li>
           {locale === 'th' ? (
-            <li className="dropdown">
-              <button type="button">{text.outbound} ▾</button>
+            <li className={`dropdown ${openDropdown === 'outbound' ? 'open' : ''}`}>
+              <button type="button" onClick={(e) => {
+                if (window.innerWidth > 992) { onShowAllOutbound(); closeMenu(); }
+                else { e.stopPropagation(); toggleDropdown('outbound'); }
+              }}>{text.outbound}</button>
+              <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} aria-label="Open submenu">▾</button>
               <ul className="country-menu">
+                <div className="col" key="all">
+                  <li>
+                    <button type="button" onClick={() => { onShowAllOutbound(); closeMenu(); setOpenDropdown(null); }}>
+                      ทัวร์ต่างประเทศทั้งหมด
+                    </button>
+                  </li>
+                </div>
                 {config.countryGroups.map((group, gi) => (
                   <div className="col" key={gi}>
+                    <h4>{group.label}</h4>
                     {group.items.map((c, ci) => (
                       <li key={ci}>
-                        <button type="button" onClick={() => { onShowOutbound(c.name); closeMenu(); }}>
+                        <button type="button" onClick={() => { onShowOutbound(c.name); closeMenu(); setOpenDropdown(null); }}>
                           <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={c.name} />
                           ทัวร์{c.name}
                         </button>
@@ -83,11 +105,16 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
               </ul>
             </li>
           ) : (
-            <li className="dropdown">
-              <button type="button">{text.outbound} ▾</button>
+            <li className={`dropdown ${openDropdown === 'outbound' ? 'open' : ''}`}>
+              <button type="button" onClick={(e) => {
+                if (window.innerWidth > 992) { onShowAllOutbound(); closeMenu(); }
+                else { e.stopPropagation(); toggleDropdown('outbound'); }
+              }}>{text.outbound}</button>
+              <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} aria-label="Open submenu">▾</button>
               <ul className="dropdown-menu">
+                <li><button type="button" onClick={() => { onShowAllOutbound(); closeMenu(); setOpenDropdown(null); }}>{isEn ? 'All Outbound Tours' : 'ทัวร์ต่างประเทศทั้งหมด'}</button></li>
                 {config.enCountries.map((c, i) => (
-                  <li key={i}><button type="button" onClick={() => { onShowOutbound(c); closeMenu(); }}>{c}</button></li>
+                  <li key={i}><button type="button" onClick={() => { onShowOutbound(c); closeMenu(); setOpenDropdown(null); }}>{c}</button></li>
                 ))}
               </ul>
             </li>
@@ -97,16 +124,17 @@ export default function Header({ locale, onNavigate, onShowDomestic, onShowOutbo
           <li><button type="button" onClick={() => { onNavigate('contact'); closeMenu(); }}>{text.contact}</button></li>
           <li><button type="button" onClick={() => { onNavigate('reviews'); closeMenu(); }}>{text.reviews}</button></li>
           {locale === 'en' && (
-            <li>
-              <select className="lang-select" value={lang} onChange={(e) => {
-                setLang(e.target.value);
-                if (e.target.value === 'th') {
-                  router.push('/');
-                }
-              }} aria-label="Language">
-                <option value="en">🇬🇧 English</option>
-                <option value="th">🇹🇭 ไทย</option>
-              </select>
+            <li className="lang-item">
+              <button type="button" className="lang-btn" onClick={() => router.push('/')}>
+                🇹🇭 ไทย
+              </button>
+            </li>
+          )}
+          {locale === 'th' && (
+            <li className="lang-item">
+              <button type="button" className="lang-btn" onClick={() => router.push('/en')}>
+                🇬🇧 English
+              </button>
             </li>
           )}
         </ul>

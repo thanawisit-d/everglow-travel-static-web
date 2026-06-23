@@ -7,6 +7,7 @@ export function generateStaticParams() {
   ];
 }
 
-export default function LocalePage() {
-  return <LocaleClient />;
+export default async function LocalePage({ params }) {
+  const { locale } = await params;
+  return <LocaleClient locale={locale} />;
 }

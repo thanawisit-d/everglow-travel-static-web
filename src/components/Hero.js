@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Hero({ locale }) {
   return (
     <section className="hero">
-      <Image src="/assets/images/Home3.jpg" fill className="hero-bg" alt="" priority />
+      <Image src="/assets/images/Home3.jpg" fill className="hero-bg" alt="" priority sizes="100vw" />
       <div className="hero-overlay" />
       <div className="hero-content">
         {locale === 'th' ? (

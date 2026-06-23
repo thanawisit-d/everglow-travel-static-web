@@ -197,6 +197,10 @@ nav ul li button:hover::after {
   position: relative;
 }
 
+.dropdown-arrow {
+  display: none;
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -436,6 +440,25 @@ nav ul li button:hover::after {
 
   .dropdown {
     position: static;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .dropdown > button:first-child {
+    flex: 1;
+  }
+
+  .dropdown-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px !important;
+    padding: 10px !important;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
   }
 
   .dropdown-menu,
@@ -516,13 +539,15 @@ nav ul li button:hover::after {
   color: var(--white);
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
+  text-align: center;
 }
 
 .hero p {
-  margin: 16px 0 0;
+  margin: 16px auto 0;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
+  text-align: center;
 }
 /* ========== SEARCH BOX ========== */
 .search-box {
@@ -2006,22 +2031,6 @@ nav ul li button:hover::after {
   color: var(--navy-secondary);
 }
 
-/* ========== LANGUAGE SELECT ========== */
-.lang-select {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--white);
-  font-size: 13px;
-  cursor: pointer;
-  outline: none;
-}
-
-.lang-select option {
-  color: var(--text-dark);
-  background: var(--white);
-}
 
 /* ========== LANDING PAGE ========== */
 .landing-page {

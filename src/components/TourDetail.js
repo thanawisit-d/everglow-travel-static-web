@@ -78,7 +78,7 @@ export default function TourDetail({ tour, locale }) {
               </div>
             </div>
             <div className="detail-item">
-              <Image src={assetPath(isOutbound ? 'icons/plane.png' : (tour.transport?.icon || 'icons/transport.png'))} width={24} height={24} alt="" />
+              <Image src={assetPath(isOutbound ? 'icons/plane.png' : (tour.transport?.icon || 'icons/van.png'))} width={24} height={24} alt="" />
               <div>
                 <strong>{t.transport}</strong>
                 {isOutbound ? (

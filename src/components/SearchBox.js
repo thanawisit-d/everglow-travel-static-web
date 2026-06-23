@@ -51,6 +51,7 @@ export default function SearchBox({ locale, tours, onResult }) {
         </select>
         <label htmlFor="search-keyword" className="sr-only">{locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}</label>
         <input
+        
           id="search-keyword"
           type="text"
           placeholder={locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}

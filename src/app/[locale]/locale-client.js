@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
 import { translateCountry, assetPath } from '@/lib/utils';
@@ -17,9 +16,7 @@ import Reviews from '@/components/Reviews';
 import TourDetail from '@/components/TourDetail';
 import Footer from '@/components/Footer';
 
-export default function LocaleClient() {
-  const params = useParams();
-  const locale = (params && params.locale) || 'th';
+export default function LocaleClient({ locale }) {
   const isEn = locale === 'en';
 
   const [page, setPage] = useState('home');
@@ -34,6 +31,7 @@ export default function LocaleClient() {
 
   const navigate = (to) => {
     setPage(to);
+    window.scrollTo(0, 0);
   };
 
   const handleShowDomestic = (duration) => {
@@ -63,13 +61,15 @@ export default function LocaleClient() {
 
   const handlePromoClick = (promo) => {
     const full = toursData.find((t) => t.id === promo.id);
-    if (full) setSelectedTour(full);
-    else setSelectedTour(promo);
-    navigate('detail');
+    if (full) {
+      setSelectedTour(full);
+      navigate('detail');
+    }
   };
 
   const renderCards = (tours, isDomestic) => (
     tours.map((t, i) => (
+      
       <TourCard key={t.id || i} locale={locale} tour={t} onClick={() => handleTourClick(t)} isDomestic={isDomestic} />
     ))
   );
@@ -81,6 +81,8 @@ export default function LocaleClient() {
         onNavigate={navigate}
         onShowDomestic={handleShowDomestic}
         onShowOutbound={handleShowOutbound}
+        onShowAllDomestic={() => { setFilteredDomestic(null); setSearchResults(null); navigate('domestic'); }}
+        onShowAllOutbound={() => { setFilteredOutbound(null); setSearchResults(null); navigate('outbound'); }}
       />
 
       {page === 'home' && (
@@ -187,7 +189,7 @@ export default function LocaleClient() {
           </div>
           <div className="tour-grid">
             {renderCards((filteredOutbound || outboundTours).filter((t) =>
-              !cityFilter || (t.desc || '').includes(cityFilter) || (t.id || '').toLowerCase().includes(cityFilter.toLowerCase())
+              !cityFilter || (t.desc || '').includes(cityFilter) || (t.country || '').includes(cityFilter) || (t.id || '').toLowerCase().includes(cityFilter.toLowerCase())
             ))}
           </div>
         </section>

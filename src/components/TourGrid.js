@@ -1,5 +1,3 @@
-'use client';
-
 import promotions from '@/data/promotions.json';
 import TourCard from './TourCard';
 
@@ -22,7 +20,7 @@ export default function TourGrid({ showBadge, onTourClick, locale }) {
             locale={locale}
             tour={t}
             onClick={onTourClick ? () => onTourClick(t) : undefined}
-            showBadge={showBadge === 'monthly' ? 'monthly' : undefined}
+            showBadge={showBadge}
           />
         ))}
       </div>
