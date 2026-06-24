@@ -38,6 +38,20 @@ html, body {
   width: 100%;
 }
 
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
 body {
   background: transparent;
   color: var(--text-dark);
@@ -296,11 +310,14 @@ nav ul li button:hover::after {
 }
 
 .country-menu .col {
+  list-style: none;
   flex: 1;
   min-width: 0;
 }
 
-.country-menu .col h4 {
+.country-menu .col .col-header,
+.country-menu .col-header {
+  display: block;
   font-size: 12px;
   font-weight: 700;
   color: var(--navy-secondary);
@@ -309,6 +326,17 @@ nav ul li button:hover::after {
   padding: 0 10px 10px;
   margin: 0 0 6px;
   border-bottom: 2px solid #eef4ff;
+}
+
+.country-menu .col .col-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.country-menu .col-all {
+  list-style: none;
+  width: 100%;
 }
 
 .dropdown:hover .country-menu {
@@ -1077,7 +1105,7 @@ nav ul li button:hover::after {
   padding-top: 0;
 }
 
-.reviews-section h2 {
+.reviews-section h1 {
   text-align: left;
   color: var(--navy);
   font-size: 34px;
@@ -1085,7 +1113,7 @@ nav ul li button:hover::after {
   text-shadow: none;
 }
 
-.reviews-section h2::after {
+.reviews-section h1::after {
   content: "";
   width: 80px;
   height: 4px;
@@ -1270,7 +1298,7 @@ nav ul li button:hover::after {
   color: var(--text-dark);
 }
 
-.contact-card h2 {
+.contact-card h1 {
   margin-bottom: 25px;
   font-size: 28px;
   font-weight: 700;
@@ -1280,7 +1308,7 @@ nav ul li button:hover::after {
   text-shadow: none;
 }
 
-.contact-card h2::after {
+.contact-card h1::after {
   content: "";
   width: 40px;
   height: 3px;
@@ -1625,7 +1653,7 @@ nav ul li button:hover::after {
   display: block;
 }
 
-.tour-detail-right h2 {
+.tour-detail-right h1 {
   font-size: 30px;
   line-height: 1.35;
   color: var(--navy);

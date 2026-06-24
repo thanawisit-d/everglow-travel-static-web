@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath, fieldIncludes } from '@/lib/utils';
 
-export default function SearchBox({ locale, tours, onResult }) {
+export default function SearchBox({ locale, tours }) {
+  const router = useRouter();
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
@@ -22,19 +24,11 @@ export default function SearchBox({ locale, tours, onResult }) {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const selectedMonth = date ? date.substring(0, 7) : '';
-    const filtered = tours.filter((tour) => {
-      const matchLocation = !location ||
-        fieldIncludes(tour.country, location) ||
-        fieldIncludes(tour.province, location);
-      const matchKeyword = !keyword ||
-        (tour.id || '').toLowerCase().includes(keyword.toLowerCase()) ||
-        (tour.desc || '').toLowerCase().includes(keyword.toLowerCase());
-      const matchDate = !selectedMonth || !tour.startMonth ||
-        (selectedMonth >= tour.startMonth && selectedMonth <= tour.endMonth);
-      return matchLocation && matchKeyword && matchDate;
-    });
-    onResult(filtered);
+    const params = new URLSearchParams();
+    if (location) params.set('location', location);
+    if (keyword) params.set('q', keyword);
+    if (date) params.set('date', date);
+    router.push(`/${locale}/search?${params.toString()}`);
   };
 
   return (

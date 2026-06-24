@@ -34,7 +34,7 @@ export default function Contact({ locale }) {
         </form> */}
         <div className="contact-info">
           <div className="contact-card">
-            <h2>{t.contactTitle}</h2>
+            <h1>{t.contactTitle}</h1>
             <div className="contact-row">
               <a href={`tel:${config.social.phone}`} className="item" style={{ textDecoration: 'none' }}>
                 <Image src={assetPath('icons/phone-call.png')} width={48} height={48} alt="โทรศัพท์" />

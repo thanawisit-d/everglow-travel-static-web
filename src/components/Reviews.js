@@ -6,7 +6,7 @@ export default function Reviews({ locale }) {
   const title = locale === 'en' ? 'Reviews' : 'รีวิว';
   return (
     <section className="reviews-section page">
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       {reviews.map((r) => (
         <div className="review-card" key={r.image}>
           <div className="review-img" style={{ position: 'relative', width: 400, maxWidth: '100%', height: 300, flexShrink: 0 }}>

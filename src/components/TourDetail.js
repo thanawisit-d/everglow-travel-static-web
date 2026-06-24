@@ -39,7 +39,7 @@ export default function TourDetail({ tour, locale }) {
           <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={tour.desc || tour.id} style={{ objectFit: 'contain', borderRadius: 8 }} />
         </div>
         <div className="tour-detail-right">
-          <h2>{tour.desc?.split(' เที่ยว')[0] || tour.id}</h2>
+          <h1>{tour.desc?.split(' เที่ยว')[0] || tour.id}</h1>
           <p>{tour.desc}</p>
           <div className="detail-info-grid">
             <div className="detail-item">
