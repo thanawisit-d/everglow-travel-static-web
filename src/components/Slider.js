@@ -24,9 +24,15 @@ export default function Slider() {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => goTo(current + 1), 4000);
+    const el = slidesRef.current;
+    if (!el) return;
+    const timer = setInterval(() => {
+      const next = (current + 1) % total;
+      el.style.transform = `translateX(-${next * 100}%)`;
+      setCurrent(next);
+    }, 4000);
     return () => clearInterval(timer);
-  }, [current]);
+  }, [current, total]);
 
   return (
     <section className="slider">

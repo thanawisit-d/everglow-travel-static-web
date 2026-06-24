@@ -510,7 +510,7 @@ nav ul li button:hover::after {
   justify-content: center;
   text-align: center;
   color: var(--white);
-  padding: 120px 24px 80px;
+  padding: 200px 24px 80px;
   overflow: hidden;
 }
 
@@ -555,7 +555,7 @@ nav ul li button:hover::after {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 6% 5px;
+  padding: 160px 6% 5px;
   position: relative;
   z-index: 2;
 }
@@ -971,7 +971,7 @@ nav ul li button:hover::after {
 }
 
 .about-page {
-  padding: 80px 6% 60px;
+  padding: 200px 6% 60px;
   color: var(--text-dark);
 }
 
@@ -1070,7 +1070,7 @@ nav ul li button:hover::after {
 }
 
 .reviews-page {
-  padding: 160px 0 0;
+  padding: 200px 0 0;
 }
 
 .reviews-page .reviews-section {
@@ -1144,7 +1144,7 @@ nav ul li button:hover::after {
 
 /* ========== CONTACT ========== */
 .contact-page {
-  padding: 80px 6% 60px;
+  padding: 200px 6% 60px;
   color: var(--text-dark);
 }
 
@@ -1362,7 +1362,7 @@ nav ul li button:hover::after {
 }
 
 .slider-section {
-  padding: 80px 6% 20px;
+  padding: 160px 6% 20px;
 }
 
 /* ========== SLIDER ========== */
@@ -1596,7 +1596,7 @@ nav ul li button:hover::after {
 
 .tour-detail-page {
   min-height: 100vh;
-  padding: 110px 55px 45px;
+  padding: 200px 55px 45px;
 }
 
 .tour-detail-container {
@@ -1943,7 +1943,7 @@ nav ul li button:hover::after {
 
 .tour-list-page {
   min-height: 100vh;
-  padding: 110px 6% 50px;
+  padding: 200px 6% 50px;
 }
 
 .tour-list-page h2 {
@@ -1957,7 +1957,7 @@ nav ul li button:hover::after {
 
 .search-results-page {
   min-height: 100vh;
-  padding: 110px 6% 50px;
+  padding: 200px 6% 50px;
 }
 
 .search-results-page h2 {
