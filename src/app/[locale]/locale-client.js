@@ -96,7 +96,7 @@ export default function LocaleClient({ locale }) {
         <div className="gallery-grid">
           {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
             <div className="gallery-item" key={i}>
-              <Image src={assetPath(`assets/images/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
+              <Image src={assetPath(`assets/images/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" />
               <div className="overlay"><span>{isEn ? 'View Photo' : 'ดูรูป'}</span></div>
             </div>
           ))}

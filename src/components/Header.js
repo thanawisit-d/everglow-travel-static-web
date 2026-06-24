@@ -32,7 +32,7 @@ export default function Header({ locale }) {
   return (
     <div className="header-sticky">
       <div className="topbar">
-        <div className="left" style={{ cursor: 'pointer' }} onClick={() => nav(`/${locale}`)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(`/${locale}`); } }} role="button" tabIndex={0} aria-label="Go to home">
+        <div className="left" onClick={() => nav(`/${locale}`)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(`/${locale}`); } }} role="button" tabIndex={0} aria-label="Go to home">
           <Image src={assetPath('assets/images/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
           <div className="company">
             <h3>{text.company}</h3>
@@ -134,7 +134,7 @@ export default function Header({ locale }) {
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/reviews`)}>{text.reviews}</button></li>
           {locale === 'en' && (
             <li role="none" className="lang-item">
-              <button type="button" className="lang-btn" role="menuitem" onClick={() => router.push('/')}>
+              <button type="button" className="lang-btn" role="menuitem" onClick={() => router.push('/th')}>
                 🇹🇭 ไทย
               </button>
             </li>

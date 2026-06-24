@@ -24,7 +24,7 @@ export default function ProvinceSelector({ tours, onSelect, locale }) {
 
   return (
     <section className="province-section">
-      <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#1a2a4a' }}>
+      <h2>
         {locale === 'th' ? 'เลือกจังหวัดที่ต้องการเดินทาง' : 'Select Province'}
       </h2>
       <div className="province-search-wrapper" ref={wrapperRef}>
@@ -39,7 +39,7 @@ export default function ProvinceSelector({ tours, onSelect, locale }) {
         />
         <div className={`province-dropdown ${open ? 'show' : ''}`}>
           {filtered.length === 0 ? (
-            <div style={{ padding: 14, color: '#999' }}>
+            <div className="empty-result">
               {locale === 'th' ? 'ไม่พบจังหวัด' : 'No province found'}
             </div>
           ) : (

@@ -9,7 +9,7 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
   const isMultiNight = multiNight.includes(tour.duration);
 
   return (
-    <div className={isDomestic ? 'tour-card domestic-tour-card' : 'tour-card'} onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
+    <div className={isDomestic ? 'tour-card domestic-tour-card' : 'tour-card'} onClick={onClick}>
       <div className="tour-img-wrapper">
         {showBadge === 'popular' && (
           <span className="badge hot">{isEn ? 'HOT DEAL' : 'โปรแกรมยอดนิยม'}</span>
@@ -17,7 +17,7 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
         {showBadge === 'monthly' && (
           <span className="badge monthly">{isEn ? 'HOT MONTHLY' : 'โปรแกรมแนะนำ'}</span>
         )}
-        <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 33vw" alt={tour.desc || tour.id} className="tour-img" style={{ objectFit: 'cover' }} />
+        <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 33vw" alt={tour.desc || tour.id} className="tour-img" />
       </div>
       <p className="tour-desc">{tour.desc}</p>
       <div className="tour-info">

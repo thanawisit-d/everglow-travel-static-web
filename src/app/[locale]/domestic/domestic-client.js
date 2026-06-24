@@ -7,6 +7,14 @@ import Pagination from '@/components/Pagination';
 
 const PER_PAGE = 12;
 
+const durationMapEnToTh = {
+  '1 day': '1 วัน',
+  '2 days 1 night': '2 วัน 1 คืน',
+  '3 days 2 night': '3 วัน 2 คืน',
+  '4 days 3 night': '4 วัน 3 คืน',
+  '5 days 4 night': '5 วัน 4 คืน',
+};
+
 function paginate(items, page) {
   const totalPages = Math.ceil(items.length / PER_PAGE) || 1;
   return {
@@ -29,8 +37,10 @@ export default function DomesticClient({ locale, tours }) {
     setPage(1);
   }, [searchParams]);
 
-  const filtered = duration
-    ? tours.filter((t) => t.duration === duration)
+  const normalizedDuration = isEn ? (durationMapEnToTh[duration] || duration) : duration;
+
+  const filtered = normalizedDuration
+    ? tours.filter((t) => t.duration === normalizedDuration)
     : tours;
 
   const { items, totalPages } = paginate(filtered, page);

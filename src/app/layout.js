@@ -31,10 +31,7 @@ export default function RootLayout({ children }) {
       <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
         <div className="min-h-screen w-full relative">
           <div
-            className="absolute inset-0 z-0"
-            style={{
-              background: "radial-gradient(125% 125% at 50% 90%, #fff 5%, #003478 100%)",
-            }}
+            className="absolute inset-0 z-0 bg-gradient-custom"
           />
           <div className="relative z-[1]">{children}</div>
         </div>

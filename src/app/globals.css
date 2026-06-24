@@ -65,6 +65,10 @@ body {
   src: url('/textfouns/AlexBrush-Regular.ttf') format('truetype');
 }
 
+.bg-gradient-custom {
+  background: radial-gradient(125% 125% at 50% 90%, #fff 5%, #003478 100%);
+}
+
 h1, h2 {
   font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-size: 30px;
@@ -96,6 +100,7 @@ h1, h2 {
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
 .topbar .logo {
@@ -727,6 +732,7 @@ nav ul li button:hover::after {
   display: flex;
   flex-direction: column;
   height: 100%;
+  cursor: pointer;
 }
 
 .tour-card:hover {
@@ -768,6 +774,7 @@ nav ul li button:hover::after {
 
 .tour-img {
   transition: transform 0.35s ease;
+  object-fit: cover;
 }
 
 .tour-desc {
@@ -1018,9 +1025,16 @@ nav ul li button:hover::after {
   }
 }
 
-.about-img img {
+.about-img {
+  position: relative;
   width: 420px;
   max-width: 100%;
+  height: 315px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
   border-radius: var(--radius-lg);
   object-fit: cover;
   box-shadow: var(--shadow-lg);
@@ -1141,8 +1155,18 @@ nav ul li button:hover::after {
   box-shadow: var(--shadow-md);
 }
 
-.review-img img {
+.review-img {
+  position: relative;
   width: 400px;
+  max-width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.review-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: var(--radius);
 }
 
@@ -1326,6 +1350,7 @@ nav ul li button:hover::after {
   padding: 10px;
   border-radius: var(--radius);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .contact-row {
@@ -1483,6 +1508,12 @@ nav ul li button:hover::after {
   padding: 40px 6%;
 }
 
+.province-section h2 {
+  text-align: center;
+  margin: 30px 0;
+  color: #1a2a4a;
+}
+
 .province-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1587,6 +1618,12 @@ nav ul li button:hover::after {
   display: block;
 }
 
+.province-dropdown .empty-result {
+  padding: 14px;
+  color: #999;
+  cursor: default;
+}
+
 .province-dropdown div,
 .province-dropdown button {
   padding: 14px 18px;
@@ -1643,6 +1680,11 @@ nav ul li button:hover::after {
   .tour-detail-container {
     grid-template-columns: 1fr;
   }
+}
+
+.tour-detail-left {
+  position: relative;
+  min-height: 400px;
 }
 
 .tour-detail-left img {

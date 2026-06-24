@@ -36,28 +36,28 @@ export default function Contact({ locale }) {
           <div className="contact-card">
             <h1>{t.contactTitle}</h1>
             <div className="contact-row">
-              <a href={`tel:${config.social.phone}`} className="item" style={{ textDecoration: 'none' }}>
+              <a href={`tel:${config.social.phone}`} className="item">
                 <Image src={assetPath('icons/phone-call.png')} width={48} height={48} alt="โทรศัพท์" />
                 <div>
                   <p className="title">{t.phoneLabel}</p>
                   <p className="text">{t.phone}</p>
                 </div>
               </a>
-              <a href={config.social.line} target="_blank" rel="noopener noreferrer" className="item" style={{ textDecoration: 'none' }}>
+              <a href={config.social.line} target="_blank" rel="noopener noreferrer" className="item">
                 <Image src={assetPath('assets/images/LINE.png')} width={48} height={48} alt="LINE" />
                 <div>
                   <p className="title">LINE</p>
                   <p className="text">LINE</p>
                 </div>
               </a>
-              <a href={config.social.facebook} target="_blank" rel="noopener noreferrer" className="item" style={{ textDecoration: 'none' }}>
+              <a href={config.social.facebook} target="_blank" rel="noopener noreferrer" className="item">
                 <Image src={assetPath('assets/images/Facebook.png')} width={48} height={48} alt="Facebook" />
                 <div>
                   <p className="title">Facebook</p>
                   <p className="text">Facebook</p>
                 </div>
               </a>
-              <a href={config.social.instagram} target="_blank" rel="noopener noreferrer" className="item" style={{ textDecoration: 'none' }}>
+              <a href={config.social.instagram} target="_blank" rel="noopener noreferrer" className="item">
                 <Image src={assetPath('assets/images/ig.png')} width={48} height={48} alt="Instagram" />
                 <div>
                   <p className="title">Instagram</p>
@@ -66,21 +66,21 @@ export default function Contact({ locale }) {
               </a>
             </div>
             <div className="contact-row">
-              <a href={`mailto:${t.email}`} className="item" style={{ textDecoration: 'none' }}>
+              <a href={`mailto:${t.email}`} className="item">
                 <Image src={assetPath('icons/email.png')} width={48} height={48} alt="อีเมล" />
                 <div>
                   <p className="title">{t.emailLabel}</p>
                   <p className="text">{t.email}</p>
                 </div>
               </a>
-              <a href={config.social.whatsapp} target="_blank" rel="noopener noreferrer" className="item" style={{ textDecoration: 'none' }}>
+              <a href={config.social.whatsapp} target="_blank" rel="noopener noreferrer" className="item">
                 <Image src={assetPath('assets/images/whatsapp.webp')} width={48} height={48} alt="WhatsApp" />
                 <div>
                   <p className="title">WhatsApp</p>
                   <p className="text">WhatsApp</p>
                 </div>
               </a>
-              <a href={config.social.tiktok} target="_blank" rel="noopener noreferrer" className="item" style={{ textDecoration: 'none' }}>
+              <a href={config.social.tiktok} target="_blank" rel="noopener noreferrer" className="item">
                 <Image src={assetPath('assets/images/tiktok.png')} width={48} height={48} alt="TikTok" />
                 <div>
                   <p className="title">TikTok</p>

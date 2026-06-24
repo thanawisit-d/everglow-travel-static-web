@@ -35,8 +35,8 @@ export default function TourDetail({ tour, locale }) {
   return (
     <div className="tour-detail-page page active">
       <div className="tour-detail-container">
-        <div className="tour-detail-left" style={{ position: 'relative', minHeight: 400 }}>
-          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={tour.desc || tour.id} style={{ objectFit: 'contain', borderRadius: 8 }} />
+        <div className="tour-detail-left">
+          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={tour.desc || tour.id} />
         </div>
         <div className="tour-detail-right">
           <h1>{tour.desc?.split(' เที่ยว')[0] || tour.id}</h1>
@@ -78,7 +78,7 @@ export default function TourDetail({ tour, locale }) {
               </div>
             </div>
             <div className="detail-item">
-              <Image src={assetPath(isOutbound ? 'icons/plane.png' : (tour.transport?.icon || 'icons/van.png'))} width={24} height={24} alt="" />
+              <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'icons/plane.png'))} width={24} height={24} alt="" />
               <div>
                 <strong>{t.transport}</strong>
                 {isOutbound ? (
