@@ -40,7 +40,8 @@ export default function SearchClient({ locale, tours }) {
       fieldIncludes(tour.province, location);
     const matchKeyword = !q ||
       (tour.id || '').toLowerCase().includes(q.toLowerCase()) ||
-      (tour.desc || '').toLowerCase().includes(q.toLowerCase());
+      (tour.desc || '').toLowerCase().includes(q.toLowerCase()) ||
+      (isEn && tour.desc_en && tour.desc_en.toLowerCase().includes(q.toLowerCase()));
     const matchDate = !selectedMonth || !tour.startMonth ||
       (selectedMonth >= tour.startMonth && selectedMonth <= tour.endMonth);
     return matchLocation && matchKeyword && matchDate;

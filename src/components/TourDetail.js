@@ -1,10 +1,17 @@
 import Image from 'next/image';
-import { formatPrice, assetPath, displayField } from '@/lib/utils';
+import { formatPrice, assetPath, displayField, translateCountry } from '@/lib/utils';
 
 export default function TourDetail({ tour, locale }) {
   if (!tour) return null;
   const isOutbound = tour.type === 'outbound';
   const isEn = locale === 'en';
+
+  const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
+  const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
+  const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;
+  const displayCountry = isEn ? displayField(tour.country).split(', ').map(c => translateCountry(c)).join(', ') : displayField(tour.country);
+  const displayProvince = isEn && tour.province_en ? tour.province_en : (tour.province ? displayField(tour.province) : '-');
+  const displayTransportName = isEn && tour.transport?.name_en ? tour.transport.name_en : (tour.transport?.name || '-');
 
   const t = isEn ? {
     tourId: 'Tour ID',
@@ -36,11 +43,11 @@ export default function TourDetail({ tour, locale }) {
     <div className="tour-detail-page page active">
       <div className="tour-detail-container">
         <div className="tour-detail-left">
-          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={tour.desc || tour.id} />
+          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} />
         </div>
         <div className="tour-detail-right">
-          <h1>{tour.desc?.split(' เที่ยว')[0] || tour.id}</h1>
-          <p>{tour.desc}</p>
+          <h1>{displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id}</h1>
+          <p>{displayDesc}</p>
           <div className="detail-info-grid">
             <div className="detail-item">
               <Image src={assetPath('assets/images/pin.png')} width={24} height={24} alt="" />
@@ -53,21 +60,21 @@ export default function TourDetail({ tour, locale }) {
               <Image src={assetPath('icons/location.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{isOutbound ? t.country : t.province}</strong>
-                <span>{isOutbound ? displayField(tour.country) : (tour.province ? displayField(tour.province) : '-')}</span>
+                <span>{isOutbound ? displayCountry : displayProvince}</span>
               </div>
             </div>
             <div className="detail-item">
               <Image src={assetPath('assets/images/clock_13819249.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{t.period}</strong>
-                <span>{tour.periodText}</span>
+                <span>{displayPeriod}</span>
               </div>
             </div>
             <div className="detail-item">
               <Image src={assetPath('assets/images/stopwatch.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{t.duration}</strong>
-                <span>{tour.duration}</span>
+                <span>{displayDuration}</span>
               </div>
             </div>
             <div className="detail-item">
@@ -84,7 +91,7 @@ export default function TourDetail({ tour, locale }) {
                 {isOutbound ? (
                   <Image src={assetPath(`plane-logo/${tour.airline}`)} width={180} height={55} className="detail-airline-logo" alt={tour.airline || ''} />
                 ) : (
-                  <span>{tour.transport?.name || '-'}</span>
+                  <span>{displayTransportName}</span>
                 )}
               </div>
             </div>

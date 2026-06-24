@@ -3,7 +3,7 @@
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { assetPath } from '@/lib/utils';
+import { assetPath, translateCountry } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
 export default function Header({ locale }) {
@@ -40,7 +40,7 @@ export default function Header({ locale }) {
           </div>
         </div>
         <div className="right contact-icons">
-          <a href={`tel:${s.phone}`} aria-label="โทรศัพท์"><Image src={assetPath('assets/images/phone.png')} width={36} height={36} alt="" /></a>
+          <a href={`tel:${s.phone}`} aria-label={isEn ? 'Phone' : 'โทรศัพท์'}><Image src={assetPath('assets/images/phone.png')} width={36} height={36} alt="" /></a>
           <a href={s.line} aria-label="LINE"><Image src={assetPath('assets/images/LINE.png')} width={36} height={36} alt="" /></a>
           <a href={s.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <Image src={assetPath('assets/images/Facebook.png')} width={36} height={36} alt="" />
@@ -84,51 +84,35 @@ export default function Header({ locale }) {
               ))}
             </ul>
           </li>
-          {locale === 'th' ? (
-            <li className={`dropdown ${openDropdown === 'outbound' ? 'open' : ''}`} role="none">
-              <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
-                if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
-                else { e.stopPropagation(); toggleDropdown('outbound'); }
-              }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.outbound}</button>
-              <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
-              <ul className="country-menu" role="menu">
-                <li role="none" className="col-all">
-                  <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
-                    ทัวร์ต่างประเทศทั้งหมด
-                  </button>
+          <li className={`dropdown ${openDropdown === 'outbound' ? 'open' : ''}`} role="none">
+            <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
+              if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
+              else { e.stopPropagation(); toggleDropdown('outbound'); }
+            }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.outbound}</button>
+            <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
+            <ul className="country-menu" role="menu">
+              <li role="none" className="col-all">
+                <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
+                  {isEn ? 'All Outbound Tours' : 'ทัวร์ต่างประเทศทั้งหมด'}
+                </button>
+              </li>
+              {config.countryGroups.map((group, gi) => (
+                <li key={gi} role="none" className="col">
+                  <span className="col-header">{isEn ? group.labelEn : group.label}</span>
+                  <ul className="col-list">
+                    {group.items.map((c, ci) => (
+                      <li key={ci} role="none">
+                        <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
+                          <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
+                          {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
-                {config.countryGroups.map((group, gi) => (
-                  <li key={gi} role="none" className="col">
-                    <span className="col-header">{group.label}</span>
-                    <ul className="col-list">
-                      {group.items.map((c, ci) => (
-                        <li key={ci} role="none">
-                          <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
-                            <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={c.name} />
-                            ทัวร์{c.name}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ) : (
-            <li className={`dropdown ${openDropdown === 'outbound' ? 'open' : ''}`} role="none">
-              <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
-                if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
-                else { e.stopPropagation(); toggleDropdown('outbound'); }
-              }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.outbound}</button>
-              <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
-              <ul className="dropdown-menu" role="menu">
-                <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>{isEn ? 'All Outbound Tours' : 'ทัวร์ต่างประเทศทั้งหมด'}</button></li>
-                {config.enCountries.map((c, i) => (
-                  <li key={i} role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c)}`)}>{c}</button></li>
-                ))}
-              </ul>
-            </li>
-          )}
+              ))}
+            </ul>
+          </li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/contact`)}>{text.contact}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/reviews`)}>{text.reviews}</button></li>

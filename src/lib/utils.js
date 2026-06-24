@@ -115,6 +115,51 @@ export const countryNameMap = {
   'Canada': 'แคนาดา',
   'ยุโรป': 'Europe',
   'Europe': 'ยุโรป',
+  'มาเก๊า': 'Macau',
+  'Macau': 'มาเก๊า',
+  'ลาว': 'Laos',
+  'Laos': 'ลาว',
+  'อังกฤษ': 'UK',
+  'UK': 'อังกฤษ',
+  'กรีซ': 'Greece',
+  'Greece': 'กรีซ',
+  'เช็ก': 'Czech',
+  'Czech': 'เช็ก',
+  'ฮังการี': 'Hungary',
+  'Hungary': 'ฮังการี',
+  'โปแลนด์': 'Poland',
+  'Poland': 'โปแลนด์',
+  'นอร์เวย์': 'Norway',
+  'Norway': 'นอร์เวย์',
+  'สวีเดน': 'Sweden',
+  'Sweden': 'สวีเดน',
+  'ลักเซมเบิร์ก': 'Luxembourg',
+  'Luxembourg': 'ลักเซมเบิร์ก',
+  'สโลวาเกีย': 'Slovakia',
+  'Slovakia': 'สโลวาเกีย',
+  'เดนมาร์ก': 'Denmark',
+  'Denmark': 'เดนมาร์ก',
+  'โมร็อกโก': 'Morocco',
+  'Morocco': 'โมร็อกโก',
+  'อเมริกา': 'USA',
+  'เม็กซิโก': 'Mexico',
+  'Mexico': 'เม็กซิโก',
+  'นิวซีแลนด์': 'New Zealand',
+  'New Zealand': 'นิวซีแลนด์',
+  'ศรีลังกา': 'Sri Lanka',
+  'Sri Lanka': 'ศรีลังกา',
+  'เนปาล': 'Nepal',
+  'Nepal': 'เนปาล',
+  'มัลดีฟส์': 'Maldives',
+  'Maldives': 'มัลดีฟส์',
+  'กาตาร์': 'Qatar',
+  'Qatar': 'กาตาร์',
+  'เปรู': 'Peru',
+  'Peru': 'เปรู',
+  'จอร์เจีย': 'Georgia',
+  'Georgia': 'จอร์เจีย',
+  'อาร์เจนตินา': 'Argentina',
+  'Argentina': 'อาร์เจนตินา',
 };
 
 export function translateCountry(name) {
@@ -125,12 +170,6 @@ export function fieldIncludes(val, search) {
   if (!val) return false;
   if (Array.isArray(val)) return val.some(v => v.includes(search));
   return val.includes(search);
-}
-
-export function fieldEquals(val, search) {
-  if (!val) return false;
-  if (Array.isArray(val)) return val.includes(search);
-  return val === search;
 }
 
 export function displayField(val, join = ', ') {

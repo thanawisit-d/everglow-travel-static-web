@@ -8,7 +8,7 @@ export default async function ReviewsPage({ params }) {
   const { locale } = await params;
   return (
     <div className="reviews-page">
-      <Reviews locale={locale} />
+      <Reviews locale={locale} standalone />
     </div>
   );
 }

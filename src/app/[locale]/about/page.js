@@ -6,5 +6,5 @@ export function generateStaticParams() {
 
 export default async function AboutPage({ params }) {
   const { locale } = await params;
-  return <About locale={locale} />;
+  return <About locale={locale} standalone />;
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 
-export default function About({ locale }) {
+export default function About({ locale, standalone }) {
   const t = locale === 'th' ? {
     title: 'เกี่ยวกับเรา',
     company: 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด',
@@ -39,8 +39,8 @@ export default function About({ locale }) {
           <Image src={assetPath('company/companydetail.jpg')} fill sizes="(max-width: 992px) 100vw, 420px" alt="Everglow Travel" />
         </div>
         <div className="about-text">
-          <h2>{t.title}</h2>
-          <h1>{t.company}</h1>
+          {standalone ? <h1>{t.title}</h1> : <h2>{t.title}</h2>}
+          {standalone ? <h2>{t.company}</h2> : <h2>{t.company}</h2>}
           <p>{t.p1}</p>
           <p>{t.p2}</p>
         </div>

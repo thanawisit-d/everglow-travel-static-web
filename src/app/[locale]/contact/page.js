@@ -6,5 +6,5 @@ export function generateStaticParams() {
 
 export default async function ContactPage({ params }) {
   const { locale } = await params;
-  return <Contact locale={locale} />;
+  return <Contact locale={locale} standalone />;
 }

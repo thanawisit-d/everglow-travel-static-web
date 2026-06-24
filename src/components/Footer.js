@@ -5,6 +5,7 @@ import config from '@/data/site-config.json';
 export default function Footer({ locale }) {
   const t = config[locale];
   const s = config.social;
+  const isEn = locale === 'en';
 
   return (
     <footer className="site-footer">
@@ -23,11 +24,11 @@ export default function Footer({ locale }) {
         <div className="footer-col footer-contact">
           <h3>{t.contactTitle}</h3>
           <div className="contact-item">
-            <Image src={assetPath('icons/clock.png')} width={24} height={24} alt="เวลาทำการ" />
+            <Image src={assetPath('icons/clock.png')} width={24} height={24} alt={isEn ? 'Business hours' : 'เวลาทำการ'} />
             <span>{t.hours}</span>
           </div>
           <div className="contact-item">
-            <Image src={assetPath('assets/images/phone3.png')} width={24} height={24} alt="โทรศัพท์" />
+            <Image src={assetPath('assets/images/phone3.png')} width={24} height={24} alt={isEn ? 'Phone' : 'โทรศัพท์'} />
             <span>{t.phone}</span>
           </div>
           <div className="contact-item">

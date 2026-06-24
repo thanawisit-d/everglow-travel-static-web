@@ -7,7 +7,10 @@
       "duration": "3 วัน 2 คืน",
       "periodText": "เม.ย. - ต.ค. 2569",
       "airline": "Cathaylogo.jpg",
-      "price": "19,999"
+      "price": "19,999",
+      "desc_en": "Hong Kong and Zhuhai tour, travel to 2 cities, fly to Mu on Hong Kong Island, visit Zhuhai, the largest amusement park and aquarium in Asia.",
+      "duration_en": "3 days 2 night",
+      "periodText_en": "Apr. - Oct. 2026"
     },
     {
       "id": "BT-KIX-NRT_S02_XJ",
@@ -16,7 +19,10 @@
       "duration": "6 วัน 4 คืน",
       "periodText": "เม.ย. - พ.ค. 2569",
       "airline": "airasia.png",
-      "price": "36,999"
+      "price": "36,999",
+      "desc_en": "Amazing Japan tour, Osaka, Toyama, Kyoto, Matsumoto, Fuji, see the beautiful scenery at Hakuba, visit \"Kamikuchi\"",
+      "duration_en": "6 days 4 nights",
+      "periodText_en": "April - May 2026"
     },
     {
       "id": "ZGKIX-2619VZ",
@@ -25,7 +31,10 @@
       "duration": "5 วัน 3 คืน",
       "periodText": "เม.ย. - มิ.ย. 2569",
       "airline": "VietJet.png",
-      "price": "23,990"
+      "price": "23,990",
+      "desc_en": "Japan tour: visit the classic old city of Kyoto. ",
+      "duration_en": "5 days 3 nights",
+      "periodText_en": "April - June 2026"
     }
   ],
   "monthly": [
@@ -36,7 +45,10 @@
       "duration": "4 วัน 2 คืน",
       "periodText": "เม.ย. - มิ.ย. 2569",
       "airline": "spring.png",
-      "price": "10,999"
+      "price": "10,999",
+      "desc_en": "China Tour Xian \"A Thousand Years Old World Heritage Site\" ",
+      "duration_en": "4 days 2 nights",
+      "periodText_en": "April - June 2026"
     },
     {
       "id": "2UPQC-VZ106",
@@ -45,7 +57,10 @@
       "duration": "3 วัน 2 คืน",
       "periodText": "เม.ย. - ต.ค. 2569",
       "airline": "VietJet.png",
-      "price": "11,800"
+      "price": "11,800",
+      "desc_en": "South Vietnam Tour 2 Amusement Parks, Aquatopia Water Park & ​​VIN WONDER Amusement Park",
+      "duration_en": "3 days 2 night",
+      "periodText_en": "Apr. - Oct. 2026"
     },
     {
       "id": "VZ-BANA01",
@@ -54,7 +69,10 @@
       "duration": "3 วัน 2 คืน",
       "periodText": "เม.ย. - ต.ค. 2569",
       "airline": "VietJet.png",
-      "price": "11,999"
+      "price": "11,999",
+      "desc_en": "Vietnam tour, Danang, Hoi An, stay in Ba Na Hills for 1 night, visit all the highlights.",
+      "duration_en": "3 days 2 night",
+      "periodText_en": "Apr. - Oct. 2026"
     }
   ]
 }

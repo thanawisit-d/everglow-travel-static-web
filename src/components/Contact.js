@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
-export default function Contact({ locale }) {
+export default function Contact({ locale, standalone }) {
   const t = config[locale];
   const [sent, setSent] = useState(false);
   const isEn = locale === 'en';
@@ -34,10 +34,10 @@ export default function Contact({ locale }) {
         </form> */}
         <div className="contact-info">
           <div className="contact-card">
-            <h1>{t.contactTitle}</h1>
+            {standalone ? <h1>{t.contactTitle}</h1> : <h2>{t.contactTitle}</h2>}
             <div className="contact-row">
               <a href={`tel:${config.social.phone}`} className="item">
-                <Image src={assetPath('icons/phone-call.png')} width={48} height={48} alt="โทรศัพท์" />
+                <Image src={assetPath('icons/phone-call.png')} width={48} height={48} alt={isEn ? 'Phone' : 'โทรศัพท์'} />
                 <div>
                   <p className="title">{t.phoneLabel}</p>
                   <p className="text">{t.phone}</p>
@@ -67,7 +67,7 @@ export default function Contact({ locale }) {
             </div>
             <div className="contact-row">
               <a href={`mailto:${t.email}`} className="item">
-                <Image src={assetPath('icons/email.png')} width={48} height={48} alt="อีเมล" />
+                <Image src={assetPath('icons/email.png')} width={48} height={48} alt={isEn ? 'Email' : 'อีเมล'} />
                 <div>
                   <p className="title">{t.emailLabel}</p>
                   <p className="text">{t.email}</p>
@@ -90,7 +90,7 @@ export default function Contact({ locale }) {
             </div>
             <div className="contact-row">
               <div className="item">
-                <Image src={assetPath('icons/time.png')} width={48} height={48} alt="เวลาทำการ" />
+                <Image src={assetPath('icons/time.png')} width={48} height={48} alt={isEn ? 'Business hours' : 'เวลาทำการ'} />
                 <div>
                   <p className="title">{t.hoursLabel}</p>
                   <p className="text">{t.hours}</p>
