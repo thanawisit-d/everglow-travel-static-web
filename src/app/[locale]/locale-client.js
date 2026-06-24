@@ -15,6 +15,18 @@ import Contact from '@/components/Contact';
 import Reviews from '@/components/Reviews';
 import TourDetail from '@/components/TourDetail';
 import Footer from '@/components/Footer';
+import Pagination from '@/components/Pagination';
+
+const PER_PAGE = 12;
+
+function paginate(items, page) {
+  const totalPages = Math.ceil(items.length / PER_PAGE) || 1;
+  const start = (page - 1) * PER_PAGE;
+  return {
+    items: items.slice(start, start + PER_PAGE),
+    totalPages,
+  };
+}
 
 export default function LocaleClient({ locale }) {
   const isEn = locale === 'en';
@@ -25,6 +37,9 @@ export default function LocaleClient({ locale }) {
   const [filteredDomestic, setFilteredDomestic] = useState(null);
   const [filteredOutbound, setFilteredOutbound] = useState(null);
   const [cityFilter, setCityFilter] = useState('');
+  const [domesticPage, setDomesticPage] = useState(1);
+  const [outboundPage, setOutboundPage] = useState(1);
+  const [searchPage, setSearchPage] = useState(1);
 
   const domesticTours = toursData.filter((t) => t.type === 'domestic');
   const outboundTours = toursData.filter((t) => t.type === 'outbound');
@@ -38,6 +53,7 @@ export default function LocaleClient({ locale }) {
     setSearchResults(null);
     const filtered = domesticTours.filter((t) => t.duration === duration);
     setFilteredDomestic(filtered);
+    setDomesticPage(1);
     navigate('domestic');
   };
 
@@ -46,11 +62,13 @@ export default function LocaleClient({ locale }) {
     const match = isEn ? translateCountry(country) : country;
     const filtered = outboundTours.filter((t) => fieldEquals(t.country, match));
     setFilteredOutbound(filtered);
+    setOutboundPage(1);
     navigate('outbound');
   };
 
   const handleSearchResult = (results) => {
     setSearchResults(results);
+    setSearchPage(1);
     navigate('search');
   };
 
@@ -81,8 +99,8 @@ export default function LocaleClient({ locale }) {
         onNavigate={navigate}
         onShowDomestic={handleShowDomestic}
         onShowOutbound={handleShowOutbound}
-        onShowAllDomestic={() => { setFilteredDomestic(null); setSearchResults(null); navigate('domestic'); }}
-        onShowAllOutbound={() => { setFilteredOutbound(null); setSearchResults(null); navigate('outbound'); }}
+        onShowAllDomestic={() => { setFilteredDomestic(null); setSearchResults(null); setDomesticPage(1); navigate('domestic'); }}
+        onShowAllOutbound={() => { setFilteredOutbound(null); setSearchResults(null); setOutboundPage(1); navigate('outbound'); }}
       />
 
       {page === 'home' && (
@@ -175,8 +193,9 @@ export default function LocaleClient({ locale }) {
         <section className="page tour-list-page active">
           <h2>{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h2>
           <div className="tour-grid">
-            {renderCards(filteredDomestic || domesticTours, true)}
+            {renderCards(paginate(filteredDomestic || domesticTours, domesticPage).items, true)}
           </div>
+          <Pagination currentPage={domesticPage} totalPages={paginate(filteredDomestic || domesticTours, domesticPage).totalPages} onPageChange={(p) => { setDomesticPage(p); window.scrollTo(0, 0); }} />
         </section>
       )}
 
@@ -185,13 +204,16 @@ export default function LocaleClient({ locale }) {
           <h2>{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</h2>
           <div className="city-filter-wrap">
             <label htmlFor="city-filter" className="sr-only">{isEn ? 'Search city' : 'ค้นหาเมือง'}</label>
-            <input id="city-filter" type="text" placeholder={isEn ? 'Search city...' : 'ค้นหาเมือง...'} value={cityFilter} onChange={(e) => setCityFilter(e.target.value)} />
+            <input id="city-filter" type="text" placeholder={isEn ? 'Search city...' : 'ค้นหาเมือง...'} value={cityFilter} onChange={(e) => { setCityFilter(e.target.value); setOutboundPage(1); }} />
           </div>
           <div className="tour-grid">
-            {renderCards((filteredOutbound || outboundTours).filter((t) =>
+            {renderCards(paginate((filteredOutbound || outboundTours).filter((t) =>
               !cityFilter || (t.desc || '').includes(cityFilter) || fieldIncludes(t.country, cityFilter) || (t.id || '').toLowerCase().includes(cityFilter.toLowerCase())
-            ))}
+            ), outboundPage).items)}
           </div>
+          <Pagination currentPage={outboundPage} totalPages={paginate((filteredOutbound || outboundTours).filter((t) =>
+            !cityFilter || (t.desc || '').includes(cityFilter) || fieldIncludes(t.country, cityFilter) || (t.id || '').toLowerCase().includes(cityFilter.toLowerCase())
+          ), outboundPage).totalPages} onPageChange={(p) => { setOutboundPage(p); window.scrollTo(0, 0); }} />
         </section>
       )}
 
@@ -204,8 +226,9 @@ export default function LocaleClient({ locale }) {
             </div>
           )}
           <div className="tour-grid">
-            {renderCards(searchResults || [])}
+            {renderCards(paginate(searchResults || [], searchPage).items)}
           </div>
+          <Pagination currentPage={searchPage} totalPages={paginate(searchResults || [], searchPage).totalPages} onPageChange={(p) => { setSearchPage(p); window.scrollTo(0, 0); }} />
         </section>
       )}
 

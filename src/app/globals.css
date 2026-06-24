@@ -2203,3 +2203,70 @@ nav ul li button:hover::after {
   color: #cfe3ff;
   margin-top: 8px;
 }
+
+.pagination-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d1d5db;
+  background: var(--white);
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s;
+  outline: none;
+}
+
+.pagination-list li + li .pagination-btn {
+  margin-left: -1px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.pagination-btn.active {
+  background: #f3f4f6;
+  color: var(--navy);
+  font-weight: 600;
+  border-color: #d1d5db;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pagination-btn.prev {
+  border-radius: 8px 0 0 8px;
+}
+
+.pagination-btn.next {
+  border-radius: 0 8px 8px 0;
+}
+
+.pagination-btn:not(.prev):not(.next) {
+  border-radius: 0;
+}
+
+.pagination-arrow {
+  width: 16px;
+  height: 16px;
+}
