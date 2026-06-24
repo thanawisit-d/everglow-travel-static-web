@@ -41,9 +41,10 @@ html, body {
 body {
   background: transparent;
   color: var(--text-dark);
-  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   min-height: 100vh;
 }
+
 
 @font-face {
   font-family: 'AlexBrush';
@@ -535,9 +536,8 @@ nav ul li button:hover::after {
 .hero h1 {
   margin: 0;
   font-size: 56px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--white);
-  font-family: var(--font-playfair), 'Playfair Display', serif;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
   text-align: center;
@@ -555,7 +555,7 @@ nav ul li button:hover::after {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 6% 5px;
+  padding: 80px 6% 5px;
   position: relative;
   z-index: 2;
 }
@@ -589,6 +589,7 @@ nav ul li button:hover::after {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -644,8 +645,12 @@ nav ul li button:hover::after {
 }
 
 /* ========== TOUR SECTION ========== */
+.tour-grid-wrapper {
+  padding: 40px 6% 20px;
+}
+
 .tour-section {
-  padding: 10px 6% 60px;
+  padding: 0 0 40px;
 }
 
 .tour-section h2 {
@@ -812,7 +817,6 @@ nav ul li button:hover::after {
 .why-choose-us {
   padding: 80px 6%;
   text-align: center;
-  background: var(--bg-page);
 }
 
 .why-choose-us h2 {
@@ -967,7 +971,7 @@ nav ul li button:hover::after {
 }
 
 .about-page {
-  padding: 160px 6% 60px;
+  padding: 80px 6% 60px;
   color: var(--text-dark);
 }
 
@@ -1007,10 +1011,10 @@ nav ul li button:hover::after {
 }
 
 .about-text h2 {
-  font-size: 20px;
+  font-size: 28px;
   color: #003478;
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .about-text p {
@@ -1062,7 +1066,7 @@ nav ul li button:hover::after {
 
 /* ========== REVIEWS ========== */
 .reviews-section {
-  padding: 80px 8%;
+  padding: 80px 6%;
 }
 
 .reviews-page {
@@ -1140,12 +1144,13 @@ nav ul li button:hover::after {
 
 /* ========== CONTACT ========== */
 .contact-page {
-  padding: 160px 6% 60px;
+  padding: 80px 6% 60px;
   color: var(--text-dark);
 }
 
 .contact-content {
   display: flex;
+  justify-content: center;
   gap: 50px;
   max-width: 1100px;
   margin: 0 auto;
@@ -1257,9 +1262,10 @@ nav ul li button:hover::after {
 
 .contact-card {
   background: var(--white);
-  padding: 35px;
+  padding: 40px;
   border-radius: var(--radius-lg);
-  width: 360px;
+  width: 860px;
+  max-width: 100%;
   box-shadow: var(--shadow-lg);
   color: var(--text-dark);
 }
@@ -1289,21 +1295,37 @@ nav ul li button:hover::after {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
   padding: 10px;
   border-radius: var(--radius);
   transition: 0.3s;
 }
 
+.contact-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.contact-row:last-child {
+  margin-bottom: 0;
+}
+
+.contact-row .item {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
 .contact-card .item:hover {
-  background: var(--bg-page);
-  transform: translateX(5px);
+  background: #eef2f7;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .contact-card .item img {
   width: 48px;
   height: 48px;
-  background: var(--bg-page);
+  background: var(--white);
   padding: 10px;
   border-radius: 50%;
 }
@@ -1318,6 +1340,25 @@ nav ul li button:hover::after {
   color: var(--navy);
   font-size: 15px;
   font-weight: 500;
+}
+
+.contact-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.contact-items .item {
+  margin-bottom: 0;
+  flex: 0 1 200px;
+  min-width: 0;
+  background: var(--bg-page);
+  border: 1px solid #eef2f7;
+}
+
+.bg-alt {
+  background: var(--bg-page);
 }
 
 .slider-section {
@@ -1978,7 +2019,7 @@ nav ul li button:hover::after {
 }
 
 .about-text p {
-  color: var(--text-muted);
+  color: #1a1a2e;
   margin-bottom: 16px;
   line-height: 1.8;
 }
@@ -2081,9 +2122,7 @@ nav ul li button:hover::after {
 }
 
 .landing-page .title {
-  font-family: var(--font-playfair), 'Playfair Display', serif;
-  font-size: 48px;
-  font-weight: 700;
+  font-family: var(--font-cinzel), 'Cinzel', serif;
   letter-spacing: 8px;
   margin: 0;
   line-height: 1.3;

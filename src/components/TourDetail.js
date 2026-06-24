@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { formatPrice, assetPath } from '@/lib/utils';
+import { formatPrice, assetPath, displayField } from '@/lib/utils';
 
 export default function TourDetail({ tour, locale }) {
   if (!tour) return null;
@@ -53,7 +53,7 @@ export default function TourDetail({ tour, locale }) {
               <Image src={assetPath('icons/location.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{isOutbound ? t.country : t.province}</strong>
-                <span>{isOutbound ? tour.country : (tour.province || '-')}</span>
+                <span>{isOutbound ? displayField(tour.country) : (tour.province ? displayField(tour.province) : '-')}</span>
               </div>
             </div>
             <div className="detail-item">

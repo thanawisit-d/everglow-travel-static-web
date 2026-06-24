@@ -1,4 +1,4 @@
-import { Kanit, Inter, Playfair_Display } from 'next/font/google';
+import { Kanit, Poppins, Cinzel } from 'next/font/google';
 import "./globals.css";
 
 const kanit = Kanit({
@@ -7,16 +7,16 @@ const kanit = Kanit({
   variable: '--font-kanit',
 });
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
-  variable: '--font-inter',
+  weight: ['300', '500', '700'],
+  variable: '--font-poppins',
 });
 
-const playfair = Playfair_Display({
+const cinzel = Cinzel({
   subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-playfair',
+  weight: ['500', '700'],
+  variable: '--font-cinzel',
 });
 
 export const metadata = {
@@ -28,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="th">
-      <body className={`${kanit.variable} ${inter.variable} ${playfair.variable}`}>
+      <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
         <div className="min-h-screen w-full relative">
           <div
             className="absolute inset-0 z-0"

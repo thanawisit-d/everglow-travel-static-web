@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { assetPath } from '@/lib/utils';
+import { assetPath, fieldIncludes } from '@/lib/utils';
 
 export default function SearchBox({ locale, tours, onResult }) {
   const [keyword, setKeyword] = useState('');
@@ -12,8 +12,10 @@ export default function SearchBox({ locale, tours, onResult }) {
   const locations = useMemo(() => {
     const set = new Set();
     tours.forEach((t) => {
-      if (t.country) set.add(t.country);
-      if (t.province) set.add(t.province);
+      [t.country, t.province].forEach(f => {
+        if (Array.isArray(f)) f.forEach(v => set.add(v));
+        else if (f) set.add(f);
+      });
     });
     return [...set].sort();
   }, [tours]);
@@ -23,8 +25,8 @@ export default function SearchBox({ locale, tours, onResult }) {
     const selectedMonth = date ? date.substring(0, 7) : '';
     const filtered = tours.filter((tour) => {
       const matchLocation = !location ||
-        (tour.country || '').includes(location) ||
-        (tour.province || '').includes(location);
+        fieldIncludes(tour.country, location) ||
+        fieldIncludes(tour.province, location);
       const matchKeyword = !keyword ||
         (tour.id || '').toLowerCase().includes(keyword.toLowerCase()) ||
         (tour.desc || '').toLowerCase().includes(keyword.toLowerCase());

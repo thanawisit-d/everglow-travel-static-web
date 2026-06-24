@@ -120,3 +120,20 @@ export const countryNameMap = {
 export function translateCountry(name) {
   return countryNameMap[name] || name;
 }
+
+export function fieldIncludes(val, search) {
+  if (!val) return false;
+  if (Array.isArray(val)) return val.some(v => v.includes(search));
+  return val.includes(search);
+}
+
+export function fieldEquals(val, search) {
+  if (!val) return false;
+  if (Array.isArray(val)) return val.includes(search);
+  return val === search;
+}
+
+export function displayField(val, join = ', ') {
+  if (!val) return '-';
+  return Array.isArray(val) ? val.join(join) : val;
+}

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
-import { translateCountry, assetPath } from '@/lib/utils';
+import { translateCountry, assetPath, fieldEquals, fieldIncludes } from '@/lib/utils';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -44,7 +44,7 @@ export default function LocaleClient({ locale }) {
   const handleShowOutbound = (country) => {
     setSearchResults(null);
     const match = isEn ? translateCountry(country) : country;
-    const filtered = outboundTours.filter((t) => t.country === match);
+    const filtered = outboundTours.filter((t) => fieldEquals(t.country, match));
     setFilteredOutbound(filtered);
     navigate('outbound');
   };
@@ -88,30 +88,30 @@ export default function LocaleClient({ locale }) {
       {page === 'home' && (
         <>
           <Hero locale={locale} />
-          <section className="slider-section">
+          <section className="slider-section bg-alt">
             <Slider />
           </section>
           <section className="search-box">
             <SearchBox locale={locale} tours={toursData} onResult={handleSearchResult} />
           </section>
-          <section className="tour-section">
+          <div className="tour-grid-wrapper bg-alt">
             <TourGrid locale={locale} showBadge="popular" onTourClick={handlePromoClick} />
             <TourGrid locale={locale} showBadge="monthly" onTourClick={handlePromoClick} />
-          </section>
+          </div>
           <section className="why-choose-us">
             <h2>{isEn ? 'Why Choose Everglow Travel' : 'ทำไมต้องเลือก Everglow Travel'}</h2>
-            <p className="subtitle">{isEn ? 'We deliver premium travel experiences with professional service' : 'เรามอบประสบการณ์การเดินทางระดับพรีเมียมด้วยบริการมืออาชีพ'}</p>
+            <p className="subtitle">{isEn ? '-----' : '--------'}</p>
             <div className="why-grid">
               {(isEn ? [
-                { icon: 'guide', title: 'Expert Guides', desc: 'Professional multilingual guides with deep local knowledge' },
-                { icon: 'price', title: 'Best Price Guarantee', desc: 'Competitive pricing with no hidden fees' },
-                { icon: 'support', title: '24/7 Support', desc: 'Round-the-clock customer service during your trip' },
-                { icon: 'package', title: 'Tailored Packages', desc: 'Customizable itineraries to match your needs' },
+                { icon: 'guide', title: '-', desc: '-' },
+                { icon: 'price', title: '-', desc: '- p-' },
+                { icon: 'support', title: '-', desc: '-' },
+                { icon: 'package', title: '-', desc: '- - - - - -' },
               ] : [
-                { icon: 'guide', title: 'ไกด์มืออาชีพ', desc: 'ไกด์มากประสบการณ์พร้อมบริการหลายภาษา' },
-                { icon: 'price', title: 'ราคาดีที่สุด', desc: 'ราคาคุ้มค่า ไม่มีค่าใช้จ่ายแอบแฝง' },
-                { icon: 'support', title: 'ดูแล 24/7', desc: 'บริการลูกค้าตลอด 24 ชั่วโมงระหว่างเดินทาง' },
-                { icon: 'package', title: 'แพ็กเกจปรับแต่งได้', desc: 'โปรแกรมทัวร์ปรับตามความต้องการของคุณ' },
+                { icon: 'guide', title: '-', desc: '-' },
+                { icon: 'price', title: '-', desc: '- -' },
+                { icon: 'support', title: '- ---', desc: '- 24 -' },
+                { icon: 'package', title: '-', desc: '-' },
               ]).map((item, i) => (
                 <div className="why-card" key={i}>
                   <div className="why-icon">
@@ -152,7 +152,7 @@ export default function LocaleClient({ locale }) {
             </div>
           </section>
 
-          <section className="gallery-section">
+          <section className="gallery-section bg-alt">
             <h2>{isEn ? 'Travel Gallery' : 'แกลเลอรีการเดินทาง'}</h2>
             <p className="subtitle">{isEn ? 'Moments captured from our journeys' : 'ภาพความประทับใจจากการเดินทางของเรา'}</p>
             <div className="gallery-grid">
@@ -189,7 +189,7 @@ export default function LocaleClient({ locale }) {
           </div>
           <div className="tour-grid">
             {renderCards((filteredOutbound || outboundTours).filter((t) =>
-              !cityFilter || (t.desc || '').includes(cityFilter) || (t.country || '').includes(cityFilter) || (t.id || '').toLowerCase().includes(cityFilter.toLowerCase())
+              !cityFilter || (t.desc || '').includes(cityFilter) || fieldIncludes(t.country, cityFilter) || (t.id || '').toLowerCase().includes(cityFilter.toLowerCase())
             ))}
           </div>
         </section>
