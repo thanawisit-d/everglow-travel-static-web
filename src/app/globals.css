@@ -279,12 +279,14 @@ nav ul li button:hover::after {
 .country-menu {
   position: absolute;
   top: 100%;
-  left: -200px;
+  right: 0;
+  left: auto;
   width: 500px;
   background: var(--white);
   border-radius: var(--radius);
   padding: 12px;
   display: flex !important;
+  flex-wrap: wrap;
   gap: 10px;
   box-shadow: var(--shadow-lg);
   opacity: 0;
@@ -341,7 +343,7 @@ nav ul li button:hover::after {
 
 .country-menu .col-all {
   list-style: none;
-  width: 100%;
+  flex: 0 0 100%;
 }
 
 .dropdown:hover .country-menu {
@@ -388,6 +390,15 @@ nav ul li button:hover::after {
   object-fit: cover;
   border-radius: 50%;
   display: block;
+}
+
+.lang-item .lang-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .dropdown.open .dropdown-menu {
@@ -1200,6 +1211,10 @@ nav ul li button:hover::after {
 .contact-page {
   padding: 200px 6% 60px;
   color: var(--text-dark);
+}
+
+.about-page + .contact-page {
+  padding-top: 60px;
 }
 
 .contact-content {
