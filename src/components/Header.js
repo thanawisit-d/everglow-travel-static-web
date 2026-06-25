@@ -31,8 +31,6 @@ export default function Header({ locale }) {
 
   const allCountries = [];
   config.countryGroups.forEach(g => g.items.forEach(i => allCountries.push(i)));
-  const cols = [[], [], []];
-  allCountries.forEach((c, i) => cols[i % 3].push(c));
 
   return (
     <div className="header-sticky">
@@ -95,25 +93,17 @@ export default function Header({ locale }) {
             }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.outbound}</button>
             <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
             <ul className="country-menu" role="menu">
-              {cols.map((colItems, ci) => (
-                <li key={ci} role="none" className="col">
-                  <ul className="col-list">
-                    {ci === 0 && (
-                      <li role="none" className="col-all-mobile">
-                        <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
-                          {config[locale].allOutbound}
-                        </button>
-                      </li>
-                    )}
-                    {colItems.map((c, i) => (
-                      <li key={i} role="none">
-                        <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
-                          <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
-                          {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
+              <li role="none" className="col-all-mobile">
+                <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
+                  {config[locale].allOutbound}
+                </button>
+              </li>
+              {allCountries.map((c, i) => (
+                <li key={i} role="none">
+                  <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
+                    <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
+                    {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
+                  </button>
                 </li>
               ))}
             </ul>

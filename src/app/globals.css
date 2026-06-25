@@ -221,10 +221,11 @@ nav ul li button:hover::after {
   display: none;
 }
 
-.dropdown-menu {
+ul.dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
+  display: block;
   width: 280px;
   background: var(--white);
   border-radius: var(--radius);
@@ -277,16 +278,17 @@ nav ul li button:hover::after {
   border-bottom: none;
 }
 
-.country-menu {
+ul.country-menu {
   position: absolute;
   top: 100%;
   left: 50%;
+  display: block;
   width: 780px;
   background: var(--white);
   border-radius: var(--radius);
   padding: 12px;
-  display: flex !important;
-  gap: 10px;
+  column-count: 3;
+  column-gap: 10px;
   box-shadow: var(--shadow-lg);
   opacity: 0;
   visibility: hidden;
