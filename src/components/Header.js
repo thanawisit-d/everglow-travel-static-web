@@ -52,7 +52,7 @@ export default function Header({ locale }) {
             <Image src={assetPath('assets/images/whatsapp.webp')} width={36} height={36} alt="" />
           </a>
           <a href={s.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <Image src={assetPath('assets/images/tiktok.png')} width={36} height={36} alt="" />
+            <Image src={assetPath('assets/images/tiktok.webp')} width={36} height={36} alt="" />
           </a>
         </div>
       </div>
@@ -78,7 +78,7 @@ export default function Header({ locale }) {
             }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.domestic}</button>
             <button className="dropdown-arrow" onClick={() => toggleDropdown('domestic')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
             <ul className="dropdown-menu" role="menu">
-              <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic`)}>{isEn ? 'All Domestic Tours' : 'ทัวร์ในประเทศทั้งหมด'}</button></li>
+              <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic`)}>{config[locale].allDomestic}</button></li>
               {text.durations.map((d, i) => (
                 <li key={i} role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button></li>
               ))}
@@ -93,7 +93,7 @@ export default function Header({ locale }) {
             <ul className="country-menu" role="menu">
               <li role="none" className="col-all">
                 <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
-                  {isEn ? 'All Outbound Tours' : 'ทัวร์ต่างประเทศทั้งหมด'}
+                  {config[locale].allOutbound}
                 </button>
               </li>
               {config.countryGroups.map((group, gi) => (

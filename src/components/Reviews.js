@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import { assetPath } from '@/lib/utils';
 import reviews from '@/data/reviews.json';
+import config from '@/data/site-config.json';
 
 export default function Reviews({ locale, standalone }) {
-  const title = locale === 'en' ? 'Reviews' : 'รีวิว';
+  const t = config[locale];
   const isEn = locale === 'en';
   return (
     <section className="reviews-section page">
-      {standalone ? <h1>{title}</h1> : <h2>{title}</h2>}
+      {standalone ? <h1>{t.reviewTitle}</h1> : <h2>{t.reviewTitle}</h2>}
       {reviews.map((r) => (
         <div className="review-card" key={r.image}>
           <div className="review-img">

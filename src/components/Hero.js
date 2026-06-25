@@ -1,22 +1,15 @@
 import Image from 'next/image';
+import config from '@/data/site-config.json';
 
 export default function Hero({ locale }) {
+  const t = config[locale];
   return (
     <section className="hero">
       <Image src="/assets/images/Home3.jpg" fill className="hero-bg" alt="" priority sizes="100vw" />
       <div className="hero-overlay" />
       <div className="hero-content">
-        {locale === 'th' ? (
-          <>
-            <h1>ยินดีต้อนรับสู่ Everglow Travel</h1>
-            <p>ค้นหาทัวร์ที่ใช่สำหรับคุณ พร้อมประสบการณ์การเดินทางที่น่าประทับใจ</p>
-          </>
-        ) : (
-          <>
-            <h1>Welcome to Everglow Travel</h1>
-            <p>Discover Thailand with us — unforgettable travel experiences await</p>
-          </>
-        )}
+        <h1>{t.heroTitle}</h1>
+        <p>{t.heroSubtitle}</p>
       </div>
     </section>
   );

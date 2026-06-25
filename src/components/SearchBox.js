@@ -4,8 +4,10 @@ import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath, fieldIncludes } from '@/lib/utils';
+import config from '@/data/site-config.json';
 
 export default function SearchBox({ locale, tours }) {
+  const t = config[locale];
   const router = useRouter();
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
@@ -35,33 +37,32 @@ export default function SearchBox({ locale, tours }) {
     <div className="search-panel">
       <h2>
         <Image src={assetPath('assets/images/search.png')} width={22} height={22} className="search-icon" alt="" />
-        {locale === 'th' ? 'ค้นหาโปรแกรมทัวร์' : 'Search Tour Programs'}
+        {t.searchTitle}
       </h2>
       <form onSubmit={handleSearch}>
-        <label htmlFor="search-destination" className="sr-only">{locale === 'th' ? 'เลือกประเทศ/จังหวัด' : 'Destination'}</label>
+        <label htmlFor="search-destination" className="sr-only">{t.destination}</label>
         <select id="search-destination" value={location} onChange={(e) => setLocation(e.target.value)}>
-          <option value="">{locale === 'th' ? 'เลือกประเทศ/จังหวัด' : 'Destination'}</option>
+          <option value="">{t.destination}</option>
           {locations.map((loc) => (
             <option key={loc} value={loc}>{loc}</option>
           ))}
         </select>
-        <label htmlFor="search-keyword" className="sr-only">{locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}</label>
+        <label htmlFor="search-keyword" className="sr-only">{t.tourKeyword}</label>
         <input
-        
           id="search-keyword"
           type="text"
-          placeholder={locale === 'th' ? 'รหัสทัวร์ / คำค้น' : 'Tour ID / Keyword'}
+          placeholder={t.tourKeyword}
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <label htmlFor="search-date" className="sr-only">{locale === 'th' ? 'เลือกวันที่' : 'Select date'}</label>
+        <label htmlFor="search-date" className="sr-only">{t.selectDate}</label>
         <input
           id="search-date"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-        <button type="submit">{locale === 'th' ? 'ค้นหา' : 'Search'}</button>
+        <button type="submit">{t.searchBtn}</button>
       </form>
     </div>
   );

@@ -1,12 +1,11 @@
 import promotions from '@/data/promotions.json';
 import TourCard from './TourCard';
+import config from '@/data/site-config.json';
 
 export default function TourGrid({ showBadge, onTourClick, locale }) {
-  const isEn = locale === 'en';
+  const t = config[locale];
   const data = promotions[showBadge] || [];
-  const title = showBadge === 'monthly'
-    ? (isEn ? 'Monthly Recommended Tours' : 'โปรแกรมทัวร์แนะนำประจำเดือน')
-    : (isEn ? 'Popular Tours' : 'โปรแกรมทัวร์ยอดนิยม');
+  const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
 
   return (
     <section className="tour-section">

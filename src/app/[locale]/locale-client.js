@@ -38,19 +38,14 @@ export default function LocaleClient({ locale }) {
       </div>
       <section className="why-choose-us">
         <h2>{isEn ? 'Why Choose Everglow Travel' : 'ทำไมต้องเลือก Everglow Travel'}</h2>
-        <p className="subtitle">{isEn ? '-----' : '--------'}</p>
+        <p className="subtitle">--------</p>
         <div className="why-grid">
-          {(isEn ? [
-            { icon: 'guide', title: '-', desc: '-' },
-            { icon: 'price', title: '-', desc: '- p-' },
-            { icon: 'support', title: '-', desc: '-' },
-            { icon: 'package', title: '-', desc: '- - - - - -' },
-          ] : [
-            { icon: 'guide', title: '-', desc: '-' },
-            { icon: 'price', title: '-', desc: '- -' },
-            { icon: 'support', title: '- ---', desc: '- 24 -' },
-            { icon: 'package', title: '-', desc: '-' },
-          ]).map((item, i) => (
+          {[
+            { icon: 'guide', title: '--------', desc: '--------' },
+            { icon: 'price', title: '--------', desc: '--------' },
+            { icon: 'support', title: '--------', desc: '--------' },
+            { icon: 'package', title: '--------', desc: '--------' },
+          ].map((item, i) => (
             <div className="why-card" key={i}>
               <div className="why-icon">
                 {item.icon === 'guide' && (

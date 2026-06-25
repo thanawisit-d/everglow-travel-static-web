@@ -25,6 +25,7 @@ export default function TourDetail({ tour, locale }) {
     call: 'Call to Book',
     line: 'Book via LINE',
     pdf: 'View Tour Program',
+    baht: 'Baht',
   } : {
     tourId: 'รหัสทัวร์',
     country: 'ประเทศ',
@@ -37,6 +38,7 @@ export default function TourDetail({ tour, locale }) {
     call: 'โทรจอง',
     line: 'จองไลน์',
     pdf: 'ดูโปรแกรมทัวร์',
+    baht: 'บาท',
   };
 
   return (
@@ -81,7 +83,7 @@ export default function TourDetail({ tour, locale }) {
               <Image src={assetPath('icons/price.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{t.priceStart}</strong>
-                <span id="detailPrice">{formatPrice(tour.price)} {isEn ? 'Baht' : 'บาท'}</span>
+                <span id="detailPrice">{formatPrice(tour.price)} {t.baht}</span>
               </div>
             </div>
             <div className="detail-item">

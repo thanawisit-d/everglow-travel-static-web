@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import { formatPrice, assetPath } from '@/lib/utils';
+import config from '@/data/site-config.json';
 
 export default function TourCard({ tour, onClick, showBadge, isDomestic, locale }) {
   const isEn = locale === 'en';
+  const t = config[locale];
   const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
   const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
   const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;
@@ -15,25 +17,25 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
     <div className={isDomestic ? 'tour-card domestic-tour-card' : 'tour-card'} onClick={onClick}>
       <div className="tour-img-wrapper">
         {showBadge === 'popular' && (
-          <span className="badge hot">{isEn ? 'HOT DEAL' : 'โปรแกรมยอดนิยม'}</span>
+          <span className="badge hot">{t.badgePopular}</span>
         )}
         {showBadge === 'monthly' && (
-          <span className="badge monthly">{isEn ? 'HOT MONTHLY' : 'โปรแกรมแนะนำ'}</span>
+          <span className="badge monthly">{t.badgeMonthly}</span>
         )}
         <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 33vw" alt={displayDesc || tour.id} className="tour-img" />
       </div>
       <p className="tour-desc">{displayDesc}</p>
       <div className="tour-info">
-        <p><Image src={assetPath('assets/images/pin.png')} width={16} height={16} alt="" /> {isEn ? 'Tour ID:' : 'รหัสทัวร์:'} {tour.id}</p>
+        <p><Image src={assetPath('assets/images/pin.png')} width={16} height={16} alt="" /> {t.tourId} {tour.id}</p>
         <p><Image src={assetPath('assets/images/stopwatch.png')} width={16} height={16} alt="" /> {displayDuration}</p>
-        <p><Image src={assetPath('assets/images/clock_13819249.png')} width={16} height={16} alt="" /> {isEn ? 'Travel:' : 'เดินทาง:'} {displayPeriod}</p>
+        <p><Image src={assetPath('assets/images/clock_13819249.png')} width={16} height={16} alt="" /> {t.travel} {displayPeriod}</p>
       </div>
       <div className="tour-bottom">
-        <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || (isEn ? 'Transport' : 'ขนส่ง')} />
+        <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || t.transportAlt} />
         <div className="price">
-          <span className="price-start">{isMultiNight ? (isEn ? 'Starting at' : 'เริ่มต้นเพียง') : (isEn ? 'Price' : 'ราคาเพียง')}</span>
+          <span className="price-start">{isMultiNight ? t.priceStartMulti : t.priceStartSingle}</span>
           <span className="price-main">{formatPrice(tour.price)}.-</span>
-          <span className="price-sub">{isEn ? 'Baht/person' : 'บาท/ท่าน'}</span>
+          <span className="price-sub">{t.priceBaht}</span>
         </div>
       </div>
     </div>
