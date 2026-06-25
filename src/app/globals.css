@@ -225,7 +225,7 @@ nav ul li button:hover::after {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 240px;
+  width: 280px;
   background: var(--white);
   border-radius: var(--radius);
   overflow: hidden;
@@ -262,6 +262,7 @@ nav ul li button:hover::after {
   font-family: inherit;
   border-bottom: 1px solid #f0f0f0;
   transition: 0.2s;
+  white-space: nowrap;
 }
 
 .dropdown-menu li a:hover,
@@ -279,19 +280,17 @@ nav ul li button:hover::after {
 .country-menu {
   position: absolute;
   top: 100%;
-  right: 0;
-  left: auto;
-  width: 500px;
+  left: 50%;
+  width: 780px;
   background: var(--white);
   border-radius: var(--radius);
   padding: 12px;
   display: flex !important;
-  flex-wrap: wrap;
   gap: 10px;
   box-shadow: var(--shadow-lg);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
+  transform: translateX(-50%) translateY(10px);
   transition: 0.25s ease;
   z-index: 999;
   max-height: 65vh;
@@ -343,13 +342,18 @@ nav ul li button:hover::after {
 
 .country-menu .col-all {
   list-style: none;
-  flex: 0 0 100%;
+  width: 100%;
+  display: none;
+}
+
+.col-all-mobile {
+  display: none;
 }
 
 .dropdown:hover .country-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 .country-menu li {
@@ -392,15 +396,6 @@ nav ul li button:hover::after {
   display: block;
 }
 
-.lang-item .lang-btn {
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 13px;
-  font-weight: 600;
-}
-
 .dropdown.open .dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -410,7 +405,7 @@ nav ul li button:hover::after {
 .dropdown.open .country-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 .menu-toggle {
@@ -527,6 +522,7 @@ nav ul li button:hover::after {
   .dropdown.open .country-menu {
     max-height: 2000px;
     padding: 12px;
+    transform: none;
   }
 
   .country-menu {
@@ -535,6 +531,10 @@ nav ul li button:hover::after {
 
   .country-menu .col {
     flex: none;
+  }
+
+  .col-all-mobile {
+    display: block;
   }
 
   .dropdown:hover .dropdown-menu,
@@ -1209,7 +1209,7 @@ nav ul li button:hover::after {
 
 /* ========== CONTACT ========== */
 .contact-page {
-  padding: 200px 6% 60px;
+  padding: 140px 6% 60px;
   color: var(--text-dark);
 }
 
