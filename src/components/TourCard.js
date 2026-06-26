@@ -3,8 +3,9 @@ import { formatPrice, assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
 export default function TourCard({ tour, onClick, showBadge, isDomestic, locale }) {
+  if (!tour) return null;
   const isEn = locale === 'en';
-  const t = config[locale];
+  const t = config[locale] || config.th;
   const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
   const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
   const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;

@@ -3,20 +3,21 @@
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { assetPath, fieldIncludes } from '@/lib/utils';
+import { assetPath } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
 export default function SearchBox({ locale, tours }) {
-  const t = config[locale];
+  const t = config[locale] || config.th;
   const router = useRouter();
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
 
   const locations = useMemo(() => {
+    if (!tours) return [];
     const set = new Set();
-    tours.forEach((t) => {
-      [t.country, t.province].forEach(f => {
+    tours.forEach((tour) => {
+      [tour.country, tour.province].forEach(f => {
         if (Array.isArray(f)) f.forEach(v => set.add(v));
         else if (f) set.add(f);
       });

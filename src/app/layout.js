@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html lang="th">
       <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
         <div className="min-h-screen w-full relative">
           <div

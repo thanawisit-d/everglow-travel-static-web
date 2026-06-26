@@ -3,7 +3,7 @@ import TourCard from './TourCard';
 import config from '@/data/site-config.json';
 
 export default function TourGrid({ showBadge, onTourClick, locale }) {
-  const t = config[locale];
+  const t = config[locale] || config.th;
   const data = promotions[showBadge] || [];
   const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
 
@@ -13,12 +13,12 @@ export default function TourGrid({ showBadge, onTourClick, locale }) {
         {title}
       </h2>
       <div className="tour-grid">
-        {data.map((t, i) => (
+        {data.map((tourItem, i) => (
           <TourCard
-            key={t.id || i}
+            key={tourItem.id || i}
             locale={locale}
-            tour={t}
-            onClick={onTourClick ? () => onTourClick(t) : undefined}
+            tour={tourItem}
+            onClick={onTourClick ? () => onTourClick(tourItem) : undefined}
             showBadge={showBadge}
           />
         ))}

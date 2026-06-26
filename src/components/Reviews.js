@@ -4,7 +4,7 @@ import reviews from '@/data/reviews.json';
 import config from '@/data/site-config.json';
 
 export default function Reviews({ locale, standalone }) {
-  const t = config[locale];
+  const t = config[locale] || config.th;
   const isEn = locale === 'en';
   return (
     <section className="reviews-section page">

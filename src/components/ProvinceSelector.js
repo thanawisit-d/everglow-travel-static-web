@@ -5,7 +5,7 @@ import { thaiProvinces } from '@/lib/utils';
 import config from '@/data/site-config.json';
 
 export default function ProvinceSelector({ tours, onSelect, locale }) {
-  const t = config[locale];
+  const t = config[locale] || config.th;
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef(null);

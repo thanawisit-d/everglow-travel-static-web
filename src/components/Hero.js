@@ -2,7 +2,7 @@ import Image from 'next/image';
 import config from '@/data/site-config.json';
 
 export default function Hero({ locale }) {
-  const t = config[locale];
+  const t = config[locale] || config.th;
   return (
     <section className="hero">
       <Image src="/assets/images/Home3.jpg" fill className="hero-bg" alt="" priority sizes="100vw" />

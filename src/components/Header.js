@@ -26,7 +26,7 @@ export default function Header({ locale }) {
     closeMenu();
   }, [router]);
 
-  const text = config[locale];
+  const text = config[locale] || config.th;
   const s = config.social;
 
   const allCountries = [];
@@ -86,7 +86,7 @@ export default function Header({ locale }) {
               ))}
             </ul>
           </li>
-          <li className={`dropdown ${openDropdown === 'outbound' ? 'open' : ''}`} role="none">
+          <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none">
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
               if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
               else { e.stopPropagation(); toggleDropdown('outbound'); }
@@ -106,6 +106,11 @@ export default function Header({ locale }) {
                   </button>
                 </li>
               ))}
+              <li role="none" className="country-menu-cta">
+                <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
+                  {isEn ? 'View All Outbound Tours' : 'ดูทัวร์ต่างประเทศทั้งหมด'} →
+                </button>
+              </li>
             </ul>
           </li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
