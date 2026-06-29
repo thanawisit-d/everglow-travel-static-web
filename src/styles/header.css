@@ -336,38 +336,6 @@ ul.country-menu {
   transform: translateY(0);
 }
 
-.country-menu-cta {
-  column-span: all;
-  padding: 10px 8px 4px;
-  margin-top: 8px;
-  border-top: 1px solid #eef4ff;
-  display: flex;
-  justify-content: center;
-}
-
-.country-menu-cta button {
-  background: var(--navy);
-  color: #fff;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.2s;
-  width: auto;
-  text-align: center;
-}
-
-.country-menu-cta button:hover {
-  background: var(--navy-secondary);
-  transform: none !important;
-}
-
 .menu-toggle {
   display: none;
   flex-direction: column;

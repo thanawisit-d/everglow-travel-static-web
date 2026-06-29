@@ -9,7 +9,6 @@ import Slider from '@/components/Slider';
 import SearchBox from '@/components/SearchBox';
 import TourGrid from '@/components/TourGrid';
 import About from '@/components/About';
-import Contact from '@/components/Contact';
 import Reviews from '@/components/Reviews';
 
 export default function LocaleClient({ locale }) {
@@ -91,7 +90,7 @@ export default function LocaleClient({ locale }) {
         <div className="gallery-grid">
           {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
             <div className="gallery-item" key={i}>
-              <Image src={assetPath(`assets/images/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" />
+              <Image src={assetPath(`assets/images/backgrounds/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" />
               <div className="overlay"><span>{isEn ? 'View Photo' : 'ดูรูป'}</span></div>
             </div>
           ))}
@@ -99,7 +98,6 @@ export default function LocaleClient({ locale }) {
       </section>
 
       <About locale={locale} />
-      <Contact locale={locale} />
       <Reviews locale={locale} />
     </div>
   );

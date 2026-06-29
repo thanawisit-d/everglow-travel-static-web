@@ -77,3 +77,73 @@ h1, h2 {
   text-align: center;
 }
 
+@keyframes skeleton-pulse {
+  0% { background: #e2e8f0; }
+  50% { background: #cbd5e1; }
+  100% { background: #e2e8f0; }
+}
+
+.skeleton {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.skeleton-card {
+  height: 320px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.skeleton-card .skeleton-img {
+  width: 100%;
+  height: 180px;
+}
+
+.skeleton-card .skeleton-line {
+  height: 14px;
+  margin: 10px 16px;
+  width: 70%;
+}
+
+.skeleton-card .skeleton-line-short {
+  height: 14px;
+  margin: 10px 16px;
+  width: 45%;
+}
+
+.skeleton-detail {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.skeleton-detail-left {
+  flex: 1;
+  height: 360px;
+}
+
+.skeleton-detail-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-detail-right .skeleton-line {
+  height: 20px;
+  width: 60%;
+}
+
+.skeleton-detail-right .skeleton-line-long {
+  height: 20px;
+  width: 90%;
+}
+
+.skeleton-page {
+  padding: 200px 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+

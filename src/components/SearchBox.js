@@ -25,12 +25,24 @@ export default function SearchBox({ locale, tours }) {
     return [...set].sort();
   }, [tours]);
 
+  const isEn = locale === 'en';
+  const datePlaceholder = isEn ? 'DD-MM-YYYY' : 'วว-ดด-ปปปป';
+
+  const parseDate = (d) => {
+    const iso = d.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (iso) return d;
+    const m = d.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+    if (m) return `${m[3]}-${m[2]}-${m[1]}`;
+    return '';
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     const params = new URLSearchParams();
     if (location) params.set('location', location);
     if (keyword) params.set('q', keyword);
-    if (date) params.set('date', date);
+    const parsed = date ? parseDate(date) : '';
+    if (parsed) params.set('date', parsed);
     router.push(`/${locale}/search?${params.toString()}`);
   };
 
@@ -59,7 +71,8 @@ export default function SearchBox({ locale, tours }) {
         <label htmlFor="search-date" className="sr-only">{t.selectDate}</label>
         <input
           id="search-date"
-          type="date"
+          type="text"
+          placeholder={datePlaceholder}
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />

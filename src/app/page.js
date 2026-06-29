@@ -6,7 +6,7 @@ export default function LandingPage() {
     <div className="landing-page">
       <div className="overlay"></div>
       <div className="box">
-        <Image src="/assets/images/White_Logo.png" width={180} height={180} className="logo" alt="Everglow Travel" />
+        <Image src="/assets/images/logos/White_Logo.png" width={180} height={180} className="logo" alt="Everglow Travel" />
         <h1 className="title">
           <span className="white">WELCOME</span>
           <span className="blue">TO</span>

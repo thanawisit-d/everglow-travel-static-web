@@ -107,11 +107,6 @@ export default function Header({ locale }) {
                   </button>
                 </li>
               ))}
-              <li role="none" className="country-menu-cta">
-                <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
-                  {isEn ? 'View All Outbound Tours' : 'ดูทัวร์ต่างประเทศทั้งหมด'} →
-                </button>
-              </li>
             </ul>
           </li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
