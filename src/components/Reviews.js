@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { assetPath } from '@/lib/utils';
+import { assetPath } from '@/lib/assets';
 import reviews from '@/data/reviews.json';
 import config from '@/data/site-config.json';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { thaiProvinces } from '@/lib/utils';
+import { thaiProvinces } from '@/lib/provinces';
 import config from '@/data/site-config.json';
 
 export default function ProvinceSelector({ tours, onSelect, locale }) {

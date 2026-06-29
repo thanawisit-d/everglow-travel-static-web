@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { fieldIncludes } from '@/lib/utils';
+import { fieldIncludes } from '@/lib/i18n';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 

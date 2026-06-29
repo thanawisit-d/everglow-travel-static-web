@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { formatPrice, assetPath } from '@/lib/utils';
+import { formatPrice } from '@/lib/pricing';
+import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
 export default function TourCard({ tour, onClick, showBadge, isDomestic, locale }) {
@@ -27,12 +28,12 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
       </div>
       <p className="tour-desc">{displayDesc}</p>
       <div className="tour-info">
-        <p><Image src={assetPath('assets/images/pin.png')} width={16} height={16} alt="" /> {t.tourId} {tour.id}</p>
-        <p><Image src={assetPath('assets/images/stopwatch.png')} width={16} height={16} alt="" /> {displayDuration}</p>
-        <p><Image src={assetPath('assets/images/clock_13819249.png')} width={16} height={16} alt="" /> {t.travel} {displayPeriod}</p>
+        <p><Image src={assetPath('assets/images/icons/pin.png')} width={16} height={16} alt="" /> {t.tourId} {tour.id}</p>
+        <p><Image src={assetPath('assets/images/icons/stopwatch.png')} width={16} height={16} alt="" /> {displayDuration}</p>
+        <p><Image src={assetPath('assets/images/icons/clock_13819249.png')} width={16} height={16} alt="" /> {t.travel} {displayPeriod}</p>
       </div>
       <div className="tour-bottom">
-        <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || t.transportAlt} />
+        <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/logos/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || t.transportAlt} />
         <div className="price">
           <span className="price-start">{isMultiNight ? t.priceStartMulti : t.priceStartSingle}</span>
           <span className="price-main">{formatPrice(tour.price)}.-</span>

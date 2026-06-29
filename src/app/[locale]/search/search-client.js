@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { fieldIncludes, assetPath } from '@/lib/utils';
+import { fieldIncludes } from '@/lib/i18n';
+import { assetPath } from '@/lib/assets';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 

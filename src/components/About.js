@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { assetPath } from '@/lib/utils';
+import { assetPath } from '@/lib/assets';
 
 export default function About({ locale, standalone }) {
   const t = locale === 'th' ? {

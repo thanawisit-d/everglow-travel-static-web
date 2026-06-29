@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
-import { assetPath } from '@/lib/utils';
+import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import SearchBox from '@/components/SearchBox';

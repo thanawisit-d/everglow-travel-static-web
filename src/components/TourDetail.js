@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import { formatPrice, assetPath, displayField, translateCountry } from '@/lib/utils';
+import { formatPrice } from '@/lib/pricing';
+import { assetPath } from '@/lib/assets';
+import { displayField, translateCountry } from '@/lib/i18n';
 
 export default function TourDetail({ tour, locale }) {
   if (!tour) return null;
@@ -52,7 +54,7 @@ export default function TourDetail({ tour, locale }) {
           <p>{displayDesc}</p>
           <div className="detail-info-grid">
             <div className="detail-item">
-              <Image src={assetPath('assets/images/pin.png')} width={24} height={24} alt="" />
+              <Image src={assetPath('assets/images/icons/pin.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{t.tourId}</strong>
                 <span>{tour.id}</span>
@@ -66,14 +68,14 @@ export default function TourDetail({ tour, locale }) {
               </div>
             </div>
             <div className="detail-item">
-              <Image src={assetPath('assets/images/clock_13819249.png')} width={24} height={24} alt="" />
+              <Image src={assetPath('assets/images/icons/clock_13819249.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{t.period}</strong>
                 <span>{displayPeriod}</span>
               </div>
             </div>
             <div className="detail-item">
-              <Image src={assetPath('assets/images/stopwatch.png')} width={24} height={24} alt="" />
+              <Image src={assetPath('assets/images/icons/stopwatch.png')} width={24} height={24} alt="" />
               <div>
                 <strong>{t.duration}</strong>
                 <span>{displayDuration}</span>
@@ -100,16 +102,16 @@ export default function TourDetail({ tour, locale }) {
           </div>
           <div className="detail-buttons">
             <a href={`tel:${tour.phone || '+66996326146'}`} className="call-btn">
-              <Image src={assetPath('assets/images/phone2 (1).png')} width={24} height={24} alt="" />
+              <Image src={assetPath('assets/images/icons/phone2 (1).png')} width={24} height={24} alt="" />
               {t.call}
             </a>
             <a href="https://lin.ee/xXcNI1w" target="_blank" rel="noopener noreferrer" className="line-btn">
-              <Image src={assetPath('assets/images/LINE.png')} width={24} height={24} alt="" />
+              <Image src={assetPath('assets/images/social/LINE.png')} width={24} height={24} alt="" />
               {t.line}
             </a>
             {tour.pdf && (
               <a href={assetPath(tour.pdf)} target="_blank" rel="noopener noreferrer" className="pdf-btn">
-                <Image src={assetPath('assets/images/pdf.png')} width={24} height={24} alt="" />
+                <Image src={assetPath('assets/images/icons/pdf.png')} width={24} height={24} alt="" />
                 {t.pdf}
               </a>
             )}

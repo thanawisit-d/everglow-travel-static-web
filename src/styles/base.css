@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #003478;
+  --navy-dark: #00275A;
+  --navy-secondary: #0B4DBB;
+  --cyan: #36D1DC;
+  --bg-page: #F5F8FC;
+  --white: #FFFFFF;
+  --text-dark: #1e2a4a;
+  --text-muted: #5a6a8a;
+  --shadow-sm: 0 4px 16px rgba(0, 52, 120, 0.08);
+  --shadow-md: 0 8px 30px rgba(0, 52, 120, 0.12);
+  --shadow-lg: 0 15px 45px rgba(0, 52, 120, 0.15);
+  --radius: 14px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+html, body {
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+body {
+  background: transparent;
+  color: var(--text-dark);
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+
+@font-face {
+  font-family: 'AlexBrush';
+  src: url('/textfouns/AlexBrush-Regular.ttf') format('truetype');
+}
+
+.bg-gradient-custom {
+  background: radial-gradient(125% 125% at 50% 90%, #fff 5%, #003478 100%);
+}
+
+h1, h2 {
+  font-family: var(--font-kanit), 'Kanit', sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  color: var(--navy);
+  text-align: center;
+}
+

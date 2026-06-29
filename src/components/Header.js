@@ -3,7 +3,8 @@
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { assetPath, translateCountry } from '@/lib/utils';
+import { assetPath } from '@/lib/assets';
+import { translateCountry } from '@/lib/i18n';
 import config from '@/data/site-config.json';
 
 export default function Header({ locale }) {
@@ -36,26 +37,26 @@ export default function Header({ locale }) {
     <div className="header-sticky">
       <div className="topbar">
         <div className="left" onClick={() => nav(`/${locale}`)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(`/${locale}`); } }} role="button" tabIndex={0} aria-label="Go to home">
-          <Image src={assetPath('assets/images/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
+          <Image src={assetPath('assets/images/logos/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
           <div className="company">
             <h3>{text.company}</h3>
             <p>{text.license}</p>
           </div>
         </div>
         <div className="right contact-icons">
-          <a href={`tel:${s.phone}`} aria-label={isEn ? 'Phone' : 'โทรศัพท์'}><Image src={assetPath('assets/images/phone.png')} width={36} height={36} alt="" /></a>
-          <a href={s.line} aria-label="LINE"><Image src={assetPath('assets/images/LINE.png')} width={36} height={36} alt="" /></a>
+          <a href={`tel:${s.phone}`} aria-label={isEn ? 'Phone' : 'โทรศัพท์'}><Image src={assetPath('assets/images/icons/phone.png')} width={36} height={36} alt="" /></a>
+          <a href={s.line} aria-label="LINE"><Image src={assetPath('assets/images/social/LINE.png')} width={36} height={36} alt="" /></a>
           <a href={s.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <Image src={assetPath('assets/images/Facebook.png')} width={36} height={36} alt="" />
+            <Image src={assetPath('assets/images/social/Facebook.png')} width={36} height={36} alt="" />
           </a>
           <a href={s.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <Image src={assetPath('assets/images/ig.png')} width={36} height={36} alt="" />
+            <Image src={assetPath('assets/images/social/ig.png')} width={36} height={36} alt="" />
           </a>
           <a href={s.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <Image src={assetPath('assets/images/whatsapp.webp')} width={36} height={36} alt="" />
+            <Image src={assetPath('assets/images/social/whatsapp.webp')} width={36} height={36} alt="" />
           </a>
           <a href={s.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <Image src={assetPath('assets/images/tiktok.webp')} width={36} height={36} alt="" />
+            <Image src={assetPath('assets/images/social/tiktok.webp')} width={36} height={36} alt="" />
           </a>
         </div>
       </div>

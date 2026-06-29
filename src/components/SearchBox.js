@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { assetPath } from '@/lib/utils';
+import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
 export default function SearchBox({ locale, tours }) {
@@ -37,7 +37,7 @@ export default function SearchBox({ locale, tours }) {
   return (
     <div className="search-panel">
       <h2>
-        <Image src={assetPath('assets/images/search.png')} width={22} height={22} className="search-icon" alt="" />
+        <Image src={assetPath('assets/images/icons/search.png')} width={22} height={22} className="search-icon" alt="" />
         {t.searchTitle}
       </h2>
       <form onSubmit={handleSearch}>

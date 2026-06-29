@@ -1,4 +1,4 @@
-import LocaleClient from './locale-client';
+import HomeClient from './home-client';
 
 export function generateStaticParams() {
   return [
@@ -9,5 +9,5 @@ export function generateStaticParams() {
 
 export default async function LocalePage({ params }) {
   const { locale } = await params;
-  return <LocaleClient locale={locale} />;
+  return <HomeClient locale={locale} />;
 }

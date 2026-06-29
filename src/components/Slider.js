@@ -4,10 +4,10 @@ import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const IMAGES = [
-  '/assets/images/slide1 (1).jpg',
-  '/assets/images/slide1 (2).jpg',
-  '/assets/images/slide1 (3).jpg',
-  '/assets/images/slide1 (4).jpg',
+  '/assets/images/backgrounds/slide1 (1).jpg',
+  '/assets/images/backgrounds/slide1 (2).jpg',
+  '/assets/images/backgrounds/slide1 (3).jpg',
+  '/assets/images/backgrounds/slide1 (4).jpg',
 ];
 
 export default function Slider() {
