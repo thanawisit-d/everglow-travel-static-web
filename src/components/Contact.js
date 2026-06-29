@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, Mail, Clock, MapPin, Globe, MessageCircle, Camera, ExternalLink } from 'lucide-react';
+import { Phone, Mail, Clock, MessageCircle, Camera, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import config from '@/data/site-config.json';
 
@@ -33,20 +33,20 @@ export default function ContactCard({ locale }) {
   const s = config.social;
 
   const row1 = [
-    { icon: Phone,   label: t.phoneLabel, value: t.phone, href: `tel:${s.phone}` },
-    { icon: Mail,    label: t.emailLabel, value: t.email, href: `mailto:${t.email}` },
-    { icon: Clock,   label: t.hoursLabel, value: t.hours },
+    { icon: MessageCircle,   label: 'LINE',       value: '@Everglowtravel',       href: s.line },
+    { icon: ExternalLink,  label: 'Facebook',  value: 'Everglow Travel',  href: s.facebook },
+    { icon: Camera,        label: 'Instagram', value: '@everglow.travel', href: s.instagram },
   ];
 
   const row2 = [
-    { icon: MapPin,          label: t.addrLabel, value: t.addr },
-    { icon: Globe,           label: t.webLabel,  value: 'www.everglowtravel.com', href: 'https://www.everglowtravel.com' },
-    { icon: MessageCircle,   label: 'LINE',       value: '@Everglowtravel',       href: s.line },
+    { icon: ExternalLink,  label: 'TikTok',    value: '@everglow.travel', href: s.tiktok },
+    { icon: MessageCircle, label: 'WhatsApp',  value: t.phone,            href: s.whatsapp },
+    { icon: Mail,          label: t.emailLabel,value: t.email,            href: `mailto:${t.email}` },
   ];
 
   const row3 = [
-    { icon: Camera,        label: 'Instagram', value: '@everglow.travel', href: s.instagram },
-    { icon: ExternalLink,  label: 'Facebook',  value: 'Everglow Travel',  href: s.facebook },
+    { icon: Phone, label: t.phoneLabel, value: t.phone, href: `tel:${s.phone}` },
+    { icon: Clock, label: t.hoursLabel, value: t.hours },
   ];
 
   return (
@@ -59,15 +59,19 @@ export default function ContactCard({ locale }) {
             <hr className="contact-underline" />
           </div>
 
-          <div className="contact-row">
+          <div className="contact-row-centered">
             {row1.map((item) => (
-              <ContactCell key={item.label} {...item} />
+              <div key={item.label} className="contact-cell-wrap-third">
+                <ContactCell {...item} />
+              </div>
             ))}
           </div>
 
-          <div className="contact-row">
+          <div className="contact-row-centered">
             {row2.map((item) => (
-              <ContactCell key={item.label} {...item} />
+              <div key={item.label} className="contact-cell-wrap-third">
+                <ContactCell {...item} />
+              </div>
             ))}
           </div>
 
