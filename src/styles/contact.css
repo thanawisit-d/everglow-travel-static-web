@@ -225,7 +225,11 @@
 }
 
 .slider-section {
-  padding: 160px 6% 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 6% 20px;
 }
 
 

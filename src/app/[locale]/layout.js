@@ -16,6 +16,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <>
       <script
+      
         dangerouslySetInnerHTML={{
           __html: `document.documentElement.lang='${locale}'`,
         }}

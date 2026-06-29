@@ -30,9 +30,7 @@
 .tour-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 20px;
 }
 
 @media (max-width: 992px) {
@@ -174,13 +172,6 @@
 .domestic-tour-page {
   min-height: 100vh;
   padding: 110px 60px 50px;
-}
-
-.tour-list-content h1 {
-  text-align: center;
-  color: var(--navy);
-  font-size: 42px;
-  margin-bottom: 30px;
 }
 
 .province-search-wrapper {
@@ -427,7 +418,7 @@
 
 .tour-list-page {
   min-height: 100vh;
-  padding: 200px 6% 50px;
+  padding: 200px 0 50px;
 }
 
 .tour-list-page h2 {
