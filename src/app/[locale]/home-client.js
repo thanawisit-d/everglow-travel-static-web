@@ -8,7 +8,6 @@ import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import SearchBox from '@/components/SearchBox';
 import TourGrid from '@/components/TourGrid';
-import About from '@/components/About';
 import Reviews from '@/components/Reviews';
 
 export default function LocaleClient({ locale }) {
@@ -97,7 +96,6 @@ export default function LocaleClient({ locale }) {
         </div>
       </section>
 
-      <About locale={locale} />
       <Reviews locale={locale} />
     </div>
   );
