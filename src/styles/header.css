@@ -159,12 +159,6 @@ ul.dropdown-menu {
   z-index: 999;
 }
 
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 .dropdown-menu li {
   list-style: none;
 }
@@ -276,12 +270,6 @@ ul.country-menu {
 
 .col-all-mobile {
   display: none;
-}
-
-.dropdown-outbound:hover .country-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
 }
 
 .country-menu li {
@@ -465,10 +453,5 @@ ul.country-menu {
     display: block;
   }
 
-  .dropdown:hover .dropdown-menu,
-  .dropdown:hover .country-menu {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 

@@ -34,24 +34,26 @@ export default function About({ locale, standalone }) {
 
   return (
     <section className="page about-page">
-      <div className="about-container">
-        <div className="about-img">
-          <Image src={assetPath('company/companydetail.jpg')} fill sizes="(max-width: 992px) 100vw, 420px" alt="Everglow Travel" />
-        </div>
-        <div className="about-text">
-          {standalone ? <h1>{t.title}</h1> : <h2>{t.title}</h2>}
-          {standalone ? <h2>{t.company}</h2> : <h2>{t.company}</h2>}
-          <p>{t.p1}</p>
-          <p>{t.p2}</p>
-        </div>
-      </div>
-      <div className="about-container about-main">
-        {t.services.map((s, i) => (
-          <div className="section-box" key={i}>
-            <div className="section-title">{s.title}</div>
-            <p>{s.desc}</p>
+      <div className="about-card">
+        <div className="about-container">
+          <div className="about-img">
+            <Image src={assetPath('company/companydetail.jpg')} fill sizes="(max-width: 992px) 100vw, 420px" alt="Everglow Travel" />
           </div>
-        ))}
+          <div className="about-text">
+            {standalone ? <h1>{t.title}</h1> : <h2>{t.title}</h2>}
+            {standalone ? <h2>{t.company}</h2> : <h2>{t.company}</h2>}
+            <p>{t.p1}</p>
+            <p>{t.p2}</p>
+          </div>
+        </div>
+        <div className="about-main">
+          {t.services.map((s, i) => (
+            <div className="section-box" key={i}>
+              <div className="section-title">{s.title}</div>
+              <p>{s.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath } from '@/lib/assets';
@@ -12,6 +12,18 @@ export default function Header({ locale }) {
   const isEn = locale === 'en';
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const domesticRef = useRef(null);
+  const outboundRef = useRef(null);
+
+  useEffect(() => {
+    if (window.innerWidth > 992) {
+      if (domesticRef.current && domesticRef.current.matches(':hover')) {
+        setOpenDropdown('domestic');
+      } else if (outboundRef.current && outboundRef.current.matches(':hover')) {
+        setOpenDropdown('outbound');
+      }
+    }
+  }, []);
 
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
@@ -75,24 +87,24 @@ export default function Header({ locale }) {
         </button>
         <ul className={menuOpen ? 'nav-open' : ''} role="menubar">
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
-          <li className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none">
+          <li ref={domesticRef} className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 992) setOpenDropdown('domestic'); }} onMouseLeave={() => { if (window.innerWidth > 992) setOpenDropdown(null); }}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
               if (window.innerWidth > 992) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
             }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.domestic}</button>
-            <button className="dropdown-arrow" onClick={() => toggleDropdown('domestic')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
+            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
             <ul className="dropdown-menu" role="menu">
               {text.durations.map((d, i) => (
                 <li key={i} role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button></li>
               ))}
             </ul>
           </li>
-          <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none">
+          <li ref={outboundRef} className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 992) setOpenDropdown('outbound'); }} onMouseLeave={() => { if (window.innerWidth > 992) setOpenDropdown(null); }}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
               if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
               else { e.stopPropagation(); toggleDropdown('outbound'); }
             }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.outbound}</button>
-            <button className="dropdown-arrow" onClick={() => toggleDropdown('outbound')} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
+            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
             <ul className="country-menu" role="menu">
               <li role="none" className="col-all-mobile">
                 <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>

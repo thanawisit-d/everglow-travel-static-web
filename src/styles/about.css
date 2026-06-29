@@ -8,12 +8,20 @@
   color: var(--text-dark);
 }
 
+.about-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
 .about-container {
   display: flex;
   align-items: center;
   gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto 50px;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 992px) {
@@ -68,6 +76,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
