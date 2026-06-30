@@ -93,7 +93,7 @@ export default function TourDetail({ tour, locale }) {
               <div>
                 <strong>{t.transport}</strong>
                 {isOutbound ? (
-                  <Image src={assetPath(`plane-logo/${tour.airline}`)} width={180} height={55} className="detail-airline-logo" alt={tour.airline || ''} />
+                  <Image src={assetPath(`plane-logo/${tour.airline}`)} width={180} height={55} className="detail-airline-logo" alt={tour.airline ? `${tour.airline} airline` : 'Airline logo'} />
                 ) : (
                   <span>{displayTransportName}</span>
                 )}

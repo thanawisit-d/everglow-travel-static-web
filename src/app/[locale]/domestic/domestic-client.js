@@ -51,19 +51,11 @@ export default function DomesticClient({ locale, tours }) {
     const d = searchParams.get('duration') || '';
     if (d) {
       const normalized = isEn ? (durationMapEnToTh[d] || d) : d;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFilters(prev => ({ ...prev, duration: normalized }));
       setPage(1);
     }
   }, [searchParams, isEn]);
-
-  useEffect(() => {
-    setFilters(prev => {
-      if (prev.priceRange[0] === 0 && prev.priceRange[1] === 0) {
-        return { ...prev, priceRange: [minPrice, maxPrice] };
-      }
-      return prev;
-    });
-  }, [minPrice, maxPrice]);
 
   const filterOptions = useMemo(() => {
     const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort();
@@ -71,6 +63,7 @@ export default function DomesticClient({ locale, tours }) {
     return { durations, provinces };
   }, [tours, isEn]);
 
+  /* MOCK — filter logic bypassed for UI demo
   const filtered = useMemo(() => {
     let result = [...tours];
 
@@ -105,6 +98,8 @@ export default function DomesticClient({ locale, tours }) {
 
     return result;
   }, [tours, filters, isEn]);
+  */
+  const filtered = tours;
 
   const { items, totalPages } = paginate(filtered, page);
 
