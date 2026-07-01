@@ -28,7 +28,7 @@ function ContactCell({ icon: Icon, label, value, href }) {
   return <div className="contact-cell-wrap">{inner}</div>;
 }
 
-export default function ContactCard({ locale }) {
+export default function ContactCard({ locale, standalone }) {
   const t = config[locale] || config.th;
   const s = config.social;
 
@@ -55,7 +55,7 @@ export default function ContactCard({ locale }) {
         <div className="contact-card-new">
 
           <div className="contact-title-wrap">
-            <h2>{t.contact}</h2>
+            {standalone ? <h1>{t.contact}</h1> : <h2>{t.contact}</h2>}
             <hr className="contact-underline" />
           </div>
 

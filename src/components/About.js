@@ -41,7 +41,7 @@ export default function About({ locale, standalone }) {
           </div>
           <div className="about-text">
             {standalone ? <h1>{t.title}</h1> : <h2>{t.title}</h2>}
-            {standalone ? <h2>{t.company}</h2> : <h2>{t.company}</h2>}
+            <h2>{t.company}</h2>
             <p>{t.p1}</p>
             <p>{t.p2}</p>
           </div>
