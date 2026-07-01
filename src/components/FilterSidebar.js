@@ -90,9 +90,30 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
             )}
             {group.type === 'range' && (
               <div className="range-slider">
-                <div className="range-values">
-                  <span>{group.currency || ''}{(group.valueMin ?? group.min).toLocaleString()}</span>
-                  <span>{group.currency || ''}{(group.valueMax ?? group.max).toLocaleString()}</span>
+                <div className="range-inputs">
+                  <input
+                    type="number"
+                    className="range-number"
+                    min={group.min}
+                    max={group.valueMax ?? group.max}
+                    value={group.valueMin ?? group.min}
+                    onChange={e => {
+                      const v = Math.min(Number(e.target.value), group.valueMax ?? group.max);
+                      if (!isNaN(v)) group.onChange([v, group.valueMax ?? group.max]);
+                    }}
+                  />
+                  <span className="range-sep">—</span>
+                  <input
+                    type="number"
+                    className="range-number"
+                    min={group.valueMin ?? group.min}
+                    max={group.max}
+                    value={group.valueMax ?? group.max}
+                    onChange={e => {
+                      const v = Math.max(Number(e.target.value), group.valueMin ?? group.min);
+                      if (!isNaN(v)) group.onChange([group.valueMin ?? group.min, v]);
+                    }}
+                  />
                 </div>
                 <div className="range-track-wrap">
                   <div className="range-bg" />

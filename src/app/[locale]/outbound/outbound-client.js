@@ -8,6 +8,7 @@ import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
+import config from '@/data/site-config.json';
 
 function getCountryLabel(countryTh, isEn) {
   if (isEn) return countryNameMap[countryTh] || countryTh;
@@ -18,10 +19,16 @@ export default function OutboundClient({ locale, tours }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  const countryToContinent = useMemo(() => {
+    const map = {};
+    config.countryGroups.forEach(g => g.items.forEach(c => { map[c.name] = g.label; }));
+    return map;
+  }, []);
+
   const {
     filters, page, mobileFilterOpen, setMobileFilterOpen,
     minPrice, maxPrice, isEn, updateFilter, setPage,
-  } = useToursFilter({ tours, locale, extraFilters: { country: '' } });
+  } = useToursFilter({ tours, locale, extraFilters: { country: '', continent: [] } });
 
   useEffect(() => {
     const c = searchParams.get('country') || '';
@@ -59,6 +66,13 @@ export default function OutboundClient({ locale, tours }) {
       });
     }
 
+    if (filters.continent?.length) {
+      result = result.filter(t => {
+        const countries = Array.isArray(t.country) ? t.country : [t.country];
+        return countries.some(c => filters.continent.includes(countryToContinent[c]));
+      });
+    }
+
     if (filters.duration) {
       result = result.filter(t => (isEn ? t.duration_en : t.duration) === filters.duration);
     }
@@ -90,6 +104,28 @@ export default function OutboundClient({ locale, tours }) {
       placeholder: isEn ? 'Search country, tour code...' : 'ค้นหาประเทศ, รหัสทัวร์...',
     },
     {
+      id: 'sort',
+      title: isEn ? 'Sort By' : 'เรียงลำดับ',
+      type: 'sort',
+      value: filters.sortBy,
+      onChange: v => updateFilter('sortBy', v),
+      options: [
+        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
+        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
+      ],
+    },
+    {
+      id: 'continent',
+      title: isEn ? 'Continent' : 'ทวีป',
+      type: 'checkbox',
+      value: filters.continent,
+      onChange: v => updateFilter('continent', v),
+      options: config.countryGroups.map(g => ({
+        value: g.label,
+        label: isEn ? g.labelEn : g.label,
+      })),
+    },
+    {
       id: 'country',
       title: isEn ? 'Country' : 'ประเทศ',
       type: 'select',
@@ -116,17 +152,6 @@ export default function OutboundClient({ locale, tours }) {
       valueMax: filters.priceRange[1],
       onChange: ([min, max]) => updateFilter('priceRange', [min, max]),
       currency: isEn ? '' : '฿',
-    },
-    {
-      id: 'sort',
-      title: isEn ? 'Sort By' : 'เรียงลำดับ',
-      type: 'sort',
-      value: filters.sortBy,
-      onChange: v => updateFilter('sortBy', v),
-      options: [
-        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
-        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
-      ],
     },
   ];
 
