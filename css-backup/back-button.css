@@ -1,0 +1,43 @@
+/* ========== BACK BUTTON ========== */
+.back-btn {
+  position: fixed;
+  top: 140px;
+  left: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--white);
+  border: 1px solid #e8edf4;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  box-shadow: var(--shadow-md);
+  color: var(--navy-secondary);
+}
+
+.back-btn.not-found-btn {
+  position: static;
+  display: inline-flex;
+  margin-top: 24px;
+}
+
+.tour-detail-container.not-found {
+  text-align: center;
+  padding: 80px 34px;
+}
+
+.not-found-msg {
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+
