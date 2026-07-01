@@ -211,7 +211,7 @@ ul.dropdown-menu {
   transform: translateY(10px);
   transition: 0.25s ease;
   z-index: 999;
-  max-height: 50vh;
+  max-height: 75vh;
   overflow: hidden;
 }
 
