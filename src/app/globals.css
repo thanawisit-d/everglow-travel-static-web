@@ -3,7 +3,6 @@
 @import "../styles/base.css";
 @import "../styles/header.css";
 @import "../styles/hero.css";
-@import "../styles/search.css";
 @import "../styles/tour.css";
 @import "../styles/why-choose-us.css";
 @import "../styles/gallery.css";
@@ -16,3 +15,4 @@
 @import "../styles/back-button.css";
 @import "../styles/landing.css";
 @import "../styles/filter-sidebar.css";
+@import "choices.js/public/assets/styles/choices.css";

@@ -1,5 +1,7 @@
 'use client';
 
+import FilterChoices from './FilterChoices';
+
 export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileToggle }) {
   const isEn = locale === 'en';
 
@@ -66,16 +68,25 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
               </select>
             )}
             {group.type === 'select' && (
-              <select
-                className="filter-select"
-                value={group.value || ''}
-                onChange={e => group.onChange(e.target.value)}
-              >
-                <option value="">{isEn ? 'All' : 'ทั้งหมด'}</option>
-                {group.options?.map(opt => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
+              group.useChoices ? (
+                <FilterChoices
+                  value={group.value || ''}
+                  onChange={group.onChange}
+                  options={group.options}
+                  placeholder={isEn ? 'All' : 'ทั้งหมด'}
+                />
+              ) : (
+                <select
+                  className="filter-select"
+                  value={group.value || ''}
+                  onChange={e => group.onChange(e.target.value)}
+                >
+                  <option value="">{isEn ? 'All' : 'ทั้งหมด'}</option>
+                  {group.options?.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              )
             )}
             {group.type === 'range' && (
               <div className="range-slider">

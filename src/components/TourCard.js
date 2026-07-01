@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';

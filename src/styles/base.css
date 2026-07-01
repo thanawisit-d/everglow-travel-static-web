@@ -58,11 +58,6 @@ body {
 }
 
 
-@font-face {
-  font-family: 'AlexBrush';
-  src: url('/textfouns/AlexBrush-Regular.ttf') format('truetype');
-}
-
 .bg-gradient-custom {
   background: radial-gradient(125% 125% at 50% 90%, #fff 5%, #003478 100%);
 }

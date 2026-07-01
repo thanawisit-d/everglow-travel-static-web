@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'AlexBrush';
+  src: url('/textfouns/AlexBrush-Regular.ttf') format('truetype');
+}
+
 /* ========== LANDING PAGE ========== */
 .landing-page {
   display: flex;
