@@ -94,6 +94,17 @@ export default function DomesticClient({ locale, tours }) {
       placeholder: isEn ? 'Search province, tour code...' : 'ค้นหาจังหวัด, รหัสทัวร์...',
     },
     {
+      id: 'sort',
+      title: isEn ? 'Sort By' : 'เรียงลำดับ',
+      type: 'sort',
+      value: filters.sortBy,
+      onChange: v => updateFilter('sortBy', v),
+      options: [
+        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
+        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
+      ],
+    },
+    {
       id: 'duration',
       title: isEn ? 'Duration' : 'ระยะเวลา',
       type: 'select',
@@ -120,17 +131,6 @@ export default function DomesticClient({ locale, tours }) {
       options: filterOptions.provinces.map(p => ({ value: p, label: p })),
       value: filters.province,
       onChange: v => updateFilter('province', v),
-    },
-    {
-      id: 'sort',
-      title: isEn ? 'Sort By' : 'เรียงลำดับ',
-      type: 'sort',
-      value: filters.sortBy,
-      onChange: v => updateFilter('sortBy', v),
-      options: [
-        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
-        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
-      ],
     },
   ];
 
