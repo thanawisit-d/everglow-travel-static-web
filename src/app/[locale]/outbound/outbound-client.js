@@ -42,8 +42,13 @@ export default function OutboundClient({ locale, tours }) {
     const countries = [...new Set(tours.flatMap(t => {
       const c = t.country;
       return Array.isArray(c) ? c : [c];
-    }).filter(Boolean))].sort();
-    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort();
+    }).filter(Boolean))].sort((a, b) => {
+      if (isEn) {
+        return getCountryLabel(a, true).localeCompare(getCountryLabel(b, true), 'en');
+      }
+      return a.localeCompare(b, 'th');
+    });
+    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
     return { countries, durations };
   }, [tours, isEn]);
 
@@ -104,17 +109,6 @@ export default function OutboundClient({ locale, tours }) {
       placeholder: isEn ? 'Search country, tour code...' : 'ค้นหาประเทศ, รหัสทัวร์...',
     },
     {
-      id: 'sort',
-      title: isEn ? 'Sort By' : 'เรียงลำดับ',
-      type: 'sort',
-      value: filters.sortBy,
-      onChange: v => updateFilter('sortBy', v),
-      options: [
-        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
-        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
-      ],
-    },
-    {
       id: 'continent',
       title: isEn ? 'Continent' : 'ทวีป',
       type: 'checkbox',
@@ -127,20 +121,12 @@ export default function OutboundClient({ locale, tours }) {
     },
     {
       id: 'country',
-      title: isEn ? 'Country' : 'ประเทศ',
+      title: isEn ? 'Destination' : 'ปลายทาง',
       type: 'select',
       useChoices: true,
       options: filterOptions.countries.map(c => ({ value: c, label: getCountryLabel(c, isEn) })),
       value: filters.country,
       onChange: v => updateFilter('country', v),
-    },
-    {
-      id: 'duration',
-      title: isEn ? 'Duration' : 'ระยะเวลา',
-      type: 'select',
-      options: filterOptions.durations.map(d => ({ value: d, label: d })),
-      value: filters.duration,
-      onChange: v => updateFilter('duration', v),
     },
     {
       id: 'price',
@@ -152,6 +138,14 @@ export default function OutboundClient({ locale, tours }) {
       valueMax: filters.priceRange[1],
       onChange: ([min, max]) => updateFilter('priceRange', [min, max]),
       currency: isEn ? '' : '฿',
+    },
+    {
+      id: 'duration',
+      title: isEn ? 'Duration' : 'ระยะเวลา',
+      type: 'select',
+      options: filterOptions.durations.map(d => ({ value: d, label: d })),
+      value: filters.duration,
+      onChange: v => updateFilter('duration', v),
     },
   ];
 
@@ -167,6 +161,19 @@ export default function OutboundClient({ locale, tours }) {
           onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
         />
         <div className="tour-list-content">
+          <div className="results-toolbar">
+            <span />
+            <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
+            <select
+              className="sort-select"
+              value={filters.sortBy}
+              onChange={e => updateFilter('sortBy', e.target.value)}
+            >
+              <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
+              <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
+              <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
+            </select>
+          </div>
           <div className="tour-grid">
             {items.length === 0 ? (
               <p className="no-result">{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
