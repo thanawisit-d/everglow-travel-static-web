@@ -7,31 +7,74 @@ import { assetPath } from '@/lib/assets';
 import { translateCountry } from '@/lib/i18n';
 import config from '@/data/site-config.json';
 
+const HOVER_DELAY = 150;
+
 export default function Header({ locale }) {
   const router = useRouter();
   const isEn = locale === 'en';
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const domesticRef = useRef(null);
-  const outboundRef = useRef(null);
+  const [activeGroup, setActiveGroup] = useState(null);
+  const closeTimer = useRef(null);
+  const menuRef = useRef(null);
 
-  useEffect(() => {
-    if (window.innerWidth > 992) {
-      if (domesticRef.current && domesticRef.current.matches(':hover')) {
-        setOpenDropdown('domestic');
-      } else if (outboundRef.current && outboundRef.current.matches(':hover')) {
-        setOpenDropdown('outbound');
-      }
+  const clearTimer = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
     }
-  }, []);
+  };
+
+  const openMenu = (name) => {
+    clearTimer();
+    setOpenDropdown(name);
+    if (name === 'outbound' && !activeGroup) {
+      setActiveGroup(config.countryGroups[0].label);
+    }
+  };
+
+  const scheduleClose = () => {
+    clearTimer();
+    closeTimer.current = setTimeout(() => {
+      setOpenDropdown(null);
+      setActiveGroup(null);
+    }, HOVER_DELAY);
+  };
 
   const toggleDropdown = (name) => {
+    clearTimer();
     setOpenDropdown(openDropdown === name ? null : name);
+    if (name === 'outbound' && openDropdown !== 'outbound' && !activeGroup) {
+      setActiveGroup(config.countryGroups[0].label);
+    }
   };
+
+  useEffect(() => {
+    function handleOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpenDropdown(null);
+        setActiveGroup(null);
+      }
+    }
+    function handleEscape(e) {
+      if (e.key === 'Escape') {
+        setOpenDropdown(null);
+        setActiveGroup(null);
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleOutside);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('mousedown', handleOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
 
   const closeMenu = () => {
     setMenuOpen(false);
     setOpenDropdown(null);
+    setActiveGroup(null);
   };
 
   const nav = useCallback((path) => {
@@ -41,9 +84,7 @@ export default function Header({ locale }) {
 
   const text = config[locale] || config.th;
   const s = config.social;
-
-  const allCountries = [];
-  config.countryGroups.forEach(g => g.items.forEach(i => allCountries.push(i)));
+  const activeGroupData = config.countryGroups.find(g => g.label === activeGroup);
 
   return (
     <div className="header-sticky">
@@ -85,41 +126,58 @@ export default function Header({ locale }) {
           <span></span>
           <span></span>
         </button>
-        <ul className={menuOpen ? 'nav-open' : ''} role="menubar">
+        <ul ref={menuRef} className={menuOpen ? 'nav-open' : ''} role="menubar">
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
-          <li ref={domesticRef} className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 992) setOpenDropdown('domestic'); }} onMouseLeave={() => { if (window.innerWidth > 992) setOpenDropdown(null); }}>
+          <li className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
               if (window.innerWidth > 992) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
-            }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.domestic}</button>
-            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
+            }}>{text.domestic}</button>
+            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
             <ul className="dropdown-menu" role="menu">
               {text.durations.map((d, i) => (
                 <li key={i} role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button></li>
               ))}
             </ul>
           </li>
-          <li ref={outboundRef} className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 992) setOpenDropdown('outbound'); }} onMouseLeave={() => { if (window.innerWidth > 992) setOpenDropdown(null); }}>
+          <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('outbound')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
               if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
               else { e.stopPropagation(); toggleDropdown('outbound'); }
-            }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }}>{text.outbound}</button>
-            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} onKeyDown={(e) => { if (e.key === 'Escape') { setOpenDropdown(null); } }} aria-label="Open submenu">▾</button>
-            <ul className="country-menu" role="menu">
-              <li role="none" className="col-all-mobile">
-                <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound`)}>
-                  {config[locale].allOutbound}
-                </button>
-              </li>
-              {allCountries.map((c, i) => (
-                <li key={i} role="none">
-                  <button type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
-                    <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
-                    {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
+            }}>{text.outbound}</button>
+            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} aria-label="Open submenu">▾</button>
+            <div className="mega-menu" role="menu">
+              <div className="mega-left">
+                {config.countryGroups.map((group) => (
+                  <button
+                    key={group.label}
+                    type="button"
+                    role="menuitem"
+                    onMouseEnter={() => setActiveGroup(group.label)}
+                    onFocus={() => setActiveGroup(group.label)}
+                    className={activeGroup === group.label ? 'active' : ''}
+                    onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(group.items[0].name)}`)}
+                  >
+                    {isEn ? group.labelEn : group.label}
                   </button>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+              <div className="mega-right">
+                {activeGroupData && (
+                  <>
+                    <h3>{isEn ? activeGroupData.labelEn : activeGroupData.label}</h3>
+                    <div className="mega-grid">
+                      {activeGroupData.items.map((c) => (
+                        <button key={c.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
+                          <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
+                          {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/contact`)}>{text.contact}</button></li>

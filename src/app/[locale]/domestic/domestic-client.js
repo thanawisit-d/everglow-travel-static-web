@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
-
-const PER_PAGE = 12;
+import useToursFilter from '@/lib/useToursFilter';
+import { parsePrice, paginate } from '@/lib/tour-utils';
 
 const durationMapEnToTh = {
   '1 day': '1 วัน',
@@ -16,72 +16,55 @@ const durationMapEnToTh = {
   '5 days 4 night': '5 วัน 4 คืน',
 };
 
-function parsePrice(p) {
-  return parseInt((p || '').replace(/,/g, ''), 10) || 0;
-}
-
-function paginate(items, page) {
-  const totalPages = Math.ceil(items.length / PER_PAGE) || 1;
-  return {
-    items: items.slice((page - 1) * PER_PAGE, page * PER_PAGE),
-    totalPages,
-  };
-}
-
 export default function DomesticClient({ locale, tours }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const isEn = locale === 'en';
 
-  const allPrices = useMemo(() => tours.map(t => parsePrice(t.price)).filter(p => p > 0), [tours]);
-  const minPrice = useMemo(() => Math.floor(Math.min(...allPrices) / 1000) * 1000, [allPrices]);
-  const maxPrice = useMemo(() => Math.ceil(Math.max(...allPrices) / 1000) * 1000, [allPrices]);
-
-  const [filters, setFilters] = useState({
-    search: '',
-    duration: '',
-    priceRange: [minPrice, maxPrice],
-    province: [],
-    sortBy: '',
-  });
-  const [page, setPage] = useState(1);
-  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const {
+    filters, page, mobileFilterOpen, setMobileFilterOpen,
+    minPrice, maxPrice, isEn, updateFilter, setPage,
+  } = useToursFilter({ tours, locale, extraFilters: { province: '' } });
 
   useEffect(() => {
     const d = searchParams.get('duration') || '';
     if (d) {
       const normalized = isEn ? (durationMapEnToTh[d] || d) : d;
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setFilters(prev => ({ ...prev, duration: normalized }));
-      setPage(1);
+      updateFilter('duration', normalized);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, isEn]);
 
   const filterOptions = useMemo(() => {
-    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort();
-    const provinces = [...new Set(tours.map(t => t.province).filter(Boolean))].sort();
+    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
+    const provinces = [...new Set(tours.flatMap(t => {
+      const p = t.province;
+      return Array.isArray(p) ? p : [p];
+    }).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'th'));
     return { durations, provinces };
   }, [tours, isEn]);
 
-  /* MOCK — filter logic bypassed for UI demo
   const filtered = useMemo(() => {
     let result = [...tours];
 
     if (filters.search) {
       const kw = filters.search;
-      result = result.filter(t =>
-        (t.province || '').includes(kw) ||
-        (isEn ? (t.desc_en || '') : (t.desc || '')).includes(kw) ||
-        (t.id || '').toLowerCase().includes(kw.toLowerCase())
-      );
+      result = result.filter(t => {
+        const prov = Array.isArray(t.province) ? t.province.join(' ') : (t.province || '');
+        return prov.includes(kw) ||
+          (isEn ? (t.desc_en || '') : (t.desc || '')).includes(kw) ||
+          (t.id || '').toLowerCase().includes(kw.toLowerCase());
+      });
     }
 
     if (filters.duration) {
       result = result.filter(t => (isEn ? t.duration_en : t.duration) === filters.duration);
     }
 
-    if (filters.province.length > 0) {
-      result = result.filter(t => filters.province.includes(t.province));
+    if (filters.province) {
+      result = result.filter(t => {
+        const prov = t.province;
+        return Array.isArray(prov) ? prov.includes(filters.province) : prov === filters.province;
+      });
     }
 
     const [pMin, pMax] = filters.priceRange;
@@ -98,15 +81,8 @@ export default function DomesticClient({ locale, tours }) {
 
     return result;
   }, [tours, filters, isEn]);
-  */
-  const filtered = tours;
 
   const { items, totalPages } = paginate(filtered, page);
-
-  const updateFilter = (key, value) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
-    setPage(1);
-  };
 
   const sidebarGroups = [
     {
@@ -118,12 +94,13 @@ export default function DomesticClient({ locale, tours }) {
       placeholder: isEn ? 'Search province, tour code...' : 'ค้นหาจังหวัด, รหัสทัวร์...',
     },
     {
-      id: 'duration',
-      title: isEn ? 'Duration' : 'ระยะเวลา',
+      id: 'province',
+      title: isEn ? 'Destination' : 'ปลายทาง',
       type: 'select',
-      options: filterOptions.durations.map(d => ({ value: d, label: d })),
-      value: filters.duration,
-      onChange: v => updateFilter('duration', v),
+      useChoices: true,
+      options: filterOptions.provinces.map(p => ({ value: p, label: p })),
+      value: filters.province,
+      onChange: v => updateFilter('province', v),
     },
     {
       id: 'price',
@@ -137,23 +114,12 @@ export default function DomesticClient({ locale, tours }) {
       currency: isEn ? '' : '฿',
     },
     {
-      id: 'province',
-      title: isEn ? 'Province' : 'จังหวัด',
-      type: 'checkbox',
-      options: filterOptions.provinces.map(p => ({ value: p, label: p })),
-      value: filters.province,
-      onChange: v => updateFilter('province', v),
-    },
-    {
-      id: 'sort',
-      title: isEn ? 'Sort By' : 'เรียงลำดับ',
-      type: 'sort',
-      value: filters.sortBy,
-      onChange: v => updateFilter('sortBy', v),
-      options: [
-        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
-        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
-      ],
+      id: 'duration',
+      title: isEn ? 'Duration' : 'ระยะเวลา',
+      type: 'select',
+      options: filterOptions.durations.map(d => ({ value: d, label: d })),
+      value: filters.duration,
+      onChange: v => updateFilter('duration', v),
     },
   ];
 
@@ -169,6 +135,19 @@ export default function DomesticClient({ locale, tours }) {
           onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
         />
         <div className="tour-list-content">
+          <div className="results-toolbar">
+            <span />
+            <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
+            <select
+              className="sort-select"
+              value={filters.sortBy}
+              onChange={e => updateFilter('sortBy', e.target.value)}
+            >
+              <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
+              <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
+              <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
+            </select>
+          </div>
           <div className="tour-grid">
             {items.length === 0 ? (
               <p className="no-result">{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>

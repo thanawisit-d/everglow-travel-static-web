@@ -1,25 +1,14 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { fieldIncludes, countryNameMap } from '@/lib/i18n';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
-
-const PER_PAGE = 12;
-
-function parsePrice(p) {
-  return parseInt((p || '').replace(/,/g, ''), 10) || 0;
-}
-
-function paginate(items, page) {
-  const totalPages = Math.ceil(items.length / PER_PAGE) || 1;
-  return {
-    items: items.slice((page - 1) * PER_PAGE, page * PER_PAGE),
-    totalPages,
-  };
-}
+import useToursFilter from '@/lib/useToursFilter';
+import { parsePrice, paginate } from '@/lib/tour-utils';
+import config from '@/data/site-config.json';
 
 function getCountryLabel(countryTh, isEn) {
   if (isEn) return countryNameMap[countryTh] || countryTh;
@@ -29,38 +18,40 @@ function getCountryLabel(countryTh, isEn) {
 export default function OutboundClient({ locale, tours }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const isEn = locale === 'en';
 
-  const allPrices = useMemo(() => tours.map(t => parsePrice(t.price)).filter(p => p > 0), [tours]);
-  const minPrice = useMemo(() => Math.floor(Math.min(...allPrices) / 1000) * 1000, [allPrices]);
-  const maxPrice = useMemo(() => Math.ceil(Math.max(...allPrices) / 1000) * 1000, [allPrices]);
+  const countryToContinent = useMemo(() => {
+    const map = {};
+    config.countryGroups.forEach(g => g.items.forEach(c => { map[c.name] = g.label; }));
+    return map;
+  }, []);
 
-  const [filters, setFilters] = useState({
-    search: '',
-    country: '',
-    duration: '',
-    priceRange: [minPrice, maxPrice],
-    sortBy: '',
-  });
-  const [page, setPage] = useState(1);
-  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const {
+    filters, page, mobileFilterOpen, setMobileFilterOpen,
+    minPrice, maxPrice, isEn, updateFilter, setPage,
+  } = useToursFilter({ tours, locale, extraFilters: { country: '', continent: [] } });
 
   useEffect(() => {
     const c = searchParams.get('country') || '';
     if (c) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setFilters(prev => ({ ...prev, country: c }));
-      setPage(1);
+      updateFilter('country', c);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const filterOptions = useMemo(() => {
-    const countries = [...new Set(tours.map(t => t.country).filter(Boolean))].sort();
-    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort();
+    const countries = [...new Set(tours.flatMap(t => {
+      const c = t.country;
+      return Array.isArray(c) ? c : [c];
+    }).filter(Boolean))].sort((a, b) => {
+      if (isEn) {
+        return getCountryLabel(a, true).localeCompare(getCountryLabel(b, true), 'en');
+      }
+      return a.localeCompare(b, 'th');
+    });
+    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
     return { countries, durations };
   }, [tours, isEn]);
 
-  /* MOCK — filter logic bypassed for UI demo
   const filtered = useMemo(() => {
     let result = [...tours];
 
@@ -74,7 +65,17 @@ export default function OutboundClient({ locale, tours }) {
     }
 
     if (filters.country) {
-      result = result.filter(t => t.country === filters.country);
+      result = result.filter(t => {
+        const c = t.country;
+        return Array.isArray(c) ? c.includes(filters.country) : c === filters.country;
+      });
+    }
+
+    if (filters.continent?.length) {
+      result = result.filter(t => {
+        const countries = Array.isArray(t.country) ? t.country : [t.country];
+        return countries.some(c => filters.continent.includes(countryToContinent[c]));
+      });
     }
 
     if (filters.duration) {
@@ -89,21 +90,14 @@ export default function OutboundClient({ locale, tours }) {
 
     if (filters.sortBy === 'price-asc') {
       result.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
-    } else if (fields.sortBy === 'price-desc') {
+    } else if (filters.sortBy === 'price-desc') {
       result.sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
     }
 
     return result;
   }, [tours, filters, isEn]);
-  */
-  const filtered = tours;
 
   const { items, totalPages } = paginate(filtered, page);
-
-  const updateFilter = (key, value) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
-    setPage(1);
-  };
 
   const sidebarGroups = [
     {
@@ -115,20 +109,24 @@ export default function OutboundClient({ locale, tours }) {
       placeholder: isEn ? 'Search country, tour code...' : 'ค้นหาประเทศ, รหัสทัวร์...',
     },
     {
+      id: 'continent',
+      title: isEn ? 'Continent' : 'ทวีป',
+      type: 'checkbox',
+      value: filters.continent,
+      onChange: v => updateFilter('continent', v),
+      options: config.countryGroups.map(g => ({
+        value: g.label,
+        label: isEn ? g.labelEn : g.label,
+      })),
+    },
+    {
       id: 'country',
-      title: isEn ? 'Country' : 'ประเทศ',
+      title: isEn ? 'Destination' : 'ปลายทาง',
       type: 'select',
+      useChoices: true,
       options: filterOptions.countries.map(c => ({ value: c, label: getCountryLabel(c, isEn) })),
       value: filters.country,
       onChange: v => updateFilter('country', v),
-    },
-    {
-      id: 'duration',
-      title: isEn ? 'Duration' : 'ระยะเวลา',
-      type: 'select',
-      options: filterOptions.durations.map(d => ({ value: d, label: d })),
-      value: filters.duration,
-      onChange: v => updateFilter('duration', v),
     },
     {
       id: 'price',
@@ -142,15 +140,12 @@ export default function OutboundClient({ locale, tours }) {
       currency: isEn ? '' : '฿',
     },
     {
-      id: 'sort',
-      title: isEn ? 'Sort By' : 'เรียงลำดับ',
-      type: 'sort',
-      value: filters.sortBy,
-      onChange: v => updateFilter('sortBy', v),
-      options: [
-        { value: 'price-asc', label: isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง' },
-        { value: 'price-desc', label: isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ' },
-      ],
+      id: 'duration',
+      title: isEn ? 'Duration' : 'ระยะเวลา',
+      type: 'select',
+      options: filterOptions.durations.map(d => ({ value: d, label: d })),
+      value: filters.duration,
+      onChange: v => updateFilter('duration', v),
     },
   ];
 
@@ -166,6 +161,19 @@ export default function OutboundClient({ locale, tours }) {
           onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
         />
         <div className="tour-list-content">
+          <div className="results-toolbar">
+            <span />
+            <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
+            <select
+              className="sort-select"
+              value={filters.sortBy}
+              onChange={e => updateFilter('sortBy', e.target.value)}
+            >
+              <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
+              <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
+              <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
+            </select>
+          </div>
           <div className="tour-grid">
             {items.length === 0 ? (
               <p className="no-result">{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>

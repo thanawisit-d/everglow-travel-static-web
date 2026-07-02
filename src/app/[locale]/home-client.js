@@ -6,7 +6,6 @@ import toursData from '@/data/tours.json';
 import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
-import SearchBox from '@/components/SearchBox';
 import TourGrid from '@/components/TourGrid';
 import Reviews from '@/components/Reviews';
 
@@ -26,9 +25,6 @@ export default function LocaleClient({ locale }) {
       <Hero locale={locale} />
       <section className="slider-section bg-alt">
         <Slider />
-      </section>
-      <section className="search-box">
-        <SearchBox locale={locale} tours={toursData} />
       </section>
       <div className="tour-grid-wrapper bg-alt">
         <TourGrid locale={locale} showBadge="popular" onTourClick={handlePromoClick} />
