@@ -1,3 +1,4 @@
+/* ========== CSS VARIABLES ========== */
 :root {
   --navy: #003478;
   --navy-dark: #00275A;
@@ -14,12 +15,14 @@
   --radius-lg: 20px;
 }
 
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ========== UTILITY ========== */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -36,6 +39,7 @@ html, body {
   width: 100%;
 }
 
+/* ========== ACCESSIBILITY ========== */
 :focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 2px;
@@ -50,6 +54,7 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
+/* ========== BODY ========== */
 body {
   background: transparent;
   color: var(--text-dark);
@@ -57,11 +62,12 @@ body {
   min-height: 100vh;
 }
 
-
+/* ========== GRADIENTS ========== */
 .bg-gradient-custom {
   background: radial-gradient(125% 125% at 50% 90%, #fff 5%, #003478 100%);
 }
 
+/* ========== TYPOGRAPHY ========== */
 h1, h2 {
   font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-size: 30px;
@@ -70,6 +76,7 @@ h1, h2 {
   text-align: center;
 }
 
+/* ========== SKELETON LOADING ========== */
 @keyframes skeleton-pulse {
   0% { background: #e2e8f0; }
   50% { background: #cbd5e1; }

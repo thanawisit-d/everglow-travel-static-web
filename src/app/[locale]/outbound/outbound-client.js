@@ -82,9 +82,16 @@ export default function OutboundClient({ locale, tours }) {
       result = result.filter(t => (isEn ? t.duration_en : t.duration) === filters.duration);
     }
 
-    const [pMin, pMax] = filters.priceRange;
+    const [minRaw, maxRaw] = filters.priceRange;
+    const pMin = Math.min(minRaw, maxRaw);
+    const pMax = Math.max(minRaw, maxRaw);
+
     result = result.filter(t => {
       const p = parsePrice(t.price);
+      if (isNaN(p)) {
+        console.warn('parsePrice ล้มเหลว:', t.price, t.id ?? t.slug);
+        return false;
+      }
       return p >= pMin && p <= pMax;
     });
 
@@ -134,6 +141,7 @@ export default function OutboundClient({ locale, tours }) {
       type: 'range',
       min: minPrice,
       max: maxPrice,
+      step: 500,
       valueMin: filters.priceRange[0],
       valueMax: filters.priceRange[1],
       onChange: ([min, max]) => updateFilter('priceRange', [min, max]),

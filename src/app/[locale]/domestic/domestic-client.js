@@ -7,6 +7,7 @@ import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
+import { provinceNameMap } from '@/lib/i18n';
 
 const durationMapEnToTh = {
   '1 day': '1 วัน',
@@ -39,7 +40,10 @@ export default function DomesticClient({ locale, tours }) {
     const provinces = [...new Set(tours.flatMap(t => {
       const p = t.province;
       return Array.isArray(p) ? p : [p];
-    }).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'th'));
+    }).filter(Boolean))].sort((a, b) => {
+      if (isEn) return provinceNameMap[a].localeCompare(provinceNameMap[b], 'en');
+      return a.localeCompare(b, 'th');
+    });
     return { durations, provinces };
   }, [tours, isEn]);
 
@@ -50,7 +54,8 @@ export default function DomesticClient({ locale, tours }) {
       const kw = filters.search;
       result = result.filter(t => {
         const prov = Array.isArray(t.province) ? t.province.join(' ') : (t.province || '');
-        return prov.includes(kw) ||
+        const provEn = Array.isArray(t.province) ? t.province.map(p => provinceNameMap[p] || p).join(' ') : (provinceNameMap[t.province] || t.province || '');
+        return prov.includes(kw) || provEn.toLowerCase().includes(kw.toLowerCase()) ||
           (isEn ? (t.desc_en || '') : (t.desc || '')).includes(kw) ||
           (t.id || '').toLowerCase().includes(kw.toLowerCase());
       });
@@ -67,9 +72,16 @@ export default function DomesticClient({ locale, tours }) {
       });
     }
 
-    const [pMin, pMax] = filters.priceRange;
+    const [minRaw, maxRaw] = filters.priceRange;
+    const pMin = Math.min(minRaw, maxRaw);
+    const pMax = Math.max(minRaw, maxRaw);
+
     result = result.filter(t => {
       const p = parsePrice(t.price);
+      if (isNaN(p)) {
+        console.warn('parsePrice ล้มเหลว:', t.price, t.id ?? t.slug);
+        return false;
+      }
       return p >= pMin && p <= pMax;
     });
 
@@ -98,7 +110,7 @@ export default function DomesticClient({ locale, tours }) {
       title: isEn ? 'Destination' : 'ปลายทาง',
       type: 'select',
       useChoices: true,
-      options: filterOptions.provinces.map(p => ({ value: p, label: p })),
+      options: filterOptions.provinces.map(p => ({ value: p, label: isEn ? provinceNameMap[p] || p : p })),
       value: filters.province,
       onChange: v => updateFilter('province', v),
     },
@@ -108,6 +120,7 @@ export default function DomesticClient({ locale, tours }) {
       type: 'range',
       min: minPrice,
       max: maxPrice,
+      step: 500,
       valueMin: filters.priceRange[0],
       valueMax: filters.priceRange[1],
       onChange: ([min, max]) => updateFilter('priceRange', [min, max]),

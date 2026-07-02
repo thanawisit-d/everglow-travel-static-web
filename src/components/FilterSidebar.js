@@ -95,23 +95,47 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                     type="number"
                     className="range-number"
                     min={group.min}
-                    max={group.valueMax ?? group.max}
+                    max={group.max}
+                    step={group.step || 1}
                     value={group.valueMin ?? group.min}
                     onChange={e => {
-                      const v = Math.min(Number(e.target.value), group.valueMax ?? group.max);
-                      if (!isNaN(v)) group.onChange([v, group.valueMax ?? group.max]);
+                      const raw = e.target.value;
+                      if (raw === '') return;
+                      let v = Number(raw);
+                      if (isNaN(v)) return;
+                      v = Math.max(group.min, Math.min(v, group.max));
+                      const currentMax = group.valueMax ?? group.max;
+                      v = Math.min(v, currentMax);
+                      group.onChange([v, currentMax]);
+                    }}
+                    onBlur={e => {
+                      if (e.target.value === '') {
+                        group.onChange([group.valueMin ?? group.min, group.valueMax ?? group.max]);
+                      }
                     }}
                   />
                   <span className="range-sep">—</span>
                   <input
                     type="number"
                     className="range-number"
-                    min={group.valueMin ?? group.min}
+                    min={group.min}
                     max={group.max}
+                    step={group.step || 1}
                     value={group.valueMax ?? group.max}
                     onChange={e => {
-                      const v = Math.max(Number(e.target.value), group.valueMin ?? group.min);
-                      if (!isNaN(v)) group.onChange([group.valueMin ?? group.min, v]);
+                      const raw = e.target.value;
+                      if (raw === '') return;
+                      let v = Number(raw);
+                      if (isNaN(v)) return;
+                      v = Math.max(group.min, Math.min(v, group.max));
+                      const currentMin = group.valueMin ?? group.min;
+                      v = Math.max(v, currentMin);
+                      group.onChange([currentMin, v]);
+                    }}
+                    onBlur={e => {
+                      if (e.target.value === '') {
+                        group.onChange([group.valueMin ?? group.min, group.valueMax ?? group.max]);
+                      }
                     }}
                   />
                 </div>
@@ -129,10 +153,15 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                     className="range-input range-input-min"
                     min={group.min}
                     max={group.max}
+                    step={group.step || 1}
                     value={group.valueMin ?? group.min}
                     onChange={e => {
-                      const v = Math.min(Number(e.target.value), group.valueMax ?? group.max);
-                      group.onChange([v, group.valueMax ?? group.max]);
+                      let v = Number(e.target.value);
+                      if (isNaN(v)) return;
+                      v = Math.max(group.min, Math.min(v, group.max));
+                      const currentMax = group.valueMax ?? group.max;
+                      v = Math.min(v, currentMax);
+                      group.onChange([v, currentMax]);
                     }}
                   />
                   <input
@@ -140,10 +169,15 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                     className="range-input range-input-max"
                     min={group.min}
                     max={group.max}
+                    step={group.step || 1}
                     value={group.valueMax ?? group.max}
                     onChange={e => {
-                      const v = Math.max(Number(e.target.value), group.valueMin ?? group.min);
-                      group.onChange([group.valueMin ?? group.min, v]);
+                      let v = Number(e.target.value);
+                      if (isNaN(v)) return;
+                      v = Math.max(group.min, Math.min(v, group.max));
+                      const currentMin = group.valueMin ?? group.min;
+                      v = Math.max(v, currentMin);
+                      group.onChange([currentMin, v]);
                     }}
                   />
                 </div>

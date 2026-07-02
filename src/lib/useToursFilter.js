@@ -1,14 +1,12 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
-import { parsePrice } from './tour-utils';
+import { useState, useCallback } from 'react';
 
 export default function useToursFilter({ tours, locale, extraFilters = {} }) {
   const isEn = locale === 'en';
 
-  const allPrices = useMemo(() => tours.map(t => parsePrice(t.price)).filter(p => p > 0), [tours]);
-  const minPrice = useMemo(() => Math.floor(Math.min(...allPrices) / 1000) * 1000, [allPrices]);
-  const maxPrice = useMemo(() => Math.ceil(Math.max(...allPrices) / 1000) * 1000, [allPrices]);
+  const minPrice = 0;
+  const maxPrice = 200000;
 
   const [filters, setFilters] = useState({
     search: '',
