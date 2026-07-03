@@ -180,7 +180,7 @@ export default function OutboundClient({ locale, tours }) {
           <div className="tour-list-content">
             <div className="results-toolbar">
               <span />
-              <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
+              <span className="results-count">{isEn ? `${filtered.length} Tours Found` : `พบ ${filtered.length} รายการ`}</span>
               <select
                 className="sort-select"
                 value={filters.sortBy}
