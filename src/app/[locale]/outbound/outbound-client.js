@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { fieldIncludes, countryNameMap } from '@/lib/i18n';
 import TourCard from '@/components/TourCard';
@@ -159,6 +160,11 @@ export default function OutboundClient({ locale, tours }) {
 
   return (
     <section className="page tour-list-page active">
+      <nav className="breadcrumb">
+        <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+        <span className="breadcrumb-sep">/</span>
+        <span className="breadcrumb-current">{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</span>
+      </nav>
       <div className="tour-list-container">
       <h1>{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</h1>
       <div className="tour-list-layout">
@@ -184,7 +190,15 @@ export default function OutboundClient({ locale, tours }) {
           </div>
           <div className="tour-grid">
             {items.length === 0 ? (
-              <p className="no-result">{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
+              <div className="no-result">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-muted)', marginBottom: 12 }}>
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                  <path d="M8 11h6" />
+                </svg>
+                <p>{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
+                <p className="no-result-hint">{isEn ? 'Try adjusting your search or filter criteria' : 'ลองปรับคำค้นหาหรือตัวกรองดูใหม่'}</p>
+              </div>
             ) : items.map((t) => (
               <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} />
             ))}
