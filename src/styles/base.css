@@ -11,6 +11,7 @@
   --shadow-sm: 0 4px 16px rgba(0, 52, 120, 0.08);
   --shadow-md: 0 8px 30px rgba(0, 52, 120, 0.12);
   --shadow-lg: 0 15px 45px rgba(0, 52, 120, 0.15);
+  --amber: #F59E0B;
   --radius: 14px;
   --radius-lg: 20px;
 }

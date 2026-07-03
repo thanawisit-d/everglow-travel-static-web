@@ -425,39 +425,58 @@
   color: #fff;
 }
 
+/* ---- Breadcrumb ---- */
 .page-hero-band .breadcrumb {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   gap: 8px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.55);
   margin-bottom: 16px;
+  padding: 0;
+  background: transparent;
 }
 
 .page-hero-band .breadcrumb a {
-  color: rgba(255, 255, 255, 0.85);
+  flex: 0 0 auto;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
+/* hover ใช้ cyan ตัวเดียวกับ active state ของ sidebar/nav ทั้งหน้า ให้เป็นภาษาสีเดียวกัน */
 .page-hero-band .breadcrumb a:hover {
   color: var(--cyan);
 }
 
 .page-hero-band .breadcrumb-sep {
-  color: rgba(255, 255, 255, 0.4);
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.30);   /* ตัวคั่นควรจางที่สุด ไม่ใช่จุดสนใจ */
   font-size: 12px;
 }
 
+/* หน้าปัจจุบัน ใช้ amber แทนขาวล้วน ให้ผูกกับ accent สีเดียวกับปุ่ม/ราคาทั้งหน้า
+   ทำให้ผู้ใช้เห็นปุ๊บรู้ว่า "อยู่ตรงนี้" เพราะสีเดียวกับจุดที่ต้องสนใจอื่นๆ */
 .page-hero-band .breadcrumb-current {
-  color: #fff;
-  font-weight: 500;
+  flex: 0 1 auto;
+  color: #ffffff;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* ---- Title / Subtitle ---- */
 .page-hero-band .page-title {
-  font-size: 36px;
+  font-size: 44px;
   font-weight: 700;
+  color: #fff;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .page-hero-band .page-subtitle {
