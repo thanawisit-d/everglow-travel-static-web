@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import { displayField, translateCountry } from '@/lib/i18n';
@@ -43,8 +44,20 @@ export default function TourDetail({ tour, locale }) {
     baht: 'บาท',
   };
 
+  const breadcrumbLabel = isOutbound
+    ? (isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ')
+    : (isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ');
+  const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
+
   return (
     <div className="tour-detail-page page active">
+      <nav className="breadcrumb">
+        <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+        <span className="breadcrumb-sep">/</span>
+        <Link href={listPath}>{breadcrumbLabel}</Link>
+        <span className="breadcrumb-sep">/</span>
+        <span className="breadcrumb-current">{displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id}</span>
+      </nav>
       <div className="tour-detail-container">
         <div className="tour-detail-left">
           <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} />

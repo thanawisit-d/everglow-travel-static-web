@@ -434,5 +434,53 @@
   margin-top: 8px;
 }
 
+/* ========== BREADCRUMB ========== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* กันไม่ให้ item ถูกดันกระจายเต็มจอ */
+  flex-wrap: nowrap;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+
+  /* ใช้ container เดียวกับเนื้อหาด้านล่าง แทน padding % ลอยๆ */
+  max-width: 1320px;              /* ปรับให้ตรงกับ max-width ของ container จริง */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;                /* ปรับให้ตรงกับ padding ของ container จริง */
+
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  flex: 0 0 auto;                 /* กัน anchor ถูกยืด */
+  color: var(--navy-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.breadcrumb-current {
+  flex: 0 1 auto;                 /* ยืดได้แค่พอดีเนื้อหา ไม่ดันสุดขอบ */
+  color: var(--text-dark);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
 
 
