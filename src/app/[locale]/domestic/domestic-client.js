@@ -139,52 +139,55 @@ export default function DomesticClient({ locale, tours }) {
 
   return (
     <section className="page tour-list-page active">
-      <nav className="breadcrumb">
-        <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
-        <span className="breadcrumb-sep">/</span>
-        <span className="breadcrumb-current">{isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ'}</span>
-      </nav>
-      <div className="tour-list-container">
-      <h1>{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1>
-      <div className="tour-list-layout">
-        <FilterSidebar
-          locale={locale}
-          groups={sidebarGroups}
-          isMobileOpen={mobileFilterOpen}
-          onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
-        />
-        <div className="tour-list-content">
-          <div className="results-toolbar">
-            <span />
-            <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
-            <select
-              className="sort-select"
-              value={filters.sortBy}
-              onChange={e => updateFilter('sortBy', e.target.value)}
-            >
-              <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
-              <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
-              <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
-            </select>
-          </div>
-          <div className="tour-grid">
-            {items.length === 0 ? (
-              <div className="no-result">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-muted)', marginBottom: 12 }}>
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.35-4.35" />
-                  <path d="M8 11h6" />
-                </svg>
-                <p>{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
-                <p className="no-result-hint">{isEn ? 'Try adjusting your search or filter criteria' : 'ลองปรับคำค้นหาหรือตัวกรองดูใหม่'}</p>
-              </div>
-            ) : items.map((t) => (
-              <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} isDomestic />
-            ))}
-          </div>
-          <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
-        </div>
+      <div className="page-hero-band">
+        <nav className="breadcrumb">
+          <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+          <span className="breadcrumb-sep">/</span>
+          <span className="breadcrumb-current">{isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ'}</span>
+        </nav>
+        <h1 className="page-title">{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1>
+        <p className="page-subtitle">{isEn ? 'Discover amazing destinations across Thailand' : 'ค้นพบจุดหมายปลายทางที่น่าทึ่งทั่วประเทศไทย'}</p>
       </div>
+      <div className="tour-list-body">
+        <div className="tour-list-layout">
+          <FilterSidebar
+            locale={locale}
+            groups={sidebarGroups}
+            isMobileOpen={mobileFilterOpen}
+            onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
+          />
+          <div className="tour-list-content">
+            <div className="results-toolbar">
+              <span />
+              <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
+              <select
+                className="sort-select"
+                value={filters.sortBy}
+                onChange={e => updateFilter('sortBy', e.target.value)}
+              >
+                <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
+                <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
+                <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
+              </select>
+            </div>
+            <div className="tour-grid">
+              {items.length === 0 ? (
+                <div className="no-result">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-muted)', marginBottom: 12 }}>
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                    <path d="M8 11h6" />
+                  </svg>
+                  <p>{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
+                  <p className="no-result-hint">{isEn ? 'Try adjusting your search or filter criteria' : 'ลองปรับคำค้นหาหรือตัวกรองดูใหม่'}</p>
+                </div>
+              ) : items.map((t) => (
+                <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} isDomestic />
+              ))}
+            </div>
+            <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -407,22 +407,6 @@
 /* ========== TOUR LIST PAGE ========== */
 .tour-list-page {
   min-height: 100vh;
-  padding: 200px 0 50px;
-}
-
-.tour-list-page h2 {
-  text-align: center;
-  color: var(--navy);
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 30px;
-  text-shadow: none;
-}
-
-.no-result {
-  text-align: center;
-  font-size: 18px;
-  color: var(--text-muted);
 }
 
 .detail-airline-logo {
@@ -434,52 +418,57 @@
   margin-top: 8px;
 }
 
-/* ========== BREADCRUMB ========== */
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;   /* กันไม่ให้ item ถูกดันกระจายเต็มจอ */
-  flex-wrap: nowrap;
-  gap: 8px;
-  font-size: 13px;
-  margin-bottom: 20px;
-
-  /* ใช้ container เดียวกับเนื้อหาด้านล่าง แทน padding % ลอยๆ */
-  max-width: 1320px;              /* ปรับให้ตรงกับ max-width ของ container จริง */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 24px;                /* ปรับให้ตรงกับ padding ของ container จริง */
-
-  color: var(--text-muted);
+/* ========== PAGE HERO BAND ========== */
+.page-hero-band {
+  background: linear-gradient(135deg, #0b2d54 0%, #163f6e 40%, #2c5a8c 100%);
+  padding: 180px 6% 50px;
+  color: #fff;
 }
 
-.breadcrumb a {
-  flex: 0 0 auto;                 /* กัน anchor ถูกยืด */
-  color: var(--navy-secondary);
+.page-hero-band .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 16px;
+}
+
+.page-hero-band .breadcrumb a {
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  white-space: nowrap;
   transition: color 0.2s;
 }
 
-.breadcrumb a:hover {
+.page-hero-band .breadcrumb a:hover {
   color: var(--cyan);
-  text-decoration: underline;
 }
 
-.breadcrumb-sep {
-  flex: 0 0 auto;
-  color: var(--text-muted);
+.page-hero-band .breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
   font-size: 12px;
 }
 
-.breadcrumb-current {
-  flex: 0 1 auto;                 /* ยืดได้แค่พอดีเนื้อหา ไม่ดันสุดขอบ */
-  color: var(--text-dark);
+.page-hero-band .breadcrumb-current {
+  color: #fff;
   font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 300px;
+}
+
+.page-hero-band .page-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-hero-band .page-subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== TOUR LIST BODY ========== */
+.tour-list-body {
+  background: #F5F8FC;
+  padding: 40px 6% 60px;
 }
 
 
