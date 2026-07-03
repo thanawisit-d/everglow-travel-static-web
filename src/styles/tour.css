@@ -260,7 +260,15 @@
 
 .tour-detail-page {
   min-height: 100vh;
-  padding: 200px 55px 45px;
+}
+
+.tour-detail-page .page-hero-band {
+  padding-bottom: 30px;
+}
+
+.tour-detail-body {
+  background: #F5F8FC;
+  padding: 40px 6% 60px;
 }
 
 .tour-detail-container {
@@ -417,6 +425,8 @@
   display: block;
   margin-top: 8px;
 }
+
+
 
 /* ========== PAGE HERO BAND ========== */
 .page-hero-band {
