@@ -289,9 +289,22 @@
   }
 }
 
+@media (max-width: 600px) {
+  .tour-detail-container {
+    padding: 20px;
+    gap: 25px;
+  }
+}
+
 .tour-detail-left {
   position: relative;
   min-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .tour-detail-left {
+    min-height: 300px;
+  }
 }
 
 .tour-detail-left img {
@@ -433,6 +446,12 @@
   background: linear-gradient(135deg, #0b2d54 0%, #163f6e 40%, #2c5a8c 100%);
   padding: 180px 6% 50px;
   color: #fff;
+}
+
+@media (max-width: 600px) {
+  .page-hero-band {
+    padding: 110px 6% 35px;
+  }
 }
 
 /* ---- Breadcrumb ---- */
