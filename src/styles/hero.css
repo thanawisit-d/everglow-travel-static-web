@@ -48,3 +48,47 @@
   max-width: 600px;
   text-align: center;
 }
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hero-btn-primary {
+  background: var(--cyan);
+  color: var(--navy-dark);
+}
+
+.hero-btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+

@@ -15,7 +15,7 @@
 .reviews-section h2 {
   text-align: left;
   color: var(--navy);
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 800;
   text-shadow: none;
 }
@@ -68,14 +68,26 @@
   flex: 1;
 }
 
-.review-content p {
+.review-text-wrap {
+  display: flex;
+  gap: 12px;
   background: var(--bg-page);
   padding: 15px;
   border-radius: var(--radius);
+  align-items: flex-start;
+}
+
+.review-quote {
+  flex-shrink: 0;
+  color: var(--navy);
+  opacity: 0.2;
+  margin-top: 2px;
+}
+
+.review-text-wrap p {
   line-height: 1.6;
   color: var(--text-dark);
-  border-left: 4px solid var(--navy);
-  padding-left: 15px;
+  flex: 1;
 }
 
 .tag {

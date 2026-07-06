@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
+import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
@@ -12,6 +13,7 @@ import Reviews from '@/components/Reviews';
 export default function LocaleClient({ locale }) {
   const router = useRouter();
   const isEn = locale === 'en';
+  const t = config[locale] || config.th;
 
   const handlePromoClick = (promo) => {
     const full = toursData.find((t) => t.id === promo.id);
@@ -19,6 +21,13 @@ export default function LocaleClient({ locale }) {
       router.push(`/${locale}/tours/${full.id}`);
     }
   };
+
+  const whyItems = [
+    { icon: 'guide', title: t.why1Title, desc: t.why1Desc },
+    { icon: 'price', title: t.why2Title, desc: t.why2Desc },
+    { icon: 'support', title: t.why3Title, desc: t.why3Desc },
+    { icon: 'package', title: t.why4Title, desc: t.why4Desc },
+  ];
 
   return (
     <div>
@@ -31,15 +40,10 @@ export default function LocaleClient({ locale }) {
         <TourGrid locale={locale} showBadge="monthly" onTourClick={handlePromoClick} />
       </div>
       <section className="why-choose-us">
-        <h2>{isEn ? 'Why Choose Everglow Travel' : 'ทำไมต้องเลือก Everglow Travel'}</h2>
-        <p className="subtitle">--------</p>
+        <h2>{t.whyTitle}</h2>
+        <p className="subtitle"></p>
         <div className="why-grid">
-          {[
-            { icon: 'guide', title: '--------', desc: '--------' },
-            { icon: 'price', title: '--------', desc: '--------' },
-            { icon: 'support', title: '--------', desc: '--------' },
-            { icon: 'package', title: '--------', desc: '--------' },
-          ].map((item, i) => (
+          {whyItems.map((item, i) => (
             <div className="why-card" key={i}>
               <div className="why-icon">
                 {item.icon === 'guide' && (

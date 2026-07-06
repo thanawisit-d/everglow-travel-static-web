@@ -143,7 +143,7 @@ export default function DomesticClient({ locale, tours }) {
         <nav className="breadcrumb">
           <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
           <span className="breadcrumb-sep">/</span>
-          <span className="breadcrumb-current">{isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ'}</span>
+          <span className="breadcrumb-current" aria-current="page">{isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ'}</span>
         </nav>
         <h1 className="page-title">{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1>
         <p className="page-subtitle">{isEn ? 'Discover amazing destinations across Thailand' : 'ค้นพบจุดหมายปลายทางที่น่าทึ่งทั่วประเทศไทย'}</p>
@@ -164,6 +164,7 @@ export default function DomesticClient({ locale, tours }) {
                 className="sort-select"
                 value={filters.sortBy}
                 onChange={e => updateFilter('sortBy', e.target.value)}
+                aria-label={isEn ? 'Sort tours' : 'เรียงลำดับทัวร์'}
               >
                 <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
                 <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>

@@ -164,7 +164,7 @@ export default function OutboundClient({ locale, tours }) {
         <nav className="breadcrumb">
           <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
           <span className="breadcrumb-sep">/</span>
-          <span className="breadcrumb-current">{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</span>
+          <span className="breadcrumb-current" aria-current="page">{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</span>
         </nav>
         <h1 className="page-title">{isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</h1>
         <p className="page-subtitle">{isEn ? 'Explore extraordinary destinations around the world' : 'สำรวจจุดหมายปลายทางสุดพิเศษทั่วโลก'}</p>
@@ -185,6 +185,7 @@ export default function OutboundClient({ locale, tours }) {
                 className="sort-select"
                 value={filters.sortBy}
                 onChange={e => updateFilter('sortBy', e.target.value)}
+                aria-label={isEn ? 'Sort tours' : 'เรียงลำดับทัวร์'}
               >
                 <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
                 <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>

@@ -46,7 +46,16 @@
     "popularTitle": "โปรแกรมทัวร์ยอดนิยม",
     "reviewTitle": "รีวิว",
     "addrLabel": "ที่อยู่",
-    "webLabel": "เว็บไซต์"
+    "webLabel": "เว็บไซต์",
+    "whyTitle": "ทำไมต้องเลือก Everglow Travel",
+    "why1Title": "มัคคุเทศก์มืออาชีพ",
+    "why1Desc": "ทีมงานมากประสบการณ์ พร้อมดูแลคุณตลอดการเดินทาง",
+    "why2Title": "ราคาคุ้มค่า",
+    "why2Desc": "ราคาโปร่งใส ไม่มีค่าใช้จ่ายแอบแฝง จ่ายจริงเท่าที่เห็น",
+    "why3Title": "บริการตลอด 24 ชม.",
+    "why3Desc": "ทีมงานพร้อมช่วยเหลือคุณตลอดการเดินทาง ทุกที่ทุกเวลา",
+    "why4Title": "แพ็กเกจหลากหลาย",
+    "why4Desc": "โปรแกรมทัวร์มากกว่า 100 รายการ ทั้งในและต่างประเทศ"
   },
   "en": {
     "company": "Everglow Global Co., Ltd. (Head Office)",
@@ -95,7 +104,16 @@
     "popularTitle": "Popular Tours",
     "reviewTitle": "Reviews",
     "addrLabel": "Address",
-    "webLabel": "Website"
+    "webLabel": "Website",
+    "whyTitle": "Why Choose Everglow Travel",
+    "why1Title": "Expert Guides",
+    "why1Desc": "Experienced team dedicated to making your journey unforgettable",
+    "why2Title": "Best Value",
+    "why2Desc": "Transparent pricing with no hidden fees — you pay only what you see",
+    "why3Title": "24/7 Support",
+    "why3Desc": "Our team is available around the clock to assist you during your travels",
+    "why4Title": "Wide Selection",
+    "why4Desc": "Over 100 tour programs covering destinations across Thailand and worldwide"
   },
   "social": {
     "phone": "+66996326146",

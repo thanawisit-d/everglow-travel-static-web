@@ -59,7 +59,7 @@ export default function TourDetail({ tour, locale }) {
           <span className="breadcrumb-sep">/</span>
           <Link href={listPath}>{breadcrumbLabel}</Link>
           <span className="breadcrumb-sep">/</span>
-          <span className="breadcrumb-current">{tourName}</span>
+          <span className="breadcrumb-current" aria-current="page">{tourName}</span>
         </nav>
       </div>
       <div className="tour-detail-body">
