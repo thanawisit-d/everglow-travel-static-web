@@ -33,11 +33,11 @@
   gap: 20px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .tour-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .tour-grid { grid-template-columns: 1fr; }
 }
 
@@ -180,6 +180,7 @@
 .province-search-wrapper {
   position: relative;
   width: 550px;
+  max-width: 100%;
   margin: 0 auto 45px;
 }
 
@@ -283,13 +284,13 @@
   box-shadow: var(--shadow-md);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .tour-detail-container {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .tour-detail-container {
     padding: 20px;
     gap: 25px;
@@ -301,7 +302,7 @@
   min-height: 400px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .tour-detail-left {
     min-height: 300px;
   }
@@ -339,7 +340,7 @@
   justify-content: start;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .detail-info-grid {
     grid-template-columns: 1fr;
   }
@@ -424,6 +425,15 @@
   color: #ff2020;
 }
 
+@media (max-width: 480px) {
+  .detail-buttons {
+    flex-direction: column;
+  }
+
+  .detail-buttons a {
+    width: 100%;
+  }
+}
 
 /* ========== TOUR LIST PAGE ========== */
 .tour-list-page {
@@ -448,7 +458,7 @@
   color: #fff;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .page-hero-band {
     padding: 110px 6% 35px;
   }

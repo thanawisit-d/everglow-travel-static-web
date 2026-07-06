@@ -24,6 +24,15 @@
   color: var(--navy-secondary);
 }
 
+@media (max-width: 768px) {
+  .back-btn {
+    top: 100px;
+    left: 16px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
 .back-btn.not-found-btn {
   position: static;
   display: inline-flex;

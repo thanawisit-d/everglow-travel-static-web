@@ -133,6 +133,35 @@
   margin-top: 8px;
 }
 
+@media (max-width: 768px) {
+  .landing-page .box {
+    width: 90%;
+  }
+
+  .landing-page .brand {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-page .brand {
+    font-size: 36px;
+  }
+
+  .landing-page .title {
+    letter-spacing: 4px;
+  }
+
+  .landing-page .btn-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .landing-page .logo {
+    width: 120px;
+  }
+}
+
 /* ========== PAGINATION ========== */
 .pagination-list {
   display: flex;

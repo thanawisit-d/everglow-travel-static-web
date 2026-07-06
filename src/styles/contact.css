@@ -23,6 +23,13 @@
   padding: 130px 6% 20px;
 }
 
+@media (max-width: 768px) {
+  .slider-section {
+    min-height: auto;
+    padding: 100px 6% 40px;
+  }
+}
+
 
 /* ========== CONTACT ========== */
 .contact-wrap {
@@ -154,5 +161,38 @@
 
 .contact-cell:hover .contact-cell-value {
   color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 120px 6% 40px;
+  }
+
+  .contact-wrap {
+    padding: 20px;
+  }
+
+  .contact-card-new {
+    padding: 24px;
+  }
+
+  .contact-cell-wrap-third {
+    flex: 0 0 calc(50% - 5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cell-wrap-third {
+    flex: 0 0 100%;
+  }
+
+  .contact-title-wrap h1,
+  .contact-title-wrap h2 {
+    font-size: 22px;
+  }
+
+  .contact-card-new {
+    padding: 16px;
+  }
 }
 

@@ -247,7 +247,7 @@
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .filter-toggle-btn {
     display: inline-flex;
   }

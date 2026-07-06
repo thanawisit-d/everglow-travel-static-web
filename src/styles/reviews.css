@@ -7,6 +7,12 @@
   padding: 200px 0 0;
 }
 
+@media (max-width: 768px) {
+  .reviews-page {
+    padding: 120px 0 0;
+  }
+}
+
 .reviews-page .reviews-section {
   padding-top: 0;
 }
@@ -98,5 +104,36 @@
   border-radius: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 50px 6%;
+  }
+
+  .review-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .review-img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    padding: 16px;
+  }
+
+  .review-img {
+    height: 200px;
+  }
+
+  .reviews-section h1,
+  .reviews-section h2 {
+    font-size: 24px;
+  }
 }
 
