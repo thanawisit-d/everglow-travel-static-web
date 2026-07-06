@@ -24,13 +24,13 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
 
       <aside className={`filter-sidebar ${isMobileOpen ? 'open' : ''}`}>
         <div className="filter-sidebar-header">
-          <h3>{isEn ? 'Filters' : 'ตัวกรอง'}</h3>
-          <button className="filter-close-btn" onClick={onMobileToggle}>×</button>
+          <h2>{isEn ? 'Filters' : 'ตัวกรอง'}</h2>
+          <button className="filter-close-btn" onClick={onMobileToggle} aria-label={isEn ? 'Close filters' : 'ปิดตัวกรอง'}>×</button>
         </div>
 
         {groups.map(group => (
           <div className="filter-group" key={group.id}>
-            <h4 className="filter-group-title">{group.title}</h4>
+            <h3 className="filter-group-title">{group.title}</h3>
             {group.type === 'search' && (
               <input
                 type="text"
@@ -38,6 +38,7 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                 placeholder={group.placeholder || (isEn ? 'Search...' : 'ค้นหา...')}
                 value={group.value || ''}
                 onChange={e => group.onChange(e.target.value)}
+                aria-label={group.title || (isEn ? 'Search' : 'ค้นหา')}
               />
             )}
             {group.type === 'checkbox' && group.options?.map(opt => (
@@ -113,6 +114,7 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                         group.onChange([group.valueMin ?? group.min, group.valueMax ?? group.max]);
                       }
                     }}
+                    aria-label={isEn ? 'Minimum price' : 'ราคาต่ำสุด'}
                   />
                   <span className="range-sep">—</span>
                   <input
@@ -137,6 +139,7 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                         group.onChange([group.valueMin ?? group.min, group.valueMax ?? group.max]);
                       }
                     }}
+                    aria-label={isEn ? 'Maximum price' : 'ราคาสูงสุด'}
                   />
                 </div>
                 <div className="range-track-wrap">
@@ -163,6 +166,7 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                       v = Math.min(v, currentMax);
                       group.onChange([v, currentMax]);
                     }}
+                    aria-label={isEn ? 'Minimum price slider' : 'แถบเลื่อนราคาต่ำสุด'}
                   />
                   <input
                     type="range"
@@ -179,6 +183,7 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                       v = Math.max(v, currentMin);
                       group.onChange([currentMin, v]);
                     }}
+                    aria-label={isEn ? 'Maximum price slider' : 'แถบเลื่อนราคาสูงสุด'}
                   />
                 </div>
               </div>

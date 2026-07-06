@@ -22,7 +22,7 @@ export default function Footer({ locale }) {
           </div>
         </div>
         <div className="footer-col footer-contact">
-          <h3>{t.contactTitle}</h3>
+          <h2 className="footer-heading">{t.contactTitle}</h2>
           <div className="contact-item">
             <Image src={assetPath('icons/clock.png')} width={24} height={24} alt={isEn ? 'Business hours' : 'เวลาทำการ'} />
             <span>{t.hours}</span>
@@ -41,21 +41,21 @@ export default function Footer({ locale }) {
           </div>
         </div>
         <div className="footer-col qr-box">
-          <h3>{t.follow}</h3>
+          <h2 className="footer-heading">{t.follow}</h2>
           <Image src={assetPath('assets/images/social/qr.png')} width={180} height={180} className="qr-img" alt="LINE QR Code" />
           <div className="line-id">@Everglowtravel</div>
           <div className="social-row">
-            <a href={s.facebook} target="_blank" rel="noopener noreferrer">
-              <Image src={assetPath('assets/images/social/Facebook.png')} width={50} height={50} alt="Facebook" />
+            <a href={s.facebook} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'Facebook' : 'เฟซบุ๊ก'}>
+              <Image src={assetPath('assets/images/social/Facebook.png')} width={50} height={50} alt="" />
             </a>
-            <a href={s.instagram} target="_blank" rel="noopener noreferrer">
-              <Image src={assetPath('assets/images/social/ig.png')} width={50} height={50} alt="Instagram" />
+            <a href={s.instagram} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'Instagram' : 'อินสตาแกรม'}>
+              <Image src={assetPath('assets/images/social/ig.png')} width={50} height={50} alt="" />
             </a>
-            <a href={s.tiktok} target="_blank" rel="noopener noreferrer">
-              <Image src={assetPath('assets/images/social/tiktok.webp')} width={50} height={50} alt="TikTok" />
+            <a href={s.tiktok} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'TikTok' : 'ติ๊กต็อก'}>
+              <Image src={assetPath('assets/images/social/tiktok.webp')} width={50} height={50} alt="" />
             </a>
-            <a href={s.line} target="_blank" rel="noopener noreferrer">
-              <Image src={assetPath('assets/images/social/LINE.png')} width={50} height={50} alt="LINE" />
+            <a href={s.line} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'LINE' : 'ไลน์'}>
+              <Image src={assetPath('assets/images/social/LINE.png')} width={50} height={50} alt="" />
             </a>
           </div>
         </div>

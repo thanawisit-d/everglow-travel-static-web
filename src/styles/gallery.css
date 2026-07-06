@@ -4,10 +4,11 @@
 }
 
 .gallery-section h2 {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--navy);
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .gallery-section .subtitle {

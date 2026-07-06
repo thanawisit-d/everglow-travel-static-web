@@ -70,6 +70,7 @@
   line-height: 1.8;
   color: #000;
   margin-bottom: 12px;
+  max-width: 65ch;
 }
 
 .about-main {
@@ -87,16 +88,13 @@
 }
 
 .section-box {
-  background: var(--white);
-  padding: 28px 24px;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 25px rgba(0, 52, 120, 0.1);
+  padding: 20px 24px;
+  border-left: 3px solid var(--cyan);
   transition: 0.3s ease;
 }
 
 .section-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 40px rgba(0, 52, 120, 0.18);
+  padding-left: 28px;
 }
 
 .section-title {
@@ -104,7 +102,7 @@
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .section-box p {
