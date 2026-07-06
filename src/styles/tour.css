@@ -260,7 +260,15 @@
 
 .tour-detail-page {
   min-height: 100vh;
-  padding: 200px 55px 45px;
+}
+
+.tour-detail-page .page-hero-band {
+  padding-bottom: 30px;
+}
+
+.tour-detail-body {
+  background: #F5F8FC;
+  padding: 40px 6% 60px;
 }
 
 .tour-detail-container {
@@ -281,9 +289,22 @@
   }
 }
 
+@media (max-width: 600px) {
+  .tour-detail-container {
+    padding: 20px;
+    gap: 25px;
+  }
+}
+
 .tour-detail-left {
   position: relative;
   min-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .tour-detail-left {
+    min-height: 300px;
+  }
 }
 
 .tour-detail-left img {
@@ -407,22 +428,6 @@
 /* ========== TOUR LIST PAGE ========== */
 .tour-list-page {
   min-height: 100vh;
-  padding: 200px 0 50px;
-}
-
-.tour-list-page h2 {
-  text-align: center;
-  color: var(--navy);
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 30px;
-  text-shadow: none;
-}
-
-.no-result {
-  text-align: center;
-  font-size: 18px;
-  color: var(--text-muted);
 }
 
 .detail-airline-logo {
@@ -432,6 +437,86 @@
   object-fit: contain;
   display: block;
   margin-top: 8px;
+}
+
+
+
+/* ========== PAGE HERO BAND ========== */
+.page-hero-band {
+  background: linear-gradient(135deg, #0b2d54 0%, #163f6e 40%, #2c5a8c 100%);
+  padding: 180px 6% 50px;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .page-hero-band {
+    padding: 110px 6% 35px;
+  }
+}
+
+/* ---- Breadcrumb ---- */
+.page-hero-band .breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 16px;
+  padding: 0;
+  background: transparent;
+}
+
+.page-hero-band .breadcrumb a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* hover ใช้ cyan ตัวเดียวกับ active state ของ sidebar/nav ทั้งหน้า ให้เป็นภาษาสีเดียวกัน */
+.page-hero-band .breadcrumb a:hover {
+  color: var(--cyan);
+}
+
+.page-hero-band .breadcrumb-sep {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.30);   /* ตัวคั่นควรจางที่สุด ไม่ใช่จุดสนใจ */
+  font-size: 12px;
+}
+
+/* หน้าปัจจุบัน ใช้ amber แทนขาวล้วน ให้ผูกกับ accent สีเดียวกับปุ่ม/ราคาทั้งหน้า
+   ทำให้ผู้ใช้เห็นปุ๊บรู้ว่า "อยู่ตรงนี้" เพราะสีเดียวกับจุดที่ต้องสนใจอื่นๆ */
+.page-hero-band .breadcrumb-current {
+  flex: 0 1 auto;
+  color: #ffffff;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Title / Subtitle ---- */
+.page-hero-band .page-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.page-hero-band .page-subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== TOUR LIST BODY ========== */
+.tour-list-body {
+  background: #F5F8FC;
+  padding: 40px 6% 60px;
 }
 
 

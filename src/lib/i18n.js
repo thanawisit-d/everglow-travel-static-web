@@ -104,11 +104,62 @@ export const countryNameMap = {
   'Georgia': 'จอร์เจีย',
   'อาร์เจนตินา': 'Argentina',
   'Argentina': 'อาร์เจนตินา',
+  'จอร์แดน': 'Jordan',
+  'Jordan': 'จอร์แดน',
 };
 
 export function translateCountry(name) {
   return countryNameMap[name] || name;
 }
+
+export const provinceNameMap = {
+  'ราชบุรี': 'Ratchaburi',
+  'นครราชสีมา': 'Nakhon Ratchasima',
+  'สระแก้ว': 'Sa Kaeo',
+  'เพชรบุรี': 'Phetchaburi',
+  'ชลบุรี': 'Chonburi',
+  'อุทัยธานี': 'Uthai Thani',
+  'สุพรรณบุรี': 'Suphanburi',
+  'พิษณุโลก': 'Phitsanulok',
+  'อุตรดิตถ์': 'Uttaradit',
+  'เลย': 'Loei',
+  'ชัยภูมิ': 'Chaiyaphum',
+  'ตาก': 'Tak',
+  'เพชรบูรณ์': 'Phetchabun',
+  'สุโขทัย': 'Sukhothai',
+  'กำแพงเพชร': 'Kamphaeng Phet',
+  'ยโสธร': 'Yasothon',
+  'อุบลราชธานี': 'Ubon Ratchathani',
+  'นครศรีธรรมราช': 'Nakhon Si Thammarat',
+  'ตรัง': 'Trang',
+  'เชียงใหม่': 'Chiang Mai',
+  'ปาย': 'Pai',
+  'อ่างขาง': 'Ang Khang',
+  'สตูล': 'Satun',
+  'Ratchaburi': 'ราชบุรี',
+  'Nakhon Ratchasima': 'นครราชสีมา',
+  'Sa Kaeo': 'สระแก้ว',
+  'Phetchaburi': 'เพชรบุรี',
+  'Chonburi': 'ชลบุรี',
+  'Uthai Thani': 'อุทัยธานี',
+  'Suphanburi': 'สุพรรณบุรี',
+  'Phitsanulok': 'พิษณุโลก',
+  'Uttaradit': 'อุตรดิตถ์',
+  'Loei': 'เลย',
+  'Chaiyaphum': 'ชัยภูมิ',
+  'Tak': 'ตาก',
+  'Phetchabun': 'เพชรบูรณ์',
+  'Sukhothai': 'สุโขทัย',
+  'Kamphaeng Phet': 'กำแพงเพชร',
+  'Yasothon': 'ยโสธร',
+  'Ubon Ratchathani': 'อุบลราชธานี',
+  'Nakhon Si Thammarat': 'นครศรีธรรมราช',
+  'Trang': 'ตรัง',
+  'Chiang Mai': 'เชียงใหม่',
+  'Pai': 'ปาย',
+  'Ang Khang': 'อ่างขาง',
+  'Satun': 'สตูล',
+};
 
 export function fieldIncludes(val, search) {
   if (!val) return false;

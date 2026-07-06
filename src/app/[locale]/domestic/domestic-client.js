@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
+import { provinceNameMap } from '@/lib/i18n';
 
 const durationMapEnToTh = {
   '1 day': '1 วัน',
@@ -39,7 +41,10 @@ export default function DomesticClient({ locale, tours }) {
     const provinces = [...new Set(tours.flatMap(t => {
       const p = t.province;
       return Array.isArray(p) ? p : [p];
-    }).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'th'));
+    }).filter(Boolean))].sort((a, b) => {
+      if (isEn) return provinceNameMap[a].localeCompare(provinceNameMap[b], 'en');
+      return a.localeCompare(b, 'th');
+    });
     return { durations, provinces };
   }, [tours, isEn]);
 
@@ -50,7 +55,8 @@ export default function DomesticClient({ locale, tours }) {
       const kw = filters.search;
       result = result.filter(t => {
         const prov = Array.isArray(t.province) ? t.province.join(' ') : (t.province || '');
-        return prov.includes(kw) ||
+        const provEn = Array.isArray(t.province) ? t.province.map(p => provinceNameMap[p] || p).join(' ') : (provinceNameMap[t.province] || t.province || '');
+        return prov.includes(kw) || provEn.toLowerCase().includes(kw.toLowerCase()) ||
           (isEn ? (t.desc_en || '') : (t.desc || '')).includes(kw) ||
           (t.id || '').toLowerCase().includes(kw.toLowerCase());
       });
@@ -67,9 +73,16 @@ export default function DomesticClient({ locale, tours }) {
       });
     }
 
-    const [pMin, pMax] = filters.priceRange;
+    const [minRaw, maxRaw] = filters.priceRange;
+    const pMin = Math.min(minRaw, maxRaw);
+    const pMax = Math.max(minRaw, maxRaw);
+
     result = result.filter(t => {
       const p = parsePrice(t.price);
+      if (isNaN(p)) {
+        console.warn('parsePrice ล้มเหลว:', t.price, t.id ?? t.slug);
+        return false;
+      }
       return p >= pMin && p <= pMax;
     });
 
@@ -98,7 +111,7 @@ export default function DomesticClient({ locale, tours }) {
       title: isEn ? 'Destination' : 'ปลายทาง',
       type: 'select',
       useChoices: true,
-      options: filterOptions.provinces.map(p => ({ value: p, label: p })),
+      options: filterOptions.provinces.map(p => ({ value: p, label: isEn ? provinceNameMap[p] || p : p })),
       value: filters.province,
       onChange: v => updateFilter('province', v),
     },
@@ -108,6 +121,7 @@ export default function DomesticClient({ locale, tours }) {
       type: 'range',
       min: minPrice,
       max: maxPrice,
+      step: 500,
       valueMin: filters.priceRange[0],
       valueMax: filters.priceRange[1],
       onChange: ([min, max]) => updateFilter('priceRange', [min, max]),
@@ -125,39 +139,55 @@ export default function DomesticClient({ locale, tours }) {
 
   return (
     <section className="page tour-list-page active">
-      <div className="tour-list-container">
-      <h1>{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1>
-      <div className="tour-list-layout">
-        <FilterSidebar
-          locale={locale}
-          groups={sidebarGroups}
-          isMobileOpen={mobileFilterOpen}
-          onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
-        />
-        <div className="tour-list-content">
-          <div className="results-toolbar">
-            <span />
-            <span className="results-count">{filtered.length} {isEn ? 'Tours Found' : 'รายการ'}</span>
-            <select
-              className="sort-select"
-              value={filters.sortBy}
-              onChange={e => updateFilter('sortBy', e.target.value)}
-            >
-              <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
-              <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
-              <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
-            </select>
-          </div>
-          <div className="tour-grid">
-            {items.length === 0 ? (
-              <p className="no-result">{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
-            ) : items.map((t) => (
-              <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} isDomestic />
-            ))}
-          </div>
-          <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
-        </div>
+      <div className="page-hero-band">
+        <nav className="breadcrumb">
+          <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+          <span className="breadcrumb-sep">/</span>
+          <span className="breadcrumb-current">{isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ'}</span>
+        </nav>
+        <h1 className="page-title">{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1>
+        <p className="page-subtitle">{isEn ? 'Discover amazing destinations across Thailand' : 'ค้นพบจุดหมายปลายทางที่น่าทึ่งทั่วประเทศไทย'}</p>
       </div>
+      <div className="tour-list-body">
+        <div className="tour-list-layout">
+          <FilterSidebar
+            locale={locale}
+            groups={sidebarGroups}
+            isMobileOpen={mobileFilterOpen}
+            onMobileToggle={() => setMobileFilterOpen(!mobileFilterOpen)}
+          />
+          <div className="tour-list-content">
+            <div className="results-toolbar">
+              <span />
+              <span className="results-count">{isEn ? `${filtered.length} Tours Found` : `พบ ${filtered.length} รายการ`}</span>
+              <select
+                className="sort-select"
+                value={filters.sortBy}
+                onChange={e => updateFilter('sortBy', e.target.value)}
+              >
+                <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
+                <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
+                <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
+              </select>
+            </div>
+            <div className="tour-grid">
+              {items.length === 0 ? (
+                <div className="no-result">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-muted)', marginBottom: 12 }}>
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                    <path d="M8 11h6" />
+                  </svg>
+                  <p>{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
+                  <p className="no-result-hint">{isEn ? 'Try adjusting your search or filter criteria' : 'ลองปรับคำค้นหาหรือตัวกรองดูใหม่'}</p>
+                </div>
+              ) : items.map((t) => (
+                <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} isDomestic />
+              ))}
+            </div>
+            <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
+          </div>
+        </div>
       </div>
     </section>
   );
