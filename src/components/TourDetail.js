@@ -49,21 +49,25 @@ export default function TourDetail({ tour, locale }) {
     : (isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ');
   const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
 
+  const tourName = displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id;
+
   return (
     <div className="tour-detail-page page active">
-      <nav className="breadcrumb">
-        <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
-        <span className="breadcrumb-sep">/</span>
-        <Link href={listPath}>{breadcrumbLabel}</Link>
-        <span className="breadcrumb-sep">/</span>
-        <span className="breadcrumb-current">{displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id}</span>
-      </nav>
+      <div className="page-hero-band">
+        <nav className="breadcrumb">
+          <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+          <span className="breadcrumb-sep">/</span>
+          <Link href={listPath}>{breadcrumbLabel}</Link>
+          <span className="breadcrumb-sep">/</span>
+          <span className="breadcrumb-current">{tourName}</span>
+        </nav>
+      </div>
+      <div className="tour-detail-body">
       <div className="tour-detail-container">
         <div className="tour-detail-left">
           <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} />
         </div>
         <div className="tour-detail-right">
-          <h1>{displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id}</h1>
           <p>{displayDesc}</p>
           <div className="detail-info-grid">
             <div className="detail-item">
@@ -130,6 +134,7 @@ export default function TourDetail({ tour, locale }) {
             )}
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
