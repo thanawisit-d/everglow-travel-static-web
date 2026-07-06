@@ -9,7 +9,7 @@
 
 .tour-section h2 {
   text-align: center;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--navy);
   letter-spacing: 1px;
@@ -167,7 +167,7 @@
 .price-main {
   font-size: 24px;
   font-weight: 800;
-  color: #e63946;
+  color: var(--amber);
 }
 
 .price-sub {
@@ -373,7 +373,7 @@
 }
 
 #detailPrice {
-  color: #e63946;
+  color: var(--amber);
   font-size: 24px;
   font-weight: 900;
 }

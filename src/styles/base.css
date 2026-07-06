@@ -36,7 +36,12 @@
   border-width: 0;
 }
 
-html, body {
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
   width: 100%;
 }
 
@@ -71,10 +76,7 @@ body {
 /* ========== TYPOGRAPHY ========== */
 h1, h2 {
   font-family: var(--font-kanit), 'Kanit', sans-serif;
-  font-size: 30px;
-  font-weight: 100;
   color: var(--navy);
-  text-align: center;
 }
 
 /* ========== SKELETON LOADING ========== */
