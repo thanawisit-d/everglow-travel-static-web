@@ -1,5 +1,6 @@
 import toursData from '@/data/tours.json';
 import TourDetail from '@/components/TourDetail';
+import config from '@/data/site-config.json';
 
 export function generateStaticParams() {
   const ids = toursData.map((t) => t.id);
@@ -15,17 +16,18 @@ export function generateStaticParams() {
 
 export default async function TourDetailPage({ params }) {
   const { locale, id } = await params;
+  const t = config[locale] || config.th;
   const tour = toursData.find((t) => t.id === id) || null;
   if (!tour) {
     return (
       <div className="page tour-detail-page">
         <div className="tour-detail-container not-found">
-          <h1>{locale === 'en' ? 'Tour Not Found' : 'ไม่พบข้อมูลทัวร์'}</h1>
+          <h1>{t.tourNotFound}</h1>
           <p className="not-found-msg">
-            {locale === 'en' ? 'The tour you are looking for does not exist or has been removed.' : 'ไม่พบข้อมูลทัวร์ที่คุณค้นหา หรือทัวร์อาจถูกลบไปแล้ว'}
+            {t.tourNotFoundMsg}
           </p>
           <a href={`/${locale}`} className="back-btn not-found-btn">
-            {locale === 'en' ? 'Back to Home' : 'กลับหน้าแรก'}
+            {t.backToHome}
           </a>
         </div>
       </div>

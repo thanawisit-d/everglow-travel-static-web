@@ -4,7 +4,6 @@ import config from '@/data/site-config.json';
 
 export default function Hero({ locale }) {
   const t = config[locale] || config.th;
-  const isEn = locale === 'en';
   return (
     <section className="hero">
       <Image src="/assets/images/backgrounds/Home3.jpg" fill className="hero-bg" alt="" priority sizes="100vw" />
@@ -14,10 +13,10 @@ export default function Hero({ locale }) {
         <p>{t.heroSubtitle}</p>
         <div className="hero-actions">
           <Link href={`/${locale}/domestic`} className="hero-btn hero-btn-primary">
-            {isEn ? 'View Domestic Tours' : 'ทัวร์ในประเทศ'}
+            {t.heroDomestic}
           </Link>
           <Link href={`/${locale}/outbound`} className="hero-btn hero-btn-secondary">
-            {isEn ? 'View Outbound Tours' : 'ทัวร์ต่างประเทศ'}
+            {t.heroOutbound}
           </Link>
         </div>
       </div>

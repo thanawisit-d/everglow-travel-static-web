@@ -9,7 +9,13 @@
     "about": "เกี่ยวกับเรา",
     "contact": "ติดต่อ",
     "reviews": "รีวิว",
-    "durations": ["1 วัน", "2 วัน 1 คืน", "3 วัน 2 คืน", "4 วัน 3 คืน", "5 วัน 4 คืน"],
+    "durations": [
+      "1 วัน",
+      "2 วัน 1 คืน",
+      "3 วัน 2 คืน",
+      "4 วัน 3 คืน",
+      "5 วัน 4 คืน"
+    ],
     "contactTitle": "ช่องทางการติดต่อ",
     "hours": "จันทร์–ศุกร์ : 09.00–18.00 น.",
     "phone": "099-632-6146",
@@ -23,7 +29,7 @@
     "addr": "25/163 ม.4 ต.บางไผ่ อ.เมือง จ.นนทบุรี 11000",
     "heroTitle": "ยินดีต้อนรับสู่ Everglow Travel",
     "heroSubtitle": "ค้นหาทัวร์ที่ใช่สำหรับคุณ พร้อมประสบการณ์การเดินทางที่น่าประทับใจ",
-    "searchTitle": "ค้นหาโปรแกรมทัวร์",
+    "searchTitle": "ค้นหา",
     "destination": "เลือกประเทศ/จังหวัด",
     "tourKeyword": "รหัสทัวร์ / คำค้น",
     "selectDate": "เลือกวันที่",
@@ -55,7 +61,46 @@
     "why3Title": "บริการตลอด 24 ชม.",
     "why3Desc": "ทีมงานพร้อมช่วยเหลือคุณตลอดการเดินทาง ทุกที่ทุกเวลา",
     "why4Title": "แพ็กเกจหลากหลาย",
-    "why4Desc": "โปรแกรมทัวร์มากกว่า 100 รายการ ทั้งในและต่างประเทศ"
+    "why4Desc": "โปรแกรมทัวร์มากกว่า 100 รายการ ทั้งในและต่างประเทศ",
+    "heroDomestic": "ทัวร์ในประเทศ",
+    "heroOutbound": "ทัวร์ต่างประเทศ",
+    "domesticSubtitle": "ค้นพบจุดหมายปลายทางที่น่าทึ่งทั่วประเทศไทย",
+    "outboundSubtitle": "สำรวจจุดหมายปลายทางสุดพิเศษทั่วโลก",
+    "domesticTitle": "ทัวร์ในประเทศ",
+    "outboundTitle": "ทัวร์ต่างประเทศ",
+    "breadcrumbDomestic": "ทัวร์ในประเทศ",
+    "breadcrumbOutbound": "ทัวร์ต่างประเทศ",
+    "galleryTitle": "แกลเลอรีการเดินทาง",
+    "gallerySubtitle": "ภาพความประทับใจจากการเดินทางของเรา",
+    "viewPhoto": "ดูรูป",
+    "sortDefault": "เรียงลำดับ",
+    "sortPriceLow": "ราคาต่ำ-สูง",
+    "sortPriceHigh": "ราคาสูง-ต่ำ",
+    "sortLabel": "เรียงลำดับทัวร์",
+    "resultsFound": "พบ {count} รายการ",
+    "noTours": "ไม่พบทัวร์ที่ค้นหา",
+    "noToursHint": "ลองปรับคำค้นหาหรือตัวกรองดูใหม่",
+    "searchPlaceholderDomestic": "ค้นหาจังหวัด, รหัสทัวร์...",
+    "searchPlaceholderOutbound": "ค้นหาประเทศ, รหัสทัวร์...",
+    "tourNotFound": "ไม่พบข้อมูลทัวร์",
+    "tourNotFoundMsg": "ไม่พบข้อมูลทัวร์ที่คุณค้นหา หรือทัวร์อาจถูกลบไปแล้ว",
+    "backToHome": "กลับหน้าแรก",
+    "detailCountry": "ประเทศ",
+    "detailProvince": "จังหวัด",
+    "detailPeriod": "กำหนดการเดินทาง",
+    "detailDuration": "จำนวนวัน",
+    "detailPriceStart": "ราคาเริ่มต้น",
+    "detailTransportDomestic": "การเดินทาง",
+    "detailTransportOutbound": "เดินทางโดย",
+    "detailBy": "เดินทางโดย",
+    "detailCall": "โทรจอง",
+    "detailLine": "จองไลน์",
+    "detailPdf": "ดูโปรแกรมทัวร์",
+    "detailBaht": "บาท",
+    "destinationTitle": "ปลายทาง",
+    "priceRangeTitle": "ช่วงราคา",
+    "durationTitle": "ระยะเวลา",
+    "continentTitle": "ทวีป"
   },
   "en": {
     "company": "Everglow Global Co., Ltd. (Head Office)",
@@ -67,7 +112,13 @@
     "about": "About Us",
     "contact": "Contact",
     "reviews": "Reviews",
-    "durations": ["1 day", "2 days 1 night", "3 days 2 night", "4 days 3 night", "5 days 4 night"],
+    "durations": [
+      "1 day",
+      "2 days 1 night",
+      "3 days 2 night",
+      "4 days 3 night",
+      "5 days 4 night"
+    ],
     "contactTitle": "Contact Us",
     "hours": "Mon–Fri : 09.00–18.00",
     "phone": "099-632-6146",
@@ -81,7 +132,7 @@
     "addr": "25/163 Moo.4, Bangphai, Mueang, Nonthaburi 11000",
     "heroTitle": "Welcome to Everglow Travel",
     "heroSubtitle": "Discover Thailand with us — unforgettable travel experiences await",
-    "searchTitle": "Search Tour Programs",
+    "searchTitle": "Search",
     "destination": "Destination",
     "tourKeyword": "Tour ID / Keyword",
     "selectDate": "Select date",
@@ -113,7 +164,46 @@
     "why3Title": "24/7 Support",
     "why3Desc": "Our team is available around the clock to assist you during your travels",
     "why4Title": "Wide Selection",
-    "why4Desc": "Over 100 tour programs covering destinations across Thailand and worldwide"
+    "why4Desc": "Over 100 tour programs covering destinations across Thailand and worldwide",
+    "heroDomestic": "View Domestic Tours",
+    "heroOutbound": "View Outbound Tours",
+    "domesticSubtitle": "Discover amazing destinations across Thailand",
+    "outboundSubtitle": "Explore extraordinary destinations around the world",
+    "domesticTitle": "Thailand Tours",
+    "outboundTitle": "Outbound Tours",
+    "breadcrumbDomestic": "Domestic Tours",
+    "breadcrumbOutbound": "Outbound Tours",
+    "galleryTitle": "Travel Gallery",
+    "gallerySubtitle": "Moments captured from our journeys",
+    "viewPhoto": "View Photo",
+    "sortDefault": "Default",
+    "sortPriceLow": "Price Low-High",
+    "sortPriceHigh": "Price High-Low",
+    "sortLabel": "Sort tours",
+    "resultsFound": "{count} Tours Found",
+    "noTours": "No tours found",
+    "noToursHint": "Try adjusting your search or filter criteria",
+    "searchPlaceholderDomestic": "Search province, tour code...",
+    "searchPlaceholderOutbound": "Search country, tour code...",
+    "tourNotFound": "Tour Not Found",
+    "tourNotFoundMsg": "The tour you are looking for does not exist or has been removed.",
+    "backToHome": "Back to Home",
+    "detailCountry": "Country",
+    "detailProvince": "Province",
+    "detailPeriod": "Travel Period",
+    "detailDuration": "Duration",
+    "detailPriceStart": "Starting Price",
+    "detailTransportDomestic": "Transport",
+    "detailTransportOutbound": "Transport",
+    "detailBy": "By",
+    "detailCall": "Call to Book",
+    "detailLine": "Book via LINE",
+    "detailPdf": "View Tour Program",
+    "detailBaht": "Baht",
+    "destinationTitle": "Destination",
+    "priceRangeTitle": "Price Range",
+    "durationTitle": "Duration",
+    "continentTitle": "Continent"
   },
   "social": {
     "phone": "+66996326146",
@@ -128,69 +218,222 @@
       "label": "เอเชีย",
       "labelEn": "Asia",
       "items": [
-        { "name": "ญี่ปุ่น", "flag": "japan.png" },
-        { "name": "เกาหลีใต้", "flag": "SouthKorea.png" },
-        { "name": "จีน", "flag": "china.png" },
-        { "name": "ไต้หวัน", "flag": "taiwan.png" },
-        { "name": "ฮ่องกง", "flag": "HongKong.png" },
-        { "name": "สิงคโปร์", "flag": "singapore.png" },
-        { "name": "มาเลเซีย", "flag": "Malaysia.png" },
-        { "name": "เวียดนาม", "flag": "vietnam.png" },
-        { "name": "อินโดนีเซีย", "flag": "indonesia.png" },
-        { "name": "มาเก๊า", "flag": "macau.png" },
-        { "name": "ลาว", "flag": "laos.png" },
-        { "name": "เมียนมา", "flag": "myanmar.png" },
-        { "name": "ฟิลิปปินส์", "flag": "philippines.png" },
-        { "name": "มองโกเลีย", "flag": "Mongolia.png" }
+        {
+          "name": "ญี่ปุ่น",
+          "flag": "japan.png"
+        },
+        {
+          "name": "เกาหลีใต้",
+          "flag": "SouthKorea.png"
+        },
+        {
+          "name": "จีน",
+          "flag": "china.png"
+        },
+        {
+          "name": "ไต้หวัน",
+          "flag": "taiwan.png"
+        },
+        {
+          "name": "ฮ่องกง",
+          "flag": "HongKong.png"
+        },
+        {
+          "name": "สิงคโปร์",
+          "flag": "singapore.png"
+        },
+        {
+          "name": "มาเลเซีย",
+          "flag": "Malaysia.png"
+        },
+        {
+          "name": "เวียดนาม",
+          "flag": "vietnam.png"
+        },
+        {
+          "name": "อินโดนีเซีย",
+          "flag": "indonesia.png"
+        },
+        {
+          "name": "มาเก๊า",
+          "flag": "macau.png"
+        },
+        {
+          "name": "ลาว",
+          "flag": "laos.png"
+        },
+        {
+          "name": "เมียนมา",
+          "flag": "myanmar.png"
+        },
+        {
+          "name": "ฟิลิปปินส์",
+          "flag": "philippines.png"
+        },
+        {
+          "name": "มองโกเลีย",
+          "flag": "Mongolia.png"
+        }
       ]
     },
     {
       "label": "ยุโรป",
       "labelEn": "Europe",
       "items": [
-        { "name": "ฝรั่งเศส", "flag": "france.png" },
-        { "name": "อิตาลี", "flag": "italy.png" },
-        { "name": "เยอรมนี", "flag": "germany.png" },
-        { "name": "สวิตเซอร์แลนด์", "flag": "switzerland.png" },
-        { "name": "ออสเตรีย", "flag": "austria.png" },
-        { "name": "สเปน", "flag": "spain.png" },
-        { "name": "เนเธอร์แลนด์", "flag": "netherlands.png" },
-        { "name": "อังกฤษ", "flag": "uk.png" },
-        { "name": "โปรตุเกส", "flag": "portugal.png" },
-        { "name": "กรีซ", "flag": "greece.png" },
-        { "name": "เช็ก", "flag": "czech.png" },
-        { "name": "ฮังการี", "flag": "hungary.png" },
-        { "name": "โปแลนด์", "flag": "poland.png" },
-        { "name": "นอร์เวย์", "flag": "norway.png" },
-        { "name": "สวีเดน", "flag": "sweden.png" },
-        { "name": "เบลเยียม", "flag": "belgium.png" },
-        { "name": "ลักเซมเบิร์ก", "flag": "luxembourg.png" },
-        { "name": "สโลวาเกีย", "flag": "slovakia.png" },
-        { "name": "เดนมาร์ก", "flag": "denmark.png" },
-        { "name": "โมร็อกโก", "flag": "morocco.png" }
+        {
+          "name": "ฝรั่งเศส",
+          "flag": "france.png"
+        },
+        {
+          "name": "อิตาลี",
+          "flag": "italy.png"
+        },
+        {
+          "name": "เยอรมนี",
+          "flag": "germany.png"
+        },
+        {
+          "name": "สวิตเซอร์แลนด์",
+          "flag": "switzerland.png"
+        },
+        {
+          "name": "ออสเตรีย",
+          "flag": "austria.png"
+        },
+        {
+          "name": "สเปน",
+          "flag": "spain.png"
+        },
+        {
+          "name": "เนเธอร์แลนด์",
+          "flag": "netherlands.png"
+        },
+        {
+          "name": "อังกฤษ",
+          "flag": "uk.png"
+        },
+        {
+          "name": "โปรตุเกส",
+          "flag": "portugal.png"
+        },
+        {
+          "name": "กรีซ",
+          "flag": "greece.png"
+        },
+        {
+          "name": "เช็ก",
+          "flag": "czech.png"
+        },
+        {
+          "name": "ฮังการี",
+          "flag": "hungary.png"
+        },
+        {
+          "name": "โปแลนด์",
+          "flag": "poland.png"
+        },
+        {
+          "name": "นอร์เวย์",
+          "flag": "norway.png"
+        },
+        {
+          "name": "สวีเดน",
+          "flag": "sweden.png"
+        },
+        {
+          "name": "เบลเยียม",
+          "flag": "belgium.png"
+        },
+        {
+          "name": "ลักเซมเบิร์ก",
+          "flag": "luxembourg.png"
+        },
+        {
+          "name": "สโลวาเกีย",
+          "flag": "slovakia.png"
+        },
+        {
+          "name": "เดนมาร์ก",
+          "flag": "denmark.png"
+        },
+        {
+          "name": "โมร็อกโก",
+          "flag": "morocco.png"
+        }
       ]
     },
     {
       "label": "อื่นๆ",
       "labelEn": "Other",
       "items": [
-        { "name": "อเมริกา", "flag": "usa.png" },
-        { "name": "แคนาดา", "flag": "canada.png" },
-        { "name": "เม็กซิโก", "flag": "mexico.png" },
-        { "name": "ดูไบ", "flag": "dubai.png" },
-        { "name": "อียิปต์", "flag": "egypt.png" },
-        { "name": "ตุรกี", "flag": "turkey.png" },
-        { "name": "ออสเตรเลีย", "flag": "australia.png" },
-        { "name": "นิวซีแลนด์", "flag": "newzealand.png" },
-        { "name": "อินเดีย", "flag": "india.png" },
-        { "name": "ศรีลังกา", "flag": "srilanka.png" },
-        { "name": "เนปาล", "flag": "nepal.png" },
-        { "name": "ภูฏาน", "flag": "Bhutan.png" },
-        { "name": "มัลดีฟส์", "flag": "maldives.png" },
-        { "name": "กาตาร์", "flag": "qatar.png" },
-        { "name": "เปรู", "flag": "peru.png" },
-        { "name": "จอร์เจีย", "flag": "georgia.png" },
-        { "name": "อาร์เจนตินา", "flag": "argentina.png" }
+        {
+          "name": "อเมริกา",
+          "flag": "usa.png"
+        },
+        {
+          "name": "แคนาดา",
+          "flag": "canada.png"
+        },
+        {
+          "name": "เม็กซิโก",
+          "flag": "mexico.png"
+        },
+        {
+          "name": "ดูไบ",
+          "flag": "dubai.png"
+        },
+        {
+          "name": "อียิปต์",
+          "flag": "egypt.png"
+        },
+        {
+          "name": "ตุรกี",
+          "flag": "turkey.png"
+        },
+        {
+          "name": "ออสเตรเลีย",
+          "flag": "australia.png"
+        },
+        {
+          "name": "นิวซีแลนด์",
+          "flag": "newzealand.png"
+        },
+        {
+          "name": "อินเดีย",
+          "flag": "india.png"
+        },
+        {
+          "name": "ศรีลังกา",
+          "flag": "srilanka.png"
+        },
+        {
+          "name": "เนปาล",
+          "flag": "nepal.png"
+        },
+        {
+          "name": "ภูฏาน",
+          "flag": "Bhutan.png"
+        },
+        {
+          "name": "มัลดีฟส์",
+          "flag": "maldives.png"
+        },
+        {
+          "name": "กาตาร์",
+          "flag": "qatar.png"
+        },
+        {
+          "name": "เปรู",
+          "flag": "peru.png"
+        },
+        {
+          "name": "จอร์เจีย",
+          "flag": "georgia.png"
+        },
+        {
+          "name": "อาร์เจนตินา",
+          "flag": "argentina.png"
+        }
       ]
     }
   ]

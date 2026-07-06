@@ -72,6 +72,27 @@
   object-fit: cover;
 }
 
+.topbar .right {
+  display: flex;
+  align-items: center;
+}
+
+.lang-item {
+  list-style: none;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  transition: 0.2s;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -354,6 +375,10 @@ ul.dropdown-menu {
 }
 
 @media (max-width: 768px) {
+  .topbar .left .company {
+    display: none;
+  }
+
   .menu-toggle {
     display: flex;
   }

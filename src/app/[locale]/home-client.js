@@ -41,7 +41,6 @@ export default function LocaleClient({ locale }) {
       </div>
       <section className="why-choose-us">
         <h2>{t.whyTitle}</h2>
-        <p className="subtitle"></p>
         <div className="why-grid">
           {whyItems.map((item, i) => (
             <div className="why-card" key={i}>
@@ -84,13 +83,13 @@ export default function LocaleClient({ locale }) {
       </section>
 
       <section className="gallery-section bg-alt">
-        <h2>{isEn ? 'Travel Gallery' : 'แกลเลอรีการเดินทาง'}</h2>
-        <p className="subtitle">{isEn ? 'Moments captured from our journeys' : 'ภาพความประทับใจจากการเดินทางของเรา'}</p>
+        <h2>{t.galleryTitle}</h2>
+        <p className="subtitle">{t.gallerySubtitle}</p>
         <div className="gallery-grid">
           {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
             <div className="gallery-item" key={i}>
               <Image src={assetPath(`assets/images/backgrounds/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" />
-              <div className="overlay"><span>{isEn ? 'View Photo' : 'ดูรูป'}</span></div>
+              <div className="overlay"><span>{t.viewPhoto}</span></div>
             </div>
           ))}
         </div>

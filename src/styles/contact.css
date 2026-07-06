@@ -69,12 +69,6 @@
   border: none;
 }
 
-.contact-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
 .contact-row-centered {
   display: flex;
   gap: 10px;
