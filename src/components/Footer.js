@@ -22,7 +22,7 @@ export default function Footer({ locale }) {
           </div>
         </div>
         <div className="footer-col footer-contact">
-          <h3>{t.contactTitle}</h3>
+          <h2 className="footer-heading">{t.contactTitle}</h2>
           <div className="contact-item">
             <Image src={assetPath('icons/clock.png')} width={24} height={24} alt={isEn ? 'Business hours' : 'เวลาทำการ'} />
             <span>{t.hours}</span>
@@ -41,7 +41,7 @@ export default function Footer({ locale }) {
           </div>
         </div>
         <div className="footer-col qr-box">
-          <h3>{t.follow}</h3>
+          <h2 className="footer-heading">{t.follow}</h2>
           <Image src={assetPath('assets/images/social/qr.png')} width={180} height={180} className="qr-img" alt="LINE QR Code" />
           <div className="line-id">@Everglowtravel</div>
           <div className="social-row">

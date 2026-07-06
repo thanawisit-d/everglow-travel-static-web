@@ -415,8 +415,8 @@
 }
 
 .line-btn {
-  border: 2px solid #27c84a;
-  color: #27c84a;
+  border: 2px solid #0D6B2B;
+  color: #0D6B2B;
 }
 
 .pdf-btn {
@@ -510,7 +510,7 @@
 
 .page-hero-band .page-subtitle {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ========== TOUR LIST BODY ========== */

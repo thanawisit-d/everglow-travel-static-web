@@ -24,13 +24,13 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
 
       <aside className={`filter-sidebar ${isMobileOpen ? 'open' : ''}`}>
         <div className="filter-sidebar-header">
-          <h3>{isEn ? 'Filters' : 'ตัวกรอง'}</h3>
+          <h2>{isEn ? 'Filters' : 'ตัวกรอง'}</h2>
           <button className="filter-close-btn" onClick={onMobileToggle}>×</button>
         </div>
 
         {groups.map(group => (
           <div className="filter-group" key={group.id}>
-            <h4 className="filter-group-title">{group.title}</h4>
+            <h3 className="filter-group-title">{group.title}</h3>
             {group.type === 'search' && (
               <input
                 type="text"
