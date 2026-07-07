@@ -171,6 +171,11 @@
   padding: 0;
 }
 
+.tour-list-body nav {
+  position: static;
+  z-index: auto;
+}
+
 .pagination-list li {
   margin: 0;
   padding: 0;

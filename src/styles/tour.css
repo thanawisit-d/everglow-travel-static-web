@@ -457,6 +457,8 @@
   margin-bottom: 16px;
   padding: 0;
   background: transparent;
+  position: static;
+  z-index: auto;
 }
 
 .page-hero-band .breadcrumb a {
