@@ -6,6 +6,17 @@ export function generateStaticParams() {
   return [{ locale: 'th' }, { locale: 'en' }];
 }
 
+const meta = {
+  th: { title: 'ทัวร์ในประเทศ', description: 'ทัวร์ในประเทศ เที่ยวไทย สัมผัสประสบการณ์สุดพิเศษทั่วทุกจังหวัด' },
+  en: { title: 'Thailand Tours', description: 'Discover Thailand with premium domestic tour packages across all provinces.' },
+};
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const m = meta[locale] || meta.th;
+  return { title: m.title, description: m.description };
+}
+
 export default async function DomesticPage({ params }) {
   const { locale } = await params;
   const tours = toursData.filter((t) => t.type === 'domestic');

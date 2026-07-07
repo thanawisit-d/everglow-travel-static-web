@@ -157,6 +157,12 @@
   color: var(--navy);
 }
 
+@media (max-width: 1024px) {
+  .contact-page { padding: 130px 6% 50px; }
+  .contact-wrap { padding: 30px; }
+  .contact-card-new { padding: 30px; }
+}
+
 @media (max-width: 768px) {
   .contact-page {
     padding: 120px 6% 40px;

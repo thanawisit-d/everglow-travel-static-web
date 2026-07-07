@@ -17,6 +17,10 @@
   text-shadow: none;
 }
 
+@media (max-width: 1024px) {
+  .tour-section h2 { font-size: 28px; }
+}
+
 .tour-section-title {
   text-align: center;
   width: 100%;
@@ -33,8 +37,12 @@
   gap: 20px;
 }
 
+@media (max-width: 1024px) {
+  .tour-grid { gap: 14px; }
+}
+
 @media (max-width: 768px) {
-  .tour-grid { grid-template-columns: repeat(2, 1fr); }
+  .tour-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 
 @media (max-width: 480px) {
@@ -217,6 +225,14 @@
   box-shadow: var(--shadow-md);
 }
 
+@media (max-width: 1024px) {
+  .tour-detail-container {
+    grid-template-columns: 320px 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .tour-detail-container {
     grid-template-columns: 1fr;
@@ -235,6 +251,12 @@
   min-height: 400px;
 }
 
+@media (max-width: 1024px) {
+  .tour-detail-left {
+    min-height: 350px;
+  }
+}
+
 @media (max-width: 480px) {
   .tour-detail-left {
     min-height: 300px;
@@ -249,21 +271,27 @@
   display: block;
 }
 
-.tour-detail-right h1 {
+.tour-detail-title {
   font-size: 30px;
   line-height: 1.35;
   color: var(--navy);
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   text-align: left;
   text-shadow: none;
 }
 
-.tour-detail-right p {
+@media (max-width: 1024px) {
+  .tour-detail-title { font-size: 26px; }
+}
+
+.tour-detail-desc {
   font-size: 15px;
   line-height: 1.75;
-  color: var(--text-muted);
-  margin-bottom: 22px;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eef1f5;
 }
 
 .detail-info-grid {
@@ -271,6 +299,13 @@
   grid-template-columns: 240px 200px;
   gap: 22px 35px;
   justify-content: start;
+}
+
+@media (max-width: 1024px) {
+  .detail-info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 24px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -358,6 +393,13 @@
   color: #ff2020;
 }
 
+@media (max-width: 1024px) {
+  .detail-buttons a {
+    width: 160px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 480px) {
   .detail-buttons {
     flex-direction: column;
@@ -389,6 +431,12 @@
   background: linear-gradient(135deg, #0b2d54 0%, #163f6e 40%, #2c5a8c 100%);
   padding: 180px 6% 50px;
   color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .page-hero-band {
+    padding: 140px 6% 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -449,6 +497,10 @@
   color: #fff;
   margin-bottom: 8px;
   text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .page-hero-band .page-title { font-size: 40px; }
 }
 
 .page-hero-band .page-subtitle {

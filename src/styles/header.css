@@ -374,6 +374,14 @@ ul.dropdown-menu {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+@media (max-width: 1024px) {
+  nav ul { gap: 10px; }
+  nav ul li a,
+  nav ul li button { font-size: 13px; }
+  .lang-btn { font-size: 12px !important; padding: 5px 10px !important; }
+  .contact-icons a { width: 32px; height: 32px; }
+}
+
 @media (max-width: 768px) {
   .topbar .left .company {
     display: none;

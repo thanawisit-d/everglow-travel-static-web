@@ -25,6 +25,11 @@
   margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .why-grid { gap: 20px; }
+  .why-choose-us h2 { font-size: 28px; }
+}
+
 @media (max-width: 768px) {
   .why-grid { grid-template-columns: repeat(2, 1fr); }
 }

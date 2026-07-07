@@ -10,13 +10,27 @@ import Slider from '@/components/Slider';
 import TourGrid from '@/components/TourGrid';
 import Reviews from '@/components/Reviews';
 
+const featuredIds = {
+  popular: [
+    'BT-KIX-NRT_S02_XJ', 'KR-CNX-SEOUL-SPRING', 'BT-DYG25_FD',
+    'BT-PVG50_VZ', 'BT-FUK_S02_VZ', '3mmjj24412',
+  ],
+  monthly: [
+    'EGT1D-02', 'EGT1D-22', 'EGT-SP-01',
+    'EGT3D2N-FP-14', 'EGT4D3N-FP-06', 'EGT4D3N-FP-07',
+  ],
+};
+
 export default function LocaleClient({ locale }) {
   const router = useRouter();
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
 
-  const handlePromoClick = (promo) => {
-    const full = toursData.find((t) => t.id === promo.id);
+  const popularTours = featuredIds.popular.map(id => toursData.find(t => t.id === id)).filter(Boolean);
+  const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
+
+  const handlePromoClick = (id) => {
+    const full = toursData.find((t) => t.id === id);
     if (full) {
       router.push(`/${locale}/tours/${full.id}`);
     }
@@ -36,8 +50,8 @@ export default function LocaleClient({ locale }) {
         <Slider />
       </section>
       <div className="tour-grid-wrapper bg-alt">
-        <TourGrid locale={locale} showBadge="popular" onTourClick={handlePromoClick} />
-        <TourGrid locale={locale} showBadge="monthly" onTourClick={handlePromoClick} />
+        <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
+        <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
       </div>
       <section className="why-choose-us">
         <h2>{t.whyTitle}</h2>
@@ -88,7 +102,7 @@ export default function LocaleClient({ locale }) {
         <div className="gallery-grid">
           {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
             <div className="gallery-item" key={i}>
-              <Image src={assetPath(`assets/images/backgrounds/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" />
+              <Image src={assetPath(`assets/images/backgrounds/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" loading="lazy" />
               <div className="overlay"><span>{t.viewPhoto}</span></div>
             </div>
           ))}

@@ -26,6 +26,11 @@
   text-shadow: none;
 }
 
+@media (max-width: 1024px) {
+  .reviews-section h1,
+  .reviews-section h2 { font-size: 28px; }
+}
+
 .reviews-section h1::after,
 .reviews-section h2::after {
   content: "";

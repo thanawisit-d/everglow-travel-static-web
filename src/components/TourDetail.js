@@ -21,7 +21,12 @@ export default function TourDetail({ tour, locale }) {
   const breadcrumbLabel = isOutbound ? t.breadcrumbOutbound : t.breadcrumbDomestic;
   const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
 
-  const tourName = displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id;
+  const splitKeyword = isEn ? ' tour' : ' เที่ยว';
+  const descParts = displayDesc?.split(splitKeyword) || [];
+  const tourName = (descParts[0] || tour.id).trim();
+  const tourDetail = descParts.length > 1
+    ? (splitKeyword + descParts.slice(1).join(splitKeyword)).trim()
+    : '';
 
   return (
     <div className="tour-detail-page page active">
@@ -37,10 +42,11 @@ export default function TourDetail({ tour, locale }) {
       <div className="tour-detail-body">
       <div className="tour-detail-container">
         <div className="tour-detail-left">
-          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} />
+          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} loading="lazy" />
         </div>
         <div className="tour-detail-right">
-          <p>{displayDesc}</p>
+          <h1 className="tour-detail-title">{tourName}</h1>
+          {tourDetail && <p className="tour-detail-desc">{tourDetail}</p>}
           <div className="detail-info-grid">
             <div className="detail-item">
               <Image src={assetPath('assets/images/icons/pin.png')} width={24} height={24} alt="" />

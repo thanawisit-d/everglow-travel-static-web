@@ -91,6 +91,10 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 44px; }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 120px 20px 60px;
