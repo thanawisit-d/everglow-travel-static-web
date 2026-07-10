@@ -387,6 +387,10 @@ ul.dropdown-menu {
     display: none;
   }
 
+  .topbar .right.contact-icons {
+    display: none;
+  }
+
   .menu-toggle {
     display: flex;
   }
