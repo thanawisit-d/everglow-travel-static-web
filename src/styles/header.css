@@ -49,8 +49,8 @@
 }
 
 .contact-icons a {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -343,8 +343,8 @@ ul.dropdown-menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
@@ -379,7 +379,7 @@ ul.dropdown-menu {
   nav ul li a,
   nav ul li button { font-size: 13px; }
   .lang-btn { font-size: 12px !important; padding: 5px 10px !important; }
-  .contact-icons a { width: 32px; height: 32px; }
+  .contact-icons a { width: 36px; height: 36px; }
 }
 
 @media (max-width: 768px) {
@@ -494,5 +494,33 @@ ul.dropdown-menu {
     grid-template-columns: repeat(2, 1fr);
   }
 
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 8px 4%;
+  }
+
+  .topbar .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-icons a {
+    width: 36px;
+    height: 36px;
+  }
+
+  nav {
+    padding: 10px 4%;
+  }
+
+  nav h2 {
+    font-size: 17px;
+  }
+
+  nav ul {
+    padding: 16px 4%;
+  }
 }
 

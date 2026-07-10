@@ -219,7 +219,7 @@
   background: var(--white);
   padding: 34px;
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: minmax(300px, 420px) 1fr;
   gap: 35px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -227,7 +227,6 @@
 
 @media (max-width: 1024px) {
   .tour-detail-container {
-    grid-template-columns: 320px 1fr;
     padding: 24px;
     gap: 24px;
   }
@@ -296,14 +295,13 @@
 
 .detail-info-grid {
   display: grid;
-  grid-template-columns: 240px 200px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 22px 35px;
   justify-content: start;
 }
 
 @media (max-width: 1024px) {
   .detail-info-grid {
-    grid-template-columns: 1fr 1fr;
     gap: 18px 24px;
   }
 }
@@ -417,11 +415,17 @@
 
 .detail-airline-logo {
   width: 180px;
-  max-width: none;
   height: 55px;
   object-fit: contain;
   display: block;
   margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .detail-airline-logo {
+    width: 120px;
+    height: 40px;
+  }
 }
 
 
@@ -442,6 +446,18 @@
 @media (max-width: 768px) {
   .page-hero-band {
     padding: 110px 6% 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-band .breadcrumb {
+    gap: 4px;
+    font-size: 11px;
+  }
+  .page-hero-band .breadcrumb a {
+    max-width: 20vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

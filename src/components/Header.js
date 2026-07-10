@@ -71,6 +71,12 @@ export default function Header({ locale }) {
     };
   }, []);
 
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = menuOpen ? 'hidden' : 'hidden auto';
+    return () => { document.body.style.overflow = prev; };
+  }, [menuOpen]);
+
   const closeMenu = () => {
     setMenuOpen(false);
     setOpenDropdown(null);

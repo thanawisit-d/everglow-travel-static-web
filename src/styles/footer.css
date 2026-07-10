@@ -27,6 +27,36 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  .footer-brand {
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-address {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 16px 24px;
+    gap: 24px;
+  }
+
+  .footer-contact {
+    padding-top: 0;
+  }
+
+  .footer-company {
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    padding: 14px;
+  }
 }
 
 .footer-col {
@@ -169,8 +199,8 @@
 }
 
 .social-row img {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   background: var(--white);
   padding: 8px;

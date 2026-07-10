@@ -3,7 +3,7 @@
   position: fixed;
   top: 140px;
   left: 25px;
-  z-index: 9999;
+  z-index: 1001;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -24,12 +24,28 @@
   color: var(--navy-secondary);
 }
 
+@media (max-width: 1024px) {
+  .back-btn {
+    top: 130px;
+    left: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .back-btn {
     top: 100px;
     left: 16px;
     padding: 8px 12px;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    top: 90px;
+    left: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
 }
 
