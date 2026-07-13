@@ -8,9 +8,9 @@
   --white: #FFFFFF;
   --text-dark: #1e2a4a;
   --text-muted: #5a6a8a;
-  --shadow-sm: 0 4px 16px rgba(0, 52, 120, 0.08);
-  --shadow-md: 0 8px 30px rgba(0, 52, 120, 0.12);
-  --shadow-lg: 0 15px 45px rgba(0, 52, 120, 0.15);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 15px 45px rgba(0, 0, 0, 0.15);
   --amber: #F59E0B;
   --radius: 14px;
   --radius-lg: 20px;
@@ -23,26 +23,19 @@
   box-sizing: border-box;
 }
 
-/* ========== UTILITY ========== */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 html {
   scroll-behavior: smooth;
   width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   width: 100%;
+  overflow-x: hidden;
+}
+
+.page.active {
+  display: block;
 }
 
 /* ========== ACCESSIBILITY ========== */
@@ -148,5 +141,17 @@ h1, h2 {
   padding: 200px 20px 40px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 

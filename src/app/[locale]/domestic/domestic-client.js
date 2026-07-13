@@ -9,6 +9,7 @@ import FilterSidebar from '@/components/FilterSidebar';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import { provinceNameMap } from '@/lib/i18n';
+import config from '@/data/site-config.json';
 
 const durationMapEnToTh = {
   '1 day': '1 วัน',
@@ -21,6 +22,7 @@ const durationMapEnToTh = {
 export default function DomesticClient({ locale, tours }) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const t = config[locale] || config.th;
 
   const {
     filters, page, mobileFilterOpen, setMobileFilterOpen,
@@ -80,7 +82,7 @@ export default function DomesticClient({ locale, tours }) {
     result = result.filter(t => {
       const p = parsePrice(t.price);
       if (isNaN(p)) {
-        console.warn('parsePrice ล้มเหลว:', t.price, t.id ?? t.slug);
+        if (process.env.NODE_ENV !== 'production') console.warn('parsePrice ล้มเหลว:', t.price, t.id ?? t.slug);
         return false;
       }
       return p >= pMin && p <= pMax;
@@ -100,15 +102,15 @@ export default function DomesticClient({ locale, tours }) {
   const sidebarGroups = [
     {
       id: 'search',
-      title: isEn ? 'Search' : 'ค้นหา',
+      title: t.searchTitle,
       type: 'search',
       value: filters.search,
       onChange: v => updateFilter('search', v),
-      placeholder: isEn ? 'Search province, tour code...' : 'ค้นหาจังหวัด, รหัสทัวร์...',
+      placeholder: t.searchPlaceholderDomestic,
     },
     {
       id: 'province',
-      title: isEn ? 'Destination' : 'ปลายทาง',
+      title: t.destinationTitle,
       type: 'select',
       useChoices: true,
       options: filterOptions.provinces.map(p => ({ value: p, label: isEn ? provinceNameMap[p] || p : p })),
@@ -117,7 +119,7 @@ export default function DomesticClient({ locale, tours }) {
     },
     {
       id: 'price',
-      title: isEn ? 'Price Range' : 'ช่วงราคา',
+      title: t.priceRangeTitle,
       type: 'range',
       min: minPrice,
       max: maxPrice,
@@ -129,7 +131,7 @@ export default function DomesticClient({ locale, tours }) {
     },
     {
       id: 'duration',
-      title: isEn ? 'Duration' : 'ระยะเวลา',
+      title: t.durationTitle,
       type: 'select',
       options: filterOptions.durations.map(d => ({ value: d, label: d })),
       value: filters.duration,
@@ -141,12 +143,12 @@ export default function DomesticClient({ locale, tours }) {
     <section className="page tour-list-page active">
       <div className="page-hero-band">
         <nav className="breadcrumb">
-          <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+          <Link href={`/${locale}`}>{t.home}</Link>
           <span className="breadcrumb-sep">/</span>
-          <span className="breadcrumb-current" aria-current="page">{isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ'}</span>
+          <span className="breadcrumb-current" aria-current="page">{t.breadcrumbDomestic}</span>
         </nav>
-        <h1 className="page-title">{isEn ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1>
-        <p className="page-subtitle">{isEn ? 'Discover amazing destinations across Thailand' : 'ค้นพบจุดหมายปลายทางที่น่าทึ่งทั่วประเทศไทย'}</p>
+        <h1 className="page-title">{t.domesticTitle}</h1>
+        <p className="page-subtitle">{t.domesticSubtitle}</p>
       </div>
       <div className="tour-list-body">
         <div className="tour-list-layout">
@@ -159,16 +161,16 @@ export default function DomesticClient({ locale, tours }) {
           <div className="tour-list-content">
             <div className="results-toolbar">
               <span />
-              <span className="results-count">{isEn ? `${filtered.length} Tours Found` : `พบ ${filtered.length} รายการ`}</span>
+              <span className="results-count">{t.resultsFound.replace('{count}', filtered.length)}</span>
               <select
                 className="sort-select"
                 value={filters.sortBy}
                 onChange={e => updateFilter('sortBy', e.target.value)}
-                aria-label={isEn ? 'Sort tours' : 'เรียงลำดับทัวร์'}
+                aria-label={t.sortLabel}
               >
-                <option value="">{isEn ? 'Default' : 'เรียงลำดับ'}</option>
-                <option value="price-asc">{isEn ? 'Price Low-High' : 'ราคาต่ำ-สูง'}</option>
-                <option value="price-desc">{isEn ? 'Price High-Low' : 'ราคาสูง-ต่ำ'}</option>
+                <option value="">{t.sortDefault}</option>
+                <option value="price-asc">{t.sortPriceLow}</option>
+                <option value="price-desc">{t.sortPriceHigh}</option>
               </select>
             </div>
             <div className="tour-grid">
@@ -179,8 +181,8 @@ export default function DomesticClient({ locale, tours }) {
                     <path d="m21 21-4.35-4.35" />
                     <path d="M8 11h6" />
                   </svg>
-                  <p>{isEn ? 'No tours found' : 'ไม่พบทัวร์ที่ค้นหา'}</p>
-                  <p className="no-result-hint">{isEn ? 'Try adjusting your search or filter criteria' : 'ลองปรับคำค้นหาหรือตัวกรองดูใหม่'}</p>
+                  <p>{t.noTours}</p>
+                  <p className="no-result-hint">{t.noToursHint}</p>
                 </div>
               ) : items.map((t) => (
                 <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} isDomestic />

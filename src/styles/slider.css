@@ -77,10 +77,81 @@
   cursor: pointer;
   transition: 0.25s;
   padding: 0;
+  background-clip: content-box;
 }
 
 .dot.active {
   background: var(--white);
   transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .dot {
+    width: 20px;
+    height: 20px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px;
+    border: none;
+    position: relative;
+  }
+
+  .dot::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    margin: auto;
+  }
+
+  .dot.active::after {
+    background: var(--white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    height: 420px;
+  }
+
+  .slide {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 350px;
+  }
+
+  .slide {
+    height: 350px;
+  }
+
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 250px;
+  }
+
+  .slide {
+    height: 250px;
+  }
+
+  .slider-btn.prev {
+    left: 8px;
+  }
+
+  .slider-btn.next {
+    right: 8px;
+  }
 }
 
