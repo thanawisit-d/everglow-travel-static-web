@@ -3,11 +3,13 @@ import Link from 'next/link';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import { displayField, translateCountry } from '@/lib/i18n';
+import config from '@/data/site-config.json';
 
 export default function TourDetail({ tour, locale }) {
   if (!tour) return null;
   const isOutbound = tour.type === 'outbound';
   const isEn = locale === 'en';
+  const t = config[locale] || config.th;
 
   const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
   const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
@@ -16,46 +18,21 @@ export default function TourDetail({ tour, locale }) {
   const displayProvince = isEn && tour.province_en ? tour.province_en : (tour.province ? displayField(tour.province) : '-');
   const displayTransportName = isEn && tour.transport?.name_en ? tour.transport.name_en : (tour.transport?.name || '-');
 
-  const t = isEn ? {
-    tourId: 'Tour ID',
-    country: 'Country',
-    province: 'Province',
-    period: 'Travel Period',
-    duration: 'Duration',
-    priceStart: 'Starting Price',
-    transport: 'Transport',
-    by: 'By',
-    call: 'Call to Book',
-    line: 'Book via LINE',
-    pdf: 'View Tour Program',
-    baht: 'Baht',
-  } : {
-    tourId: 'รหัสทัวร์',
-    country: 'ประเทศ',
-    province: 'จังหวัด',
-    period: 'กำหนดการเดินทาง',
-    duration: 'จำนวนวัน',
-    priceStart: 'ราคาเริ่มต้น',
-    transport: isOutbound ? 'เดินทางโดย' : 'การเดินทาง',
-    by: 'เดินทางโดย',
-    call: 'โทรจอง',
-    line: 'จองไลน์',
-    pdf: 'ดูโปรแกรมทัวร์',
-    baht: 'บาท',
-  };
-
-  const breadcrumbLabel = isOutbound
-    ? (isEn ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ')
-    : (isEn ? 'Domestic Tours' : 'ทัวร์ในประเทศ');
+  const breadcrumbLabel = isOutbound ? t.breadcrumbOutbound : t.breadcrumbDomestic;
   const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
 
-  const tourName = displayDesc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id;
+  const splitKeyword = isEn ? ' tour' : ' เที่ยว';
+  const descParts = displayDesc?.split(splitKeyword) || [];
+  const tourName = (descParts[0] || tour.id).trim();
+  const tourDetail = descParts.length > 1
+    ? (splitKeyword + descParts.slice(1).join(splitKeyword)).trim()
+    : '';
 
   return (
     <div className="tour-detail-page page active">
       <div className="page-hero-band">
         <nav className="breadcrumb">
-          <Link href={`/${locale}`}>{isEn ? 'Home' : 'หน้าแรก'}</Link>
+          <Link href={`/${locale}`}>{t.home}</Link>
           <span className="breadcrumb-sep">/</span>
           <Link href={listPath}>{breadcrumbLabel}</Link>
           <span className="breadcrumb-sep">/</span>
@@ -65,10 +42,11 @@ export default function TourDetail({ tour, locale }) {
       <div className="tour-detail-body">
       <div className="tour-detail-container">
         <div className="tour-detail-left">
-          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} />
+          <Image src={assetPath(tour.image)} fill sizes="(max-width: 992px) 100vw, 420px" alt={displayDesc || tour.id} loading="lazy" />
         </div>
         <div className="tour-detail-right">
-          <p>{displayDesc}</p>
+          <h1 className="tour-detail-title">{tourName}</h1>
+          {tourDetail && <p className="tour-detail-desc">{tourDetail}</p>}
           <div className="detail-info-grid">
             <div className="detail-item">
               <Image src={assetPath('assets/images/icons/pin.png')} width={24} height={24} alt="" />
@@ -80,35 +58,35 @@ export default function TourDetail({ tour, locale }) {
             <div className="detail-item">
               <Image src={assetPath('icons/location.png')} width={24} height={24} alt="" />
               <div>
-                <strong>{isOutbound ? t.country : t.province}</strong>
+                <strong>{isOutbound ? t.detailCountry : t.detailProvince}</strong>
                 <span>{isOutbound ? displayCountry : displayProvince}</span>
               </div>
             </div>
             <div className="detail-item">
               <Image src={assetPath('assets/images/icons/clock_13819249.png')} width={24} height={24} alt="" />
               <div>
-                <strong>{t.period}</strong>
+                <strong>{t.detailPeriod}</strong>
                 <span>{displayPeriod}</span>
               </div>
             </div>
             <div className="detail-item">
               <Image src={assetPath('assets/images/icons/stopwatch.png')} width={24} height={24} alt="" />
               <div>
-                <strong>{t.duration}</strong>
+                <strong>{t.detailDuration}</strong>
                 <span>{displayDuration}</span>
               </div>
             </div>
             <div className="detail-item">
               <Image src={assetPath('icons/price.png')} width={24} height={24} alt="" />
               <div>
-                <strong>{t.priceStart}</strong>
-                <span id="detailPrice">{formatPrice(tour.price)} {t.baht}</span>
+                <strong>{t.detailPriceStart}</strong>
+                <span id="detailPrice">{formatPrice(tour.price)} {t.detailBaht}</span>
               </div>
             </div>
             <div className="detail-item">
               <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'icons/plane.png'))} width={24} height={24} alt="" />
               <div>
-                <strong>{t.transport}</strong>
+                <strong>{isOutbound ? t.detailTransportOutbound : t.detailTransportDomestic}</strong>
                 {isOutbound ? (
                   <Image src={assetPath(`plane-logo/${tour.airline}`)} width={180} height={55} className="detail-airline-logo" alt={tour.airline ? `${tour.airline} airline` : 'Airline logo'} />
                 ) : (
@@ -120,16 +98,16 @@ export default function TourDetail({ tour, locale }) {
           <div className="detail-buttons">
             <a href={`tel:${tour.phone || '+66996326146'}`} className="call-btn">
               <Image src={assetPath('assets/images/icons/phone2 (1).png')} width={24} height={24} alt="" />
-              {t.call}
+              {t.detailCall}
             </a>
             <a href="https://lin.ee/xXcNI1w" target="_blank" rel="noopener noreferrer" className="line-btn">
               <Image src={assetPath('assets/images/social/LINE.png')} width={24} height={24} alt="" />
-              {t.line}
+              {t.detailLine}
             </a>
             {tour.pdf && (
               <a href={assetPath(tour.pdf)} target="_blank" rel="noopener noreferrer" className="pdf-btn">
                 <Image src={assetPath('assets/images/icons/pdf.png')} width={24} height={24} alt="" />
-                {t.pdf}
+                {t.detailPdf}
               </a>
             )}
           </div>

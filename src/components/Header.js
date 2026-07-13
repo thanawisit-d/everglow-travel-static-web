@@ -71,6 +71,12 @@ export default function Header({ locale }) {
     };
   }, []);
 
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = menuOpen ? 'hidden' : 'hidden auto';
+    return () => { document.body.style.overflow = prev; };
+  }, [menuOpen]);
+
   const closeMenu = () => {
     setMenuOpen(false);
     setOpenDropdown(null);
@@ -130,7 +136,7 @@ export default function Header({ locale }) {
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
           <li className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
-              if (window.innerWidth > 992) { nav(`/${locale}/domestic`); }
+              if (window.innerWidth > 768) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
             }}>{text.domestic}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
@@ -142,7 +148,7 @@ export default function Header({ locale }) {
           </li>
           <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('outbound')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
-              if (window.innerWidth > 992) { nav(`/${locale}/outbound`); }
+              if (window.innerWidth > 768) { nav(`/${locale}/outbound`); }
               else { e.stopPropagation(); toggleDropdown('outbound'); }
             }}>{text.outbound}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} aria-label="Open submenu">▾</button>

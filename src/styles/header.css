@@ -49,8 +49,8 @@
 }
 
 .contact-icons a {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +70,27 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.topbar .right {
+  display: flex;
+  align-items: center;
+}
+
+.lang-item {
+  list-style: none;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  transition: 0.2s;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
 }
 
 nav {
@@ -322,8 +343,8 @@ ul.dropdown-menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
@@ -353,7 +374,23 @@ ul.dropdown-menu {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+  nav ul { gap: 10px; }
+  nav ul li a,
+  nav ul li button { font-size: 13px; }
+  .lang-btn { font-size: 12px !important; padding: 5px 10px !important; }
+  .contact-icons a { width: 36px; height: 36px; }
+}
+
+@media (max-width: 768px) {
+  .topbar .left .company {
+    display: none;
+  }
+
+  .topbar .right.contact-icons {
+    display: none;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -461,5 +498,37 @@ ul.dropdown-menu {
     grid-template-columns: repeat(2, 1fr);
   }
 
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 8px 4%;
+  }
+
+  .topbar .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-icons a {
+    width: 36px;
+    height: 36px;
+  }
+
+  nav {
+    padding: 10px 4%;
+  }
+
+  nav h2 {
+    font-size: 17px;
+  }
+
+  nav ul {
+    padding: 16px 4%;
+  }
+
+  .mega-grid {
+    grid-template-columns: 1fr;
+  }
 }
 

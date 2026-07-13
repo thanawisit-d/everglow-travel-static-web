@@ -195,7 +195,7 @@
     },
     "desc": "ทัวร์สุพรรณบุรี วัดเขาทำเทียม อู่ทอง",
     "pdf": "filepdf_1day/EGT1D-06.pdf",
-    "desc_en": "Suphanburi Tour ",
+    "desc_en": "Suphanburi Tour: Visit Don Wai Floating Market, pay homage to sacred temples, and enjoy the scenic beauty along the Tha Chin River.",
     "duration_en": "1 day",
     "periodText_en": "March - June 2026"
   },
@@ -271,7 +271,7 @@
     },
     "desc": "ทัวร์อุตรดิตถ์ บุฟเฟ่ต์ทุเรียนหลง-หลินลับแล 2 วัน 1 คืน เที่ยวบ้านโบราณ ประตูเมืองลับแล บุฟเฟ่ต์ทุเรียนหลง-หลินลับแล สตรีห้ามโภคหก วัดพระแท่นศิลาอาสน์ และสัมผัสบรรยากาศเมืองลับแล",
     "pdf": "filepdf_2d1n/EGT-SP-43.pdf",
-    "desc_en": "Uttaradit Tour ",
+    "desc_en": "Uttaradit Tour 2 days 1 night: Explore the historic Phra Si Rattana Mahathat Temple, visit Than Sae Waterfall, and experience the natural beauty and local culture of Uttaradit.",
     "duration_en": "2 days 1 night",
     "periodText_en": "May - July 2026"
   },
@@ -290,7 +290,7 @@
     },
     "desc": "ทัวร์อุทัยธานี ทุเรียนป่าเงาฝนคอกควาย 2 วัน 1 คืน เที่ยวตลาดชาวไฮ่ วัดถ้ำเขาประทุน สวนสมุนไพรกูปางสวรรค์ บุฟเฟ่ต์ทุเรียนและผลไม้ประจำฤดู ถนนใต้ดิน ต้นไม้ยักษ์ และวัดถ้ำเขาประทุน",
     "pdf": "filepdf_2d1n/EGT-FP-42.pdf",
-    "desc_en": "Uthai Thani Tour ",
+    "desc_en": "Uthai Thani Tour 2 days 1 night: Discover the charming Sakae Krang River community, visit Wat Tha Sung, explore Hup Pa Tat, and immerse in the peaceful atmosphere of this hidden gem province.",
     "duration_en": "2 days 1 night",
     "periodText_en": "June - July 2026"
   },
@@ -347,7 +347,7 @@
     },
     "desc": "ทัวร์เพชรบุรี แก่งกระจาน-เขาสามร้อยยอด 2 วัน 1 คืน เที่ยวอุทยานแห่งชาติแก่งกระจาน จุดชมวิวเขาพะเนินทุ่ง ตลาดริมน้ำจามจุรี Pribphree Cafe เส้นทางศึกษาธรรมชาติบึงบัว สะพานแขวนแก่งกระจาน และถ้ำพระยานคร",
     "pdf": "filepdf_2d1n/EGT-FP-07.1.pdf",
-    "desc_en": "Phetchaburi Tour ",
+    "desc_en": "Phetchaburi Tour 2 days 1 night: Visit Khao Wang (Phra Nakhon Khiri Historical Park), explore Kaeng Krachan National Park, and enjoy the famous Phetchaburi sweets and local cuisine.",
     "duration_en": "2 days 1 night",
     "periodText_en": "Feb. - June 2026"
   },
@@ -366,7 +366,7 @@
     },
     "desc": "ทัวร์อุทัยธานี วัดเขาสะแกกรัง-หุบป่าตาด 2 วัน 1 คืน เที่ยวตลาดชาวไฮ่ วัดเขาสะแกกรัง ถนนคนเดินตรอกโรงยา วัดท่าซุง หลวงพ่อฤาษีลิงดำ วัดอุโปสถาราม หลวงพ่อเงิน วัดเขาถ้ำประทุน ต้นไม้ยักษ์ หุบป่าตาด และบ้านชายเขา",
     "pdf": "filepdf_2d1n/EGT-SP-05.1.pdf",
-    "desc_en": "Uthai Thani Tour ",
+    "desc_en": "Uthai Thani Tour 2 days 1 night: Explore Hup Pa Tat, take a boat trip along the Sakae Krang River, visit Wat Tha Sung, and enjoy the tranquil local way of life.",
     "duration_en": "2 days 1 night",
     "periodText_en": "Feb. - June 2026"
   },
@@ -423,7 +423,7 @@
     },
     "desc": "ทัวร์เพชรบุรี แก่งกระจาน-ถ้ำเขาหลวง 2 วัน 1 คืน เที่ยวอุทยานแห่งชาติแก่งกระจาน ตลาดริมน้ำจามจุรี Pribphree Cafe จุดชมวิวเขาพะเนินทุ่ง สะพานแขวนแก่งกระจาน ถ้ำเขาหลวง ตลาดเพชรบุรี วัดมหาธาตุวรวิหาร และพระนครคีรี เขาวัง",
     "pdf": "filepdf_2d1n/EGT-FP-07.pdf",
-    "desc_en": "Phetchaburi Tour ",
+    "desc_en": "Phetchaburi Tour 2 days 1 night: Experience the blend of history and nature at Khao Wang, Kaeng Krachan National Park, and Chao Samran Beach.",
     "duration_en": "2 days 1 night",
     "periodText_en": "Feb. - June 2026"
   },
@@ -469,7 +469,7 @@
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc_en": "Yasothon-Ubon Tour ",
+    "desc_en": "Yasothon-Ubon Tour 3 days 2 nights: Visit Pha Taem National Park, explore ancient rock paintings, and experience the cultural highlights of Isan.",
     "duration_en": "3 days 2 night",
     "periodText_en": "26 - 28 Feb. 2026"
   },
@@ -2064,7 +2064,7 @@
     "shortDesc": "ทัวร์ยุโรปตะวันออก",
     "desc": "ทัวร์ยุโรปตะวันออก เที่ยวบูดาเปสต์ บราติสลาวา เวียนนา ปราก เดรสเดน ชมสถาปัตยกรรมยุโรปคลาสสิกและแลนด์มาร์กชื่อดัง",
     "pdf": "Outbound/Europe/pdf/VBUDFRA96DE-21.pdf",
-    "desc_en": "Eastern Europe Tour ",
+    "desc_en": "Eastern Europe Tour: Explore the enchanting cities of Austria, Czech Republic, Hungary, and Slovakia. Visit grand palaces, medieval old towns, and iconic landmarks across Central Europe.",
     "duration_en": "9 days 6 nights",
     "periodText_en": "April - June 2026"
   },
@@ -2214,7 +2214,7 @@
     "shortDesc": "ทัวร์แทสมาเนีย ซิดนีย์",
     "desc": "ทัวร์ออสเตรเลีย เที่ยวแทสมาเนีย ซิดนีย์ ชมธรรมชาติสุดอลังการ เที่ยว Hobart, Cradle Mountain และ Sydney Opera House",
     "pdf": "Outbound/Australia/pdf/BWHD240043.pdf",
-    "desc_en": "Australia tour ",
+    "desc_en": "Australia Tour: Discover Tasmania from Hobart to Cradle Mountain, then experience Sydney Opera House and Harbour Bridge.",
     "duration_en": "9 days 7 nights",
     "periodText_en": "Feb. - June 2026"
   },
@@ -2252,7 +2252,7 @@
     "shortDesc": "ทัวร์เมลเบิร์น ซิดนีย์",
     "desc": "ทัวร์ออสเตรเลีย เที่ยวเมลเบิร์น ซิดนีย์ ชม Great Ocean Road, Twelve Apostles, Sydney Opera House และแลนด์มาร์กชื่อดัง",
     "pdf": "Outbound/Australia/pdf/BWHD250082.pdf",
-    "desc_en": "Australia tour ",
+    "desc_en": "Australia Tour: Drive the Great Ocean Road, marvel at the Twelve Apostles, and explore Sydney world-famous landmarks.",
     "duration_en": "7 days 5 nights",
     "periodText_en": "Jan. - June 2026"
   },
@@ -2328,7 +2328,7 @@
     "shortDesc": "ทัวร์มองโกเลีย ทุ่งหญ้าและทะเลทราย",
     "desc": "ทัวร์มองโกเลีย เที่ยวทุ่งหญ้ามองโกเลีย สัมผัสวิถีชีวิตชนเผ่า ชมทะเลทรายโกบี ขี่อูฐ และชมการแสดงวัฒนธรรมพื้นเมือง",
     "pdf": "Outbound/India/pdf/MRT-MNVZ01.pdf",
-    "desc_en": "Mongolia tour ",
+    "desc_en": "Mongolia Tour: Explore the Gobi Desert, experience traditional nomadic life on the steppes, and witness the breathtaking landscapes of Mongolia.",
     "duration_en": "5 days 4 night",
     "periodText_en": "May - September 2026"
   },
