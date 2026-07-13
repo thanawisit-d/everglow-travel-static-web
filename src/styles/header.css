@@ -7,7 +7,50 @@
   z-index: 1000;
   background: linear-gradient(135deg, var(--navy), var(--navy-dark));
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.header-sticky,
+.header-sticky > *,
+.header-sticky .topbar .logo,
+.header-sticky .topbar .contact-icons a {
   transition: 0.3s;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-in-nav {
+  display: none;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.header-sticky.shrunk .topbar {
+  display: none;
+}
+
+.header-sticky.shrunk .logo-in-nav {
+  display: block;
+}
+
+.header-sticky.shrunk nav {
+  padding: 8px 6%;
+}
+
+.header-sticky.shrunk nav h2 {
+  font-size: 16px;
+}
+
+.header-sticky.shrunk nav ul {
+  gap: 14px;
+}
+
+.header-sticky.shrunk nav > ul > li > a,
+.header-sticky.shrunk nav > ul > li > button {
+  font-size: 13px;
 }
 
 .topbar {
@@ -381,6 +424,9 @@ ul.dropdown-menu {
   nav ul li button { font-size: 13px; }
   .lang-btn { font-size: 12px !important; padding: 5px 10px !important; }
   .contact-icons a { width: 44px; height: 44px; }
+  .header-sticky.shrunk nav ul { gap: 8px; }
+  .header-sticky.shrunk nav > ul > li > a,
+  .header-sticky.shrunk nav > ul > li > button { font-size: 12px; }
 }
 
 @media (max-width: 768px) {
@@ -497,6 +543,14 @@ ul.dropdown-menu {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .header-sticky.shrunk nav {
+    padding: 6px 6%;
+  }
+
+  .header-sticky.shrunk nav h2 {
+    font-size: 15px;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -528,6 +582,14 @@ ul.dropdown-menu {
 
   .mega-grid {
     grid-template-columns: 1fr;
+  }
+
+  .header-sticky.shrunk nav {
+    padding: 6px 4%;
+  }
+
+  .header-sticky.shrunk nav h2 {
+    font-size: 14px;
   }
 }
 
