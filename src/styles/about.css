@@ -25,11 +25,13 @@
 }
 
 @media (max-width: 1024px) {
+  .about-page { padding-top: 140px; }
   .about-container { gap: 40px; }
   .about-img { width: 340px; height: 255px; }
 }
 
 @media (max-width: 768px) {
+  .about-page { padding-top: 110px; }
   .about-container {
     flex-direction: column;
     text-align: center;
@@ -94,6 +96,7 @@
   .about-main { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
+  .about-page { padding-top: 100px; }
   .about-main { grid-template-columns: 1fr; }
 }
 

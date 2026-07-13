@@ -42,11 +42,30 @@
 }
 
 @media (max-width: 768px) {
-  .tour-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .tour-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 8px;
+    scroll-padding: 0 16px;
+  }
+
+  .tour-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tour-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
 }
 
 @media (max-width: 480px) {
-  .tour-grid { grid-template-columns: 1fr; }
+  .tour-card {
+    flex: 0 0 85%;
+  }
 }
 
 .tour-card {

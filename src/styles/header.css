@@ -526,5 +526,9 @@ ul.dropdown-menu {
   nav ul {
     padding: 16px 4%;
   }
+
+  .mega-grid {
+    grid-template-columns: 1fr;
+  }
 }
 

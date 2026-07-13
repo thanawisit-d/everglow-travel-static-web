@@ -183,6 +183,8 @@
 }
 
 @media (max-width: 480px) {
+  .contact-page { padding-top: 100px; }
+
   .contact-cell-wrap-third {
     flex: 0 0 100%;
   }

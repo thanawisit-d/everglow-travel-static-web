@@ -175,6 +175,37 @@
   }
 }
 
+@media (max-height: 500px) {
+  .landing-page {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .landing-page .logo {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .landing-page .brand {
+    font-size: 40px;
+    margin-top: 8px;
+  }
+
+  .landing-page .title {
+    font-size: 32px;
+  }
+
+  .landing-page .btn-group {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .landing-page .btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
 /* ========== PAGINATION ========== */
 .pagination-list {
   display: flex;

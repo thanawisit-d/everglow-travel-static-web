@@ -77,11 +77,38 @@
   cursor: pointer;
   transition: 0.25s;
   padding: 0;
+  background-clip: content-box;
 }
 
 .dot.active {
   background: var(--white);
   transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .dot {
+    width: 20px;
+    height: 20px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px;
+    border: none;
+    position: relative;
+  }
+
+  .dot::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    margin: auto;
+  }
+
+  .dot.active::after {
+    background: var(--white);
+  }
 }
 
 @media (max-width: 1024px) {

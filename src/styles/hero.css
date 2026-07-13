@@ -128,4 +128,30 @@
   }
 }
 
+@media (max-height: 500px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 24px 40px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .hero-actions {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
 
