@@ -17,6 +17,7 @@ export default function Header({ locale }) {
   const [activeGroup, setActiveGroup] = useState(null);
   const closeTimer = useRef(null);
   const menuRef = useRef(null);
+  const hoverOpenedAt = useRef(0);
 
   const clearTimer = () => {
     if (closeTimer.current) {
@@ -28,6 +29,7 @@ export default function Header({ locale }) {
   const openMenu = (name) => {
     clearTimer();
     setOpenDropdown(name);
+    hoverOpenedAt.current = Date.now();
     if (name === 'outbound' && !activeGroup) {
       setActiveGroup(config.countryGroups[0].label);
     }
@@ -43,6 +45,12 @@ export default function Header({ locale }) {
 
   const toggleDropdown = (name) => {
     clearTimer();
+    const now = Date.now();
+    if (hoverOpenedAt.current > 0 && now - hoverOpenedAt.current < 500 && openDropdown === name) {
+      hoverOpenedAt.current = 0;
+      return;
+    }
+    hoverOpenedAt.current = 0;
     setOpenDropdown(openDropdown === name ? null : name);
     if (name === 'outbound' && openDropdown !== 'outbound' && !activeGroup) {
       setActiveGroup(config.countryGroups[0].label);

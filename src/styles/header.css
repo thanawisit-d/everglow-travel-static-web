@@ -460,9 +460,10 @@ ul.dropdown-menu {
     border-radius: 8px;
     margin-top: 0;
     max-height: 0;
-  overflow-y: auto;
+    overflow-y: auto;
     transition: max-height 0.35s ease, padding 0.35s ease;
     display: flex !important;
+    flex-direction: column;
     padding: 0 12px;
   }
 
@@ -471,10 +472,6 @@ ul.dropdown-menu {
     max-height: 2000px;
     padding: 12px;
     transform: none;
-  }
-
-  .mega-menu {
-    flex-direction: column;
   }
 
   .mega-left {
