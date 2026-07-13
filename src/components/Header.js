@@ -142,17 +142,19 @@ export default function Header({ locale }) {
         </button>
         <ul ref={menuRef} className={menuOpen ? 'nav-open' : ''} role="menubar">
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
-          <li className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
+          <li className={`dropdown dropdown-outbound ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
               if (window.innerWidth > 768) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
             }}>{text.domestic}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
-            <ul className="dropdown-menu" role="menu">
-              {text.durations.map((d, i) => (
-                <li key={i} role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button></li>
-              ))}
-            </ul>
+            <div className="mega-menu" role="menu">
+              <div className="mega-left" style={{ borderRight: 'none', flexDirection: 'column' }}>
+                {text.durations.map((d, i) => (
+                  <button key={i} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button>
+                ))}
+              </div>
+            </div>
           </li>
           <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('outbound')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
