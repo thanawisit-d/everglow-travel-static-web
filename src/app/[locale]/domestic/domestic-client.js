@@ -31,9 +31,13 @@ export default function DomesticClient({ locale, tours }) {
 
   useEffect(() => {
     const d = searchParams.get('duration') || '';
+    const p = searchParams.get('province') || '';
     if (d) {
       const normalized = isEn ? (durationMapEnToTh[d] || d) : d;
       updateFilter('duration', normalized);
+    }
+    if (p) {
+      updateFilter('province', p);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, isEn]);

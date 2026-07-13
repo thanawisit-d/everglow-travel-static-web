@@ -440,5 +440,58 @@
         }
       ]
     }
+  ],
+  "domesticGroups": [
+    {
+      "label": "ภาคเหนือ",
+      "labelEn": "Northern",
+      "items": [
+        { "name": "เชียงใหม่", "province": "เชียงใหม่" },
+        { "name": "พิษณุโลก", "province": "พิษณุโลก" },
+        { "name": "สุโขทัย", "province": "สุโขทัย" },
+        { "name": "กำแพงเพชร", "province": "กำแพงเพชร" },
+        { "name": "ตาก", "province": "ตาก" },
+        { "name": "อุตรดิตถ์", "province": "อุตรดิตถ์" },
+        { "name": "เพชรบูรณ์", "province": "เพชรบูรณ์" }
+      ]
+    },
+    {
+      "label": "ภาคกลาง",
+      "labelEn": "Central",
+      "items": [
+        { "name": "ราชบุรี", "province": "ราชบุรี" },
+        { "name": "เพชรบุรี", "province": "เพชรบุรี" },
+        { "name": "สุพรรณบุรี", "province": "สุพรรณบุรี" },
+        { "name": "อุทัยธานี", "province": "อุทัยธานี" }
+      ]
+    },
+    {
+      "label": "ภาคตะวันออก",
+      "labelEn": "Eastern",
+      "items": [
+        { "name": "ชลบุรี", "province": "ชลบุรี" },
+        { "name": "สระแก้ว", "province": "สระแก้ว" }
+      ]
+    },
+    {
+      "label": "ภาคใต้",
+      "labelEn": "Southern",
+      "items": [
+        { "name": "นครศรีธรรมราช", "province": "นครศรีธรรมราช" },
+        { "name": "ตรัง", "province": "ตรัง" },
+        { "name": "สตูล", "province": "สตูล" }
+      ]
+    },
+    {
+      "label": "ภาคอีสาน",
+      "labelEn": "Northeastern",
+      "items": [
+        { "name": "นครราชสีมา", "province": "นครราชสีมา" },
+        { "name": "ชัยภูมิ", "province": "ชัยภูมิ" },
+        { "name": "ยโสธร", "province": "ยโสธร" },
+        { "name": "อุบลราชธานี", "province": "อุบลราชธานี" },
+        { "name": "เลย", "province": "เลย" }
+      ]
+    }
   ]
 }

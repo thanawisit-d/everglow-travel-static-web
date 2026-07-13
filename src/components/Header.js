@@ -15,6 +15,7 @@ export default function Header({ locale }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [activeGroup, setActiveGroup] = useState(null);
+  const [activeDomesticGroup, setActiveDomesticGroup] = useState(null);
   const closeTimer = useRef(null);
   const menuRef = useRef(null);
   const hoverOpenedAt = useRef(0);
@@ -33,6 +34,9 @@ export default function Header({ locale }) {
     if (name === 'outbound' && !activeGroup) {
       setActiveGroup(config.countryGroups[0].label);
     }
+    if (name === 'domestic' && !activeDomesticGroup) {
+      setActiveDomesticGroup(config.domesticGroups[0].label);
+    }
   };
 
   const scheduleClose = () => {
@@ -40,6 +44,7 @@ export default function Header({ locale }) {
     closeTimer.current = setTimeout(() => {
       setOpenDropdown(null);
       setActiveGroup(null);
+      setActiveDomesticGroup(null);
     }, HOVER_DELAY);
   };
 
@@ -55,6 +60,9 @@ export default function Header({ locale }) {
     if (name === 'outbound' && openDropdown !== 'outbound' && !activeGroup) {
       setActiveGroup(config.countryGroups[0].label);
     }
+    if (name === 'domestic' && openDropdown !== 'domestic' && !activeDomesticGroup) {
+      setActiveDomesticGroup(config.domesticGroups[0].label);
+    }
   };
 
   useEffect(() => {
@@ -62,12 +70,14 @@ export default function Header({ locale }) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setOpenDropdown(null);
         setActiveGroup(null);
+        setActiveDomesticGroup(null);
       }
     }
     function handleEscape(e) {
       if (e.key === 'Escape') {
         setOpenDropdown(null);
         setActiveGroup(null);
+        setActiveDomesticGroup(null);
         setMenuOpen(false);
       }
     }
@@ -89,6 +99,7 @@ export default function Header({ locale }) {
     setMenuOpen(false);
     setOpenDropdown(null);
     setActiveGroup(null);
+    setActiveDomesticGroup(null);
   };
 
   const nav = useCallback((path) => {
@@ -99,6 +110,7 @@ export default function Header({ locale }) {
   const text = config[locale] || config.th;
   const s = config.social;
   const activeGroupData = config.countryGroups.find(g => g.label === activeGroup);
+  const activeDomesticGroupData = config.domesticGroups.find(g => g.label === activeDomesticGroup);
 
   return (
     <div className="header-sticky">
@@ -149,10 +161,34 @@ export default function Header({ locale }) {
             }}>{text.domestic}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
             <div className="mega-menu" role="menu">
-              <div className="mega-left" style={{ borderRight: 'none', flexDirection: 'column' }}>
-                {text.durations.map((d, i) => (
-                  <button key={i} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button>
+              <div className="mega-left">
+                {config.domesticGroups.map((group) => (
+                  <button
+                    key={group.label}
+                    type="button"
+                    role="menuitem"
+                    onMouseEnter={() => setActiveDomesticGroup(group.label)}
+                    onFocus={() => setActiveDomesticGroup(group.label)}
+                    className={activeDomesticGroup === group.label ? 'active' : ''}
+                    onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(group.items[0].province)}`)}
+                  >
+                    {isEn ? group.labelEn : group.label}
+                  </button>
                 ))}
+              </div>
+              <div className="mega-right">
+                {activeDomesticGroupData && (
+                  <>
+                    <h3>{isEn ? activeDomesticGroupData.labelEn : activeDomesticGroupData.label}</h3>
+                    <div className="mega-grid">
+                      {activeDomesticGroupData.items.map((item) => (
+                        <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(item.province)}`)}>
+                          {item.name}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </li>
