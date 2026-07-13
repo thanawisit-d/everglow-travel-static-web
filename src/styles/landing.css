@@ -214,6 +214,7 @@
   margin-top: 40px;
   list-style: none;
   padding: 0;
+  gap: 0;
 }
 
 .tour-list-body nav {
@@ -280,11 +281,24 @@
   height: 16px;
 }
 
+@media (max-width: 768px) {
+  .pagination-list {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    gap: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .pagination-btn {
     width: 44px;
     height: 44px;
     font-size: 12px;
+  }
+
+  .pagination-list {
+    margin-top: 24px;
+    margin-bottom: 20px;
   }
 }
 

@@ -76,6 +76,26 @@
   .tour-list-layout {
     grid-template-columns: 1fr;
   }
+
+  .tour-list-layout .tour-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+    gap: 14px;
+    padding-bottom: 0;
+    scroll-snap-type: none;
+  }
+
+  .tour-list-layout .tour-card {
+    flex: none;
+    scroll-snap-align: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-list-layout .tour-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
