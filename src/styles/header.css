@@ -19,6 +19,7 @@
 .nav-group {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .logo-in-nav {
@@ -26,6 +27,15 @@
   width: 36px;
   height: 36px;
   flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo-in-nav img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .header-sticky.shrunk .topbar {
