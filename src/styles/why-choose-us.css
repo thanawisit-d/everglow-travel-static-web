@@ -34,9 +34,7 @@
   .why-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 480px) {
-  .why-grid { grid-template-columns: 1fr; }
-}
+
 
 .why-card {
   text-align: center;

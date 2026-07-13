@@ -14,6 +14,7 @@
   --amber: #F59E0B;
   --radius: 14px;
   --radius-lg: 20px;
+  --border-color: #d1d5db;
 }
 
 /* ========== RESET ========== */
@@ -26,12 +27,10 @@
 html {
   scroll-behavior: smooth;
   width: 100%;
-  overflow-x: hidden;
 }
 
 body {
   width: 100%;
-  overflow-x: hidden;
 }
 
 .page.active {

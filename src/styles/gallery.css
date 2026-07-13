@@ -60,6 +60,7 @@
 
 .gallery-item .overlay {
   position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 52, 120, 0.7), transparent);
   opacity: 0;

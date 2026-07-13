@@ -38,7 +38,7 @@
 }
 
 .company p {
-  font-size: 10px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -49,14 +49,15 @@
 }
 
 .contact-icons a {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   transition: 0.3s;
 }
@@ -379,7 +380,7 @@ ul.dropdown-menu {
   nav ul li a,
   nav ul li button { font-size: 13px; }
   .lang-btn { font-size: 12px !important; padding: 5px 10px !important; }
-  .contact-icons a { width: 36px; height: 36px; }
+  .contact-icons a { width: 44px; height: 44px; }
 }
 
 @media (max-width: 768px) {
@@ -403,6 +404,7 @@ ul.dropdown-menu {
     left: 0;
     right: 0;
     background: rgba(0, 52, 120, 0.97);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 20px 6%;
     gap: 8px;
@@ -458,7 +460,7 @@ ul.dropdown-menu {
     border-radius: 8px;
     margin-top: 0;
     max-height: 0;
-    overflow: hidden;
+  overflow-y: auto;
     transition: max-height 0.35s ease, padding 0.35s ease;
     display: flex !important;
     padding: 0 12px;
@@ -511,8 +513,8 @@ ul.dropdown-menu {
   }
 
   .contact-icons a {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
   }
 
   nav {
