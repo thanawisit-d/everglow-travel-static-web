@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import TourCard from './TourCard';
 import config from '@/data/site-config.json';
 
@@ -8,20 +8,7 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
   const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
 
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
   const isSlider = data.length > 3;
-
-  useEffect(() => {
-    if (!isSlider) return;
-    const check = () => setCardsPerView(window.innerWidth <= 768 ? 2 : 3);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, [isSlider]);
-
-  useEffect(() => {
-    setCurrentIdx(prev => Math.min(prev, data.length - cardsPerView));
-  }, [cardsPerView, data.length]);
 
   if (data.length === 0) return null;
 
@@ -45,9 +32,8 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
   }
 
   const total = data.length;
-  const totalWidth = (total / cardsPerView) * 100;
   const itemWidth = 100 / total;
-  const maxIdx = total - cardsPerView;
+  const maxIdx = total - 1;
 
   return (
     <section className="tour-section">
@@ -56,7 +42,7 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
         <div
           className="tour-slider-track"
           style={{
-            width: `${totalWidth}%`,
+            width: `${total * 100}%`,
             transform: `translateX(-${currentIdx * itemWidth}%)`
           }}
         >
