@@ -582,14 +582,19 @@
 .tour-slider-item {
   flex-shrink: 0;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
   padding: 0 10px;
 }
 
-.tour-slider-item .tour-card {
-  max-width: 380px;
-  width: 100%;
+@media (max-width: 768px) {
+  .tour-slider-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .tour-slider-item .tour-card {
+    max-width: 380px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
