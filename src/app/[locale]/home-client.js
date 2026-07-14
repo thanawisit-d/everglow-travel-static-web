@@ -8,6 +8,7 @@ import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import TourGrid from '@/components/TourGrid';
+import Partners from '@/components/Partners';
 import Reviews from '@/components/Reviews';
 
 const featuredIds = {
@@ -85,6 +86,8 @@ export default function LocaleClient({ locale }) {
           ))}
         </div>
       </section>
+
+      <Partners locale={locale} />
 
       <section className="gallery-section bg-alt">
         <h2>{t.galleryTitle}</h2>
