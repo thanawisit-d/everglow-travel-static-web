@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import TourCard from './TourCard';
 import config from '@/data/site-config.json';
