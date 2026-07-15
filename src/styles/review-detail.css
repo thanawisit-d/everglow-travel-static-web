@@ -1,0 +1,44 @@
+.review-detail-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 6%;
+}
+
+.review-detail-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.review-detail-image img {
+  object-fit: cover;
+}
+
+.review-detail-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.review-detail-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .review-detail-body {
+    padding: 24px 5%;
+  }
+  .review-detail-image {
+    aspect-ratio: 4 / 3;
+  }
+}
