@@ -91,7 +91,7 @@ export default function OutboundClient({ locale, tours }) {
     result = result.filter(t => {
       const p = parsePrice(t.price);
       if (isNaN(p)) {
-        if (process.env.NODE_ENV !== 'production') console.warn('parsePrice ล้มเหลว:', t.price, t.id ?? t.slug);
+        if (process.env.NODE_ENV !== 'production') console.warn('parsePrice failed:', t.price, t.id ?? t.slug);
         return false;
       }
       return p >= pMin && p <= pMax;

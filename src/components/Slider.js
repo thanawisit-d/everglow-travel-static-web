@@ -45,7 +45,7 @@ export default function Slider() {
       <button className="slider-btn next" onClick={() => goTo(current + 1)} aria-label="Next slide">&#10095;</button>
       <div className="slider-dots">
         {IMAGES.map((_, i) => (
-          <button key={i} className={`dot ${i === current ? 'active' : ''}`} onClick={() => goTo(i)} aria-label={`Go to slide ${i + 1}`} />
+          <button key={i} className={`slider-dot ${i === current ? 'active' : ''}`} onClick={() => goTo(i)} aria-label={`Go to slide ${i + 1}`} />
         ))}
       </div>
     </section>
