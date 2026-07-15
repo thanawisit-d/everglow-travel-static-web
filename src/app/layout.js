@@ -87,7 +87,7 @@ const jsonLd = {
 export default function RootLayout({ children }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   return (
-    <html lang="th">
+    <html lang="th" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
