@@ -116,9 +116,13 @@ export default function Header({ locale }) {
   };
 
   const nav = useCallback((path) => {
-    router.push(path);
+    if (window.location.pathname === path) {
+      window.location.reload();
+    } else {
+      router.push(path);
+    }
     closeMenu();
-  }, [router]);
+  }, [router, closeMenu]);
 
   const text = config[locale] || config.th;
   const s = config.social;
@@ -155,7 +159,14 @@ export default function Header({ locale }) {
 
       <nav aria-label="Main navigation">
         <div className="nav-group">
-          <div className="logo-in-nav">
+          <div
+            className="logo-in-nav"
+            onClick={() => nav(`/${locale}`)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(`/${locale}`); } }}
+            role="button"
+            tabIndex={0}
+            aria-label="Go to home"
+          >
             <Image src={assetPath('assets/images/logos/Logo.jpg')} width={36} height={36} alt="" priority />
           </div>
           <h2>{text.brand}</h2>
