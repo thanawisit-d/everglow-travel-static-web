@@ -22,11 +22,27 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const meta = pageMeta[locale] || pageMeta.th;
   return {
-    title: meta.title,
+    title: { absolute: 'Everglow Travel' },
     description: meta.description,
     openGraph: {
-      title: meta.title,
+      title: 'Everglow Travel',
       description: meta.description,
+      locale: locale === 'en' ? 'en_US' : 'th_TH',
+      url: `/${locale}`,
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Everglow Travel',
+      description: meta.description,
+      images: ['/og-image.jpg'],
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        th: '/th',
+        en: '/en',
+      },
     },
   };
 }

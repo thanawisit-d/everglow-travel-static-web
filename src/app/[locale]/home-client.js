@@ -8,7 +8,8 @@ import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import TourGrid from '@/components/TourGrid';
-import Reviews from '@/components/Reviews';
+import Partners from '@/components/Partners';
+import Testimonials from '@/components/Testimonials';
 
 const featuredIds = {
   popular: [
@@ -86,6 +87,8 @@ export default function LocaleClient({ locale }) {
         </div>
       </section>
 
+      <Partners locale={locale} />
+
       <section className="gallery-section bg-alt">
         <h2>{t.galleryTitle}</h2>
         <p className="subtitle">{t.gallerySubtitle}</p>
@@ -99,7 +102,7 @@ export default function LocaleClient({ locale }) {
         </div>
       </section>
 
-      <Reviews locale={locale} />
+      <Testimonials locale={locale} />
     </div>
   );
 }

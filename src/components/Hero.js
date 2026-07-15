@@ -1,3 +1,6 @@
+'use client';
+
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import config from '@/data/site-config.json';
@@ -11,11 +14,19 @@ const serviceImages = [
 
 export default function Hero({ locale }) {
   const t = config[locale] || config.th;
+  const scrollRef = useRef(null);
   const serviceNames = [
     t.heroService1Name,
     t.heroService2Name,
     t.heroService3Name,
   ];
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || window.innerWidth > 768) return;
+    const middle = (el.scrollWidth - el.clientWidth) / 2;
+    el.scrollLeft = middle;
+  }, []);
 
   return (
     <section className="hero">
@@ -33,7 +44,7 @@ export default function Hero({ locale }) {
               {t.heroServiceBtn} →
             </Link>
           </div>
-          <div className="hero-right">
+          <div className="hero-right" ref={scrollRef}>
             {[0, 1, 2].map((i) => (
               <div className="service-card" key={i}>
                 <div className="service-card-img">

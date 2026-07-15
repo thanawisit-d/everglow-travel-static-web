@@ -14,7 +14,30 @@ const meta = {
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const m = meta[locale] || meta.th;
-  return { title: m.title, description: m.description };
+  return {
+    title: m.title,
+    description: m.description,
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      locale: locale === 'en' ? 'en_US' : 'th_TH',
+      url: `/${locale}/domestic`,
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m.title,
+      description: m.description,
+      images: ['/og-image.jpg'],
+    },
+    alternates: {
+      canonical: `/${locale}/domestic`,
+      languages: {
+        th: '/th/domestic',
+        en: '/en/domestic',
+      },
+    },
+  };
 }
 
 export default async function DomesticPage({ params }) {

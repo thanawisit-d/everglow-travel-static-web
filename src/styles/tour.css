@@ -21,6 +21,10 @@
   .tour-section h2 { font-size: 28px; }
 }
 
+@media (max-width: 480px) {
+  .tour-section h2 { font-size: 22px; }
+}
+
 .tour-section-title {
   text-align: center;
   width: 100%;
@@ -47,9 +51,9 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
+    gap: 12px;
     padding-bottom: 8px;
-    scroll-padding: 0 16px;
+    scroll-padding: 0 12px;
   }
 
   .tour-grid::-webkit-scrollbar {
@@ -57,14 +61,39 @@
   }
 
   .tour-card {
-    flex: 0 0 80%;
+    flex: 0 0 60%;
     scroll-snap-align: start;
   }
 }
 
 @media (max-width: 480px) {
   .tour-card {
-    flex: 0 0 85%;
+    flex: 0 0 72%;
+  }
+
+  .tour-desc {
+    padding: 10px 12px 3px;
+    font-size: 13px;
+  }
+
+  .tour-info {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .tour-info p { margin: 4px 0; }
+
+  .tour-bottom {
+    padding: 10px 12px;
+  }
+
+  .airline {
+    width: 50px;
+    height: 28px;
+  }
+
+  .price-main {
+    font-size: 17px;
   }
 }
 
@@ -88,7 +117,7 @@
 
 .tour-img-wrapper {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
   overflow: hidden;
   position: relative;
 }
@@ -124,9 +153,9 @@
 }
 
 .tour-desc {
-  padding: 14px 16px 5px;
+  padding: 10px 14px 3px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--navy);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -135,46 +164,27 @@
 }
 
 .tour-info {
-  padding: 10px 16px;
-  font-size: 14px;
+  padding: 6px 14px;
+  font-size: 12px;
   color: var(--text-muted);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 .tour-info p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 6px 0;
-  min-height: 22px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
-.tour-info img {
-  width: 16px;
-  height: 16px;
-  opacity: 0.6;
+  margin: 3px 0;
 }
 
 .tour-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 16px;
-  border-top: 1px solid #eef1f5;
+  padding: 12px 14px;
+  border-top: 1px solid var(--bg-page);
   margin-top: auto;
 }
 
 .airline {
-  width: 70px;
-  height: 40px;
+  width: 60px;
+  height: 34px;
   object-fit: contain;
 }
 
@@ -187,18 +197,18 @@
 }
 
 .price-start {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-muted);
 }
 
 .price-main {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--amber);
 }
 
 .price-sub {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-muted);
 }
 
@@ -228,7 +238,7 @@
 }
 
 .tour-detail-body {
-  background: #F5F8FC;
+  background: var(--bg-page);
   padding: 40px 6% 60px;
 }
 
@@ -275,6 +285,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .tour-detail-left {
+    min-height: 320px;
+  }
+}
+
 @media (max-width: 480px) {
   .tour-detail-left {
     min-height: 300px;
@@ -309,7 +325,7 @@
   color: var(--text-dark);
   margin-bottom: 24px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eef1f5;
+  border-bottom: 1px solid var(--bg-page);
 }
 
 .detail-info-grid {
@@ -453,7 +469,7 @@
 .page-hero-band {
   background: linear-gradient(135deg, #0b2d54 0%, #163f6e 40%, #2c5a8c 100%);
   padding: 180px 6% 50px;
-  color: #fff;
+  color: var(--white);
 }
 
 @media (max-width: 1024px) {
@@ -488,7 +504,7 @@
   flex-wrap: nowrap;
   gap: 8px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 16px;
   padding: 0;
   background: transparent;
@@ -512,7 +528,7 @@
 
 .page-hero-band .breadcrumb-sep {
   flex: 0 0 auto;
-  color: rgba(255, 255, 255, 0.30);   /* ตัวคั่นควรจางที่สุด ไม่ใช่จุดสนใจ */
+  color: rgba(255, 255, 255, 0.60);   /* ตัวคั่นควรจางที่สุด ไม่ใช่จุดสนใจ */
   font-size: 12px;
 }
 
@@ -520,7 +536,7 @@
    ทำให้ผู้ใช้เห็นปุ๊บรู้ว่า "อยู่ตรงนี้" เพราะสีเดียวกับจุดที่ต้องสนใจอื่นๆ */
 .page-hero-band .breadcrumb-current {
   flex: 0 1 auto;
-  color: #ffffff;
+  color: var(--white);
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -531,7 +547,7 @@
 .page-hero-band .page-title {
   font-size: 52px;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 8px;
   text-align: left;
 }
@@ -547,9 +563,73 @@
 
 /* ========== TOUR LIST BODY ========== */
 .tour-list-body {
-  background: #F5F8FC;
+  background: var(--bg-page);
   padding: 40px 6% 60px;
 }
+
+/* ========== TOUR SLIDER ========== */
+.tour-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-slider-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  padding: 8px 0;
+}
+
+.tour-slider-item {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .tour-slider-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .tour-slider-item .tour-card {
+    max-width: 380px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-slider-item .tour-card {
+    max-width: none;
+  }
+}
+
+.tour-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: var(--shadow-sm);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.tour-slider-btn:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.tour-slider-btn.prev { left: 16px; }
+.tour-slider-btn.next { right: 16px; }
 
 
 

@@ -61,7 +61,7 @@ export default function Footer({ locale }) {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy;2026 Everglow Global Co., Ltd. All rights reserved.
+        &copy;{new Date().getFullYear()} Everglow Global Co., Ltd. All rights reserved.
       </div>
     </footer>
   );
