@@ -1,4 +1,4 @@
-import Reviews from '@/components/Reviews';
+import Testimonials from '@/components/Testimonials';
 
 export function generateStaticParams() {
   return [{ locale: 'th' }, { locale: 'en' }];
@@ -41,8 +41,6 @@ export async function generateMetadata({ params }) {
 export default async function ReviewsPage({ params }) {
   const { locale } = await params;
   return (
-    <div className="reviews-page">
-      <Reviews locale={locale} standalone />
-    </div>
+    <Testimonials locale={locale} standalone />
   );
 }
