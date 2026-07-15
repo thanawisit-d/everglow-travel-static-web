@@ -2,8 +2,8 @@
 
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
-import { Star } from 'lucide-react';
-import testimonials from '@/data/testimonials.json';
+import reviews from '@/data/reviews.json';
+import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
 export default function Testimonials({ locale, standalone }) {
@@ -11,16 +11,14 @@ export default function Testimonials({ locale, standalone }) {
   const isEn = locale === 'en';
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visible = testimonials[activeIndex];
+  if (!reviews.length) return null;
 
   const goTo = useCallback((i) => {
     setActiveIndex(i);
   }, []);
 
-  if (!visible) return null;
-
   return (
-    <section className="testimonials">
+    <section className={`testimonials${standalone ? ' testimonials--standalone' : ''}`}>
       <div className="testimonials__background">
         <Image
           src="/assets/images/backgrounds/Home1.jpg"
@@ -36,39 +34,32 @@ export default function Testimonials({ locale, standalone }) {
         {standalone ? <h1 className="testimonials__heading">{t.reviewTitle}</h1> : <h2 className="testimonials__heading">{t.reviewTitle}</h2>}
 
         <div className="testimonials__track">
-          {testimonials.map((item, i) => (
+          {reviews.map((item, i) => (
             <article
-              key={item.id}
+              key={i}
               className={`testimonial-card ${i === activeIndex ? 'testimonial-card--active' : ''}`}
-              aria-hidden={i !== activeIndex}
             >
-              <div className="testimonial-card__avatar" aria-hidden="true">
-                <div className="testimonial-card__avatar-placeholder">
-                  {item.name.charAt(0)}
-                </div>
+              <div className="testimonial-card__image">
+                <Image
+                  src={assetPath(item.image)}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  alt={isEn && item.tag_en ? item.tag_en : item.tag}
+                  className="testimonial-card__image-img"
+                />
               </div>
-
-              <div className="testimonial-card__header">
-                <div>
-                  <p className="testimonial-card__name">{item.name}</p>
-                  <p className="testimonial-card__role">{isEn && item.role_en ? item.role_en : item.role}</p>
-                </div>
-                <div className="testimonial-card__stars" aria-label={`${item.rating} ${isEn ? 'out of 5 stars' : 'จาก 5 ดาว'}`}>
-                  {Array.from({ length: item.rating }).map((_, si) => (
-                    <Star key={si} size={14} className="testimonial-card__star" />
-                  ))}
-                </div>
+              <div className="testimonial-card__body">
+                <div className="testimonial-card__tag">{isEn && item.tag_en ? item.tag_en : item.tag}</div>
+                <p className="testimonial-card__quote">{isEn && item.text_en ? item.text_en : item.text}</p>
               </div>
-
-              <p className="testimonial-card__quote">{isEn && item.quote_en ? item.quote_en : item.quote}</p>
             </article>
           ))}
         </div>
 
         <div className="testimonials__dots">
-          {testimonials.map((item, i) => (
+          {reviews.map((_, i) => (
             <button
-              key={item.id}
+              key={i}
               type="button"
               className={`testimonials__dot ${i === activeIndex ? 'is-active' : ''}`}
               aria-label={isEn ? `Go to review ${i + 1}` : `ไปที่รีวิวที่ ${i + 1}`}
