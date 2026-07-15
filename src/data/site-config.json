@@ -57,7 +57,7 @@
     "reviewTitle": "รีวิว",
     "addrLabel": "ที่อยู่",
     "webLabel": "เว็บไซต์",
-    "whyTitle": "จุดเด่นที่ท่านจะได้รับ",
+    "whyTitle": "ทำไมถึงเลือกเรา",
     "why1Title": "ดูแลครบวงจร",
     "why1Desc": "จัดการทุกขั้นตอนตั้งแต่การวางแผน ทริปพักผ่อน ไปจนถึงการสำรองที่พัก ตั๋วเครื่องบิน และบริการวีซ่า",
     "why2Title": "ประสบการณ์การเดินทางที่เหนือระดับ",
@@ -75,6 +75,15 @@
     "galleryTitle": "แกลเลอรีการเดินทาง",
     "gallerySubtitle": "ภาพความประทับใจจากการเดินทางของเรา",
     "viewPhoto": "ดูรูป",
+    "partnerTitle": "พาร์ทเนอร์ของเรา",
+    "partners": [
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" }
+    ],
     "sortDefault": "เรียงลำดับ",
     "sortPriceLow": "ราคาต่ำ-สูง",
     "sortPriceHigh": "ราคาสูง-ต่ำ",
@@ -162,7 +171,7 @@
     "reviewTitle": "Reviews",
     "addrLabel": "Address",
     "webLabel": "Website",
-    "whyTitle": "Highlights You Will Receive",
+    "whyTitle": "Why Choose Us",
     "why1Title": "Comprehensive Service",
     "why1Desc": "Manage every step from trip planning to hotel booking, flight tickets, and visa services.",
     "why2Title": "Premium Experience",
@@ -180,6 +189,15 @@
     "galleryTitle": "Travel Gallery",
     "gallerySubtitle": "Moments captured from our journeys",
     "viewPhoto": "View Photo",
+    "partnerTitle": "Our Partners",
+    "partners": [
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" }
+    ],
     "sortDefault": "Default",
     "sortPriceLow": "Price Low-High",
     "sortPriceHigh": "Price High-Low",
@@ -438,6 +456,59 @@
           "name": "อาร์เจนตินา",
           "flag": "argentina.png"
         }
+      ]
+    }
+  ],
+  "domesticGroups": [
+    {
+      "label": "ภาคเหนือ",
+      "labelEn": "Northern",
+      "items": [
+        { "name": "เชียงใหม่", "province": "เชียงใหม่" },
+        { "name": "พิษณุโลก", "province": "พิษณุโลก" },
+        { "name": "สุโขทัย", "province": "สุโขทัย" },
+        { "name": "กำแพงเพชร", "province": "กำแพงเพชร" },
+        { "name": "ตาก", "province": "ตาก" },
+        { "name": "อุตรดิตถ์", "province": "อุตรดิตถ์" },
+        { "name": "เพชรบูรณ์", "province": "เพชรบูรณ์" }
+      ]
+    },
+    {
+      "label": "ภาคกลาง",
+      "labelEn": "Central",
+      "items": [
+        { "name": "ราชบุรี", "province": "ราชบุรี" },
+        { "name": "เพชรบุรี", "province": "เพชรบุรี" },
+        { "name": "สุพรรณบุรี", "province": "สุพรรณบุรี" },
+        { "name": "อุทัยธานี", "province": "อุทัยธานี" }
+      ]
+    },
+    {
+      "label": "ภาคตะวันออก",
+      "labelEn": "Eastern",
+      "items": [
+        { "name": "ชลบุรี", "province": "ชลบุรี" },
+        { "name": "สระแก้ว", "province": "สระแก้ว" }
+      ]
+    },
+    {
+      "label": "ภาคใต้",
+      "labelEn": "Southern",
+      "items": [
+        { "name": "นครศรีธรรมราช", "province": "นครศรีธรรมราช" },
+        { "name": "ตรัง", "province": "ตรัง" },
+        { "name": "สตูล", "province": "สตูล" }
+      ]
+    },
+    {
+      "label": "ภาคอีสาน",
+      "labelEn": "Northeastern",
+      "items": [
+        { "name": "นครราชสีมา", "province": "นครราชสีมา" },
+        { "name": "ชัยภูมิ", "province": "ชัยภูมิ" },
+        { "name": "ยโสธร", "province": "ยโสธร" },
+        { "name": "อุบลราชธานี", "province": "อุบลราชธานี" },
+        { "name": "เลย", "province": "เลย" }
       ]
     }
   ]

@@ -1,9 +1,44 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import FilterChoices from './FilterChoices';
 
 export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileToggle }) {
   const isEn = locale === 'en';
+  const asideRef = useRef(null);
+  const closeBtnRef = useRef(null);
+
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const timer = setTimeout(() => closeBtnRef.current?.focus(), 50);
+    return () => clearTimeout(timer);
+  }, [isMobileOpen]);
+
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const aside = asideRef.current;
+    if (!aside) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        onMobileToggle();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const focusable = aside.querySelectorAll('button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [isMobileOpen, onMobileToggle]);
 
   return (
     <>
@@ -22,10 +57,10 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
 
       {isMobileOpen && <div className="filter-overlay" onClick={onMobileToggle} />}
 
-      <aside className={`filter-sidebar ${isMobileOpen ? 'open' : ''}`}>
+      <aside ref={asideRef} className={`filter-sidebar ${isMobileOpen ? 'open' : ''}`}>
         <div className="filter-sidebar-header">
           <h2>{isEn ? 'Filters' : 'ตัวกรอง'}</h2>
-          <button className="filter-close-btn" onClick={onMobileToggle} aria-label={isEn ? 'Close filters' : 'ปิดตัวกรอง'}>×</button>
+          <button ref={closeBtnRef} className="filter-close-btn" onClick={onMobileToggle} aria-label={isEn ? 'Close filters' : 'ปิดตัวกรอง'}>×</button>
         </div>
 
         {groups.map(group => (

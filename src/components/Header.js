@@ -15,8 +15,11 @@ export default function Header({ locale }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [activeGroup, setActiveGroup] = useState(null);
+  const [activeDomesticGroup, setActiveDomesticGroup] = useState(null);
+  const [shrunk, setShrunk] = useState(false);
   const closeTimer = useRef(null);
   const menuRef = useRef(null);
+  const hoverOpenedAt = useRef(0);
 
   const clearTimer = () => {
     if (closeTimer.current) {
@@ -28,8 +31,12 @@ export default function Header({ locale }) {
   const openMenu = (name) => {
     clearTimer();
     setOpenDropdown(name);
+    hoverOpenedAt.current = Date.now();
     if (name === 'outbound' && !activeGroup) {
       setActiveGroup(config.countryGroups[0].label);
+    }
+    if (name === 'domestic' && !activeDomesticGroup) {
+      setActiveDomesticGroup(config.domesticGroups[0].label);
     }
   };
 
@@ -38,14 +45,24 @@ export default function Header({ locale }) {
     closeTimer.current = setTimeout(() => {
       setOpenDropdown(null);
       setActiveGroup(null);
+      setActiveDomesticGroup(null);
     }, HOVER_DELAY);
   };
 
   const toggleDropdown = (name) => {
     clearTimer();
+    const now = Date.now();
+    if (hoverOpenedAt.current > 0 && now - hoverOpenedAt.current < 500 && openDropdown === name) {
+      hoverOpenedAt.current = 0;
+      return;
+    }
+    hoverOpenedAt.current = 0;
     setOpenDropdown(openDropdown === name ? null : name);
     if (name === 'outbound' && openDropdown !== 'outbound' && !activeGroup) {
       setActiveGroup(config.countryGroups[0].label);
+    }
+    if (name === 'domestic' && openDropdown !== 'domestic' && !activeDomesticGroup) {
+      setActiveDomesticGroup(config.domesticGroups[0].label);
     }
   };
 
@@ -54,12 +71,14 @@ export default function Header({ locale }) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setOpenDropdown(null);
         setActiveGroup(null);
+        setActiveDomesticGroup(null);
       }
     }
     function handleEscape(e) {
       if (e.key === 'Escape') {
         setOpenDropdown(null);
         setActiveGroup(null);
+        setActiveDomesticGroup(null);
         setMenuOpen(false);
       }
     }
@@ -77,10 +96,23 @@ export default function Header({ locale }) {
     return () => { document.body.style.overflow = prev; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const first = menuRef.current?.querySelector('[data-first-focus]');
+    if (first) setTimeout(() => first.focus(), 50);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const onScroll = () => setShrunk(window.scrollY > 150);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const closeMenu = () => {
     setMenuOpen(false);
     setOpenDropdown(null);
     setActiveGroup(null);
+    setActiveDomesticGroup(null);
   };
 
   const nav = useCallback((path) => {
@@ -91,9 +123,10 @@ export default function Header({ locale }) {
   const text = config[locale] || config.th;
   const s = config.social;
   const activeGroupData = config.countryGroups.find(g => g.label === activeGroup);
+  const activeDomesticGroupData = config.domesticGroups.find(g => g.label === activeDomesticGroup);
 
   return (
-    <div className="header-sticky">
+    <div className={`header-sticky${shrunk ? ' shrunk' : ''}`}>
       <div className="topbar">
         <div className="left" onClick={() => nav(`/${locale}`)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(`/${locale}`); } }} role="button" tabIndex={0} aria-label="Go to home">
           <Image src={assetPath('assets/images/logos/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
@@ -121,7 +154,12 @@ export default function Header({ locale }) {
       </div>
 
       <nav aria-label="Main navigation">
-        <h2>{text.brand}</h2>
+        <div className="nav-group">
+          <div className="logo-in-nav">
+            <Image src={assetPath('assets/images/logos/Logo.jpg')} width={36} height={36} alt="" priority />
+          </div>
+          <h2>{text.brand}</h2>
+        </div>
         <button
           className={`menu-toggle ${menuOpen ? 'open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -133,18 +171,44 @@ export default function Header({ locale }) {
           <span></span>
         </button>
         <ul ref={menuRef} className={menuOpen ? 'nav-open' : ''} role="menubar">
-          <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
-          <li className={`dropdown ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
+          <li role="none"><button type="button" role="menuitem" data-first-focus onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
+          <li className={`dropdown dropdown-outbound ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
               if (window.innerWidth > 768) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
             }}>{text.domestic}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
-            <ul className="dropdown-menu" role="menu">
-              {text.durations.map((d, i) => (
-                <li key={i} role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?duration=${encodeURIComponent(d)}`)}>{d}</button></li>
-              ))}
-            </ul>
+            <div className="mega-menu" role="menu">
+              <div className="mega-left">
+                {config.domesticGroups.map((group) => (
+                  <button
+                    key={group.label}
+                    type="button"
+                    role="menuitem"
+                    onMouseEnter={() => setActiveDomesticGroup(group.label)}
+                    onFocus={() => setActiveDomesticGroup(group.label)}
+                    className={activeDomesticGroup === group.label ? 'active' : ''}
+                    onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(group.items[0].province)}`)}
+                  >
+                    {isEn ? group.labelEn : group.label}
+                  </button>
+                ))}
+              </div>
+              <div className="mega-right">
+                {activeDomesticGroupData && (
+                  <>
+                    <h3>{isEn ? activeDomesticGroupData.labelEn : activeDomesticGroupData.label}</h3>
+                    <div className="mega-grid">
+                      {activeDomesticGroupData.items.map((item) => (
+                        <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(item.province)}`)}>
+                          {item.name}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </li>
           <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('outbound')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {

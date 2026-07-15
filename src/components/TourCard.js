@@ -30,9 +30,9 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
       </div>
       <p className="tour-desc">{displayDesc}</p>
       <div className="tour-info">
-        <p><Image src={assetPath('assets/images/icons/pin.png')} width={16} height={16} alt="" /> {t.tourId} {tour.id}</p>
-        <p><Image src={assetPath('assets/images/icons/stopwatch.png')} width={16} height={16} alt="" /> {displayDuration}</p>
-        <p><Image src={assetPath('assets/images/icons/clock_13819249.png')} width={16} height={16} alt="" /> {t.travel} {displayPeriod}</p>
+        <p>{t.tourId} {tour.id}</p>
+        <p>{displayDuration}</p>
+        <p>{t.travel} {displayPeriod}</p>
       </div>
       <div className="tour-bottom">
         <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/logos/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || t.transportAlt} />

@@ -20,16 +20,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 130px 6% 20px;
+  padding: 130px 40px 20px;
 }
-
-@media (max-width: 768px) {
-  .slider-section {
-    min-height: auto;
-    padding: 100px 6% 40px;
-  }
-}
-
 
 /* ========== CONTACT ========== */
 .contact-wrap {
@@ -138,7 +130,7 @@
 .contact-cell-label {
   margin: 0;
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -147,7 +139,7 @@
 .contact-cell-value {
   margin: 4px 0 0;
   color: var(--text-dark);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
   transition: color 0.2s ease;
@@ -165,6 +157,11 @@
 }
 
 @media (max-width: 768px) {
+  .slider-section {
+    min-height: auto;
+    padding: 100px 40px 40px;
+  }
+
   .contact-page {
     padding: 120px 6% 40px;
   }
