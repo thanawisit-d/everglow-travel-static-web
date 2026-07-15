@@ -76,6 +76,14 @@
     "gallerySubtitle": "ภาพความประทับใจจากการเดินทางของเรา",
     "viewPhoto": "ดูรูป",
     "partnerTitle": "พาร์ทเนอร์ของเรา",
+    "partners": [
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" }
+    ],
     "sortDefault": "เรียงลำดับ",
     "sortPriceLow": "ราคาต่ำ-สูง",
     "sortPriceHigh": "ราคาสูง-ต่ำ",
@@ -182,6 +190,14 @@
     "gallerySubtitle": "Moments captured from our journeys",
     "viewPhoto": "View Photo",
     "partnerTitle": "Our Partners",
+    "partners": [
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" },
+      { "name": "Everglow Travel", "logo": "Logo.jpg" }
+    ],
     "sortDefault": "Default",
     "sortPriceLow": "Price Low-High",
     "sortPriceHigh": "Price High-Low",

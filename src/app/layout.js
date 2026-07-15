@@ -1,5 +1,6 @@
 import { Kanit, Poppins, Cinzel } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import SkipToContent from '@/components/SkipToContent';
 import "./globals.css";
 
 const kanit = Kanit({
@@ -97,9 +98,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
         {gaId && <GoogleAnalytics gaId={gaId} />}
+        <SkipToContent href="#main-content" />
         <div className="min-h-screen w-full relative">
           <div className="absolute inset-0 z-0 bg-gradient-custom" />
-          <div className="relative z-[1]">{children}</div>
+          <div id="main-content" className="relative z-[1]">{children}</div>
         </div>
       </body>
     </html>

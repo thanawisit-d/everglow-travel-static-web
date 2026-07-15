@@ -68,7 +68,7 @@
   z-index: 10;
 }
 
-.dot {
+.slider-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -80,7 +80,7 @@
   background-clip: content-box;
 }
 
-.dot.active {
+.slider-dot.active {
   background: var(--white);
   transform: scale(1.15);
 }
@@ -110,7 +110,7 @@
     font-size: 18px;
   }
 
-  .dot {
+  .slider-dot {
     width: 20px;
     height: 20px;
     min-width: 44px;
@@ -120,7 +120,7 @@
     position: relative;
   }
 
-  .dot::after {
+  .slider-dot::after {
     content: '';
     display: block;
     width: 12px;
@@ -130,7 +130,7 @@
     margin: auto;
   }
 
-  .dot.active::after {
+  .slider-dot.active::after {
     background: var(--white);
   }
 }

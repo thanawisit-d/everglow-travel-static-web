@@ -97,6 +97,12 @@ export default function Header({ locale }) {
   }, [menuOpen]);
 
   useEffect(() => {
+    if (!menuOpen) return;
+    const first = menuRef.current?.querySelector('[data-first-focus]');
+    if (first) setTimeout(() => first.focus(), 50);
+  }, [menuOpen]);
+
+  useEffect(() => {
     const onScroll = () => setShrunk(window.scrollY > 150);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -165,7 +171,7 @@ export default function Header({ locale }) {
           <span></span>
         </button>
         <ul ref={menuRef} className={menuOpen ? 'nav-open' : ''} role="menubar">
-          <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
+          <li role="none"><button type="button" role="menuitem" data-first-focus onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
           <li className={`dropdown dropdown-outbound ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
               if (window.innerWidth > 768) { nav(`/${locale}/domestic`); }
