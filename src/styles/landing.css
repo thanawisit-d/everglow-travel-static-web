@@ -66,7 +66,7 @@
 }
 
 .landing-page .blue {
-  color: #0d6efd;
+  color: var(--cyan);
   margin-left: 12px;
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
@@ -115,13 +115,13 @@
 }
 
 .landing-page .thai {
-  background: linear-gradient(45deg, #0d6efd, #3a8bff);
+  background: linear-gradient(45deg, var(--cyan), #4dd8e3);
   color: white;
 }
 
 .landing-page .eng {
   background: white;
-  color: #0d6efd;
+  color: var(--cyan);
 }
 
 .landing-page .btn:hover {
@@ -214,12 +214,9 @@
   margin-top: 40px;
   list-style: none;
   padding: 0;
+  gap: 0;
 }
 
-.tour-list-body nav {
-  position: static;
-  z-index: auto;
-}
 
 .pagination-list li {
   margin: 0;
@@ -239,7 +236,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: 0.15s;
-  outline: none;
+  outline: none; /* focus-visible handled globally in base.css */
 }
 
 .pagination-list li + li .pagination-btn {
@@ -280,11 +277,24 @@
   height: 16px;
 }
 
+@media (max-width: 768px) {
+  .pagination-list {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    gap: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .pagination-btn {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     font-size: 12px;
+  }
+
+  .pagination-list {
+    margin-top: 24px;
+    margin-bottom: 20px;
   }
 }
 
