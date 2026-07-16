@@ -117,7 +117,7 @@ export default function Header({ locale }) {
 
   const nav = useCallback((path) => {
     if (window.location.pathname === path) {
-      window.location.reload();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       router.push(path);
     }
@@ -263,20 +263,31 @@ export default function Header({ locale }) {
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/contact`)}>{text.contact}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/reviews`)}>{text.reviews}</button></li>
-          {locale === 'en' && (
-            <li role="none" className="lang-item">
-              <button type="button" className="lang-btn" role="menuitem" onClick={() => router.push('/th')}>
-                🇹🇭 ไทย
+          <li role="none" className="lang-item">
+            <div className="lang-toggle" role="group" aria-label="Language switch">
+              <span
+                className="lang-thumb"
+                style={{ transform: locale === 'en' ? 'translateX(100%)' : 'translateX(0)' }}
+                aria-hidden="true"
+              />
+              <button
+                type="button"
+                className={`lang-opt${locale === 'th' ? ' lang-opt--active' : ''}`}
+                onClick={() => router.push('/th')}
+                aria-pressed={locale === 'th'}
+              >
+                TH
               </button>
-            </li>
-          )}
-          {locale === 'th' && (
-            <li role="none" className="lang-item">
-              <button type="button" className="lang-btn" role="menuitem" onClick={() => router.push('/en')}>
-                🇬🇧 English
+              <button
+                type="button"
+                className={`lang-opt${locale === 'en' ? ' lang-opt--active' : ''}`}
+                onClick={() => router.push('/en')}
+                aria-pressed={locale === 'en'}
+              >
+                EN
               </button>
-            </li>
-          )}
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
