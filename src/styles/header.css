@@ -325,7 +325,6 @@
   top: 100%;
   right: 0;
   width: 70%;
-  display: flex;
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
@@ -336,6 +335,12 @@
   z-index: 999;
   max-height: 75vh;
   overflow: hidden;
+}
+
+.header-sticky .mega-menu-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .header-sticky .mega-left {
@@ -563,29 +568,45 @@
     cursor: pointer;
   }
 
+  /* the outer element only handles the collapse animation now */
   .header-sticky .dropdown-menu,
   .header-sticky .mega-menu {
     position: static;
     width: 100%;
     opacity: 1;
     visibility: visible;
-    transform: none;
     box-shadow: none;
     border-radius: 8px;
     margin-top: 0;
-    max-height: 0;
-    overflow-y: auto;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 0 12px;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
   }
 
   .header-sticky .dropdown.open .dropdown-menu,
   .header-sticky .dropdown.open .mega-menu {
-    max-height: 2000px;
+    grid-template-rows: 1fr;
+  }
+
+  /* required for the grid trick: exactly one child, clipped, that can shrink below its content size */
+  .header-sticky .dropdown-menu-inner,
+  .header-sticky .mega-menu-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .header-sticky .dropdown-menu-inner {
+    padding: 0 12px;
+  }
+
+  .header-sticky .dropdown.open .dropdown-menu-inner {
     padding: 12px;
-    transform: none;
+  }
+
+  /* mega-left / mega-right layout now lives on the inner wrapper */
+  .header-sticky .mega-menu-inner {
+    display: flex;
+    flex-direction: column;
   }
 
   .header-sticky .mega-left {
@@ -603,12 +624,20 @@
     font-size: 13px;
   }
 
-.header-sticky .mega-right {
+  .header-sticky .mega-right {
     padding: 12px;
   }
 
   .header-sticky .mega-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* respect users who've turned off motion */
+  @media (prefers-reduced-motion: reduce) {
+    .header-sticky .dropdown-menu,
+    .header-sticky .mega-menu {
+      transition: none;
+    }
   }
 
   .header-sticky.shrunk nav {
