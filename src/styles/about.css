@@ -123,7 +123,7 @@
 /* ========== MOBILE ========== */
 @media (max-width: 768px) {
   .about-page {
-    padding-top: 130px;
+    padding-top: 150px;
   }
 
   .about-card {
@@ -153,7 +153,7 @@
 
 @media (max-width: 480px) {
   .about-page {
-    padding-top: 100px;
+    padding-top: 140px;
   }
 
   .about-card {
@@ -190,7 +190,7 @@
 /* ========== LANDSCAPE (short viewport) ========== */
 @media (max-height: 500px) {
   .about-page {
-    padding-top: 90px;
+    padding-top: 120px;
   }
 
   .about-card {
