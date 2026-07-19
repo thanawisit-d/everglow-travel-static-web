@@ -480,11 +480,14 @@
 
 @media (max-width: 768px) {
   .page-hero-band {
-    padding: 110px 6% 35px;
+    padding: 140px 6% 35px;
   }
 }
 
 @media (max-width: 480px) {
+  .page-hero-band {
+    padding-top: 130px;
+  }
   .page-hero-band .breadcrumb {
     gap: 4px;
     font-size: 11px;

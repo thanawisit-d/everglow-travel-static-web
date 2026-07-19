@@ -9,7 +9,7 @@ import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
-import Testimonials from '@/components/Testimonials';
+import ReviewSection from '@/components/ReviewSection';
 
 const featuredIds = {
   popular: [
@@ -102,7 +102,7 @@ export default function LocaleClient({ locale }) {
         </div>
       </section>
 
-      <Testimonials locale={locale} />
+      <ReviewSection locale={locale} />
     </div>
   );
 }

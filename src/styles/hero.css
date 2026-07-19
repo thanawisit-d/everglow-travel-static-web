@@ -11,7 +11,6 @@
 
 .hero-bg {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   object-fit: cover;
   z-index: 0;
@@ -19,7 +18,6 @@
 
 .hero-overlay {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   background: rgba(0, 40, 90, 0.6);
   z-index: 1;
@@ -87,7 +85,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 36px;
+  gap: 8px;
+  padding: 14px 32px;
   background: var(--cyan);
   color: var(--navy-dark);
   font-size: 16px;
@@ -104,10 +103,30 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+.hero-cta:hover svg {
+  transform: translateX(3px);
+}
+
+.hero-cta svg {
+  transition: transform 0.2s ease;
+}
+
 /* ========== RIGHT COLUMN ========== */
+.hero-right-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .hero-right {
   display: flex;
   gap: 24px;
+}
+
+.hero-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
 }
 
 .service-card {
@@ -208,6 +227,7 @@
 
   .hero-header {
     align-items: center;
+    text-align: center;
   }
 
   .hero-left {
@@ -221,7 +241,16 @@
 
   .hero-cta {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .hero-right-wrapper {
+    /* negative margin lets the fade mask reach the true viewport edge
+       while the dots below stay aligned with the rest of the content */
+    margin: 0 -24px;
+    padding: 0 24px;
   }
 
   .hero-right {
@@ -231,10 +260,45 @@
     flex-direction: row;
     gap: 16px;
     padding-bottom: 8px;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 24px,
+      #000 calc(100% - 24px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 24px,
+      #000 calc(100% - 24px),
+      transparent 100%
+    );
   }
 
   .hero-right::-webkit-scrollbar {
     display: none;
+  }
+
+  .hero-dots {
+    display: flex;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background 0.2s ease, width 0.2s ease;
+  }
+
+  .hero-dot--active {
+    background: var(--cyan);
+    width: 20px;
+    border-radius: 4px;
   }
 
   .service-card {
@@ -263,6 +327,11 @@
     gap: 24px;
   }
 
+  .hero-right-wrapper {
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+
   .hero-service-title {
     font-size: 30px;
   }
@@ -272,8 +341,9 @@
   }
 
   .hero-cta {
-    padding: 12px 28px;
-    font-size: 14px;
+    max-width: 240px;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 
   .service-card {
