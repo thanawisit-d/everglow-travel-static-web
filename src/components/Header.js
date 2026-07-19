@@ -82,17 +82,17 @@ export default function Header({ locale }) {
         setMenuOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleOutside);
+    document.addEventListener('click', handleOutside);
     document.addEventListener('keydown', handleEscape);
     return () => {
-      document.removeEventListener('mousedown', handleOutside);
+      document.removeEventListener('click', handleOutside);
       document.removeEventListener('keydown', handleEscape);
     };
   }, []);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
-    document.body.style.overflow = menuOpen ? 'hidden' : 'hidden auto';
+    document.body.style.overflow = menuOpen ? 'hidden auto' : 'hidden auto';
     return () => { document.body.style.overflow = prev; };
   }, [menuOpen]);
 
@@ -116,9 +116,13 @@ export default function Header({ locale }) {
   };
 
   const nav = useCallback((path) => {
-    router.push(path);
+    if (window.location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      router.push(path);
+    }
     closeMenu();
-  }, [router]);
+  }, [router, closeMenu]);
 
   const text = config[locale] || config.th;
   const s = config.social;
@@ -155,7 +159,14 @@ export default function Header({ locale }) {
 
       <nav aria-label="Main navigation">
         <div className="nav-group">
-          <div className="logo-in-nav">
+          <div
+            className="logo-in-nav"
+            onClick={() => nav(`/${locale}`)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(`/${locale}`); } }}
+            role="button"
+            tabIndex={0}
+            aria-label="Go to home"
+          >
             <Image src={assetPath('assets/images/logos/Logo.jpg')} width={36} height={36} alt="" priority />
           </div>
           <h2>{text.brand}</h2>
@@ -172,100 +183,115 @@ export default function Header({ locale }) {
         </button>
         <ul ref={menuRef} className={menuOpen ? 'nav-open' : ''} role="menubar">
           <li role="none"><button type="button" role="menuitem" data-first-focus onClick={() => nav(`/${locale}`)}>{text.home}</button></li>
-          <li className={`dropdown dropdown-outbound ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('domestic')} onMouseLeave={scheduleClose}>
+          <li className={`dropdown dropdown-outbound ${openDropdown === 'domestic' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 768) openMenu('domestic'); }} onMouseLeave={() => { if (window.innerWidth > 768) scheduleClose(); }}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'domestic'} onClick={(e) => {
               if (window.innerWidth > 768) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
             }}>{text.domestic}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
             <div className="mega-menu" role="menu">
-              <div className="mega-left">
-                {config.domesticGroups.map((group) => (
-                  <button
-                    key={group.label}
-                    type="button"
-                    role="menuitem"
-                    onMouseEnter={() => setActiveDomesticGroup(group.label)}
-                    onFocus={() => setActiveDomesticGroup(group.label)}
-                    className={activeDomesticGroup === group.label ? 'active' : ''}
-                    onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(group.items[0].province)}`)}
-                  >
-                    {isEn ? group.labelEn : group.label}
-                  </button>
-                ))}
-              </div>
-              <div className="mega-right">
-                {activeDomesticGroupData && (
-                  <>
-                    <h3>{isEn ? activeDomesticGroupData.labelEn : activeDomesticGroupData.label}</h3>
-                    <div className="mega-grid">
-                      {activeDomesticGroupData.items.map((item) => (
-                        <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(item.province)}`)}>
-                          {item.name}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
+              <div className="mega-menu-inner">
+                <div className="mega-left">
+                  {config.domesticGroups.map((group) => (
+                    <button
+                      key={group.label}
+                      type="button"
+                      role="menuitem"
+                      onMouseEnter={() => setActiveDomesticGroup(group.label)}
+                      onFocus={() => setActiveDomesticGroup(group.label)}
+                      className={activeDomesticGroup === group.label ? 'active' : ''}
+                      onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(group.items[0].province)}`)}
+                    >
+                      {isEn ? group.labelEn : group.label}
+                    </button>
+                  ))}
+                </div>
+                <div className="mega-right">
+                  {activeDomesticGroupData && (
+                    <>
+                      <h3>{isEn ? activeDomesticGroupData.labelEn : activeDomesticGroupData.label}</h3>
+                      <div className="mega-grid">
+                        {activeDomesticGroupData.items.map((item) => (
+                          <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(item.province)}`)}>
+                            {item.name}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </li>
-          <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => openMenu('outbound')} onMouseLeave={scheduleClose}>
+          <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 768) openMenu('outbound'); }} onMouseLeave={() => { if (window.innerWidth > 768) scheduleClose(); }}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
               if (window.innerWidth > 768) { nav(`/${locale}/outbound`); }
               else { e.stopPropagation(); toggleDropdown('outbound'); }
             }}>{text.outbound}</button>
             <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} aria-label="Open submenu">▾</button>
             <div className="mega-menu" role="menu">
-              <div className="mega-left">
-                {config.countryGroups.map((group) => (
-                  <button
-                    key={group.label}
-                    type="button"
-                    role="menuitem"
-                    onMouseEnter={() => setActiveGroup(group.label)}
-                    onFocus={() => setActiveGroup(group.label)}
-                    className={activeGroup === group.label ? 'active' : ''}
-                    onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(group.items[0].name)}`)}
-                  >
-                    {isEn ? group.labelEn : group.label}
-                  </button>
-                ))}
-              </div>
-              <div className="mega-right">
-                {activeGroupData && (
-                  <>
-                    <h3>{isEn ? activeGroupData.labelEn : activeGroupData.label}</h3>
-                    <div className="mega-grid">
-                      {activeGroupData.items.map((c) => (
-                        <button key={c.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
-                          <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
-                          {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
+              <div className="mega-menu-inner">
+                <div className="mega-left">
+                  {config.countryGroups.map((group) => (
+                    <button
+                      key={group.label}
+                      type="button"
+                      role="menuitem"
+                      onMouseEnter={() => setActiveGroup(group.label)}
+                      onFocus={() => setActiveGroup(group.label)}
+                      className={activeGroup === group.label ? 'active' : ''}
+                      onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(group.items[0].name)}`)}
+                    >
+                      {isEn ? group.labelEn : group.label}
+                    </button>
+                  ))}
+                </div>
+                <div className="mega-right">
+                  {activeGroupData && (
+                    <>
+                      <h3>{isEn ? activeGroupData.labelEn : activeGroupData.label}</h3>
+                      <div className="mega-grid">
+                        {activeGroupData.items.map((c) => (
+                          <button key={c.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(c.name)}`)}>
+                            <Image src={assetPath(`flag_country/${c.flag}`)} width={26} height={26} alt={isEn ? translateCountry(c.name) : c.name} />
+                            {isEn ? `${translateCountry(c.name)} Tours` : `ทัวร์${c.name}`}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/contact`)}>{text.contact}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/reviews`)}>{text.reviews}</button></li>
-          {locale === 'en' && (
-            <li role="none" className="lang-item">
-              <button type="button" className="lang-btn" role="menuitem" onClick={() => router.push('/th')}>
-                🇹🇭 ไทย
+          <li role="none" className="lang-item">
+            <div className="lang-toggle" role="group" aria-label="Language switch">
+              <span
+                className="lang-thumb"
+                style={{ transform: locale === 'en' ? 'translateX(100%)' : 'translateX(0)' }}
+                aria-hidden="true"
+              />
+              <button
+                type="button"
+                className={`lang-opt${locale === 'th' ? ' lang-opt--active' : ''}`}
+                onClick={() => router.push('/th')}
+                aria-pressed={locale === 'th'}
+              >
+                TH
               </button>
-            </li>
-          )}
-          {locale === 'th' && (
-            <li role="none" className="lang-item">
-              <button type="button" className="lang-btn" role="menuitem" onClick={() => router.push('/en')}>
-                🇬🇧 English
+              <button
+                type="button"
+                className={`lang-opt${locale === 'en' ? ' lang-opt--active' : ''}`}
+                onClick={() => router.push('/en')}
+                aria-pressed={locale === 'en'}
+              >
+                EN
               </button>
-            </li>
-          )}
+            </div>
+          </li>
         </ul>
       </nav>
     </div>

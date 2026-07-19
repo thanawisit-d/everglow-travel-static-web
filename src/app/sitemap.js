@@ -1,6 +1,7 @@
 export const dynamic = 'force-static';
 
 import toursData from '@/data/tours.json';
+import reviewsData from '@/data/reviews.json';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
 
@@ -31,6 +32,18 @@ export default async function sitemap() {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.6,
+      });
+    }
+  }
+
+  const reviewIds = [...new Set(reviewsData.map((r) => r.id))];
+  for (const locale of locales) {
+    for (const reviewId of reviewIds) {
+      entries.push({
+        url: `${siteUrl}/${locale}/reviews/${reviewId}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.5,
       });
     }
   }
