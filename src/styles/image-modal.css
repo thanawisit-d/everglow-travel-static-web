@@ -1,0 +1,128 @@
+/* ========== IMAGE MODAL (lightbox) ========== */
+.image-modal-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3 / 4;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: var(--shadow-lg);
+}
+
+.image-modal-thumb {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-modal-trigger:hover .image-modal-thumb {
+  transform: scale(1.03);
+}
+
+.image-modal-hint {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.image-modal-trigger:hover .image-modal-hint,
+.image-modal-trigger:focus-visible .image-modal-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-modal-trigger:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.image-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  z-index: 1000;
+  animation: image-modal-fade 0.2s ease;
+}
+
+@keyframes image-modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.image-modal-full {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--navy);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.image-modal-close:hover {
+  transform: scale(1.1);
+  background: var(--cyan);
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .image-modal-close {
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .image-modal-hint {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
