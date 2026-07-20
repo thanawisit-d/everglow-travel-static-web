@@ -16,11 +16,7 @@
 }
 
 .slider-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 130px 40px 20px;
+  padding: 130px 40px 30px;
 }
 
 /* ========== CONTACT ========== */
@@ -158,8 +154,7 @@
 
 @media (max-width: 768px) {
   .slider-section {
-    min-height: auto;
-    padding: 100px 40px 40px;
+    padding: 100px 20px 24px;
   }
 
   .contact-page {
