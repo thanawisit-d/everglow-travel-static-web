@@ -53,7 +53,7 @@ export default function LocaleClient({ locale }) {
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
       </div>
-      <section className="why-choose-us">
+      <section className="why-choose-us bg-alt">
         <h2>{t.whyTitle}</h2>
         <div className="why-grid">
           {whyItems.map((item, i) => (
