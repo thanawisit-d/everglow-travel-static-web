@@ -599,18 +599,28 @@
 
 .tour-slider-track {
   display: flex;
-  transition: transform 0.4s ease-in-out;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 8px 0;
 }
 
+.tour-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
 .tour-slider-item {
-  flex-shrink: 0;
+  flex: 0 0 calc(100% / 3);
+  scroll-snap-align: start;
   box-sizing: border-box;
   padding: 0 10px;
 }
 
 @media (max-width: 768px) {
   .tour-slider-item {
+    flex: 0 0 85%;
     display: flex;
     justify-content: center;
   }
