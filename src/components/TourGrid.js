@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useRef } from 'react';
 import TourCard from './TourCard';
 import config from '@/data/site-config.json';
 
@@ -7,26 +7,18 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
   const t = config[locale] || config.th;
   const data = tours || [];
   const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
-
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
-  const isSlider = data.length > 3;
-
-  useEffect(() => {
-    if (!isSlider) return;
-    const check = () => setCardsPerView(window.innerWidth <= 768 ? 1 : 3);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, [isSlider]);
-
-  useEffect(() => {
-    setCurrentIdx(prev => Math.min(prev, data.length - cardsPerView));
-  }, [cardsPerView, data.length]);
+  const trackRef = useRef(null);
 
   if (data.length === 0) return null;
 
-  if (!isSlider) {
+  const scroll = (direction) => {
+    if (!trackRef.current) return;
+    const container = trackRef.current;
+    const scrollAmount = container.clientWidth * (window.innerWidth <= 768 ? 0.85 : 0.333);
+    container.scrollBy({ left: direction === 'next' ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+  };
+
+  if (data.length <= 3) {
     return (
       <section className="tour-section">
         <h2 className="tour-section-title">{title}</h2>
@@ -45,24 +37,13 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
     );
   }
 
-  const total = data.length;
-  const totalWidth = (total / cardsPerView) * 100;
-  const itemWidth = 100 / total;
-  const maxIdx = total - cardsPerView;
-
   return (
     <section className="tour-section">
       <h2 className="tour-section-title">{title}</h2>
       <div className="tour-slider-wrapper">
-        <div
-          className="tour-slider-track"
-          style={{
-            width: `${totalWidth}%`,
-            transform: `translateX(-${currentIdx * itemWidth}%)`
-          }}
-        >
+        <div ref={trackRef} className="tour-slider-track">
           {data.map((tourItem, i) => (
-            <div key={tourItem.id || i} className="tour-slider-item" style={{ width: `${itemWidth}%` }}>
+            <div key={tourItem.id || i} className="tour-slider-item">
               <TourCard
                 locale={locale}
                 tour={tourItem}
@@ -72,22 +53,8 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
             </div>
           ))}
         </div>
-        {currentIdx > 0 && (
-          <button
-            className="tour-slider-btn prev"
-            onClick={(e) => { e.stopPropagation(); setCurrentIdx(p => p - 1); }}
-          >
-            &#10094;
-          </button>
-        )}
-        {currentIdx < maxIdx && (
-          <button
-            className="tour-slider-btn next"
-            onClick={(e) => { e.stopPropagation(); setCurrentIdx(p => p + 1); }}
-          >
-            &#10095;
-          </button>
-        )}
+        <button className="tour-slider-btn prev" onClick={() => scroll('prev')}>&#10094;</button>
+        <button className="tour-slider-btn next" onClick={() => scroll('next')}>&#10095;</button>
       </div>
     </section>
   );
