@@ -1,17 +1,6 @@
 /* ========== TOUR SECTION ========== */
 .tour-grid-wrapper {
   padding: 20px 6% 20px;
-  position: relative;
-}
-
-.tour-grid-wrapper::before {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: var(--cyan);
-  border-radius: 2px;
-  margin: 0 auto 24px;
 }
 
 .tour-section {
