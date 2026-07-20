@@ -15,6 +15,10 @@
   background: var(--bg-page);
 }
 
+.bg-section {
+  background: var(--bg-section);
+}
+
 .slider-section {
   padding: 130px 40px 30px;
 }
