@@ -49,7 +49,7 @@ export default function LocaleClient({ locale }) {
       <section className="slider-section bg-alt">
         <Slider />
       </section>
-      <div className="tour-grid-wrapper bg-alt">
+      <div className="tour-grid-wrapper">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
       </div>
