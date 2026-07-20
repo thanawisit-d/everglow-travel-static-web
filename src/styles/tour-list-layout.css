@@ -98,6 +98,72 @@
   }
 }
 
+/* ========== ACTIVE FILTER TAGS ========== */
+.active-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.active-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  background: #eef4ff;
+  color: var(--navy);
+  border: 1px solid #d6e4f0;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.active-tag:hover {
+  background: #dce8f8;
+  border-color: #b8cce0;
+}
+
+.active-tag svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.active-tag:hover svg {
+  opacity: 1;
+}
+
+.active-tag--clear {
+  background: transparent;
+  border-color: #d1d5db;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.active-tag--clear:hover {
+  background: #f3f4f6;
+  color: var(--text-dark);
+  border-color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .active-tags {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .active-tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
 @media (max-width: 480px) {
   .results-toolbar {
     flex-direction: column;
