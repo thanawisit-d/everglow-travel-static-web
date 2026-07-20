@@ -223,6 +223,8 @@ export default function Header({ locale }) {
               </div>
             </div>
           </li>
+          {/* Outbound Tours — ซ่อนใน EN ตาม requirement */}
+          {!isEn && (
           <li className={`dropdown dropdown-outbound ${openDropdown === 'outbound' ? 'open' : ''}`} role="none" onMouseEnter={() => { if (window.innerWidth > 768) openMenu('outbound'); }} onMouseLeave={() => { if (window.innerWidth > 768) scheduleClose(); }}>
             <button type="button" role="menuitem" aria-haspopup="true" aria-expanded={openDropdown === 'outbound'} onClick={(e) => {
               if (window.innerWidth > 768) { nav(`/${locale}/outbound`); }
@@ -264,10 +266,12 @@ export default function Header({ locale }) {
               </div>
             </div>
           </li>
+          )}
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/about`)}>{text.about}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/contact`)}>{text.contact}</button></li>
           <li role="none"><button type="button" role="menuitem" onClick={() => nav(`/${locale}/reviews`)}>{text.reviews}</button></li>
-          <li role="none" className="lang-item">
+          {/* lang-toggle — ซ่อนทั้ง TH/EN ตาม requirement */}
+          {/* <li role="none" className="lang-item">
             <div className="lang-toggle" role="group" aria-label="Language switch">
               <span
                 className="lang-thumb"
@@ -291,7 +295,7 @@ export default function Header({ locale }) {
                 EN
               </button>
             </div>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>
