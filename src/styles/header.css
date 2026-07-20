@@ -195,6 +195,10 @@
   color: #fff;
 }
 
+.lang-opt::after {
+  display: none;
+}
+
 .header-sticky nav {
   display: flex;
   justify-content: space-between;
