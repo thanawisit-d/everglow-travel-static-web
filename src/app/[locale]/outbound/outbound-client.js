@@ -7,6 +7,7 @@ import { fieldIncludes, countryNameMap } from '@/lib/i18n';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
+import ActiveFilters from '@/components/ActiveFilters';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import config from '@/data/site-config.json';
@@ -108,6 +109,23 @@ export default function OutboundClient({ locale, tours }) {
 
   const { items, totalPages } = paginate(filtered, page);
 
+  const activeFilters = [
+    { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => updateFilter('search', '') },
+    { id: 'continent', label: filters.continent.join(', '), active: filters.continent.length > 0, onClear: () => updateFilter('continent', []) },
+    { id: 'country', label: getCountryLabel(filters.country, isEn), active: !!filters.country, onClear: () => updateFilter('country', '') },
+    { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => updateFilter('duration', '') },
+    { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => updateFilter('priceRange', [minPrice, maxPrice]) },
+  ];
+
+  const clearAllFilters = () => {
+    updateFilter('search', '');
+    updateFilter('continent', []);
+    updateFilter('country', '');
+    updateFilter('duration', '');
+    updateFilter('priceRange', [minPrice, maxPrice]);
+    setPage(1);
+  };
+
   const sidebarGroups = [
     {
       id: 'search',
@@ -193,6 +211,7 @@ export default function OutboundClient({ locale, tours }) {
                 <option value="price-desc">{t.sortPriceHigh}</option>
               </select>
             </div>
+            <ActiveFilters items={activeFilters} onClearAll={clearAllFilters} locale={locale} />
             <div className="tour-grid">
               {items.length === 0 ? (
                 <div className="no-result">

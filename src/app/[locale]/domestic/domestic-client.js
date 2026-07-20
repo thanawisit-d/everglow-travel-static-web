@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
+import ActiveFilters from '@/components/ActiveFilters';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import { provinceNameMap } from '@/lib/i18n';
@@ -103,6 +104,21 @@ export default function DomesticClient({ locale, tours }) {
 
   const { items, totalPages } = paginate(filtered, page);
 
+  const activeFilters = [
+    { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => updateFilter('search', '') },
+    { id: 'province', label: isEn ? (provinceNameMap[filters.province] || filters.province) : filters.province, active: !!filters.province, onClear: () => updateFilter('province', '') },
+    { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => updateFilter('duration', '') },
+    { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => updateFilter('priceRange', [minPrice, maxPrice]) },
+  ];
+
+  const clearAllFilters = () => {
+    updateFilter('search', '');
+    updateFilter('province', '');
+    updateFilter('duration', '');
+    updateFilter('priceRange', [minPrice, maxPrice]);
+    setPage(1);
+  };
+
   const sidebarGroups = [
     {
       id: 'search',
@@ -177,6 +193,7 @@ export default function DomesticClient({ locale, tours }) {
                 <option value="price-desc">{t.sortPriceHigh}</option>
               </select>
             </div>
+            <ActiveFilters items={activeFilters} onClearAll={clearAllFilters} locale={locale} />
             <div className="tour-grid">
               {items.length === 0 ? (
                 <div className="no-result">

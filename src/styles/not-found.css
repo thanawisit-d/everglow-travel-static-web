@@ -1,0 +1,87 @@
+/* ========== 404 PAGE ========== */
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  background: radial-gradient(125% 125% at 50% 90%, #fff 5%, #003478 100%);
+}
+
+.not-found-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 60px 48px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 52, 120, 0.2);
+}
+
+.not-found-logo-wrap {
+  margin-bottom: 16px;
+}
+
+.not-found-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.not-found-code {
+  font-size: 96px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 12px;
+  font-family: var(--font-kanit), 'Kanit', sans-serif;
+}
+
+.not-found-msg-th {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.not-found-msg-en {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.not-found-card .back-btn.not-found-btn {
+  display: inline-flex;
+  position: static;
+  padding: 14px 32px;
+  font-size: 15px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.not-found-card .back-btn.not-found-btn:hover {
+  background: var(--navy-secondary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .not-found-card {
+    padding: 40px 24px;
+  }
+
+  .not-found-code {
+    font-size: 72px;
+  }
+
+  .not-found-msg-th {
+    font-size: 16px;
+  }
+}

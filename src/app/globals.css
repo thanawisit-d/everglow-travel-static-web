@@ -15,8 +15,10 @@
 @import "../styles/footer.css";
 @import "../styles/image-modal.css";
 @import "../styles/back-button.css";
+@import "../styles/scroll-to-top.css";
 @import "../styles/landing.css";
 @import "../styles/filter-sidebar.css";
 @import "../styles/tour-list-layout.css";
 @import "../styles/choices-overrides.css";
 @import "choices.js/public/assets/styles/choices.css";
+@import "../styles/not-found.css";

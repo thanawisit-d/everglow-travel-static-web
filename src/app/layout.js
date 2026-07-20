@@ -1,6 +1,7 @@
 import { Kanit, Poppins, Cinzel } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import SkipToContent from '@/components/SkipToContent';
+import ScrollToTop from '@/components/ScrollToTop';
 import "./globals.css";
 
 const kanit = Kanit({
@@ -107,6 +108,7 @@ export default function RootLayout({ children }) {
         <div className="min-h-screen w-full relative">
           <div className="absolute inset-0 z-0 bg-gradient-custom" />
           <div id="main-content" className="relative z-[1]">{children}</div>
+          <ScrollToTop />
         </div>
       </body>
     </html>
