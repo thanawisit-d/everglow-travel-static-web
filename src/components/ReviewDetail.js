@@ -23,17 +23,19 @@ export default function ReviewDetail({ review, locale }) {
         </nav>
       </div>
       <div className="review-detail-body">
-        <div className="review-detail-image">
-          <Image
-            src={assetPath(review.image)}
-            fill
-            sizes="(max-width: 768px) 100vw, 800px"
-            alt={displayTag}
-            className="review-detail-image-img"
-          />
+        <div className="review-detail-card">
+          <div className="review-detail-image">
+            <Image
+              src={assetPath(review.image)}
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              alt={displayTag}
+              className="review-detail-image-img"
+            />
+          </div>
+          <div className="review-detail-tag">{displayTag}</div>
+          <p className="review-detail-text">{displayText}</p>
         </div>
-        <div className="review-detail-tag">{displayTag}</div>
-        <p className="review-detail-text">{displayText}</p>
       </div>
     </div>
   );

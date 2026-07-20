@@ -1,7 +1,15 @@
 .review-detail-body {
+  background: var(--bg-page);
+  padding: 40px 6% 60px;
+}
+
+.review-detail-card {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 6%;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
 }
 
 .review-detail-image {
@@ -36,9 +44,20 @@
 
 @media (max-width: 768px) {
   .review-detail-body {
-    padding: 24px 5%;
+    padding: 24px 5% 40px;
   }
+
+  .review-detail-card {
+    padding: 24px;
+  }
+
   .review-detail-image {
     aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-detail-card {
+    padding: 16px;
   }
 }
