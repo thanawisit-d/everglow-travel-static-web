@@ -7,7 +7,6 @@ import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
-import SearchBox from '@/components/SearchBox';
 import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
@@ -49,9 +48,6 @@ export default function LocaleClient({ locale }) {
       <div className="hero-slider">
         <Slider />
       </div>
-      <section className="search-box">
-        <SearchBox locale={locale} tours={toursData} />
-      </section>
       <div className="tour-grid-wrapper">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
