@@ -45,13 +45,14 @@ export default function LocaleClient({ locale }) {
 
   return (
     <div>
-      <Hero locale={locale} />
-      <section className="slider-section bg-alt">
-        <Slider />
-      </section>
+      <Slider />
       <div className="tour-grid-wrapper">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
+      </div>
+      <div className="services-section">
+        <h2 className="tour-section-title">{t.servicesTitle}</h2>
+        <Hero locale={locale} />
       </div>
       <section className="why-choose-us bg-section">
         <h2>{t.whyTitle}</h2>
