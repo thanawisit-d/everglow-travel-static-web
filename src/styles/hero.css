@@ -11,6 +11,13 @@
 
 .services-section .hero {
   min-height: auto;
+  padding: 60px 0;
+  justify-content: center;
+}
+
+.services-section .hero-inner {
+  margin: 0 auto;
+  max-width: 1100px;
 }
 
 .hero-bg {

@@ -1,4 +1,10 @@
 /* ========== SLIDER ========== */
+.hero-slider {
+  padding-top: 130px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .slider {
   width: 100%;
   max-width: 1100px;
@@ -146,6 +152,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero-slider {
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .slider {
     aspect-ratio: 4 / 3;
   }
