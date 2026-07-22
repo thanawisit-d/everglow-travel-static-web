@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
@@ -7,6 +8,7 @@ import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
+import SearchWidget from '@/components/SearchWidget';
 import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
@@ -30,6 +32,22 @@ export default function LocaleClient({ locale }) {
   const popularTours = featuredIds.popular.map(id => toursData.find(t => t.id === id)).filter(Boolean);
   const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
 
+  const destinations = useMemo(() => {
+    const set = new Set();
+    toursData.forEach((t) => {
+      if (t.type === 'outbound') {
+        const c = t.country;
+        if (Array.isArray(c)) c.forEach(v => set.add(v));
+        else if (c) set.add(c);
+      } else {
+        const p = t.province;
+        if (Array.isArray(p)) p.forEach(v => set.add(v));
+        else if (p) set.add(p);
+      }
+    });
+    return [...set].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
+  }, [isEn]);
+
   const handlePromoClick = (id) => {
     const full = toursData.find((t) => t.id === id);
     if (full) {
@@ -48,6 +66,7 @@ export default function LocaleClient({ locale }) {
       <div className="hero-slider">
         <Slider />
       </div>
+      <SearchWidget locale={locale} destinations={destinations} />
       <div className="tour-grid-wrapper">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />

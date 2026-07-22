@@ -35,8 +35,12 @@ export default function OutboundClient({ locale, tours }) {
 
   useEffect(() => {
     const c = searchParams.get('country') || '';
+    const q = searchParams.get('q') || '';
     if (c) {
       updateFilter('country', c);
+    }
+    if (q) {
+      updateFilter('search', q);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
