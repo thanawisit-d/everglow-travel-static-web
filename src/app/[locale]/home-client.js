@@ -33,20 +33,28 @@ export default function LocaleClient({ locale }) {
   const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
 
   const destinations = useMemo(() => {
-    const set = new Set();
-    toursData.forEach((t) => {
-      if (t.type === 'outbound') {
-        const c = t.country;
-        if (Array.isArray(c)) c.forEach(v => set.add(v));
-        else if (c) set.add(c);
+    const domesticSet = new Set();
+    const outboundSet = new Set();
+
+    toursData.forEach((tour) => {
+      if (tour.type === 'outbound') {
+        const c = tour.country;
+        if (Array.isArray(c)) c.forEach((v) => outboundSet.add(v));
+        else if (c) outboundSet.add(c);
       } else {
-        const p = t.province;
-        if (Array.isArray(p)) p.forEach(v => set.add(v));
-        else if (p) set.add(p);
+        const p = tour.province;
+        if (Array.isArray(p)) p.forEach((v) => domesticSet.add(v));
+        else if (p) domesticSet.add(p);
       }
     });
-    return [...set].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
-  }, [isEn]);
+
+    const collator = (a, b) => a.localeCompare(b, isEn ? 'en' : 'th');
+
+    return {
+      domestic: [...domesticSet].sort(collator),
+      outbound: [...outboundSet].sort(collator),
+    };
+  }, [isEn, toursData]);
 
   const handlePromoClick = (id) => {
     const full = toursData.find((t) => t.id === id);
@@ -63,15 +71,15 @@ export default function LocaleClient({ locale }) {
 
   return (
     <div>
-      <div className="hero-slider">
+      <div className="hero-slider bg-section">
         <Slider />
       </div>
       <SearchWidget locale={locale} destinations={destinations} />
-      <div className="tour-grid-wrapper">
+      <div className="tour-grid-wrapper bg-section">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
       </div>
-      <div className="services-section">
+      <div className="services-section bg-section">
         <Hero locale={locale} />
       </div>
       <section className="why-choose-us bg-section">

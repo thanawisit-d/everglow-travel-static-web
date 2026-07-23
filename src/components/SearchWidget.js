@@ -1,58 +1,81 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapPin, Calendar, Compass, Search } from 'lucide-react';
+import { MapPin, Calendar, Compass, Search, Hash, ChevronDown } from 'lucide-react';
 
 const TEXT = {
   th: {
     destinationLabel: 'ปลายทาง',
     destinationPlaceholder: 'เลือกปลายทาง',
     typeLabel: 'ประเภททัวร์',
-    typePlaceholder: 'เลือกประเภท',
+    typePlaceholder: 'ทุกประเภท',
     typeDomestic: 'ทัวร์ในประเทศ',
     typeOutbound: 'ทัวร์ต่างประเทศ',
+    groupDomestic: 'ในประเทศ',
+    groupOutbound: 'ต่างประเทศ',
     tourIdLabel: 'รหัสทัวร์',
     tourIdPlaceholder: 'กรอกรหัสทัวร์',
+    tourIdToggle: 'รู้รหัสทัวร์อยู่แล้ว? ค้นหาด้วยรหัส',
     dateLabel: 'วันเดินทาง',
-    datePlaceholder: 'เลือกวันที่',
     search: 'ค้นหา',
   },
   en: {
     destinationLabel: 'Destination',
     destinationPlaceholder: 'Choose a destination',
     typeLabel: 'Tour type',
-    typePlaceholder: 'Choose a type',
+    typePlaceholder: 'All types',
     typeDomestic: 'Domestic tours',
     typeOutbound: 'Outbound tours',
+    groupDomestic: 'Domestic',
+    groupOutbound: 'Outbound',
     tourIdLabel: 'Tour ID',
     tourIdPlaceholder: 'Enter tour ID',
+    tourIdToggle: 'Already know your tour ID? Search by ID',
     dateLabel: 'Travel date',
-    datePlaceholder: 'Select date',
     search: 'Search',
   },
 };
 
-export default function SearchWidget({ locale, destinations = [] }) {
+export default function SearchWidget({ locale, destinations = { domestic: [], outbound: [] } }) {
   const router = useRouter();
   const t = TEXT[locale] || TEXT.th;
 
-  const [destination, setDestination] = useState('');
   const [tourType, setTourType] = useState('');
-  const [tourId, setTourId] = useState('');
+  const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
+  const [showTourId, setShowTourId] = useState(false);
+  const [tourId, setTourId] = useState('');
+
+  const domesticOptions = destinations.domestic || [];
+  const outboundOptions = destinations.outbound || [];
+
+  const handleTypeChange = (value) => {
+    setTourType(value);
+    if (value && destination && !destination.startsWith(`${value}::`)) {
+      setDestination('');
+    }
+  };
+
+  const parsedDestination = useMemo(() => {
+    if (!destination) return null;
+    const [type, ...rest] = destination.split('::');
+    return { type, name: rest.join('::') };
+  }, [destination]);
 
   const handleSearch = (e) => {
     e.preventDefault();
+
+    const effectiveType = parsedDestination?.type || tourType || 'domestic';
+
     const params = new URLSearchParams();
-    if (destination) {
-      if (tourType === 'outbound') params.set('country', destination);
-      else params.set('province', destination);
+    if (parsedDestination) {
+      params.set(effectiveType === 'outbound' ? 'country' : 'province', parsedDestination.name);
     }
     if (tourId) params.set('q', tourId);
     if (date) params.set('date', date);
-    const basePath = tourType === 'outbound' ? 'outbound' : 'domestic';
-    router.push(`/${locale}/${basePath}${params.toString() ? `?${params.toString()}` : ''}`);
+
+    router.push(`/${locale}/${effectiveType}${params.toString() ? `?${params.toString()}` : ''}`);
   };
 
   return (
@@ -62,7 +85,7 @@ export default function SearchWidget({ locale, destinations = [] }) {
           <label htmlFor="sw-type">{t.typeLabel}</label>
           <div className="search-input">
             <Compass size={18} strokeWidth={2} className="search-input-icon" />
-            <select id="sw-type" value={tourType} onChange={(e) => setTourType(e.target.value)}>
+            <select id="sw-type" value={tourType} onChange={(e) => handleTypeChange(e.target.value)}>
               <option value="">{t.typePlaceholder}</option>
               <option value="domestic">{t.typeDomestic}</option>
               <option value="outbound">{t.typeOutbound}</option>
@@ -78,26 +101,25 @@ export default function SearchWidget({ locale, destinations = [] }) {
             <MapPin size={18} strokeWidth={2} className="search-input-icon" />
             <select id="sw-destination" value={destination} onChange={(e) => setDestination(e.target.value)}>
               <option value="">{t.destinationPlaceholder}</option>
-              {destinations.map((d) => (
-                <option key={d} value={d}>{d}</option>
-              ))}
+              {(!tourType || tourType === 'domestic') && domesticOptions.length > 0 && (
+                <optgroup label={t.groupDomestic}>
+                  {domesticOptions.map((name) => (
+                    <option key={`d-${name}`} value={`domestic::${name}`}>
+                      {name}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
+              {(!tourType || tourType === 'outbound') && outboundOptions.length > 0 && (
+                <optgroup label={t.groupOutbound}>
+                  {outboundOptions.map((name) => (
+                    <option key={`o-${name}`} value={`outbound::${name}`}>
+                      {name}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
             </select>
-          </div>
-        </div>
-
-        <div className="search-divider" aria-hidden="true" />
-
-        <div className="search-field">
-          <label htmlFor="sw-tourid">{t.tourIdLabel}</label>
-          <div className="search-input">
-            <Search size={18} strokeWidth={2} className="search-input-icon" />
-            <input
-              id="sw-tourid"
-              type="text"
-              placeholder={t.tourIdPlaceholder}
-              value={tourId}
-              onChange={(e) => setTourId(e.target.value)}
-            />
           </div>
         </div>
 
@@ -116,6 +138,32 @@ export default function SearchWidget({ locale, destinations = [] }) {
           {t.search}
         </button>
       </form>
+
+      <div className="search-tourid">
+        <button
+          type="button"
+          className="search-tourid-toggle"
+          onClick={() => setShowTourId((v) => !v)}
+          aria-expanded={showTourId}
+        >
+          <Hash size={14} strokeWidth={2.5} />
+          {t.tourIdToggle}
+          <ChevronDown size={14} strokeWidth={2.5} className={showTourId ? 'is-open' : ''} />
+        </button>
+
+        {showTourId && (
+          <form className="search-tourid-form" onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder={t.tourIdPlaceholder}
+              value={tourId}
+              onChange={(e) => setTourId(e.target.value)}
+              autoFocus
+            />
+            <button type="submit">{t.search}</button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

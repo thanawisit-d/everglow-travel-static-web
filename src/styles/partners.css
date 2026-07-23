@@ -4,7 +4,7 @@
   align-items: center;
   padding: 64px 0;
   gap: 40px;
-  background: var(--white);
+  background: var(--bg-section);
   overflow: hidden;
 }
 
