@@ -22,9 +22,9 @@ export default function HeroSection({ locale, destinations }) {
     <>
       <section className="hero-static bg-section">
         <Image
-          src={assetPath('assets/images/backgrounds/Home.jpg')}
-          width={1200}
-          height={800}
+          src={assetPath('assets/images/backgrounds/Home4.jpg')}
+          width={1440}
+          height={400}
           priority
           alt=""
           className="hero-static-img"
