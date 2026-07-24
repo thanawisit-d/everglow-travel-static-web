@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapPin, Calendar, Compass, Search, Hash, ChevronDown } from 'lucide-react';
+import { MapPin, Calendar, Compass, Search } from 'lucide-react';
 
 const TEXT = {
   th: {
@@ -14,9 +14,6 @@ const TEXT = {
     typeOutbound: 'ทัวร์ต่างประเทศ',
     groupDomestic: 'ในประเทศ',
     groupOutbound: 'ต่างประเทศ',
-    tourIdLabel: 'รหัสทัวร์',
-    tourIdPlaceholder: 'กรอกรหัสทัวร์',
-    tourIdToggle: 'รู้รหัสทัวร์อยู่แล้ว? ค้นหาด้วยรหัส',
     dateLabel: 'วันเดินทาง',
     search: 'ค้นหา',
   },
@@ -29,9 +26,6 @@ const TEXT = {
     typeOutbound: 'Outbound tours',
     groupDomestic: 'Domestic',
     groupOutbound: 'Outbound',
-    tourIdLabel: 'Tour ID',
-    tourIdPlaceholder: 'Enter tour ID',
-    tourIdToggle: 'Already know your tour ID? Search by ID',
     dateLabel: 'Travel date',
     search: 'Search',
   },
@@ -44,8 +38,6 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
   const [tourType, setTourType] = useState('');
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
-  const [showTourId, setShowTourId] = useState(false);
-  const [tourId, setTourId] = useState('');
 
   const domesticOptions = destinations.domestic || [];
   const outboundOptions = destinations.outbound || [];
@@ -72,7 +64,6 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
     if (parsedDestination) {
       params.set(effectiveType === 'outbound' ? 'country' : 'province', parsedDestination.name);
     }
-    if (tourId) params.set('q', tourId);
     if (date) params.set('date', date);
 
     router.push(`/${locale}/${effectiveType}${params.toString() ? `?${params.toString()}` : ''}`);
@@ -138,32 +129,6 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
           {t.search}
         </button>
       </form>
-
-      <div className="search-tourid">
-        <button
-          type="button"
-          className="search-tourid-toggle"
-          onClick={() => setShowTourId((v) => !v)}
-          aria-expanded={showTourId}
-        >
-          <Hash size={14} strokeWidth={2.5} />
-          {t.tourIdToggle}
-          <ChevronDown size={14} strokeWidth={2.5} className={showTourId ? 'is-open' : ''} />
-        </button>
-
-        {showTourId && (
-          <form className="search-tourid-form" onSubmit={handleSearch}>
-            <input
-              type="text"
-              placeholder={t.tourIdPlaceholder}
-              value={tourId}
-              onChange={(e) => setTourId(e.target.value)}
-              autoFocus
-            />
-            <button type="submit">{t.search}</button>
-          </form>
-        )}
-      </div>
     </div>
   );
 }
