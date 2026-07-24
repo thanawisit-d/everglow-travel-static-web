@@ -1,0 +1,75 @@
+/* ========== STATIC HERO — image is 1200x800, width/height locks the ratio ========== */
+.hero-static {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-static-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-static-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 38, 71, 0.5) 0%,
+    rgba(10, 38, 71, 0.35) 45%,
+    rgba(10, 38, 71, 0.7) 100%
+  );
+}
+
+.hero-static-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 0 20px;
+}
+
+.hero-static-content h1 {
+  font-family: var(--font-kanit), 'Kanit', sans-serif;
+  font-size: clamp(22px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  max-width: 760px;
+}
+
+.hero-static-content p {
+  font-size: clamp(13px, 1.4vw, 18px);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 600px;
+}
+
+@media (max-width: 1024px) {
+  .hero-static {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-static {
+    margin-top: 145px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-static {
+    margin-top: 130px;
+  }
+}
