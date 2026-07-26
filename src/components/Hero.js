@@ -66,7 +66,7 @@ export default function Hero({ locale }) {
   return (
     <section className="hero">
       <Image
-        src="/assets/images/backgrounds/Home3.jpg"
+        src="/assets/images/backgrounds/Home9.jpg"
         fill
         className="hero-bg"
         alt=""
