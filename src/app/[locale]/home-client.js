@@ -1,12 +1,13 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toursData from '@/data/tours.json';
 import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
-import Slider from '@/components/Slider';
+import HeroSection from '@/components/HeroSection';
 import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
@@ -30,6 +31,30 @@ export default function LocaleClient({ locale }) {
   const popularTours = featuredIds.popular.map(id => toursData.find(t => t.id === id)).filter(Boolean);
   const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
 
+  const destinations = useMemo(() => {
+    const domesticSet = new Set();
+    const outboundSet = new Set();
+
+    toursData.forEach((tour) => {
+      if (tour.type === 'outbound') {
+        const c = tour.country;
+        if (Array.isArray(c)) c.forEach((v) => outboundSet.add(v));
+        else if (c) outboundSet.add(c);
+      } else {
+        const p = tour.province;
+        if (Array.isArray(p)) p.forEach((v) => domesticSet.add(v));
+        else if (p) domesticSet.add(p);
+      }
+    });
+
+    const collator = (a, b) => a.localeCompare(b, isEn ? 'en' : 'th');
+
+    return {
+      domestic: [...domesticSet].sort(collator),
+      outbound: [...outboundSet].sort(collator),
+    };
+  }, [isEn, toursData]);
+
   const handlePromoClick = (id) => {
     const full = toursData.find((t) => t.id === id);
     if (full) {
@@ -45,13 +70,13 @@ export default function LocaleClient({ locale }) {
 
   return (
     <div>
-      <Hero locale={locale} />
-      <section className="slider-section bg-alt">
-        <Slider />
-      </section>
-      <div className="tour-grid-wrapper">
+      <HeroSection locale={locale} destinations={destinations} />
+      <div className="tour-grid-wrapper bg-section">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
+      </div>
+      <div className="services-section bg-section">
+        <Hero locale={locale} />
       </div>
       <section className="why-choose-us bg-section">
         <h2>{t.whyTitle}</h2>

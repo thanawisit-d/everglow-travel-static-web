@@ -1,23 +1,32 @@
-/* ========== SLIDER ========== */
+/* ========== SLIDER (full-bleed hero, pairs with the overlapping SearchWidget) ========== */
+.hero-slider {
+  padding-top: 160px;
+}
+
 .slider {
   width: 100%;
-  max-width: 1100px;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 21 / 8;
   overflow: hidden;
   position: relative;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  margin: 0 auto 40px;
   outline: none;
 }
 
+.slider::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
 .slider::after {
-  /* subtle bottom vignette so dots stay legible over bright images */
   content: '';
   position: absolute;
   inset: auto 0 0 0;
-  height: 90px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
+  height: 220px;
+  background: linear-gradient(to top, rgba(0, 24, 51, 0.75), transparent);
   z-index: 5;
   pointer-events: none;
 }
@@ -39,11 +48,11 @@
 
 .slide {
   object-fit: cover;
+  object-position: center;
   transform: scale(1);
   transition: transform 6s ease-out;
 }
 
-/* gentle Ken Burns zoom while a slide is active */
 .slide-frame--active .slide {
   transform: scale(1.08);
 }
@@ -52,12 +61,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
@@ -69,21 +78,21 @@
 }
 
 .slider-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.35);
   transform: translateY(-50%) scale(1.06);
 }
 
 .slider-btn.prev {
-  left: 16px;
+  left: 28px;
 }
 
 .slider-btn.next {
-  right: 16px;
+  right: 28px;
 }
 
 .slider-dots {
   position: absolute;
-  bottom: 18px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -146,22 +155,41 @@
 }
 
 @media (max-width: 768px) {
-  .slider {
-    aspect-ratio: 4 / 3;
+  .hero-slider {
+    padding-top: 145px;
   }
 
-  /* mobile relies on swipe + dots, arrows just add clutter on small screens */
+  .slider {
+    aspect-ratio: 3 / 4;
+  }
+
+  .slide {
+    object-position: center 30%;
+  }
+
   .slider-btn {
     display: none;
+  }
+
+  .slider-dots {
+    bottom: 70px;
   }
 }
 
 @media (max-width: 480px) {
   .slider {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 5;
+  }
+
+  .slide {
+    object-position: center 30%;
   }
 
   .slider-dot {
     width: 24px;
+  }
+
+  .slider-dots {
+    bottom: 56px;
   }
 }
