@@ -114,6 +114,8 @@
 @media (max-width: 1024px) {
   .search-widget-wrapper {
     margin-top: 12px;
+    padding: 0;
+    max-width: none;
   }
 
   .search-widget {
@@ -133,14 +135,16 @@
 @media (max-width: 768px) {
   .search-widget-wrapper {
     margin-top: 12px;
-    padding: 0 20px;
+    padding: 0;
+    max-width: none;
   }
 
   .search-widget {
     flex-direction: column;
     gap: 16px;
     padding: 20px;
-    border-radius: var(--radius-lg);
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .search-divider {
@@ -157,7 +161,7 @@
 @media (max-width: 480px) {
   .search-widget-wrapper {
     margin-top: 8px;
-    padding: 0 16px;
+    padding: 0;
   }
 
   .search-widget {

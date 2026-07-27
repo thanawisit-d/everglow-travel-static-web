@@ -71,7 +71,7 @@ export default function LocaleClient({ locale }) {
   return (
     <div>
       <HeroSection locale={locale} destinations={destinations} />
-      <div className="tour-grid-wrapper bg-section">
+      <div className="tour-grid-wrapper">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
         <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
       </div>
