@@ -113,7 +113,7 @@
 
 @media (max-width: 1024px) {
   .search-widget-wrapper {
-    margin-top: 12px;
+    margin-top: 0;
     padding: 0;
     max-width: none;
   }
@@ -134,7 +134,7 @@
 
 @media (max-width: 768px) {
   .search-widget-wrapper {
-    margin-top: 12px;
+    margin-top: 0;
     padding: 0;
     max-width: none;
   }
@@ -160,7 +160,7 @@
 
 @media (max-width: 480px) {
   .search-widget-wrapper {
-    margin-top: 8px;
+    margin-top: 0;
     padding: 0;
   }
 
