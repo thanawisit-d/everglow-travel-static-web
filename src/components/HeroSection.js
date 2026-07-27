@@ -20,13 +20,13 @@ export default function HeroSection({ locale, destinations }) {
 
   return (
     <>
-      <section className="hero-static bg-section">
+      <section className="hero-static">
         <Image
           src={assetPath('assets/images/backgrounds/Home3.jpg')}
-          width={1440}
-          height={400}
+          fill
           priority
           alt=""
+          sizes="100vw"
           className="hero-static-img"
         />
         <div className="hero-static-overlay" />

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapPin, Calendar, Compass, Search } from 'lucide-react';
+import { MapPin, Calendar, Compass, Search, ChevronDown } from 'lucide-react';
 
 const TEXT = {
   th: {
@@ -81,6 +81,7 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
               <option value="domestic">{t.typeDomestic}</option>
               <option value="outbound">{t.typeOutbound}</option>
             </select>
+            <ChevronDown size={16} className="search-input-chevron" />
           </div>
         </div>
 
@@ -111,6 +112,7 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
                 </optgroup>
               )}
             </select>
+            <ChevronDown size={16} className="search-input-chevron" />
           </div>
         </div>
 

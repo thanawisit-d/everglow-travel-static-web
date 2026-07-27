@@ -1,6 +1,6 @@
 /* ========== TOUR SECTION ========== */
 .tour-grid-wrapper {
-  padding: 20px 6% 20px;
+  padding: 60px 6% 20px;
 }
 
 .tour-section {
@@ -19,6 +19,10 @@
 
 @media (max-width: 1024px) {
   .tour-section h2 { font-size: 28px; }
+}
+
+@media (max-width: 768px) {
+  .tour-grid-wrapper { padding-top: 52px; }
 }
 
 @media (max-width: 480px) {
