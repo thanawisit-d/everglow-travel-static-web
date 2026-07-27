@@ -6,12 +6,12 @@
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 6% 40px;
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr;
-  gap: 50px;
+  gap: 70px;
   align-items: start;
 }
 
