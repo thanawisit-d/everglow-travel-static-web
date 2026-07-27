@@ -22,12 +22,13 @@ export default function HeroSection({ locale, destinations }) {
     <>
       <section className="hero-static">
         <Image
-          src={assetPath('assets/images/backgrounds/Home3.jpg')}
+          src={assetPath('assets/images/backgrounds/Home4.jpg')}
           fill
           priority
           alt=""
           sizes="100vw"
           className="hero-static-img"
+          style={{ objectPosition: 'center 35%' }}
         />
         <div className="hero-static-overlay" />
         <div className="hero-static-content">

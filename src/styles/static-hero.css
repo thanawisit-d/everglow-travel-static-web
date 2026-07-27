@@ -1,14 +1,22 @@
-/* ========== STATIC HERO — object-fit:cover keeps portrait Home4 as banner ========== */
+/* ========== STATIC HERO ========== */
 .hero-static {
   position: relative;
-  width: 100%;
-  height: clamp(280px, 28vw, 400px);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  height: auto;
+  min-height: 250px;
+  aspect-ratio: 3 / 1;
   overflow: hidden;
 }
 
 .hero-static-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 35%;
 }
 
 .hero-static-overlay {
@@ -57,26 +65,18 @@
 
 @media (max-width: 1024px) {
   .hero-static-content {
-    padding-top: 80px;
+    padding-top: 100px;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-static {
-    height: 300px;
-  }
-
   .hero-static-content {
-    padding-top: 60px;
+    padding-top: 110px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-static {
-    height: 270px;
-  }
-
   .hero-static-content {
-    padding-top: 50px;
+    padding-top: 100px;
   }
 }
