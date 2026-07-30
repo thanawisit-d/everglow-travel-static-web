@@ -9,6 +9,7 @@ export default function DestinationCombobox({
   onChange,
   placeholder,
   id,
+  noResultsText = 'ไม่พบผลลัพธ์',
 }) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -124,7 +125,7 @@ export default function DestinationCombobox({
 
       {isOpen && (
         <ul className="combobox-panel" role="listbox">
-          {flatFiltered.length === 0 && <li className="combobox-empty">ไม่พบผลลัพธ์</li>}
+          {flatFiltered.length === 0 && <li className="combobox-empty">{noResultsText}</li>}
           {grouped.map((g) => (
             <li key={g.group || 'ungrouped'} className="combobox-group">
               {g.group && <span className="combobox-group-label">{g.group}</span>}

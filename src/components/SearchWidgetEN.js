@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Calendar, Search } from 'lucide-react';
 import DestinationCombobox from './DestinationCombobox';
+import { provinceNameMap } from '@/lib/i18n';
 
 const TEXT = {
   destinationLabel: 'Destination',
@@ -19,7 +20,7 @@ export default function SearchWidgetEN({ destinations = [] }) {
   const [date, setDate] = useState('');
 
   const options = useMemo(
-    () => destinations.map((name) => ({ value: name, label: name })),
+    () => destinations.map((name) => ({ value: name, label: provinceNameMap[name] || name })),
     [destinations]
   );
 
@@ -45,6 +46,7 @@ export default function SearchWidgetEN({ destinations = [] }) {
               value={destination}
               onChange={setDestination}
               placeholder={TEXT.destinationPlaceholder}
+              noResultsText="No results found"
             />
           </div>
         </div>
