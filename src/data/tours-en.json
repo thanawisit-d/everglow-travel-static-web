@@ -1,0 +1,495 @@
+[
+  {
+    "id": "EGT1D-02",
+    "type": "domestic",
+    "province": "ราชบุรี",
+    "image": "banner1day/EGT1D-02.png",
+    "price": "1,499",
+    "duration": "1 วัน",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Ratchaburi Tour: Khao Ngu Stone Park ",
+    "pdf": "filepdf_1day/EGT1D-02.pdf",
+    "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park ",
+    "duration_en": "1 day",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT1D-22",
+    "type": "domestic",
+    "province": "นครราชสีมา",
+    "image": "banner1day/EGT1D-22.png",
+    "price": "1,520",
+    "duration": "1 วัน",
+    "periodText": "มี.ค. - พ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Nakhon Ratchasima tour, butterfly viewing, Khao Yai National Park",
+    "pdf": "filepdf_1day/EGT1D-22.pdf",
+    "desc_en": "Nakhon Ratchasima tour, butterfly viewing, Khao Yai National Park",
+    "duration_en": "1 day",
+    "periodText_en": "March - May 2026"
+  },
+  {
+    "id": "EGT1D-20",
+    "type": "domestic",
+    "province": "สระแก้ว",
+    "image": "banner1day/EGT1D-20.png",
+    "price": "1,599",
+    "duration": "1 วัน",
+    "periodText": "มี.ค. - พ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Sa Kaeo tour, butterfly watching, Pang Sida National Park",
+    "pdf": "filepdf_1day/EGT1D-20.pdf",
+    "desc_en": "Sa Kaeo tour, butterfly watching, Pang Sida National Park",
+    "duration_en": "1 day",
+    "periodText_en": "March - May 2026"
+  },
+  {
+    "id": "EGT1D-19",
+    "type": "domestic",
+    "province": "เพชรบุรี",
+    "image": "banner1day/EGT1D-19.png",
+    "price": "1,640",
+    "duration": "1 วัน",
+    "periodText": "มี.ค. - พ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Phetchaburi Tour, Butterfly Watching, Ban Krang",
+    "pdf": "filepdf_1day/EGT1D-19.pdf",
+    "desc_en": "Phetchaburi Tour, Butterfly Watching, Ban Krang",
+    "duration_en": "1 day",
+    "periodText_en": "March - May 2026"
+  },
+  {
+    "id": "EGT1D-18",
+    "type": "domestic",
+    "province": "ชลบุรี",
+    "image": "banner1day/EGT1D-18.png",
+    "price": "1,699",
+    "duration": "1 วัน",
+    "periodText": "ก.พ. - เม.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Chonburi Tour, Koh Sichang",
+    "pdf": "filepdf_1day/EGT1D-18.pdf",
+    "desc_en": "Chonburi Tour, Koh Sichang",
+    "duration_en": "1 day",
+    "periodText_en": "Feb. - Apr. 2026"
+  },
+  {
+    "id": "EGT1D-17",
+    "type": "domestic",
+    "province": "ราชบุรี",
+    "image": "banner1day/EGT1D-17.png",
+    "price": "1,640",
+    "duration": "1 วัน",
+    "periodText": "ก.พ. - มี.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Ratchaburi Tour: Heavenly Roses",
+    "pdf": "filepdf_1day/EGT1D-17.pdf",
+    "desc_en": "Ratchaburi Tour: Heavenly Roses",
+    "duration_en": "1 day",
+    "periodText_en": "Feb. - Mar. 2026"
+  },
+  {
+    "id": "EGT1D-14",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner1day/EGT1D-14.png",
+    "price": "1,250",
+    "duration": "1 วัน",
+    "periodText": "ม.ค. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Uthai Thani Tour, Hup Pa Tat",
+    "pdf": "filepdf_1day/EGT1D-14.pdf",
+    "desc_en": "Uthai Thani Tour, Hup Pa Tat",
+    "duration_en": "1 day",
+    "periodText_en": "Jan. - June 2026"
+  },
+  {
+    "id": "EGT1D-06",
+    "type": "domestic",
+    "province": "สุพรรณบุรี",
+    "image": "banner1day/EGT-06-01.png",
+    "price": "1,399",
+    "duration": "1 วัน",
+    "periodText": "มี.ค. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Suphanburi Tour: Visit Don Wai Floating Market, pay homage to sacred temples, and enjoy the scenic beauty along the Tha Chin River.",
+    "pdf": "filepdf_1day/EGT1D-06.pdf",
+    "desc_en": "Suphanburi Tour: Visit Don Wai Floating Market, pay homage to sacred temples, and enjoy the scenic beauty along the Tha Chin River.",
+    "duration_en": "1 day",
+    "periodText_en": "March - June 2026"
+  },
+  {
+    "id": "EGT-FP-46",
+    "type": "domestic",
+    "province": "พิษณุโลก",
+    "image": "banner2day/EGT-FP-46.png",
+    "price": "3,599",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Phitsanulok-Nakhon Sawan tour 2 days 1 night, visit Sawan Park. ",
+    "pdf": "filepdf_2d1n/EGT-FP-46.pdf",
+    "desc_en": "Phitsanulok-Nakhon Sawan tour 2 days 1 night, visit Sawan Park. ",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT-SP-44.1",
+    "type": "domestic",
+    "province": "ราชบุรี",
+    "image": "banner2day/EGT-SP-44.1.png",
+    "price": "2,999",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ก.พ. - พ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Ratchaburi tour, fire show at Sattatha, 2 days 1 night, visit Khao Ngu Stone Park, Oh Poi Market, Grand Canyon Ratchaburi at Sattatha, Thai Park, Ratchaburi Old Water Jar Museum, Phupha Coffee Camp, Vento, Suan Phueng, and Khao Bin Cave.",
+    "pdf": "filepdf_2d1n/EGT-SP-44.1.pdf",
+    "desc_en": "Ratchaburi tour, fire show at Sattatha, 2 days 1 night, visit Khao Ngu Stone Park, Oh Poi Market, Grand Canyon Ratchaburi at Sattatha, Thai Park, Ratchaburi Old Water Jar Museum, Phupha Coffee Camp, Vento, Suan Phueng, and Khao Bin Cave.",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Feb. - May 2026"
+  },
+  {
+    "id": "EGT-SP-44",
+    "type": "domestic",
+    "province": "ราชบุรี",
+    "image": "banner2day/EGT-SP-44.png",
+    "price": "2,799",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "มิ.ย. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Ratchaburi Tour: Khao Ngu Stone Park ",
+    "pdf": "filepdf_2d1n/EGT-SP-44.pdf",
+    "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park ",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "June - December 2026"
+  },
+  {
+    "id": "EGT-SP-43",
+    "type": "domestic",
+    "province": "อุตรดิตถ์",
+    "image": "banner2day/EGT-SP-43.png",
+    "price": "3,699",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "พ.ค. - ก.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Uttaradit Tour 2 days 1 night: Explore the historic Phra Si Rattana Mahathat Temple, visit Than Sae Waterfall, and experience the natural beauty and local culture of Uttaradit.",
+    "pdf": "filepdf_2d1n/EGT-SP-43.pdf",
+    "desc_en": "Uttaradit Tour 2 days 1 night: Explore the historic Phra Si Rattana Mahathat Temple, visit Than Sae Waterfall, and experience the natural beauty and local culture of Uttaradit.",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "May - July 2026"
+  },
+  {
+    "id": "EGT-FP-42",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner2day/EGT-FP-42.png",
+    "price": "4,950",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "มิ.ย. - ก.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Uthai Thani Tour 2 days 1 night: Discover the charming Sakae Krang River community, visit Wat Tha Sung, explore Hup Pa Tat, and immerse in the peaceful atmosphere of this hidden gem province.",
+    "pdf": "filepdf_2d1n/EGT-FP-42.pdf",
+    "desc_en": "Uthai Thani Tour 2 days 1 night: Discover the charming Sakae Krang River community, visit Wat Tha Sung, explore Hup Pa Tat, and immerse in the peaceful atmosphere of this hidden gem province.",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "June - July 2026"
+  },
+  {
+    "id": "EGT-SP-29.2",
+    "type": "domestic",
+    "province": "เลย",
+    "image": "banner2day/EGT-SP-29.2.png",
+    "price": "3,899",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "20 - 22 มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Tour Loei, Phi Ta Khon Festival, 2 days 1 night, visit Kaeng Khut Khu rapids. ",
+    "pdf": "filepdf_2d1n/EGT-SP-29.2.pdf",
+    "desc_en": "Tour Loei, Phi Ta Khon Festival, 2 days 1 night, visit Kaeng Khut Khu rapids. ",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "20 - 22 June 2026"
+  },
+  {
+    "id": "EGT-SP-28",
+    "type": "domestic",
+    "province": "ชัยภูมิ",
+    "image": "banner2day/EGT-SP-28.png",
+    "price": "3,699",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "พ.ค. - ส.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Chaiyaphum tour, hunt 4 national parks, see butterflies and Krachiew flower fields, 2 days 1 night, visit Mo Hin Khao. ",
+    "pdf": "filepdf_2d1n/EGT-SP-28.pdf",
+    "desc_en": "Chaiyaphum tour, hunt 4 national parks, see butterflies and Krachiew flower fields, 2 days 1 night, visit Mo Hin Khao. ",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "May - August 2026"
+  },
+  {
+    "id": "EGT-FP-07.1",
+    "type": "domestic",
+    "province": "เพชรบุรี",
+    "image": "banner2day/EGT-FP-07.1.png",
+    "price": "5,250",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Phetchaburi Tour 2 days 1 night: Visit Khao Wang (Phra Nakhon Khiri Historical Park), explore Kaeng Krachan National Park, and enjoy the famous Phetchaburi sweets and local cuisine.",
+    "pdf": "filepdf_2d1n/EGT-FP-07.1.pdf",
+    "desc_en": "Phetchaburi Tour 2 days 1 night: Visit Khao Wang (Phra Nakhon Khiri Historical Park), explore Kaeng Krachan National Park, and enjoy the famous Phetchaburi sweets and local cuisine.",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT-SP-05.1",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner2day/EGT-SP-05.1.png",
+    "price": "2,999",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Uthai Thani Tour 2 days 1 night: Explore Hup Pa Tat, take a boat trip along the Sakae Krang River, visit Wat Tha Sung, and enjoy the tranquil local way of life.",
+    "pdf": "filepdf_2d1n/EGT-SP-05.1.pdf",
+    "desc_en": "Uthai Thani Tour 2 days 1 night: Explore Hup Pa Tat, take a boat trip along the Sakae Krang River, visit Wat Tha Sung, and enjoy the tranquil local way of life.",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT-SP-01",
+    "type": "domestic",
+    "province": "ตาก",
+    "image": "banner2day/EGT-SP-01.png",
+    "price": "4,999",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ต.ค. 2569 - ม.ค. 2570",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Tak tour 2 days 1 night, visit Rim Moei market ",
+    "pdf": "filepdf_2d1n/EGT-SP-01.pdf",
+    "desc_en": "Tak tour 2 days 1 night, visit Rim Moei market ",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Oct 2026 - Jan 2027"
+  },
+  {
+    "id": "EGT-SP-41",
+    "type": "domestic",
+    "province": "เพชรบูรณ์",
+    "image": "banner2day/EGT-SP-41.png",
+    "price": "3,799",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Phetchabun-Khao Kho tour 2 days 1 night, visit Khao Kho windmill field. ",
+    "pdf": "filepdf_2d1n/EGT-SP-41.pdf",
+    "desc_en": "Phetchabun-Khao Kho tour 2 days 1 night, visit Khao Kho windmill field. ",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT-FP-07",
+    "type": "domestic",
+    "province": "เพชรบุรี",
+    "image": "banner2day/EGT-FP-07.png",
+    "price": "4,820",
+    "duration": "2 วัน 1 คืน",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "Phetchaburi Tour 2 days 1 night: Experience the blend of history and nature at Khao Wang, Kaeng Krachan National Park, and Chao Samran Beach.",
+    "pdf": "filepdf_2d1n/EGT-FP-07.pdf",
+    "desc_en": "Phetchaburi Tour 2 days 1 night: Experience the blend of history and nature at Khao Wang, Kaeng Krachan National Park, and Chao Samran Beach.",
+    "duration_en": "2 days 1 night",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT3D2N-FP-14",
+    "type": "domestic",
+    "province": [
+      "สุโขทัย",
+      "กำแพงเพชร"
+    ],
+    "duration": "3 วัน 2 คืน",
+    "price": "6899",
+    "image": "banner3d2n/EGT3D2N-FP-14.png",
+    "desc": "Sukhothai tour, Ban Ton Na Chan - Kamphaeng Phet, visit the historical park, see the way of life of the Ban Ton Na Chan community. ",
+    "shortDesc": "สุโขทัย บ้านต้นนาจั่น กำแพงเพชร ชมอุทยานประวัติศาสตร์ วิถีชุมชน และจุดชมวิวห้วยต้นไฮ",
+    "periodText": "ก.พ. - มิ.ย. 2569",
+    "pdf": "filepdf_3d2n/EGT3D2N-FP-14.pdf",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc_en": "Sukhothai tour, Ban Ton Na Chan - Kamphaeng Phet, visit the historical park, see the way of life of the Ban Ton Na Chan community. ",
+    "duration_en": "3 days 2 night",
+    "periodText_en": "Feb. - June 2026"
+  },
+  {
+    "id": "EGT3D2N-FP-13",
+    "type": "domestic",
+    "province": [
+      "ยโสธร",
+      "อุบลราชธานี"
+    ],
+    "duration": "3 วัน 2 คืน",
+    "price": "7150",
+    "image": "banner3d2n/EGT3D2N-FP-13.png",
+    "desc": "Yasothon-Ubon Tour 3 days 2 nights: Visit Pha Taem National Park, explore ancient rock paintings, and experience the cultural highlights of Isan.",
+    "shortDesc": "ยโสธร อุบล งานบุญแห่มาลัยข้าวตอก เที่ยววัดดัง และแลนด์มาร์กสำคัญ",
+    "periodText": "26 - 28 ก.พ. 2569",
+    "pdf": "filepdf_3d2n/EGT3D2N-FP-13.pdf",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc_en": "Yasothon-Ubon Tour 3 days 2 nights: Visit Pha Taem National Park, explore ancient rock paintings, and experience the cultural highlights of Isan.",
+    "duration_en": "3 days 2 night",
+    "periodText_en": "26 - 28 Feb. 2026"
+  },
+  {
+    "id": "EGT4D3N-FP-05",
+    "type": "domestic",
+    "province": [
+      "นครศรีธรรมราช",
+      "ตรัง"
+    ],
+    "duration": "4 วัน 3 คืน",
+    "price": "12220",
+    "image": "banner4d3n/EGT4D3N-FP-05.png",
+    "shortDesc": "นครศรีธรรมราช ตรัง เที่ยวทะเล ถ้ำดัง และแลนด์มาร์กสำคัญ",
+    "desc": "Nakhon Si Thammarat-Trang tour 4 days 3 nights, visit Khao Chang Hai cave. ",
+    "periodText": "เมษายน - มิถุนายน 2569",
+    "pdf": "filepdf_4d3n/EGT4D3N-FP-05.pdf",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc_en": "Nakhon Si Thammarat-Trang tour 4 days 3 nights, visit Khao Chang Hai cave. ",
+    "duration_en": "4 days 3 night",
+    "periodText_en": "April - June 2026"
+  },
+  {
+    "id": "EGT4D3N-FP-06",
+    "type": "domestic",
+    "province": [
+      "เชียงใหม่",
+      "ปาย",
+      "อ่างขาง"
+    ],
+    "duration": "4 วัน 3 คืน",
+    "price": "9499",
+    "image": "banner4d3n/EGT4D3N-FP-06.png",
+    "shortDesc": "เชียงใหม่ ปาย อ่างขาง เที่ยวธรรมชาติ จุดชมวิว และแลนด์มาร์กดัง",
+    "desc": "Tour Chiang Mai, Pai, Ang Khang, 4 days 3 nights, visit Doi Ang Khang. ",
+    "periodText": "ตลอดเดือนมีนาคม 2569",
+    "pdf": "filepdf_4d3n/EGT4D3N-FP-06.pdf",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc_en": "Tour Chiang Mai, Pai, Ang Khang, 4 days 3 nights, visit Doi Ang Khang. ",
+    "duration_en": "4 days 3 night",
+    "periodText_en": "Throughout March 2026"
+  },
+  {
+    "id": "EGT4D3N-FP-07",
+    "type": "domestic",
+    "province": "สตูล",
+    "duration": "4 วัน 3 คืน",
+    "price": "10899",
+    "image": "banner4d3n/EGT4D3N-FP-07.png",
+    "shortDesc": "สตูล เที่ยวทะเล ถ้ำ จุดชมวิว และแลนด์มาร์กสำคัญ",
+    "desc": "Satun tour 4 days 3 nights, visit Prasat Hin Pan Yot, Laem Ta Pan, Pha Sai Nai, Phap Rak Cave, street art in Satun. ",
+    "periodText": "เมษายน - มิถุนายน 2569",
+    "pdf": "filepdf_4d3n/EGT4D3N-FP-07.pdf",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc_en": "Satun tour 4 days 3 nights, visit Prasat Hin Pan Yot, Laem Ta Pan, Pha Sai Nai, Phap Rak Cave, street art in Satun. ",
+    "duration_en": "4 days 3 night",
+    "periodText_en": "April - June 2026"
+  }
+]

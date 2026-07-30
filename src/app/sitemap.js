@@ -1,6 +1,7 @@
 export const dynamic = 'force-static';
 
-import toursData from '@/data/tours.json';
+import toursDataTh from '@/data/tours-th.json';
+import toursDataEn from '@/data/tours-en.json';
 import reviewsData from '@/data/reviews.json';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
@@ -24,11 +25,11 @@ export default async function sitemap() {
     }
   }
 
-  const tourIds = [...new Set(toursData.map((t) => t.id))];
+  const tourDataMap = { th: toursDataTh, en: toursDataEn };
   for (const locale of locales) {
-    for (const tourId of tourIds) {
+    for (const tour of tourDataMap[locale]) {
       entries.push({
-        url: `${siteUrl}/${locale}/tours/${tourId}`,
+        url: `${siteUrl}/${locale}/tours/${tour.id}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.6,

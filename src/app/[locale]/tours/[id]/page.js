@@ -1,14 +1,15 @@
-import toursData from '@/data/tours.json';
+import toursDataTh from '@/data/tours-th.json';
+import toursDataEn from '@/data/tours-en.json';
 import TourDetail from '@/components/TourDetail';
 import config from '@/data/site-config.json';
 
 export function generateStaticParams() {
-  const ids = toursData.map((t) => t.id);
   const locales = ['th', 'en'];
   const params = [];
   for (const locale of locales) {
-    for (const id of ids) {
-      params.push({ locale, id });
+    const data = locale === 'th' ? toursDataTh : toursDataEn;
+    for (const tour of data) {
+      params.push({ locale, id: tour.id });
     }
   }
   return params;
@@ -18,6 +19,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com'
 
 export async function generateMetadata({ params }) {
   const { locale, id } = await params;
+  const toursData = locale === 'th' ? toursDataTh : toursDataEn;
   const tour = toursData.find((t) => t.id === id);
   if (!tour) {
     return { title: 'Tour Not Found' };
@@ -49,6 +51,7 @@ export async function generateMetadata({ params }) {
 export default async function TourDetailPage({ params }) {
   const { locale, id } = await params;
   const t = config[locale] || config.th;
+  const toursData = locale === 'th' ? toursDataTh : toursDataEn;
   const tour = toursData.find((t) => t.id === id) || null;
   if (!tour) {
     return (

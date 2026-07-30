@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import toursData from '@/data/tours.json';
+import toursDataTh from '@/data/tours-th.json';
+import toursDataEn from '@/data/tours-en.json';
 import DomesticClient from './domestic-client';
 
 export function generateStaticParams() {
@@ -42,7 +43,8 @@ export async function generateMetadata({ params }) {
 
 export default async function DomesticPage({ params }) {
   const { locale } = await params;
-  const tours = toursData.filter((t) => t.type === 'domestic');
+  const source = locale === 'th' ? toursDataTh : toursDataEn;
+  const tours = source.filter((t) => t.type === 'domestic');
   return (
     <Suspense fallback={<section className="page tour-list-page active"><h1>{locale === 'en' ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1></section>}>
       <DomesticClient locale={locale} tours={tours} />

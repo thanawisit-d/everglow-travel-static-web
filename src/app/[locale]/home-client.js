@@ -3,7 +3,8 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import toursData from '@/data/tours.json';
+import toursDataTh from '@/data/tours-th.json';
+import toursDataEn from '@/data/tours-en.json';
 import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 import Hero from '@/components/Hero';
@@ -27,6 +28,7 @@ export default function LocaleClient({ locale }) {
   const router = useRouter();
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
+  const toursData = isEn ? toursDataEn : toursDataTh;
 
   const popularTours = featuredIds.popular.map(id => toursData.find(t => t.id === id)).filter(Boolean);
   const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
