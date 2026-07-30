@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { MapPin, Calendar, Compass, Search, ChevronDown } from 'lucide-react';
 
@@ -41,6 +41,21 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
 
   const domesticOptions = destinations.domestic || [];
   const outboundOptions = destinations.outbound || [];
+  const hasOutbound = outboundOptions.length > 0;
+
+  // if the locale/data changes underneath us (e.g. switching to EN, which has
+  // no outbound tours) and the current selection no longer makes sense,
+  // reset instead of leaving the widget pointed at data that doesn"t exist
+  useEffect(() => {
+    if (tourType === 'outbound' && !hasOutbound) {
+      setTourType('');
+      setDestination('');
+      return;
+    }
+    if (destination && destination.startsWith('outbound::') && !hasOutbound) {
+      setDestination('');
+    }
+  }, [hasOutbound, tourType, destination]);
 
   const handleTypeChange = (value) => {
     setTourType(value);
@@ -78,8 +93,8 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
             <Compass size={18} strokeWidth={2} className="search-input-icon" />
             <select id="sw-type" value={tourType} onChange={(e) => handleTypeChange(e.target.value)}>
               <option value="">{t.typePlaceholder}</option>
-              <option value="domestic">{t.typeDomestic}</option>
-              <option value="outbound">{t.typeOutbound}</option>
+              {domesticOptions.length > 0 && <option value="domestic">{t.typeDomestic}</option>}
+              {hasOutbound && <option value="outbound">{t.typeOutbound}</option>}
             </select>
             <ChevronDown size={16} className="search-input-chevron" />
           </div>
@@ -96,18 +111,14 @@ export default function SearchWidget({ locale, destinations = { domestic: [], ou
               {(!tourType || tourType === 'domestic') && domesticOptions.length > 0 && (
                 <optgroup label={t.groupDomestic}>
                   {domesticOptions.map((name) => (
-                    <option key={`d-${name}`} value={`domestic::${name}`}>
-                      {name}
-                    </option>
+                    <option key={`d-${name}`} value={`domestic::${name}`}>{name}</option>
                   ))}
                 </optgroup>
               )}
-              {(!tourType || tourType === 'outbound') && outboundOptions.length > 0 && (
+              {(!tourType || tourType === 'outbound') && hasOutbound && (
                 <optgroup label={t.groupOutbound}>
                   {outboundOptions.map((name) => (
-                    <option key={`o-${name}`} value={`outbound::${name}`}>
-                      {name}
-                    </option>
+                    <option key={`o-${name}`} value={`outbound::${name}`}>{name}</option>
                   ))}
                 </optgroup>
               )}
