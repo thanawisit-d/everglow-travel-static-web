@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BedDouble, Bus, Compass } from 'lucide-react';
 import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 
@@ -17,6 +17,7 @@ export default function Hero({ locale }) {
   const t = config[locale] || config.th;
   const scrollRef = useRef(null);
   const [activeCard, setActiveCard] = useState(0);
+  const serviceIcons = [BedDouble, Bus, Compass];
   const serviceNames = [
     t.heroService1Name,
     t.heroService2Name,
@@ -90,19 +91,26 @@ export default function Hero({ locale }) {
 
           <div className="hero-right-wrapper">
             <div className="hero-right" ref={scrollRef}>
-              {[0, 1, 2].map((i) => (
-                <div className="service-card" key={i}>
-                  <div className="service-card-img">
-                    <Image
-                      src={assetPath(serviceImages[i])}
-                      fill
-                      alt={serviceNames[i]}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
+              {[0, 1, 2].map((i) => {
+                const Icon = serviceIcons[i];
+                return (
+                  <div className="service-card" key={i}>
+                    <div className="service-card-img">
+                      <Image
+                        src={assetPath(serviceImages[i])}
+                        fill
+                        alt={serviceNames[i]}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="service-card-fade" aria-hidden="true" />
+                    </div>
+                    <div className="service-card-name">
+                      <Icon size={16} strokeWidth={2.5} className="service-card-icon" />
+                      <span>{serviceNames[i]}</span>
+                    </div>
                   </div>
-                  <span className="service-card-name">{serviceNames[i]}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="hero-dots" role="tablist" aria-label="Service cards">
