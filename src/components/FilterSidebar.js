@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import FilterChoices from './FilterChoices';
+import MonthPicker from './MonthPicker';
 
 export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileToggle }) {
   const isEn = locale === 'en';
@@ -123,6 +124,15 @@ export default function FilterSidebar({ locale, groups, isMobileOpen, onMobileTo
                   ))}
                 </select>
               )
+            )}
+            {group.type === 'month' && (
+              <MonthPicker
+                id={`filter-${group.id}`}
+                value={group.value || ''}
+                onChange={group.onChange}
+                locale={locale}
+                placeholder={isEn ? 'All months' : 'ทุกเดือน'}
+              />
             )}
             {group.type === 'range' && (
               <div className="range-slider">

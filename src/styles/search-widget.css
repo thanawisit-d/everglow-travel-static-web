@@ -409,4 +409,18 @@
   }
 }
 
+/* ========== MONTH PICKER IN FILTER SIDEBAR ========== */
+.filter-sidebar .month-picker .combobox-input-row {
+  border: 2px solid #e8edf4;
+  border-radius: 10px;
+  background: var(--white);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.filter-sidebar .month-picker-panel {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* end search widget */

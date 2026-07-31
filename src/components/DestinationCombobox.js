@@ -16,6 +16,7 @@ export default function DestinationCombobox({
   const [activeIndex, setActiveIndex] = useState(-1);
   const rootRef = useRef(null);
   const inputRef = useRef(null);
+  const suppressOpenRef = useRef(false);
 
   const selected = options.find((o) => o.value === value) || null;
 
@@ -57,6 +58,15 @@ export default function DestinationCombobox({
     setActiveIndex(-1);
   };
 
+  const handleFocus = () => {
+    if (suppressOpenRef.current) {
+      suppressOpenRef.current = false;
+      return;
+    }
+    if (selected) setQuery(selected.label);
+    openList();
+  };
+
   const selectOption = (opt) => {
     onChange(opt.value);
     setQuery('');
@@ -68,6 +78,7 @@ export default function DestinationCombobox({
     e.stopPropagation();
     onChange('');
     setQuery('');
+    suppressOpenRef.current = true;
     inputRef.current?.focus();
   };
 
@@ -86,6 +97,10 @@ export default function DestinationCombobox({
       e.preventDefault();
       if (activeIndex >= 0 && flatFiltered[activeIndex]) {
         selectOption(flatFiltered[activeIndex]);
+      } else if (flatFiltered.length > 0) {
+        const q = query.trim().toLowerCase();
+        const exact = flatFiltered.find((o) => o.label.toLowerCase() === q) || flatFiltered[0];
+        selectOption(exact);
       }
     } else if (e.key === 'Escape') {
       setIsOpen(false);
@@ -104,10 +119,12 @@ export default function DestinationCombobox({
           role="combobox"
           aria-expanded={isOpen}
           aria-autocomplete="list"
+          aria-controls={isOpen ? `${id}-listbox` : undefined}
+          aria-activedescendant={isOpen && activeIndex >= 0 && flatFiltered[activeIndex] ? `${id}-opt-${activeIndex}` : undefined}
           autoComplete="off"
           placeholder={placeholder}
           value={isOpen ? query : selected?.label || ''}
-          onFocus={openList}
+          onFocus={handleFocus}
           onChange={(e) => {
             setQuery(e.target.value);
             if (!isOpen) setIsOpen(true);
@@ -124,7 +141,7 @@ export default function DestinationCombobox({
       </div>
 
       {isOpen && (
-        <ul className="combobox-panel" role="listbox">
+        <ul className="combobox-panel" role="listbox" id={`${id}-listbox`}>
           {flatFiltered.length === 0 && <li className="combobox-empty">{noResultsText}</li>}
           {grouped.map((g) => (
             <li key={g.group || 'ungrouped'} className="combobox-group">
@@ -136,6 +153,9 @@ export default function DestinationCombobox({
                     <li key={opt.value}>
                       <button
                         type="button"
+                        id={`${id}-opt-${flatIndex}`}
+                        role="option"
+                        aria-selected={opt.value === value}
                         className={`combobox-option${flatIndex === activeIndex ? ' is-active' : ''}${opt.value === value ? ' is-selected' : ''}`}
                         onMouseDown={(e) => e.preventDefault()}
                         onClick={() => selectOption(opt)}

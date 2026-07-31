@@ -9,7 +9,7 @@ import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
 import ActiveFilters from '@/components/ActiveFilters';
 import useToursFilter from '@/lib/useToursFilter';
-import { tourMatchesMonth } from '@/lib/dateFilter';
+import { tourMatchesMonth, formatMonthLabel } from '@/lib/dateFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import config from '@/data/site-config.json';
 
@@ -127,7 +127,7 @@ export default function OutboundClient({ locale, tours }) {
     { id: 'continent', label: filters.continent.join(', '), active: filters.continent.length > 0, onClear: () => updateFilter('continent', []) },
     { id: 'country', label: getCountryLabel(filters.country, isEn), active: !!filters.country, onClear: () => updateFilter('country', '') },
     { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => updateFilter('duration', '') },
-    { id: 'date', label: filters.date, active: !!filters.date, onClear: () => updateFilter('date', '') },
+    { id: 'date', label: formatMonthLabel(filters.date, isEn ? 'en' : 'th'), active: !!filters.date, onClear: () => updateFilter('date', '') },
     { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => updateFilter('priceRange', [minPrice, maxPrice]) },
   ];
 
@@ -149,6 +149,13 @@ export default function OutboundClient({ locale, tours }) {
       value: filters.search,
       onChange: v => updateFilter('search', v),
       placeholder: t.searchPlaceholderOutbound,
+    },
+    {
+      id: 'date',
+      title: t.monthTitle,
+      type: 'month',
+      value: filters.date,
+      onChange: v => updateFilter('date', v),
     },
     {
       id: 'continent',

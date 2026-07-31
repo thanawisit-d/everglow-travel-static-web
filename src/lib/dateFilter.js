@@ -90,3 +90,26 @@ export function tourMatchesMonth(tour, selectedYM) {
 
   return isWithinRange(selectedYM, range.startYM, range.endYM);
 }
+
+const MONTHS_FULL_EN = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+const MONTHS_FULL_TH = [
+  'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+  'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม',
+];
+
+/**
+ * Formats 'YYYY-MM' into a locale label: TH → "กุมภาพันธ์ 2569", EN → "February 2026".
+ * Returns the raw input when it cannot be parsed.
+ */
+export function formatMonthLabel(ym, locale = 'th') {
+  if (!ym) return '';
+  const month = parseInt(ym.slice(5, 7), 10);
+  const year = parseInt(ym.slice(0, 4), 10);
+  if (isNaN(month) || month < 1 || month > 12 || isNaN(year)) return ym;
+  if (locale === 'en') return `${MONTHS_FULL_EN[month - 1]} ${year}`;
+  return `${MONTHS_FULL_TH[month - 1]} ${year + BUDDHIST_YEAR_OFFSET}`;
+}
