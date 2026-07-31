@@ -2,18 +2,20 @@
 
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { Calendar, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import DestinationCombobox from './DestinationCombobox';
+import MonthPicker from './MonthPicker';
 import { provinceNameMap } from '@/lib/i18n';
 
 const TEXT = {
   destinationLabel: 'Destination',
   destinationPlaceholder: 'Search a destination in Thailand',
-  dateLabel: 'Travel date',
+  dateLabel: 'Travel month',
+  datePlaceholder: 'Select travel month',
   search: 'Search',
 };
 
-export default function SearchWidgetEN({ destinations = [] }) {
+export default function SearchWidgetEN({ locale = 'en', destinations = [] }) {
   const router = useRouter();
 
   const [destination, setDestination] = useState('');
@@ -55,9 +57,14 @@ export default function SearchWidgetEN({ destinations = [] }) {
 
         <div className="search-field">
           <label htmlFor="sw-en-date">{TEXT.dateLabel}</label>
-          <div className="search-input">
-            <Calendar size={18} strokeWidth={2} className="search-input-icon" />
-            <input id="sw-en-date" type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <div className="search-input search-input--combobox">
+            <MonthPicker
+              id="sw-en-date"
+              value={date}
+              onChange={setDate}
+              locale={locale}
+              placeholder={TEXT.datePlaceholder}
+            />
           </div>
         </div>
 

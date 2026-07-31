@@ -202,10 +202,6 @@
   overflow-wrap: normal;
 }
 
-.service-card-icon {
-  flex-shrink: 0;
-}
-
 /* ========== TABLET ========== */
 @media (max-width: 1024px) {
   .hero-inner {

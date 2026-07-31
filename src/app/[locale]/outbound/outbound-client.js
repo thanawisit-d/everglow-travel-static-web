@@ -9,6 +9,7 @@ import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
 import ActiveFilters from '@/components/ActiveFilters';
 import useToursFilter from '@/lib/useToursFilter';
+import { tourMatchesMonth } from '@/lib/dateFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import config from '@/data/site-config.json';
 
@@ -36,11 +37,15 @@ export default function OutboundClient({ locale, tours }) {
   useEffect(() => {
     const c = searchParams.get('country') || '';
     const q = searchParams.get('q') || '';
+    const d = searchParams.get('date') || '';
     if (c) {
       updateFilter('country', c);
     }
     if (q) {
       updateFilter('search', q);
+    }
+    if (d) {
+      updateFilter('date', d);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
@@ -85,6 +90,10 @@ export default function OutboundClient({ locale, tours }) {
       });
     }
 
+    if (filters.date) {
+      result = result.filter(t => tourMatchesMonth(t, filters.date));
+    }
+
     if (filters.duration) {
       result = result.filter(t => (isEn ? t.duration_en : t.duration) === filters.duration);
     }
@@ -109,7 +118,7 @@ export default function OutboundClient({ locale, tours }) {
     }
 
     return result;
-  }, [tours, filters, isEn]);
+  }, [tours, filters, isEn, countryToContinent]);
 
   const { items, totalPages } = paginate(filtered, page);
 
@@ -118,6 +127,7 @@ export default function OutboundClient({ locale, tours }) {
     { id: 'continent', label: filters.continent.join(', '), active: filters.continent.length > 0, onClear: () => updateFilter('continent', []) },
     { id: 'country', label: getCountryLabel(filters.country, isEn), active: !!filters.country, onClear: () => updateFilter('country', '') },
     { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => updateFilter('duration', '') },
+    { id: 'date', label: filters.date, active: !!filters.date, onClear: () => updateFilter('date', '') },
     { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => updateFilter('priceRange', [minPrice, maxPrice]) },
   ];
 
@@ -126,6 +136,7 @@ export default function OutboundClient({ locale, tours }) {
     updateFilter('continent', []);
     updateFilter('country', '');
     updateFilter('duration', '');
+    updateFilter('date', '');
     updateFilter('priceRange', [minPrice, maxPrice]);
     setPage(1);
   };

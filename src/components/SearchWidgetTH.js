@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { Calendar, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import DestinationCombobox from './DestinationCombobox';
+import MonthPicker from './MonthPicker';
 
 const TEXT = {
   destinationLabel: 'ปลายทาง',
@@ -13,27 +14,22 @@ const TEXT = {
   typeOutbound: 'ต่างประเทศ',
   groupDomestic: 'ในประเทศ',
   groupOutbound: 'ต่างประเทศ',
-  dateLabel: 'วันเดินทาง',
+  dateLabel: 'เดือนเดินทาง',
+  datePlaceholder: 'เลือกเดือนเดินทาง',
   search: 'ค้นหา',
 };
 
-export default function SearchWidgetTH({ destinations = { domestic: [], outbound: [] } }) {
+export default function SearchWidgetTH({ locale = 'th', destinations = { domestic: [], outbound: [] } }) {
   const router = useRouter();
 
-  const domesticOptions = destinations.domestic || [];
-  const outboundOptions = destinations.outbound || [];
+  const domesticOptions = useMemo(() => destinations.domestic || [], [destinations]);
+  const outboundOptions = useMemo(() => destinations.outbound || [], [destinations]);
   const hasOutbound = outboundOptions.length > 0;
   const hasDomestic = domesticOptions.length > 0;
 
   const [tourType, setTourType] = useState(hasDomestic ? 'domestic' : 'outbound');
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
-
-  // reset if the current selection no longer matches available data
-  useEffect(() => {
-    if (tourType === 'outbound' && !hasOutbound) setTourType('domestic');
-    if (tourType === 'domestic' && !hasDomestic) setTourType('outbound');
-  }, [hasOutbound, hasDomestic, tourType]);
 
   const options = useMemo(() => {
     const list = [];
@@ -108,9 +104,14 @@ export default function SearchWidgetTH({ destinations = { domestic: [], outbound
 
         <div className="search-field">
           <label htmlFor="sw-date">{TEXT.dateLabel}</label>
-          <div className="search-input">
-            <Calendar size={18} strokeWidth={2} className="search-input-icon" />
-            <input id="sw-date" type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <div className="search-input search-input--combobox">
+            <MonthPicker
+              id="sw-date"
+              value={date}
+              onChange={setDate}
+              locale={locale}
+              placeholder={TEXT.datePlaceholder}
+            />
           </div>
         </div>
 

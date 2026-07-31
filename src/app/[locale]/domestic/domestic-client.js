@@ -10,6 +10,7 @@ import ActiveFilters from '@/components/ActiveFilters';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import { provinceNameMap } from '@/lib/i18n';
+import { tourMatchesMonth } from '@/lib/dateFilter';
 import config from '@/data/site-config.json';
 
 const durationMapEnToTh = {
@@ -34,6 +35,7 @@ export default function DomesticClient({ locale, tours }) {
     const d = searchParams.get('duration') || '';
     const p = searchParams.get('province') || '';
     const q = searchParams.get('q') || '';
+    const dt = searchParams.get('date') || '';
     if (d) {
       const normalized = isEn ? (durationMapEnToTh[d] || d) : d;
       updateFilter('duration', normalized);
@@ -43,6 +45,9 @@ export default function DomesticClient({ locale, tours }) {
     }
     if (q) {
       updateFilter('search', q);
+    }
+    if (dt) {
+      updateFilter('date', dt);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, isEn]);
@@ -84,6 +89,10 @@ export default function DomesticClient({ locale, tours }) {
       });
     }
 
+    if (filters.date) {
+      result = result.filter(t => tourMatchesMonth(t, filters.date));
+    }
+
     const [minRaw, maxRaw] = filters.priceRange;
     const pMin = Math.min(minRaw, maxRaw);
     const pMax = Math.max(minRaw, maxRaw);
@@ -112,6 +121,7 @@ export default function DomesticClient({ locale, tours }) {
     { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => updateFilter('search', '') },
     { id: 'province', label: isEn ? (provinceNameMap[filters.province] || filters.province) : filters.province, active: !!filters.province, onClear: () => updateFilter('province', '') },
     { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => updateFilter('duration', '') },
+    { id: 'date', label: filters.date, active: !!filters.date, onClear: () => updateFilter('date', '') },
     { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => updateFilter('priceRange', [minPrice, maxPrice]) },
   ];
 
@@ -119,6 +129,7 @@ export default function DomesticClient({ locale, tours }) {
     updateFilter('search', '');
     updateFilter('province', '');
     updateFilter('duration', '');
+    updateFilter('date', '');
     updateFilter('priceRange', [minPrice, maxPrice]);
     setPage(1);
   };
