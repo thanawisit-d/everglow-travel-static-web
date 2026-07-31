@@ -97,19 +97,19 @@
   }
 
   .tour-desc {
-    padding: 10px 12px 3px;
-    font-size: 13px;
-  }
-
-  .tour-info {
-    padding: 6px 12px;
+    padding: 6px 12px 2px;
     font-size: 12px;
   }
 
-  .tour-info p { margin: 4px 0; }
+  .tour-info {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .tour-info p { margin: 2px 0; }
 
   .tour-bottom {
-    padding: 10px 12px;
+    padding: 8px 12px;
   }
 
   .airline {
@@ -178,31 +178,31 @@
 }
 
 .tour-desc {
-  padding: 10px 14px 3px;
+  padding: 8px 14px 2px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--navy);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .tour-info {
-  padding: 6px 14px;
-  font-size: 12px;
+  padding: 4px 14px;
+  font-size: 11px;
   color: var(--text-muted);
 }
 
 .tour-info p {
-  margin: 3px 0;
+  margin: 2px 0;
 }
 
 .tour-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 14px;
+  padding: 8px 14px;
   border-top: 1px solid var(--bg-page);
   margin-top: auto;
 }
