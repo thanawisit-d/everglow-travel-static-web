@@ -24,13 +24,21 @@ const featuredIds = {
   ],
 };
 
+const featuredPopularEn = [
+  'EGT1D-20', 'EGT1D-19', 'EGT1D-17',
+  'EGT-FP-46', 'EGT-SP-44', 'EGT-FP-42',
+];
+
 export default function LocaleClient({ locale }) {
   const router = useRouter();
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
   const toursData = isEn ? toursDataEn : toursDataTh;
 
-  const popularTours = featuredIds.popular.map(id => toursData.find(t => t.id === id)).filter(Boolean);
+  let popularTours = (isEn ? featuredPopularEn : featuredIds.popular)
+    .map(id => toursData.find(t => t.id === id))
+    .filter(Boolean);
+  if (popularTours.length === 0) popularTours = toursData.slice(0, 6);
   const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
 
   const destinations = useMemo(() => {

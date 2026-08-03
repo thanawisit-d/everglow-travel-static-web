@@ -20,9 +20,10 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
     return () => window.removeEventListener('resize', check);
   }, [isSlider]);
 
-  useEffect(() => {
-    setCurrentIdx(prev => Math.min(prev, data.length - cardsPerView));
-  }, [cardsPerView, data.length]);
+  const maxIdx = data.length - cardsPerView;
+  if (currentIdx > maxIdx && maxIdx >= 0) {
+    setCurrentIdx(maxIdx);
+  }
 
   if (data.length === 0) return null;
 
@@ -48,7 +49,6 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
   const total = data.length;
   const totalWidth = (total / cardsPerView) * 100;
   const itemWidth = 100 / total;
-  const maxIdx = total - cardsPerView;
 
   return (
     <section className="tour-section">

@@ -4,7 +4,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath } from '@/lib/assets';
-import { translateCountry } from '@/lib/i18n';
+import { translateCountry, provinceNameMap } from '@/lib/i18n';
 import config from '@/data/site-config.json';
 
 const HOVER_DELAY = 150;
@@ -213,7 +213,7 @@ export default function Header({ locale }) {
                       <div className="mega-grid">
                         {activeDomesticGroupData.items.map((item) => (
                           <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(item.province)}`)}>
-                            {item.name}
+                            {isEn ? (provinceNameMap[item.name] || item.name) : item.name}
                           </button>
                         ))}
                       </div>
