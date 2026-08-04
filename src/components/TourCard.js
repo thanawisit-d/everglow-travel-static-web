@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Clock, CalendarDays } from 'lucide-react';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
@@ -28,12 +29,22 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
         )}
         <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 33vw" alt={displayDesc || tour.id} className="tour-img" />
       </div>
+
+      <span className="tour-code">{tour.id}</span>
+
       <p className="tour-desc">{displayDesc}</p>
+
       <div className="tour-info">
-        <p>{t.tourId} {tour.id}</p>
-        <p>{displayDuration}</p>
-        <p>{t.travel} {displayPeriod}</p>
+        <span className="tour-info-item">
+          <Clock size={14} strokeWidth={2} />
+          {displayDuration}
+        </span>
+        <span className="tour-info-item">
+          <CalendarDays size={14} strokeWidth={2} />
+          {displayPeriod}
+        </span>
       </div>
+
       <div className="tour-bottom">
         <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/logos/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || t.transportAlt} />
         <div className="price">
