@@ -19,10 +19,6 @@
   background: var(--bg-section);
 }
 
-.slider-section {
-  padding: 130px 40px 30px;
-}
-
 /* ========== CONTACT ========== */
 .contact-wrap {
   max-width: 860px;
@@ -157,10 +153,6 @@
 }
 
 @media (max-width: 768px) {
-  .slider-section {
-    padding: 100px 20px 24px;
-  }
-
   .contact-page {
     padding: 120px 6% 40px;
   }

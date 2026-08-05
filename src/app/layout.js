@@ -1,7 +1,6 @@
 import { Kanit, Poppins, Cinzel } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { FacebookPixel } from '@/components/FacebookPixel';
-import FloatingContact from '@/components/FloatingContact';
 import SkipToContent from '@/components/SkipToContent';
 import ScrollToTop from '@/components/ScrollToTop';
 import "./globals.css";
@@ -114,7 +113,6 @@ export default function RootLayout({ children }) {
           <div id="main-content" className="relative z-[1]">{children}</div>
           <ScrollToTop />
         </div>
-        <FloatingContact />
       </body>
     </html>
   );

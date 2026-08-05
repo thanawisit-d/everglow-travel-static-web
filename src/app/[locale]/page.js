@@ -1,5 +1,4 @@
 import HomeClient from './home-client';
-import RecentlyViewed from '@/components/RecentlyViewed';
 
 export function generateStaticParams() {
   return [
@@ -50,10 +49,5 @@ export async function generateMetadata({ params }) {
 
 export default async function LocalePage({ params }) {
   const { locale } = await params;
-  return (
-    <>
-      <HomeClient locale={locale} />
-      <RecentlyViewed locale={locale} />
-    </>
-  );
+  return <HomeClient locale={locale} />;
 }

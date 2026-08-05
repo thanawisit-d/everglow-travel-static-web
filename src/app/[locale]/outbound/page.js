@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import toursDataTh from '@/data/tours-th.json';
 import OutboundClient from './outbound-client';
-import RecentlyViewed from '@/components/RecentlyViewed';
 
 export function generateStaticParams() {
   return [{ locale: 'th' }, { locale: 'en' }];
@@ -47,7 +46,6 @@ export default async function OutboundPage({ params }) {
   return (
     <Suspense fallback={<section className="page tour-list-page active"><h1>{locale === 'en' ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</h1></section>}>
       <OutboundClient locale={locale} tours={tours} />
-      <RecentlyViewed locale={locale} />
     </Suspense>
   );
 }

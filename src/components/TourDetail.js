@@ -1,24 +1,15 @@
-'use client';
-
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatPrice, formatPriceApprox } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import { displayField, translateCountry } from '@/lib/i18n';
-import { trackRecentlyViewed } from '@/lib/recentlyViewed';
 import config from '@/data/site-config.json';
 
 export default function TourDetail({ tour, locale }) {
-  const isOutbound = tour?.type === 'outbound';
+  if (!tour) return null;
+  const isOutbound = tour.type === 'outbound';
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
-
-  useEffect(() => {
-    if (tour) trackRecentlyViewed(tour);
-  }, [tour]);
-
-  if (!tour) return null;
 
   const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
   const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;

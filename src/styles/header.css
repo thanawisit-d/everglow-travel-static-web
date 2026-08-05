@@ -269,57 +269,6 @@
   display: none;
 }
 
-.header-sticky .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: block;
-  width: 280px;
-  background: var(--white);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.25s ease;
-  z-index: 999;
-}
-
-.header-sticky .dropdown-menu li {
-  list-style: none;
-}
-
-.header-sticky .dropdown-menu li a,
-.header-sticky .dropdown-menu li button {
-  display: block;
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 14px;
-  color: var(--text-dark);
-  text-decoration: none;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-  border-bottom: 1px solid #f0f0f0;
-  transition: 0.2s;
-  white-space: nowrap;
-}
-
-.header-sticky .dropdown-menu li a:hover,
-.header-sticky .dropdown-menu li button:hover {
-  background: #eef4ff;
-  color: var(--navy-secondary);
-  padding-left: 22px;
-}
-
-.header-sticky .dropdown-menu li:last-child a,
-.header-sticky .dropdown-menu li:last-child button {
-  border-bottom: none;
-}
-
 .header-sticky .dropdown-outbound {
   position: static;
 }
@@ -435,12 +384,6 @@
   object-fit: cover;
   border-radius: 50%;
   display: block;
-}
-
-.header-sticky .dropdown.open .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
 }
 
 .header-sticky .dropdown.open .mega-menu {
@@ -580,7 +523,6 @@
   }
 
   /* the outer element only handles the collapse animation now */
-  .header-sticky .dropdown-menu,
   .header-sticky .mega-menu {
     position: static;
     width: 100%;
@@ -594,24 +536,14 @@
     transition: grid-template-rows 0.35s ease;
   }
 
-  .header-sticky .dropdown.open .dropdown-menu,
   .header-sticky .dropdown.open .mega-menu {
     grid-template-rows: 1fr;
   }
 
   /* required for the grid trick: exactly one child, clipped, that can shrink below its content size */
-  .header-sticky .dropdown-menu-inner,
   .header-sticky .mega-menu-inner {
     overflow: hidden;
     min-height: 0;
-  }
-
-  .header-sticky .dropdown-menu-inner {
-    padding: 0 12px;
-  }
-
-  .header-sticky .dropdown.open .dropdown-menu-inner {
-    padding: 12px;
   }
 
   /* mega-left / mega-right layout now lives on the inner wrapper */
@@ -645,7 +577,6 @@
 
   /* respect users who've turned off motion */
   @media (prefers-reduced-motion: reduce) {
-    .header-sticky .dropdown-menu,
     .header-sticky .mega-menu {
       transition: none;
     }
