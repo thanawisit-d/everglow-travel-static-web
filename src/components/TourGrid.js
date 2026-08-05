@@ -9,12 +9,12 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
   const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
 
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
-  const isSlider = data.length > 3;
+  const [cardsPerView, setCardsPerView] = useState(4);
+  const isSlider = data.length > 4;
 
   useEffect(() => {
     if (!isSlider) return;
-    const check = () => setCardsPerView(window.innerWidth <= 768 ? 1 : 3);
+    const check = () => setCardsPerView(window.innerWidth <= 768 ? 1 : 4);
     check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
