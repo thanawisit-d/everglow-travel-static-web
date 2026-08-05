@@ -76,27 +76,52 @@ export default async function TourDetailPage({ params }) {
   );
 }
 
+function isoDurationFrom(duration) {
+  if (!duration) return null;
+  const m = String(duration).match(/(\d+)\s*day/i);
+  return m ? `P${m[1]}D` : null;
+}
+
 function TourJSONLD({ tour, siteUrl }) {
   const price = parseFloat(String(tour.price).replace(/,/g, '')) || 0;
+  const tourUrl = `${siteUrl}/${tour.type === 'domestic' ? 'th' : 'en'}/tours/${tour.id}`;
+  const listPath = tour.type === 'domestic' ? 'domestic' : 'outbound';
+  const listName = tour.type === 'domestic' ? 'Domestic Tours' : 'Outbound Tours';
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'TouristTrip',
     name: tour.desc || tour.id,
     description: tour.desc_en || tour.desc || '',
     image: tour.image ? `${siteUrl}${tour.image.startsWith('/') ? '' : '/'}${tour.image}` : undefined,
-    sku: tour.id,
+    url: tourUrl,
+    duration: isoDurationFrom(tour.duration_en || tour.duration),
     offers: {
       '@type': 'Offer',
       price: price,
       priceCurrency: 'THB',
       availability: 'https://schema.org/InStock',
-      url: `${siteUrl}/${tour.type === 'domestic' ? 'th' : 'en'}/tours/${tour.id}`,
+      url: tourUrl,
     },
   };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Everglow Travel', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: listName, item: `${siteUrl}/${tour.type === 'domestic' ? 'th' : 'en'}/${listPath}` },
+      { '@type': 'ListItem', position: 3, name: tour.desc || tour.id, item: tourUrl },
+    ],
+  };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+    </>
   );
 }

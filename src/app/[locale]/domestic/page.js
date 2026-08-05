@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
 import DomesticClient from './domestic-client';
+import RecentlyViewed from '@/components/RecentlyViewed';
 
 export function generateStaticParams() {
   return [{ locale: 'th' }, { locale: 'en' }];
@@ -48,6 +49,7 @@ export default async function DomesticPage({ params }) {
   return (
     <Suspense fallback={<section className="page tour-list-page active"><h1>{locale === 'en' ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1></section>}>
       <DomesticClient locale={locale} tours={tours} />
+      <RecentlyViewed locale={locale} />
     </Suspense>
   );
 }

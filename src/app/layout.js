@@ -1,5 +1,7 @@
 import { Kanit, Poppins, Cinzel } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { FacebookPixel } from '@/components/FacebookPixel';
+import FloatingContact from '@/components/FloatingContact';
 import SkipToContent from '@/components/SkipToContent';
 import ScrollToTop from '@/components/ScrollToTop';
 import "./globals.css";
@@ -88,6 +90,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const fbId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
   return (
     <html lang="th" suppressHydrationWarning>
       <head>
@@ -104,12 +107,14 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
         {gaId && <GoogleAnalytics gaId={gaId} />}
+        {fbId && <FacebookPixel fbId={fbId} />}
         <SkipToContent href="#main-content" />
         <div className="min-h-screen w-full relative">
           <div className="absolute inset-0 z-0 bg-gradient-custom" />
           <div id="main-content" className="relative z-[1]">{children}</div>
           <ScrollToTop />
         </div>
+        <FloatingContact />
       </body>
     </html>
   );

@@ -84,17 +84,6 @@
   .tour-grid::-webkit-scrollbar {
     display: none;
   }
-
-  .tour-card {
-    flex: 0 0 68%;
-    scroll-snap-align: start;
-  }
-}
-
-@media (max-width: 480px) {
-  .tour-card {
-    flex: 0 0 78%;
-  }
 }
 
 /* ========== TOUR LIST / DETAIL ========== */
@@ -248,6 +237,13 @@
   color: var(--amber);
   font-size: 24px;
   font-weight: 900;
+}
+
+.detail-price-approx {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
 
 .detail-buttons {
@@ -462,17 +458,6 @@
   .tour-slider-item {
     display: flex;
     justify-content: center;
-  }
-
-  .tour-slider-item .tour-card {
-    max-width: 380px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .tour-slider-item .tour-card {
-    max-width: none;
   }
 }
 

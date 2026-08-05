@@ -29,7 +29,13 @@
   aspect-ratio: 1 / 1;
   overflow: hidden;
   position: relative;
-  background: var(--bg-section);
+  background: linear-gradient(110deg, #dfe7f0 8%, #eef3f9 18%, #dfe7f0 33%);
+  background-size: 200% 100%;
+  animation: tour-img-shimmer 1.6s linear infinite;
+}
+
+@keyframes tour-img-shimmer {
+  to { background-position: -200% 0; }
 }
 
 .tour-img {
@@ -47,18 +53,27 @@
   top: 15px;
   left: 15px;
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: var(--navy);
   color: var(--white);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.4px;
   box-shadow: 0 4px 12px rgba(0, 20, 60, 0.35);
+  white-space: nowrap;
 }
 
+/* popular = ฮอตใช้ amber/orange ต่างชัดจาก monthly (cyan) */
+.tour-badge--popular {
+  background: linear-gradient(135deg, #f97316 0%, var(--amber) 100%);
+}
+
+/* monthly = cyan gradient ตัดจากภาพ ถ้าอยากนึกภาพ: ฟ้า = โปรเดือนนี้ */
 .tour-badge--monthly {
-  background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+  background: linear-gradient(135deg, var(--navy-secondary) 0%, var(--cyan) 130%);
 }
 
 /* ========== BODY ========== */
@@ -158,7 +173,37 @@
   color: var(--text-muted);
 }
 
+.price-approx {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 /* ========== RESPONSIVE ========== */
+
+/* การ์ดใน slider/scroll แนวนอนของหน้าแรก (ย้ายจาก tour.css ให้รวมอยู่ไฟล์เดียว) */
+@media (max-width: 768px) {
+  .tour-grid .tour-card {
+    flex: 0 0 68%;
+    scroll-snap-align: start;
+  }
+
+  .tour-slider-item .tour-card {
+    max-width: 380px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-grid .tour-card {
+    flex: 0 0 78%;
+  }
+
+  .tour-slider-item .tour-card {
+    max-width: none;
+  }
+}
+
 @media (max-width: 1024px) {
   .tour-desc {
     font-size: 15px;
