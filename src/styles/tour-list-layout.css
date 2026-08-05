@@ -85,11 +85,6 @@
     padding-bottom: 0;
     scroll-snap-type: none;
   }
-
-  .tour-list-layout .tour-card {
-    flex: none;
-    scroll-snap-align: none;
-  }
 }
 
 @media (max-width: 480px) {

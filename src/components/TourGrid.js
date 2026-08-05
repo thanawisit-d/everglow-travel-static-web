@@ -38,7 +38,7 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
               locale={locale}
               tour={tourItem}
               onClick={onTourClick ? () => onTourClick(tourItem.id) : undefined}
-              showBadge={showBadge}
+              badge={showBadge}
             />
           ))}
         </div>
@@ -67,7 +67,7 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
                 locale={locale}
                 tour={tourItem}
                 onClick={onTourClick ? () => onTourClick(tourItem.id) : undefined}
-                showBadge={showBadge}
+                badge={showBadge}
               />
             </div>
           ))}

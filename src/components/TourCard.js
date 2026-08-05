@@ -6,7 +6,7 @@ import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
-export default function TourCard({ tour, onClick, showBadge, isDomestic, locale }) {
+export default function TourCard({ tour, onClick, badge, locale }) {
   if (!tour) return null;
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
@@ -18,31 +18,48 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
     : ['2 วัน 1 คืน', '3 วัน 2 คืน', '4 วัน 3 คืน'];
   const isMultiNight = multiNight.includes(displayDuration);
 
+  const handleKeyDown = (e) => {
+    if (!onClick) return;
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
-    <div className={isDomestic ? 'tour-card domestic-tour-card' : 'tour-card'} onClick={onClick}>
+    <article
+      className="tour-card"
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      role={onClick ? 'link' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      aria-label={displayDesc || tour.id}
+    >
       <div className="tour-img-wrapper">
-        {showBadge === 'popular' && (
-          <span className="badge hot">{t.badgePopular}</span>
+        {badge === 'popular' && (
+          <span className="tour-badge tour-badge--popular">{t.badgePopular}</span>
         )}
-        {showBadge === 'monthly' && (
-          <span className="badge monthly">{t.badgeMonthly}</span>
+        {badge === 'monthly' && (
+          <span className="tour-badge tour-badge--monthly">{t.badgeMonthly}</span>
         )}
         <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 33vw" alt={displayDesc || tour.id} className="tour-img" />
       </div>
 
-      <span className="tour-code">{tour.id}</span>
+      <div className="tour-card-body">
+        <span className="tour-code">{tour.id}</span>
 
-      <p className="tour-desc">{displayDesc}</p>
+        <p className="tour-desc">{displayDesc}</p>
 
-      <div className="tour-info">
-        <span className="tour-info-item">
-          <Clock size={14} strokeWidth={2} />
-          {displayDuration}
-        </span>
-        <span className="tour-info-item">
-          <CalendarDays size={14} strokeWidth={2} />
-          {displayPeriod}
-        </span>
+        <div className="tour-info">
+          <span className="tour-info-item">
+            <Clock size={14} strokeWidth={2} />
+            {displayDuration}
+          </span>
+          <span className="tour-info-item">
+            <CalendarDays size={14} strokeWidth={2} />
+            {displayPeriod}
+          </span>
+        </div>
       </div>
 
       <div className="tour-bottom">
@@ -53,6 +70,6 @@ export default function TourCard({ tour, onClick, showBadge, isDomestic, locale 
           <span className="price-sub">{t.priceBaht}</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -228,7 +228,7 @@ export default function DomesticClient({ locale, tours }) {
                   <p className="no-result-hint">{t.noToursHint}</p>
                 </div>
               ) : items.map((t) => (
-                <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} isDomestic />
+                <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} />
               ))}
             </div>
             <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
