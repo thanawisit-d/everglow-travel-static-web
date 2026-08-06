@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { Phone, Mail, Clock } from 'lucide-react';
 import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 
@@ -114,7 +114,6 @@ export default function ContactCard({ locale }) {
         </a>
       </div>
 
-      <h2 className="contact-heading">{t.contactInfoTitle}</h2>
       <div className="contact-info-section">
         {details.map((item) => (
           <ContactCell key={item.label} {...item} />
@@ -122,14 +121,14 @@ export default function ContactCard({ locale }) {
       </div>
 
       <h2 className="contact-heading">{t.contactFindUs}</h2>
-      <p className="contact-findus-addr">
-        <MapPin size={22} strokeWidth={2} />
-        {t.addr}
-      </p>
       <div className="contact-map-wrap">
-        <div className="contact-map-placeholder">
-          <MapPin size={34} strokeWidth={1.5} />
-        </div>
+        <iframe
+          src={t.mapEmbedUrl}
+          title={t.contactFindUs}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     </section>
   );

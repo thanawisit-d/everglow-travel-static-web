@@ -103,7 +103,7 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   max-width: 1050px;
-  margin: 0 auto 80px;
+  margin: 40px auto 80px;
 }
 
 .contact-cell-wrap {
@@ -180,30 +180,7 @@
   color: var(--navy);
 }
 
-/* ---- address above the map ---- */
-.contact-findus-addr {
-  position: relative;
-  z-index: 1;
-  max-width: 1050px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-  color: var(--navy);
-  font-family: var(--font-kanit), 'Kanit', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.contact-findus-addr svg {
-  flex-shrink: 0;
-  color: var(--cyan);
-}
-
-/* ---- map (placeholder until real embed is wired in) ---- */
+/* ---- map ---- */
 .contact-map-wrap {
   position: relative;
   z-index: 1;
@@ -223,24 +200,38 @@
   display: block;
 }
 
-.contact-map-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #8a99b3;
-  font-size: 14px;
-  text-align: center;
-  padding: 20px;
+/* ---- desktop-only enlargement of contact details ---- */
+@media (min-width: 1025px) {
+  .contact-cell {
+    gap: 14px;
+    padding: 28px 20px;
+  }
+
+  .contact-cell-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .contact-cell-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-cell-label {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-cell-value {
+    font-size: 22px;
+    font-weight: 600;
+  }
 }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .contact-page {
-    padding: 130px 6% 60px;
+    padding: 150px 6% 60px;
   }
 
   .contact-social-grid {
@@ -250,7 +241,11 @@
 
 @media (max-width: 768px) {
   .contact-page {
-    padding: 110px 6% 60px;
+    padding: 145px 6% 60px;
+  }
+
+  .contact-media-card__title {
+    padding: 0 12px 48px;
   }
 
   .contact-map-wrap {
@@ -260,7 +255,7 @@
 
 @media (max-width: 480px) {
   .contact-page {
-    padding-top: 100px;
+    padding-top: 135px;
   }
 
   .contact-social-grid {
@@ -274,9 +269,5 @@
   .contact-info-section {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .contact-findus-addr {
-    font-size: 15px;
   }
 }

@@ -79,14 +79,6 @@ const jsonLd = {
   telephone: '+66996326146',
   email: 'everglowtravel@gmail.com',
   image: `${siteUrl}/og-image.jpg`,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '25/163 ม.4 ต.บางไผ่ อ.เมือง',
-    addressLocality: 'นนทบุรี',
-    addressRegion: 'นนทบุรี',
-    postalCode: '11000',
-    addressCountry: 'TH',
-  },
   sameAs: [
     'https://www.facebook.com/people/Everglow-Travel/61580670863894/',
     'https://www.instagram.com/everglow_travel',
