@@ -1,4 +1,4 @@
-import { Kanit, Poppins, Cinzel } from 'next/font/google';
+import { Kanit, Poppins, Cinzel, Koulen } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { FacebookPixel } from '@/components/FacebookPixel';
 import SkipToContent from '@/components/SkipToContent';
@@ -23,6 +23,13 @@ const cinzel = Cinzel({
   subsets: ['latin'],
   weight: ['500', '700'],
   variable: '--font-cinzel',
+  display: 'swap',
+});
+
+const koulen = Koulen({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-koulen',
   display: 'swap',
 });
 
@@ -104,7 +111,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="/assets/images/backgrounds/Home4.jpg" as="image" fetchPriority="high" />
       </head>
-      <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable}`}>
+      <body className={`${kanit.variable} ${poppins.variable} ${cinzel.variable} ${koulen.variable}`}>
         {gaId && <GoogleAnalytics gaId={gaId} />}
         {fbId && <FacebookPixel fbId={fbId} />}
         <SkipToContent href="#main-content" />
