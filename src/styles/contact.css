@@ -271,3 +271,120 @@
     gap: 12px;
   }
 }
+
+/* ========== CONTACT — LINE ADD FRIEND ========== */
+.contact-line-section {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1050px;
+  margin: 0 auto 60px;
+  padding: 32px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-line-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-line-title {
+  font-family: var(--font-koulen), sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.2vw, 40px);
+  color: #06c755;
+  margin: 0;
+}
+
+.contact-line-banner {
+  width: 100%;
+  background: var(--navy);
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.contact-line-banner p {
+  margin: 0;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.contact-line-cta {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--text-dark);
+  margin: 2px 0 0;
+}
+
+.contact-line-qr img {
+  display: block;
+  border-radius: 8px;
+}
+
+.contact-line-id {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: #06c755;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-line-id:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(6, 199, 85, 0.3);
+}
+
+.contact-line-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-line-right svg,
+.contact-line-right img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .contact-line-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .contact-line-left {
+    align-items: center;
+  }
+
+  .contact-line-right {
+    order: -1;
+    max-width: 180px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-line-title {
+    font-size: 24px;
+  }
+
+  .contact-line-banner p {
+    font-size: 14px;
+  }
+}

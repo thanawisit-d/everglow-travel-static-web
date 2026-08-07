@@ -57,6 +57,45 @@ function ContactCell({ icon: Icon, label, value, href }) {
   return <div className="contact-cell-wrap">{inner}</div>;
 }
 
+/* ---- NEW: LINE add-friend section ---- */
+function LineSection({ t, lineHref }) {
+  return (
+    <div className="contact-line-section">
+      <div className="contact-line-left">
+        <h3 className="contact-line-title">{t.lineTitle}</h3>
+
+        <div className="contact-line-banner">
+          <p>{t.lineBanner}</p>
+        </div>
+
+        <p className="contact-line-cta">{t.lineCta}</p>
+
+        <div className="contact-line-qr">
+          <Image
+            src={assetPath('assets/images/contact/line-qr.png')}
+            width={200}
+            height={200}
+            alt={`LINE QR - ${t.lineId}`}
+          />
+        </div>
+
+        <a href={lineHref} target="_blank" rel="noopener noreferrer" className="contact-line-id">
+          {t.lineId}
+        </a>
+      </div>
+
+      <div className="contact-line-right">
+        <Image
+          src={assetPath('assets/images/contact/phone-mockup.svg')}
+          width={631}
+          height={1072}
+          alt="LINE phone mockup"
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function ContactCard({ locale }) {
   const t = config[locale] || config.th;
   const s = config.social;
@@ -80,6 +119,9 @@ export default function ContactCard({ locale }) {
           <MediaCard key={item.alt} {...item} />
         ))}
       </div>
+
+      {/* ---- LINE, inserted between the two rows ---- */}
+      <LineSection t={t} lineHref={s.line} />
 
       <div className="contact-social-strip">
         <a
