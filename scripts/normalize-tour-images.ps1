@@ -11,7 +11,7 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 
 $src = (Join-Path $PSScriptRoot '..') | Resolve-Path
-$dataFiles = @('src/data/tours.json', 'src/data/tours-th.json', 'src/data/tours-en.json')
+$dataFiles = @('src/data/tours-th.json', 'src/data/tours-en.json')
 
 $seen = @{}
 foreach ($df in $dataFiles) {

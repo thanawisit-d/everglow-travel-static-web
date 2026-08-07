@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { MapPin } from 'lucide-react';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
@@ -28,12 +27,6 @@ export default function Footer({ locale }) {
             )}
           </div>
           <div className="footer-license">{t.license}</div>
-          <div className="footer-address">
-            <span className="contact-icon contact-icon--inline">
-              <MapPin size={16} strokeWidth={2} />
-            </span>
-            <span>{t.addr}</span>
-          </div>
         </div>
 
         <div className="footer-col footer-contact">

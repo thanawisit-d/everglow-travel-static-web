@@ -282,10 +282,6 @@
   gap: 40px;
   max-width: 1050px;
   margin: 0 auto 60px;
-  padding: 32px;
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
 }
 
 .contact-line-left {
@@ -364,7 +360,6 @@
   .contact-line-section {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 24px;
     text-align: center;
   }
 

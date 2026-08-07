@@ -1,14 +1,12 @@
+import { notFound } from 'next/navigation';
 import toursDataTh from '@/data/tours-th.json';
-import toursDataEn from '@/data/tours-en.json';
 import TourDetail from '@/components/TourDetail';
-import config from '@/data/site-config.json';
 
 export function generateStaticParams() {
   const locales = ['th', 'en'];
   const params = [];
   for (const locale of locales) {
-    const data = locale === 'th' ? toursDataTh : toursDataEn;
-    for (const tour of data) {
+    for (const tour of toursDataTh) {
       params.push({ locale, id: tour.id });
     }
   }
@@ -19,8 +17,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com'
 
 export async function generateMetadata({ params }) {
   const { locale, id } = await params;
-  const toursData = locale === 'th' ? toursDataTh : toursDataEn;
-  const tour = toursData.find((t) => t.id === id);
+  const tour = toursDataTh.find((t) => t.id === id);
   if (!tour) {
     return { title: 'Tour Not Found' };
   }
@@ -50,27 +47,13 @@ export async function generateMetadata({ params }) {
 
 export default async function TourDetailPage({ params }) {
   const { locale, id } = await params;
-  const t = config[locale] || config.th;
-  const toursData = locale === 'th' ? toursDataTh : toursDataEn;
-  const tour = toursData.find((t) => t.id === id) || null;
+  const tour = toursDataTh.find((t) => t.id === id) || null;
   if (!tour) {
-    return (
-      <div className="page tour-detail-page">
-        <div className="tour-detail-container not-found">
-          <h1>{t.tourNotFound}</h1>
-          <p className="not-found-msg">
-            {t.tourNotFoundMsg}
-          </p>
-          <a href={`/${locale}`} className="back-btn not-found-btn">
-            {t.backToHome}
-          </a>
-        </div>
-      </div>
-    );
+    notFound();
   }
   return (
     <>
-      <TourJSONLD tour={tour} siteUrl={siteUrl} />
+      <TourJSONLD tour={tour} siteUrl={siteUrl} locale={locale} />
       <TourDetail locale={locale} tour={tour} />
     </>
   );
@@ -82,9 +65,9 @@ function isoDurationFrom(duration) {
   return m ? `P${m[1]}D` : null;
 }
 
-function TourJSONLD({ tour, siteUrl }) {
+function TourJSONLD({ tour, siteUrl, locale }) {
   const price = parseFloat(String(tour.price).replace(/,/g, '')) || 0;
-  const tourUrl = `${siteUrl}/${tour.type === 'domestic' ? 'th' : 'en'}/tours/${tour.id}`;
+  const tourUrl = `${siteUrl}/${locale}/tours/${tour.id}`;
   const listPath = tour.type === 'domestic' ? 'domestic' : 'outbound';
   const listName = tour.type === 'domestic' ? 'Domestic Tours' : 'Outbound Tours';
   const jsonLd = {
@@ -108,7 +91,7 @@ function TourJSONLD({ tour, siteUrl }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Everglow Travel', item: `${siteUrl}/` },
-      { '@type': 'ListItem', position: 2, name: listName, item: `${siteUrl}/${tour.type === 'domestic' ? 'th' : 'en'}/${listPath}` },
+      { '@type': 'ListItem', position: 2, name: listName, item: `${siteUrl}/${locale}/${listPath}` },
       { '@type': 'ListItem', position: 3, name: tour.desc || tour.id, item: tourUrl },
     ],
   };

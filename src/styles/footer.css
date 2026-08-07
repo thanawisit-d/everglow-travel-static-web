@@ -50,20 +50,6 @@
   margin-bottom: 8px;
 }
 
-.footer-address {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.contact-icon--inline {
-  margin-top: 1px;
-}
-
 .qr-box {
   background: rgba(255, 255, 255, 0.08);
   -webkit-backdrop-filter: blur(12px);
@@ -212,8 +198,7 @@ a.contact-item:hover .contact-icon {
   }
 
   .footer-company,
-  .footer-license,
-  .footer-address {
+  .footer-license {
     margin-bottom: 0;
   }
 
@@ -254,11 +239,6 @@ a.contact-item:hover .contact-icon {
   .contact-item {
     justify-content: center;
   }
-
-  .footer-address {
-    justify-content: center;
-    margin-top: 4px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -271,8 +251,7 @@ a.contact-item:hover .contact-icon {
     font-size: 15px;
   }
 
-  .footer-license,
-  .footer-address {
+  .footer-license {
     font-size: 13px;
   }
 

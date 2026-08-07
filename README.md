@@ -54,7 +54,7 @@ public/               รูป, PDF, assets ต่างๆ
 - CSS variables หลักอยู่ใน base.css (--navy, --amber, --cyan, etc.)
 
 ### ข้อมูล
-- ข้อมูลทัวร์อยู่ใน src/data/tours.json
+- ข้อมูลทัวร์อยู่ใน src/data/tours-th.json (มีทั้งภาษาไทยและฟิลด์ *\_en สำหรับหน้า English; tours-en.json มีข้อมูล domestic ชุด English แยกไว้)
 - ข้อมูลรีวิวอยู่ใน src/data/reviews.json
 - ข้อความ UI ทั้งสองภาษาอยู่ใน src/data/site-config.json
 - ไม่มี CMS หรือ API — ทั้งหมดเป็น static data
