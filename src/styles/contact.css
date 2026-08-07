@@ -93,6 +93,9 @@
   gap: 20px;
   max-width: 1050px;
   margin: 0 auto 90px;
+  padding: 32px;
+  background: var(--navy);
+  border-radius: var(--radius-xl);
 }
 
 /* ---- contact details (call / email / hours) ---- */
@@ -264,6 +267,7 @@
 
   .contact-social-strip {
     grid-template-columns: 1fr;
+    padding: 24px;
   }
 
   .contact-info-section {
