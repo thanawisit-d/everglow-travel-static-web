@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatPrice, formatPriceApprox } from '@/lib/pricing';
+import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import { displayField, translateCountry } from '@/lib/i18n';
 import config from '@/data/site-config.json';
@@ -81,7 +81,6 @@ export default function TourDetail({ tour, locale }) {
               <div>
                 <strong>{t.detailPriceStart}</strong>
                 <span id="detailPrice">{formatPrice(tour.price)} {t.detailBaht}</span>
-                {isEn && <span className="detail-price-approx">{formatPriceApprox(tour.price, locale)}</span>}
               </div>
             </div>
             <div className="detail-item">

@@ -173,12 +173,6 @@
   color: var(--text-muted);
 }
 
-.price-approx {
-  font-size: 11px;
-  color: var(--text-muted);
-  white-space: nowrap;
-}
-
 /* ========== RESPONSIVE ========== */
 
 /* การ์ดใน slider/scroll แนวนอนของหน้าแรก (ย้ายจาก tour.css ให้รวมอยู่ไฟล์เดียว) */

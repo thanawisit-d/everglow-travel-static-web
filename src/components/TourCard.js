@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Clock, CalendarDays, Flame } from 'lucide-react';
-import { formatPrice, formatPriceApprox } from '@/lib/pricing';
+import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
@@ -73,11 +73,7 @@ export default function TourCard({ tour, onClick, badge, locale }) {
         <div className="price">
           <span className="price-start">{isMultiNight ? t.priceStartMulti : t.priceStartSingle}</span>
           <span className="price-main">{formatPrice(tour.price)}.-</span>
-          {isEn ? (
-            <span className="price-approx">{formatPriceApprox(tour.price, locale)}</span>
-          ) : (
-            <span className="price-sub">{t.priceBaht}</span>
-          )}
+          <span className="price-sub">{t.priceBaht}</span>
         </div>
       </div>
     </article>

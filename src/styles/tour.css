@@ -242,13 +242,6 @@
   font-weight: 900;
 }
 
-.detail-price-approx {
-  display: block;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
 .detail-buttons {
   margin-top: 28px;
   display: flex;
