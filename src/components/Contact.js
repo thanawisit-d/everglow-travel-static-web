@@ -61,12 +61,12 @@ function ContactCell({ icon: Icon, label, value, href }) {
 function LineSection({ t, lineHref }) {
   return (
     <div className="contact-line-section">
+      <div className="contact-line-banner">
+        <p>{t.lineBanner}</p>
+      </div>
+
       <div className="contact-line-left">
         <h3 className="contact-line-title">{t.lineTitle}</h3>
-
-        <div className="contact-line-banner">
-          <p>{t.lineBanner}</p>
-        </div>
 
         <p className="contact-line-cta">{t.lineCta}</p>
 
