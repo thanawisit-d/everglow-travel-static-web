@@ -72,7 +72,7 @@ function LineSection({ t, lineHref }) {
 
         <div className="contact-line-qr">
           <Image
-            src={assetPath('assets/images/contact/line-qr.png')}
+            src={assetPath('assets/images/social/qr.png')}
             width={200}
             height={200}
             alt={`LINE QR - ${t.lineId}`}
