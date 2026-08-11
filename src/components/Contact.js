@@ -111,7 +111,7 @@ function LineSection({ t }) {
 
       <div className="contact-line-right">
         <Image
-          src={assetPath('assets/images/contact/phone-mockup.svg')}
+          src={assetPath('assets/images/contact/mock.svg')}
           width={631}
           height={1072}
           alt="LINE phone mockup"
