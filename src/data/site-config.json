@@ -24,7 +24,7 @@
     "mapEmbedUrl": "https://maps.google.com/maps?q=13.8251997,100.4963884&z=16&output=embed",
     "lineTitle": "แอดไลน์",
     "lineBanner": "สแกน QR เพื่อแอดไลน์",
-    "lineCta": "แอด @Everglowtravel รับโปรโมชันพิเศษ",
+    "lineCta": "สแกนเพื่อพูดคุยกับเรา",
     "lineId": "@Everglowtravel",
     "heroServiceTitle": "บริการที่คุณจะได้",
     "heroServiceDesc": "เรามีบริการครอบคลุมทุกความต้องการในการเดินทางของคุณ พร้อมมอบประสบการณ์ท่องเที่ยวที่ประทับใจในทุกเส้นทาง",
@@ -61,12 +61,30 @@
     "viewPhoto": "ดูรูป",
     "partnerTitle": "พาร์ทเนอร์ของเรา",
     "partners": [
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" }
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      }
     ],
     "sortDefault": "เรียงลำดับ",
     "sortPriceLow": "ราคาต่ำ-สูง",
@@ -122,7 +140,7 @@
     "mapEmbedUrl": "https://maps.google.com/maps?q=13.8251997,100.4963884&z=16&output=embed",
     "lineTitle": "Add LINE FRIEND",
     "lineBanner": "Scan QR to add LINE",
-    "lineCta": "Add @Everglowtravel for special deals",
+    "lineCta": "Scan to chat with us",
     "lineId": "@Everglowtravel",
     "heroServiceTitle": "Services You Will Get",
     "heroServiceDesc": "We offer comprehensive travel services covering every need, delivering memorable experiences on every journey.",
@@ -159,12 +177,30 @@
     "viewPhoto": "View Photo",
     "partnerTitle": "Our Partners",
     "partners": [
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" },
-      { "name": "Everglow Travel", "logo": "Logo.jpg" }
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      },
+      {
+        "name": "Everglow Travel",
+        "logo": "Logo.jpg"
+      }
     ],
     "sortDefault": "Default",
     "sortPriceLow": "Price Low-High",
@@ -432,51 +468,114 @@
       "label": "ภาคเหนือ",
       "labelEn": "Northern",
       "items": [
-        { "name": "เชียงใหม่", "province": "เชียงใหม่" },
-        { "name": "พิษณุโลก", "province": "พิษณุโลก" },
-        { "name": "สุโขทัย", "province": "สุโขทัย" },
-        { "name": "กำแพงเพชร", "province": "กำแพงเพชร" },
-        { "name": "ตาก", "province": "ตาก" },
-        { "name": "อุตรดิตถ์", "province": "อุตรดิตถ์" },
-        { "name": "เพชรบูรณ์", "province": "เพชรบูรณ์" }
+        {
+          "name": "เชียงใหม่",
+          "province": "เชียงใหม่"
+        },
+        {
+          "name": "พิษณุโลก",
+          "province": "พิษณุโลก"
+        },
+        {
+          "name": "สุโขทัย",
+          "province": "สุโขทัย"
+        },
+        {
+          "name": "กำแพงเพชร",
+          "province": "กำแพงเพชร"
+        },
+        {
+          "name": "ตาก",
+          "province": "ตาก"
+        },
+        {
+          "name": "อุตรดิตถ์",
+          "province": "อุตรดิตถ์"
+        },
+        {
+          "name": "เพชรบูรณ์",
+          "province": "เพชรบูรณ์"
+        }
       ]
     },
     {
       "label": "ภาคกลาง",
       "labelEn": "Central",
       "items": [
-        { "name": "ราชบุรี", "province": "ราชบุรี" },
-        { "name": "เพชรบุรี", "province": "เพชรบุรี" },
-        { "name": "สุพรรณบุรี", "province": "สุพรรณบุรี" },
-        { "name": "อุทัยธานี", "province": "อุทัยธานี" }
+        {
+          "name": "ราชบุรี",
+          "province": "ราชบุรี"
+        },
+        {
+          "name": "เพชรบุรี",
+          "province": "เพชรบุรี"
+        },
+        {
+          "name": "สุพรรณบุรี",
+          "province": "สุพรรณบุรี"
+        },
+        {
+          "name": "อุทัยธานี",
+          "province": "อุทัยธานี"
+        }
       ]
     },
     {
       "label": "ภาคตะวันออก",
       "labelEn": "Eastern",
       "items": [
-        { "name": "ชลบุรี", "province": "ชลบุรี" },
-        { "name": "สระแก้ว", "province": "สระแก้ว" }
+        {
+          "name": "ชลบุรี",
+          "province": "ชลบุรี"
+        },
+        {
+          "name": "สระแก้ว",
+          "province": "สระแก้ว"
+        }
       ]
     },
     {
       "label": "ภาคใต้",
       "labelEn": "Southern",
       "items": [
-        { "name": "นครศรีธรรมราช", "province": "นครศรีธรรมราช" },
-        { "name": "ตรัง", "province": "ตรัง" },
-        { "name": "สตูล", "province": "สตูล" }
+        {
+          "name": "นครศรีธรรมราช",
+          "province": "นครศรีธรรมราช"
+        },
+        {
+          "name": "ตรัง",
+          "province": "ตรัง"
+        },
+        {
+          "name": "สตูล",
+          "province": "สตูล"
+        }
       ]
     },
     {
       "label": "ภาคอีสาน",
       "labelEn": "Northeastern",
       "items": [
-        { "name": "นครราชสีมา", "province": "นครราชสีมา" },
-        { "name": "ชัยภูมิ", "province": "ชัยภูมิ" },
-        { "name": "ยโสธร", "province": "ยโสธร" },
-        { "name": "อุบลราชธานี", "province": "อุบลราชธานี" },
-        { "name": "เลย", "province": "เลย" }
+        {
+          "name": "นครราชสีมา",
+          "province": "นครราชสีมา"
+        },
+        {
+          "name": "ชัยภูมิ",
+          "province": "ชัยภูมิ"
+        },
+        {
+          "name": "ยโสธร",
+          "province": "ยโสธร"
+        },
+        {
+          "name": "อุบลราชธานี",
+          "province": "อุบลราชธานี"
+        },
+        {
+          "name": "เลย",
+          "province": "เลย"
+        }
       ]
     }
   ]

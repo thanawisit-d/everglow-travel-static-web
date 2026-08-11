@@ -58,7 +58,7 @@ function ContactCell({ icon: Icon, label, value, href }) {
 }
 
 /* ---- NEW: LINE add-friend section ---- */
-function LineSection({ t, lineHref }) {
+function LineSection({ t }) {
   return (
     <div className="contact-line-section">
       <h3 className="contact-line-title">{t.lineTitle}</h3>
@@ -72,16 +72,12 @@ function LineSection({ t, lineHref }) {
 
         <div className="contact-line-qr">
           <Image
-            src={assetPath('assets/images/social/qr.png')}
-            width={200}
-            height={200}
+            src={assetPath('assets/images/contact/scan.png')}
+            width={260}
+            height={260}
             alt={`LINE QR - ${t.lineId}`}
           />
         </div>
-
-        <a href={lineHref} target="_blank" rel="noopener noreferrer" className="contact-line-id">
-          {t.lineId}
-        </a>
       </div>
 
       <div className="contact-line-right">
@@ -121,7 +117,7 @@ export default function ContactCard({ locale }) {
       </div>
 
       {/* ---- LINE, inserted between the two rows ---- */}
-      <LineSection t={t} lineHref={s.line} />
+      <LineSection t={t} />
 
       <div className="contact-social-strip">
         <a
