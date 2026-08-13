@@ -202,6 +202,53 @@
   overflow-wrap: normal;
 }
 
+/* ========== TABLET-LARGE (2 cols keep, right column scrolls) ========== */
+@media (max-width: 1280px) {
+  .hero-right-wrapper {
+    min-width: 0;
+  }
+
+  .hero-right {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 24px,
+      #000 calc(100% - 24px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 24px,
+      #000 calc(100% - 24px),
+      transparent 100%
+    );
+  }
+
+  .hero-right::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-card {
+    flex: 0 0 55%;
+    scroll-snap-align: center;
+    width: auto;
+  }
+
+  .service-card-img {
+    aspect-ratio: 16/9;
+  }
+
+  .service-card-name {
+    font-size: 15px;
+    padding: 14px;
+  }
+}
+
 /* ========== TABLET ========== */
 @media (max-width: 1024px) {
   .hero-inner {
@@ -329,7 +376,7 @@
   }
 
   .service-card {
-    flex: 0 0 65%;
+    flex: 0 0 55%;
     scroll-snap-align: center;
     width: auto;
   }
@@ -374,7 +421,7 @@
   }
 
   .service-card {
-    flex: 0 0 75%;
+    flex: 0 0 60%;
   }
 
   .service-card-name {

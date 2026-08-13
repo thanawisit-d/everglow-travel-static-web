@@ -1,7 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import TourCard from './TourCard';
 import config from '@/data/site-config.json';
+
+const SWIPE_THRESHOLD = 50;
 
 export default function TourGrid({ showBadge, locale, tours }) {
   const t = config[locale] || config.th;
@@ -11,6 +13,12 @@ export default function TourGrid({ showBadge, locale, tours }) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(4);
   const isSlider = data.length > 4;
+
+  const trackRef = useRef(null);
+  const touchStartX = useRef(0);
+  const lastDeltaX = useRef(0);
+  const isDragging = useRef(false);
+  const suppressClick = useRef(false);
 
   useEffect(() => {
     if (!isSlider) return;
@@ -50,15 +58,62 @@ export default function TourGrid({ showBadge, locale, tours }) {
   const totalWidth = (total / cardsPerView) * 100;
   const itemWidth = 100 / total;
 
+  const baseTransform = `translateX(-${currentIdx * itemWidth}%)`;
+
+  const onTouchStart = (e) => {
+    suppressClick.current = false;
+    isDragging.current = true;
+    touchStartX.current = e.touches[0].clientX;
+    lastDeltaX.current = 0;
+  };
+
+  const onTouchMove = (e) => {
+    if (!isDragging.current) return;
+    const deltaX = e.touches[0].clientX - touchStartX.current;
+    lastDeltaX.current = deltaX;
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) suppressClick.current = true;
+    const el = trackRef.current;
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.transform = `translateX(calc(${-currentIdx * itemWidth}% + ${deltaX}px))`;
+  };
+
+  const onTouchEnd = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    const el = trackRef.current;
+    if (el) {
+      el.style.transition = '';
+      el.style.transform = `translateX(-${currentIdx * itemWidth}%)`;
+    }
+    const deltaX = lastDeltaX.current;
+    lastDeltaX.current = 0;
+    if (Math.abs(deltaX) >= SWIPE_THRESHOLD) {
+      if (deltaX < 0 && currentIdx < maxIdx) setCurrentIdx((p) => Math.min(maxIdx, p + 1));
+      else if (deltaX > 0 && currentIdx > 0) setCurrentIdx((p) => Math.max(0, p - 1));
+    }
+  };
+
   return (
     <section className="tour-section">
       <h2 className="tour-section-title">{title}</h2>
       <div className="tour-slider-wrapper">
         <div
           className="tour-slider-track"
+          ref={trackRef}
           style={{
             width: `${totalWidth}%`,
-            transform: `translateX(-${currentIdx * itemWidth}%)`
+            transform: baseTransform
+          }}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onTouchCancel={onTouchEnd}
+          onClickCapture={(e) => {
+            if (suppressClick.current) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
           }}
         >
           {data.map((tourItem, i) => (
