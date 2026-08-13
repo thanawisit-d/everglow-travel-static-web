@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Phone, Mail, Clock } from 'lucide-react';
 import config from '@/data/site-config.json';
@@ -60,44 +59,16 @@ function ContactCell({ icon: Icon, label, value, href }) {
 
 /* ---- NEW: LINE add-friend section ---- */
 function LineSection({ t }) {
-  const titleRef = useRef(null);
-  const bannerTextRef = useRef(null);
-  const ctaRef = useRef(null);
-
-  useEffect(() => {
-    const textCenterX = (el) => {
-      const range = document.createRange();
-      range.selectNodeContents(el);
-      const rect = range.getBoundingClientRect();
-      return rect.left + rect.width / 2;
-    };
-
-    const alignToBanner = () => {
-      const bannerText = bannerTextRef.current;
-      if (!bannerText) return;
-      const bannerCenter = textCenterX(bannerText);
-      [titleRef.current, ctaRef.current].forEach((el) => {
-        if (!el) return;
-        el.style.transform = `translateX(${bannerCenter - textCenterX(el)}px)`;
-      });
-    };
-
-    alignToBanner();
-    window.addEventListener('resize', alignToBanner);
-    document.fonts?.ready.then(alignToBanner).catch(() => {});
-    return () => window.removeEventListener('resize', alignToBanner);
-  }, []);
-
   return (
     <div className="contact-line-section">
-      <h3 ref={titleRef} className="contact-line-title">{t.lineTitle}</h3>
+      <h3 className="contact-line-title">{t.lineTitle}</h3>
 
       <div className="contact-line-banner">
-        <p ref={bannerTextRef}>{t.lineBanner}</p>
+        <p>{t.lineBanner}</p>
       </div>
 
       <div className="contact-line-body">
-        <p ref={ctaRef} className="contact-line-cta">{t.lineCta}</p>
+        <p className="contact-line-cta">{t.lineCta}</p>
 
         <div className="contact-line-qr">
           <Image

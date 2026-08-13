@@ -279,39 +279,49 @@
   }
 }
 
-/* ========== CONTACT — LINE ADD FRIEND ========== */
+/* ========== CONTACT — LINE ADD FRIEND (centered, no JS) ========== */
 .contact-line-section {
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 12px 40px;
   max-width: 1050px;
   margin: 0 auto 16px;
   padding: 40px 0;
+  text-align: center;
+}
+
+/* reserves room on desktop so the centered text block doesn't sit under the phone */
+@media (min-width: 769px) {
+  .contact-line-section {
+    padding-right: 280px;
+  }
 }
 
 .contact-line-title {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  text-align: left;
   font-family: var(--font-koulen), sans-serif;
   font-weight: 400;
   font-size: clamp(28px, 3.2vw, 40px);
   color: #06c755;
-  margin: 0;
+  margin: 0 0 12px;
+  text-align: center;
 }
 
 .contact-line-banner {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  position: relative;
+  z-index: 0;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-line-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
   width: 100vw;
-  margin-left: calc(50% - 50vw);
+  transform: translateX(-50%);
   background: var(--navy);
-  padding: 12px 6% 12px max(6vw, calc((100vw - 1050px) / 2));
-  border-radius: 0;
-  text-align: left;
+  z-index: -1;
 }
 
 .contact-line-banner p {
@@ -322,71 +332,54 @@
 }
 
 .contact-line-body {
-  grid-column: 1;
-  grid-row: 3;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 36px;
-  margin-top: -20px;
+  align-items: center;
+  gap: 20px;
 }
 
 .contact-line-cta {
   font-weight: 800;
   font-size: clamp(22px, 2.4vw, 32px);
   color: var(--text-dark);
-  margin: 2px 0 0;
+  margin: 0;
+  text-align: center;
 }
 
 .contact-line-qr img {
   display: block;
   border-radius: 8px;
+  margin: 0 auto;
 }
 
+/* phone: floated, doesn't consume layout width, so it never throws off the centering above */
 .contact-line-right {
-  grid-column: 2;
-  grid-row: 1 / 4;
-  align-self: start;
-  margin-top: 40px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 240px;
 }
 
-.contact-line-right svg,
 .contact-line-right img {
   width: 100%;
-  max-width: 500px;
   height: auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
   .contact-line-section {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 24px;
-    text-align: left;
-  }
-
-  .contact-line-title,
-  .contact-line-banner,
-  .contact-line-body {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .contact-line-body {
-    align-items: center;
+    padding: 32px 0 260px; /* room for the phone, which drops below the text on mobile */
   }
 
   .contact-line-right {
-    grid-column: 1;
-    grid-row: auto;
-    order: -1;
-    max-width: 180px;
-    margin: 0 auto;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 180px;
   }
 }
 
@@ -397,5 +390,13 @@
 
   .contact-line-banner p {
     font-size: 20px;
+  }
+
+  .contact-line-section {
+    padding-bottom: 220px;
+  }
+
+  .contact-line-right {
+    width: 150px;
   }
 }
