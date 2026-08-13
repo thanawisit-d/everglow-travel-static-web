@@ -26,13 +26,15 @@ export async function generateMetadata({ params }) {
   const displayTag = isEn && review.tag_en ? review.tag_en : review.tag;
   const displayText = isEn && review.text_en ? review.text_en : review.text;
   const desc = displayText ? displayText.slice(0, 160) : displayTag;
+  const reviewPath = `/reviews/${review.id}`;
   return {
     title: displayTag,
     description: desc,
     openGraph: {
       title: displayTag,
       description: desc,
-      url: `/${locale}/reviews/${review.id}`,
+      locale: isEn ? 'en_US' : 'th_TH',
+      url: `/${locale}${reviewPath}`,
       images: review.image ? [{ url: `${siteUrl}/${review.image}`, width: 800, height: 600 }] : [],
     },
     twitter: {
@@ -42,7 +44,12 @@ export async function generateMetadata({ params }) {
       images: review.image ? [`${siteUrl}/${review.image}`] : [],
     },
     alternates: {
-      canonical: `/${locale}/reviews/${review.id}`,
+      canonical: `/${locale}${reviewPath}`,
+      languages: {
+        th: `/th${reviewPath}`,
+        en: `/en${reviewPath}`,
+        'x-default': `/th${reviewPath}`,
+      },
     },
   };
 }

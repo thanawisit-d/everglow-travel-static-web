@@ -23,14 +23,17 @@ export async function generateMetadata({ params }) {
   }
   const isEn = locale === 'en';
   const desc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
-  const name = desc?.split(isEn ? ' tour' : ' เที่ยว')[0] || tour.id;
+  const raw = desc || tour.id;
+  const name = raw.length > 70 ? `${raw.slice(0, 70).trimEnd()}…` : raw;
+  const tourPath = `/tours/${tour.id}`;
   return {
     title: name,
     description: desc ? `${desc} | ${isEn ? 'Starting at' : 'เริ่มต้น'} ${tour.price} บาท` : `Tour ${tour.id}`,
     openGraph: {
       title: name,
       description: desc || `Tour ${tour.id}`,
-      url: `/${locale}/tours/${tour.id}`,
+      locale: isEn ? 'en_US' : 'th_TH',
+      url: `/${locale}${tourPath}`,
       images: tour.image ? [{ url: `${siteUrl}${tour.image.startsWith('/') ? '' : '/'}${tour.image}`, width: 800, height: 600 }] : [],
     },
     twitter: {
@@ -40,7 +43,12 @@ export async function generateMetadata({ params }) {
       images: tour.image ? [`${siteUrl}${tour.image.startsWith('/') ? '' : '/'}${tour.image}`] : [],
     },
     alternates: {
-      canonical: `/${locale}/tours/${tour.id}`,
+      canonical: `/${locale}${tourPath}`,
+      languages: {
+        th: `/th${tourPath}`,
+        en: `/en${tourPath}`,
+        'x-default': `/th${tourPath}`,
+      },
     },
   };
 }

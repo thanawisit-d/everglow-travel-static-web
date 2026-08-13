@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { fieldIncludes, countryNameMap } from '@/lib/i18n';
 import TourCard from '@/components/TourCard';
 import Pagination from '@/components/Pagination';
@@ -19,7 +19,6 @@ function getCountryLabel(countryTh, isEn) {
 }
 
 export default function OutboundClient({ locale, tours }) {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const t = config[locale] || config.th;
 
@@ -246,7 +245,7 @@ export default function OutboundClient({ locale, tours }) {
                   <p className="no-result-hint">{t.noToursHint}</p>
                 </div>
               ) : items.map((t) => (
-                <TourCard key={t.id} locale={locale} tour={t} onClick={() => router.push(`/${locale}/tours/${t.id}`)} />
+                <TourCard key={t.id} locale={locale} tour={t} href={`/${locale}/tours/${t.id}`} />
               ))}
             </div>
             <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />

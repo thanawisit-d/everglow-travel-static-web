@@ -3,7 +3,7 @@ import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { FacebookPixel } from '@/components/FacebookPixel';
 import SkipToContent from '@/components/SkipToContent';
 import ScrollToTop from '@/components/ScrollToTop';
-import "./globals.css";
+import "../app/globals.css";
 
 const kanit = Kanit({
   subsets: ['thai', 'latin'],
@@ -35,62 +35,29 @@ const koulen = Koulen({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
 
-export const metadata = {
-  title: {
-    default: 'Everglow Travel',
-    template: '%s | Everglow Travel',
-  },
-  description: 'Everglow Travel - บริษัท เอเวอร์โกลว์ โกลบอล จำกัด',
-  metadataBase: new URL(siteUrl),
-  openGraph: {
-    type: 'website',
-    locale: 'th_TH',
-    siteName: 'Everglow Travel',
-    title: 'Everglow Travel',
-    description: 'Everglow Travel - บริษัท เอเวอร์โกลว์ โกลบอล จำกัด',
-    url: '/',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Everglow Travel',
-    description: 'Everglow Travel - บริษัท เอเวอร์โกลว์ โกลบอล จำกัด',
-    images: ['/og-image.jpg'],
-  },
-  alternates: {
-    canonical: '/',
-    languages: {
-      th: '/th',
-      en: '/en',
-    },
-  },
-  other: {
-    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
-  },
-};
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'TravelAgency',
-  name: 'Everglow Travel',
-  legalName: 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด (สำนักงานใหญ่)',
-  taxID: '0125568006295',
-  url: siteUrl,
-  telephone: '+66996326146',
-  email: 'everglowtravel@gmail.com',
-  image: `${siteUrl}/og-image.jpg`,
-  sameAs: [
-    'https://www.facebook.com/people/Everglow-Travel/61580670863894/',
-    'https://www.instagram.com/everglow_travel',
-    'https://lin.ee/xXcNI1w',
-  ],
-};
-
-export default function RootLayout({ children }) {
+export default function RootShell({ lang, children }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const fbId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: 'Everglow Travel',
+    legalName: 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด (สำนักงานใหญ่)',
+    taxID: '0125568006295',
+    url: siteUrl,
+    telephone: '+66996326146',
+    email: 'everglowtravel@gmail.com',
+    image: `${siteUrl}/og-image.jpg`,
+    sameAs: [
+      'https://www.facebook.com/people/Everglow-Travel/61580670863894/',
+      'https://www.instagram.com/everglow_travel',
+      'https://lin.ee/xXcNI1w',
+    ],
+  };
+
   return (
-    <html lang="th" suppressHydrationWarning>
+    <html lang={lang}>
       <head>
         <script
           type="application/ld+json"

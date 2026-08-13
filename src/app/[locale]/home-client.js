@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
@@ -30,7 +29,6 @@ const featuredPopularEn = [
 ];
 
 export default function LocaleClient({ locale }) {
-  const router = useRouter();
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
   const toursData = isEn ? toursDataEn : toursDataTh;
@@ -65,13 +63,6 @@ export default function LocaleClient({ locale }) {
     };
   }, [isEn, toursData]);
 
-  const handlePromoClick = (id) => {
-    const full = toursData.find((t) => t.id === id);
-    if (full) {
-      router.push(`/${locale}/tours/${full.id}`);
-    }
-  };
-
   const whyItems = [
     { icon: 'service', title: t.why1Title, desc: t.why1Desc },
     { icon: 'experience', title: t.why2Title, desc: t.why2Desc },
@@ -82,8 +73,8 @@ export default function LocaleClient({ locale }) {
     <div>
       <HeroSection locale={locale} destinations={destinations} />
       <div className="tour-grid-wrapper">
-        <TourGrid locale={locale} showBadge="popular" tours={popularTours} onTourClick={(id) => handlePromoClick(id)} />
-        <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} onTourClick={(id) => handlePromoClick(id)} />
+        <TourGrid locale={locale} showBadge="popular" tours={popularTours} />
+        <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} />
       </div>
       <div className="services-section bg-section">
         <Hero locale={locale} />

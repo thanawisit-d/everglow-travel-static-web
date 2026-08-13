@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Clock, CalendarDays, Flame } from 'lucide-react';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
-export default function TourCard({ tour, onClick, badge, locale }) {
+export default function TourCard({ tour, href, badge, locale }) {
   if (!tour) return null;
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
@@ -17,22 +18,12 @@ export default function TourCard({ tour, onClick, badge, locale }) {
     ? ['2 days 1 night', '3 days 2 night', '4 days 3 night']
     : ['2 วัน 1 คืน', '3 วัน 2 คืน', '4 วัน 3 คืน'];
   const isMultiNight = multiNight.includes(displayDuration);
-
-  const handleKeyDown = (e) => {
-    if (!onClick) return;
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onClick();
-    }
-  };
+  const cardHref = href || `/${locale}/tours/${tour.id}`;
 
   return (
-    <article
+    <Link
+      href={cardHref}
       className="tour-card"
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
-      role={onClick ? 'link' : undefined}
-      tabIndex={onClick ? 0 : undefined}
       aria-label={displayDesc || tour.id}
     >
       <div className="tour-img-wrapper">
@@ -76,6 +67,6 @@ export default function TourCard({ tour, onClick, badge, locale }) {
           <span className="price-sub">{t.priceBaht}</span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

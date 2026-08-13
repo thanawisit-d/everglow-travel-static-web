@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import TourCard from './TourCard';
 import config from '@/data/site-config.json';
 
-export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
+export default function TourGrid({ showBadge, locale, tours }) {
   const t = config[locale] || config.th;
   const data = tours || [];
   const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
@@ -37,7 +37,7 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
               key={tourItem.id || i}
               locale={locale}
               tour={tourItem}
-              onClick={onTourClick ? () => onTourClick(tourItem.id) : undefined}
+              href={`/${locale}/tours/${tourItem.id}`}
               badge={showBadge}
             />
           ))}
@@ -66,7 +66,7 @@ export default function TourGrid({ showBadge, onTourClick, locale, tours }) {
               <TourCard
                 locale={locale}
                 tour={tourItem}
-                onClick={onTourClick ? () => onTourClick(tourItem.id) : undefined}
+                href={`/${locale}/tours/${tourItem.id}`}
                 badge={showBadge}
               />
             </div>
