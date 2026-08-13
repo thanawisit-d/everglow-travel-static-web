@@ -386,6 +386,10 @@
   display: block;
 }
 
+.header-sticky .mega-view-all {
+  display: none;
+}
+
 .header-sticky .dropdown.open .mega-menu {
   opacity: 1;
   visibility: visible;
@@ -465,6 +469,9 @@
     padding: 20px 6%;
     gap: 8px;
     z-index: 999;
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .header-sticky nav ul.nav-open {
@@ -559,6 +566,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 4px 0;
+    min-height: 0;
   }
 
   .header-sticky .mega-left button {
@@ -569,10 +577,40 @@
 
   .header-sticky .mega-right {
     padding: 12px;
+    min-height: 0;
   }
 
   .header-sticky .mega-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-sticky .mega-view-all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d6e4f0;
+    background: #f8faff;
+    color: var(--navy-secondary);
+    font-weight: 700;
+    font-size: 13px;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .header-sticky .mega-view-all span {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .header-sticky .mega-view-all:hover {
+    background: #eef4ff;
+    border-color: var(--cyan);
   }
 
   /* respect users who've turned off motion */

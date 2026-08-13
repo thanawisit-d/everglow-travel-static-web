@@ -92,7 +92,7 @@ export default function Header({ locale }) {
 
   useEffect(() => {
     const prev = document.body.style.overflow;
-    document.body.style.overflow = menuOpen ? 'hidden auto' : 'hidden auto';
+    document.body.style.overflow = menuOpen ? 'hidden' : prev;
     return () => { document.body.style.overflow = prev; };
   }, [menuOpen]);
 
@@ -200,7 +200,13 @@ export default function Header({ locale }) {
                       onMouseEnter={() => setActiveDomesticGroup(group.label)}
                       onFocus={() => setActiveDomesticGroup(group.label)}
                       className={activeDomesticGroup === group.label ? 'active' : ''}
-                      onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(group.items[0].province)}`)}
+                      onClick={() => {
+                        if (window.innerWidth > 768) {
+                          nav(`/${locale}/domestic?province=${encodeURIComponent(group.items[0].province)}`);
+                        } else {
+                          setActiveDomesticGroup(group.label);
+                        }
+                      }}
                     >
                       {isEn ? group.labelEn : group.label}
                     </button>
@@ -220,6 +226,10 @@ export default function Header({ locale }) {
                     </>
                   )}
                 </div>
+                <button type="button" className="mega-view-all" onClick={() => nav(`/${locale}/domestic`)}>
+                  {isEn ? 'View All Thailand Tours' : 'ดูทัวร์ในประเทศทั้งหมด'}
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </div>
           </li>
@@ -242,7 +252,13 @@ export default function Header({ locale }) {
                       onMouseEnter={() => setActiveGroup(group.label)}
                       onFocus={() => setActiveGroup(group.label)}
                       className={activeGroup === group.label ? 'active' : ''}
-                      onClick={() => nav(`/${locale}/outbound?country=${encodeURIComponent(group.items[0].name)}`)}
+                      onClick={() => {
+                        if (window.innerWidth > 768) {
+                          nav(`/${locale}/outbound?country=${encodeURIComponent(group.items[0].name)}`);
+                        } else {
+                          setActiveGroup(group.label);
+                        }
+                      }}
                     >
                       {isEn ? group.labelEn : group.label}
                     </button>
@@ -263,6 +279,10 @@ export default function Header({ locale }) {
                     </>
                   )}
                 </div>
+                <button type="button" className="mega-view-all" onClick={() => nav(`/${locale}/outbound`)}>
+                  {isEn ? 'View All Outbound Tours' : 'ดูทัวร์ต่างประเทศทั้งหมด'}
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </div>
           </li>
