@@ -73,8 +73,8 @@ export default function LocaleClient({ locale }) {
   };
 
   const whyItems = [
-    { icon: 'seamless', title: t.why1Title, desc: t.why1Desc },
-    { icon: 'premium', title: t.why2Title, desc: t.why2Desc },
+    { icon: 'service', title: t.why1Title, desc: t.why1Desc },
+    { icon: 'experience', title: t.why2Title, desc: t.why2Desc },
     { icon: 'trust', title: t.why3Title, desc: t.why3Desc },
   ];
 
@@ -94,26 +94,10 @@ export default function LocaleClient({ locale }) {
           {whyItems.map((item, i) => (
             <div className="why-card" key={i}>
               <div className="why-icon">
-                {item.icon === 'seamless' && (
-                  <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
-                    <path d="M20 40C16 36 14 30 16 24c3-9 13-14 22-11s14 13 11 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-                    <path d="M44 24c4 4 6 10 4 16-3 9-13 14-22 11s-14-13-11-22" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-                    <path d="M18 48l6-8 8 4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M46 16l-6 8-8-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <circle cx="32" cy="32" r="20" stroke="white" strokeWidth="2" strokeDasharray="4 3" />
-                  </svg>
-                )}
-                {item.icon === 'premium' && (
-                  <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
-                    <path d="M32 6l8 16 18 2-13 12 4 18-17-9-17 9 4-18L6 24l18-2L32 6Z" stroke="white" strokeWidth="2.5" strokeLinejoin="round" />
-                  </svg>
-                )}
-                {item.icon === 'trust' && (
-                  <svg viewBox="0 0 64 64" fill="none" width="32" height="32">
-                    <path d="M32 6L8 16v12c0 14 10 27 24 30 14-3 24-16 24-30V16L32 6Z" stroke="white" strokeWidth="2.5" strokeLinejoin="round" fill="none" />
-                    <path d="M22 34l6 6 14-14" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
+                <img
+                  src={assetPath(`assets/images/icons/${item.icon}.svg`)}
+                  alt={item.title}
+                />
               </div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
