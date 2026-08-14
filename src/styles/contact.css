@@ -94,8 +94,8 @@
   flex-wrap: wrap;
   gap: 72px;
   width: 100vw;
-  margin: 0 0 90px calc(50% - 50vw);
-  padding: 48px 6%;
+  margin: -52px 0 90px calc(50% - 50vw); /* pulled up 52px to overlap the LINE section below */
+  padding: 0 6% 48px; /* LINE section and this strip now touch (no top padding) */
   background: var(--navy);
 }
 
@@ -283,8 +283,8 @@
 .contact-line-section {
   position: relative;
   max-width: 1050px;
-  margin: 0 auto 16px;
-  padding: 40px 0;
+  margin: 0 auto;
+  padding: 40px 0 0;
   text-align: center;
 }
 
@@ -406,13 +406,16 @@
   }
 
   .contact-line-left {
-    flex: 0 0 62%; /* measured: banner ends at 61.7% of total width */
+    flex: 0 0 50%;
     min-width: 0;
     text-align: left; /* measured: title/banner/cta are all left-aligned, not centered */
     padding-right: 24px;
   }
 
-  .contact-line-title,
+  .contact-line-title {
+    text-align: center; /* centered so it sits at the middle of the centered banner text below */
+  }
+
   .contact-line-cta {
     text-align: left;
   }
@@ -425,17 +428,24 @@
     margin: 0;
   }
 
-  /* desktop: banner no longer needs the 100vw breakout — it just fills the left column now */
+  /* desktop: the navy strip spans the full viewport again, via the ::before breakout
+     re-anchored to the viewport center. The banner sits in the left column (50% of the
+     centered 1050px section, minus 24px column padding-right), so its center is offset
+     from the viewport center by 0.25 * section + 12px; translateX() compensates so the
+     100vw strip is centered on the viewport: 0.25 * min(1050px, 88vw) + 12px.
+     NOTE: keep in sync if the 50% column / 6% page padding / 24px gap ever change. */
   .contact-line-banner {
-    background: var(--navy);
+    background: transparent; /* the strip comes from ::before, not the element */
   }
 
   .contact-line-banner::before {
-    content: none;
+    content: '';
+    transform: translateX(calc(-50% + min(274.5px, 22vw + 12px)));
   }
 
   .contact-line-right {
     position: static;
-    flex: 0 0 38%; /* measured: phone column is the remaining ~38.3% */
+    flex: 0 0 55%; /* enlarged phone column — overflows ~5% into the right page padding */
+    margin-top: -160px; /* phone sits ~160px higher than the "แอดไลน์" title line */
   }
 }
