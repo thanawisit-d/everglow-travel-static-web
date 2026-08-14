@@ -193,6 +193,7 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   aspect-ratio: 16 / 8;
+  min-height: 420px; /* fallback height so the map stays usable even without aspect-ratio support */
   background: #e5e9ef;
   box-shadow: var(--shadow-md);
 }
@@ -254,6 +255,7 @@
 
   .contact-map-wrap {
     aspect-ratio: 4 / 3;
+    min-height: 360px;
   }
 }
 
