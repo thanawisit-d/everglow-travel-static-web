@@ -67,13 +67,13 @@ export default function DomesticClient({ locale, tours }) {
     let result = [...tours];
 
     if (filters.search) {
-      const kw = filters.search;
+      const kw = filters.search.toLowerCase();
       result = result.filter(t => {
         const prov = Array.isArray(t.province) ? t.province.join(' ') : (t.province || '');
         const provEn = Array.isArray(t.province) ? t.province.map(p => provinceNameMap[p] || p).join(' ') : (provinceNameMap[t.province] || t.province || '');
-        return prov.includes(kw) || provEn.toLowerCase().includes(kw.toLowerCase()) ||
-          (isEn ? (t.desc_en || '') : (t.desc || '')).includes(kw) ||
-          (t.id || '').toLowerCase().includes(kw.toLowerCase());
+        return prov.toLowerCase().includes(kw) || provEn.toLowerCase().includes(kw) ||
+          (isEn ? (t.desc_en || '') : (t.desc || '')).toLowerCase().includes(kw) ||
+          (t.id || '').toLowerCase().includes(kw);
       });
     }
 

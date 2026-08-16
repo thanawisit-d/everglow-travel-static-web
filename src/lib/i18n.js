@@ -162,9 +162,10 @@ export const provinceNameMap = {
 };
 
 export function fieldIncludes(val, search) {
-  if (!val) return false;
-  if (Array.isArray(val)) return val.some(v => v.includes(search));
-  return val.includes(search);
+  const s = String(search || '').toLowerCase();
+  if (!s) return false;
+  if (Array.isArray(val)) return val.some(v => String(v).toLowerCase().includes(s));
+  return String(val).toLowerCase().includes(s);
 }
 
 export function displayField(val, join = ', ') {
