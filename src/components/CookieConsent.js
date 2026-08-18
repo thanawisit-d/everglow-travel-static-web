@@ -80,7 +80,6 @@ export default function CookieConsent({ lang, onConsent }) {
           <>
             <span className="cc-icon"><Cookie size={18} strokeWidth={2} /></span>
             <div className="cc-header">
-              <span className="cc-title">{t.cookieConsentTitle}</span>
               <span className="cc-desc">
                 {t.cookieConsentDesc}<br />
                 <Link href={`/${lang}/privacy`}>{t.learnMore}</Link>
