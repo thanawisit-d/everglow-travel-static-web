@@ -82,7 +82,7 @@ export default function CookieConsent({ lang, onConsent }) {
             <div className="cc-header">
               <span className="cc-title">{t.cookieConsentTitle}</span>
               <span className="cc-desc">
-                {t.cookieConsentDesc}{' '}
+                {t.cookieConsentDesc}<br />
                 <Link href={`/${lang}/privacy`}>{t.learnMore}</Link>
               </span>
             </div>
