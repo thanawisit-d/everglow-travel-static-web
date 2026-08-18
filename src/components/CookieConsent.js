@@ -78,22 +78,20 @@ export default function CookieConsent({ lang, onConsent }) {
       <div className="cc-inner">
         {!showPrefs ? (
           <>
+            <span className="cc-icon"><Cookie size={18} strokeWidth={2} /></span>
             <div className="cc-header">
-              <span className="cc-icon"><Cookie size={20} strokeWidth={2} /></span>
-              <div>
-                <h2 className="cc-title">{t.cookieConsentTitle}</h2>
-                <p className="cc-desc">
-                  {t.cookieConsentDesc}{' '}
-                  <Link href={`/${lang}/privacy`}>{t.learnMore}</Link>
-                </p>
-              </div>
+              <span className="cc-title">{t.cookieConsentTitle}</span>
+              <span className="cc-desc">
+                {t.cookieConsentDesc}{' '}
+                <Link href={`/${lang}/privacy`}>{t.learnMore}</Link>
+              </span>
             </div>
             <div className="cc-actions">
-              <button type="button" onClick={handleRejectAll} className="cc-btn cc-btn-reject">
-                {t.rejectAll}
-              </button>
               <button type="button" onClick={() => setShowPrefs(true)} className="cc-btn-manage">
                 {t.managePrefs}
+              </button>
+              <button type="button" onClick={handleRejectAll} className="cc-btn cc-btn-reject">
+                {t.rejectAll}
               </button>
               <button type="button" onClick={handleAcceptAll} className="cc-btn cc-btn-accept">
                 {t.acceptAll}
@@ -103,8 +101,8 @@ export default function CookieConsent({ lang, onConsent }) {
         ) : (
           <>
             <div className="cc-prefs">
-              <div className="cc-header">
-                <span className="cc-icon"><Cookie size={20} strokeWidth={2} /></span>
+              <div className="cc-prefs-header">
+                <span className="cc-icon"><Cookie size={18} strokeWidth={2} /></span>
                 <h2 className="cc-prefs-title">{t.managePrefs}</h2>
               </div>
 
@@ -137,15 +135,15 @@ export default function CookieConsent({ lang, onConsent }) {
                   <span className="cc-toggle-knob" />
                 </button>
               </div>
-            </div>
 
-            <div className="cc-prefs-actions">
-              <button type="button" onClick={handleRejectAll} className="cc-btn cc-btn-reject">
-                {t.rejectAll}
-              </button>
-              <button type="button" onClick={handleSavePrefs} className="cc-btn cc-btn-accept">
-                {t.savePrefs}
-              </button>
+              <div className="cc-prefs-actions">
+                <button type="button" onClick={handleRejectAll} className="cc-btn cc-btn-reject">
+                  {t.rejectAll}
+                </button>
+                <button type="button" onClick={handleSavePrefs} className="cc-btn cc-btn-accept">
+                  {t.savePrefs}
+                </button>
+              </div>
             </div>
           </>
         )}

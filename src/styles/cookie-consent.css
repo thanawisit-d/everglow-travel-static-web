@@ -1,63 +1,70 @@
-/* ========== COOKIE CONSENT — floating card, equal-weight buttons ========== */
+/* ========== COOKIE CONSENT — compact horizontal floating bar ========== */
 .cc-banner {
   position: fixed;
   inset: auto 0 0 0;
   z-index: 9999;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 16px 20px;
   pointer-events: none;
 }
 
 .cc-inner {
   pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
   width: 100%;
-  max-width: 640px;
+  max-width: 960px;
   background: var(--navy);
   color: var(--white);
   border-radius: var(--radius-xl);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  padding: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  padding: 14px 20px;
   animation: cc-slide-up 0.3s ease;
 }
 
 @keyframes cc-slide-up {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- header ---- */
-.cc-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
+/* ---- icon ---- */
 .cc-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.12);
   color: var(--cyan);
   flex-shrink: 0;
 }
 
+/* ---- header (text block) ---- */
+.cc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
 .cc-title {
   font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 14px;
   color: var(--white);
-  margin-bottom: 4px;
+  white-space: nowrap;
 }
 
 .cc-desc {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cc-desc a {
@@ -72,22 +79,23 @@
 /* ---- buttons row ---- */
 .cc-actions {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .cc-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 24px;
+  padding: 8px 18px;
   border-radius: var(--radius);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   border: 1.5px solid transparent;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
 }
 
 .cc-btn:active {
@@ -95,13 +103,12 @@
 }
 
 .cc-btn:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .cc-btn-accept {
   background: var(--cyan);
   color: var(--navy);
-  order: 3;
 }
 
 .cc-btn-accept:hover {
@@ -111,8 +118,7 @@
 .cc-btn-reject {
   background: transparent;
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.6);
-  order: 1;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .cc-btn-reject:hover {
@@ -123,14 +129,12 @@
 .cc-btn-manage {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
   font-weight: 500;
   text-decoration: underline;
   cursor: pointer;
-  padding: 10px 8px;
-  order: 2;
-  margin-right: auto;
+  padding: 8px 6px;
 }
 
 .cc-btn-manage:hover {
@@ -139,13 +143,20 @@
 
 /* ---- preferences panel ---- */
 .cc-prefs {
-  margin-bottom: 18px;
+  width: 100%;
+}
+
+.cc-prefs-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
 .cc-prefs-title {
   font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 15px;
   color: var(--white);
 }
 
@@ -153,12 +164,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 14px 16px;
+  gap: 14px;
+  padding: 10px 14px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .cc-pref-info {
@@ -167,25 +178,25 @@
 }
 
 .cc-pref-label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .cc-pref-desc {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.5;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.4;
 }
 
 /* ---- toggle switch ---- */
 .cc-toggle {
   position: relative;
   display: inline-flex;
-  width: 44px;
-  height: 24px;
-  border-radius: 12px;
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
   border: 2px solid transparent;
   background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
@@ -207,8 +218,8 @@
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -216,27 +227,45 @@
 }
 
 .cc-toggle[aria-checked="true"] .cc-toggle-knob {
-  transform: translateX(20px);
+  transform: translateX(18px);
 }
 
 /* ---- prefs action row ---- */
 .cc-prefs-actions {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.cc-prefs-actions .cc-btn-reject {
-  order: 1;
+/* ========== RESPONSIVE — stack on mobile ========== */
+@media (max-width: 768px) {
+  .cc-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cc-header {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .cc-desc {
+    white-space: normal;
+  }
+
+  .cc-actions {
+    flex: 1 1 100%;
+    justify-content: flex-end;
+  }
+
+  .cc-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
 }
 
-.cc-prefs-actions .cc-btn-accept {
-  order: 2;
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .cc-banner {
     padding: 0;
   }
@@ -244,36 +273,31 @@
   .cc-inner {
     max-width: none;
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    padding: 20px;
+    padding: 14px 16px;
   }
 
   .cc-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .cc-btn-manage {
-    order: 3;
-    margin-right: 0;
-    text-align: center;
+    flex-wrap: wrap;
   }
 
   .cc-btn {
-    width: 100%;
+    flex: 1;
+    text-align: center;
+    min-width: 0;
   }
 
   .cc-pref-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
 
   .cc-prefs-actions {
-    flex-direction: column;
-    align-items: stretch;
+    flex-wrap: wrap;
   }
 
   .cc-prefs-actions .cc-btn {
-    width: 100%;
+    flex: 1;
+    text-align: center;
   }
 }
