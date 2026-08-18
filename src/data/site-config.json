@@ -113,7 +113,20 @@
     "priceRangeTitle": "ช่วงราคา",
     "durationTitle": "ระยะเวลา",
     "monthTitle": "เดือนเดินทาง",
-    "continentTitle": "ทวีป"
+    "continentTitle": "ทวีป",
+    "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+    "cookieSettings": "ตั้งค่า Cookie",
+    "cookieConsentTitle": "เว็บนี้ใช้คุกกี้",
+    "cookieConsentDesc": "เราใช้คุกกี้เพื่อวิเคราะห์การเข้าชมเว็บไซต์และปรับปรุงประสบการณ์ใช้งานของท่าน",
+    "acceptAll": "ยอมรับทั้งหมด",
+    "rejectAll": "ปฏิเสธทั้งหมด",
+    "managePrefs": "จัดการตั้งค่า",
+    "savePrefs": "บันทึกตั้งค่า",
+    "analyticsLabel": "คุกกี้เพื่อการวิเคราะห์",
+    "analyticsDesc": "ช่วยเราวิเคราะห์จำนวนผู้เข้าชมและพฤติกรรมการใช้งาน",
+    "marketingLabel": "คุกกี้เพื่อการตลาด",
+    "marketingDesc": "ช่วยแสดงโฆษณาที่เหมาะสมกับความสนใจของท่าน",
+    "learnMore": "ดูรายละเอียดได้ที่นโยบายความเป็นส่วนตัว"
   },
   "en": {
     "company": "Everglow Global Co., Ltd. (Head Office)",
@@ -229,7 +242,20 @@
     "priceRangeTitle": "Price Range",
     "durationTitle": "Duration",
     "monthTitle": "Travel month",
-    "continentTitle": "Continent"
+    "continentTitle": "Continent",
+    "privacyPolicy": "Privacy Policy",
+    "cookieSettings": "Cookie Settings",
+    "cookieConsentTitle": "This website uses cookies",
+    "cookieConsentDesc": "We use cookies to analyze website traffic and improve your experience",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "managePrefs": "Manage Preferences",
+    "savePrefs": "Save Preferences",
+    "analyticsLabel": "Analytics Cookies",
+    "analyticsDesc": "Help us analyze visitor count and usage patterns",
+    "marketingLabel": "Marketing Cookies",
+    "marketingDesc": "Help show ads relevant to your interests",
+    "learnMore": "Learn more in our Privacy Policy"
   },
   "social": {
     "phone": "+66996326146",

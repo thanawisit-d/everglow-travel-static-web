@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
@@ -89,7 +92,19 @@ export default function Footer({ locale }) {
       </div>
 
       <div className="footer-bottom">
-        &copy;{new Date().getFullYear()} Everglow Global Co., Ltd. All rights reserved.
+        <div>&copy;{new Date().getFullYear()} Everglow Global Co., Ltd. All rights reserved.</div>
+        <div className="flex flex-wrap gap-4 mt-2 text-sm">
+          <Link href={`/${locale}/privacy`} className="hover:underline">
+            {t.privacyPolicy}
+          </Link>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event('open-cookie-consent'))}
+            className="hover:underline cursor-pointer"
+          >
+            {t.cookieSettings}
+          </button>
+        </div>
       </div>
     </footer>
   );

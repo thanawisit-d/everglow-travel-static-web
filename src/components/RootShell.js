@@ -1,6 +1,10 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
 import { Kanit, Poppins, Koulen } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { FacebookPixel } from '@/components/FacebookPixel';
+import CookieConsent from '@/components/CookieConsent';
 import SkipToContent from '@/components/SkipToContent';
 import ScrollToTop from '@/components/ScrollToTop';
 import "../app/globals.css";
@@ -31,6 +35,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com'
 export default function RootShell({ lang, children }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const fbId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
+  const [consent, setConsent] = useState({ analytics: false, marketing: false });
+
+  const handleConsent = useCallback((c) => {
+    setConsent(c);
+  }, []);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -61,11 +70,11 @@ export default function RootShell({ lang, children }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="preload" href="/assets/images/backgrounds/Home4.jpg" as="image" fetchPriority="high" />
       </head>
       <body className={`${kanit.variable} ${poppins.variable} ${koulen.variable}`}>
-        {gaId && <GoogleAnalytics gaId={gaId} />}
-        {fbId && <FacebookPixel fbId={fbId} />}
+        {gaId && <GoogleAnalytics gaId={gaId} consent={consent.analytics} />}
+        {fbId && <FacebookPixel fbId={fbId} consent={consent.marketing} />}
+        <CookieConsent lang={lang} onConsent={handleConsent} />
         <SkipToContent href="#main-content" />
         <div className="min-h-screen w-full relative">
           <div className="absolute inset-0 z-0 bg-gradient-custom" />

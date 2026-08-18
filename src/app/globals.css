@@ -25,3 +25,5 @@
 @import "choices.js/public/assets/styles/choices.css";
 @import "../styles/not-found.css";
 @import "../styles/search-widget.css";
+@import "../styles/privacy.css";
+@import "../styles/cookie-consent.css";
