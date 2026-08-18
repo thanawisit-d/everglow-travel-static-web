@@ -1,4 +1,4 @@
-/* ========== COOKIE CONSENT — compact horizontal floating bar ========== */
+/* ========== COOKIE CONSENT — compact horizontal floating bar (white) ========== */
 .cc-banner {
   position: fixed;
   inset: auto 0 0 0;
@@ -16,10 +16,10 @@
   gap: 16px;
   width: 100%;
   max-width: 960px;
-  background: var(--navy);
-  color: var(--white);
+  background: var(--white);
+  color: var(--text-dark);
   border-radius: var(--radius-xl);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
   padding: 14px 20px;
   animation: cc-slide-up 0.3s ease;
 }
@@ -37,8 +37,8 @@
   width: 34px;
   height: 34px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--cyan);
+  background: rgba(0, 52, 120, 0.08);
+  color: var(--navy);
   flex-shrink: 0;
 }
 
@@ -55,23 +55,24 @@
   font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-weight: 600;
   font-size: 14px;
-  color: var(--white);
+  color: var(--navy);
   white-space: nowrap;
 }
 
 .cc-desc {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
 .cc-desc a {
-  color: var(--cyan);
+  color: var(--navy);
+  font-weight: 500;
   text-decoration: underline;
 }
 
 .cc-desc a:hover {
-  color: var(--white);
+  color: var(--cyan);
 }
 
 /* ---- buttons row ---- */
@@ -101,7 +102,7 @@
 }
 
 .cc-btn:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .cc-btn-accept {
@@ -115,19 +116,19 @@
 
 .cc-btn-reject {
   background: transparent;
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--navy);
+  border-color: var(--border-color);
 }
 
 .cc-btn-reject:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--white);
+  background: var(--bg-section);
+  border-color: var(--navy);
 }
 
 .cc-btn-manage {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   font-size: 12px;
   font-weight: 500;
   text-decoration: underline;
@@ -136,7 +137,7 @@
 }
 
 .cc-btn-manage:hover {
-  color: var(--white);
+  color: var(--navy);
 }
 
 /* ---- preferences panel ---- */
@@ -155,7 +156,7 @@
   font-family: var(--font-kanit), 'Kanit', sans-serif;
   font-weight: 600;
   font-size: 15px;
-  color: var(--white);
+  color: var(--navy);
 }
 
 .cc-pref-row {
@@ -164,8 +165,8 @@
   justify-content: space-between;
   gap: 14px;
   padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-section);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius);
   margin-bottom: 8px;
 }
@@ -178,13 +179,13 @@
 .cc-pref-label {
   font-size: 13px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);
   margin-bottom: 1px;
 }
 
 .cc-pref-desc {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
@@ -195,16 +196,17 @@
   width: 40px;
   height: 22px;
   border-radius: 11px;
-  border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid var(--border-color);
+  background: var(--bg-section);
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
   flex-shrink: 0;
   padding: 0;
 }
 
 .cc-toggle[aria-checked="true"] {
   background: var(--cyan);
+  border-color: var(--cyan);
 }
 
 .cc-toggle:focus-visible {
@@ -220,7 +222,7 @@
   height: 14px;
   border-radius: 50%;
   background: var(--white);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
 }
 
@@ -246,10 +248,6 @@
   .cc-header {
     flex: 1 1 100%;
     min-width: 0;
-  }
-
-  .cc-desc {
-    white-space: normal;
   }
 
   .cc-actions {
