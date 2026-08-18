@@ -61,7 +61,7 @@
 
 .cc-desc {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-dark);
   line-height: 1.5;
 }
 
@@ -128,9 +128,9 @@
 .cc-btn-manage {
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: var(--text-dark);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
   padding: 8px 6px;
