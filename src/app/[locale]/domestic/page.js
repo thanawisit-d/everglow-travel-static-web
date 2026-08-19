@@ -34,6 +34,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${locale}/domestic`,
       languages: {
+        'x-default': '/domestic',
         th: '/th/domestic',
         en: '/en/domestic',
       },

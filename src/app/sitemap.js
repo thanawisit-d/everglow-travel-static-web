@@ -6,7 +6,7 @@ import reviewsData from '@/data/reviews.json';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
 
 const staticPages = [
-  '', '/domestic', '/outbound', '/about', '/contact', '/reviews',
+  '', '/domestic', '/outbound', '/about', '/contact', '/reviews', '/privacy',
 ];
 
 export default async function sitemap() {

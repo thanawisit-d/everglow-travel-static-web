@@ -167,7 +167,7 @@ export default function Header({ locale }) {
             tabIndex={0}
             aria-label="Go to home"
           >
-            <Image src={assetPath('assets/images/logos/Logo.jpg')} width={36} height={36} alt="" priority />
+            <Image src={assetPath('assets/images/logos/Logo.jpg')} width={36} height={36} alt="Everglow Travel" priority />
           </div>
           <h2>{text.brand}</h2>
         </div>

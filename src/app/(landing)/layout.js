@@ -1,5 +1,3 @@
-import RootShell from '@/components/RootShell';
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
 
 export const metadata = {
@@ -38,5 +36,5 @@ export const metadata = {
 };
 
 export default function LandingLayout({ children }) {
-  return <RootShell lang="th">{children}</RootShell>;
+  return children;
 }

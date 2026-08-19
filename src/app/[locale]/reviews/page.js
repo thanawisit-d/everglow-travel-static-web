@@ -31,6 +31,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${locale}/reviews`,
       languages: {
+        'x-default': '/reviews',
         th: '/th/reviews',
         en: '/en/reviews',
       },

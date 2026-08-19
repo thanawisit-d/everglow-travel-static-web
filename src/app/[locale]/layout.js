@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import RootShell from '@/components/RootShell';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
 
@@ -49,10 +48,10 @@ export async function generateMetadata({ params }) {
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   return (
-    <RootShell lang={locale}>
+    <>
       <Header locale={locale} />
       {children}
       <Footer locale={locale} />
-    </RootShell>
+    </>
   );
 }
