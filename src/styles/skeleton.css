@@ -1,0 +1,155 @@
+/* ========== TOUR CARD SKELETON ========== */
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.tour-card-skeleton {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  background: var(--white);
+}
+
+.skel-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+.skel-body {
+  flex: 1;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skel-badge {
+  width: 80px;
+  height: 22px;
+  border-radius: 999px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+.skel-code {
+  width: 100px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+  margin-top: 4px;
+}
+
+.skel-text {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+.skel-text--long { width: 100%; }
+.skel-text--short { width: 60%; }
+
+.skel-info {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.skel-chip {
+  width: 70px;
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+.skel-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-top: 1px solid var(--bg-page);
+}
+
+.skel-airline {
+  width: 52px;
+  height: 30px;
+  border-radius: 6px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+.skel-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.skel-price-sub {
+  width: 40px;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+.skel-price-main {
+  width: 70px;
+  height: 18px;
+  border-radius: 6px;
+  background: linear-gradient(110deg, #e8edf4 8%, #f3f6fb 18%, #e8edf4 33%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+/* Filter transition overlay */
+.tour-grid--transitioning .tour-grid > * {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.tour-grid--loaded .tour-grid > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skel-img,
+  .skel-badge,
+  .skel-code,
+  .skel-text,
+  .skel-chip,
+  .skel-airline,
+  .skel-price-sub,
+  .skel-price-main {
+    animation: none;
+    background: #e8edf4;
+  }
+
+  .tour-grid--transitioning .tour-grid > *,
+  .tour-grid--loaded .tour-grid > * {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

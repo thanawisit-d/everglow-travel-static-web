@@ -39,7 +39,7 @@ export default function TourCard({ tour, href, badge, locale }) {
             {t.badgeMonthly}
           </span>
         )}
-        <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 33vw, 25vw" alt={displayDesc || tour.id} className="tour-img" />
+        <Image src={assetPath(tour.image)} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 33vw, 25vw" alt={displayDesc || tour.id} className="tour-img" loading="lazy" />
       </div>
 
       <div className="tour-card-body">

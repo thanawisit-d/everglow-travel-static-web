@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import TourCard from '@/components/TourCard';
+import TourCardSkeleton from '@/components/TourCardSkeleton';
 import Pagination from '@/components/Pagination';
 import FilterSidebar from '@/components/FilterSidebar';
 import ActiveFilters from '@/components/ActiveFilters';
@@ -11,6 +12,7 @@ import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import { provinceNameMap } from '@/lib/i18n';
 import { tourMatchesMonth, formatMonthLabel } from '@/lib/dateFilter';
+import { trackSearch, trackFilter } from '@/lib/tracking';
 import config from '@/data/site-config.json';
 
 const durationMapEnToTh = {
@@ -29,6 +31,27 @@ export default function DomesticClient({ locale, tours }) {
     filters, page, mobileFilterOpen, setMobileFilterOpen,
     minPrice, maxPrice, isEn, updateFilter, setPage,
   } = useToursFilter({ tours, locale, extraFilters: { province: '' } });
+
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const transitionTimer = useRef(null);
+
+  const triggerTransition = useCallback(() => {
+    if (transitionTimer.current) clearTimeout(transitionTimer.current);
+    setIsTransitioning(true);
+    transitionTimer.current = setTimeout(() => setIsTransitioning(false), 320);
+  }, []);
+
+  useEffect(() => () => { if (transitionTimer.current) clearTimeout(transitionTimer.current); }, []);
+
+  const wrappedUpdateFilter = useCallback((key, value) => {
+    if (key !== 'search') triggerTransition();
+    updateFilter(key, value);
+    if (key === 'search' && !value) {
+      trackSearch('', { locale, tourType: 'domestic' });
+    } else if (key !== 'search') {
+      trackFilter(key, value, { locale, tourType: 'domestic' });
+    }
+  }, [triggerTransition, updateFilter, locale]);
 
   useEffect(() => {
     const d = searchParams.get('duration') || '';
@@ -117,19 +140,19 @@ export default function DomesticClient({ locale, tours }) {
   const { items, totalPages } = paginate(filtered, page);
 
   const activeFilters = [
-    { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => updateFilter('search', '') },
-    { id: 'province', label: isEn ? (provinceNameMap[filters.province] || filters.province) : filters.province, active: !!filters.province, onClear: () => updateFilter('province', '') },
-    { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => updateFilter('duration', '') },
-    { id: 'date', label: formatMonthLabel(filters.date, isEn ? 'en' : 'th'), active: !!filters.date, onClear: () => updateFilter('date', '') },
-    { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => updateFilter('priceRange', [minPrice, maxPrice]) },
+    { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => wrappedUpdateFilter('search', '') },
+    { id: 'province', label: isEn ? (provinceNameMap[filters.province] || filters.province) : filters.province, active: !!filters.province, onClear: () => wrappedUpdateFilter('province', '') },
+    { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => wrappedUpdateFilter('duration', '') },
+    { id: 'date', label: formatMonthLabel(filters.date, isEn ? 'en' : 'th'), active: !!filters.date, onClear: () => wrappedUpdateFilter('date', '') },
+    { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => wrappedUpdateFilter('priceRange', [minPrice, maxPrice]) },
   ];
 
   const clearAllFilters = () => {
-    updateFilter('search', '');
-    updateFilter('province', '');
-    updateFilter('duration', '');
-    updateFilter('date', '');
-    updateFilter('priceRange', [minPrice, maxPrice]);
+    wrappedUpdateFilter('search', '');
+    wrappedUpdateFilter('province', '');
+    wrappedUpdateFilter('duration', '');
+    wrappedUpdateFilter('date', '');
+    wrappedUpdateFilter('priceRange', [minPrice, maxPrice]);
     setPage(1);
   };
 
@@ -139,7 +162,7 @@ export default function DomesticClient({ locale, tours }) {
       title: t.searchTitle,
       type: 'search',
       value: filters.search,
-      onChange: v => updateFilter('search', v),
+      onChange: v => wrappedUpdateFilter('search', v),
       placeholder: t.searchPlaceholderDomestic,
     },
     {
@@ -147,7 +170,7 @@ export default function DomesticClient({ locale, tours }) {
       title: t.monthTitle,
       type: 'month',
       value: filters.date,
-      onChange: v => updateFilter('date', v),
+      onChange: v => wrappedUpdateFilter('date', v),
     },
     {
       id: 'province',
@@ -156,7 +179,7 @@ export default function DomesticClient({ locale, tours }) {
       useChoices: true,
       options: filterOptions.provinces.map(p => ({ value: p, label: isEn ? provinceNameMap[p] || p : p })),
       value: filters.province,
-      onChange: v => updateFilter('province', v),
+      onChange: v => wrappedUpdateFilter('province', v),
     },
     {
       id: 'price',
@@ -167,7 +190,7 @@ export default function DomesticClient({ locale, tours }) {
       step: 500,
       valueMin: filters.priceRange[0],
       valueMax: filters.priceRange[1],
-      onChange: ([min, max]) => updateFilter('priceRange', [min, max]),
+      onChange: ([min, max]) => wrappedUpdateFilter('priceRange', [min, max]),
       currency: isEn ? '' : '฿',
     },
     {
@@ -176,7 +199,7 @@ export default function DomesticClient({ locale, tours }) {
       type: 'select',
       options: filterOptions.durations.map(d => ({ value: d, label: d })),
       value: filters.duration,
-      onChange: v => updateFilter('duration', v),
+      onChange: v => wrappedUpdateFilter('duration', v),
     },
   ];
 
@@ -206,7 +229,7 @@ export default function DomesticClient({ locale, tours }) {
               <select
                 className="sort-select"
                 value={filters.sortBy}
-                onChange={e => updateFilter('sortBy', e.target.value)}
+                onChange={e => wrappedUpdateFilter('sortBy', e.target.value)}
                 aria-label={t.sortLabel}
               >
                 <option value="">{t.sortDefault}</option>
@@ -215,20 +238,26 @@ export default function DomesticClient({ locale, tours }) {
               </select>
             </div>
             <ActiveFilters items={activeFilters} onClearAll={clearAllFilters} locale={locale} />
-            <div className="tour-grid">
-              {items.length === 0 ? (
-                <div className="no-result">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-muted)', marginBottom: 12 }}>
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="m21 21-4.35-4.35" />
-                    <path d="M8 11h6" />
-                  </svg>
-                  <p>{t.noTours}</p>
-                  <p className="no-result-hint">{t.noToursHint}</p>
-                </div>
-              ) : items.map((t) => (
-                <TourCard key={t.id} locale={locale} tour={t} href={`/${locale}/tours/${t.id}`} />
-              ))}
+            <div className={`tour-grid-wrapper ${isTransitioning ? 'tour-grid--transitioning' : 'tour-grid--loaded'}`}>
+              <div className="tour-grid">
+                {isTransitioning ? (
+                  Array.from({ length: Math.min(items.length || 8, 8) }).map((_, i) => (
+                    <TourCardSkeleton key={`skel-${i}`} />
+                  ))
+                ) : items.length === 0 ? (
+                  <div className="no-result">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-muted)', marginBottom: 12 }}>
+                      <circle cx="11" cy="11" r="8" />
+                      <path d="m21 21-4.35-4.35" />
+                      <path d="M8 11h6" />
+                    </svg>
+                    <p>{t.noTours}</p>
+                    <p className="no-result-hint">{t.noToursHint}</p>
+                  </div>
+                ) : items.map((t) => (
+                  <TourCard key={t.id} locale={locale} tour={t} href={`/${locale}/tours/${t.id}`} />
+                ))}
+              </div>
             </div>
             <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
           </div>
