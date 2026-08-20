@@ -4,6 +4,7 @@ import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
 import { displayField, translateCountry } from '@/lib/i18n';
 import config from '@/data/site-config.json';
+import TourProgram from './TourProgram';
 
 export default function TourDetail({ tour, locale }) {
   if (!tour) return null;
@@ -113,6 +114,11 @@ export default function TourDetail({ tour, locale }) {
           </div>
         </div>
       </div>
+      </div>
+      <div className="tour-detail-body" style={{ paddingTop: 0 }}>
+        <div className="tour-detail-container">
+          <TourProgram itinerary={tour.itinerary} locale={locale} />
+        </div>
       </div>
     </div>
   );

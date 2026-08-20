@@ -16,7 +16,40 @@
     "pdf": "Outbound/HongKong/pdf/BT-HKG61_CX.pdf",
     "desc_en": "Hong Kong-Zhuhai tour, visit 2 cities, see Ngong Ping, Tian Tan Buddha, Che Kung Miu Temple, and Chimelong Ocean Kingdom.",
     "duration_en": "3 days 2 night",
-    "periodText_en": "April - July 2026"
+    "periodText_en": "April - July 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "สนามบินสุวรรณภูมิ • ฮ่องกง",
+        "title_en": "Suvarnabhumi Airport • Hong Kong",
+        "items": [
+          { "time": "21:00", "time_en": "09:00 PM", "description": "นัดหมายที่สนามบินสุวรรณภูมิ ประตู 3", "description_en": "Meet at Suvarnabhumi Airport Gate 3" },
+          { "time": "23:55", "time_en": "11:55 PM", "description": "ออกเดินทางสู่ฮ่องกง โดยสายการบิน Cathay Pacific", "description_en": "Depart to Hong Kong via Cathay Pacific" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "ฮ่องกง • จูไห่",
+        "title_en": "Hong Kong • Zhuhai",
+        "items": [
+          { "time": "06:30", "time_en": "06:30 AM", "description": "เดินทางถึงสนามบินฮ่องกง ผ่านพิธีตรวจคนเข้าเมือง", "description_en": "Arrive at Hong Kong Airport, immigration" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "นั่งกระเช้า Ngong Ping 360 สู่หมู่บ้านนองปิง", "description_en": "Take Ngong Ping 360 cable car to Ngong Ping Village" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "ชมพระใหญ่เทียนถาน วัดแชกงหมิว", "description_en": "Visit Tian Tan Buddha and Che Kung Temple" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ข้ามสะพานฮ่องกง-จูไห่-มาเก๊า สู่เมืองจูไห่", "description_en": "Cross Hong Kong-Zhuhai-Macau Bridge to Zhuhai" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "เข้าพักโรงแรมที่จูไห่", "description_en": "Check-in hotel in Zhuhai" }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "จูไห่ • สนามบินฮ่องกง • กรุงเทพฯ",
+        "title_en": "Zhuhai • Hong Kong Airport • Bangkok",
+        "items": [
+          { "time": "08:00", "time_en": "08:00 AM", "description": " Chimelong Ocean Kingdom สวนสนุกที่ใหญ่ที่สุดในจูไห่", "description_en": "Chimelong Ocean Kingdom, largest theme park in Zhuhai" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ออกเดินทางกลับสนามบินฮ่องกง", "description_en": "Depart back to Hong Kong Airport" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ออกเดินทางกลับกรุงเทพฯ โดยสายการบิน Cathay Pacific", "description_en": "Depart to Bangkok via Cathay Pacific" }
+        ]
+      }
+    ]
   },
   {
     "id": "BT-KIX-NRT_S02_XJ",
@@ -222,7 +255,31 @@
     "pdf": "filepdf_2d1n/EGT-FP-46.pdf",
     "desc_en": "Phitsanulok-Nakhon Sawan tour 2 days 1 night, visit Sawan Park. ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "Feb. - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • พิษณุโลก • นครสวรรค์",
+        "title_en": "Bangkok • Phitsanulok • Nakhon Sawan",
+        "items": [
+          { "time": "06:00", "time_en": "06:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่พิษณุโลก", "description_en": "Meet in Bangkok, depart to Phitsanulok" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "ชมพระพุทธชินราช วัดพระศรีรัตนมหาธาตุ", "description_en": "Visit Phra Phuttha Chinnarat at Wat Phra Si Rattana Mahathat" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "13:30", "time_en": "01:30 PM", "description": "พระราชวังจันทน์ วัดวรนาถบรรพต", "description_en": "Chan Royal Palace, Wat Boranat Banphot" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "เดินทางสู่นครสวรรค์ เข้าพักโรงแรม", "description_en": "Travel to Nakhon Sawan, check-in hotel" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "อุทยานสวรรค์ • กรุงเทพฯ",
+        "title_en": "Sawan Park • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้าที่โรงแรม", "description_en": "Breakfast at hotel" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "เที่ยวอุทยานสวรรค์ ชมวิวเขื่อนเจ้าพระยา", "description_en": "Visit Sawan Park, Chao Phraya Dam viewpoint" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน แล้วเดินทางกลับกรุงเทพฯ", "description_en": "Lunch, then return to Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-44.1",
