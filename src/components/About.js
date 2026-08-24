@@ -1,5 +1,5 @@
 import { assetPath } from '@/lib/assets';
-import ImageModal from './ImageModal';
+import Image from 'next/image';
 
 export default function About({ locale, standalone }) {
   const t = locale === 'th' ? {
@@ -37,10 +37,12 @@ export default function About({ locale, standalone }) {
       <div className="about-card">
         <div className="about-container">
           <div className="about-img">
-            <ImageModal
+            <Image
               src={assetPath('company/companydetail.jpg')}
               alt="Everglow Travel"
-              hintLabel={locale === 'en' ? 'View full size' : 'ดูภาพขยาย'}
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="about-img-object"
             />
           </div>
           <div className="about-text">
