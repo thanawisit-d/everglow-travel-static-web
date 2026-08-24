@@ -20,20 +20,26 @@
 .about-container {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   margin-bottom: 40px;
 }
 
 .about-img {
   position: relative;
-  width: 420px;
+  width: 100%;
   max-width: 100%;
   height: auto;
   aspect-ratio: 4/3;
+  flex-shrink: 0;
 }
 
 .about-img .image-modal-trigger {
   aspect-ratio: 4 / 3;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .about-text h1 {
@@ -102,13 +108,7 @@
   }
 
   .about-container {
-    gap: 40px;
-  }
-
-  .about-img {
-    width: 340px;
-    height: auto;
-    aspect-ratio: 4/3;
+    gap: 30px;
   }
 
   .about-text h1 {
