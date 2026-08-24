@@ -242,6 +242,17 @@
   .contact-social-grid {
     gap: 18px;
   }
+
+  .contact-social-strip {
+    gap: 40px;
+    margin: -40px 0 60px calc(50% - 50vw);
+    padding: 20px 6%;
+  }
+
+  .contact-ribbon-img__img {
+    width: 340px;
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {
