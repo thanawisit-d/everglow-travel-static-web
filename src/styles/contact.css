@@ -249,8 +249,12 @@
     padding: 20px 6%;
   }
 
+  .contact-ribbon-img {
+    width: 200px;
+  }
+
   .contact-ribbon-img__img {
-    width: 150px;
+    width: 100%;
     height: auto;
   }
 

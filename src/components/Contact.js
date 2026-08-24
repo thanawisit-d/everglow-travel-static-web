@@ -88,6 +88,7 @@ function LineSection({ t }) {
           width={631}
           height={1072}
           alt="LINE phone mockup"
+          style={{ width: '100%', height: 'auto' }}
         />
       </div>
     </div>
@@ -135,6 +136,7 @@ export default function ContactCard({ locale }) {
             width={468}
             height={154}
             className="contact-ribbon-img__img"
+            style={{ width: '100%', height: 'auto' }}
           />
         </a>
         <a
@@ -150,6 +152,7 @@ export default function ContactCard({ locale }) {
             width={518}
             height={160}
             className="contact-ribbon-img__img"
+            style={{ width: '100%', height: 'auto' }}
           />
         </a>
       </div>
