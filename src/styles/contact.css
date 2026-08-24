@@ -366,17 +366,11 @@
 
 @media (max-width: 768px) {
   .contact-line-section {
-    padding: 32px 0 260px; /* room for the phone, which drops below the text on mobile */
+    padding: 32px 0 0;
   }
 
   .contact-line-right {
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: 180px;
+    display: none;
   }
 }
 
@@ -387,14 +381,6 @@
 
   .contact-line-banner p {
     font-size: 20px;
-  }
-
-  .contact-line-section {
-    padding-bottom: 220px;
-  }
-
-  .contact-line-right {
-    width: 150px;
   }
 }
 
