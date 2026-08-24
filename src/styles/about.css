@@ -115,7 +115,8 @@
 
   .about-img {
     width: 340px;
-    height: 400px;
+    height: auto;
+    aspect-ratio: 4/3;
   }
 
   .about-text h1 {
@@ -145,7 +146,8 @@
   .about-img {
     width: 100%;
     max-width: 420px;
-    height: 400px;
+    height: auto;
+    aspect-ratio: 4/3;
   }
 
   .about-text h2 {
