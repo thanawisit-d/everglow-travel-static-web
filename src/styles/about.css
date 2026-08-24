@@ -114,8 +114,8 @@
   }
 
   .about-img {
-    width: 320px;
-    height: 380px;
+    width: 340px;
+    height: 400px;
   }
 
   .about-text h1 {
@@ -144,8 +144,8 @@
 
   .about-img {
     width: 100%;
-    max-width: 400px;
-    height: 380px;
+    max-width: 420px;
+    height: 400px;
   }
 
   .about-text h2 {
