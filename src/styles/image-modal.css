@@ -3,8 +3,7 @@
   position: relative;
   display: block;
   width: 100%;
-  max-width: 420px;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   border: none;
   padding: 0;
   margin: 0;
@@ -16,6 +15,8 @@
 
 .image-modal-thumb {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
   transition: transform 0.3s ease;
 }
 
