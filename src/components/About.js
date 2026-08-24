@@ -1,5 +1,5 @@
 import { assetPath } from '@/lib/assets';
-import ImageModal from './ImageModal';
+import Image from 'next/image';
 
 export default function About({ locale, standalone }) {
   const t = locale === 'th' ? {
@@ -35,20 +35,20 @@ export default function About({ locale, standalone }) {
   return (
     <section className="page about-page">
       <div className="about-card">
-        <div className="about-container">
-          <div className="about-img">
-            <ImageModal
-              src={assetPath('company/companydetail.jpg')}
-              alt="Everglow Travel"
-              hintLabel={locale === 'en' ? 'View full size' : 'ดูภาพขยาย'}
-            />
-          </div>
-          <div className="about-text">
-            {standalone ? <h1>{t.title}</h1> : <h2>{t.title}</h2>}
-            <h2>{t.company}</h2>
-            <p>{t.p1}</p>
-            <p>{t.p2}</p>
-          </div>
+        <div className="about-img-full">
+          <Image
+            src={assetPath('company/companydetail.jpg')}
+            alt="Everglow Travel"
+            fill
+            sizes="100vw"
+            className="about-img-full-image"
+          />
+        </div>
+        <div className="about-text">
+          {standalone ? <h1>{t.title}</h1> : <h2>{t.title}</h2>}
+          <h2>{t.company}</h2>
+          <p>{t.p1}</p>
+          <p>{t.p2}</p>
         </div>
         <div className="about-main">
           {t.services.map((s, i) => (
