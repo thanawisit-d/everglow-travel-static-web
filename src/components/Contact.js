@@ -77,6 +77,7 @@ function LineSection({ t }) {
               width={260}
               height={260}
               alt={`LINE QR - ${t.lineId}`}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>
