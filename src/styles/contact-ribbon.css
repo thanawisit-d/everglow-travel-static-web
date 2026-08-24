@@ -11,3 +11,13 @@
   width: min(100%, 520px);
   height: auto;
 }
+
+@media (max-width: 1024px) {
+  .contact-ribbon-img {
+    width: 140px;
+  }
+
+  .contact-ribbon-img__img {
+    width: 100%;
+  }
+}
