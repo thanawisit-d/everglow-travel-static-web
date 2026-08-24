@@ -253,6 +253,10 @@
     width: 200px;
     height: auto;
   }
+
+  .contact-line-right {
+    width: 180px;
+  }
 }
 
 @media (max-width: 768px) {
