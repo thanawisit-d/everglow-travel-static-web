@@ -1,0 +1,192 @@
+/* ========== TOUR PROGRAM ACCORDION ========== */
+.tour-detail-body + .tour-detail-body {
+  padding-top: 0;
+}
+
+.tour-detail-body + .tour-detail-body .tour-detail-container {
+  display: block;
+  grid-template-columns: unset;
+}
+
+.tour-program {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.tour-program__heading {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.tour-program__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---- Accordion Item ---- */
+.tour-program__item {
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.tour-program__item--open {
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Header / Summary ---- */
+.tour-program__header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+
+.tour-program__header:hover {
+  background: #f1f5f9;
+}
+
+.tour-program__header:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -2px;
+}
+
+.tour-program__day-label {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  white-space: nowrap;
+  min-width: 52px;
+}
+
+.tour-program__divider {
+  width: 1px;
+  height: 24px;
+  background: #cbd5e1;
+  align-self: center;
+}
+
+.tour-program__summary {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tour-program__chevron {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.tour-program__chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ---- Content ---- */
+.tour-program__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.tour-program__item--open .tour-program__content {
+  grid-template-rows: 1fr;
+}
+
+.tour-program__items {
+  overflow: hidden;
+}
+
+.tour-program__item--open .tour-program__items {
+  padding: 16px 20px;
+}
+
+.tour-program__row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e5e7eb;
+  align-items: start;
+}
+
+.tour-program__row:last-child {
+  border-bottom: none;
+}
+
+.tour-program__time {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-secondary);
+  white-space: nowrap;
+}
+
+.tour-program__desc {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .tour-program__header {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .tour-program__day-label {
+    font-size: 14px;
+    min-width: 44px;
+  }
+
+  .tour-program__summary {
+    font-size: 13px;
+  }
+
+  .tour-program__item--open .tour-program__items {
+    padding: 12px 16px;
+  }
+
+  .tour-program__row {
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+  }
+
+  .tour-program__time {
+    font-size: 13px;
+  }
+
+  .tour-program__desc {
+    font-size: 13px;
+  }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .tour-program__content {
+    transition: none;
+  }
+
+  .tour-program__chevron {
+    transition: none;
+  }
+}
