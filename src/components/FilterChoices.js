@@ -59,7 +59,7 @@ export default function FilterChoices({ value, onChange, options, placeholder })
   }, [value]);
 
   return (
-    <select ref={selectRef} className="filter-choices-select">
+    <select ref={selectRef} className="filter-choices-select" aria-label={placeholderText}>
       <option value="">{placeholderText}</option>
       {options.map(opt => (
         <option key={opt.value} value={opt.value}>{opt.label}</option>

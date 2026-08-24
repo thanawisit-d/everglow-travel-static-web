@@ -7,6 +7,7 @@ const SWIPE_THRESHOLD = 50;
 
 export default function TourGrid({ showBadge, locale, tours }) {
   const t = config[locale] || config.th;
+  const isEn = locale === 'en';
   const data = tours || [];
   const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
 
@@ -131,6 +132,7 @@ export default function TourGrid({ showBadge, locale, tours }) {
           <button
             className="tour-slider-btn prev"
             onClick={(e) => { e.stopPropagation(); setCurrentIdx(p => p - 1); }}
+            aria-label={isEn ? 'Previous' : 'ก่อนหน้า'}
           >
             &#10094;
           </button>
@@ -139,6 +141,7 @@ export default function TourGrid({ showBadge, locale, tours }) {
           <button
             className="tour-slider-btn next"
             onClick={(e) => { e.stopPropagation(); setCurrentIdx(p => p + 1); }}
+            aria-label={isEn ? 'Next' : 'ถัดไป'}
           >
             &#10095;
           </button>

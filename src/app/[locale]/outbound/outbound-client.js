@@ -277,7 +277,7 @@ export default function OutboundClient({ locale, tours }) {
                 ))}
               </div>
             </div>
-            <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
+            <Pagination currentPage={page} totalPages={totalPages} onPageChange={(p) => { setPage(p); window.scrollTo(0, 0); }} locale={locale} />
           </div>
         </div>
       </div>

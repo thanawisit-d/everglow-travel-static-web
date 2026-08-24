@@ -1,7 +1,8 @@
 'use client';
 
-export default function Pagination({ currentPage, totalPages, onPageChange }) {
+export default function Pagination({ currentPage, totalPages, onPageChange, locale = 'th' }) {
   if (totalPages <= 1) return null;
+  const isEn = locale === 'en';
 
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
@@ -9,14 +10,14 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   }
 
   return (
-    <nav aria-label="Page navigation">
+    <nav aria-label={isEn ? 'Page navigation' : 'การนำทางหน้า'}>
       <ul className="pagination-list">
         <li>
           <button
             className="pagination-btn prev"
             disabled={currentPage <= 1}
             onClick={() => onPageChange(currentPage - 1)}
-            aria-label="Previous"
+            aria-label={isEn ? 'Previous page' : 'หน้าก่อนหน้า'}
           >
             <svg className="pagination-arrow" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7" />
@@ -39,7 +40,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
             className="pagination-btn next"
             disabled={currentPage >= totalPages}
             onClick={() => onPageChange(currentPage + 1)}
-            aria-label="Next"
+            aria-label={isEn ? 'Next page' : 'หน้าถัดไป'}
           >
             <svg className="pagination-arrow" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7" />

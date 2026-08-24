@@ -49,6 +49,7 @@ export default function SearchWidgetEN({ locale = 'en', destinations = [] }) {
               onChange={setDestination}
               placeholder={TEXT.destinationPlaceholder}
               noResultsText="No results found"
+              clearLabel="Clear"
             />
           </div>
         </div>

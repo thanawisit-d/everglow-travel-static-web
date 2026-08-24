@@ -1,7 +1,7 @@
-export default function SkipToContent({ href }) {
+export default function SkipToContent({ href, locale = 'th' }) {
   return (
     <a href={href} className="skip-link">
-      Skip to content
+      {locale === 'en' ? 'Skip to content' : 'ข้ามไปยังเนื้อหา'}
     </a>
   );
 }

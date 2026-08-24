@@ -96,6 +96,7 @@ export default function SearchWidgetTH({ locale = 'th', destinations = { domesti
               value={destination}
               onChange={setDestination}
               placeholder={TEXT.destinationPlaceholder}
+              clearLabel="ล้าง"
             />
           </div>
         </div>

@@ -25,7 +25,7 @@ export default function RootShell({ children }) {
       {gaId && <GoogleAnalytics gaId={gaId} consent={consent.analytics} />}
       {fbId && <FacebookPixel fbId={fbId} consent={consent.marketing} />}
       <CookieConsent lang={locale} onConsent={handleConsent} />
-      <SkipToContent href="#main-content" />
+      <SkipToContent href="#main-content" locale={locale} />
       <div className="min-h-screen w-full relative">
         <div className="absolute inset-0 z-0 bg-gradient-custom" />
         <div id="main-content" className="relative z-[1]">{children}</div>

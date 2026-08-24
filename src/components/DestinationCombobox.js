@@ -10,6 +10,7 @@ export default function DestinationCombobox({
   placeholder,
   id,
   noResultsText = 'ไม่พบผลลัพธ์',
+  clearLabel = 'Clear',
 }) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -132,7 +133,7 @@ export default function DestinationCombobox({
           onKeyDown={handleKeyDown}
         />
         {selected && !isOpen ? (
-          <button type="button" className="combobox-clear" onClick={clearSelection} aria-label="Clear">
+          <button type="button" className="combobox-clear" onClick={clearSelection} aria-label={clearLabel}>
             <X size={15} strokeWidth={2.5} />
           </button>
         ) : (

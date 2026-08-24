@@ -188,7 +188,7 @@ export default function Header({ locale }) {
               if (window.innerWidth > 768) { nav(`/${locale}/domestic`); }
               else { e.stopPropagation(); toggleDropdown('domestic'); }
             }}>{text.domestic}</button>
-            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label="Open submenu">▾</button>
+            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('domestic'); }} aria-label={isEn ? 'Open domestic submenu' : 'เปิดเมนูย่อยทัวร์ในประเทศ'}>▾</button>
             <div className="mega-menu" role="menu">
               <div className="mega-menu-inner">
                 <div className="mega-left">
@@ -240,7 +240,7 @@ export default function Header({ locale }) {
               if (window.innerWidth > 768) { nav(`/${locale}/outbound`); }
               else { e.stopPropagation(); toggleDropdown('outbound'); }
             }}>{text.outbound}</button>
-            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} aria-label="Open submenu">▾</button>
+            <button className="dropdown-arrow" onClick={(e) => { e.stopPropagation(); toggleDropdown('outbound'); }} aria-label={isEn ? 'Open outbound submenu' : 'เปิดเมนูย่อยทัวร์ต่างประเทศ'}>▾</button>
             <div className="mega-menu" role="menu">
               <div className="mega-menu-inner">
                 <div className="mega-left">
