@@ -465,6 +465,6 @@
 /* tablet override — placed after base .contact-line-section rule so it wins */
 @media (max-width: 1024px) {
   .contact-line-section {
-    margin-bottom: 1200px;
+    margin-bottom: 800px;
   }
 }
