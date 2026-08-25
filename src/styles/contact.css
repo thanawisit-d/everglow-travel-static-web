@@ -246,7 +246,7 @@
 
   .contact-social-strip {
     gap: 40px;
-    margin: -40px 0 80px calc(50% - 50vw);
+    margin: 0 0 80px calc(50% - 50vw);
     padding: 20px 6%;
   }
 
