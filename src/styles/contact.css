@@ -259,10 +259,6 @@
     height: auto;
   }
 
-  .contact-line-section {
-    margin-bottom: 1200px;
-  }
-
   .contact-info-section {
     margin: 60px auto 100px;
   }
@@ -463,5 +459,12 @@
     position: static;
     flex: 0 0 55%; /* enlarged phone column — overflows ~5% into the right page padding */
     margin-top: -160px; /* phone sits ~160px higher than the "แอดไลน์" title line */
+  }
+}
+
+/* tablet override — placed after base .contact-line-section rule so it wins */
+@media (max-width: 1024px) {
+  .contact-line-section {
+    margin-bottom: 1200px;
   }
 }
