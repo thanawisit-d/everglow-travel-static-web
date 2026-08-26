@@ -457,8 +457,8 @@
 
   .contact-line-right {
     position: static;
-    flex: 0 0 55%; /* enlarged phone column — overflows ~5% into the right page padding */
-    margin-top: -160px; /* phone sits ~160px higher than the "แอดไลน์" title line */
+    flex: 0 0 55%;
+    margin-top: -40px;
   }
 }
 
