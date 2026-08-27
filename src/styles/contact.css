@@ -94,7 +94,7 @@
   flex-wrap: wrap;
   gap: 100px; /* ribbons pushed apart */
   width: 100vw;
-  margin: -52px 0 90px calc(50% - 50vw); /* pulled up 52px to overlap the LINE section below */
+  margin: -100px 0 90px calc(50% - 50vw); /* pulled up to overlap the LINE section */
   padding: 24px 6% 24px; /* symmetric — ribbons sit vertically centered in the navy banner */
   background: var(--navy);
 }
