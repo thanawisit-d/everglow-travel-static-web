@@ -303,6 +303,11 @@
     grid-template-columns: 1fr;
     gap: 12px;
   }
+
+  .contact-map-wrap {
+    aspect-ratio: 1 / 1;
+    min-height: 280px;
+  }
 }
 
 /* ========== CONTACT — LINE ADD FRIEND (centered, no JS) ========== */
