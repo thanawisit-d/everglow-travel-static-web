@@ -413,7 +413,8 @@
   .contact-line-section {
     display: flex;
     align-items: flex-start;
-    gap: 0; /* measured: banner's right edge and the phone's left edge are ~0.2% apart — effectively touching */
+    gap: 0;
+    padding: 60px 0 0;
     padding-right: 0;
   }
 
