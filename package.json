@@ -9,11 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@line/bot-sdk": "^11.2.0",
+    "@types/node": "^26.4.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
     "choices.js": "^11.2.3",
     "lucide-react": "^1.21.0",
     "next": "^16.3.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
