@@ -62,7 +62,12 @@ async function handleEvent(event: {
         await replyMessage(event.replyToken, [{ type: 'text', text: reply }]);
       }
 
-      if (lineConfig.adminNotificationEnabled && userId && userId !== env.adminUserId) {
+      if (
+        lineConfig.adminNotificationEnabled &&
+        env.adminUserId &&
+        userId &&
+        userId !== env.adminUserId
+      ) {
         const profileName = 'customer';
         await pushMessage(env.adminUserId, [
           {
