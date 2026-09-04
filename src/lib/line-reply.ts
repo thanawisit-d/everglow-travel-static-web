@@ -55,6 +55,22 @@ export function detectIntent(text: string): IntentResult {
     }
   }
 
+  const promotionWords = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
+  for (const kw of promotionWords) {
+    if (t.includes(kw)) {
+      const parsed = parseSearchText(
+        text.replace(/โปรโมชั่น|โปร|ลดราคา/gi, '').trim(),
+      );
+
+      return {
+        intent: 'promotionSearch',
+        keyword: parsed.keyword,
+        maxPrice: parsed.maxPrice,
+        days: parsed.days,
+      };
+    }
+  }
+
   if (t.length > 1) {
     const parsed = parseSearchText(text);
 
@@ -126,6 +142,47 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
         return `${i + 1}. ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
       });
       return `ตัวอย่างราคาทัวร์:\n${lines.join('\n')}`;
+    }
+
+    case 'promotionSearch': {
+      const keyword = result.keyword || '';
+
+      let tours = keyword ? searchTours(keyword, locale) : getTours(locale);
+
+      // กรองจำนวนวัน (ถ้ามี)
+      if (result.days) {
+        tours = tours.filter((tour) => {
+          const match = tour.duration.match(/^(\d+)/);
+          const days = match ? Number(match[1]) : undefined;
+          return days === result.days;
+        });
+      }
+
+      // กรองงบประมาณ (ถ้ามี)
+      if (result.maxPrice) {
+        const max = result.maxPrice;
+        tours = tours.filter((tour) => toNumber(tour.price) <= max);
+      }
+
+      // เรียงจากราคาถูกที่สุด
+      tours = [...tours].sort((a, b) => toNumber(a.price) - toNumber(b.price));
+
+      if (tours.length === 0) {
+        const conditions: string[] = [];
+        if (keyword) conditions.push(`"${keyword}"`);
+        if (result.maxPrice) conditions.push(`ไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
+
+        return `ยังไม่มีโปรโมชั่น ${conditions.join(' ')} ในขณะนี้ค่ะ`;
+      }
+
+      const lines = tours.slice(0, 5).map((tour, i) => {
+        const name = tourCountryLabel(tour, locale);
+        return `${i + 1}. 🔥 ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
+      });
+
+      const title = keyword.length > 0 ? `🔥 โปรโมชั่น ${keyword}` : '🔥 โปรโมชั่นแนะนำ';
+
+      return `${title}\nพบ ${tours.length} รายการ\n\n${lines.join('\n')}`;
     }
 
     case 'contactAdmin':
