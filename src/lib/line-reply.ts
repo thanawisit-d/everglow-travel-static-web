@@ -4,11 +4,31 @@ import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
 import { searchTours, getTours } from '@/lib/tours-data';
 import { tourCountryLabel } from '@/types/tour';
-import { formatPrice } from '@/utils/price';
+import { formatPrice, toNumber } from '@/utils/price';
 
 const GREETING_KEYWORDS = ['สวัสดี', 'hello', 'hi', 'หวัดดี', 'สวัสดีครับ', 'สวัสดีค่ะ'];
 const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'แพง', 'ถูก'];
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
+
+function parseSearchText(text: string) {
+  const input = text.trim();
+
+  // หาเลข 4–6 หลัก เช่น 3000, 15900, 30000
+  const priceMatch = input.match(/\d{4,6}/);
+  const maxPrice = priceMatch ? Number(priceMatch[0]) : undefined;
+
+  // ลบคำว่า "ทัวร์" และตัวเลขออก เหลือชื่อประเทศ/เมือง
+  const keyword = input
+    .replace(/ทัวร์/gi, '')
+    .replace(/\d{4,6}/g, '')
+    .replace(/ไม่เกิน|ต่ำกว่า|งบ/gi, '')
+    .trim();
+
+  return {
+    keyword,
+    maxPrice,
+  };
+}
 
 export function detectIntent(text: string): IntentResult {
   const t = (text || '').toLowerCase().trim();
@@ -29,7 +49,15 @@ export function detectIntent(text: string): IntentResult {
     }
   }
 
-  if (t.length > 1) return { intent: 'searchTour', keyword: text.trim() };
+  if (t.length > 1) {
+    const parsed = parseSearchText(text);
+
+    return {
+      intent: 'searchTour',
+      keyword: parsed.keyword,
+      maxPrice: parsed.maxPrice,
+    };
+  }
 
   return { intent: 'unknown' };
 }
@@ -41,17 +69,37 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
 
     case 'searchTour': {
       const keyword = result.keyword || '';
-      const tours = keyword ? searchTours(keyword, locale) : getTours(locale);
-      if (tours.length === 0) {
-        return locale === 'en'
-          ? `No tours found for "${keyword}". Try another destination.`
-          : `ไม่พบทัวร์ "${keyword}" ลองค้นหาปลายทางอื่นนะคะ`;
+      const maxPrice = result.maxPrice;
+
+      // ค้นหาตาม keyword ก่อน
+      let tours = keyword ? searchTours(keyword, locale) : getTours(locale);
+
+      // ถ้ามีงบ ให้กรองราคา
+      if (maxPrice !== undefined) {
+        tours = tours.filter((tour) => toNumber(tour.price) <= maxPrice);
       }
+
+      if (tours.length === 0) {
+        if (maxPrice !== undefined) {
+          return `ไม่พบทัวร์ "${keyword}" ที่ราคาไม่เกิน ${formatPrice(maxPrice)} บาท ลองเพิ่มงบหรือค้นหาปลายทางอื่นนะคะ`;
+        }
+
+        return `ไม่พบทัวร์ "${keyword}" ลองค้นหาปลายทางอื่นนะคะ`;
+      }
+
       const lines = tours.slice(0, 5).map((tour, i) => {
         const name = tourCountryLabel(tour, locale);
         return `${i + 1}. ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
       });
-      return `พบ ${tours.length} รายการ สำหรับ "${keyword}":\n${lines.join('\n')}`;
+
+      const header =
+        maxPrice !== undefined
+          ? `พบ ${tours.length} รายการ สำหรับ "${keyword}" ไม่เกิน ${formatPrice(maxPrice)} บาท`
+          : `พบ ${tours.length} รายการ สำหรับ "${keyword}"`;
+
+      const footer = tours.length > 5 ? `\n\nแสดง 5 จาก ${tours.length} รายการ` : '';
+
+      return `${header}:\n${lines.join('\n')}${footer}`;
     }
 
     case 'priceSearch': {
