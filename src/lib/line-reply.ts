@@ -17,16 +17,22 @@ function parseSearchText(text: string) {
   const priceMatch = input.match(/\d{4,6}/);
   const maxPrice = priceMatch ? Number(priceMatch[0]) : undefined;
 
-  // ลบคำว่า "ทัวร์" และตัวเลขออก เหลือชื่อประเทศ/เมือง
+  // หาจำนวนวัน เช่น "5 วัน", "8วัน"
+  const dayMatch = text.match(/(\d+)\s*วัน/);
+  const days = dayMatch ? Number(dayMatch[1]) : undefined;
+
+  // ลบคำว่า "ทัวร์", ตัวเลข, และ "X วัน" ออก เหลือชื่อประเทศ/เมือง
   const keyword = input
     .replace(/ทัวร์/gi, '')
     .replace(/\d{4,6}/g, '')
+    .replace(/\d+\s*วัน/g, '')
     .replace(/ไม่เกิน|ต่ำกว่า|งบ/gi, '')
     .trim();
 
   return {
     keyword,
     maxPrice,
+    days,
   };
 }
 
@@ -56,6 +62,7 @@ export function detectIntent(text: string): IntentResult {
       intent: 'searchTour',
       keyword: parsed.keyword,
       maxPrice: parsed.maxPrice,
+      days: parsed.days,
     };
   }
 
@@ -69,22 +76,31 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
 
     case 'searchTour': {
       const keyword = result.keyword || '';
-      const maxPrice = result.maxPrice;
 
-      // ค้นหาตาม keyword ก่อน
       let tours = keyword ? searchTours(keyword, locale) : getTours(locale);
 
-      // ถ้ามีงบ ให้กรองราคา
-      if (maxPrice !== undefined) {
-        tours = tours.filter((tour) => toNumber(tour.price) <= maxPrice);
+      // กรองตามจำนวนวัน
+      if (result.days) {
+        tours = tours.filter((tour) => {
+          const match = tour.duration.match(/^(\d+)/);
+          const days = match ? Number(match[1]) : undefined;
+          return days === result.days;
+        });
+      }
+
+      // กรองตามงบประมาณ
+      if (result.maxPrice) {
+        const max = result.maxPrice;
+        tours = tours.filter((tour) => toNumber(tour.price) <= max);
       }
 
       if (tours.length === 0) {
-        if (maxPrice !== undefined) {
-          return `ไม่พบทัวร์ "${keyword}" ที่ราคาไม่เกิน ${formatPrice(maxPrice)} บาท ลองเพิ่มงบหรือค้นหาปลายทางอื่นนะคะ`;
-        }
+        const conditions: string[] = [];
+        if (keyword) conditions.push(`"${keyword}"`);
+        if (result.days) conditions.push(`${result.days} วัน`);
+        if (result.maxPrice) conditions.push(`ราคาไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
 
-        return `ไม่พบทัวร์ "${keyword}" ลองค้นหาปลายทางอื่นนะคะ`;
+        return `ไม่พบทัวร์ ${conditions.join(' ')} ลองเพิ่มงบหรือค้นหาปลายทางอื่นนะคะ`;
       }
 
       const lines = tours.slice(0, 5).map((tour, i) => {
@@ -92,11 +108,12 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
         return `${i + 1}. ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
       });
 
-      const header =
-        maxPrice !== undefined
-          ? `พบ ${tours.length} รายการ สำหรับ "${keyword}" ไม่เกิน ${formatPrice(maxPrice)} บาท`
-          : `พบ ${tours.length} รายการ สำหรับ "${keyword}"`;
+      const conditions: string[] = [];
+      if (keyword) conditions.push(`"${keyword}"`);
+      if (result.days) conditions.push(`${result.days} วัน`);
+      if (result.maxPrice) conditions.push(`ไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
 
+      const header = `พบ ${tours.length} รายการ สำหรับ ${conditions.join(' • ')}`;
       const footer = tours.length > 5 ? `\n\nแสดง 5 จาก ${tours.length} รายการ` : '';
 
       return `${header}:\n${lines.join('\n')}${footer}`;
