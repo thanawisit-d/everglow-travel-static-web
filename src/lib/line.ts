@@ -2,6 +2,7 @@ import { messagingApi, validateSignature } from '@line/bot-sdk';
 
 import { env } from '@/lib/env';
 import { buildQuickReply } from '@/lib/line-quick-reply';
+import type { ReplyPayload } from '@/types/line';
 
 let client: messagingApi.MessagingApiClient | null = null;
 
@@ -38,6 +39,33 @@ export async function replyMessage(
   await getClient().replyMessage({
     replyToken,
     messages: withQuickReply(messages) as never,
+  });
+}
+
+// Send from a ReplyPayload. Flex first (no quick reply), then text with quick reply.
+export async function replyWithPayload(
+  replyToken: string,
+  payload: ReplyPayload,
+): Promise<void> {
+  const messages: LineMessage[] = [];
+
+  if (payload.flex) {
+    messages.push(payload.flex as unknown as LineMessage);
+  }
+
+  if (payload.text) {
+    messages.push({
+      type: 'text',
+      text: payload.text,
+      quickReply: buildQuickReply(),
+    });
+  }
+
+  if (messages.length === 0) return;
+
+  await getClient().replyMessage({
+    replyToken,
+    messages: messages as never,
   });
 }
 

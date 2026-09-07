@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 import { env } from '@/lib/env';
 import { lineConfig } from '@/lib/line-config';
 import { logger } from '@/lib/logger';
-import { isValidSignature, replyMessage, pushMessage } from '@/lib/line';
+import { isValidSignature, replyMessage, replyWithPayload, pushMessage } from '@/lib/line';
 import { detectIntent, buildReply } from '@/lib/line-reply';
 
 export const runtime = 'nodejs';
@@ -59,7 +59,7 @@ async function handleEvent(event: {
       const reply = buildReply(result, lineConfig.defaultLocale);
 
       if (event.replyToken) {
-        await replyMessage(event.replyToken, [{ type: 'text', text: reply }]);
+        await replyWithPayload(event.replyToken, reply);
       }
 
       if (

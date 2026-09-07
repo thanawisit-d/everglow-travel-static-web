@@ -1,10 +1,11 @@
 import type { Intent } from '@/types/intent';
-import type { IntentResult } from '@/types/line';
+import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
 import { searchTours, getTours } from '@/lib/tours-data';
 import { tourCountryLabel } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
+import { buildTourFlex, buildTourCarousel } from '@/lib/line-flex';
 
 const GREETING_KEYWORDS = ['สวัสดี', 'hello', 'hi', 'หวัดดี', 'สวัสดีครับ', 'สวัสดีค่ะ'];
 const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'ไม่เกิน', 'ต่ำกว่า', 'แพง', 'ถูก'];
@@ -131,10 +132,10 @@ export function detectIntent(text: string): IntentResult {
   return { intent: 'unknown' };
 }
 
-export function buildReply(result: IntentResult, locale: Locale = 'th'): string {
+export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPayload {
   switch (result.intent) {
     case 'greeting':
-      return locale === 'en' ? lineConfig.welcomeMessageEn : lineConfig.welcomeMessage;
+      return { text: locale === 'en' ? lineConfig.welcomeMessageEn : lineConfig.welcomeMessage };
 
     case 'searchTour': {
       const keyword = result.keyword || '';
@@ -169,13 +170,10 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
         if (result.days) conditions.push(`${result.days} วัน`);
         if (result.maxPrice) conditions.push(`ราคาไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
 
-        return `ไม่พบทัวร์ ${conditions.join(' ')} ลองเพิ่มงบหรือค้นหาปลายทางอื่นนะคะ`;
+        return {
+          text: `ไม่พบทัวร์ ${conditions.join(' ')} ลองเพิ่มงบหรือค้นหาปลายทางอื่นนะคะ`,
+        };
       }
-
-      const lines = tours.slice(0, 5).map((tour, i) => {
-        const name = tourCountryLabel(tour, locale);
-        return `${i + 1}. ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
-      });
 
       const conditions: string[] = [];
       if (keyword) conditions.push(`ประเทศ "${keyword}"`);
@@ -186,7 +184,10 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
       const header = `พบ ${tours.length} รายการ สำหรับ ${conditions.join(' • ')}`;
       const footer = tours.length > 5 ? `\n\nแสดง 5 จาก ${tours.length} รายการ` : '';
 
-      return `${header}:\n${lines.join('\n')}${footer}`;
+      return {
+        flex: buildTourCarousel(tours, locale),
+        text: `${header}${footer}`,
+      };
     }
 
     case 'priceSearch': {
@@ -208,7 +209,7 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
         ? `ทัวร์ไม่เกิน ${formatPrice(result.maxPrice)} บาท แนะนำ:`
         : 'ตัวอย่างราคาทัวร์:';
 
-      return `${title}\n${lines.join('\n')}`;
+      return { text: `${title}\n${lines.join('\n')}` };
     }
 
     case 'promotionSearch': {
@@ -245,27 +246,30 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
         if (keyword) conditions.push(`"${keyword}"`);
         if (result.maxPrice) conditions.push(`ไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
 
-        return `ยังไม่มีโปรโมชั่น ${conditions.join(' ')} ในขณะนี้ค่ะ`;
+        return {
+          text: `ยังไม่มีโปรโมชั่น ${conditions.join(' ')} ในขณะนี้ค่ะ`,
+        };
       }
 
-      const lines = tours.slice(0, 5).map((tour, i) => {
-        const name = tourCountryLabel(tour, locale);
-        return `${i + 1}. 🔥 ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
-      });
-
       const title = keyword.length > 0 ? `🔥 โปรโมชั่น ${keyword}` : '🔥 โปรโมชั่นแนะนำ';
+      const footer = tours.length > 5 ? `\n\nแสดง 5 จาก ${tours.length} รายการ` : '';
 
-      return `${title}\nพบ ${tours.length} รายการ\n\n${lines.join('\n')}`;
+      return {
+        flex: buildTourCarousel(tours, locale),
+        text: `${title}\nพบ ${tours.length} รายการ${footer}`,
+      };
     }
 
     case 'contactAdmin':
-      return 'กรุณารอสักครู่ค่ะ เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุด 🙏';
+      return { text: 'กรุณารอสักครู่ค่ะ เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุด 🙏' };
 
     default:
-      return locale === 'en' ? lineConfig.unknownReplyEn : lineConfig.unknownReply;
+      return {
+        text: locale === 'en' ? lineConfig.unknownReplyEn : lineConfig.unknownReply,
+      };
   }
 }
 
-export function createToursMessage(locale: Locale = 'th'): string {
+export function createToursMessage(locale: Locale = 'th'): ReplyPayload {
   return buildReply({ intent: 'searchTour', keyword: '' }, locale);
 }

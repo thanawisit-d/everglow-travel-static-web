@@ -1,4 +1,5 @@
 import type { Intent } from './intent';
+import type { messagingApi } from '@line/bot-sdk';
 
 export interface IntentResult {
   intent: Intent;
@@ -9,6 +10,7 @@ export interface IntentResult {
 }
 
 export interface ReplyPayload {
-  text: string;
+  text?: string;
+  flex?: messagingApi.FlexMessage;
   quickReplyItems?: string[];
 }
