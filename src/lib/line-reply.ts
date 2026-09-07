@@ -7,8 +7,9 @@ import { tourCountryLabel } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
 
 const GREETING_KEYWORDS = ['สวัสดี', 'hello', 'hi', 'หวัดดี', 'สวัสดีครับ', 'สวัสดีค่ะ'];
-const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'แพง', 'ถูก'];
+const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'ไม่เกิน', 'ต่ำกว่า', 'แพง', 'ถูก'];
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
+const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
 
 const CITY_KEYWORDS = [
   'โตเกียว',
@@ -21,6 +22,22 @@ const CITY_KEYWORDS = [
   'ไทเป',
   'ฮ่องกง',
   'เซี่ยงไฮ้',
+];
+
+const STOP_WORDS = [
+  'อยากไป',
+  'ไป',
+  'เที่ยว',
+  'หา',
+  'มี',
+  'ไหม',
+  'หน่อย',
+  'ครับ',
+  'ค่ะ',
+  'ที',
+  'ให้',
+  'ดู',
+  'ขอ',
 ];
 
 function parseSearchText(text: string) {
@@ -37,14 +54,24 @@ function parseSearchText(text: string) {
   // หาชื่อเมือง เช่น โตเกียว, โอซาก้า, โซล
   const city = CITY_KEYWORDS.find((name) => input.includes(name));
 
-  // ลบคำว่า "ทัวร์", ตัวเลข, "X วัน", และชื่อเมืองออก เหลือชื่อประเทศ/เมือง
-  const keyword = input
+  // ลบคำฟุ่มเฟือย ออกจาก keyword เหลือชื่อประเทศ/เมือง
+  let keyword = input
     .replace(/ทัวร์/gi, '')
+    .replace(/โปรโมชั่น|โปร|ลดราคา/gi, '')
     .replace(/\d{4,6}/g, '')
     .replace(/\d+\s*วัน/g, '')
-    .replace(/ไม่เกิน|ต่ำกว่า|งบ/gi, '')
     .replace(city ?? '', '')
     .trim();
+
+  for (const word of [...STOP_WORDS].sort((a, b) => b.length - a.length)) {
+    keyword = keyword.replace(new RegExp(word, 'gi'), ' ');
+  }
+
+  for (const word of PRICE_KEYWORDS) {
+    keyword = keyword.replace(new RegExp(word, 'gi'), ' ');
+  }
+
+  keyword = keyword.replace(/\s+/g, ' ').trim();
 
   return {
     keyword,
@@ -67,38 +94,37 @@ export function detectIntent(text: string): IntentResult {
     if (t.includes(kw.toLowerCase())) return { intent: 'contactAdmin' };
   }
 
-  for (const kw of PRICE_KEYWORDS) {
-    if (t.includes(kw.toLowerCase())) {
-      return { intent: 'priceSearch', keyword: 'price' };
-    }
+  const parsed = parseSearchText(text);
+  const containsPromotion = PROMOTION_KEYWORDS.some((kw) => t.includes(kw));
+  const containsPriceKeyword = PRICE_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()));
+
+  // 1. Promotion มาก่อน
+  if (containsPromotion) {
+    return {
+      intent: 'promotionSearch',
+      keyword: parsed.keyword,
+      city: parsed.city,
+      maxPrice: parsed.maxPrice,
+      days: parsed.days,
+    };
   }
 
-  const promotionWords = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
-  for (const kw of promotionWords) {
-    if (t.includes(kw)) {
-      const parsed = parseSearchText(
-        text.replace(/โปรโมชั่น|โปร|ลดราคา/gi, '').trim(),
-      );
-
-      return {
-        intent: 'promotionSearch',
-        keyword: parsed.keyword,
-        maxPrice: parsed.maxPrice,
-        days: parsed.days,
-        city: parsed.city,
-      };
-    }
-  }
-
-  if (t.length > 1) {
-    const parsed = parseSearchText(text);
-
+  // 2. ถ้ามี keyword หรือ city ให้ถือว่าเป็น Search Tour
+  if (parsed.keyword || parsed.city) {
     return {
       intent: 'searchTour',
       keyword: parsed.keyword,
+      city: parsed.city,
       maxPrice: parsed.maxPrice,
       days: parsed.days,
-      city: parsed.city,
+    };
+  }
+
+  // 3. ไม่มีปลายทาง แต่มีคำเกี่ยวกับราคา
+  if (containsPriceKeyword) {
+    return {
+      intent: 'priceSearch',
+      maxPrice: parsed.maxPrice,
     };
   }
 
@@ -164,12 +190,25 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
     }
 
     case 'priceSearch': {
-      const tours = getTours(locale).slice(0, 5);
-      const lines = tours.map((tour, i) => {
+      let tours = getTours(locale);
+
+      if (result.maxPrice) {
+        const max = result.maxPrice;
+        tours = tours.filter((tour) => toNumber(tour.price) <= max);
+      }
+
+      tours = [...tours].sort((a, b) => toNumber(a.price) - toNumber(b.price));
+
+      const lines = tours.slice(0, 5).map((tour, i) => {
         const name = tourCountryLabel(tour, locale);
         return `${i + 1}. ${name} · ${tour.duration} · ${formatPrice(tour.price)} บาท (${tour.id})`;
       });
-      return `ตัวอย่างราคาทัวร์:\n${lines.join('\n')}`;
+
+      const title = result.maxPrice
+        ? `ทัวร์ไม่เกิน ${formatPrice(result.maxPrice)} บาท แนะนำ:`
+        : 'ตัวอย่างราคาทัวร์:';
+
+      return `${title}\n${lines.join('\n')}`;
     }
 
     case 'promotionSearch': {
