@@ -10,6 +10,19 @@ const GREETING_KEYWORDS = ['สวัสดี', 'hello', 'hi', 'หวัดด
 const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'แพง', 'ถูก'];
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
 
+const CITY_KEYWORDS = [
+  'โตเกียว',
+  'โอซาก้า',
+  'ฟุกุโอกะ',
+  'ฮอกไกโด',
+  'ซัปโปโร',
+  'โซล',
+  'ปูซาน',
+  'ไทเป',
+  'ฮ่องกง',
+  'เซี่ยงไฮ้',
+];
+
 function parseSearchText(text: string) {
   const input = text.trim();
 
@@ -21,16 +34,21 @@ function parseSearchText(text: string) {
   const dayMatch = text.match(/(\d+)\s*วัน/);
   const days = dayMatch ? Number(dayMatch[1]) : undefined;
 
-  // ลบคำว่า "ทัวร์", ตัวเลข, และ "X วัน" ออก เหลือชื่อประเทศ/เมือง
+  // หาชื่อเมือง เช่น โตเกียว, โอซาก้า, โซล
+  const city = CITY_KEYWORDS.find((name) => input.includes(name));
+
+  // ลบคำว่า "ทัวร์", ตัวเลข, "X วัน", และชื่อเมืองออก เหลือชื่อประเทศ/เมือง
   const keyword = input
     .replace(/ทัวร์/gi, '')
     .replace(/\d{4,6}/g, '')
     .replace(/\d+\s*วัน/g, '')
     .replace(/ไม่เกิน|ต่ำกว่า|งบ/gi, '')
+    .replace(city ?? '', '')
     .trim();
 
   return {
     keyword,
+    city,
     maxPrice,
     days,
   };
@@ -67,6 +85,7 @@ export function detectIntent(text: string): IntentResult {
         keyword: parsed.keyword,
         maxPrice: parsed.maxPrice,
         days: parsed.days,
+        city: parsed.city,
       };
     }
   }
@@ -79,6 +98,7 @@ export function detectIntent(text: string): IntentResult {
       keyword: parsed.keyword,
       maxPrice: parsed.maxPrice,
       days: parsed.days,
+      city: parsed.city,
     };
   }
 
@@ -94,6 +114,12 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
       const keyword = result.keyword || '';
 
       let tours = keyword ? searchTours(keyword, locale) : getTours(locale);
+
+      // กรองตามเมือง
+      if (result.city) {
+        const city = result.city;
+        tours = tours.filter((tour) => tour.city?.toLowerCase().includes(city.toLowerCase()));
+      }
 
       // กรองตามจำนวนวัน
       if (result.days) {
@@ -112,7 +138,8 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
 
       if (tours.length === 0) {
         const conditions: string[] = [];
-        if (keyword) conditions.push(`"${keyword}"`);
+        if (keyword) conditions.push(`ประเทศ "${keyword}"`);
+        if (result.city) conditions.push(`เมือง "${result.city}"`);
         if (result.days) conditions.push(`${result.days} วัน`);
         if (result.maxPrice) conditions.push(`ราคาไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
 
@@ -125,7 +152,8 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
       });
 
       const conditions: string[] = [];
-      if (keyword) conditions.push(`"${keyword}"`);
+      if (keyword) conditions.push(`ประเทศ "${keyword}"`);
+      if (result.city) conditions.push(`เมือง "${result.city}"`);
       if (result.days) conditions.push(`${result.days} วัน`);
       if (result.maxPrice) conditions.push(`ไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
 
@@ -148,6 +176,12 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): string 
       const keyword = result.keyword || '';
 
       let tours = keyword ? searchTours(keyword, locale) : getTours(locale);
+
+      // กรองตามเมือง
+      if (result.city) {
+        const city = result.city;
+        tours = tours.filter((tour) => tour.city?.toLowerCase().includes(city.toLowerCase()));
+      }
 
       // กรองจำนวนวัน (ถ้ามี)
       if (result.days) {
