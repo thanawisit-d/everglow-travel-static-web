@@ -113,7 +113,7 @@ export function buildTourCarousel(
   locale: "th" | "en" = "th"
 ): messagingApi.FlexMessage {
   if (tours.length === 0) {
-    throw new Error("buildTourCarousel: no tours provided");
+    throw new Error('Cannot build carousel with zero tours.');
   }
 
   if (tours.length === 1) {

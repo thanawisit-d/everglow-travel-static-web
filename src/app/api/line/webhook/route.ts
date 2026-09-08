@@ -3,18 +3,19 @@ import type { NextRequest } from 'next/server';
 
 import { env } from '@/lib/env';
 import { lineConfig } from '@/lib/line-config';
-import { logger } from '@/lib/logger';
+import { logger, newCorrelationId } from '@/lib/logger';
 import { isValidSignature, replyMessage, replyWithPayload, pushMessage } from '@/lib/line';
 import { detectIntent, buildReply } from '@/lib/line-reply';
 
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
+  const reqId = newCorrelationId();
   const rawBody = await request.text();
   const signature = request.headers.get('x-line-signature');
 
   if (!isValidSignature(rawBody, signature)) {
-    logger.warn('Invalid LINE signature');
+    logger.warn(`[${reqId}] Invalid LINE signature`);
     return NextResponse.json({ success: false, error: 'Invalid signature' }, { status: 401 });
   }
 
@@ -22,32 +23,35 @@ export async function POST(request: NextRequest) {
   try {
     body = JSON.parse(rawBody);
   } catch (err) {
-    logger.error('Failed to parse webhook body', err);
+    logger.error(`[${reqId}] Failed to parse webhook body`, err);
     return NextResponse.json({ success: false, error: 'Bad request' }, { status: 400 });
   }
 
   const events = body?.events ?? [];
-  logger.info('Webhook received', { events: events.length });
+  logger.info(`[${reqId}] Webhook received`, { events: events.length });
 
   for (const rawEvent of events) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const event = rawEvent as any;
     try {
-      await handleEvent(event);
+      await handleEvent(event, reqId);
     } catch (err) {
-      logger.error('Failed to process event', err);
+      logger.error(`[${reqId}] Failed to process event`, err);
     }
   }
 
   return new Response('ok', { status: 200 });
 }
 
-async function handleEvent(event: {
-  type: string;
-  replyToken?: string;
-  source?: { userId?: string; type?: string };
-  message?: { type?: string; text?: string };
-}) {
+async function handleEvent(
+  event: {
+    type: string;
+    replyToken?: string;
+    source?: { userId?: string; type?: string };
+    message?: { type?: string; text?: string };
+  },
+  reqId: string,
+) {
   switch (event.type) {
     case 'message': {
       if (event.message?.type !== 'text' || !event.message.text) return;
@@ -57,6 +61,11 @@ async function handleEvent(event: {
 
       const result = detectIntent(text);
       const reply = buildReply(result, lineConfig.defaultLocale);
+
+      logger.info(`[${reqId}] Intent resolved`, {
+        intent: result.intent,
+        hasFlex: Boolean(reply.flex),
+      });
 
       if (event.replyToken) {
         await replyWithPayload(event.replyToken, reply);
@@ -85,7 +94,7 @@ async function handleEvent(event: {
           { type: 'text', text: lineConfig.welcomeMessage },
         ]);
       }
-      logger.info('New follower', { userId: event.source?.userId });
+      logger.info(`[${reqId}] New follower`, { userId: event.source?.userId });
       return;
     }
 

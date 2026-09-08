@@ -2,6 +2,7 @@ import { messagingApi, validateSignature } from '@line/bot-sdk';
 
 import { env } from '@/lib/env';
 import { buildQuickReply } from '@/lib/line-quick-reply';
+import { logLineError } from '@/lib/logger';
 import type { ReplyPayload } from '@/types/line';
 
 let client: messagingApi.MessagingApiClient | null = null;
@@ -43,30 +44,39 @@ export async function replyMessage(
 }
 
 // Send from a ReplyPayload. Flex first (no quick reply), then text with quick reply.
+// If Flex fails for any reason, fall back to plain text so the user always gets an answer.
 export async function replyWithPayload(
   replyToken: string,
   payload: ReplyPayload,
 ): Promise<void> {
-  const messages: LineMessage[] = [];
+  try {
+    const messages: LineMessage[] = [];
 
-  if (payload.flex) {
-    messages.push(payload.flex as unknown as LineMessage);
-  }
+    // Only push Flex when it has actual contents (guards empty carousel, etc.)
+    if (payload.flex?.contents) {
+      messages.push(payload.flex as unknown as LineMessage);
+    }
 
-  if (payload.text) {
-    messages.push({
-      type: 'text',
-      text: payload.text,
-      quickReply: buildQuickReply(),
+    if (payload.text) {
+      messages.push({
+        type: 'text',
+        text: payload.text,
+        quickReply: buildQuickReply(),
+      });
+    }
+
+    if (messages.length === 0) return;
+
+    await getClient().replyMessage({
+      replyToken,
+      messages: messages as never,
     });
+  } catch (error) {
+    logLineError('LINE Flex reply failed', error);
+
+    const fallbackText = payload.text || 'ขออภัย ระบบไม่สามารถแสดงข้อมูลทัวร์ได้ในขณะนี้ 🙏';
+    await replyMessage(replyToken, [{ type: 'text', text: fallbackText }]);
   }
-
-  if (messages.length === 0) return;
-
-  await getClient().replyMessage({
-    replyToken,
-    messages: messages as never,
-  });
 }
 
 export async function pushMessage(userId: string, messages: LineMessage[]): Promise<void> {
