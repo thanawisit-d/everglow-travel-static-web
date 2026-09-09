@@ -18,6 +18,10 @@ export function getTourById(id: string, locale: Locale = 'th'): Tour | undefined
   return cache[locale].find((t) => t.id === id);
 }
 
+export function getPopularTours(locale: Locale = 'th'): Tour[] {
+  return cache[locale].filter((t) => t.popular === true).slice(0, 5);
+}
+
 export function searchTours(keyword: string, locale: Locale = 'th'): Tour[] {
   const q = keyword.trim().toLowerCase();
   if (!q) return getTours(locale);

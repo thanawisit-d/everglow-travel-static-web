@@ -21,6 +21,7 @@ export interface ItineraryDay {
 export interface Tour {
   id: string;
   type: TourType;
+  popular?: boolean;
   country?: string | string[];
   city?: string;
   province?: string;

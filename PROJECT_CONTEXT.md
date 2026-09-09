@@ -211,12 +211,16 @@ Never mutate cached data.
 
 1. greeting
 2. contactAdmin
-3. promotionSearch
-4. searchTour
-5. priceSearch
-6. unknown
+3. monthlyProgram
+4. promotionSearch
+5. searchTour
+6. priceSearch
+7. unknown
 
 Special case: a message beginning with `^` is treated as `priceSearch` (checked before `contactAdmin`).
+
+The Rich Menu button "โปรแกรมประจำเดือน" sends the message `โปรแกรมประจำเดือน` into the bot,
+which is detected as `monthlyProgram` via `MONTHLY_PROGRAM_KEYWORDS`.
 
 Never change this priority without updating this document to match `detectIntent()`.
 

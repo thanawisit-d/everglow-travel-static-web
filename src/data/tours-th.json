@@ -54,6 +54,7 @@
   {
     "id": "BT-KIX-NRT_S02_XJ",
     "type": "outbound",
+    "popular": true,
     "country": "ญี่ปุ่น",
     "image": "Populartours/JapanBT-KIX-NRT_S02_XJ.jpg",
     "price": "36,999",
@@ -739,6 +740,7 @@
   {
     "id": "BT-DYG25_FD",
     "type": "outbound",
+    "popular": true,
     "country": "จีน",
     "city": "จางเจียเจี้ย",
     "startMonth": "2026-06",
@@ -834,6 +836,7 @@
   {
     "id": "BT-PVG50_VZ",
     "type": "outbound",
+    "popular": true,
     "country": "จีน",
     "city": "เซี่ยงไฮ้",
     "startMonth": "2026-03",
@@ -1081,6 +1084,7 @@
   {
     "id": "BT-FUK_S02_VZ",
     "type": "outbound",
+    "popular": true,
     "country": "ญี่ปุ่น",
     "city": "ฟุกุโอกะ",
     "startMonth": "2026-05",
@@ -1176,6 +1180,7 @@
   {
     "id": "KR-CNX-SEOUL-SPRING",
     "type": "outbound",
+    "popular": true,
     "country": "เกาหลีใต้",
     "city": "โซล",
     "startMonth": "2026-03",

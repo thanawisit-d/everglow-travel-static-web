@@ -2,7 +2,7 @@ import type { Intent } from '@/types/intent';
 import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
-import { searchTours, getTours } from '@/lib/tours-data';
+import { searchTours, getTours, getPopularTours } from '@/lib/tours-data';
 import { tourCountryLabel } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
 import { buildTourFlex, buildTourCarousel } from '@/lib/line-flex';
@@ -11,6 +11,7 @@ const GREETING_KEYWORDS = ['สวัสดี', 'hello', 'hi', 'หวัดด
 const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'ไม่เกิน', 'ต่ำกว่า', 'แพง', 'ถูก'];
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
 const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
+const MONTHLY_PROGRAM_KEYWORDS = ['โปรแกรมประจำเดือน', 'โปรแกรมเดือนนี้', 'โปรแกรมยอดนิยม'];
 
 const CITY_KEYWORDS = [
   'โตเกียว',
@@ -95,6 +96,10 @@ export function detectIntent(text: string): IntentResult {
     if (t.includes(kw.toLowerCase())) return { intent: 'contactAdmin' };
   }
 
+  for (const kw of MONTHLY_PROGRAM_KEYWORDS) {
+    if (t.includes(kw.toLowerCase())) return { intent: 'monthlyProgram' };
+  }
+
   const parsed = parseSearchText(text);
   const containsPromotion = PROMOTION_KEYWORDS.some((kw) => t.includes(kw));
   const containsPriceKeyword = PRICE_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()));
@@ -136,6 +141,21 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
   switch (result.intent) {
     case 'greeting':
       return { text: locale === 'en' ? lineConfig.welcomeMessageEn : lineConfig.welcomeMessage };
+
+    case 'monthlyProgram': {
+      const tours = getPopularTours(locale);
+
+      if (tours.length === 0) {
+        return {
+          text: 'ขออภัย ขณะนี้ยังไม่มีโปรแกรมประจำเดือนค่ะ 🙏',
+        };
+      }
+
+      return {
+        flex: buildTourCarousel(tours, locale),
+        text: `🌟 โปรแกรมทัวร์ประจำเดือนนี้\nพบ ${tours.length} โปรแกรมยอดนิยม\nเลื่อนดูการ์ดด้านบนเพื่อเลือกโปรแกรมที่สนใจได้เลย ✈️`,
+      };
+    }
 
     case 'searchTour': {
       const keyword = result.keyword || '';
