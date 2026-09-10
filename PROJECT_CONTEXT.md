@@ -351,9 +351,17 @@ This behavior is considered production behavior.
 
 ## Admin Notification
 
-Code exists.
+Active for `bookingTour` and `tourInquiry` intents only.
+Push message is built by `buildAdminNotification()` (name, userId, tour id, text, time).
+`getProfile()` fetches the customer display name (best-effort).
 
-Currently disabled until `LINE_ADMIN_USER_ID` is configured.
+Skipped (with warning log) when:
+
+- `ADMIN_NOTIFICATION_ENABLED=false`
+- `LINE_ADMIN_USER_ID` not set
+- sender is the admin themselves
+
+Customer reply is never blocked by notification errors.
 
 ---
 

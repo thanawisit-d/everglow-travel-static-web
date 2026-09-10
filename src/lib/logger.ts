@@ -38,3 +38,18 @@ export function logLineError(context: string, error: unknown): void {
 export function newCorrelationId(): string {
   return `req-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 }
+
+interface AdminNotifyMeta {
+  intent: string;
+  tour?: string;
+  user?: string;
+  reason?: string;
+}
+
+export function logAdminPushed(reqId: string, meta: AdminNotifyMeta): void {
+  logger.info(`[${reqId}] Admin notification pushed`, meta);
+}
+
+export function logAdminSkipped(reqId: string, meta: AdminNotifyMeta): void {
+  logger.warn(`[${reqId}] Admin notification skipped`, meta);
+}

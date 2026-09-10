@@ -326,3 +326,59 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
 export function createToursMessage(locale: Locale = 'th'): ReplyPayload {
   return buildReply({ intent: 'searchTour', keyword: '' }, locale);
 }
+
+const THAI_MONTHS = [
+  'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.',
+  'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.',
+  'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.',
+];
+
+function padZero(n: number): string {
+  return String(n).padStart(2, '0');
+}
+
+export function formatThaiDateTime(date: Date = new Date()): string {
+  return `${date.getDate()} ${THAI_MONTHS[date.getMonth()]} ${date.getFullYear() + 543} ${padZero(date.getHours())}:${padZero(date.getMinutes())}`;
+}
+
+// Builds the LINE push message text sent to the admin when a customer triggers
+// bookingTour or tourInquiry. No database lookup — uses event fields only.
+export function buildAdminNotification(params: {
+  intent: 'bookingTour' | 'tourInquiry';
+  displayName: string;
+  userId: string;
+  text: string;
+  tourId?: string;
+}): string {
+  const { intent, displayName, userId, text, tourId } = params;
+
+  if (intent === 'bookingTour') {
+    return [
+      '📝 มีคำขอจองทัวร์ใหม่',
+      '',
+      '👤 ชื่อใน LINE',
+      displayName || '-',
+      '🆔 User ID',
+      userId,
+      '💬 ข้อความลูกค้า',
+      text,
+      '🕒 เวลา',
+      formatThaiDateTime(),
+    ].join('\n');
+  }
+
+  return [
+    '📩 มีลูกค้าสนใจทัวร์',
+    '',
+    '👤 ชื่อใน LINE',
+    displayName || '-',
+    '🆔 User ID',
+    userId,
+    '📦 รหัสทัวร์',
+    tourId || '-',
+    '💬 ข้อความลูกค้า',
+    text,
+    '🕒 เวลา',
+    formatThaiDateTime(),
+  ].join('\n');
+}
