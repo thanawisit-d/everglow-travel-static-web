@@ -90,7 +90,7 @@ export function buildTourFlex(
             action: {
               type: "uri",
               label: "ดูรายละเอียด",
-              uri: `${siteUrl}/tours/${tour.id}`,
+              uri: `${siteUrl}/${locale}/tours/${tour.id}`,
             },
           },
           {

@@ -213,15 +213,19 @@ Never mutate cached data.
 2. contactAdmin
 3. bookingTour
 4. monthlyProgram
-5. promotionSearch
-6. searchTour
-7. priceSearch
-8. unknown
+5. tourInquiry
+6. promotionSearch
+7. searchTour
+8. priceSearch
+9. unknown
 
 Special case: a message beginning with `^` is treated as `priceSearch` (checked before `contactAdmin`).
 
 The Rich Menu button "จองทัวร์" sends the message `จองทัวร์` into the bot,
 which is detected as `bookingTour` via `BOOKING_KEYWORDS`.
+
+The Flex card button "สอบถามแอดมิน" sends the message `สนใจทัวร์ {tour.id}` into the bot,
+which is detected as `tourInquiry` (e.g. `สนใจทัวร์ BT-KIX-NRT_S02_XJ`).
 
 The Rich Menu button "โปรแกรมประจำเดือน" sends the message `โปรแกรมประจำเดือน` into the bot,
 which is detected as `monthlyProgram` via `MONTHLY_PROGRAM_KEYWORDS`.

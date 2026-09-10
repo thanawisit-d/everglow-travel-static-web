@@ -3,6 +3,7 @@ export type Intent =
   | 'contactAdmin'
   | 'bookingTour'
   | 'monthlyProgram'
+  | 'tourInquiry'
   | 'searchTour'
   | 'priceSearch'
   | 'promotionSearch'

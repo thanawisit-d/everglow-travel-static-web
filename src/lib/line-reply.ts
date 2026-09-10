@@ -105,6 +105,13 @@ export function detectIntent(text: string): IntentResult {
     if (t.includes(kw.toLowerCase())) return { intent: 'monthlyProgram' };
   }
 
+  if (text.startsWith('สนใจทัวร์')) {
+    return {
+      intent: 'tourInquiry',
+      keyword: text.replace('สนใจทัวร์', '').trim(),
+    };
+  }
+
   const parsed = parseSearchText(text);
   const containsPromotion = PROMOTION_KEYWORDS.some((kw) => t.includes(kw));
   const containsPriceKeyword = PRICE_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()));
@@ -299,6 +306,14 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
           '4. วันที่ต้องการเดินทาง\n' +
           '5. ชื่อและเบอร์โทรติดต่อ\n\n' +
           'เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุดค่ะ 😊',
+      };
+
+    case 'tourInquiry':
+      return {
+        text:
+          `📩 รับคำขอสอบถามเรียบร้อยค่ะ\n\n` +
+          `โปรแกรม: ${result.keyword || '-'}\n\n` +
+          'เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุด 🙏',
       };
 
     default:
