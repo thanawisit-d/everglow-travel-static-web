@@ -12,6 +12,7 @@ const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท�
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
 const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
 const MONTHLY_PROGRAM_KEYWORDS = ['โปรแกรมประจำเดือน', 'โปรแกรมเดือนนี้', 'โปรแกรมยอดนิยม'];
+const BOOKING_KEYWORDS = ['จองทัวร์', 'จอง', 'book tour', 'book'];
 
 const CITY_KEYWORDS = [
   'โตเกียว',
@@ -94,6 +95,10 @@ export function detectIntent(text: string): IntentResult {
 
   for (const kw of CONTACT_KEYWORDS) {
     if (t.includes(kw.toLowerCase())) return { intent: 'contactAdmin' };
+  }
+
+  if (BOOKING_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()))) {
+    return { intent: 'bookingTour' };
   }
 
   for (const kw of MONTHLY_PROGRAM_KEYWORDS) {
@@ -282,6 +287,19 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
 
     case 'contactAdmin':
       return { text: 'กรุณารอสักครู่ค่ะ เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุด 🙏' };
+
+    case 'bookingTour':
+      return {
+        text:
+          '📝 จองทัวร์ Everglow Travel\n\n' +
+          'กรุณาส่งข้อมูลดังนี้\n' +
+          '1. โปรแกรมที่ต้องการจอง\n' +
+          '2. รหัสทัวร์ (ถ้ามี)\n' +
+          '3. จำนวนผู้เดินทาง\n' +
+          '4. วันที่ต้องการเดินทาง\n' +
+          '5. ชื่อและเบอร์โทรติดต่อ\n\n' +
+          'เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุดค่ะ 😊',
+      };
 
     default:
       return {

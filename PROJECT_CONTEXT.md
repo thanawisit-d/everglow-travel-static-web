@@ -211,13 +211,17 @@ Never mutate cached data.
 
 1. greeting
 2. contactAdmin
-3. monthlyProgram
-4. promotionSearch
-5. searchTour
-6. priceSearch
-7. unknown
+3. bookingTour
+4. monthlyProgram
+5. promotionSearch
+6. searchTour
+7. priceSearch
+8. unknown
 
 Special case: a message beginning with `^` is treated as `priceSearch` (checked before `contactAdmin`).
+
+The Rich Menu button "จองทัวร์" sends the message `จองทัวร์` into the bot,
+which is detected as `bookingTour` via `BOOKING_KEYWORDS`.
 
 The Rich Menu button "โปรแกรมประจำเดือน" sends the message `โปรแกรมประจำเดือน` into the bot,
 which is detected as `monthlyProgram` via `MONTHLY_PROGRAM_KEYWORDS`.
