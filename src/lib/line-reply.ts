@@ -93,6 +93,11 @@ export function detectIntent(text: string): IntentResult {
 
   if (text.includes('^')) return { intent: 'priceSearch', keyword: 'price' };
 
+  // Rich Menu button sends the exact text "ติดต่อแอดมิน" → dedicated intent
+  if (t === 'ติดต่อแอดมิน') {
+    return { intent: 'contactAdminRequest', keyword: text };
+  }
+
   for (const kw of CONTACT_KEYWORDS) {
     if (t.includes(kw.toLowerCase())) return { intent: 'contactAdmin' };
   }
@@ -295,10 +300,17 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
     case 'contactAdmin':
       return { text: 'กรุณารอสักครู่ค่ะ เจ้าหน้าที่จะติดต่อกลับโดยเร็วที่สุด 🙏' };
 
+    case 'contactAdminRequest':
+      return {
+        text:
+          '💬 รับคำขอเรียบร้อยค่ะ\n' +
+          'เจ้าหน้าที่ของ Everglow Travel จะติดต่อกลับโดยเร็วที่สุด 🙏',
+      };
+
     case 'bookingTour':
       return {
         text:
-          '📝 จองทัวร์ Everglow Travel\n\n' +
+          'จองทัวร์ Everglow Travel\n\n' +
           'กรุณาส่งข้อมูลดังนี้\n' +
           '1. โปรแกรมที่ต้องการจอง\n' +
           '2. รหัสทัวร์ (ถ้ามี)\n' +
@@ -355,18 +367,31 @@ export function formatThaiDateTime(date: Date = new Date()): string {
 }
 
 // Builds the LINE push message text sent to the admin when a customer triggers
-// bookingTour or tourInquiry. No database lookup — uses event fields only.
+// bookingTour, tourInquiry, or contactAdminRequest. No database lookup — uses
+// event fields only. Never includes the customer's LINE User ID.
 export function buildAdminNotification(params: {
-  intent: 'bookingTour' | 'tourInquiry';
+  intent: 'bookingTour' | 'tourInquiry' | 'contactAdminRequest';
   displayName: string;
-  userId: string;
   text: string;
   tourId?: string;
   messageTime?: Date;
 }): string {
-  const { intent, displayName, userId, text, tourId, messageTime } = params;
+  const { intent, displayName, text, tourId, messageTime } = params;
 
   const time = formatThaiDateTime(messageTime ? new Date(messageTime) : new Date());
+
+  if (intent === 'contactAdminRequest') {
+    return [
+      '💬 มีลูกค้าต้องการสอบถามเพิ่มเติม',
+      '',
+      '👤 ชื่อใน LINE',
+      displayName || '-',
+      '💬 ข้อความลูกค้า',
+      text,
+      '🕒 เวลา',
+      time,
+    ].join('\n');
+  }
 
   if (intent === 'bookingTour') {
     return [
@@ -374,8 +399,6 @@ export function buildAdminNotification(params: {
       '',
       '👤 ชื่อใน LINE',
       displayName || '-',
-      '🆔 User ID',
-      userId,
       '💬 ข้อความลูกค้า',
       text,
       '🕒 เวลา',
@@ -388,8 +411,6 @@ export function buildAdminNotification(params: {
     '',
     '👤 ชื่อใน LINE',
     displayName || '-',
-    '🆔 User ID',
-    userId,
     '📦 รหัสทัวร์',
     tourId || '-',
     '💬 ข้อความลูกค้า',

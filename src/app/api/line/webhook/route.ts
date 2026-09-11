@@ -11,7 +11,7 @@ import type { IntentResult } from '@/types/line';
 
 export const runtime = 'nodejs';
 
-const NOTIFY_INTENTS: Intent[] = ['bookingTour', 'tourInquiry'];
+const NOTIFY_INTENTS: Intent[] = ['bookingTour', 'tourInquiry', 'contactAdminRequest'];
 
 export async function POST(request: NextRequest) {
   const reqId = newCorrelationId();
@@ -145,9 +145,8 @@ async function notifyAdmin(
     }
 
     const messageText = buildAdminNotification({
-      intent: result.intent as 'bookingTour' | 'tourInquiry',
+      intent: result.intent as 'bookingTour' | 'tourInquiry' | 'contactAdminRequest',
       displayName,
-      userId,
       text,
       tourId: result.keyword,
       messageTime: timestamp ? new Date(timestamp) : undefined,

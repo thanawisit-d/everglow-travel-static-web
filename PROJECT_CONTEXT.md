@@ -211,13 +211,14 @@ Never mutate cached data.
 
 1. greeting
 2. contactAdmin
-3. bookingTour
-4. monthlyProgram
-5. tourInquiry
-6. promotionSearch
-7. searchTour
-8. priceSearch
-9. unknown
+3. contactAdminRequest (exact text `ติดต่อแอดมิน` — Rich Menu button, checked before other contact keywords)
+4. bookingTour
+5. monthlyProgram
+6. tourInquiry
+7. promotionSearch
+8. searchTour
+9. priceSearch
+10. unknown
 
 Special case: a message beginning with `^` is treated as `priceSearch` (checked before `contactAdmin`).
 
@@ -351,8 +352,10 @@ This behavior is considered production behavior.
 
 ## Admin Notification
 
-Active for `bookingTour` and `tourInquiry` intents only.
-Push message is built by `buildAdminNotification()` (name, userId, tour id, text, time).
+Active for `bookingTour`, `tourInquiry`, and `contactAdminRequest` intents only.
+Push message is built by `buildAdminNotification()` (name, tour id, text, time).
+It never includes the customer's LINE User ID.
+`contactAdminRequest` = exact text "ติดต่อแอดมิน" from the Rich Menu button.
 `getProfile()` fetches the customer display name (best-effort).
 
 Time uses `event.timestamp` (LINE event time) formatted as Thailand time via
