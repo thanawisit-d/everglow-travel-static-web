@@ -355,6 +355,10 @@ Active for `bookingTour` and `tourInquiry` intents only.
 Push message is built by `buildAdminNotification()` (name, userId, tour id, text, time).
 `getProfile()` fetches the customer display name (best-effort).
 
+Time uses `event.timestamp` (LINE event time) formatted as Thailand time via
+`Intl.DateTimeFormat` with `th-TH` locale and `Asia/Bangkok` timezone. Never
+hardcode a UTC offset.
+
 Skipped (with warning log) when:
 
 - `ADMIN_NOTIFICATION_ENABLED=false`

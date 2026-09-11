@@ -327,18 +327,31 @@ export function createToursMessage(locale: Locale = 'th'): ReplyPayload {
   return buildReply({ intent: 'searchTour', keyword: '' }, locale);
 }
 
-const THAI_MONTHS = [
-  'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.',
-  'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.',
-  'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.',
-];
-
 function padZero(n: number): string {
   return String(n).padStart(2, '0');
 }
 
 export function formatThaiDateTime(date: Date = new Date()): string {
-  return `${date.getDate()} ${THAI_MONTHS[date.getMonth()]} ${date.getFullYear() + 543} ${padZero(date.getHours())}:${padZero(date.getMinutes())}`;
+  const parts = new Intl.DateTimeFormat('th-TH', {
+    timeZone: 'Asia/Bangkok',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+
+  const get = (type: Intl.DateTimeFormatPartTypes): string =>
+    parts.find((p) => p.type === type)?.value ?? '';
+
+  const dst = Number(get('day'));
+  const month = get('month');
+  const year = get('year');
+  const hour = get('hour');
+  const minute = get('minute');
+
+  return `${dst} ${month} ${year} ${padZero(Number(hour))}:${padZero(Number(minute))} น.`;
 }
 
 // Builds the LINE push message text sent to the admin when a customer triggers
@@ -349,8 +362,11 @@ export function buildAdminNotification(params: {
   userId: string;
   text: string;
   tourId?: string;
+  messageTime?: Date;
 }): string {
-  const { intent, displayName, userId, text, tourId } = params;
+  const { intent, displayName, userId, text, tourId, messageTime } = params;
+
+  const time = formatThaiDateTime(messageTime ? new Date(messageTime) : new Date());
 
   if (intent === 'bookingTour') {
     return [
@@ -363,7 +379,7 @@ export function buildAdminNotification(params: {
       '💬 ข้อความลูกค้า',
       text,
       '🕒 เวลา',
-      formatThaiDateTime(),
+      time,
     ].join('\n');
   }
 
@@ -379,6 +395,6 @@ export function buildAdminNotification(params: {
     '💬 ข้อความลูกค้า',
     text,
     '🕒 เวลา',
-    formatThaiDateTime(),
+    time,
   ].join('\n');
 }

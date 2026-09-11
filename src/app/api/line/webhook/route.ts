@@ -53,6 +53,7 @@ async function handleEvent(
     replyToken?: string;
     source?: { userId?: string; type?: string };
     message?: { type?: string; text?: string };
+    timestamp?: number;
   },
   reqId: string,
 ) {
@@ -78,7 +79,7 @@ async function handleEvent(
         await replyWithPayload(event.replyToken, reply);
       }
 
-      await notifyAdmin(reqId, result, text, userId);
+      await notifyAdmin(reqId, result, text, userId, event.timestamp);
       return;
     }
 
@@ -110,6 +111,7 @@ async function notifyAdmin(
   result: IntentResult,
   text: string,
   userId?: string,
+  timestamp?: number,
 ): Promise<void> {
   if (!NOTIFY_INTENTS.includes(result.intent)) return;
 
@@ -148,6 +150,7 @@ async function notifyAdmin(
       userId,
       text,
       tourId: result.keyword,
+      messageTime: timestamp ? new Date(timestamp) : undefined,
     });
 
     await pushMessage(env.adminUserId, [{ type: 'text', text: messageText }]);
