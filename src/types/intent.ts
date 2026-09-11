@@ -1,6 +1,7 @@
 export type Intent =
   | 'greeting'
   | 'contactAdmin'
+  | 'contactAdminRequest'
   | 'bookingTour'
   | 'monthlyProgram'
   | 'tourInquiry'
