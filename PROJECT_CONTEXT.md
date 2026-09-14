@@ -232,6 +232,18 @@ The Rich Menu button "โปรแกรมประจำเดือน" sends
 which is detected as `monthlyProgram` via `MONTHLY_PROGRAM_KEYWORDS`.
 
 Never change this priority without updating this document to match `detectIntent()`.
+`bookingGuide` is checked before `bookingTour` because "วิธีจองทัวร์" contains "จองทัวร์".
+
+### Quick Reply (Sprint 5.0.1)
+
+5 buttons (no country buttons):
+1. `📅 โปรแกรมประจำเดือน` → `โปรแกรมประจำเดือน` → `monthlyProgram`
+2. `💰 งบ 20,000–30,000` → `งบ20000-30000` → `priceSearch`
+3. `✈️ โปรโมชันล่าสุด` → `โปรโมชั่นล่าสุด` → `promotionSearch`
+4. `📋 วิธีจองทัวร์` → `วิธีจองทัวร์` → `bookingGuide`
+5. `💬 ติดต่อเจ้าหน้าที่` → `ติดต่อแอดมิน` → `contactAdminRequest`
+
+`bookingGuide` returns the booking steps text and does NOT notify the admin.
 
 ---
 

@@ -7,48 +7,40 @@ export function buildQuickReply(): messagingApi.QuickReply {
         type: "action",
         action: {
           type: "message",
-          label: "🇯🇵 ญี่ปุ่น",
-          text: "ญี่ปุ่น",
+          label: "📅 โปรแกรมประจำเดือน",
+          text: "โปรแกรมประจำเดือน",
         },
       },
       {
         type: "action",
         action: {
           type: "message",
-          label: "🇰🇷 เกาหลี",
-          text: "เกาหลี",
+          label: "💰 งบ 20,000–30,000",
+          text: "งบ20000-30000",
         },
       },
       {
         type: "action",
         action: {
           type: "message",
-          label: "🇹🇼 ไต้หวัน",
-          text: "ไต้หวัน",
+          label: "✈️ โปรโมชันล่าสุด",
+          text: "โปรโมชั่นล่าสุด",
         },
       },
       {
         type: "action",
         action: {
           type: "message",
-          label: "🇹🇭 ไทย",
-          text: "ไทย",
+          label: "📋 วิธีจองทัวร์",
+          text: "วิธีจองทัวร์",
         },
       },
       {
         type: "action",
         action: {
           type: "message",
-          label: "💰 โปรโมชั่น",
-          text: "โปรโมชั่น",
-        },
-      },
-      {
-        type: "action",
-        action: {
-          type: "message",
-          label: "📞 ติดต่อแอดมิน",
-          text: "ติดต่อ",
+          label: "💬 ติดต่อเจ้าหน้าที่",
+          text: "ติดต่อแอดมิน",
         },
       },
     ],

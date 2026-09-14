@@ -12,6 +12,7 @@ const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท�
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
 const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
 const MONTHLY_PROGRAM_KEYWORDS = ['โปรแกรมประจำเดือน', 'โปรแกรมเดือนนี้', 'โปรแกรมยอดนิยม'];
+const BOOKING_GUIDE_KEYWORDS = ["วิธีจองทัวร์", "ขั้นตอนการจอง", "จองยังไง"];
 const BOOKING_KEYWORDS = ['จองทัวร์', 'จอง', 'book tour', 'book'];
 
 const CITY_KEYWORDS = [
@@ -74,7 +75,7 @@ function parseSearchText(text: string) {
     keyword = keyword.replace(new RegExp(word, 'gi'), ' ');
   }
 
-  keyword = keyword.replace(/\s+/g, ' ').trim();
+  keyword = keyword.replace(/\s+/g, ' ').replace(/^[-–/]+|[-–/]+$/g, '').trim();
 
   return {
     keyword,
@@ -100,6 +101,12 @@ export function detectIntent(text: string): IntentResult {
 
   for (const kw of CONTACT_KEYWORDS) {
     if (t.includes(kw.toLowerCase())) return { intent: 'contactAdmin' };
+  }
+
+  // Booking guide must be checked BEFORE bookingTour, because phrases like
+  // "วิธีจองทัวร์" also contain the "จองทัวร์" booking keyword.
+  for (const kw of BOOKING_GUIDE_KEYWORDS) {
+    if (t.includes(kw.toLowerCase())) return { intent: 'bookingGuide' };
   }
 
   if (BOOKING_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()))) {
@@ -305,6 +312,17 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
         text:
           '💬 รับคำขอเรียบร้อยค่ะ\n' +
           'เจ้าหน้าที่ของ Everglow Travel จะติดต่อกลับโดยเร็วที่สุด 🙏',
+      };
+
+    case 'bookingGuide':
+      return {
+        text:
+          '📝 วิธีจองทัวร์กับ Everglow Travel\n\n' +
+          'เพื่อความสะดวก รบกวนส่งข้อมูลดังนี้ค่ะ\n' +
+          '1. โปรแกรมที่ต้องการจอง\n' +
+          '2. จำนวนผู้เดินทาง\n' +
+          '3. วันที่เดินทาง (ถ้ามี)\n\n' +
+          'เจ้าหน้าที่จะติดต่อกลับผ่าน LINE นี้โดยเร็วที่สุดค่ะ 😊',
       };
 
     case 'bookingTour':
