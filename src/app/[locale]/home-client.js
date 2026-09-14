@@ -6,6 +6,7 @@ import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
 import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
+import { getPopularTours } from '@/lib/tours-data';
 import Hero from '@/components/Hero';
 import HeroSection from '@/components/HeroSection';
 import TourGrid from '@/components/TourGrid';
@@ -13,29 +14,21 @@ import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
 
 const featuredIds = {
-  popular: [
-    'BT-KIX-NRT_S02_XJ', 'KR-CNX-SEOUL-SPRING', 'BT-DYG25_FD',
-    'BT-PVG50_VZ', 'BT-FUK_S02_VZ', '3mmjj24412',
-  ],
   monthly: [
     'EGT1D-02', 'EGT1D-22', 'EGT-SP-01',
     'EGT3D2N-FP-14', 'EGT4D3N-FP-06', 'EGT4D3N-FP-07',
   ],
 };
 
-const featuredPopularEn = [
-  'EGT1D-20', 'EGT1D-19', 'EGT1D-17',
-  'EGT-FP-46', 'EGT-SP-44', 'EGT-FP-42',
-];
-
 export default function LocaleClient({ locale }) {
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
   const toursData = isEn ? toursDataEn : toursDataTh;
 
-  let popularTours = (isEn ? featuredPopularEn : featuredIds.popular)
-    .map(id => toursData.find(t => t.id === id))
-    .filter(Boolean);
+  // Popular tours come straight from the data layer (same source as the LINE
+  // bot's monthly program), so editing `popular: true` in JSON updates both.
+  let popularTours = getPopularTours(locale);
+  if (isEn && popularTours.length === 0) popularTours = getPopularTours('th');
   if (popularTours.length === 0) popularTours = toursData.slice(0, 6);
   const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
 
