@@ -245,6 +245,10 @@ Never change this priority without updating this document to match `detectIntent
 
 `bookingGuide` returns the booking steps text and does NOT notify the admin.
 
+Exact phrases `โปรโมชั่นล่าสุด` / `โปรล่าสุด` / `โปรโมชันล่าสุด` → `promotionSearch`
+with empty keyword (shows all tours as promotions). Specific keywords like `โปรญี่ปุ่น`
+search only that country.
+
 ---
 
 ## Sprint 3 — Flex Message + Quick Reply

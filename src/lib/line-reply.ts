@@ -124,6 +124,14 @@ export function detectIntent(text: string): IntentResult {
     };
   }
 
+  // Exact "latest promotion" phrases → show ALL promotions (empty keyword).
+  // Must be checked before generic PROMOTION_KEYWORDS so "ล่าสุด" is not
+  // treated as a search term.
+  const LATEST_PROMOTION_PHRASES = ['โปรโมชั่นล่าสุด', 'โปรล่าสุด', 'โปรโมชันล่าสุด'];
+  if (LATEST_PROMOTION_PHRASES.some((p) => t === p)) {
+    return { intent: 'promotionSearch', keyword: '' };
+  }
+
   const parsed = parseSearchText(text);
   const containsPromotion = PROMOTION_KEYWORDS.some((kw) => t.includes(kw));
   const containsPriceKeyword = PRICE_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()));
@@ -300,7 +308,10 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
 
       return {
         flex: buildTourCarousel(tours, locale),
-        text: `${title}\nพบ ${tours.length} รายการ${footer}`,
+        text:
+          keyword.length === 0
+            ? `🎉 โปรโมชั่นล่าสุดของ Everglow Travel\n\nรวมโปรแกรมทัวร์ที่กำลังมีโปรโมชันในขณะนี้ค่ะ ✈️`
+            : `${title}\nพบ ${tours.length} รายการ${footer}`,
       };
     }
 
