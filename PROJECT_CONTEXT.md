@@ -249,6 +249,13 @@ Exact phrases `โปรโมชั่นล่าสุด` / `โปรล่
 with empty keyword (shows all tours as promotions). Specific keywords like `โปรญี่ปุ่น`
 search only that country.
 
+### Flex Card (Sprint 5.0.2)
+
+Body order: title → `📅 เดินทาง <เดือน> – <เดือน> <พ.ศ.>` (only if startMonth exists) →
+`✈️ <airline>` (only if airline exists) → `📍 <city>` (only if city non-empty, never "-") →
+duration → "ราคาเริ่มต้น" + price. Travel months parsed from `YYYY-MM`, converted to
+Buddhist years. Airlines mapped from logo filename via `AIRLINE_NAMES`.
+
 ---
 
 ## Sprint 3 — Flex Message + Quick Reply
