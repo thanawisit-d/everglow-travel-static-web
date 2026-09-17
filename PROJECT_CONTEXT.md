@@ -216,9 +216,10 @@ Never mutate cached data.
 5. monthlyProgram
 6. tourInquiry
 7. promotionSearch
-8. searchTour
-9. priceSearch
-10. unknown
+8. monthSearch (exact Thai month name, e.g. `ตุลาคม` — Sprint 5.1.1, MUST stay before `searchTour`)
+9. searchTour
+10. priceSearch
+11. unknown
 
 Special case: a message beginning with `^` is treated as `priceSearch` (checked before `contactAdmin`).
 
@@ -256,6 +257,14 @@ Confirmed in QA review (Sprint 5.0): keep current behavior, it is NOT a bug.
 Exact phrases `โปรโมชั่นล่าสุด` / `โปรล่าสุด` / `โปรโมชันล่าสุด` → `promotionSearch`
 with empty keyword (shows all tours as promotions). Specific keywords like `โปรญี่ปุ่น`
 search only that country.
+
+### Month Search (Sprint 5.1.1)
+
+A message that is an exact Thai month name (e.g. `ตุลาคม`, `เมษายน`) → `monthSearch`.
+`filterToursByMonth(locale, month)` filters tours whose `startMonth` starts with the
+matching `2026-MM` prefix (keys in `THAI_MONTHS`). Locale `en` returns `[]`. No result
+→ friendly fallback message (no throw). Mixed queries like `ญี่ปุ่นเดือนเมษายน` are
+Sprint 5.2 and currently fall through to `searchTour`.
 
 ### Flex Card (Sprint 5.0.2)
 
@@ -666,32 +675,26 @@ Status: COMPLETE
 
 Rich Menu + Flex V2 + Smart Search V2
 
-Status: CURRENT SPRINT
-
-Tasks:
+Status: COMPLETE
 
 - Rich Menu Design
 - Rich Menu Integration
 - Rich Menu Actions
 - Flex V2 UI
 - Alias Search
-- Month Search
 - Airline Search
+- Admin Notification (4.4) + Thai time + notification without User ID
 
 ## Sprint 5
 
-Booking MVP
+Status: COMPLETE (5.0.x); CURRENT SPRINT (5.1.x)
 
-Planned
-
-Features
-
-- Booking flow
-- Contact admin flow
-- Customer information
-- Booking summary
-
-No database yet.
+- 5.0.1 Quick Reply refresh (5 buttons, no country buttons) + bookingGuide
+- 5.0.1b latest-promotion phrases → promotionSearch (empty keyword)
+- 5.0.2 Flex card polish (travel month, airline, price label, hide empty city)
+- 5.0.3 website `getPopularTours()` single source of truth, EN fallback
+- 5.1.1 Month Search — exact Thai month name → monthSearch (COMPLETE)
+- 5.1.2 Natural Language Parser — e.g. `ญี่ปุ่นเดือนเมษายน` (PLANNED)
 
 ## Sprint 6
 

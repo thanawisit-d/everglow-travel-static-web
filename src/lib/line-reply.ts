@@ -2,7 +2,7 @@ import type { Intent } from '@/types/intent';
 import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
-import { searchTours, getTours, getPopularTours } from '@/lib/tours-data';
+import { searchTours, getTours, getPopularTours, filterToursByMonth, THAI_MONTHS } from '@/lib/tours-data';
 import { tourCountryLabel } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
 import { buildTourFlex, buildTourCarousel } from '@/lib/line-flex';
@@ -147,6 +147,11 @@ export function detectIntent(text: string): IntentResult {
     };
   }
 
+  // เดือนล้วน เช่น "ตุลาคม" → monthSearch (ต้องมาก่อน searchTour)
+  if (THAI_MONTHS[t]) {
+    return { intent: 'monthSearch', keyword: t };
+  }
+
   // 2. ถ้ามี keyword หรือ city ให้ถือว่าเป็น Search Tour
   if (parsed.keyword || parsed.city) {
     return {
@@ -186,6 +191,22 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
       return {
         flex: buildTourCarousel(tours, locale),
         text: `🌟 โปรแกรมทัวร์ประจำเดือนนี้\nพบ ${tours.length} โปรแกรมยอดนิยม\nเลื่อนดูการ์ดด้านบนเพื่อเลือกโปรแกรมที่สนใจได้เลย ✈️`,
+      };
+    }
+
+    case 'monthSearch': {
+      const month = result.keyword || '';
+      const tours = filterToursByMonth(locale, month);
+
+      if (tours.length === 0) {
+        return {
+          text: `📅 เดือน${month}\nขออภัยค่ะ ยังไม่มีโปรแกรมที่เดินทางในเดือนนี้ในขณะนี้ 😊`,
+        };
+      }
+
+      return {
+        flex: buildTourCarousel(tours, locale),
+        text: `📅 โปรแกรมเดินทางเดือน${month}\nพบทั้งหมด ${tours.length} โปรแกรม ✈️`,
       };
     }
 
