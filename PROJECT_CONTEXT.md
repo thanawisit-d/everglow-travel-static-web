@@ -696,7 +696,7 @@ Status: COMPLETE
 
 ## Sprint 5
 
-Status: COMPLETE (5.0.x); CURRENT SPRINT (5.1.x)
+Status: COMPLETE (5.0.x + 5.1.x)
 
 - 5.0.1 Quick Reply refresh (5 buttons, no country buttons) + bookingGuide
 - 5.0.1b latest-promotion phrases → promotionSearch (empty keyword)
@@ -705,8 +705,10 @@ Status: COMPLETE (5.0.x); CURRENT SPRINT (5.1.x)
 - 5.1.1 Month Search — exact Thai month name → monthSearch (COMPLETE)
 - 5.1.2 Natural Language Month Search — `ญี่ปุ่นเดือนเมษายน`, `เดือนตุลาคม`,
   `มีนาคมไปไหนได้บ้าง`, `ไปญี่ปุ่นช่วงพฤศจิกายน` → monthSearch with country filter (COMPLETE)
-- 5.1.3/5.3 Multiple conditions — `ญี่ปุ่น ตุลาคม ไม่เกิน 30000`,
-  `โปรญี่ปุ่นเดือนเมษายน` (PLANNED)
+
+## Sprint 5.2 (PLANNED)
+
+LINE Broadcast — send scheduled monthly program / promotion messages.
 
 ## Sprint 6
 
