@@ -29,6 +29,17 @@ const MONTH_ABBREVIATIONS: Record<string, string> = {
 
 const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'โปรโมชัน', 'ลดราคา', 'promotion'];
 
+// "เดือน..." ทุกรูปแบบด้วย regex เดียว — จับชื่อเต็มหรือชื่อย่อของ 12 เดือน
+// หลังคำนำหน้า: เดือน / ช่วงเดือน / ต้นเดือน / กลางเดือน / ปลายเดือน
+const MONTH_PREFIX = new RegExp(
+  '(?:ต้นเดือน|ปลายเดือน|กลางเดือน|ช่วงเดือน|เดือน)?' +
+    '(' +
+    THAI_MONTH_NAMES.join('|') +
+    '|' +
+    Object.keys(MONTH_ABBREVIATIONS).map((m) => m.replace(/\./g, '\\.')).join('|') +
+    ')',
+);
+
 // Extract every search condition from a raw customer message.
 // Pure function: does not read tours JSON or build replies.
 export function extractSearchFilters(text: string): SearchFilters {
@@ -60,17 +71,10 @@ export function extractSearchFilters(text: string): SearchFilters {
     }
   }
 
-  // 3. Month (full names first, then abbreviations → normalize to full name)
-  const fullMonth = THAI_MONTH_NAMES.find((m) => input.includes(m));
-  if (fullMonth) {
-    filters.month = fullMonth;
-  } else {
-    for (const [abbr, full] of Object.entries(MONTH_ABBREVIATIONS)) {
-      if (input.includes(abbr)) {
-        filters.month = full;
-        break;
-      }
-    }
+  // 3. Month — regex เดียว จับเดือน+คำนำหน้า แล้ว normalize ชื่อย่อ → ชื่อเต็ม
+  const monthMatch = input.match(MONTH_PREFIX);
+  if (monthMatch && monthMatch[1]) {
+    filters.month = MONTH_ABBREVIATIONS[monthMatch[1]] ?? monthMatch[1];
   }
 
   // 4. Budget — strip thousands separators, then find a 4-6 digit amount

@@ -238,23 +238,29 @@ function buildSearchEngineReply(filters: SearchFilters, locale: Locale): ReplyPa
   }
 
   const lines: string[] = [];
-  if (filters.country) lines.push(`• ประเทศ: ${filters.country}`);
-  if (filters.month) lines.push(`• เดือนเดินทาง: ${filters.month}`);
-  if (filters.maxPrice !== undefined) lines.push(`• งบไม่เกิน: ฿${formatPrice(filters.maxPrice)}`);
-  if (filters.duration !== undefined) lines.push(`• ระยะเวลา: ${filters.duration} วัน`);
+  if (filters.country) lines.push(`ประเทศ: ${filters.country}`);
+  if (filters.month) lines.push(`เดือนเดินทาง: ${filters.month}`);
+  if (filters.maxPrice !== undefined) lines.push(`งบไม่เกิน: ฿${formatPrice(filters.maxPrice)}`);
+  if (filters.duration !== undefined) lines.push(`ระยะเวลา: ${filters.duration} วัน`);
 
   let text: string;
+  const flag = filters.country ? (COUNTRY_FLAGS[filters.country] ?? '🌍') : '📅';
+
   if (filters.promotion) {
     text = `🎉 พบ ${tours.length} โปรแกรมโปรโมชันที่ตรงกับเงื่อนไข\n${lines.join('\n')}\nรีบจองก่อนหมดโปรค่ะ ✨`;
+  } else if (filters.country && !filters.month && filters.maxPrice === undefined && filters.duration === undefined) {
+    // ปลายทางอย่างเดียว
+    text = `${flag} พบ ${tours.length} โปรแกรมในประเทศ${filters.country}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+  } else if (filters.month && !filters.country && filters.maxPrice === undefined && filters.duration === undefined) {
+    // เดือนอย่างเดียว
+    text = `📅 พบ ${tours.length} โปรแกรมที่เดินทางในเดือน${filters.month}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+  } else if (filters.maxPrice !== undefined && !filters.country && !filters.month && filters.duration === undefined) {
+    // งบอย่างเดียว
+    text = `💰 พบ ${tours.length} โปรแกรมในงบไม่เกิน ฿${formatPrice(filters.maxPrice)}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+  } else if (lines.length === 0) {
+    text = `พบ ${tours.length} โปรแกรมที่ตรงกับเงื่อนไข\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
   } else {
-    const flag = filters.country ? (COUNTRY_FLAGS[filters.country] ?? '🌍') : '📅';
-    if (lines.length === 0) {
-      text = `พบ ${tours.length} โปรแกรมที่ตรงกับเงื่อนไข\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
-    } else if (lines.length === 1 && filters.country && !filters.month) {
-      text = `${flag} พบ ${tours.length} โปรแกรมในประเทศ${filters.country}\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
-    } else {
-      text = `${flag} พบ ${tours.length} โปรแกรมที่ตรงกับเงื่อนไข\n${lines.join('\n')}\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
-    }
+    text = `${flag} พบ ${tours.length} โปรแกรมที่ตรงกับเงื่อนไข\n\n${lines.join('\n')}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
   }
 
   return {
