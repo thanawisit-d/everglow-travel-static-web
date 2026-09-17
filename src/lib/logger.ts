@@ -53,3 +53,16 @@ export function logAdminPushed(reqId: string, meta: AdminNotifyMeta): void {
 export function logAdminSkipped(reqId: string, meta: AdminNotifyMeta): void {
   logger.warn(`[${reqId}] Admin notification skipped`, meta);
 }
+
+// Broadcast operational logs (always visible, even in production).
+export function logBroadcastPreview(type: string, messages: number): void {
+  console.log(`[BROADCAST PREVIEW] type=${type} messages=${messages}`);
+}
+
+export function logBroadcastSent(type: string, messages: number): void {
+  console.log(`[BROADCAST SENT] type=${type} messages=${messages}`);
+}
+
+export function logBroadcastFailed(type: string, reason: string): void {
+  console.error(`[BROADCAST FAILED] type=${type} reason=${reason}`);
+}
