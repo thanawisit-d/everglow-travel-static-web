@@ -706,9 +706,14 @@ Status: COMPLETE (5.0.x + 5.1.x)
 - 5.1.2 Natural Language Month Search — `ญี่ปุ่นเดือนเมษายน`, `เดือนตุลาคม`,
   `มีนาคมไปไหนได้บ้าง`, `ไปญี่ปุ่นช่วงพฤศจิกายน` → monthSearch with country filter (COMPLETE)
 
-## Sprint 5.2 (PLANNED)
+## Sprint 5.2 — Monthly Broadcast System (CURRENT SPRINT)
 
-LINE Broadcast — send scheduled monthly program / promotion messages.
+- 5.2.1 Broadcast Payload Builder — `buildBroadcastPayload(type)` in
+  `src/lib/line-broadcast.ts`: `monthly` → `getPopularTours()` Carousel,
+  `promotion` → all tours sorted by price (Logic เดียวกับ `promotionSearch`
+  keyword=""), reuse `buildTourCarousel()`, no quick reply, no API yet (COMPLETE)
+- 5.2.2 Broadcast API route + Safety Guard (PLANNED)
+- 5.2.3 Broadcast QA (PLANNED)
 
 ## Sprint 6
 
