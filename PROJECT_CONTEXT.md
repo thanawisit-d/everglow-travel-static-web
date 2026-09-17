@@ -234,6 +234,14 @@ which is detected as `monthlyProgram` via `MONTHLY_PROGRAM_KEYWORDS`.
 Never change this priority without updating this document to match `detectIntent()`.
 `bookingGuide` is checked before `bookingTour` because "วิธีจองทัวร์" contains "จองทัวร์".
 
+#### Design Decision — unmatched text falls back to `searchTour`
+
+Messages that produce a keyword after parsing (e.g. `ข้อความมั่วๆ`) go to
+`searchTour` → "ไม่พบทัวร์ ..." instead of `unknown`. This answers the customer
+politely and is preferred over the generic unknown reply. `unknown` is only
+reached when no keyword/price/promotion can be extracted (e.g. empty text).
+Confirmed in QA review (Sprint 5.0): keep current behavior, it is NOT a bug.
+
 ### Quick Reply (Sprint 5.0.1)
 
 5 buttons (no country buttons):
@@ -686,6 +694,16 @@ Features
 No database yet.
 
 ## Sprint 6
+
+### Backlog — data & asset audit (from QA review, Sprint 5.0)
+
+- TODO: Audit `tours-th.json` so every tour that has a real PDF under
+  `public/Outbound/*/pdf/` also has the `pdf` field (3 tours currently missing:
+  starts with `BT-KIX-NRT_S02_XJ` and 2 others). No broken PDF links.
+- TODO: Broken Image Audit — all banner/popular/review images load 200.
+- TODO: Internal Link Audit — `/th/tours/*`, `/th/outbound`, `/th/domestic`,
+  `/th/about`, `/th/contact` return 200 (no 404).
+- TODO: Console Warning Audit — separate pre-existing warnings from new ones.
 
 Database Migration
 
