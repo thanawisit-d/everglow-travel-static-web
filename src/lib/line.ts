@@ -83,6 +83,11 @@ export async function pushMessage(userId: string, messages: LineMessage[]): Prom
   await getClient().pushMessage({ to: userId, messages: withQuickReply(messages) as never });
 }
 
+// Broadcast to all LINE OA followers (separate endpoint, no quick reply attached).
+export async function broadcastMessage(messages: LineMessage[]): Promise<void> {
+  await getClient().broadcast({ messages: messages as never });
+}
+
 export async function getProfile(userId: string) {
   return getClient().getProfile(userId);
 }
