@@ -42,6 +42,14 @@ export interface Tour {
   itinerary?: ItineraryDay[];
 }
 
+export interface SearchFilters {
+  country?: string;
+  month?: string;
+  maxPrice?: number;
+  duration?: number;
+  promotion?: boolean;
+}
+
 export function tourCountryLabel(tour: Tour, locale: 'th' | 'en' = 'th'): string {
   const c = tour.country;
   if (typeof c === 'string') return c;
