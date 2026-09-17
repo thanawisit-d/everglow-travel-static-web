@@ -2,7 +2,7 @@ import type { Intent } from '@/types/intent';
 import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
-import { searchTours, getTours, getPopularTours, filterToursByMonth, THAI_MONTHS } from '@/lib/tours-data';
+import { searchTours, getTours, getPopularTours, filterToursByMonth, THAI_MONTHS, getCountryNames } from '@/lib/tours-data';
 import { tourCountryLabel } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
 import { buildTourFlex, buildTourCarousel } from '@/lib/line-flex';
@@ -27,6 +27,43 @@ const CITY_KEYWORDS = [
   'ฮ่องกง',
   'เซี่ยงไฮ้',
 ];
+
+// Country names as they appear in tours JSON (longest first for matching).
+const COUNTRY_NAMES = getCountryNames();
+// Short/alternate user forms → canonical country name used in tours JSON.
+const COUNTRY_ALIASES: Record<string, string> = {
+  'เกาหลี': 'เกาหลีใต้',
+};
+// Display flag for the reply header (found results only).
+const COUNTRY_FLAGS: Record<string, string> = {
+  'ฮ่องกง': '🇭🇰',
+  'มาเก๊า': '🇲🇴',
+  'ญี่ปุ่น': '🇯🇵',
+  'จีน': '🇨🇳',
+  'เกาหลีใต้': '🇰🇷',
+  'เวียดนาม': '🇻🇳',
+  'ไต้หวัน': '🇹🇼',
+  'สเปน': '🇪🇸',
+  'ตุรกี': '🇹🇷',
+  'ออสเตรเลีย': '🇦🇺',
+  'เมียนมา': '🇲🇲',
+  'อินเดีย': '🇮🇳',
+  'มองโกเลีย': '🇲🇳',
+  'ฟิลิปปินส์': '🇵🇭',
+  'ภูฏาน': '🇧🇹',
+  'อิตาลี': '🇮🇹',
+};
+const MONTH_NAMES = Object.keys(THAI_MONTHS);
+
+function detectCountry(t: string): string | undefined {
+  for (const name of COUNTRY_NAMES) {
+    if (t.includes(name)) return name;
+  }
+  for (const [alias, canonical] of Object.entries(COUNTRY_ALIASES)) {
+    if (t.includes(alias)) return canonical;
+  }
+  return undefined;
+}
 
 const STOP_WORDS = [
   'อยากไป',
@@ -147,9 +184,13 @@ export function detectIntent(text: string): IntentResult {
     };
   }
 
-  // เดือนล้วน เช่น "ตุลาคม" → monthSearch (ต้องมาก่อน searchTour)
-  if (THAI_MONTHS[t]) {
-    return { intent: 'monthSearch', keyword: t };
+  // เดือนในประโยค เช่น "ตุลาคม", "เดือนตุลาคม", "ญี่ปุ่นเดือนเมษายน",
+  // "ไปญี่ปุ่นช่วงพฤศจิกายน", "มีนาคมไปไหนได้บ้าง" → monthSearch
+  // (ต้องมาก่อน searchTour; promotion ตรวจแล้วก่อนหน้านี้)
+  const monthInText = MONTH_NAMES.find((m) => t.includes(m));
+  if (monthInText) {
+    const country = detectCountry(t);
+    return { intent: 'monthSearch', keyword: monthInText, city: country };
   }
 
   // 2. ถ้ามี keyword หรือ city ให้ถือว่าเป็น Search Tour
@@ -196,17 +237,23 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
 
     case 'monthSearch': {
       const month = result.keyword || '';
-      const tours = filterToursByMonth(locale, month);
+      const country = result.city || '';
+      const tours = filterToursByMonth(locale, month, country || undefined);
 
       if (tours.length === 0) {
+        const head = country ? `📅 ${country} เดือน${month}` : `📅 เดือน${month}`;
         return {
-          text: `📅 เดือน${month}\nขออภัยค่ะ ยังไม่มีโปรแกรมที่เดินทางในเดือนนี้ในขณะนี้ 😊`,
+          text: `${head}\nขออภัยค่ะ ยังไม่มีโปรแกรมที่เดินทางในช่วงนี้ 😊`,
         };
       }
 
+      const head = country
+        ? `${COUNTRY_FLAGS[country] ?? '🌍'} โปรแกรม${country} เดือน${month}`
+        : `📅 โปรแกรมเดินทางเดือน${month}`;
+
       return {
         flex: buildTourCarousel(tours, locale),
-        text: `📅 โปรแกรมเดินทางเดือน${month}\nพบทั้งหมด ${tours.length} โปรแกรม ✈️`,
+        text: `${head}\nพบทั้งหมด ${tours.length} โปรแกรม ✈️`,
       };
     }
 

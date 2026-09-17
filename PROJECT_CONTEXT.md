@@ -216,7 +216,7 @@ Never mutate cached data.
 5. monthlyProgram
 6. tourInquiry
 7. promotionSearch
-8. monthSearch (exact Thai month name, e.g. `ตุลาคม` — Sprint 5.1.1, MUST stay before `searchTour`)
+8. monthSearch (any Thai month name in text, with optional country — Sprint 5.1.1/5.1.2, MUST stay before `searchTour`)
 9. searchTour
 10. priceSearch
 11. unknown
@@ -258,13 +258,22 @@ Exact phrases `โปรโมชั่นล่าสุด` / `โปรล่
 with empty keyword (shows all tours as promotions). Specific keywords like `โปรญี่ปุ่น`
 search only that country.
 
-### Month Search (Sprint 5.1.1)
+### Month Search (Sprint 5.1.1 → 5.1.2)
 
-A message that is an exact Thai month name (e.g. `ตุลาคม`, `เมษายน`) → `monthSearch`.
-`filterToursByMonth(locale, month)` filters tours whose `startMonth` starts with the
-matching `2026-MM` prefix (keys in `THAI_MONTHS`). Locale `en` returns `[]`. No result
-→ friendly fallback message (no throw). Mixed queries like `ญี่ปุ่นเดือนเมษายน` are
-Sprint 5.2 and currently fall through to `searchTour`.
+A message containing any Thai month name → `monthSearch`:
+- exact month name: `ตุลาคม` / `เมษายน`
+- month in a sentence: `เดือนตุลาคม`, `มีนาคมไปไหนได้บ้าง`
+- country + month: `ญี่ปุ่นเดือนเมษายน`, `ไปญี่ปุ่นช่วงพฤศจิกายน`, `เกาหลีเดือนตุลาคม`
+  → `detectCountry()` finds the country (via `COUNTRY_NAMES` from tours JSON +
+  `COUNTRY_ALIASES` e.g. `เกาหลี` → `เกาหลีใต้`); the country is carried in the
+  `IntentResult.city` field to avoid adding a new type field.
+- `filterToursByMonth(locale, month, country?)` filters tours whose `startMonth`
+  starts with the matching `2026-MM` prefix and (optionally) whose `country` field
+  exactly matches the given country (handles `string` and `string[]`). Locale `en`
+  returns `[]`. No result → friendly fallback message (no throw).
+- Not part of 5.1.2 (multiple conditions → Sprint 5.3): `โปรญี่ปุ่นเดือนเมษายน`,
+  `ญี่ปุ่น ตุลาคม ไม่เกิน 30000`, `เกาหลีตุลาคม 5 วัน`. Promotion is still checked
+  before monthSearch, so `โปร...` keeps resolving to `promotionSearch`.
 
 ### Flex Card (Sprint 5.0.2)
 
@@ -694,7 +703,10 @@ Status: COMPLETE (5.0.x); CURRENT SPRINT (5.1.x)
 - 5.0.2 Flex card polish (travel month, airline, price label, hide empty city)
 - 5.0.3 website `getPopularTours()` single source of truth, EN fallback
 - 5.1.1 Month Search — exact Thai month name → monthSearch (COMPLETE)
-- 5.1.2 Natural Language Parser — e.g. `ญี่ปุ่นเดือนเมษายน` (PLANNED)
+- 5.1.2 Natural Language Month Search — `ญี่ปุ่นเดือนเมษายน`, `เดือนตุลาคม`,
+  `มีนาคมไปไหนได้บ้าง`, `ไปญี่ปุ่นช่วงพฤศจิกายน` → monthSearch with country filter (COMPLETE)
+- 5.1.3/5.3 Multiple conditions — `ญี่ปุ่น ตุลาคม ไม่เกิน 30000`,
+  `โปรญี่ปุ่นเดือนเมษายน` (PLANNED)
 
 ## Sprint 6
 

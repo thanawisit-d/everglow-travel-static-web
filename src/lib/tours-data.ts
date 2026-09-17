@@ -85,8 +85,31 @@ export const THAI_MONTHS: Record<string, string> = {
   'ธันวาคม': '2026-12',
 };
 
-export function filterToursByMonth(locale: Locale = 'th', month: string): Tour[] {
+export function filterToursByMonth(
+  locale: Locale = 'th',
+  month: string,
+  country?: string,
+): Tour[] {
   const prefix = THAI_MONTHS[month];
   if (!prefix) return [];
-  return cache[locale].filter((t) => t.startMonth?.startsWith(prefix) === true);
+  return cache[locale].filter((t) => {
+    if (t.startMonth?.startsWith(prefix) !== true) return false;
+    if (country) {
+      const match =
+        typeof t.country === 'string'
+          ? t.country === country
+          : Array.isArray(t.country) && t.country.includes(country);
+      if (!match) return false;
+    }
+    return true;
+  });
+}
+
+export function getCountryNames(locale: Locale = 'th'): string[] {
+  const set = new Set<string>();
+  for (const t of cache[locale]) {
+    if (typeof t.country === 'string') set.add(t.country);
+    else if (Array.isArray(t.country)) t.country.forEach((c) => set.add(c));
+  }
+  return Array.from(set).sort((a, b) => b.length - a.length);
 }
