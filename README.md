@@ -1,205 +1,285 @@
 # Everglow Travel
 
-เว็บทัวร์สองภาษา (TH/EN) + LINE Official Account Bot ของ Everglow Travel สร้างด้วย Next.js (App Router)
+เว็บไซต์ทัวร์ 2 ภาษา (TH/EN) พร้อม LINE Official Account Bot สำหรับค้นหาทัวร์และตอบลูกค้าอัตโนมัติ สร้างด้วย **Next.js 16 (App Router)** และ **LINE Messaging API**
+
+**Current Status:** Sprint **6.0 – Production Polish & Data QA**
 
 ---
 
-## 1. Project Overview
+## Overview
 
-- **เว็บไซต์**: แสดงรายการทัวร์ในประเทศ / ต่างประเทศ, รายละเอียดทัวร์, รีวิว, เกี่ยวกับ, ติดต่อ — รองรับ `/th` และ `/en`
-- **LINE Bot**: ตอบข้อความอัตโนมัติ (ค้นหาทัวร์ ตามประเทศ/เดือน/งบ/โปรโมชัน), แจ้งเตือน admin, Broadcast โปรโมชัน
-- **Data**: JSON เท่านั้น (ไม่มี CMS / database) — `tours-th.json` เป็น Single Source of Truth
+Everglow Travel มี 3 ส่วนหลัก
 
-Sprint ปัจจุบัน: **6.0 (Production Polish & Data QA)** — สถานะตาม `git log`
+* 🌐 **Website** — รายการทัวร์, รายละเอียดทัวร์, รีวิว, เกี่ยวกับ, ติดต่อ (`/th`, `/en`)
+* 💬 **LINE Bot** — ค้นหาทัวร์จากข้อความ (ประเทศ / เดือน / งบ / โปรโมชัน), Quick Reply, Rich Menu, Admin Notification
+* 📦 **Data Layer** — ใช้ JSON ทั้งหมด (ไม่มี Database หรือ CMS)
 
----
-
-## 2. Tech Stack
-
-| | |
-|---|---|
-| Framework | Next.js 16 (App Router), React 19 |
-| Language | TypeScript (backend + core lib) / JavaScript (frontend components) |
-| Styling | Tailwind CSS v4 + vanilla CSS (`src/styles/`) |
-| LINE | `@line/bot-sdk` v11 (Messaging API) |
-| Deploy | Vercel — auto-deploy จาก branch `deploy` |
-| Static Export | `output: export` (หน้าเว็บเป็น static, API routes ใช้ Node runtime) |
+**Single Source of Truth:** `src/data/tours-th.json`
 
 ---
 
-## 3. Folder Structure
+## Tech Stack
 
-```
+| Technology            | Usage                        |
+| --------------------- | ---------------------------- |
+| Next.js 16 + React 19 | Website & API Routes         |
+| TypeScript            | Backend logic / shared types |
+| JavaScript            | Frontend components          |
+| Tailwind CSS v4       | Styling                      |
+| `@line/bot-sdk`       | LINE Messaging API           |
+| Vercel                | Deployment                   |
+
+---
+
+## Project Structure
+
+```text
 src/
 ├── app/
-│   ├── (landing)/          หน้า Landing
-│   ├── [locale]/           /th หรือ /en (home, domestic, outbound, tours/[id], reviews, about, contact, privacy)
-│   ├── api/
-│   │   ├── health/         Health check
-│   │   ├── tours/          GET /api/tours (filter: locale, country, q, minPrice, maxPrice)
-│   │   └── line/
-│   │       ├── webhook/    POST /api/line/webhook (LINE event handler)
-│   │       └── broadcast/  POST /api/line/broadcast (guard: BROADCAST_ENABLED)
-│   ├── error.js, not-found.js, loading.js
-│   ├── layout.js, globals.css
-│   ├── robots.js, sitemap.js
-├── components/             UI components (TourCard, FilterSidebar, SearchWidget, Footer, ...)
+│   ├── [locale]/             # TH / EN pages
+│   └── api/
+│       ├── tours/            # Tour API
+│       └── line/
+│           ├── webhook/      # LINE webhook
+│           └── broadcast/     # Broadcast API
+│
 ├── lib/
-│   ├── tours-data.ts       อ่าน tours JSON (getTours, getPopularTours, searchTours, ...)
-│   ├── search-filters.ts   Search Engine (extractSearchFilters → filterTours)
-│   ├── line-reply.ts       detectIntent + buildReply + buildSearchEngineReply + buildAdminNotification
-│   ├── line-flex.ts        buildTourCarousel / buildTourFlex (Flex Message)
-│   ├── line-broadcast.ts   buildBroadcastPayload("monthly" | "promotion")
-│   ├── line.ts, line-quick-reply.ts, line-config.ts, env.ts
-│   ├── logger.ts           structured logger + broadcast/admin logs
-│   └── (web helpers: i18n, pricing, dateFilter, tour-utils, tracking, assets, useToursFilter)
-├── types/                  tour.ts (Tour, SearchFilters), intent.ts, line.ts, api.ts
-├── utils/price.ts          toNumber / formatPrice
-├── data/                   tours-th.json, tours-en.json, reviews.json, site-config.json
-├── styles/                 CSS ทุกหน้า (import ผ่าน globals.css)
-public/                     รูป, PDF, plane-logo, flag_country, ...
-scripts/                    normalizing scripts (dev only)
+│   ├── line-reply.ts         # Intent + Reply Builder
+│   ├── search-filters.ts     # Search Engine
+│   ├── tours-data.ts         # Tour data access
+│   ├── line-flex.ts          # Flex Carousel Builder
+│   ├── line-broadcast.ts     # Broadcast payload builder
+│   ├── line.ts               # LINE API wrapper
+│   ├── line-quick-reply.ts
+│   ├── logger.ts
+│   └── env.ts
+│
+├── types/                    # Shared types
+├── data/                     # tours-th.json, tours-en.json, reviews.json
+├── components/               # UI Components
+└── utils/
+
+
+public/
+├── images/
+└── pdf/
 ```
+
+### Important Files
+
+| File                 | Responsibility                   |
+| -------------------- | -------------------------------- |
+| `line-reply.ts`      | Detect intent และสร้างข้อความตอบ |
+| `search-filters.ts`  | Natural language search engine   |
+| `tours-data.ts`      | โหลดและกรองข้อมูลทัวร์จาก JSON   |
+| `line-flex.ts`       | สร้าง Flex Carousel              |
+| `webhook/route.ts`   | รับข้อความจาก LINE OA            |
+| `broadcast/route.ts` | Broadcast + Preview API          |
 
 ---
 
-## 4. Installation
+## Installation
 
 ```bash
-# 1. ติดตั้ง dependencies
 npm install
 
-# 2. สร้าง env file
 cp .env.example .env.local
 
-# 3. เติมค่าจริงใน .env.local (LINE secrets + feature flags + NEXT_PUBLIC_*)
-#    .env.local ถูก git-ignore อยู่แล้ว — ห้าม commit
-
-# 4. รัน dev server
 npm run dev
 ```
 
-เปิด http://localhost:3000/th หรือ http://localhost:3000/en
+เปิดเว็บไซต์ที่
 
-> **LINE functions ทำงานได้แค่ตอน env LINE ครบ** — ถ้ายังไม่มี token ให้เว็บ static ยังรันได้ปกติ
-> วิธีหา LINE token / Admin ID: ดูหัวข้อ [LINE OA Setup](#6-line-oa-setup) ด้านล่าง
+* `http://localhost:3000/th`
+* `http://localhost:3000/en`
 
----
-
-## 5. Available Scripts
-
-| Command | ความหมาย |
-|---|---|
-| `npm run dev` | Dev server (http://localhost:3000) |
-| `npm run build` | Production build (tsc + next build) |
-| `npm start` | Serve production build หลัง `build` |
-| `npm run lint` | ESLint |
-| `npx tsc --noEmit` | Type check |
+> LINE Bot จะทำงานเมื่อกำหนด Environment Variables ครบ
 
 ---
 
-## 6. LINE OA Setup
+## Environment Variables
 
-### 6.1 สร้าง LINE Official Account + Channel
+สร้าง `.env.local`
 
-1. สมัคร LINE Official Account: https://manager.line.biz/
-2. สร้าง Channel → **Messaging API** ที่ https://developers.line.biz/console/
-3. เปิด **Use webhooks** = On, ปิด **Auto-reply messages** = Off
+```env
+LINE_CHANNEL_SECRET=
+LINE_CHANNEL_ACCESS_TOKEN=
+LINE_ADMIN_USER_ID=
 
-### 6.2 เก็บ Token
+ADMIN_NOTIFICATION_ENABLED=false
+BROADCAST_ENABLED=false
 
-ไปที่ Channel detail → Basic settings:
-
-| ค่า | ตำแหน่ง | ใช้ทำอะไร |
-|---|---|---|
-| Channel access token | `LINE_CHANNEL_ACCESS_TOKEN` | ส่งข้อความ (reply / push / broadcast) |
-| Channel secret | `LINE_CHANNEL_SECRET` | verify signature ของ webhook |
-
-> เก็บ token ไว้ที่เดียว (`.env.local` / Vercel env) อย่าส่งต่อใคร
-
-### 6.3 ตั้ง Webhook URL
-
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
+
+`.env.local` ถูก ignore โดย Git — **ห้าม commit**
+
+---
+
+## Available Scripts
+
+```bash
+npm run dev        # Development server
+npm run build      # Production build
+npm start          # Run production build
+npm run lint       # ESLint
+npx tsc --noEmit   # Type check
+```
+
+---
+
+## LINE OA Setup
+
+1. สร้าง LINE Official Account และ Messaging API Channel
+2. เปิด **Use Webhooks**
+3. ปิด **Auto Reply Messages**
+4. ตั้ง Webhook URL
+
+```text
 https://<your-domain>/api/line/webhook
 ```
 
-กด **Verify** → ต้องได้รับ "Success"
+5. เพิ่มค่าเหล่านี้ลง `.env.local`
 
-### 6.4 หา LINE Admin User ID
+* `LINE_CHANNEL_SECRET`
+* `LINE_CHANNEL_ACCESS_TOKEN`
+* `LINE_ADMIN_USER_ID`
 
-1. แอด bot เป็นเพื่อน (สแกน QR จาก Channel detail)
-2. ส่งข้อความอะไรก็ได้ให้ bot 1 ครั้ง
-3. ไปที่ Channel → Messaging API settings → Webhook → เช็ค log จะเห็น `userId` (รูปแบบ `U` + 32 ตัวอักษร)
-4. ใส่ค่า `LINE_ADMIN_USER_ID` ใน `.env.local` / Vercel env
+---
 
-### 6.5 Intent Flow
+## LINE Bot Flow
 
-```
-ลูกค้า → LINE OA → POST /api/line/webhook
-  → verifySignature (x-line-signature)
-  → detectIntent(text)           จำแนกเป็น 1 ใน 13 intents
-  → buildReply(result, locale)   ผ่าน Search Engine (extractSearchFilters → filterTours)
-  → replyWithPayload             ตอบ Flex Carousel (max 5) + ข้อความ + Quick Reply 5 ปุ่ม
-  → notifyAdmin (เฉพาะ booking/tourInquiry/contactAdmin เข้า Queue push)
+```text
+LINE User
+    │
+    ▼
+Webhook (/api/line/webhook)
+    │
+    ▼
+detectIntent()
+    │
+    ▼
+extractSearchFilters()
+    │
+    ▼
+filterTours()
+    │
+    ▼
+buildReply()
+    │
+    ▼
+Flex Carousel + Quick Reply
+    │
+    └── Admin Notification (booking / inquiry / contact)
 ```
 
 ---
 
-## 7. Broadcast Preview
+## Search Engine
 
-Broadcast = ส่งโปรโมชัน/โปรแกรมประจำเดือนแบบ Push ถึงผู้ติดตามทุกคน
+รองรับข้อความธรรมชาติ เช่น
 
-- **Preview (ไม่ส่งจริง)**: `GET /api/line/broadcast?preview=true&type=monthly` → 200 + JSON payload
-- **ส่งจริง**: `POST /api/line/broadcast` body `{ "type": "monthly" | "promotion" }`
-- **ต้องเปิด**: `BROADCAST_ENABLED=true` ใน `.env.local` (ถ้า `false` → 403)
-- **Log**: `logBroadcastPreview / logBroadcastSent / logBroadcastFailed` ใน `src/lib/logger.ts`
+| Example               | Filters                     |
+| --------------------- | --------------------------- |
+| ญี่ปุ่น ตุลาคม        | Country + Month             |
+| งบ30000               | Max Price                   |
+| เกาหลี มีนาคม 5 วัน   | Country + Month + Duration  |
+| โปรญี่ปุ่นเดือนเมษายน | Promotion + Country + Month |
 
-```bash
-# Preview ก่อนส่งจริงเสมอ
-curl "https://<your-domain>/api/line/broadcast?preview=true&type=monthly"
 
-# ส่งจริง
-curl -X POST "https://<your-domain>/api/line/broadcast" \
-  -H "Content-Type: application/json" \
-  -d '{ "type": "monthly" }'
-```
+Search ใช้ `extractSearchFilters()` → `filterTours()` เพียงชุดเดียว
 
 ---
 
-## 8. Deploy (Vercel)
+## Broadcast API
 
-### 8.1 ENV บน Vercel
-
-ไปที่ **Vercel Dashboard → Project → Settings → Environment Variables**
-
-| Variable | ค่า | Environment |
-|---|---|---|
-| `LINE_CHANNEL_ACCESS_TOKEN` | จาก LINE Console | Production, Preview |
-| `LINE_CHANNEL_SECRET` | จาก LINE Console | Production, Preview |
-| `LINE_ADMIN_USER_ID` | จาก LINE Console | Production, Preview |
-| `ADMIN_NOTIFICATION_ENABLED` | `true` หรือ `false` | Production, Preview |
-| `BROADCAST_ENABLED` | `true` (ถ้าจะใช้ broadcast) | Production, Preview |
-| `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>` | Production |
-
-### 8.2 Git Workflow (backend / deploy)
-
-- **`backend`** = branch ที่ทำงานหลัก (commit ได้เลย)
-- **`deploy`** = Production branch ของ Vercel **merge เท่านั้น ห้าม commit ตรง**
-- **`main`** = baseline เดิม (ไม่แตะ)
+### Preview (ไม่ส่งจริง)
 
 ```bash
-# ทุกครั้งที่อยากให้ขึ้น production
+GET /api/line/broadcast?preview=true&type=monthly
+```
+
+### Send Broadcast
+
+```bash
+POST /api/line/broadcast
+{
+  "type": "monthly"
+}
+```
+
+ต้องเปิด
+
+```env
+BROADCAST_ENABLED=true
+```
+
+รองรับ `monthly` และ `promotion`
+
+---
+
+## Deployment (Vercel)
+
+Production ใช้ **branch `deploy`**
+
+Workflow
+
+```bash
 git checkout deploy
 git merge backend
-git push origin deploy     # Vercel rebuild อัตโนมัติ
+git push origin deploy
+
 git checkout backend
 git push origin backend
 ```
 
+Vercel จะ Deploy อัตโนมัติเมื่อ `deploy` ถูก Push
+
 ---
 
-## Testing
+## Git Workflow
 
-- **Web**: `npm run lint` + `npx tsc --noEmit` + `npm run build`
-- **LINE (local)**: ใช้ LINE Console ส่ง test message ไป webhook (ต้อง deploy ก่อน เพราะ LINE ต้องการ HTTPS public)
-- **LINE (production)**: แอด bot → พิมพ์ "สวัสดี" / "ญี่ปุ่น" / "โปรโมชั่นล่าสุด" / "เมษายนไปไหน"
+| Branch      | Purpose                    |
+| ----------- | -------------------------- |
+| `backend`   | Development branch         |
+| `deploy`    | Production branch (Vercel) |
+| `feature/*` | Feature / Sprint branches  |
+| `main`      | Baseline (ไม่ใช้พัฒนา)     |
+
+ก่อนเปิด Pull Request ให้รัน
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
+
+---
+
+## Testing Checklist
+
+### Website
+
+* Home (`/th`, `/en`)
+* Search
+* Tour Detail
+* Reviews / Contact / About
+
+### LINE Bot
+
+* Greeting
+* Country Search
+* Month Search
+* Promotion Search
+* Booking
+* Admin Notification
+* Broadcast Preview
+
+---
+
+## Notes for Contributors
+
+* **ไม่มี Database** — ทุกข้อมูลอยู่ใน `src/data/*.json`
+* `tours-th.json` คือข้อมูลหลักของระบบ
+* LINE Bot และ Website ใช้ข้อมูลชุดเดียวกัน
+* ห้าม commit `.env.local` หรือ Secret ใด ๆ
