@@ -59,7 +59,6 @@ src/
 ├── styles/                 CSS ทุกหน้า (import ผ่าน globals.css)
 public/                     รูป, PDF, plane-logo, flag_country, ...
 scripts/                    normalizing scripts (dev only)
-docs/                       DEPLOY.md, LINE-OA-SETUP.md
 ```
 
 ---
@@ -83,7 +82,7 @@ npm run dev
 เปิด http://localhost:3000/th หรือ http://localhost:3000/en
 
 > **LINE functions ทำงานได้แค่ตอน env LINE ครบ** — ถ้ายังไม่มี token ให้เว็บ static ยังรันได้ปกติ
-> ดูวิธีหา LINE token/Admin ID ใน `docs/DEPLOY.md` หรือ `docs/LINE-OA-SETUP.md`
+> วิธีหา LINE token / Admin ID: ดูหัวข้อ [LINE OA Setup](#6-line-oa-setup) ด้านล่าง
 
 ---
 
@@ -101,15 +100,39 @@ npm run dev
 
 ## 6. LINE OA Setup
 
-สรุปขั้นตอน (รายละเอียดเต็มใน `docs/LINE-OA-SETUP.md`):
+### 6.1 สร้าง LINE Official Account + Channel
 
-1. สร้าง LINE Official Account +เปิด Messaging API
-2. ตั้ง Webhook URL = `https://<your-domain>/api/line/webhook`
-3. เก็บ `LINE_CHANNEL_ACCESS_TOKEN` + `LINE_CHANNEL_SECRET` ใส่ `.env.local`
-4. หา `LINE_ADMIN_USER_ID` (ส่งข้อความให้ bot 1 ครั้ง → ดู userId ใน Webhook log)
-5. ตั้ง `ADMIN_NOTIFICATION_ENABLED=true` ถ้าต้องการให้ bot push แจ้ง admin
+1. สมัคร LINE Official Account: https://manager.line.biz/
+2. สร้าง Channel → **Messaging API** ที่ https://developers.line.biz/console/
+3. เปิด **Use webhooks** = On, ปิด **Auto-reply messages** = Off
 
-### Intent Flow
+### 6.2 เก็บ Token
+
+ไปที่ Channel detail → Basic settings:
+
+| ค่า | ตำแหน่ง | ใช้ทำอะไร |
+|---|---|---|
+| Channel access token | `LINE_CHANNEL_ACCESS_TOKEN` | ส่งข้อความ (reply / push / broadcast) |
+| Channel secret | `LINE_CHANNEL_SECRET` | verify signature ของ webhook |
+
+> เก็บ token ไว้ที่เดียว (`.env.local` / Vercel env) อย่าส่งต่อใคร
+
+### 6.3 ตั้ง Webhook URL
+
+```
+https://<your-domain>/api/line/webhook
+```
+
+กด **Verify** → ต้องได้รับ "Success"
+
+### 6.4 หา LINE Admin User ID
+
+1. แอด bot เป็นเพื่อน (สแกน QR จาก Channel detail)
+2. ส่งข้อความอะไรก็ได้ให้ bot 1 ครั้ง
+3. ไปที่ Channel → Messaging API settings → Webhook → เช็ค log จะเห็น `userId` (รูปแบบ `U` + 32 ตัวอักษร)
+4. ใส่ค่า `LINE_ADMIN_USER_ID` ใน `.env.local` / Vercel env
+
+### 6.5 Intent Flow
 
 ```
 ลูกค้า → LINE OA → POST /api/line/webhook
@@ -129,11 +152,36 @@ Broadcast = ส่งโปรโมชัน/โปรแกรมประจ�
 - **Preview (ไม่ส่งจริง)**: `GET /api/line/broadcast?preview=true&type=monthly` → 200 + JSON payload
 - **ส่งจริง**: `POST /api/line/broadcast` body `{ "type": "monthly" | "promotion" }`
 - **ต้องเปิด**: `BROADCAST_ENABLED=true` ใน `.env.local` (ถ้า `false` → 403)
-- รายละเอียด: `docs/DEPLOY.md`
+- **Log**: `logBroadcastPreview / logBroadcastSent / logBroadcastFailed` ใน `src/lib/logger.ts`
+
+```bash
+# Preview ก่อนส่งจริงเสมอ
+curl "https://<your-domain>/api/line/broadcast?preview=true&type=monthly"
+
+# ส่งจริง
+curl -X POST "https://<your-domain>/api/line/broadcast" \
+  -H "Content-Type: application/json" \
+  -d '{ "type": "monthly" }'
+```
 
 ---
 
-## 8. Git Workflow (backend / deploy)
+## 8. Deploy (Vercel)
+
+### 8.1 ENV บน Vercel
+
+ไปที่ **Vercel Dashboard → Project → Settings → Environment Variables**
+
+| Variable | ค่า | Environment |
+|---|---|---|
+| `LINE_CHANNEL_ACCESS_TOKEN` | จาก LINE Console | Production, Preview |
+| `LINE_CHANNEL_SECRET` | จาก LINE Console | Production, Preview |
+| `LINE_ADMIN_USER_ID` | จาก LINE Console | Production, Preview |
+| `ADMIN_NOTIFICATION_ENABLED` | `true` หรือ `false` | Production, Preview |
+| `BROADCAST_ENABLED` | `true` (ถ้าจะใช้ broadcast) | Production, Preview |
+| `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>` | Production |
+
+### 8.2 Git Workflow (backend / deploy)
 
 - **`backend`** = branch ที่ทำงานหลัก (commit ได้เลย)
 - **`deploy`** = Production branch ของ Vercel **merge เท่านั้น ห้าม commit ตรง**
