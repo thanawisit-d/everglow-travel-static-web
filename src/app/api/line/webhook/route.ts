@@ -64,8 +64,10 @@ async function handleEvent(
       const userId = event.source?.userId;
       const text = event.message.text;
 
-      console.log('LINE_USER_ID:', userId);
-      console.log('LINE_REPLY_TOKEN:', event.replyToken);
+      logger.info(`[${reqId}] LINE message received`, {
+        hasUser: Boolean(userId),
+        intent: null,
+      });
 
       const result = detectIntent(text);
       const reply = buildReply(result, lineConfig.defaultLocale);

@@ -145,6 +145,34 @@ LINE_ADMIN_USER_ID=Uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
+## 6.5 Broadcast
+
+Broadcast = ส่งโปรโมชัน / โปรแกรมประจำเดือน แบบ Push ถึงผู้ติดตาม
+
+| | |
+|---|---|
+| Preview (ไม่ส่งจริง) | `GET /api/line/broadcast?preview=true&type=monthly` หรือ `?type=promotion` |
+| ส่งจริง | `POST /api/line/broadcast` body `{ "type": "monthly" }` |
+| Guard | ต้องตั้ง `BROADCAST_ENABLED=true` ถึงจะส่งได้ — ถ้า `false` หรือไม่ตั้ง → 403 |
+| Payload | ตรวจในหน้า preview ก่อนส่ง (จำนวน bubble 1–10, messages ≤ 5) |
+| Log | `logBroadcastPreview / logBroadcastSent / logBroadcastFailed` ใน `src/lib/logger.ts` |
+
+ตัวอย่าง preview:
+
+```bash
+curl "https://<your-domain>/api/line/broadcast?preview=true&type=monthly"
+```
+
+ตัวอย่างส่งจริง:
+
+```bash
+curl -X POST "https://<your-domain>/api/line/broadcast" \
+  -H "Content-Type: application/json" \
+  -d '{ "type": "monthly" }'
+```
+
+---
+
 ## 7. Deploy Checklist
 
 - [ ] Vercel ENV ครบ (4 ตัวข้างบน)
@@ -154,6 +182,7 @@ LINE_ADMIN_USER_ID=Uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - [ ] LINE_ADMIN_USER_ID หาได้แล้ว
 - [ ] ส่งข้อความทดสอบแล้ว bot ตอบ
 - [ ] Push notification ถึง admin สำเร็จ
+- [ ] Broadcast preview ผ่าน (`?preview=true`) — ก่อนส่งจริงครั้งแรก
 
 ---
 

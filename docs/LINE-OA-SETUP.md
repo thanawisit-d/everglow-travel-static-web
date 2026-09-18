@@ -110,12 +110,14 @@ LINE_ADMIN_USER_ID=Uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ลูกค้า → LINE OA → webhook → /api/line/webhook
    │
-   ├─ verify signature (security)
-   ├─ detectIntent (อ่าน keyword)
-   ├─ createReply (หาทัวร์ + สร้างข้อความ)
-   ├─ replyMessage (ตอบลูกค้า)
+   ├─ verify signature (isValidSignature)
+   ├─ detectIntent (จำแนก intent + extractSearchFilters)
+   ├─ buildReply (ค้นทัวร์ผ่าน Search Engine + สร้าง Flex/ข้อความ)
+   ├─ replyWithPayload (ตอบลูกค้า: Flex carousel + Quick Reply)
    └─ pushMessage (แจ้ง admin)
 ```
+
+> ชื่อฟังก์ชันจริงในโค้ด: `isValidSignature` / `detectIntent` / `buildReply` / `replyWithPayload` / `pushMessage`
 
 ---
 
@@ -123,11 +125,14 @@ LINE_ADMIN_USER_ID=Uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### auto-reply (ตอบอัตโนมัติ)
 
+ข้อความลูกค้าจะถูกประมวลผลด้วย `detectIntent` → `buildReply` (ผ่าน Search Engine):
+
 | ข้อความลูกค้า | Bot ตอบอะไร |
 |---|---|
 | สวัสดี / Hello | ข้อความต้อนรับ |
 | ญี่ปุ่น / Korea | รายการทัวร์ประเทศนั้น (max 5 ตัว) |
 | ราคา / Price | ตัวอย่างราคาทัวร์ (max 5 ตัว) |
+| ญี่ปุ่นเมษายน / งบ30000 | ทัวร์ตามเงื่อนไขหลายตัว (Search Engine) |
 | ติดต่อ admin | "กรุณารอสักครู่ค่ะ เจ้าหน้าที่จะติดต่อกลับ" |
 
 ### push แจ้ง admin
@@ -142,19 +147,20 @@ LINE_ADMIN_USER_ID=Uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Keyword ที่รองรับ
 
+> เอกสารส่วนนี้เป็น **ตัวอย่างคร่าว ๆ** — intent ปัจจุบันถูกนิยามไว้ใน `src/types/intent.ts` และ parser อยู่ที่ `src/lib/line-reply.ts` (detectIntent) + `src/lib/search-filters.ts` (extractSearchFilters)
+
 ### greeting
 - สวัสดี, hello, hi, หวัดดี
 
-### searchTour
-- ชื่อประเทศ (ญี่ปุ่น, เกาหลี, ฮ่องกง, ฯลฯ)
-- ชื่อเมือง (โอซาก้า, โซล, ฯลฯ)
-- ชื่อทัวร์ (ID ทัวร์)
+### monthlyProgram
+- โปรแกรมประจำเดือน, โปรแกรมเดือนนี้, โปรแกรมยอดนิยม
 
-### priceSearch
-- ราคา, price, กี่บาท, เท่าไหร่, งบ, budget
+### searchTour / monthSearch / priceSearch / promotionSearch
+- ชื่อประเทศ ตามด้วยเดือน/งบ/ช่วง ได้ เช่น "ญี่ปุ่นเมษายน", "เที่ยวเกาหลีเดือนมีนาคม", "โปรญี่ปุ่น งบ30000"
+- ใช้ Search Engine ตัวเดียวกัน: `extractSearchFilters` → `filterTours` → `buildTourCarousel`
 
-### contactAdmin
-- ติดต่อ, contact, แอดมิน, admin, คุยกับคน, เจ้าหน้าที่
+### bookingGuide / bookingTour / tourInquiry / contactAdmin / contactAdminRequest
+- วิธีจองทัวร์, จองทัวร์, สนใจทัวร์..., ติดต่อแอดมิน
 
 ---
 
