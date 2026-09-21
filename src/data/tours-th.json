@@ -104,7 +104,46 @@
     "pdf": "filepdf_1day/EGT1D-02.pdf",
     "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park ",
     "duration_en": "1 day",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "Feb. - June 2026",
+   "itinerary": [
+  {
+    "day": 1,
+    "title": "กรุงเทพฯ • ราชบุรี",
+    "title_en": "Bangkok • Ratchaburi",
+    "items": [
+      {
+        "time": "07:00",
+        "time_en": "07:00 AM",
+        "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ราชบุรี",
+        "description_en": "Meet in Bangkok, depart to Ratchaburi"
+      },
+      {
+        "time": "10:00",
+        "time_en": "10:00 AM",
+        "description": "ชมพิพิธภัณฑ์โอ่งเก่าราชบุรี อุทยานหินเขางู",
+        "description_en": "Visit the Ratchaburi Old Pottery Museum and Khao Ngu Stone Park"
+      },
+      {
+        "time": "12:00",
+        "time_en": "12:00 PM",
+        "description": "รับประทานอาหารกลางวันที่บ้านตลาดควาย",
+        "description_en": "Lunch at Ban Talat Khwai"
+      },
+      {
+        "time": "13:00",
+        "time_en": "01:00 PM",
+        "description": "เที่ยวชมเวเนโต้ สวนผึ้ง",
+        "description_en": "Visit Veneto Suan Phueng"
+      },
+      {
+        "time": "18:00",
+        "time_en": "06:00 PM",
+        "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+        "description_en": "Arrive safely in Bangkok"
+      }
+    ]
+  }
+]
   },
   {
     "id": "EGT1D-22",
@@ -123,7 +162,46 @@
     "pdf": "filepdf_1day/EGT1D-22.pdf",
     "desc_en": "Nakhon Ratchasima tour, butterfly viewing, Khao Yai National Park",
     "duration_en": "1 day",
-    "periodText_en": "March - May 2026"
+    "periodText_en": "March - May 2026",
+  "itinerary": [
+  {
+    "day": 1,
+    "title": "กรุงเทพฯ • นครราชสีมา",
+    "title_en": "Bangkok • Nakhon Ratchasima",
+    "items": [
+      {
+        "time": "07:00",
+        "time_en": "07:00 AM",
+        "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
+        "description_en": "Meet in Bangkok, depart to Nakhon Ratchasima"
+      },
+      {
+        "time": "10:00",
+        "time_en": "10:00 AM",
+        "description": "แวะชมจุดดูผีเสื้อบริเวณโป่งดินริมถนนภายในอุทยาน",
+        "description_en": "Stop to see butterflies at the soil pond area along the road inside the national park"
+      },
+      {
+        "time": "12:00",
+        "time_en": "12:00 PM",
+        "description": "รับประทานอาหารกลางวัน",
+        "description_en": "Lunch"
+      },
+      {
+        "time": "13:00",
+        "time_en": "01:00 PM",
+        "description": "น้ำตกเหวสุวัต",
+        "description_en": "Haew Suwat Waterfall"
+      },
+      {
+        "time": "19:00",
+        "time_en": "07:00 PM",
+        "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+        "description_en": "Arrive safely in Bangkok"
+      }
+    ]
+  }
+]
   },
   {
     "id": "EGT1D-20",
@@ -142,7 +220,40 @@
     "pdf": "filepdf_1day/EGT1D-20.pdf",
     "desc_en": "Sa Kaeo tour, butterfly watching, Pang Sida National Park",
     "duration_en": "1 day",
-    "periodText_en": "March - May 2026"
+    "periodText_en": "March - May 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • สระแก้ว",
+        "title_en": "Bangkok • Sa Kaeo",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่สระแก้ว",
+            "description_en": "Meet in Bangkok, depart to Sa Kaeo"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "ชมอุทยานแห่งชาติปางสีดา",
+            "description_en": "Visit Pang Sida National Park"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "เล่นน้ำตกปางสีดา",
+            "description_en": "Play at Pang Sida Waterfall"
+          },
+          {
+            "time": "18:00",
+            "time_en": "06:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT1D-19",
@@ -161,9 +272,48 @@
     "pdf": "filepdf_1day/EGT1D-19.pdf",
     "desc_en": "Phetchaburi Tour, Butterfly Watching, Ban Krang",
     "duration_en": "1 day",
-    "periodText_en": "March - May 2026"
+    "periodText_en": "March - May 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • เพชรบุรี",
+        "title_en": "Bangkok • Phetchaburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เพชรบุรี",
+            "description_en": "Meet in Bangkok, depart to Phetchaburi"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "แคมป์บ้านกร่าง อุทยานแห่งชาติแก่งกระจาน",
+            "description_en": "Ban Krang Camp, Kaeng Krachan National Park"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "วัดถ้ำเขาหลวง",
+            "description_en": "Tham Khao Luang Temple"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
-  {
+ {
     "id": "EGT1D-18",
     "type": "domestic",
     "province": "ชลบุรี",
@@ -180,7 +330,70 @@
     "pdf": "filepdf_1day/EGT1D-18.pdf",
     "desc_en": "Chonburi Tour, Koh Sichang",
     "duration_en": "1 day",
-    "periodText_en": "Feb. - Apr. 2026"
+    "periodText_en": "Feb. - Apr. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ชลบุรี",
+        "title_en": "Bangkok • Chonburi",
+        "items": [
+          {
+            "time": "06:00",
+            "time_en": "06:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ชลบุรี",
+            "description_en": "Meet in Bangkok, depart to Chonburi"
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "Breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "สักการะศาลเจ้าพ่อเขาใหญ่จากท่าเรือเกาะลอย",
+            "description_en": "Pay respects at Chao Pho Khao Yai Shrine from Ko Loi Pier"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "ถ่ายภาพที่สะพานอัษฎางค์",
+            "description_en": "Take photos at Atsadang Bridge"
+          },
+          {
+            "time": "10:30",
+            "time_en": "10:30 AM",
+            "description": "หาดถ้ำพัง และ แหลมจักรพงษ์",
+            "description_en": "Tham Phang Beach and Laem Chakkraphong"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "ชมถ้ำทะลุ",
+            "description_en": "Visit Tham Thalu Cave"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "อิสระเล่นน้ำ และพักผ่อนตามอัธยาศัย",
+            "description_en": "Free time to swim and relax"
+          },
+          {
+            "time": "19:00",
+            "time_en": "07:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT1D-17",
@@ -199,7 +412,52 @@
     "pdf": "filepdf_1day/EGT1D-17.pdf",
     "desc_en": "Ratchaburi Tour: Heavenly Roses",
     "duration_en": "1 day",
-    "periodText_en": "Feb. - Mar. 2026"
+    "periodText_en": "Feb. - Mar. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ราชบุรี",
+        "title_en": "Bangkok • Ratchaburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ราชบุรี",
+            "description_en": "Meet in Bangkok, depart to Ratchaburi"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวันที่ตลาดซาวไฮ่",
+            "description_en": "Lunch at Sao Hai Market"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "ถ้ำพุหวาย",
+            "description_en": "Tham Phu Wai Cave"
+          },
+          {
+            "time": "14:00",
+            "time_en": "02:00 PM",
+            "description": "ชมสวนสมุนไพรภูปางสวรรค์",
+            "description_en": "Visit Phu Pang Sawan Herbal Garden"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "ชมฝายกั้นน้ำบ้านปางสวรรค์",
+            "description_en": "Visit Ban Pang Sawan Weir"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT1D-14",
@@ -218,7 +476,64 @@
     "pdf": "filepdf_1day/EGT1D-14.pdf",
     "desc_en": "Uthai Thani Tour, Hup Pa Tat",
     "duration_en": "1 day",
-    "periodText_en": "Jan. - June 2026"
+    "periodText_en": "Jan. - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี",
+            "description_en": "Meet in Bangkok, depart to Uthai Thani"
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "Breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "วัดถ้ำเขาวง",
+            "description_en": "Wat Tham Khao Wong"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "ชมต้นไม้ยักษ์",
+            "description_en": "Visit the giant tree"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "หุบป่าตาด",
+            "description_en": "Hup Pa Tat"
+          },
+          {
+            "time": "14:30",
+            "time_en": "02:30 PM",
+            "description": "ออกเดินทางกลับกรุงเทพฯ",
+            "description_en": "Depart back to Bangkok"
+          },
+          {
+            "time": "19:00",
+            "time_en": "07:00 PM",
+            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT1D-06",
@@ -237,7 +552,58 @@
     "pdf": "filepdf_1day/EGT1D-06.pdf",
     "desc_en": "Suphanburi Tour: Visit Don Wai Floating Market, pay homage to sacred temples, and enjoy the scenic beauty along the Tha Chin River.",
     "duration_en": "1 day",
-    "periodText_en": "March - June 2026"
+    "periodText_en": "March - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • สุพรรณบุรี",
+        "title_en": "Bangkok • Suphanburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่สุพรรณบุรี",
+            "description_en": "Meet in Bangkok, depart to Suphanburi"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "อุทยานประวัติศาสตร์อู่ทอง",
+            "description_en": "U Thong Historical Park"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "วัดเขาทำเทียม",
+            "description_en": "Wat Khao Tham Thiam"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "ชมหมู่บ้านมังกรสรรค์",
+            "description_en": "Visit Mangkon Sawan Village"
+          },
+          {
+            "time": "16:00",
+            "time_en": "04:00 PM",
+            "description": "เดินเล่น เลือกซื้อของฝาก และสินค้าพื้นเมือง ตามอัธยาศัย",
+            "description_en": "Free time to stroll and shop for souvenirs and local products"
+          },
+          {
+            "time": "18:00",
+            "time_en": "06:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-FP-46",
