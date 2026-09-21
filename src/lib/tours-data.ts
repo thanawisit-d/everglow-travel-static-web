@@ -4,6 +4,7 @@ import type { Locale } from '@/types/api';
 import type { Tour } from '@/types/tour';
 import { tourCountryLabel } from '@/types/tour';
 import { toNumber } from '@/utils/price';
+import { THAI_MONTHS } from '@/lib/search-constants';
 
 const cache: Record<Locale, readonly Tour[]> = {
   th: Object.freeze(toursTh as unknown as Tour[]),
@@ -69,21 +70,6 @@ export function getCountries(locale: Locale = 'th'): string[] {
   }
   return Array.from(set).filter(Boolean).sort();
 }
-
-export const THAI_MONTHS: Record<string, string> = {
-  'มกราคม': '2026-01',
-  'กุมภาพันธ์': '2026-02',
-  'มีนาคม': '2026-03',
-  'เมษายน': '2026-04',
-  'พฤษภาคม': '2026-05',
-  'มิถุนายน': '2026-06',
-  'กรกฎาคม': '2026-07',
-  'สิงหาคม': '2026-08',
-  'กันยายน': '2026-09',
-  'ตุลาคม': '2026-10',
-  'พฤศจิกายน': '2026-11',
-  'ธันวาคม': '2026-12',
-};
 
 export function filterToursByMonth(
   locale: Locale = 'th',

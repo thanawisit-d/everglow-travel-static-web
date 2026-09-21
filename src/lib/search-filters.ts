@@ -1,33 +1,13 @@
 import type { Locale } from '@/types/api';
 import type { SearchFilters, Tour } from '@/types/tour';
 import { tourCountryLabel } from '@/types/tour';
-import { getTours, THAI_MONTHS, getCountryNames } from '@/lib/tours-data';
+import { getTours, getCountryNames } from '@/lib/tours-data';
 import { toNumber } from '@/utils/price';
+import { THAI_MONTHS, MONTH_ALIASES, COUNTRY_ALIASES, PROMOTION_KEYWORDS } from '@/lib/search-constants';
 
 const COUNTRY_NAMES = getCountryNames();
 
-const COUNTRY_ALIASES: Record<string, string> = {
-  'เกาหลี': 'เกาหลีใต้',
-};
-
 const THAI_MONTH_NAMES = Object.keys(THAI_MONTHS);
-
-const MONTH_ABBREVIATIONS: Record<string, string> = {
-  'ม.ค.': 'มกราคม',
-  'ก.พ.': 'กุมภาพันธ์',
-  'มี.ค.': 'มีนาคม',
-  'เม.ย.': 'เมษายน',
-  'พ.ค.': 'พฤษภาคม',
-  'มิ.ย.': 'มิถุนายน',
-  'ก.ค.': 'กรกฎาคม',
-  'ส.ค.': 'สิงหาคม',
-  'ก.ย.': 'กันยายน',
-  'ต.ค.': 'ตุลาคม',
-  'พ.ย.': 'พฤศจิกายน',
-  'ธ.ค.': 'ธันวาคม',
-};
-
-const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'โปรโมชัน', 'ลดราคา', 'promotion'];
 
 // "เดือน..." ทุกรูปแบบด้วย regex เดียว — จับชื่อเต็มหรือชื่อย่อของ 12 เดือน
 // หลังคำนำหน้า: เดือน / ช่วงเดือน / ต้นเดือน / กลางเดือน / ปลายเดือน
@@ -36,7 +16,7 @@ const MONTH_PREFIX = new RegExp(
     '(' +
     THAI_MONTH_NAMES.join('|') +
     '|' +
-    Object.keys(MONTH_ABBREVIATIONS).map((m) => m.replace(/\./g, '\\.')).join('|') +
+    Object.keys(MONTH_ALIASES).map((m) => m.replace(/\./g, '\\.')).join('|') +
     ')',
 );
 
@@ -74,7 +54,7 @@ export function extractSearchFilters(text: string): SearchFilters {
   // 3. Month — regex เดียว จับเดือน+คำนำหน้า แล้ว normalize ชื่อย่อ → ชื่อเต็ม
   const monthMatch = input.match(MONTH_PREFIX);
   if (monthMatch && monthMatch[1]) {
-    filters.month = MONTH_ABBREVIATIONS[monthMatch[1]] ?? monthMatch[1];
+    filters.month = MONTH_ALIASES[monthMatch[1]] ?? monthMatch[1];
   }
 
   // 4. Budget — strip thousands separators, then find a 4-6 digit amount

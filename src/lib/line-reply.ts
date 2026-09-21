@@ -2,16 +2,16 @@ import type { Intent } from '@/types/intent';
 import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
-import { searchTours, getTours, getPopularTours, filterToursByMonth, THAI_MONTHS, getCountryNames } from '@/lib/tours-data';
+import { searchTours, getTours, getPopularTours, filterToursByMonth, getCountryNames } from '@/lib/tours-data';
 import { extractSearchFilters, filterTours } from '@/lib/search-filters';
 import { tourCountryLabel, type SearchFilters } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
 import { buildTourFlex, buildTourCarousel } from '@/lib/line-flex';
+import { THAI_MONTHS, COUNTRY_ALIASES, PROMOTION_KEYWORDS } from '@/lib/search-constants';
 
 const GREETING_KEYWORDS = ['สวัสดี', 'hello', 'hi', 'หวัดดี', 'สวัสดีครับ', 'สวัสดีค่ะ'];
 const PRICE_KEYWORDS = ['ราคา', 'price', 'กี่บาท', 'เท่าไหร่', 'งบ', 'budget', 'ไม่เกิน', 'ต่ำกว่า', 'แพง', 'ถูก'];
 const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน', 'admin', 'คุยกับคน', 'เจ้าหน้าที่', 'staff'];
-const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'ลดราคา', 'promotion'];
 const MONTHLY_PROGRAM_KEYWORDS = ['โปรแกรมประจำเดือน', 'โปรแกรมเดือนนี้', 'โปรแกรมยอดนิยม'];
 const BOOKING_GUIDE_KEYWORDS = ["วิธีจองทัวร์", "ขั้นตอนการจอง", "จองยังไง"];
 const BOOKING_KEYWORDS = ['จองทัวร์', 'จอง', 'book tour', 'book'];
@@ -31,10 +31,6 @@ const CITY_KEYWORDS = [
 
 // Country names as they appear in tours JSON (longest first for matching).
 const COUNTRY_NAMES = getCountryNames();
-// Short/alternate user forms → canonical country name used in tours JSON.
-const COUNTRY_ALIASES: Record<string, string> = {
-  'เกาหลี': 'เกาหลีใต้',
-};
 // Display flag for the reply header (found results only).
 const COUNTRY_FLAGS: Record<string, string> = {
   'ฮ่องกง': '🇭🇰',
