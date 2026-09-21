@@ -15,10 +15,6 @@ export function getTours(locale: Locale = 'th'): Tour[] {
   return [...cache[locale]];
 }
 
-export function getTourById(id: string, locale: Locale = 'th'): Tour | undefined {
-  return cache[locale].find((t) => t.id === id);
-}
-
 export function getPopularTours(locale: Locale = 'th'): Tour[] {
   return cache[locale].filter((t) => t.popular === true).slice(0, 5);
 }
@@ -61,14 +57,6 @@ export function filterTours(filters: TourFilter, locale: Locale = 'th'): Tour[] 
     if (filters.maxPrice !== undefined && price > filters.maxPrice) return false;
     return true;
   });
-}
-
-export function getCountries(locale: Locale = 'th'): string[] {
-  const set = new Set<string>();
-  for (const t of cache[locale]) {
-    set.add(tourCountryLabel(t));
-  }
-  return Array.from(set).filter(Boolean).sort();
 }
 
 export function filterToursByMonth(
