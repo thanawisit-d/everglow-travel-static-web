@@ -35,8 +35,13 @@ export async function POST(request: NextRequest) {
   logger.info(`[${reqId}] Webhook received`, { events: events.length });
 
   for (const rawEvent of events) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const event = rawEvent as any;
+    const event = rawEvent as {
+      type: string;
+      replyToken?: string;
+      source?: { userId?: string; type?: string };
+      message?: { type?: string; text?: string };
+      timestamp?: number;
+    };
     try {
       await handleEvent(event, reqId);
     } catch (err) {

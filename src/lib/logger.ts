@@ -1,7 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function stringify(meta?: any): string {
+function stringify(meta?: unknown): string {
   if (meta === undefined || meta === null) return '';
   try {
     return ' ' + JSON.stringify(meta);
