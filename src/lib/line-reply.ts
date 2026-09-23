@@ -15,6 +15,7 @@ const CONTACT_KEYWORDS = ['ติดต่อ', 'contact', 'แอดมิน',
 const MONTHLY_PROGRAM_KEYWORDS = ['โปรแกรมประจำเดือน', 'โปรแกรมเดือนนี้', 'โปรแกรมยอดนิยม'];
 const BOOKING_GUIDE_KEYWORDS = ["วิธีจองทัวร์", "ขั้นตอนการจอง", "จองยังไง"];
 const BOOKING_KEYWORDS = ['จองทัวร์', 'จอง', 'book tour', 'book'];
+const INQUIRY_PREFIXES = ['สอบถามทัวร์', 'สนใจทัวร์'];
 
 const CITY_KEYWORDS = [
   'โตเกียว',
@@ -51,6 +52,7 @@ const COUNTRY_FLAGS: Record<string, string> = {
   'อิตาลี': '🇮🇹',
 };
 const MONTH_NAMES = Object.keys(THAI_MONTHS);
+const SEARCH_FOOTER = 'เลื่อนดูโปรแกรมที่สนใจได้เลย ✈️';
 
 function detectCountry(t: string): string | undefined {
   for (const name of COUNTRY_NAMES) {
@@ -151,10 +153,11 @@ export function detectIntent(text: string): IntentResult {
     if (t.includes(kw.toLowerCase())) return { intent: 'monthlyProgram' };
   }
 
-  if (text.startsWith('สนใจทัวร์')) {
+  const inquiryPrefix = INQUIRY_PREFIXES.find((p) => text.startsWith(p));
+  if (inquiryPrefix) {
     return {
       intent: 'tourInquiry',
-      keyword: text.replace('สนใจทัวร์', '').trim(),
+      keyword: text.slice(inquiryPrefix.length).trim(),
     };
   }
 
@@ -198,6 +201,16 @@ export function detectIntent(text: string): IntentResult {
 
   // 2. ถ้ามี keyword หรือ city ให้ถือว่าเป็น Search Tour
   if (parsed.keyword || parsed.city) {
+    // keyword ภาษาอังกฤษล้วน (ไม่มีอักษรไทย) → unknown เฉพาะเมื่อคำนั้น (และทุก
+    // token ที่แยกด้วยเว้นวรรค) ไม่ตรงกับทัวร์ใดเลย เช่น "abcxyz"
+    // แต่ "japan october" ยังเข้า Search Tour เพราะ token "japan" มีผลค้นหา
+    if (parsed.keyword && !/[\u0E00-\u0E7F]/.test(parsed.keyword)) {
+      const tokens = parsed.keyword.split(/[\s-]+/);
+      const matchesAnyToken = tokens.some((token) => searchTours(token, 'th').length > 0);
+      if (!matchesAnyToken) {
+        return { intent: 'unknown' };
+      }
+    }
     return {
       intent: 'searchTour',
       keyword: parsed.keyword,
@@ -241,20 +254,20 @@ function buildSearchSummary(filters: SearchFilters, total: number): string {
 
   if (filters.country && !filters.month && filters.maxPrice === undefined && filters.duration === undefined) {
     // ปลายทางอย่างเดียว
-    return `${flag} พบ ${total} โปรแกรมในประเทศ${filters.country}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+    return `${flag} พบ ${total} โปรแกรมในประเทศ${filters.country}\n\n${SEARCH_FOOTER}`;
   }
   if (filters.month && !filters.country && filters.maxPrice === undefined && filters.duration === undefined) {
     // เดือนอย่างเดียว
-    return `📅 พบ ${total} โปรแกรมที่เดินทางในเดือน${filters.month}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+    return `📅 พบ ${total} โปรแกรมที่เดินทางในเดือน${filters.month}\n\n${SEARCH_FOOTER}`;
   }
   if (filters.maxPrice !== undefined && !filters.country && !filters.month && filters.duration === undefined) {
     // งบอย่างเดียว
-    return `💰 พบ ${total} โปรแกรมในงบไม่เกิน ฿${formatPrice(filters.maxPrice)}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+    return `💰 พบ ${total} โปรแกรมในงบไม่เกิน ฿${formatPrice(filters.maxPrice)}\n\n${SEARCH_FOOTER}`;
   }
   if (lines.length === 0) {
-    return `พบ ${total} โปรแกรมที่ตรงกับเงื่อนไข\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+    return `พบ ${total} โปรแกรมที่ตรงกับเงื่อนไข\n\n${SEARCH_FOOTER}`;
   }
-  return `${flag} พบ ${total} โปรแกรมที่ตรงกับเงื่อนไข\n\n${lines.join('\n')}\n\nเลื่อนดูโปรแกรมที่สนใจได้เลย ✈️`;
+  return `${flag} พบ ${total} โปรแกรมที่ตรงกับเงื่อนไข\n\n${lines.join('\n')}\n\n${SEARCH_FOOTER}`;
 }
 
 function buildEmptySearchReply(filters: SearchFilters): ReplyPayload {
@@ -266,7 +279,7 @@ function buildEmptySearchReply(filters: SearchFilters): ReplyPayload {
 function buildPromotionReply(filters: SearchFilters, tours: Tour[], locale: Locale): ReplyPayload {
   return {
     flex: buildTourCarousel(tours, locale),
-    text: `🎉 พบ ${tours.length} โปรแกรมโปรโมชันที่ตรงกับเงื่อนไข\n${buildSearchLines(filters).join('\n')}\nรีบจองก่อนหมดโปรค่ะ ✨`,
+    text: `🎉 พบ ${tours.length} โปรแกรมโปรโมชั่นที่ตรงกับเงื่อนไข\n${buildSearchLines(filters).join('\n')}\nรีบจองก่อนหมดโปรค่ะ ✨`,
   };
 }
 
@@ -376,7 +389,7 @@ function buildPromotionSearchReply(result: IntentResult, locale: Locale): ReplyP
     const tours = [...getTours(locale)].sort((a, b) => toNumber(a.price) - toNumber(b.price));
     return {
       flex: buildTourCarousel(tours, locale),
-      text: '🎉 โปรโมชั่นล่าสุดของ Everglow Travel\n\nรวมโปรแกรมทัวร์ที่กำลังมีโปรโมชันในขณะนี้ค่ะ ✈️',
+      text: '🎉 โปรโมชั่นล่าสุดของ Everglow Travel\n\nรวมโปรแกรมทัวร์ที่กำลังมีโปรโมชั่นในขณะนี้ค่ะ ✈️',
     };
   }
   if (result.filters) {
@@ -409,8 +422,17 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
 
     case 'monthSearch':
     case 'searchTour':
-    case 'priceSearch':
       return result.filters
+        ? buildSearchEngineReply(result.filters, locale)
+        : buildFallbackSearchReply(result, locale);
+
+    // priceSearch มีงบ/เงื่อนไข → Search Engine; ถาม "ราคา" ลอยๆ (ไม่มีงบ)
+    // → แสดงตัวอย่างราคาแทน (fallback) เพื่อไม่ให้ตอบ "พบ 123 โปรแกรม" เปล่าๆ
+    case 'priceSearch':
+      return result.filters &&
+        (result.filters.maxPrice !== undefined ||
+          result.filters.country !== undefined ||
+          result.filters.duration !== undefined)
         ? buildSearchEngineReply(result.filters, locale)
         : buildFallbackSearchReply(result, locale);
 
