@@ -14,7 +14,7 @@ for (const type of ['monthly', 'promotion'] as const) {
   console.log(`text: ${JSON.stringify(payload.text)}`);
   console.log(`flex altText: ${JSON.stringify(payload.flex?.altText)}`);
   console.log(`bubbles: ${bubbles} (limit 10)`);
-  console.log(`all bubbles have body: ${bubbleCaps.every((b) => b === 'has-body')} (${bubbles}x)`);
+  console.log(`all bubbles have body: ${bubbleCaps.every((b: string) => b === 'has-body')} (${bubbles}x)`);
 }
 
 const promo = [...getTours('th')].sort((a, b) => toNumber(a.price) - toNumber(b.price));

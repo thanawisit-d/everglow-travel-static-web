@@ -27,7 +27,7 @@ export function buildBroadcastPayload(type: BroadcastType, locale: Locale = 'th'
   return {
     text:
       '🎉 โปรโมชั่นล่าสุดจาก Everglow Travel\n' +
-      'รวมโปรแกรมทัวร์ที่กำลังมีโปรโมชันในขณะนี้ รีบจองก่อนหมดโปรค่ะ ✨',
+      'รวมโปรแกรมทัวร์ที่กำลังมีโปรโมชั่นในขณะนี้ รีบจองก่อนหมดโปรค่ะ ✨',
     flex: buildTourCarousel(tours, locale),
   };
 }
