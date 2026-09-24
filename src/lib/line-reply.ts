@@ -548,7 +548,7 @@ export function buildAdminNotification(params: {
 
   if (intent === 'bookingTour') {
     return [
-      '📝 มีคำขอจองทัวร์ใหม่',
+      '📥 มีคำขอจองทัวร์ใหม่',
       '',
       '👤 ชื่อใน LINE',
       displayName || '-',
@@ -560,7 +560,7 @@ export function buildAdminNotification(params: {
   }
 
   return [
-    '📩 มีลูกค้าสนใจทัวร์',
+    '📩 มีลูกค้าสอบถาม/สนใจทัวร์',
     '',
     '👤 ชื่อใน LINE',
     displayName || '-',
