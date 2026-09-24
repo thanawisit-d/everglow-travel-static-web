@@ -1,5 +1,3 @@
-const isProd = process.env.NODE_ENV === 'production';
-
 function stringify(meta?: unknown): string {
   if (meta === undefined || meta === null) return '';
   try {
@@ -11,7 +9,7 @@ function stringify(meta?: unknown): string {
 
 export const logger = {
   info: (msg: string, meta?: unknown) => {
-    if (!isProd) console.log(`[INFO] ${msg}${stringify(meta)}`);
+    console.log(`[INFO] ${msg}${stringify(meta)}`);
   },
   warn: (msg: string, meta?: unknown) => {
     console.warn(`[WARN] ${msg}${stringify(meta)}`);
