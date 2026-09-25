@@ -6,7 +6,7 @@ import SearchWidget from './SearchWidget';
 
 const TEXT = {
   th: {
-    title: 'ค้นพบทริปในฝันของคุณ',
+    title: 'ค้นหาทริปในฝันของคุณ',
     subtitle: 'ค้นหาปลายทาง เลือกวันเดินทาง แล้วเริ่มต้นทริปที่ใช่',
   },
   en: {

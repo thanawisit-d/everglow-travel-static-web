@@ -84,13 +84,13 @@ export default function LocaleClient({ locale }) {
                 />
               </div>
               <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <p className="whitespace-pre-line">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <Partners locale={locale} />
+      {/* <Partners locale={locale} /> */}
 
       <section className="gallery-section bg-section">
         <h2>{t.galleryTitle}</h2>
