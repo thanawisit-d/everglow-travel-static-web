@@ -606,6 +606,602 @@
     ]
   },
   {
+    "id": "EGT1D-07",
+    "type": "domestic",
+    "province": "ลพบุรี",
+    "image": "banner1day/EGT1D-07.png",
+    "price": "1,750",
+    "duration": "1 วัน",
+    "periodText": "พ.ย. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์ลพบุรี ทุ่งทานตะวัน เขื่อนป่าสักชลสิทธิ์ เที่ยวทุ่งทานตะวันเขาจีนแล ทุ่งทานตะวันบ้านไร่คุณยายส้มป่อย น้ำตกวังก้านเหลือง นิวซีแลนด์เมืองไทยบ้านหาดเล็บยาว และเขื่อนป่าสักชลสิทธิ์",
+    "pdf": "filepdf_1day/EGT1D-07.pdf",
+    "desc_en": "Lopburi Tour, Sunflower Fields, Pa Sak Jolasid Dam, visit Khao Chin Lae sunflower field, Baan Rai Khun Yai Somploy sunflower field, Wang Kan Luang Waterfall, New Zealand of Thailand at Ban Hat Lep Yao, and Pa Sak Jolasid Dam.",
+    "duration_en": "1 day",
+    "periodText_en": "Nov. - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ลพบุรี",
+        "title_en": "Bangkok • Lopburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ลพบุรี",
+            "description_en": "Meet in Bangkok and depart for Lopburi."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "09:00",
+            "time_en": "09:00 AM",
+            "description": "ชมทุ่งทานตะวัน เขาจีนแล",
+            "description_en": "Visit Khao Chin Lae Sunflower Field"
+          },
+          {
+            "time": "10:30",
+            "time_en": "10:30 AM",
+            "description": "ทุ่งทานตะวันบ้านไร่คุณยายส้มป่อย",
+            "description_en": "Baan Rai Khun Yai Somploy Sunflower Field"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "ชมน้ำตกวังก้านเหลือง",
+            "description_en": "Visit Wang Kan Luang Waterfall"
+          },
+          {
+            "time": "16:00",
+            "time_en": "04:00 PM",
+            "description": "ชมนิวซีแลนด์เมืองไทยและจุดกางเต็นท์ บ้านหาดเล็บยาว",
+            "description_en": "Visit New Zealand of Thailand and the camping spot at Ban Hat Lep Yao"
+          },
+          {
+            "time": "17:30",
+            "time_en": "05:30 PM",
+            "description": "เขื่อนป่าสักชลสิทธิ์",
+            "description_en": "Pa Sak Jolasid Dam"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-10",
+    "type": "domestic",
+    "province": "นครราชสีมา",
+    "image": "banner1day/EGT1D-10.png",
+    "price": "1,950",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์เขาใหญ่",
+    "pdf": "filepdf_1day/EGT1D-10.pdf",
+    "desc_en": "Khao Yai Tour.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • เขาใหญ่",
+        "title_en": "Bangkok • Khao Yai",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
+            "description_en": "Meet in Bangkok and depart for Nakhon Ratchasima."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "09:30",
+            "time_en": "09:30 AM",
+            "description": "ไร่สุวรรณ",
+            "description_en": "Suwan Farm"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "เกาะแกะ เขาใหญ่",
+            "description_en": "Khoa Kae Khao Yai"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "Hokkaido Flower Park Khao Yai",
+            "description_en": "Hokkaido Flower Park Khao Yai"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "Portofino Cafe",
+            "description_en": "Portofino Cafe"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "Primo Piazza หมู่บ้านอิตาลีกลางเขาใหญ่",
+            "description_en": "Primo Piazza, an Italian village in Khao Yai"
+          },
+          {
+            "time": "19:00",
+            "time_en": "07:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-36",
+    "type": "domestic",
+    "province": "พระนครศรีอยุธยา",
+    "image": "banner1day/EGT1D-36.png",
+    "price": "1,750",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์อยุธยา ล่องเรือรอบเกาะอยุธยา เที่ยววัดไชยวัฒนาราม วัดมหาธาตุ ตลาดน้ำอโยธยา และล่องเรือรอบเกาะอยุธยา",
+    "pdf": "filepdf_1day/EGT1D-36.pdf",
+    "desc_en": "Ayutthaya Tour, boat trip around Ayutthaya Island, visit Wat Chaiwatthanaram, Wat Mahathat, Ayothaya Floating Market, and boat trip around Ayutthaya Island.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อยุธยา",
+        "title_en": "Bangkok • Ayutthaya",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่พระนครศรีอยุธยา",
+            "description_en": "Meet in Bangkok and depart for Phra Nakhon Si Ayutthaya."
+          },
+          {
+            "time": "09:00",
+            "time_en": "09:00 AM",
+            "description": "วัดไชยวัฒนาราม",
+            "description_en": "Wat Chaiwatthanaram"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "วัดมหาธาตุ",
+            "description_en": "Wat Mahathat"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "ตลาดน้ำอโยธยา",
+            "description_en": "Ayothaya Floating Market"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "ล่องเรือรอบเกาะอยุธยา",
+            "description_en": "Boat trip around Ayutthaya Island"
+          },
+          {
+            "time": "18:30",
+            "time_en": "06:30 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-37",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner1day/EGT1D-37.png",
+    "price": "1,790",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์อุทัยธานี ไหว้พระ 4 วัด เที่ยววัดเขาถ้ำประทุน ตลาดชาวไฮ่ วัดถ้ำเขาวง วัดท่าซุง หลวงพ่อฤาษีลิงดำ และวัดเขาสะแกกรัง",
+    "pdf": "filepdf_1day/EGT1D-37.pdf",
+    "desc_en": "Uthai Thani Tour, pay homage to 4 temples, visit Wat Khao Tham Prathun, Sao Hai Market, Wat Tham Khao Wong, Wat Tha Sung (Luang Pho Reusi Ling Dam), and Wat Khao Sakae Krang.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี",
+            "description_en": "Meet in Bangkok and depart for Uthai Thani."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "วัดเขาถ้ำประทุน",
+            "description_en": "Wat Khao Tham Prathun"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "ตลาดชาวไฮ่ และรับประทานอาหารกลางวัน",
+            "description_en": "Sao Hai Market and have lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "วัดถ้ำเขาวง",
+            "description_en": "Wat Tham Khao Wong"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "วัดท่าซุง หลวงพ่อฤาษีลิงดำ",
+            "description_en": "Wat Tha Sung (Luang Pho Reusi Ling Dam)"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "วัดเขาสะแกกรัง",
+            "description_en": "Wat Khao Sakae Krang"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-39",
+    "type": "domestic",
+    "province": "กาญจนบุรี",
+    "image": "banner1day/EGT1D-39.png",
+    "price": "1,999",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์กาญจนบุรี เมืองมัลลิกา เที่ยวเมืองมัลลิกา ร.ศ. ๑๒๔ ถ้ำกระแซ & ทางรถไฟสายมรณะ สะพานข้ามแม่น้ำแคว และสกายวอล์กเมืองกาญจนบุรี",
+    "pdf": "filepdf_1day/EGT1D-39.pdf",
+    "desc_en": "Kanchanaburi Tour, Mallika City, visit Mallika City R.S. 124, Tham Krasae Cave & the Death Railway, the Bridge over the River Kwai, and Kanchanaburi Skywalk.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • กาญจนบุรี",
+        "title_en": "Bangkok • Kanchanaburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่กาญจนบุรี",
+            "description_en": "Meet in Bangkok and depart for Kanchanaburi"
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "เมืองมัลลิกา ร.ศ. ๑๒๔ และรับประทานอาหารกลางวัน",
+            "description_en": "Mallika City R.S. 124 and have lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "ชมถ้ำกระแซ และทางรถไฟสายมรณะ",
+            "description_en": "Visit Tham Krasae Cave and the Death Railway"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "สะพานข้ามแม่น้ำแคว",
+            "description_en": "the Bridge over the River Kwai"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "สกายวอล์กเมืองกาญจนบุรี",
+            "description_en": "Kanchanaburi Skywalk"
+          },
+          {
+            "time": "18:00",
+            "time_en": "06:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-42",
+    "type": "domestic",
+    "province": "สระบุรี",
+    "image": "banner1day/EGT1D-42.png",
+    "price": "1,750",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ก.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์สระบุรี อุทยานแห่งชาติน้ำตกสามหลั่น เที่ยววัดพระพุทธฉาย หอมนสิการ ตลาดหัวปลี และอุทยานแห่งชาติน้ำตกสามหลั่น",
+    "pdf": "filepdf_1day/EGT1D-42.pdf",
+    "desc_en": "Saraburi Tour, Sam Lan Waterfall National Park, visit Wat Phra Phutthachai, Homnasikan, Hua Plee Market, and Sam Lan Waterfall National Park.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Sept. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • สระบุรี",
+        "title_en": "Bangkok • Saraburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่สระบุรี",
+            "description_en": "Meet in Bangkok and depart for Saraburi."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "09:30",
+            "time_en": "09:30 AM",
+            "description": "อุทยานแห่งชาติน้ำตกสามหลั่น",
+            "description_en": "Sam Lan Waterfall National Park."
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "วัดพระพุทธฉาย",
+            "description_en": "Wat Phra Phutthachai."
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "14:00",
+            "time_en": "02:00 PM",
+            "description": "หอมนสิการ",
+            "description_en": "Homnasikan."
+          },
+          {
+            "time": "15:30",
+            "time_en": "03:30 PM",
+            "description": "ตลาดหัวปลี",
+            "description_en": "Hua Plee Market."
+          },
+          {
+            "time": "18:30",
+            "time_en": "06:30 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "id": "EGT1D-43",
+  "type": "domestic",
+  "province": "นครนายก",
+  "image": "banner1day/EGT1D-43.png",
+  "price": "1,759",
+  "duration": "1 วัน",
+  "periodText": "มิ.ย. - ก.ค. 2570",
+  "transport": {
+    "name": "รถตู้ VIP 10 ที่นั่ง",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "ทัวร์นครนายก ล่องเรือเขาช่องลม วัดมณีวงศ์",
+  "pdf": "filepdf_1day/EGT1D-43.pdf",
+  "desc_en": "Nakhon Nayok Tour, Khao Chong Lom boat trip, Wat Maniwong.",
+  "duration_en": "1 day",
+  "periodText_en": "June - July 2027",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "กรุงเทพฯ • นครนายก",
+      "title_en": "Bangkok • Nakhon Nayok",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครนายก",
+          "description_en": "Meet at the designated meeting point in Bangkok and depart for Nakhon Nayok."
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า",
+          "description_en": "breakfast"
+        },
+        {
+          "time": "10:00",
+          "time_en": "10:00 AM",
+          "description": "เขาช่องลม",
+          "description_en": "Khao Chong Lom."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน",
+          "description_en": "Lunch"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "วัดมณีวงศ์",
+          "description_en": "Wat Maniwong."
+        },
+        {
+          "time": "15:30",
+          "time_en": "03:30 PM",
+          "description": "มองเทรอส์คาเฟ่ แอนด์ ฟาร์ม",
+          "description_en": "Montreux Cafe and Farm."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+          "description_en": "Arrive safely in Bangkok"
+        }
+      ]
+    }
+  ]
+},
+{
+    "id": "EGT1D-16.1",
+    "type": "domestic",
+    "province": "นครราชสีมา",
+    "image": "banner1day/กค EGT1D-16.1.png",
+    "price": "1,950",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569, ม.ค. 2570",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์วังน้ำเขียว เที่ยวโรงคั่วกาแฟวังน้ำเขียว A Cup of Love พุทธอุทยานวังน้ำเขียว (คำชะโนดวังน้ำเขียว) และ Montana Farm",
+    "pdf": "filepdf_1day/กคEGT1D-16.1.pdf",
+    "desc_en": "Wang Nam Khiao Tour, visit Wang Nam Khiao Coffee Roastery, A Cup of Love, Wang Nam Khiao Buddhist Park (Kham Cha Nod Wang Nam Khiao), and Montana Farm.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026, Jan. 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • วังน้ำเขียว",
+        "title_en": "Bangkok • Wang Nam Khiao",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
+            "description_en": "Meet in Bangkok and depart for Nakhon Ratchasima."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "ร้านกาแฟ A Cup of Love",
+            "description_en": "Visit A Cup of Love"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "โรงคั่วกาแฟวังน้ำเขียว และรับประทานอาหารกลางวัน",
+            "description_en": "Visit Wang Nam Khiao Coffee Roastery and havelunch"
+          },
+          {
+            "time": "14:00",
+            "time_en": "02:00 PM",
+            "description": "พุทธอุทยานวังน้ำเขียว",
+            "description_en": "Visit Wang Nam Khiao Buddhist Park"
+          },
+          {
+            "time": "16:00",
+            "time_en": "04:00 PM",
+            "description": "ปิดท้ายด้วย Montana Farm",
+            "description_en": "End at Montana Farm"
+          },
+          {
+            "time": "20:30",
+            "time_en": "08:30 PM",
+            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "EGT-FP-46",
     "type": "domestic",
     "province": "พิษณุโลก",
@@ -665,7 +1261,37 @@
     "pdf": "filepdf_2d1n/EGT-SP-44.1.pdf",
     "desc_en": "Ratchaburi tour, fire show at Sattatha, 2 days 1 night, visit Khao Ngu Stone Park, Oh Poi Market, Grand Canyon Ratchaburi at Sattatha, Thai Park, Ratchaburi Old Water Jar Museum, Phupha Coffee Camp, Vento, Suan Phueng, and Khao Bin Cave.",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - May 2026"
+    "periodText_en": "Feb. - May 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ราชบุรี",
+        "title_en": "Bangkok • Ratchaburi",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ราชบุรี", "description_en": "Meet in Bangkok, depart to Ratchaburi" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "อุทยานหินเขางู", "description_en": "Khao Ngu Stone Park" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "เดินตลาดโอ๊ะป่อย และอิสระรับประทานอาหารกลางวัน", "description_en": "Stroll Oh Poi Market, free time for lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "เช็คอินที่เวเนโต้ สวนผึ้ง", "description_en": "Check in at Vento, Suan Phueng" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ชมแกรนด์แคนยอนราชบุรี", "description_en": "Visit Grand Canyon Ratchaburi" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" },
+          { "time": "17:00", "time_en": "05:00 PM", "description": "เที่ยวชม ณ สัทธา อุทยานไทย", "description_en": "Visit Na Sattha Thai Park" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "กลับที่พัก รีสอร์ทเรือนชมดาว", "description_en": "Return to Ruen Chom Dao Resort" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "สวนผึ้ง • ราชบุรี • กรุงเทพฯ",
+        "title_en": "Suan Phueng • Ratchaburi • Bangkok",
+        "items": [
+          { "time": "08:00", "time_en": "08:00 AM", "description": "รับประทานอาหารเช้า ณ โรงแรม", "description_en": "Breakfast at hotel" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "พักผ่อน ณ Phupha Coffee Camp", "description_en": "Relax at Phupha Coffee Camp" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ถ้ำเขาบิน", "description_en": "Khao Bin Cave" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "พิพิธภัณฑ์โอ่งเก่าราชบุรี", "description_en": "Ratchaburi Old Water Jar Museum" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-44",
@@ -684,7 +1310,35 @@
     "pdf": "filepdf_2d1n/EGT-SP-44.pdf",
     "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "June - December 2026"
+    "periodText_en": "June - December 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ราชบุรี",
+        "title_en": "Bangkok • Ratchaburi",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ราชบุรี", "description_en": "Meet in Bangkok, depart to Ratchaburi" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "อุทยานหินเขางู", "description_en": "Khao Ngu Stone Park" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "ตลาดโอ๊ะป่อย และรับประทานอาหารกลางวัน", "description_en": "Oh Poi Market and lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "เช็คอินเวเนโต้ สวนผึ้ง", "description_en": "Check in at Vento, Suan Phueng" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ชมแกรนด์แคนยอนราชบุรี", "description_en": "Visit Grand Canyon Ratchaburi" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก รีสอร์ทเรือนชมดาว", "description_en": "Ruen Chom Dao Resort" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "สวนผึ้ง • ราชบุรี • กรุงเทพฯ",
+        "title_en": "Suan Phueng • Ratchaburi • Bangkok",
+        "items": [
+          { "time": "08:00", "time_en": "08:00 AM", "description": "รับประทานอาหารเช้า ณ โรงแรม", "description_en": "Breakfast at hotel" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "พักผ่อน ณ Phupha Coffee Camp และรับประทานอาหารกลางวัน", "description_en": "Relax at Phupha Coffee Camp and lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ถ้ำเขาบิน", "description_en": "Khao Bin Cave" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "พิพิธภัณฑ์โอ่งเก่าราชบุรี", "description_en": "Ratchaburi Old Water Jar Museum" },
+          { "time": "15:00", "time_en": "03:00 PM", "description": "ณ สัทธา อุทยานไทย", "description_en": "Na Sattha Thai Park" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-43",
@@ -703,7 +1357,37 @@
     "pdf": "filepdf_2d1n/EGT-SP-43.pdf",
     "desc_en": "Uttaradit Tour 2 days 1 night: Explore the historic Phra Si Rattana Mahathat Temple, visit Than Sae Waterfall, and experience the natural beauty and local culture of Uttaradit.",
     "duration_en": "2 days 1 night",
-    "periodText_en": "May - July 2026"
+    "periodText_en": "May - July 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ลับแล อุตรดิตถ์",
+        "title_en": "Bangkok • Laplae, Uttaradit",
+        "items": [
+          { "time": "06:00", "time_en": "06:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุตรดิตถ์", "description_en": "Meet in Bangkok, depart to Uttaradit" },
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "เดินทางถึงอำเภอลับแล", "description_en": "Arrive at Laplae District" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "บุฟเฟ่ต์ทุเรียนหลงลับแลและหลินลับแล", "description_en": "Long Laplae and Lin Laplae durian buffet" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "เที่ยวชมเมืองลับแล ประตูเมืองลับแล", "description_en": "Explore Laplae town and Laplae town gate" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ถ่ายภาพบ้านโบราณ", "description_en": "Take photos at the ancient houses" },
+          { "time": "15:00", "time_en": "03:00 PM", "description": "ถ่ายภาพกับสตรีห้ามโกหก", "description_en": "Take photos with the Satri Ham Kohok statue" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "รับประทานอาหารเย็น ณ ร้านอาหารท้องถิ่น", "description_en": "Dinner at a local restaurant" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก โรงแรมสีหราช", "description_en": "Seeharaj Hotel" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "อุตรดิตถ์ • กรุงเทพฯ",
+        "title_en": "Uttaradit • Bangkok",
+        "items": [
+          { "time": "08:00", "time_en": "08:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "วัดพระแท่นศิลาอาสน์", "description_en": "Wat Phra Thaen Sila At" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "แวะเลือกซื้อของฝากพื้นเมือง", "description_en": "Stop for local souvenir shopping" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "21:00", "time_en": "09:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-FP-42",
@@ -722,7 +1406,36 @@
     "pdf": "filepdf_2d1n/EGT-FP-42.pdf",
     "desc_en": "Uthai Thani Tour 2 days 1 night: Discover the charming Sakae Krang River community, visit Wat Tha Sung, explore Hup Pa Tat, and immerse in the peaceful atmosphere of this hidden gem province.",
     "duration_en": "2 days 1 night",
-    "periodText_en": "June - July 2026"
+    "periodText_en": "June - July 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          { "time": "06:00", "time_en": "06:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี", "description_en": "Meet in Bangkok, depart to Uthai Thani" },
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "วัดถ้ำเขาประทุน", "description_en": "Wat Tham Khao Prathun" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "ถนนใต้ดิน", "description_en": "Underground Road" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวันที่ตลาดซาวไฮ่", "description_en": "Lunch at Sao Hai Market" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ชมต้นไม้ยักษ์", "description_en": "Visit the giant tree" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "สวนสมุนไพรภูปางสวรรค์", "description_en": "Phu Pang Sawan Herbal Garden" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก ห้วยขาแข้ง คันทรีโฮม", "description_en": "Huai Kha Khaeng Country Home" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "อุทัยธานี • กรุงเทพฯ",
+        "title_en": "Uthai Thani • Bangkok",
+        "items": [
+          { "time": "08:00", "time_en": "08:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "บุฟเฟ่ต์ทุเรียนและผลไม้ประจำฤดู", "description_en": "Durian and seasonal fruit buffet" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "19:00", "time_en": "07:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-29.2",
@@ -741,7 +1454,35 @@
     "pdf": "filepdf_2d1n/EGT-SP-29.2.pdf",
     "desc_en": "Tour Loei, Phi Ta Khon Festival, 2 days 1 night, visit Kaeng Khut Khu rapids. ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "20 - 22 June 2026"
+    "periodText_en": "20 - 22 June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • เลย • เชียงคาน",
+        "title_en": "Bangkok • Loei • Chiang Khan",
+        "items": [
+          { "time": "05:00", "time_en": "05:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เลย", "description_en": "Meet in Bangkok, depart to Loei" },
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "งานเทศกาลผีตาโขน", "description_en": "Phi Ta Khon Festival" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "อิสระรับประทานอาหารเย็นที่ถนนคนเดินเชียงคาน", "description_en": "Free time for dinner at Chiang Khan Walking Street" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "โรงแรมเชียงคานโคซี่", "description_en": "Chiang Khan Cozy Hotel" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "เชียงคาน • เลย • กรุงเทพฯ",
+        "title_en": "Chiang Khan • Loei • Bangkok",
+        "items": [
+          { "time": "06:00", "time_en": "06:00 AM", "description": "ใส่บาตรข้าวเหนียวริมแม่น้ำโขง", "description_en": "Offer sticky rice alms by the Mekong River" },
+          { "time": "06:30", "time_en": "06:30 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "แก่งคุดคู้", "description_en": "Kaeng Khut Khu Rapids" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "สักการะวัดเนรมิตวิปัสสนา", "description_en": "Pay homage at Wat Neramit Wipatsana" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "21:00", "time_en": "09:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-28",
@@ -760,7 +1501,36 @@
     "pdf": "filepdf_2d1n/EGT-SP-28.pdf",
     "desc_en": "Chaiyaphum tour, hunt 4 national parks, see butterflies and Krachiew flower fields, 2 days 1 night, visit Mo Hin Khao. ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "May - August 2026"
+    "periodText_en": "May - August 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ชัยภูมิ",
+        "title_en": "Bangkok • Chaiyaphum",
+        "items": [
+          { "time": "05:00", "time_en": "05:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ชัยภูมิ", "description_en": "Meet in Bangkok, depart to Chaiyaphum" },
+          { "time": "07:00", "time_en": "07:00 AM", "description": "อิสระรับประทานอาหารเช้า", "description_en": "Free time for breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "อุทยานแห่งชาติป่าหินงาม", "description_en": "Pa Hin Ngam National Park" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "อุทยานแห่งชาติไทรทอง", "description_en": "Sai Thong National Park" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "อิสระรับประทานอาหารเย็น ณ ถนนคนเดินชัยภูมิ", "description_en": "Free time for dinner at Chaiyaphum Walking Street" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พักโรงแรมฮ็อป อินน์ ชัยภูมิ", "description_en": "Hop Inn Chaiyaphum Hotel" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "ชัยภูมิ • กรุงเทพฯ",
+        "title_en": "Chaiyaphum • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า ณ ชัยภูมิติ่มซำ", "description_en": "Breakfast at Chaiyaphum Dim Sum" },
+          { "time": "08:00", "time_en": "08:00 AM", "description": "มอหินขาว", "description_en": "Mo Hin Khao" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "อุทยานแห่งชาติภูแลนคา", "description_en": "Phu Laen Kha National Park" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "อุทยานแห่งชาติตาดโตน", "description_en": "Tat Ton National Park" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "19:00", "time_en": "07:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-FP-07.1",
@@ -779,9 +1549,44 @@
     "pdf": "filepdf_2d1n/EGT-FP-07.1.pdf",
     "desc_en": "Phetchaburi Tour 2 days 1 night: Visit Khao Wang (Phra Nakhon Khiri Historical Park), explore Kaeng Krachan National Park, and enjoy the famous Phetchaburi sweets and local cuisine.",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "Feb. - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • แก่งกระจาน เพชรบุรี",
+        "title_en": "Bangkok • Kaeng Krachan, Phetchaburi",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เพชรบุรี", "description_en": "Meet in Bangkok, depart to Phetchaburi" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "อุทยานแห่งชาติแก่งกระจาน", "description_en": "Kaeng Krachan National Park" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "ชมสะพานแขวนแก่งกระจาน", "description_en": "Visit Kaeng Krachan Suspension Bridge" },
+          { "time": "11:15", "time_en": "11:15 AM", "description": "จุดชมวิวเขาพะเนินทุ่ง", "description_en": "Khao Panoen Thung Viewpoint" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ตลาดริมน้ำจามจุรี", "description_en": "Chamchuri Riverside Market" },
+          { "time": "15:00", "time_en": "03:00 PM", "description": "Pribphree Café", "description_en": "Pribphree Café" },
+          { "time": "17:00", "time_en": "05:00 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก Nana Resort Kaeng Krachan", "description_en": "Nana Resort Kaeng Krachan" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "บึงบัว • ถ้ำพระยานคร • กรุงเทพฯ",
+        "title_en": "Bueng Bua • Phraya Nakhon Cave • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "08:00", "time_en": "08:00 AM", "description": "เส้นทางศึกษาธรรมชาติบึงบัว", "description_en": "Bueng Bua Nature Trail" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "ขึ้นเรือไปหาดแหลมศาลา", "description_en": "Boat to Laem Sala Beach" },
+          { "time": "09:20", "time_en": "09:20 AM", "description": "ถ้ำพระยานคร", "description_en": "Phraya Nakhon Cave" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "จุดไฮไลท์พระที่นั่งคูหาคฤหาสน์", "description_en": "Highlight: Phra Thinang Khuha Kharuehat" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ลงจากถ้ำ", "description_en": "Descend from the cave" },
+          { "time": "13:15", "time_en": "01:15 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "เลือกซื้อสับปะรดปากน้ำปราณ น้ำพริกกุ้งเสียบ ขนมพื้นเมือง และผลิตภัณฑ์ชุมชนต่างๆ", "description_en": "Shop for Pak Nam Pran pineapple, kung siap chili paste, local sweets, and community products" },
+          { "time": "14:30", "time_en": "02:30 PM", "description": "สิ้นสุดการท่องเที่ยวในตัวเมืองเพชรบุรี", "description_en": "End of sightseeing in Phetchaburi town" },
+          { "time": "17:00", "time_en": "05:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
-  {
+ {
     "id": "EGT-SP-05.1",
     "type": "domestic",
     "province": "อุทัยธานี",
@@ -798,7 +1603,37 @@
     "pdf": "filepdf_2d1n/EGT-SP-05.1.pdf",
     "desc_en": "Uthai Thani Tour 2 days 1 night: Explore Hup Pa Tat, take a boat trip along the Sakae Krang River, visit Wat Tha Sung, and enjoy the tranquil local way of life.",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "Feb. - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี", "description_en": "Meet in Bangkok, depart to Uthai Thani" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "วัดเขาสะแกกรัง", "description_en": "Wat Khao Sakae Krang" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน ณ ร้านอาหารริมแม่น้ำสะแกกรัง", "description_en": "Lunch at a restaurant by the Sakae Krang River" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "วัดท่าซุง", "description_en": "Wat Tha Sung" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "วัดอุโปสถาราม", "description_en": "Wat Uposatharam" },
+          { "time": "15:00", "time_en": "03:00 PM", "description": "ถนนคนเดินตรอกโรงยา และอิสระรับประทานอาหาร", "description_en": "Trok Rong Ya Walking Street, free time for dinner" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก โรงแรม ซีทูยู อุทัยธานี", "description_en": "C2U Hotel Uthai Thani" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "อุทัยธานี • กรุงเทพฯ",
+        "title_en": "Uthai Thani • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "ตลาดซาวไฮ่", "description_en": "Sao Hai Market" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "ชมต้นไม้ยักษ์", "description_en": "Visit the giant tree" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "วัดเขาถ้ำประทุน", "description_en": "Wat Khao Tham Prathun" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "หุบป่าตาด", "description_en": "Hup Pa Tat" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "บ้านชายเขา", "description_en": "Ban Chai Khao" },
+          { "time": "19:00", "time_en": "07:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-01",
@@ -817,7 +1652,35 @@
     "pdf": "filepdf_2d1n/EGT-SP-01.pdf",
     "desc_en": "Tak tour 2 days 1 night, visit Rim Moei market ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Oct 2026 - Jan 2027"
+    "periodText_en": "Oct 2026 - Jan 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ตาก",
+        "title_en": "Bangkok • Tak",
+        "items": [
+          { "time": "06:00", "time_en": "06:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ตาก", "description_en": "Meet in Bangkok, depart to Tak" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน ณ จังหวัดนครสวรรค์", "description_en": "Lunch in Nakhon Sawan Province" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ถ้ำสีฟ้า", "description_en": "Blue Cave" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ดอยป่าหวาย", "description_en": "Doi Pa Wai" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก โฮมสเตย์ ดอยป่าหวาย", "description_en": "Doi Pa Wai Homestay" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "ตาก • กรุงเทพฯ",
+        "title_en": "Tak • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "08:00", "time_en": "08:00 AM", "description": "เช็คเอาต์", "description_en": "Check out" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "วัดแม่ตาว", "description_en": "Wat Mae Tao" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "ตลาดริมเมย", "description_en": "Rim Moei Market" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "พิพิธภัณฑ์ไม้กลายเป็นหิน", "description_en": "Petrified Wood Museum" },
+          { "time": "20:30", "time_en": "08:30 PM", "description": "เดินทางถึงกรุงเทพมหานคร", "description_en": "Arrive in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-41",
@@ -836,7 +1699,39 @@
     "pdf": "filepdf_2d1n/EGT-SP-41.pdf",
     "desc_en": "Phetchabun-Khao Kho tour 2 days 1 night, visit Khao Kho windmill field. ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "Feb. - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • เพชรบูรณ์ • เขาค้อ",
+        "title_en": "Bangkok • Phetchabun • Khao Kho",
+        "items": [
+          { "time": "05:00", "time_en": "05:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เพชรบูรณ์", "description_en": "Meet in Bangkok, depart to Phetchabun" },
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "จุดชมวิวทะเลหมอกเขาค้อ", "description_en": "Khao Kho Sea of Mist Viewpoint" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ทุ่งกังหันลมเขาค้อ", "description_en": "Khao Kho Windmill Field" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "เขาค้อฟลาวเวอร์เทอเรส", "description_en": "Khao Kho Flower Terrace" },
+          { "time": "15:00", "time_en": "03:00 PM", "description": "สกายวอล์คภูเลิศ เขาค้อ", "description_en": "Phu Loet Skywalk, Khao Kho" },
+          { "time": "17:00", "time_en": "05:00 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก ภูพ่อบท เขาค้อ", "description_en": "Phu Por Bot Khao Kho" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "เขาค้อ • กรุงเทพฯ",
+        "title_en": "Khao Kho • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "วัดพระธาตุผาซ่อนแก้ว", "description_en": "Wat Phra That Pha Son Kaeo" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "จุดชมวิวผาซ่อนแก้ว", "description_en": "Pha Son Kaeo Viewpoint" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวันที่กอดหมอก คาเฟ่", "description_en": "Lunch at Kod Mok Cafe" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ถ่ายภาพที่ไฮเดรนเยีย คาเฟ่ เขาค้อ", "description_en": "Take photos at Hydrangea Cafe, Khao Kho" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ม่อนแกะ เขาค้อ", "description_en": "Mon Kae, Khao Kho" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-FP-07",
@@ -855,7 +1750,41 @@
     "pdf": "filepdf_2d1n/EGT-FP-07.pdf",
     "desc_en": "Phetchaburi Tour 2 days 1 night: Experience the blend of history and nature at Khao Wang, Kaeng Krachan National Park, and Chao Samran Beach.",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "Feb. - June 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • แก่งกระจาน เพชรบุรี",
+        "title_en": "Bangkok • Kaeng Krachan, Phetchaburi",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เพชรบุรี", "description_en": "Meet in Bangkok, depart to Phetchaburi" },
+          { "time": "07:30", "time_en": "07:30 AM", "description": "อุทยานแห่งชาติแก่งกระจาน", "description_en": "Kaeng Krachan National Park" },
+          { "time": "09:15", "time_en": "09:15 AM", "description": "จุดชมวิวเขาพะเนินทุ่ง", "description_en": "Khao Panoen Thung Viewpoint" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "ลงจากพะเนินทุ่งกลับสู่ที่ทำการอุทยาน", "description_en": "Descend from Panoen Thung back to the park office" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "ชมสะพานแขวนแก่งกระจาน", "description_en": "Visit Kaeng Krachan Suspension Bridge" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ตลาดริมน้ำจามจุรี", "description_en": "Chamchuri Riverside Market" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "Pribphree Café", "description_en": "Pribphree Café" },
+          { "time": "15:30", "time_en": "03:30 PM", "description": "ที่พัก Nana Resort Kaeng Krachan", "description_en": "Nana Resort Kaeng Krachan" },
+          { "time": "17:30", "time_en": "05:30 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "ถ้ำเขาหลวง • เมืองเพชรบุรี • กรุงเทพฯ",
+        "title_en": "Tham Khao Luang • Phetchaburi Town • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "ถ้ำเขาหลวง", "description_en": "Tham Khao Luang" },
+          { "time": "10:30", "time_en": "10:30 AM", "description": "พระนครคีรี (เขาวัง)", "description_en": "Phra Nakhon Khiri (Khao Wang)" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "ตลาดเพชรบุรี และรับประทานอาหารกลางวัน", "description_en": "Phetchaburi Market and lunch" },
+          { "time": "13:30", "time_en": "01:30 PM", "description": "วัดใหญ่สุวรรณาราม", "description_en": "Wat Yai Suwannaram" },
+          { "time": "14:30", "time_en": "02:30 PM", "description": "วัดมหาธาตุวรวิหาร", "description_en": "Wat Mahathat Worawihan" },
+          { "time": "15:30", "time_en": "03:30 PM", "description": "สิ้นสุดการท่องเที่ยว", "description_en": "End of sightseeing" },
+          { "time": "18:30", "time_en": "06:30 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT3D2N-FP-14",
