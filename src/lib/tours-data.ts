@@ -4,7 +4,7 @@ import type { Locale } from '@/types/api';
 import type { Tour } from '@/types/tour';
 import { tourCountryLabel } from '@/types/tour';
 import { toNumber } from '@/utils/price';
-import { THAI_MONTHS } from '@/lib/search-constants';
+import { THAI_MONTHS, buildMonthPrefix } from '@/lib/search-constants';
 
 const cache: Record<Locale, readonly Tour[]> = {
   th: Object.freeze(toursTh as unknown as Tour[]),
@@ -59,24 +59,33 @@ export function filterTours(filters: TourFilter, locale: Locale = 'th'): Tour[] 
   });
 }
 
+function matchesCountry(tour: Tour, country?: string): boolean {
+  if (!country) return true;
+  return typeof tour.country === 'string'
+    ? tour.country === country
+    : Array.isArray(tour.country) && tour.country.includes(country);
+}
+
+export function filterToursByPrefix(
+  prefix: string,
+  locale: Locale = 'th',
+  country?: string,
+): Tour[] {
+  return cache[locale].filter((t) => {
+    if (t.startMonth?.startsWith(prefix) !== true) return false;
+    return matchesCountry(t, country);
+  });
+}
+
 export function filterToursByMonth(
   locale: Locale = 'th',
   month: string,
   country?: string,
 ): Tour[] {
-  const prefix = THAI_MONTHS[month];
-  if (!prefix) return [];
-  return cache[locale].filter((t) => {
-    if (t.startMonth?.startsWith(prefix) !== true) return false;
-    if (country) {
-      const match =
-        typeof t.country === 'string'
-          ? t.country === country
-          : Array.isArray(t.country) && t.country.includes(country);
-      if (!match) return false;
-    }
-    return true;
-  });
+  const monthNumber = THAI_MONTHS[month];
+  if (!monthNumber) return [];
+  const prefix = buildMonthPrefix(monthNumber, new Date().getFullYear());
+  return filterToursByPrefix(prefix, locale, country);
 }
 
 export function getCountryNames(locale: Locale = 'th'): string[] {

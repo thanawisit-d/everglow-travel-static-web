@@ -1,16 +1,16 @@
 export const THAI_MONTHS: Record<string, string> = {
-  'มกราคม': '2026-01',
-  'กุมภาพันธ์': '2026-02',
-  'มีนาคม': '2026-03',
-  'เมษายน': '2026-04',
-  'พฤษภาคม': '2026-05',
-  'มิถุนายน': '2026-06',
-  'กรกฎาคม': '2026-07',
-  'สิงหาคม': '2026-08',
-  'กันยายน': '2026-09',
-  'ตุลาคม': '2026-10',
-  'พฤศจิกายน': '2026-11',
-  'ธันวาคม': '2026-12',
+  'มกราคม': '01',
+  'กุมภาพันธ์': '02',
+  'มีนาคม': '03',
+  'เมษายน': '04',
+  'พฤษภาคม': '05',
+  'มิถุนายน': '06',
+  'กรกฎาคม': '07',
+  'สิงหาคม': '08',
+  'กันยายน': '09',
+  'ตุลาคม': '10',
+  'พฤศจิกายน': '11',
+  'ธันวาคม': '12',
 };
 
 export const MONTH_ALIASES: Record<string, string> = {
@@ -33,3 +33,15 @@ export const COUNTRY_ALIASES: Record<string, string> = {
 };
 
 export const PROMOTION_KEYWORDS = ['โปร', 'โปรโมชั่น', 'โปรโมชัน', 'ลดราคา', 'promotion'];
+
+export function getYearMonthPrefix(date: Date, offset = 0): string {
+  const year = date.getFullYear();
+  const monthIndex = date.getMonth() + offset;
+  const y = year + Math.floor(monthIndex / 12);
+  const m = ((monthIndex % 12) + 12) % 12 + 1;
+  return `${y}-${String(m).padStart(2, '0')}`;
+}
+
+export function buildMonthPrefix(monthNumber: string, year: number): string {
+  return `${year}-${monthNumber}`;
+}

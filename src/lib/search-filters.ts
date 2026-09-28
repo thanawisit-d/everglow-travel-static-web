@@ -3,7 +3,7 @@ import type { SearchFilters, Tour } from '@/types/tour';
 import { tourCountryLabel } from '@/types/tour';
 import { getTours, getCountryNames } from '@/lib/tours-data';
 import { toNumber } from '@/utils/price';
-import { THAI_MONTHS, MONTH_ALIASES, COUNTRY_ALIASES, PROMOTION_KEYWORDS } from '@/lib/search-constants';
+import { THAI_MONTHS, MONTH_ALIASES, COUNTRY_ALIASES, PROMOTION_KEYWORDS, buildMonthPrefix } from '@/lib/search-constants';
 
 const COUNTRY_NAMES = getCountryNames();
 
@@ -86,9 +86,12 @@ export function filterTours(filters: SearchFilters, locale: Locale = 'th'): Tour
   }
 
   if (filters.month) {
-    const prefix = THAI_MONTHS[filters.month];
-    if (prefix) {
-      tours = tours.filter((tour) => tour.startMonth?.startsWith(prefix) === true);
+    const monthNumber = THAI_MONTHS[filters.month];
+    if (monthNumber) {
+      const prefix = buildMonthPrefix(monthNumber, new Date().getFullYear());
+      tours = tours.filter(
+        (tour) => tour.startMonth?.startsWith(prefix) === true,
+      );
     }
   }
 
