@@ -5,11 +5,11 @@ import config from '@/data/site-config.json';
 
 const SWIPE_THRESHOLD = 50;
 
-export default function TourGrid({ showBadge, locale, tours }) {
+export default function TourGrid({ showBadge, locale, tours, title: titleProp }) {
   const t = config[locale] || config.th;
   const isEn = locale === 'en';
   const data = tours || [];
-  const title = showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle;
+  const title = titleProp || (showBadge === 'monthly' ? t.monthlyTitle : t.popularTitle);
 
   const [currentIdx, setCurrentIdx] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(4);

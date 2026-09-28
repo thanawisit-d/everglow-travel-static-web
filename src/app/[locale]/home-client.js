@@ -1,36 +1,42 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
 import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 import { getPopularTours } from '@/lib/tours-data';
+import { selectMonthlyTours } from '@/lib/monthly-selector';
+import { formatMonthLabel } from '@/lib/dateFilter';
 import Hero from '@/components/Hero';
 import HeroSection from '@/components/HeroSection';
 import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
 
-const featuredIds = {
-  monthly: [
-    'EGT1D-02', 'EGT1D-22', 'EGT-SP-01',
-    'EGT3D2N-FP-14', 'EGT4D3N-FP-06', 'EGT4D3N-FP-07',
-  ],
-};
-
-export default function LocaleClient({ locale }) {
+export default function LocaleClient({ locale, monthlySnapshot }) {
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
   const toursData = isEn ? toursDataEn : toursDataTh;
+
+  // Use the build-time snapshot for SSR (hydration-safe), then refresh against
+  // the real clock after mount so the section tracks the current month.
+  const [monthly, setMonthly] = useState(monthlySnapshot);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMonthly(selectMonthlyTours({ locale }));
+  }, [locale]);
 
   // Popular tours come straight from the data layer (same source as the LINE
   // bot's monthly program), so editing `popular: true` in JSON updates both.
   let popularTours = getPopularTours(locale);
   if (isEn && popularTours.length === 0) popularTours = getPopularTours('th');
   if (popularTours.length === 0) popularTours = toursData.slice(0, 6);
-  const monthlyTours = featuredIds.monthly.map(id => toursData.find(t => t.id === id)).filter(Boolean);
+  const monthlyTours = monthly.tours;
+  const monthlyTitle = monthly.sourceMonth
+    ? `${t.monthlyTitle} ${formatMonthLabel(monthly.sourceMonth, isEn ? 'en' : 'th')}`
+    : t.monthlyTitle;
 
   const destinations = useMemo(() => {
     const domesticSet = new Set();
@@ -67,7 +73,7 @@ export default function LocaleClient({ locale }) {
       <HeroSection locale={locale} destinations={destinations} />
       <div className="tour-grid-wrapper">
         <TourGrid locale={locale} showBadge="popular" tours={popularTours} />
-        <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} />
+        <TourGrid locale={locale} showBadge="monthly" tours={monthlyTours} title={monthlyTitle} />
       </div>
       <div className="services-section bg-section">
         <Hero locale={locale} />

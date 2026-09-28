@@ -1,4 +1,5 @@
 import HomeClient from './home-client';
+import { selectMonthlyTours } from '@/lib/monthly-selector';
 
 export function generateStaticParams() {
   return [
@@ -50,5 +51,6 @@ export async function generateMetadata({ params }) {
 
 export default async function LocalePage({ params }) {
   const { locale } = await params;
-  return <HomeClient locale={locale} />;
+  const monthlySnapshot = selectMonthlyTours({ locale });
+  return <HomeClient locale={locale} monthlySnapshot={monthlySnapshot} />;
 }
