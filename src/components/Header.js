@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath } from '@/lib/assets';
 import { translateCountry, provinceNameMap } from '@/lib/i18n';
@@ -11,7 +11,9 @@ const HOVER_DELAY = 150;
 
 export default function Header({ locale }) {
   const router = useRouter();
+  const pathname = usePathname();
   const isEn = locale === 'en';
+  const [isThaiHome, setIsThaiHome] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [activeGroup, setActiveGroup] = useState(null);
@@ -20,6 +22,11 @@ export default function Header({ locale }) {
   const closeTimer = useRef(null);
   const menuRef = useRef(null);
   const hoverOpenedAt = useRef(0);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration-safe path detection
+    setIsThaiHome(pathname === '/th');
+  }, [pathname]);
 
   const clearTimer = () => {
     if (closeTimer.current) {
@@ -125,7 +132,7 @@ export default function Header({ locale }) {
   }, [router, closeMenu]);
 
   const text = config[locale] || config.th;
-  const s = config.social;
+  const s = config[locale].social;
   const activeGroupData = config.countryGroups.find(g => g.label === activeGroup);
   const activeDomesticGroupData = config.domesticGroups.find(g => g.label === activeDomesticGroup);
 
@@ -148,9 +155,11 @@ export default function Header({ locale }) {
           <a href={s.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <Image src={assetPath('assets/images/social/ig.png')} width={36} height={36} alt="" />
           </a>
-          <a href={s.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <Image src={assetPath('assets/images/social/whatsapp.webp')} width={36} height={36} alt="" />
-          </a>
+          {!isThaiHome && (
+            <a href={s.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <Image src={assetPath('assets/images/social/whatsapp.webp')} width={36} height={36} alt="" />
+            </a>
+          )}
           <a href={s.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <Image src={assetPath('assets/images/social/tiktok.webp')} width={36} height={36} alt="" />
           </a>

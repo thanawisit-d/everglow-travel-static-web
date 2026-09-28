@@ -7,7 +7,7 @@ import config from '@/data/site-config.json';
 
 export default function Footer({ locale }) {
   const t = config[locale] || config.th;
-  const s = config.social;
+  const s = config[locale].social;
   const isEn = locale === 'en';
 
   return (

@@ -126,7 +126,15 @@
     "analyticsDesc": "ช่วยเราวิเคราะห์จำนวนผู้เข้าชมและพฤติกรรมการใช้งาน",
     "marketingLabel": "คุกกี้เพื่อการตลาด",
     "marketingDesc": "ช่วยแสดงโฆษณาที่เหมาะสมกับความสนใจของท่าน",
-    "learnMore": "ดูรายละเอียดได้ที่นโยบายความเป็นส่วนตัว"
+    "learnMore": "ดูรายละเอียดได้ที่นโยบายความเป็นส่วนตัว",
+    "social": {
+      "phone": "+66996326146",
+      "line": "https://lin.ee/xXcNI1w",
+      "facebook": "https://www.facebook.com/people/Everglow-Travel/61580670863894/",
+      "instagram": "https://www.instagram.com/everglow_travel?igsh=MWJ0NnM2anIwYWV1Mw==",
+      "whatsapp": "https://wa.me/66996326146",
+      "tiktok": "https://www.tiktok.com/@everglow.travel"
+    }
   },
   "en": {
     "company": "Everglow Global Co., Ltd. (Head Office)",
@@ -255,15 +263,15 @@
     "analyticsDesc": "Help us analyze visitor count and usage patterns",
     "marketingLabel": "Marketing Cookies",
     "marketingDesc": "Help show ads relevant to your interests",
-    "learnMore": "Learn more in our Privacy Policy"
-  },
-  "social": {
-    "phone": "+66996326146",
-    "line": "https://lin.ee/xXcNI1w",
-    "facebook": "https://www.facebook.com/people/Everglow-Travel/61580670863894/",
-    "instagram": "https://www.instagram.com/everglow_travel?igsh=MWJ0NnM2anIwYWV1Mw==",
-    "whatsapp": "https://wa.me/66996326146",
-    "tiktok": "https://www.tiktok.com/@everglow.travel"
+    "learnMore": "Learn more in our Privacy Policy",
+    "social": {
+      "phone": "+66996326146",
+      "line": "https://lin.ee/xXcNI1w",
+      "facebook": "https://www.facebook.com/profile.php?id=61584615487609",
+      "instagram": "https://www.instagram.com/everglowtravel_thailand",
+      "whatsapp": "https://wa.me/66996326146",
+      "tiktok": "https://www.tiktok.com/@everglowtravel.th"
+    }
   },
   "countryGroups": [
     {

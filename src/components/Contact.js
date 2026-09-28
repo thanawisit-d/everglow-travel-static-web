@@ -97,7 +97,7 @@ function LineSection({ t }) {
 
 export default function ContactCard({ locale }) {
   const t = config[locale] || config.th;
-  const s = config.social;
+  const s = config[locale].social;
 
   const media = [
     { img: 'assets/images/contact/facebook.png', alt: 'Facebook', title: 'FACEBOOK', titleStyle: 'fb', href: s.facebook },
