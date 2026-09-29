@@ -2,7 +2,7 @@ import type { Intent } from '@/types/intent';
 import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
-import { searchTours, getTours, getPopularTours, filterToursByMonth, getCountryNames } from '@/lib/tours-data';
+import { searchTours, getTours, getPopularTours, getCountryNames } from '@/lib/tours-data';
 import { extractSearchFilters, filterTours } from '@/lib/search-filters';
 import { tourCountryLabel, type SearchFilters, type Tour } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
@@ -315,57 +315,8 @@ function buildMonthlyProgramReply(locale: Locale): ReplyPayload {
   };
 }
 
-// Fallback: legacy single-intent paths when no filters were extracted
-// (createToursMessage + direct IntentResult created outside detectIntent).
+// Fallback: legacy price-only reply when no search filters were extracted.
 function buildFallbackSearchReply(result: IntentResult, locale: Locale): ReplyPayload {
-  if (result.intent === 'monthSearch') {
-    const month = result.keyword || '';
-    const country = result.city || '';
-    const tours = filterToursByMonth(locale, month, country || undefined);
-    if (tours.length === 0) {
-      const head = country ? `📅 ${country} เดือน${month}` : `📅 เดือน${month}`;
-      return { text: `${head}\nขออภัยค่ะ ยังไม่มีโปรแกรมที่เดินทางในช่วงนี้ 😊` };
-    }
-    const head = country
-      ? `${COUNTRY_FLAGS[country] ?? '🌍'} โปรแกรม${country} เดือน${month}`
-      : `📅 โปรแกรมเดินทางเดือน${month}`;
-    return { flex: buildTourCarousel(tours, locale), text: `${head}\nพบทั้งหมด ${tours.length} โปรแกรม ✈️` };
-  }
-  if (result.intent === 'searchTour') {
-    const keyword = result.keyword || '';
-    let tours = keyword ? searchTours(keyword, locale) : getTours(locale);
-    if (result.city) {
-      const city = result.city;
-      tours = tours.filter((tour) => tour.city?.toLowerCase().includes(city.toLowerCase()));
-    }
-    if (result.days) {
-      tours = tours.filter((tour) => {
-        const match = tour.duration.match(/^(\d+)/);
-        const days = match ? Number(match[1]) : undefined;
-        return days === result.days;
-      });
-    }
-    if (result.maxPrice) {
-      const max = result.maxPrice;
-      tours = tours.filter((tour) => toNumber(tour.price) <= max);
-    }
-    if (tours.length === 0) {
-      const conditions: string[] = [];
-      if (keyword) conditions.push(`ประเทศ "${keyword}"`);
-      if (result.city) conditions.push(`เมือง "${result.city}"`);
-      if (result.days) conditions.push(`${result.days} วัน`);
-      if (result.maxPrice) conditions.push(`ราคาไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
-      return { text: `ไม่พบทัวร์ ${conditions.join(' ')} ลองเพิ่มงบหรือค้นหาปลายทางอื่นนะคะ` };
-    }
-    const conditions: string[] = [];
-    if (keyword) conditions.push(`ประเทศ "${keyword}"`);
-    if (result.city) conditions.push(`เมือง "${result.city}"`);
-    if (result.days) conditions.push(`${result.days} วัน`);
-    if (result.maxPrice) conditions.push(`ไม่เกิน ${formatPrice(result.maxPrice)} บาท`);
-    const header = `พบ ${tours.length} รายการ สำหรับ ${conditions.join(' • ')}`;
-    const footer = tours.length > 5 ? `\n\nแสดง 5 จาก ${tours.length} รายการ` : '';
-    return { flex: buildTourCarousel(tours, locale), text: `${header}${footer}` };
-  }
   // priceSearch fallback (no filters)
   let priceTours = getTours(locale);
   if (result.maxPrice) {
@@ -486,10 +437,6 @@ export function buildReply(result: IntentResult, locale: Locale = 'th'): ReplyPa
         text: locale === 'en' ? lineConfig.unknownReplyEn : lineConfig.unknownReply,
       };
   }
-}
-
-export function createToursMessage(locale: Locale = 'th'): ReplyPayload {
-  return buildReply({ intent: 'searchTour', keyword: '' }, locale);
 }
 
 function padZero(n: number): string {
