@@ -333,6 +333,46 @@
         {
           "name": "มองโกเลีย",
           "flag": "Mongolia.png"
+        },
+        {
+          "name": "อินเดีย",
+          "flag": "india.png"
+        },
+        {
+          "name": "ศรีลังกา",
+          "flag": "srilanka.png"
+        },
+        {
+          "name": "เนปาล",
+          "flag": "nepal.png"
+        },
+        {
+          "name": "ภูฏาน",
+          "flag": "Bhutan.png"
+        },
+        {
+          "name": "มัลดีฟส์",
+          "flag": "maldives.png"
+        },
+        {
+          "name": "ดูไบ",
+          "flag": "dubai.png"
+        },
+        {
+          "name": "กาตาร์",
+          "flag": "qatar.png"
+        },
+        {
+          "name": "จอร์แดน",
+          "flag": "jordan.png"
+        },
+        {
+          "name": "จอร์เจีย",
+          "flag": "georgia.png"
+        },
+        {
+          "name": "ตุรกี",
+          "flag": "turkey.png"
         }
       ]
     },
@@ -423,11 +463,21 @@
       ]
     },
     {
-      "label": "อื่นๆ",
-      "labelEn": "Other",
+      "label": "แอฟริกา",
+      "labelEn": "Africa",
       "items": [
         {
-          "name": "อเมริกา",
+          "name": "อียิปต์",
+          "flag": "egypt.png"
+        }
+      ]
+    },
+    {
+      "label": "อเมริกา",
+      "labelEn": "Americas",
+      "items": [
+        {
+          "name": "สหรัฐอเมริกา",
           "flag": "usa.png"
         },
         {
@@ -439,17 +489,19 @@
           "flag": "mexico.png"
         },
         {
-          "name": "ดูไบ",
-          "flag": "dubai.png"
+          "name": "เปรู",
+          "flag": "peru.png"
         },
         {
-          "name": "อียิปต์",
-          "flag": "egypt.png"
-        },
-        {
-          "name": "ตุรกี",
-          "flag": "turkey.png"
-        },
+          "name": "อาร์เจนตินา",
+          "flag": "argentina.png"
+        }
+      ]
+    },
+    {
+      "label": "ออสเตรเลีย",
+      "labelEn": "Australia",
+      "items": [
         {
           "name": "ออสเตรเลีย",
           "flag": "australia.png"
@@ -457,42 +509,6 @@
         {
           "name": "นิวซีแลนด์",
           "flag": "newzealand.png"
-        },
-        {
-          "name": "อินเดีย",
-          "flag": "india.png"
-        },
-        {
-          "name": "ศรีลังกา",
-          "flag": "srilanka.png"
-        },
-        {
-          "name": "เนปาล",
-          "flag": "nepal.png"
-        },
-        {
-          "name": "ภูฏาน",
-          "flag": "Bhutan.png"
-        },
-        {
-          "name": "มัลดีฟส์",
-          "flag": "maldives.png"
-        },
-        {
-          "name": "กาตาร์",
-          "flag": "qatar.png"
-        },
-        {
-          "name": "เปรู",
-          "flag": "peru.png"
-        },
-        {
-          "name": "จอร์เจีย",
-          "flag": "georgia.png"
-        },
-        {
-          "name": "อาร์เจนตินา",
-          "flag": "argentina.png"
         }
       ]
     }

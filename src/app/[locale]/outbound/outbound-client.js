@@ -14,6 +14,7 @@ import { tourMatchesMonth, formatMonthLabel } from '@/lib/dateFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
 import { trackSearch, trackFilter } from '@/lib/tracking';
 import config from '@/data/site-config.json';
+import { buildCountryContinentMap } from '@/lib/continent';
 
 function getCountryLabel(countryTh, isEn) {
   if (isEn) return countryNameMap[countryTh] || countryTh;
@@ -24,11 +25,7 @@ export default function OutboundClient({ locale, tours }) {
   const searchParams = useSearchParams();
   const t = config[locale] || config.th;
 
-  const countryToContinent = useMemo(() => {
-    const map = {};
-    config.countryGroups.forEach(g => g.items.forEach(c => { map[c.name] = g.label; }));
-    return map;
-  }, []);
+  const countryToContinent = useMemo(() => buildCountryContinentMap(config.countryGroups), []);
 
   const {
     filters, page, mobileFilterOpen, setMobileFilterOpen,
@@ -108,7 +105,10 @@ export default function OutboundClient({ locale, tours }) {
     if (filters.continent?.length) {
       result = result.filter(t => {
         const countries = Array.isArray(t.country) ? t.country : [t.country];
-        return countries.some(c => filters.continent.includes(countryToContinent[c]));
+        return countries.some(c => {
+          const continent = countryToContinent[c];
+          return !!continent && filters.continent.includes(continent);
+        });
       });
     }
 
