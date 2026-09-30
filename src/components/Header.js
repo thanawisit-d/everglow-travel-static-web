@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { assetPath } from '@/lib/assets';
 import { translateCountry, provinceNameMap } from '@/lib/i18n';
@@ -11,9 +11,7 @@ const HOVER_DELAY = 150;
 
 export default function Header({ locale }) {
   const router = useRouter();
-  const pathname = usePathname();
   const isEn = locale === 'en';
-  const [isThaiHome, setIsThaiHome] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [activeGroup, setActiveGroup] = useState(null);
@@ -22,11 +20,6 @@ export default function Header({ locale }) {
   const closeTimer = useRef(null);
   const menuRef = useRef(null);
   const hoverOpenedAt = useRef(0);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration-safe path detection
-    setIsThaiHome(pathname === '/th');
-  }, [pathname]);
 
   const clearTimer = () => {
     if (closeTimer.current) {
@@ -148,14 +141,16 @@ export default function Header({ locale }) {
         </div>
         <div className="right contact-icons">
           <a href={`tel:${s.phone}`} aria-label={isEn ? 'Phone' : 'โทรศัพท์'}><Image src={assetPath('assets/images/icons/phone.png')} width={36} height={36} alt="" /></a>
-          <a href={s.line} aria-label="LINE"><Image src={assetPath('assets/images/social/LINE.png')} width={36} height={36} alt="" /></a>
+          {!isEn && (
+            <a href={s.line} aria-label="LINE"><Image src={assetPath('assets/images/social/LINE.png')} width={36} height={36} alt="" /></a>
+          )}
           <a href={s.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <Image src={assetPath('assets/images/social/Facebook.png')} width={36} height={36} alt="" />
           </a>
           <a href={s.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <Image src={assetPath('assets/images/social/ig.png')} width={36} height={36} alt="" />
           </a>
-          {!isThaiHome && (
+          {isEn && (
             <a href={s.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <Image src={assetPath('assets/images/social/whatsapp.webp')} width={36} height={36} alt="" />
             </a>

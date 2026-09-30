@@ -38,7 +38,7 @@ export default function About({ locale, standalone }) {
         <div className="about-container">
           <div className="about-img">
             <ImageModal
-              src={assetPath('company/companydetail.jpg')}
+              src={assetPath(locale === 'en' ? 'company/detail_en.jpg' : 'company/companydetail.jpg')}
               alt="Everglow Travel"
               hintLabel={locale === 'en' ? 'View full size' : 'ดูภาพขยาย'}
             />
