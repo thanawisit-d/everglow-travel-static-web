@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
   const tourPath = `/tours/${tour.id}`;
   return {
     title: name,
-    description: desc ? `${desc} | ${isEn ? 'Starting at' : 'เริ่มต้น'} ${tour.price} บาท` : `Tour ${tour.id}`,
+    description: desc ? `${desc} | ${isEn ? 'Price' : 'ราคา'} ${tour.price} บาท` : `Tour ${tour.id}`,
     openGraph: {
       title: name,
       description: desc || `Tour ${tour.id}`,
