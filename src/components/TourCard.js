@@ -14,10 +14,17 @@ export default function TourCard({ tour, href, badge, locale }) {
   const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
   const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
   const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;
-  const multiNight = isEn
-    ? ['2 days 1 night', '3 days 2 night', '4 days 3 night']
-    : ['2 วัน 1 คืน', '3 วัน 2 คืน', '4 วัน 3 คืน'];
-  const isMultiNight = multiNight.includes(displayDuration);
+  const getDayCount = (duration, isEn) => {
+    const pattern = isEn
+      ? /(\d+)\s+days?/
+      : /(\d+)\s*วัน/;
+
+    const match = duration?.match(pattern);
+    return match ? Number(match[1]) : 0;
+  };
+
+  const dayCount = getDayCount(displayDuration, isEn);
+  const isSingleDay = dayCount === 1;
   const cardHref = href || `/${locale}/tours/${tour.id}`;
 
   return (
@@ -62,7 +69,7 @@ export default function TourCard({ tour, href, badge, locale }) {
       <div className="tour-bottom">
         <Image src={assetPath(tour.transport?.icon || (tour.airline ? `plane-logo/${tour.airline}` : 'assets/images/logos/Logo.jpg'))} width={70} height={40} className="airline" alt={tour.airline || t.transportAlt} />
         <div className="price">
-          <span className="price-start">{isMultiNight ? t.priceStartMulti : t.priceStartSingle}</span>
+          <span className="price-start">{isSingleDay ? t.priceStartSingle : t.priceStartMulti}</span>
           <span className="price-main">{formatPrice(tour.price)}.-</span>
           <span className="price-sub">{t.priceBaht}</span>
         </div>
