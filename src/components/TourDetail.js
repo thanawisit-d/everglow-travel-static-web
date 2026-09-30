@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
-import { displayField, translateCountry } from '@/lib/i18n';
+import { displayField, translateCountry, provinceNameMap } from '@/lib/i18n';
 import config from '@/data/site-config.json';
 import TourProgram from './TourProgram';
 
@@ -16,7 +16,9 @@ export default function TourDetail({ tour, locale }) {
   const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
   const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;
   const displayCountry = isEn ? displayField(tour.country).split(', ').map(c => translateCountry(c)).join(', ') : displayField(tour.country);
-  const displayProvince = isEn && tour.province_en ? tour.province_en : (tour.province ? displayField(tour.province) : '-');
+  const displayProvince = isEn
+    ? (tour.province_en || (tour.province ? displayField(tour.province).split(', ').map(p => provinceNameMap[p] || p).join(', ') : '-'))
+    : (tour.province ? displayField(tour.province) : '-');
   const displayTransportName = isEn && tour.transport?.name_en ? tour.transport.name_en : (tour.transport?.name || '-');
 
   const breadcrumbLabel = isOutbound ? t.breadcrumbOutbound : t.breadcrumbDomestic;
