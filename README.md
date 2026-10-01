@@ -9,7 +9,7 @@
 Everglow Travel มี 3 ส่วนหลัก
 
 * 🌐 **Website** — รายการทัวร์, รายละเอียดทัวร์, รีวิว, เกี่ยวกับ, ติดต่อ (`/th`, `/en`)
-* 💬 **LINE Bot** — ค้นหาทัวร์จากข้อความ (ประเทศ / เดือน / งบ / โปรโมชัน), Quick Reply, Rich Menu, Admin Notification
+* 💬 **LINE Bot** — ค้นหาทัวร์จากข้อความ (ประเทศ / เดือน / งบ / โปรโมชัน), Quick Reply, Rich Menu
 * 📦 **Data Layer** — ใช้ JSON ทั้งหมด (ไม่มี Database หรือ CMS)
 
 
@@ -38,14 +38,12 @@ src/
 │       ├── tours/            # Tour API
 │       └── line/
 │           ├── webhook/      # LINE webhook
-│           └── broadcast/     # Broadcast API
 │
 ├── lib/
 │   ├── line-reply.ts         # Intent + Reply Builder
 │   ├── search-filters.ts     # Search Engine
 │   ├── tours-data.ts         # Tour data access
 │   ├── line-flex.ts          # Flex Carousel Builder
-│   ├── line-broadcast.ts     # Broadcast payload builder
 │   ├── line.ts               # LINE API wrapper
 │   ├── line-quick-reply.ts
 │   ├── logger.ts
@@ -71,7 +69,6 @@ public/
 | `tours-data.ts`      | โหลดและกรองข้อมูลทัวร์จาก JSON   |
 | `line-flex.ts`       | สร้าง Flex Carousel              |
 | `webhook/route.ts`   | รับข้อความจาก LINE OA            |
-| `broadcast/route.ts` | Broadcast + Preview API          |
 
 ---
 

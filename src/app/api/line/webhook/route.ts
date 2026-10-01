@@ -1,17 +1,12 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-import { env } from '@/lib/env';
 import { lineConfig } from '@/lib/line-config';
-import { logger, newCorrelationId, logAdminPushed, logAdminSkipped, logLineError } from '@/lib/logger';
-import { isValidSignature, replyMessage, replyWithPayload, pushMessage, getProfile } from '@/lib/line';
-import { detectIntent, buildReply, buildAdminNotification } from '@/lib/line-reply';
-import type { Intent } from '@/types/intent';
-import type { IntentResult } from '@/types/line';
+import { logger, newCorrelationId } from '@/lib/logger';
+import { isValidSignature, replyMessage, replyWithPayload } from '@/lib/line';
+import { detectIntent, buildReply } from '@/lib/line-reply';
 
 export const runtime = 'nodejs';
-
-const NOTIFY_INTENTS: Intent[] = ['bookingTour', 'tourInquiry', 'contactAdminRequest'];
 
 export async function POST(request: NextRequest) {
   const reqId = newCorrelationId();
@@ -85,8 +80,6 @@ async function handleEvent(
       if (event.replyToken) {
         await replyWithPayload(event.replyToken, reply);
       }
-
-      await notifyAdmin(reqId, result, text, userId, event.timestamp);
       return;
     }
 
@@ -110,58 +103,5 @@ async function handleEvent(
 
     default:
       return;
-  }
-}
-
-async function notifyAdmin(
-  reqId: string,
-  result: IntentResult,
-  text: string,
-  userId?: string,
-  timestamp?: number,
-): Promise<void> {
-  if (!NOTIFY_INTENTS.includes(result.intent)) return;
-
-  if (
-    !lineConfig.adminNotificationEnabled ||
-    !env.adminUserId ||
-    !userId ||
-    userId === env.adminUserId
-  ) {
-    logAdminSkipped(reqId, {
-      intent: result.intent,
-      user: userId,
-      reason: !lineConfig.adminNotificationEnabled
-        ? 'admin_disabled'
-        : !env.adminUserId
-          ? 'missing_admin_user_id'
-          : !userId
-            ? 'missing_user_id'
-            : 'admin_user_self',
-    });
-    return;
-  }
-
-  try {
-    let displayName = 'ลูกค้า';
-    try {
-      const profile = await getProfile(userId);
-      displayName = profile.displayName || displayName;
-    } catch {
-      // Profile fetch is best-effort; never block the notification.
-    }
-
-    const messageText = buildAdminNotification({
-      intent: result.intent as 'bookingTour' | 'tourInquiry' | 'contactAdminRequest',
-      displayName,
-      text,
-      tourId: result.keyword,
-      messageTime: timestamp ? new Date(timestamp) : undefined,
-    });
-
-    await pushMessage(env.adminUserId, [{ type: 'text', text: messageText }]);
-    logAdminPushed(reqId, { intent: result.intent, tour: result.keyword, user: userId });
-  } catch (err) {
-    logLineError(`[${reqId}] Admin notification failed`, err);
   }
 }
