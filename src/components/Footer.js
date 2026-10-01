@@ -70,13 +70,13 @@ export default function Footer({ locale }) {
             <li>
               Instagram :{' '}
               <a href={s.instagram} target="_blank" rel="noopener noreferrer" className="footer-link">
-                everglow travel
+                Everglow_Travel
               </a>
             </li>
             <li>
               TikTok :{' '}
               <a href={s.tiktok} target="_blank" rel="noopener noreferrer" className="footer-link">
-                Everglow Travel
+                Everglow.Travel
               </a>
             </li>
           </ul>
