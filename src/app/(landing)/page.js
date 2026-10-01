@@ -9,7 +9,7 @@ export default function LandingPage() {
         <Image
           src="/assets/images/logos/White_Logo.png"
           width={180}
-          height={180}
+          height={144}
           className="logo"
           alt="Everglow Travel"
           priority

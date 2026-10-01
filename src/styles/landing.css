@@ -33,6 +33,7 @@
 
 .landing-page .logo {
   width: 180px;
+  height: auto;
   margin-bottom: 20px;
   display: block;
   margin-left: auto;
