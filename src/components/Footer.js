@@ -7,8 +7,9 @@ import config from '@/data/site-config.json';
 
 export default function Footer({ locale }) {
   const t = config[locale] || config.th;
-  const s = config[locale].social;
-  const isEn = locale === 'en';
+  const s = config.social;
+  const companyName = t.company.replace(/\s*\(.*?\)/g, '').trim();
+  const companyBranch = t.company.match(/\(([^)]+)\)/)?.[1];
 
   return (
     <footer className="site-footer">
@@ -17,93 +18,87 @@ export default function Footer({ locale }) {
           <Image
             src={assetPath('assets/images/logos/whitelogo.png')}
             width={190}
-            height={60}
+            height={152}
             className="footer-logo"
             alt="Everglow Travel"
           />
           <div className="footer-company">
-            {t.company.replace(/\s*\(.*?\)/g, '').trim()}
-            {t.company.includes('(') && (
-              <>
-                <br />({t.company.match(/\(([^)]+)\)/)?.[1]})
-              </>
-            )}
+            {companyName}
+            {companyBranch && <span className="footer-company-branch"> ({companyBranch})</span>}
           </div>
-          <div className="footer-license">{t.license}</div>
+          <div className="footer-address">
+            <span className="footer-address-label">{t.addressLabel}</span>
+            <span>{t.address}</span>
+          </div>
+          <div className="footer-license">
+            {t.license}
+            <br />
+            {t.tourLicense}
+          </div>
         </div>
 
         <div className="footer-col footer-contact">
           <h2 className="footer-heading">{t.contactTitle}</h2>
-
-          <div className="contact-item">
-            <span className="contact-icon">
-              <Image src={assetPath('icons/clock.png')} width={18} height={18} alt="" />
-            </span>
-            <span>{t.hours}</span>
-          </div>
-
-          <a href={`tel:${t.phone.replace(/[^0-9+]/g, '')}`} className="contact-item">
-            <span className="contact-icon">
-              <Image src={assetPath('assets/images/icons/phone3.png')} width={18} height={18} alt="" />
-            </span>
-            <span>{t.phone}</span>
-          </a>
-
-          <a href={s.facebook} target="_blank" rel="noopener noreferrer" className="contact-item">
-            <span className="contact-icon">
-              <Image src={assetPath('assets/images/social/Facebook.png')} width={18} height={18} alt="" />
-            </span>
-            <span>{t.fb}</span>
-          </a>
-
-          <a href={s.line} target="_blank" rel="noopener noreferrer" className="contact-item">
-            <span className="contact-icon">
-              <Image src={assetPath('assets/images/social/LINE.png')} width={18} height={18} alt="" />
-            </span>
-            <span>{t.line}</span>
-          </a>
+          <ul className="footer-list">
+            <li>
+              {t.footerHoursLabel} : {t.footerHours}
+            </li>
+            <li>
+              {t.footerPhoneLabel} :{' '}
+              <a href={`tel:${s.phone}`} className="footer-link">
+                {t.phone}
+              </a>
+            </li>
+            <li>
+              LINE :{' '}
+              <a href={s.lineChat} target="_blank" rel="noopener noreferrer" className="footer-link">
+                {t.lineId}
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div className="footer-col qr-box">
+        <div className="footer-col footer-follow">
           <h2 className="footer-heading">{t.follow}</h2>
-          <Image
-            src={assetPath('assets/images/social/qr.png')}
-            width={180}
-            height={180}
-            className="qr-img"
-            alt="LINE QR Code"
-          />
-          <div className="line-id">@Everglowtravel</div>
-          <div className="social-row">
-            <a href={s.facebook} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'Facebook' : 'เฟซบุ๊ก'}>
-              <Image src={assetPath('assets/images/social/Facebook.png')} width={50} height={50} alt="" />
-            </a>
-            <a href={s.instagram} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'Instagram' : 'อินสตาแกรม'}>
-              <Image src={assetPath('assets/images/social/ig.png')} width={50} height={50} alt="" />
-            </a>
-            <a href={s.tiktok} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'TikTok' : 'ติ๊กต็อก'}>
-              <Image src={assetPath('assets/images/social/tiktok.webp')} width={50} height={50} alt="" />
-            </a>
-            <a href={s.line} target="_blank" rel="noopener noreferrer" aria-label={isEn ? 'LINE' : 'ไลน์'}>
-              <Image src={assetPath('assets/images/social/LINE.png')} width={50} height={50} alt="" />
-            </a>
-          </div>
+          <ul className="footer-list">
+            <li>
+              Facebook :{' '}
+              <a href={s.facebook} target="_blank" rel="noopener noreferrer" className="footer-link">
+                Everglow Travel
+              </a>
+            </li>
+            <li>
+              Instagram :{' '}
+              <a href={s.instagram} target="_blank" rel="noopener noreferrer" className="footer-link">
+                everglow travel
+              </a>
+            </li>
+            <li>
+              TikTok :{' '}
+              <a href={s.tiktok} target="_blank" rel="noopener noreferrer" className="footer-link">
+                Everglow Travel
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <div>&copy;{new Date().getFullYear()} Everglow Global Co., Ltd. All rights reserved.</div>
-        <div className="flex flex-wrap gap-4 mt-2 text-sm">
-          <Link href={`/${locale}/privacy`} className="hover:underline">
-            {t.privacyPolicy}
-          </Link>
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new Event('open-cookie-consent'))}
-            className="hover:underline cursor-pointer"
-          >
-            {t.cookieSettings}
-          </button>
+        <div className="footer-bottom-inner">
+          <div className="footer-bottom-left">
+            <span>&copy; {new Date().getFullYear()} {t.copyright}</span>
+            <Link href={`/${locale}/privacy`} className="footer-bottom-link">
+              {t.privacyPolicy}
+            </Link>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event('open-cookie-consent'))}
+              className="footer-bottom-link"
+            >
+              {t.cookieSettings}
+            </button>
+          </div>
+          <div className="footer-bottom-brand">EVERGLOW TRAVEL</div>
         </div>
       </div>
     </footer>
