@@ -64,8 +64,14 @@ body {
 }
 
 /* ========== GRADIENTS ========== */
+/* Light tints of navy #003478, so white cards and content stand out */
 .bg-gradient-custom {
-  background: var(--bg-section);
+  background: linear-gradient(
+    180deg,
+    #F2F5FA 0%,
+    #E1E8F2 45%,
+    #CCD8E8 100%
+  );
 }
 
 /* ========== TYPOGRAPHY ========== */
