@@ -50,27 +50,6 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                function clean(root) {
-                  root.querySelectorAll('[fdprocessedid]').forEach(function (el) {
-                    el.removeAttribute('fdprocessedid');
-                  });
-                }
-                clean(document);
-                new MutationObserver(function () {
-                  clean(document);
-                }).observe(document.documentElement, {
-                  attributes: true,
-                  attributeFilter: ['fdprocessedid'],
-                  subtree: true
-                });
-              })();
-            `,
-          }}
-        />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
