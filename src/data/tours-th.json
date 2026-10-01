@@ -1,110 +1,22 @@
 [
   {
-    "id": "BT-HKG61_CX",
-    "type": "outbound",
-    "country": "ฮ่องกง",
-    "city": "ฮ่องกง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-07",
-    "periodText": "เม.ย. - ก.ค. 2569",
-    "image": "Outbound/HongKong/banner/BT-HKG61_CX.png",
-    "price": "19,999",
-    "duration": "3 วัน 2 คืน",
-    "airline": "Cathaylogo.jpg",
-    "shortDesc": "ทัวร์ฮ่องกง จูไห่",
-    "desc": "ทัวร์ฮ่องกง จูไห่ เที่ยว 2 เมือง ชมนองปิง พระใหญ่เทียนถาน วัดแชกงหมิว และ Chimelong Ocean Kingdom",
-    "pdf": "Outbound/HongKong/pdf/BT-HKG61_CX.pdf",
-    "desc_en": "Hong Kong-Zhuhai tour, visit 2 cities, see Ngong Ping, Tian Tan Buddha, Che Kung Miu Temple, and Chimelong Ocean Kingdom.",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "April - July 2026",
-    "itinerary": [
-      {
-        "day": 1,
-        "title": "สนามบินสุวรรณภูมิ • ฮ่องกง",
-        "title_en": "Suvarnabhumi Airport • Hong Kong",
-        "items": [
-          { "time": "21:00", "time_en": "09:00 PM", "description": "นัดหมายที่สนามบินสุวรรณภูมิ ประตู 3", "description_en": "Meet at Suvarnabhumi Airport Gate 3" },
-          { "time": "23:55", "time_en": "11:55 PM", "description": "ออกเดินทางสู่ฮ่องกง โดยสายการบิน Cathay Pacific", "description_en": "Depart to Hong Kong via Cathay Pacific" }
-        ]
-      },
-      {
-        "day": 2,
-        "title": "ฮ่องกง • จูไห่",
-        "title_en": "Hong Kong • Zhuhai",
-        "items": [
-          { "time": "06:30", "time_en": "06:30 AM", "description": "เดินทางถึงสนามบินฮ่องกง ผ่านพิธีตรวจคนเข้าเมือง", "description_en": "Arrive at Hong Kong Airport, immigration" },
-          { "time": "09:00", "time_en": "09:00 AM", "description": "นั่งกระเช้า Ngong Ping 360 สู่หมู่บ้านนองปิง", "description_en": "Take Ngong Ping 360 cable car to Ngong Ping Village" },
-          { "time": "11:00", "time_en": "11:00 AM", "description": "ชมพระใหญ่เทียนถาน วัดแชกงหมิว", "description_en": "Visit Tian Tan Buddha and Che Kung Temple" },
-          { "time": "14:00", "time_en": "02:00 PM", "description": "ข้ามสะพานฮ่องกง-จูไห่-มาเก๊า สู่เมืองจูไห่", "description_en": "Cross Hong Kong-Zhuhai-Macau Bridge to Zhuhai" },
-          { "time": "18:00", "time_en": "06:00 PM", "description": "เข้าพักโรงแรมที่จูไห่", "description_en": "Check-in hotel in Zhuhai" }
-        ]
-      },
-      {
-        "day": 3,
-        "title": "จูไห่ • สนามบินฮ่องกง • กรุงเทพฯ",
-        "title_en": "Zhuhai • Hong Kong Airport • Bangkok",
-        "items": [
-          { "time": "08:00", "time_en": "08:00 AM", "description": " Chimelong Ocean Kingdom สวนสนุกที่ใหญ่ที่สุดในจูไห่", "description_en": "Chimelong Ocean Kingdom, largest theme park in Zhuhai" },
-          { "time": "14:00", "time_en": "02:00 PM", "description": "ออกเดินทางกลับสนามบินฮ่องกง", "description_en": "Depart back to Hong Kong Airport" },
-          { "time": "18:00", "time_en": "06:00 PM", "description": "ออกเดินทางกลับกรุงเทพฯ โดยสายการบิน Cathay Pacific", "description_en": "Depart to Bangkok via Cathay Pacific" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "BT-KIX-NRT_S02_XJ",
-    "type": "outbound",
-    "popular": true,
-    "country": "ญี่ปุ่น",
-    "image": "Populartours/JapanBT-KIX-NRT_S02_XJ.jpg",
-    "price": "36,999",
-    "duration": "6 วัน 4 คืน",
-    "periodText": "เม.ย. - พ.ค. 2569",
-    "startMonth": "2026-04",
-    "endMonth": "2026-05",
-    "airline": "airasia.png",
-    "desc": "ทัวร์ญี่ปุ่น มหัศจรรย์ Osaka โทยามะ เกียวโต มัตสึโมโต้ ฟูจิ",
-    "desc_en": "Amazing Japan tour, Osaka, Toyama, Kyoto, Matsumoto, Fuji.",
-    "duration_en": "6 days 4 nights",
-    "periodText_en": "April - May 2026"
-  },
-  {
-    "id": "ZGKIX-2619VZ",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "โอซาก้า",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/japan/banner/ZGKIX-2619VZ.png",
-    "price": "23,990",
-    "duration": "5 วัน 3 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์ญี่ปุ่น โอซาก้า เกียวโต ช้อปปิ้งชินไซบาชิ",
-    "desc": "ทัวร์ญี่ปุ่น โอซาก้า เกียวโต ช้อปปิ้งชินไซบาชิ เที่ยววัดคิโยมิสึ เดินเล่นย่านตลาดคุโรมง ถ่ายรูปแลนด์มาร์กชื่อดัง และสัมผัสเสน่ห์เมืองคันไซ",
-    "pdf": "Outbound/japan/pdf/ZGKIX-2619VZ.pdf",
-    "desc_en": "Japan tour, Osaka, Kyoto, shopping, Shinsaibashi ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
     "id": "EGT1D-02",
     "type": "domestic",
     "province": "ราชบุรี",
-    "image": "banner1day/EGT1D-02.png",
-    "price": "1,499",
+    "image": "banner1day/Banner EGT1D-02.png",
+    "price": "2,150",
     "duration": "1 วัน",
-    "periodText": "ก.พ. - มิ.ย. 2569",
+    "periodText": "ก.ค. - ธ.ค. 2569",
     "transport": {
       "name": "รถตู้ VIP 10 ที่นั่ง",
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc": "ทัวร์ราชบุรี อุทยานหินเขางู เรื่องของโอ่ง",
+    "desc": "ทัวร์ราชบุรี อุทยานหินเขางู เรื่องของโอ่ง เที่ยวถ้ำเขาบิน เวเนโต้ สวนผึ้ง อุทยานหินเขางู และบ้านตลาดควาย",
     "pdf": "filepdf_1day/EGT1D-02.pdf",
-    "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park ",
+    "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park, the Story of Pottery Jars, visit Khao Bin Cave, Veneto Suan Phueng, Khao Ngu Stone Park, and Ban Talat Khwai.",
     "duration_en": "1 day",
-    "periodText_en": "Feb. - June 2026",
+    "periodText_en": "July - Dec. 2026",
    "itinerary": [
   {
     "day": 1,
@@ -123,6 +35,12 @@
         "description": "ชมพิพิธภัณฑ์โอ่งเก่าราชบุรี อุทยานหินเขางู",
         "description_en": "Visit the Ratchaburi Old Pottery Museum and Khao Ngu Stone Park"
       },
+      {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "ถ้ำเขาบิน",
+            "description_en": "Khao Bin Cave"
+          },
       {
         "time": "12:00",
         "time_en": "12:00 PM",
@@ -146,413 +64,23 @@
 ]
   },
   {
-    "id": "EGT1D-22",
-    "type": "domestic",
-    "province": "นครราชสีมา",
-    "image": "banner1day/EGT1D-22.png",
-    "price": "1,520",
-    "duration": "1 วัน",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์นครราชสีมา ดูผีเสื้อ อุทยานแห่งชาติเขาใหญ่",
-    "pdf": "filepdf_1day/EGT1D-22.pdf",
-    "desc_en": "Nakhon Ratchasima tour, butterfly viewing, Khao Yai National Park",
-    "duration_en": "1 day",
-    "periodText_en": "March - May 2026",
-  "itinerary": [
-  {
-    "day": 1,
-    "title": "กรุงเทพฯ • นครราชสีมา",
-    "title_en": "Bangkok • Nakhon Ratchasima",
-    "items": [
-      {
-        "time": "07:00",
-        "time_en": "07:00 AM",
-        "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
-        "description_en": "Meet in Bangkok, depart to Nakhon Ratchasima"
-      },
-      {
-        "time": "10:00",
-        "time_en": "10:00 AM",
-        "description": "แวะชมจุดดูผีเสื้อบริเวณโป่งดินริมถนนภายในอุทยาน",
-        "description_en": "Stop to see butterflies at the soil pond area along the road inside the national park"
-      },
-      {
-        "time": "12:00",
-        "time_en": "12:00 PM",
-        "description": "รับประทานอาหารกลางวัน",
-        "description_en": "Lunch"
-      },
-      {
-        "time": "13:00",
-        "time_en": "01:00 PM",
-        "description": "น้ำตกเหวสุวัต",
-        "description_en": "Haew Suwat Waterfall"
-      },
-      {
-        "time": "19:00",
-        "time_en": "07:00 PM",
-        "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
-        "description_en": "Arrive safely in Bangkok"
-      }
-    ]
-  }
-]
-  },
-  {
-    "id": "EGT1D-20",
-    "type": "domestic",
-    "province": "สระแก้ว",
-    "image": "banner1day/EGT1D-20.png",
-    "price": "1,599",
-    "duration": "1 วัน",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์สระแก้ว ดูผีเสื้อ อุทยานแห่งชาติปางสีดา",
-    "pdf": "filepdf_1day/EGT1D-20.pdf",
-    "desc_en": "Sa Kaeo tour, butterfly watching, Pang Sida National Park",
-    "duration_en": "1 day",
-    "periodText_en": "March - May 2026",
-    "itinerary": [
-      {
-        "day": 1,
-        "title": "กรุงเทพฯ • สระแก้ว",
-        "title_en": "Bangkok • Sa Kaeo",
-        "items": [
-          {
-            "time": "07:00",
-            "time_en": "07:00 AM",
-            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่สระแก้ว",
-            "description_en": "Meet in Bangkok, depart to Sa Kaeo"
-          },
-          {
-            "time": "10:00",
-            "time_en": "10:00 AM",
-            "description": "ชมอุทยานแห่งชาติปางสีดา",
-            "description_en": "Visit Pang Sida National Park"
-          },
-          {
-            "time": "12:00",
-            "time_en": "12:00 PM",
-            "description": "เล่นน้ำตกปางสีดา",
-            "description_en": "Play at Pang Sida Waterfall"
-          },
-          {
-            "time": "18:00",
-            "time_en": "06:00 PM",
-            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
-            "description_en": "Arrive safely in Bangkok"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "EGT1D-19",
-    "type": "domestic",
-    "province": "เพชรบุรี",
-    "image": "banner1day/EGT1D-19.png",
-    "price": "1,640",
-    "duration": "1 วัน",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์เพชรบุรี ดูผีเสื้อ บ้านกร่าง",
-    "pdf": "filepdf_1day/EGT1D-19.pdf",
-    "desc_en": "Phetchaburi Tour, Butterfly Watching, Ban Krang",
-    "duration_en": "1 day",
-    "periodText_en": "March - May 2026",
-    "itinerary": [
-      {
-        "day": 1,
-        "title": "กรุงเทพฯ • เพชรบุรี",
-        "title_en": "Bangkok • Phetchaburi",
-        "items": [
-          {
-            "time": "07:00",
-            "time_en": "07:00 AM",
-            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เพชรบุรี",
-            "description_en": "Meet in Bangkok, depart to Phetchaburi"
-          },
-          {
-            "time": "10:00",
-            "time_en": "10:00 AM",
-            "description": "แคมป์บ้านกร่าง อุทยานแห่งชาติแก่งกระจาน",
-            "description_en": "Ban Krang Camp, Kaeng Krachan National Park"
-          },
-          {
-            "time": "12:00",
-            "time_en": "12:00 PM",
-            "description": "รับประทานอาหารกลางวัน",
-            "description_en": "Lunch"
-          },
-          {
-            "time": "13:00",
-            "time_en": "01:00 PM",
-            "description": "วัดถ้ำเขาหลวง",
-            "description_en": "Tham Khao Luang Temple"
-          },
-          {
-            "time": "20:00",
-            "time_en": "08:00 PM",
-            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
-            "description_en": "Arrive safely in Bangkok"
-          }
-        ]
-      }
-    ]
-  },
- {
-    "id": "EGT1D-18",
-    "type": "domestic",
-    "province": "ชลบุรี",
-    "image": "banner1day/EGT1D-18.png",
-    "price": "1,699",
-    "duration": "1 วัน",
-    "periodText": "ก.พ. - เม.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์ชลบุรี เกาะสีชัง",
-    "pdf": "filepdf_1day/EGT1D-18.pdf",
-    "desc_en": "Chonburi Tour, Koh Sichang",
-    "duration_en": "1 day",
-    "periodText_en": "Feb. - Apr. 2026",
-    "itinerary": [
-      {
-        "day": 1,
-        "title": "กรุงเทพฯ • ชลบุรี",
-        "title_en": "Bangkok • Chonburi",
-        "items": [
-          {
-            "time": "06:00",
-            "time_en": "06:00 AM",
-            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ชลบุรี",
-            "description_en": "Meet in Bangkok, depart to Chonburi"
-          },
-          {
-            "time": "08:00",
-            "time_en": "08:00 AM",
-            "description": "รับประทานอาหารเช้า",
-            "description_en": "Breakfast"
-          },
-          {
-            "time": "10:00",
-            "time_en": "10:00 AM",
-            "description": "สักการะศาลเจ้าพ่อเขาใหญ่จากท่าเรือเกาะลอย",
-            "description_en": "Pay respects at Chao Pho Khao Yai Shrine from Ko Loi Pier"
-          },
-          {
-            "time": "10:00",
-            "time_en": "10:00 AM",
-            "description": "ถ่ายภาพที่สะพานอัษฎางค์",
-            "description_en": "Take photos at Atsadang Bridge"
-          },
-          {
-            "time": "10:30",
-            "time_en": "10:30 AM",
-            "description": "หาดถ้ำพัง และ แหลมจักรพงษ์",
-            "description_en": "Tham Phang Beach and Laem Chakkraphong"
-          },
-          {
-            "time": "11:00",
-            "time_en": "11:00 AM",
-            "description": "ชมถ้ำทะลุ",
-            "description_en": "Visit Tham Thalu Cave"
-          },
-          {
-            "time": "12:00",
-            "time_en": "12:00 PM",
-            "description": "รับประทานอาหารกลางวัน",
-            "description_en": "Lunch"
-          },
-          {
-            "time": "13:00",
-            "time_en": "01:00 PM",
-            "description": "อิสระเล่นน้ำ และพักผ่อนตามอัธยาศัย",
-            "description_en": "Free time to swim and relax"
-          },
-          {
-            "time": "19:00",
-            "time_en": "07:00 PM",
-            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
-            "description_en": "Arrive safely in Bangkok"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "EGT1D-17",
-    "type": "domestic",
-    "province": "ราชบุรี",
-    "image": "banner1day/EGT1D-17.png",
-    "price": "1,640",
-    "duration": "1 วัน",
-    "periodText": "ก.พ. - มี.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์ราชบุรี กุหลาบสวรรค์",
-    "pdf": "filepdf_1day/EGT1D-17.pdf",
-    "desc_en": "Ratchaburi Tour: Heavenly Roses",
-    "duration_en": "1 day",
-    "periodText_en": "Feb. - Mar. 2026",
-    "itinerary": [
-      {
-        "day": 1,
-        "title": "กรุงเทพฯ • ราชบุรี",
-        "title_en": "Bangkok • Ratchaburi",
-        "items": [
-          {
-            "time": "07:00",
-            "time_en": "07:00 AM",
-            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ราชบุรี",
-            "description_en": "Meet in Bangkok, depart to Ratchaburi"
-          },
-          {
-            "time": "12:00",
-            "time_en": "12:00 PM",
-            "description": "รับประทานอาหารกลางวันที่ตลาดซาวไฮ่",
-            "description_en": "Lunch at Sao Hai Market"
-          },
-          {
-            "time": "13:00",
-            "time_en": "01:00 PM",
-            "description": "ถ้ำพุหวาย",
-            "description_en": "Tham Phu Wai Cave"
-          },
-          {
-            "time": "14:00",
-            "time_en": "02:00 PM",
-            "description": "ชมสวนสมุนไพรภูปางสวรรค์",
-            "description_en": "Visit Phu Pang Sawan Herbal Garden"
-          },
-          {
-            "time": "15:00",
-            "time_en": "03:00 PM",
-            "description": "ชมฝายกั้นน้ำบ้านปางสวรรค์",
-            "description_en": "Visit Ban Pang Sawan Weir"
-          },
-          {
-            "time": "20:00",
-            "time_en": "08:00 PM",
-            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
-            "description_en": "Arrive safely in Bangkok"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "EGT1D-14",
-    "type": "domestic",
-    "province": "อุทัยธานี",
-    "image": "banner1day/EGT1D-14.png",
-    "price": "1,250",
-    "duration": "1 วัน",
-    "periodText": "ม.ค. - มิ.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์อุทัยธานี หุบป่าตาด",
-    "pdf": "filepdf_1day/EGT1D-14.pdf",
-    "desc_en": "Uthai Thani Tour, Hup Pa Tat",
-    "duration_en": "1 day",
-    "periodText_en": "Jan. - June 2026",
-    "itinerary": [
-      {
-        "day": 1,
-        "title": "กรุงเทพฯ • อุทัยธานี",
-        "title_en": "Bangkok • Uthai Thani",
-        "items": [
-          {
-            "time": "07:00",
-            "time_en": "07:00 AM",
-            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี",
-            "description_en": "Meet in Bangkok, depart to Uthai Thani"
-          },
-          {
-            "time": "08:00",
-            "time_en": "08:00 AM",
-            "description": "รับประทานอาหารเช้า",
-            "description_en": "Breakfast"
-          },
-          {
-            "time": "10:00",
-            "time_en": "10:00 AM",
-            "description": "วัดถ้ำเขาวง",
-            "description_en": "Wat Tham Khao Wong"
-          },
-          {
-            "time": "11:00",
-            "time_en": "11:00 AM",
-            "description": "ชมต้นไม้ยักษ์",
-            "description_en": "Visit the giant tree"
-          },
-          {
-            "time": "12:00",
-            "time_en": "12:00 PM",
-            "description": "รับประทานอาหารกลางวัน",
-            "description_en": "Lunch"
-          },
-          {
-            "time": "13:00",
-            "time_en": "01:00 PM",
-            "description": "หุบป่าตาด",
-            "description_en": "Hup Pa Tat"
-          },
-          {
-            "time": "14:30",
-            "time_en": "02:30 PM",
-            "description": "ออกเดินทางกลับกรุงเทพฯ",
-            "description_en": "Depart back to Bangkok"
-          },
-          {
-            "time": "19:00",
-            "time_en": "07:00 PM",
-            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
-            "description_en": "Arrive safely in Bangkok"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "EGT1D-06",
     "type": "domestic",
     "province": "สุพรรณบุรี",
-    "image": "banner1day/EGT-06-01.png",
-    "price": "1,399",
+    "image": "banner1day/EGT1D-06.png",
+    "price": "1,750",
     "duration": "1 วัน",
-    "periodText": "มี.ค. - มิ.ย. 2569",
+    "periodText": "ก.ค. - ธ.ค. 2569",
     "transport": {
       "name": "รถตู้ VIP 10 ที่นั่ง",
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc": "ทัวร์สุพรรณบุรี วัดเขาทำเทียม อู่ทอง",
+    "desc": "ทัวร์สุพรรณบุรี วัดเขาทำเทียม อู่ทอง เที่ยววัดเขาทำเทียม หมู่บ้านมังกรสวรรค์ และอุทยานประวัติศาสตร์อู่ทอง",
     "pdf": "filepdf_1day/EGT1D-06.pdf",
-    "desc_en": "Suphanburi Tour: Visit Don Wai Floating Market, pay homage to sacred temples, and enjoy the scenic beauty along the Tha Chin River.",
+    "desc_en": "Suphanburi Tour: Wat Khao Tham Thiam, U Thong, visit Wat Khao Tham Thiam, Mangkon Sawan Village, and U Thong Historical Park.",
     "duration_en": "1 day",
-    "periodText_en": "March - June 2026",
+    "periodText_en": "July - Dec. 2026",
     "itinerary": [
       {
         "day": 1,
@@ -606,67 +134,1003 @@
     ]
   },
   {
-    "id": "EGT-FP-46",
+    "id": "EGT1D-07",
     "type": "domestic",
-    "province": "พิษณุโลก",
-    "image": "banner2day/EGT-FP-46.png",
-    "price": "3,599",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "ก.พ. - มิ.ย. 2569",
+    "province": "ลพบุรี",
+    "image": "banner1day/EGT1D-07.png",
+    "price": "1,750",
+    "duration": "1 วัน",
+    "periodText": "พ.ย. - ธ.ค. 2569",
     "transport": {
       "name": "รถตู้ VIP 10 ที่นั่ง",
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc": "ทัวร์พิษณุโลก-นครสวรรค์ 2 วัน 1 คืน เที่ยวอุทยานสวรรค์ พระพุทธชินราช พระราชวังจันทน์ วัดวรนาถบรรพต วัดจันทร์ตะวันตก คลองญวน ชวนรักษ์ และถนนคนเดินพิษณุโลก",
-    "pdf": "filepdf_2d1n/EGT-FP-46.pdf",
-    "desc_en": "Phitsanulok-Nakhon Sawan tour 2 days 1 night, visit Sawan Park. ",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026",
+    "desc": "ทัวร์ลพบุรี ทุ่งทานตะวัน เขื่อนป่าสักชลสิทธิ์ เที่ยวทุ่งทานตะวันเขาจีนแล ทุ่งทานตะวันบ้านไร่คุณยายส้มป่อย น้ำตกวังก้านเหลือง นิวซีแลนด์เมืองไทยบ้านหาดเล็บยาว และเขื่อนป่าสักชลสิทธิ์",
+    "pdf": "filepdf_1day/EGT1D-07.pdf",
+    "desc_en": "Lopburi Tour, Sunflower Fields, Pa Sak Jolasid Dam, visit Khao Chin Lae sunflower field, Baan Rai Khun Yai Somploy sunflower field, Wang Kan Luang Waterfall, New Zealand of Thailand at Ban Hat Lep Yao, and Pa Sak Jolasid Dam.",
+    "duration_en": "1 day",
+    "periodText_en": "Nov. - Dec. 2026",
     "itinerary": [
       {
         "day": 1,
-        "title": "กรุงเทพฯ • พิษณุโลก • นครสวรรค์",
-        "title_en": "Bangkok • Phitsanulok • Nakhon Sawan",
+        "title": "กรุงเทพฯ • ลพบุรี",
+        "title_en": "Bangkok • Lopburi",
         "items": [
-          { "time": "06:00", "time_en": "06:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่พิษณุโลก", "description_en": "Meet in Bangkok, depart to Phitsanulok" },
-          { "time": "10:00", "time_en": "10:00 AM", "description": "ชมพระพุทธชินราช วัดพระศรีรัตนมหาธาตุ", "description_en": "Visit Phra Phuttha Chinnarat at Wat Phra Si Rattana Mahathat" },
-          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน", "description_en": "Lunch" },
-          { "time": "13:30", "time_en": "01:30 PM", "description": "พระราชวังจันทน์ วัดวรนาถบรรพต", "description_en": "Chan Royal Palace, Wat Boranat Banphot" },
-          { "time": "16:00", "time_en": "04:00 PM", "description": "เดินทางสู่นครสวรรค์ เข้าพักโรงแรม", "description_en": "Travel to Nakhon Sawan, check-in hotel" }
-        ]
-      },
-      {
-        "day": 2,
-        "title": "อุทยานสวรรค์ • กรุงเทพฯ",
-        "title_en": "Sawan Park • Bangkok",
-        "items": [
-          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้าที่โรงแรม", "description_en": "Breakfast at hotel" },
-          { "time": "09:00", "time_en": "09:00 AM", "description": "เที่ยวอุทยานสวรรค์ ชมวิวเขื่อนเจ้าพระยา", "description_en": "Visit Sawan Park, Chao Phraya Dam viewpoint" },
-          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน แล้วเดินทางกลับกรุงเทพฯ", "description_en": "Lunch, then return to Bangkok" }
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ลพบุรี",
+            "description_en": "Meet in Bangkok and depart for Lopburi."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "09:00",
+            "time_en": "09:00 AM",
+            "description": "ชมทุ่งทานตะวัน เขาจีนแล",
+            "description_en": "Visit Khao Chin Lae Sunflower Field"
+          },
+          {
+            "time": "10:30",
+            "time_en": "10:30 AM",
+            "description": "ทุ่งทานตะวันบ้านไร่คุณยายส้มป่อย",
+            "description_en": "Baan Rai Khun Yai Somploy Sunflower Field"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "ชมน้ำตกวังก้านเหลือง",
+            "description_en": "Visit Wang Kan Luang Waterfall"
+          },
+          {
+            "time": "16:00",
+            "time_en": "04:00 PM",
+            "description": "ชมนิวซีแลนด์เมืองไทยและจุดกางเต็นท์ บ้านหาดเล็บยาว",
+            "description_en": "Visit New Zealand of Thailand and the camping spot at Ban Hat Lep Yao"
+          },
+          {
+            "time": "17:30",
+            "time_en": "05:30 PM",
+            "description": "เขื่อนป่าสักชลสิทธิ์",
+            "description_en": "Pa Sak Jolasid Dam"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
         ]
       }
     ]
   },
   {
-    "id": "EGT-SP-44.1",
+    "id": "EGT1D-10",
     "type": "domestic",
-    "province": "ราชบุรี",
-    "image": "banner2day/EGT-SP-44.1.png",
-    "price": "2,999",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "ก.พ. - พ.ค. 2569",
+    "province": "นครราชสีมา",
+    "image": "banner1day/EGT1D-10.png",
+    "price": "1,950",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
     "transport": {
       "name": "รถตู้ VIP 10 ที่นั่ง",
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc": "ทัวร์ราชบุรี งานแสดงไฟ ณ สัทธา 2 วัน 1 คืน เที่ยวอุทยานหินเขางู ตลาดโอ๊ะป่อย แกรนด์แคนยอนราชบุรี ณ สัทธา อุทยานไทย พิพิธภัณฑ์โอ่งเก่าราชบุรี Phupha Coffee Camp เวนโต้ สวนผึ้ง และถ้ำเขาบิน",
-    "pdf": "filepdf_2d1n/EGT-SP-44.1.pdf",
-    "desc_en": "Ratchaburi tour, fire show at Sattatha, 2 days 1 night, visit Khao Ngu Stone Park, Oh Poi Market, Grand Canyon Ratchaburi at Sattatha, Thai Park, Ratchaburi Old Water Jar Museum, Phupha Coffee Camp, Vento, Suan Phueng, and Khao Bin Cave.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - May 2026"
+    "desc": "ทัวร์เขาใหญ่ เที่ยวไร่สุวรรณ Portofino Cafe เกาะแกะ เขาใหญ่ Primo Piazza และ Hokkaido Flower Park Khao Yai",
+    "pdf": "filepdf_1day/EGT1D-10.pdf",
+    "desc_en": "Khao Yai Tour.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • เขาใหญ่",
+        "title_en": "Bangkok • Khao Yai",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
+            "description_en": "Meet in Bangkok and depart for Nakhon Ratchasima."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "09:30",
+            "time_en": "09:30 AM",
+            "description": "ไร่สุวรรณ",
+            "description_en": "Suwan Farm"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "เกาะแกะ เขาใหญ่",
+            "description_en": "Khoa Kae Khao Yai"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "Hokkaido Flower Park Khao Yai",
+            "description_en": "Hokkaido Flower Park Khao Yai"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "Portofino Cafe",
+            "description_en": "Portofino Cafe"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "Primo Piazza หมู่บ้านอิตาลีกลางเขาใหญ่",
+            "description_en": "Primo Piazza, an Italian village in Khao Yai"
+          },
+          {
+            "time": "19:00",
+            "time_en": "07:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
   },
+  {
+    "id": "EGT1D-14",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner1day/EGT1D-14.png",
+    "price": "1,790",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์อุทัยธานี หุบป่าตาด เที่ยวตลาดซาวไฮ่ ต้นไม้ยักษ์ บ้านสะนำ วัดถ้ำเขาวง และหุบป่าตาด",
+    "pdf": "filepdf_1day/EGT1D-14.pdf",
+    "desc_en": "Uthai Thani Tour, Hup Pa Tat, visit Sao Hai Market, the giant tree, Ban Sanam, Wat Tham Khao Wong, and Hup Pa Tat.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี",
+            "description_en": "Meet in Bangkok, depart to Uthai Thani"
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "Breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "วัดถ้ำเขาวง",
+            "description_en": "Wat Tham Khao Wong"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "ชมต้นไม้ยักษ์",
+            "description_en": "Visit the giant tree"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "ตลาดซาวไฮ่ และรับประทานอาหารกลางวัน",
+            "description_en": "Sao Hai Market and lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "หุบป่าตาด",
+            "description_en": "Hup Pa Tat"
+          },
+          {
+            "time": "14:30",
+            "time_en": "02:30 PM",
+            "description": "บ้านสะนำ",
+            "description_en": "Ban Sanam"
+          },
+          {
+            "time": "19:30",
+            "time_en": "07:30 PM",
+            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-16.1",
+    "type": "domestic",
+    "province": "นครราชสีมา",
+    "image": "banner1day/กค EGT1D-16.1.png",
+    "price": "1,950",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569, ม.ค. 2570",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์วังน้ำเขียว เที่ยวโรงคั่วกาแฟวังน้ำเขียว A Cup of Love พุทธอุทยานวังน้ำเขียว (คำชะโนดวังน้ำเขียว) และ Montana Farm",
+    "pdf": "filepdf_1day/กคEGT1D-16.1.pdf",
+    "desc_en": "Wang Nam Khiao Tour, visit Wang Nam Khiao Coffee Roastery, A Cup of Love, Wang Nam Khiao Buddhist Park (Kham Cha Nod Wang Nam Khiao), and Montana Farm.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026, Jan. 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • วังน้ำเขียว",
+        "title_en": "Bangkok • Wang Nam Khiao",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
+            "description_en": "Meet in Bangkok and depart for Nakhon Ratchasima."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "ร้านกาแฟ A Cup of Love",
+            "description_en": "Visit A Cup of Love"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "โรงคั่วกาแฟวังน้ำเขียว และรับประทานอาหารกลางวัน",
+            "description_en": "Visit Wang Nam Khiao Coffee Roastery and havelunch"
+          },
+          {
+            "time": "14:00",
+            "time_en": "02:00 PM",
+            "description": "พุทธอุทยานวังน้ำเขียว",
+            "description_en": "Visit Wang Nam Khiao Buddhist Park"
+          },
+          {
+            "time": "16:00",
+            "time_en": "04:00 PM",
+            "description": "ปิดท้ายด้วย Montana Farm",
+            "description_en": "End at Montana Farm"
+          },
+          {
+            "time": "20:30",
+            "time_en": "08:30 PM",
+            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-17",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner1day/EGT1D-17.png",
+    "price": "1,820",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์อุทัยธานี ภูปางสวรรค์ เที่ยวตลาดซาวไฮ่ สวนสมุนไพรภูปางสวรรค์ ฝายกั้นน้ำบ้านปางสวรรค์ และถ้ำพุหวาย",
+    "pdf": "filepdf_1day/EGT1D-17.pdf",
+    "desc_en": "Uthai Thani Tour, Phu Pang Sawan, visit Sao Hai Market, Phu Pang Sawan Herbal Garden, Ban Pang Sawan Weir, and Tham Phu Wai Cave.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี",
+            "description_en": "Meet in Bangkok, depart to Uthai Thani"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวันที่ตลาดซาวไฮ่",
+            "description_en": "Lunch at Sao Hai Market"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "ถ้ำพุหวาย",
+            "description_en": "Tham Phu Wai Cave"
+          },
+          {
+            "time": "14:00",
+            "time_en": "02:00 PM",
+            "description": "ฝายกั้นน้ำบ้านปางสวรรค์",
+            "description_en": "Ban Pang Sawan Weir"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "ชมสวนสมุนไพรภูปางสวรรค์",
+            "description_en": "Visit Phu Pang Sawan Herbal Garden"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-18",
+    "type": "domestic",
+    "province": "ชลบุรี",
+    "image": "banner1day/EGT1D-18.png",
+    "price": "1,950",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์ชลบุรี เกาะสีชัง เที่ยวท่าเรือเกาะลอย ศาลเจ้าพ่อเขาใหญ่ ช่องเขาขาด หาดถ้ำพัง แหลมจักรพงษ์ ถ้ำทะลุ และสะพานอัษฎางค์",
+    "pdf": "filepdf_1day/EGT1D-18.pdf",
+    "desc_en": "Chonburi Tour, Koh Sichang, visit Ko Loi Pier, Chao Pho Khao Yai Shrine, Chong Khao Khat, Tham Phang Beach, Laem Chakkraphong, Tham Thalu Cave, and Atsadang Bridge.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ชลบุรี",
+        "title_en": "Bangkok • Chonburi",
+        "items": [
+          {
+            "time": "06:00",
+            "time_en": "06:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ชลบุรี",
+            "description_en": "Meet in Bangkok, depart to Chonburi"
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "Breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "สักการะศาลเจ้าพ่อเขาใหญ่จากท่าเรือเกาะลอย",
+            "description_en": "Pay respects at Chao Pho Khao Yai Shrine from Ko Loi Pier"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "ถ่ายภาพที่สะพานอัษฎางค์",
+            "description_en": "Take photos at Atsadang Bridge"
+          },
+          {
+            "time": "10:30",
+            "time_en": "10:30 AM",
+            "description": "หาดถ้ำพัง และ แหลมจักรพงษ์",
+            "description_en": "Tham Phang Beach and Laem Chakkraphong"
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "ชมถ้ำทะลุ",
+            "description_en": "Visit Tham Thalu Cave"
+          },
+          {
+            "time": "11:30",
+            "time_en": "11:30 AM",
+            "description": "ช่องเขาขาด",
+            "description_en": "Chong Khao Khat"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "อิสระเล่นน้ำ และพักผ่อนตามอัธยาศัย",
+            "description_en": "Free time to swim and relax"
+          },
+          {
+            "time": "19:00",
+            "time_en": "07:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-19",
+    "type": "domestic",
+    "province": "เพชรบุรี",
+    "image": "banner1day/EGT1D-19.png",
+    "price": "1,720",
+    "duration": "1 วัน",
+    "periodText": "เม.ย. - มิ.ย. 2570",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์เพชรบุรี ดูผีเสื้อ บ้านกร่าง เที่ยววัดถ้ำเขาหลวง แคมป์บ้านกร่าง และอุทยานแห่งชาติแก่งกระจาน",
+    "pdf": "filepdf_1day/EGT1D-19.pdf",
+    "desc_en": "Phetchaburi Tour, Butterfly Watching, Ban Krang, visit Tham Khao Luang Temple, Ban Krang Camp, and Kaeng Krachan National Park.",
+    "duration_en": "1 day",
+    "periodText_en": "April - June 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • เพชรบุรี",
+        "title_en": "Bangkok • Phetchaburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่เพชรบุรี",
+            "description_en": "Meet in Bangkok, depart to Phetchaburi"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "แคมป์บ้านกร่าง อุทยานแห่งชาติแก่งกระจาน",
+            "description_en": "Ban Krang Camp, Kaeng Krachan National Park"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "วัดถ้ำเขาหลวง",
+            "description_en": "Tham Khao Luang Temple"
+          },
+          {
+            "time": "18:00",
+            "time_en": "06:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-20",
+    "type": "domestic",
+    "province": "สระแก้ว",
+    "image": "banner1day/EGT1D-20.png",
+    "price": "1,759",
+    "duration": "1 วัน",
+    "periodText": "พ.ค. - มิ.ย. 2570",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์สระแก้ว ดูผีเสื้อ อุทยานแห่งชาติปางสีดา เที่ยวอุทยานแห่งชาติปางสีดา ชุมผีเสื้อ และน้ำตกปางสีดา",
+    "pdf": "filepdf_1day/EGT1D-20.pdf",
+    "desc_en": "Sa Kaeo tour, butterfly watching, Pang Sida National Park, visit Pang Sida National Park, butterfly gathering spots, and Pang Sida Waterfall.",
+    "duration_en": "1 day",
+    "periodText_en": "May - June 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • สระแก้ว",
+        "title_en": "Bangkok • Sa Kaeo",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่สระแก้ว",
+            "description_en": "Meet in Bangkok, depart to Sa Kaeo"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "ชมอุทยานแห่งชาติปางสีดา",
+            "description_en": "Visit Pang Sida National Park"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "เล่นน้ำตกปางสีดา",
+            "description_en": "Play at Pang Sida Waterfall"
+          },
+          {
+            "time": "19:00",
+            "time_en": "07:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-22",
+    "type": "domestic",
+    "province": "นครราชสีมา",
+    "image": "banner1day/EGT1D-22.png",
+    "price": "1,669",
+    "duration": "1 วัน",
+    "periodText": "มิ.ย. - ส.ค. 2570",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์นครราชสีมา ดูผีเสื้อ อุทยานแห่งชาติเขาใหญ่ เที่ยวอุทยานแห่งชาติเขาใหญ่ และน้ำตกเหวสุวัต",
+    "pdf": "filepdf_1day/EGT1D-22.pdf",
+    "desc_en": "Nakhon Ratchasima tour, butterfly viewing, Khao Yai National Park, visit Khao Yai National Park and Haew Suwat Waterfall.",
+    "duration_en": "1 day",
+    "periodText_en": "June - Aug. 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • นครราชสีมา",
+        "title_en": "Bangkok • Nakhon Ratchasima",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครราชสีมา",
+            "description_en": "Meet in Bangkok, depart to Nakhon Ratchasima"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "แวะชมจุดดูผีเสื้อบริเวณโป่งดินริมถนนภายในอุทยาน",
+            "description_en": "Stop to see butterflies at the soil pond area along the road inside the national park"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "น้ำตกเหวสุวัต",
+            "description_en": "Haew Suwat Waterfall"
+          },
+          {
+            "time": "18:00",
+            "time_en": "06:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-36",
+    "type": "domestic",
+    "province": "พระนครศรีอยุธยา",
+    "image": "banner1day/EGT1D-36.png",
+    "price": "1,750",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์อยุธยา ล่องเรือรอบเกาะอยุธยา เที่ยววัดไชยวัฒนาราม วัดมหาธาตุ ตลาดน้ำอโยธยา และล่องเรือรอบเกาะอยุธยา",
+    "pdf": "filepdf_1day/EGT1D-36.pdf",
+    "desc_en": "Ayutthaya Tour, boat trip around Ayutthaya Island, visit Wat Chaiwatthanaram, Wat Mahathat, Ayothaya Floating Market, and boat trip around Ayutthaya Island.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อยุธยา",
+        "title_en": "Bangkok • Ayutthaya",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่พระนครศรีอยุธยา",
+            "description_en": "Meet in Bangkok and depart for Phra Nakhon Si Ayutthaya."
+          },
+          {
+            "time": "09:00",
+            "time_en": "09:00 AM",
+            "description": "วัดไชยวัฒนาราม",
+            "description_en": "Wat Chaiwatthanaram"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "วัดมหาธาตุ",
+            "description_en": "Wat Mahathat"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "ตลาดน้ำอโยธยา",
+            "description_en": "Ayothaya Floating Market"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "ล่องเรือรอบเกาะอยุธยา",
+            "description_en": "Boat trip around Ayutthaya Island"
+          },
+          {
+            "time": "18:30",
+            "time_en": "06:30 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-37",
+    "type": "domestic",
+    "province": "อุทัยธานี",
+    "image": "banner1day/EGT1D-37.png",
+    "price": "1,790",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์อุทัยธานี ไหว้พระ 4 วัด เที่ยววัดเขาถ้ำประทุน ตลาดชาวไฮ่ วัดถ้ำเขาวง วัดท่าซุง หลวงพ่อฤาษีลิงดำ และวัดเขาสะแกกรัง",
+    "pdf": "filepdf_1day/EGT1D-37.pdf",
+    "desc_en": "Uthai Thani Tour, pay homage to 4 temples, visit Wat Khao Tham Prathun, Sao Hai Market, Wat Tham Khao Wong, Wat Tha Sung (Luang Pho Reusi Ling Dam), and Wat Khao Sakae Krang.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • อุทัยธานี",
+        "title_en": "Bangkok • Uthai Thani",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่อุทัยธานี",
+            "description_en": "Meet in Bangkok and depart for Uthai Thani."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "วัดเขาถ้ำประทุน",
+            "description_en": "Wat Khao Tham Prathun"
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "ตลาดชาวไฮ่ และรับประทานอาหารกลางวัน",
+            "description_en": "Sao Hai Market and have lunch"
+          },
+          {
+            "time": "13:30",
+            "time_en": "01:30 PM",
+            "description": "วัดถ้ำเขาวง",
+            "description_en": "Wat Tham Khao Wong"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "วัดท่าซุง หลวงพ่อฤาษีลิงดำ",
+            "description_en": "Wat Tha Sung (Luang Pho Reusi Ling Dam)"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "วัดเขาสะแกกรัง",
+            "description_en": "Wat Khao Sakae Krang"
+          },
+          {
+            "time": "20:00",
+            "time_en": "08:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-39",
+    "type": "domestic",
+    "province": "กาญจนบุรี",
+    "image": "banner1day/EGT1D-39.png",
+    "price": "1,999",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ธ.ค. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์กาญจนบุรี เมืองมัลลิกา เที่ยวเมืองมัลลิกา ร.ศ. ๑๒๔ ถ้ำกระแซ & ทางรถไฟสายมรณะ สะพานข้ามแม่น้ำแคว และสกายวอล์กเมืองกาญจนบุรี",
+    "pdf": "filepdf_1day/EGT1D-39.pdf",
+    "desc_en": "Kanchanaburi Tour, Mallika City, visit Mallika City R.S. 124, Tham Krasae Cave & the Death Railway, the Bridge over the River Kwai, and Kanchanaburi Skywalk.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Dec. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • กาญจนบุรี",
+        "title_en": "Bangkok • Kanchanaburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่กาญจนบุรี",
+            "description_en": "Meet in Bangkok and depart for Kanchanaburi"
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "10:00",
+            "time_en": "10:00 AM",
+            "description": "เมืองมัลลิกา ร.ศ. ๑๒๔ และรับประทานอาหารกลางวัน",
+            "description_en": "Mallika City R.S. 124 and have lunch"
+          },
+          {
+            "time": "13:00",
+            "time_en": "01:00 PM",
+            "description": "ชมถ้ำกระแซ และทางรถไฟสายมรณะ",
+            "description_en": "Visit Tham Krasae Cave and the Death Railway"
+          },
+          {
+            "time": "15:00",
+            "time_en": "03:00 PM",
+            "description": "สะพานข้ามแม่น้ำแคว",
+            "description_en": "the Bridge over the River Kwai"
+          },
+          {
+            "time": "16:30",
+            "time_en": "04:30 PM",
+            "description": "สกายวอล์กเมืองกาญจนบุรี",
+            "description_en": "Kanchanaburi Skywalk"
+          },
+          {
+            "time": "18:00",
+            "time_en": "06:00 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EGT1D-42",
+    "type": "domestic",
+    "province": "สระบุรี",
+    "image": "banner1day/EGT1D-42.png",
+    "price": "1,750",
+    "duration": "1 วัน",
+    "periodText": "ก.ค. - ก.ย. 2569",
+    "transport": {
+      "name": "รถตู้ VIP 10 ที่นั่ง",
+      "icon": "icons/van.png",
+      "name_en": "VIP van 10 seats"
+    },
+    "desc": "ทัวร์สระบุรี อุทยานแห่งชาติน้ำตกสามหลั่น เที่ยววัดพระพุทธฉาย หอมนสิการ ตลาดหัวปลี และอุทยานแห่งชาติน้ำตกสามหลั่น",
+    "pdf": "filepdf_1day/EGT1D-42.pdf",
+    "desc_en": "Saraburi Tour, Sam Lan Waterfall National Park, visit Wat Phra Phutthachai, Homnasikan, Hua Plee Market, and Sam Lan Waterfall National Park.",
+    "duration_en": "1 day",
+    "periodText_en": "July - Sept. 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • สระบุรี",
+        "title_en": "Bangkok • Saraburi",
+        "items": [
+          {
+            "time": "07:00",
+            "time_en": "07:00 AM",
+            "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่สระบุรี",
+            "description_en": "Meet in Bangkok and depart for Saraburi."
+          },
+          {
+            "time": "08:00",
+            "time_en": "08:00 AM",
+            "description": "รับประทานอาหารเช้า",
+            "description_en": "breakfast"
+          },
+          {
+            "time": "09:30",
+            "time_en": "09:30 AM",
+            "description": "อุทยานแห่งชาติน้ำตกสามหลั่น",
+            "description_en": "Sam Lan Waterfall National Park."
+          },
+          {
+            "time": "11:00",
+            "time_en": "11:00 AM",
+            "description": "วัดพระพุทธฉาย",
+            "description_en": "Wat Phra Phutthachai."
+          },
+          {
+            "time": "12:00",
+            "time_en": "12:00 PM",
+            "description": "รับประทานอาหารกลางวัน",
+            "description_en": "lunch"
+          },
+          {
+            "time": "14:00",
+            "time_en": "02:00 PM",
+            "description": "หอมนสิการ",
+            "description_en": "Homnasikan."
+          },
+          {
+            "time": "15:30",
+            "time_en": "03:30 PM",
+            "description": "ตลาดหัวปลี",
+            "description_en": "Hua Plee Market."
+          },
+          {
+            "time": "18:30",
+            "time_en": "06:30 PM",
+            "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ",
+            "description_en": "Arrive safely in Bangkok"
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "id": "EGT1D-43",
+  "type": "domestic",
+  "province": "นครนายก",
+  "image": "banner1day/EGT1D-43.png",
+  "price": "1,759",
+  "duration": "1 วัน",
+  "periodText": "มิ.ย. - ก.ค. 2570",
+  "transport": {
+    "name": "รถตู้ VIP 10 ที่นั่ง",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "ทัวร์นครนายก เขาช่องลม วัดมณีวงศ์ เที่ยวล่องเรือเขาช่องลม วัดมณีวงศ์ และมองเทรอส์คาเฟ่ แอนด์ ฟาร์ม",
+  "pdf": "filepdf_1day/EGT1D-43.pdf",
+  "desc_en": "Nakhon Nayok Tour, Khao Chong Lom boat trip, Wat Maniwong.",
+  "duration_en": "1 day",
+  "periodText_en": "June - July 2027",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "กรุงเทพฯ • นครนายก",
+      "title_en": "Bangkok • Nakhon Nayok",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่นครนายก",
+          "description_en": "Meet at the designated meeting point in Bangkok and depart for Nakhon Nayok."
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า",
+          "description_en": "breakfast"
+        },
+        {
+          "time": "10:00",
+          "time_en": "10:00 AM",
+          "description": "เขาช่องลม",
+          "description_en": "Khao Chong Lom."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน",
+          "description_en": "Lunch"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "วัดมณีวงศ์",
+          "description_en": "Wat Maniwong."
+        },
+        {
+          "time": "15:30",
+          "time_en": "03:30 PM",
+          "description": "มองเทรอส์คาเฟ่ แอนด์ ฟาร์ม",
+          "description_en": "Montreux Cafe and Farm."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ",
+          "description_en": "Arrive safely in Bangkok"
+        }
+      ]
+    }
+  ]
+},
   {
     "id": "EGT-SP-44",
     "type": "domestic",
@@ -680,125 +1144,39 @@
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc": "ทัวร์ราชบุรี อุทยานหินเขางู เรื่องของโอ่ง 2 วัน 1 คืน เที่ยวอุทยานหินเขางู ตลาดโอ๊ะป่อย แกรนด์แคนยอนราชบุรี ณ สัทธา อุทยานไทย พิพิธภัณฑ์โอ่งเก่าราชบุรี Phupha Coffee Camp เวนโต้ สวนผึ้ง และถ้ำเขาบิน",
+    "desc": "ทัวร์ราชบุรี อุทยานหินเขางู เรื่องของโอ่ง เที่ยวอุทยานหินเขางู ตลาดโอ๊ะป่อย แกรนด์แคนยอนราชบุรี ณ สัทธา อุทยานไทย พิพิธภัณฑ์โอ่งเก่าราชบุรี Phupha Coffee Camp เวนโต้ สวนผึ้ง และถ้ำเขาบิน",
     "pdf": "filepdf_2d1n/EGT-SP-44.pdf",
     "desc_en": "Ratchaburi Tour: Khao Ngu Stone Park ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "June - December 2026"
-  },
-  {
-    "id": "EGT-SP-43",
-    "type": "domestic",
-    "province": "อุตรดิตถ์",
-    "image": "banner2day/EGT-SP-43.png",
-    "price": "3,699",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "พ.ค. - ก.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์อุตรดิตถ์ บุฟเฟ่ต์ทุเรียนหลง-หลินลับแล 2 วัน 1 คืน เที่ยวบ้านโบราณ ประตูเมืองลับแล บุฟเฟ่ต์ทุเรียนหลง-หลินลับแล สตรีห้ามโภคหก วัดพระแท่นศิลาอาสน์ และสัมผัสบรรยากาศเมืองลับแล",
-    "pdf": "filepdf_2d1n/EGT-SP-43.pdf",
-    "desc_en": "Uttaradit Tour 2 days 1 night: Explore the historic Phra Si Rattana Mahathat Temple, visit Than Sae Waterfall, and experience the natural beauty and local culture of Uttaradit.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "May - July 2026"
-  },
-  {
-    "id": "EGT-FP-42",
-    "type": "domestic",
-    "province": "อุทัยธานี",
-    "image": "banner2day/EGT-FP-42.png",
-    "price": "4,950",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "มิ.ย. - ก.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์อุทัยธานี ทุเรียนป่าเงาฝนคอกควาย 2 วัน 1 คืน เที่ยวตลาดชาวไฮ่ วัดถ้ำเขาประทุน สวนสมุนไพรกูปางสวรรค์ บุฟเฟ่ต์ทุเรียนและผลไม้ประจำฤดู ถนนใต้ดิน ต้นไม้ยักษ์ และวัดถ้ำเขาประทุน",
-    "pdf": "filepdf_2d1n/EGT-FP-42.pdf",
-    "desc_en": "Uthai Thani Tour 2 days 1 night: Discover the charming Sakae Krang River community, visit Wat Tha Sung, explore Hup Pa Tat, and immerse in the peaceful atmosphere of this hidden gem province.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "June - July 2026"
-  },
-  {
-    "id": "EGT-SP-29.2",
-    "type": "domestic",
-    "province": "เลย",
-    "image": "banner2day/EGT-SP-29.2.png",
-    "price": "3,899",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "20 - 22 มิ.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์เลย เทศกาลผีตาโขน 2 วัน 1 คืน เที่ยวแก่งคุดคู้ เทศกาลผีตาโขน วัดเนรมิตวิปัสสนา ถนนคนเดินเชียงคาน และสัมผัสวัฒนธรรมพื้นบ้านเมืองเลย",
-    "pdf": "filepdf_2d1n/EGT-SP-29.2.pdf",
-    "desc_en": "Tour Loei, Phi Ta Khon Festival, 2 days 1 night, visit Kaeng Khut Khu rapids. ",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "20 - 22 June 2026"
-  },
-  {
-    "id": "EGT-SP-28",
-    "type": "domestic",
-    "province": "ชัยภูมิ",
-    "image": "banner2day/EGT-SP-28.png",
-    "price": "3,699",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "พ.ค. - ส.ค. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์ชัยภูมิ ล่า 4 อุทยาน ดูผีเสื้อและทุ่งดอกกระเจียว 2 วัน 1 คืน เที่ยวมอหินขาว ถนนคนเดินชัยภูมิ อุทยานแห่งชาติป่าหินงาม อุทยานแห่งชาติไทรทอง ด่านซับมงคล อุทยานแห่งชาติภูแลนคา และตาดโตน",
-    "pdf": "filepdf_2d1n/EGT-SP-28.pdf",
-    "desc_en": "Chaiyaphum tour, hunt 4 national parks, see butterflies and Krachiew flower fields, 2 days 1 night, visit Mo Hin Khao. ",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "May - August 2026"
-  },
-  {
-    "id": "EGT-FP-07.1",
-    "type": "domestic",
-    "province": "เพชรบุรี",
-    "image": "banner2day/EGT-FP-07.1.png",
-    "price": "5,250",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "ก.พ. - มิ.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์เพชรบุรี แก่งกระจาน-เขาสามร้อยยอด 2 วัน 1 คืน เที่ยวอุทยานแห่งชาติแก่งกระจาน จุดชมวิวเขาพะเนินทุ่ง ตลาดริมน้ำจามจุรี Pribphree Cafe เส้นทางศึกษาธรรมชาติบึงบัว สะพานแขวนแก่งกระจาน และถ้ำพระยานคร",
-    "pdf": "filepdf_2d1n/EGT-FP-07.1.pdf",
-    "desc_en": "Phetchaburi Tour 2 days 1 night: Visit Khao Wang (Phra Nakhon Khiri Historical Park), explore Kaeng Krachan National Park, and enjoy the famous Phetchaburi sweets and local cuisine.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
-  },
-  {
-    "id": "EGT-SP-05.1",
-    "type": "domestic",
-    "province": "อุทัยธานี",
-    "image": "banner2day/EGT-SP-05.1.png",
-    "price": "2,999",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "ก.พ. - มิ.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
-    },
-    "desc": "ทัวร์อุทัยธานี วัดเขาสะแกกรัง-หุบป่าตาด 2 วัน 1 คืน เที่ยวตลาดชาวไฮ่ วัดเขาสะแกกรัง ถนนคนเดินตรอกโรงยา วัดท่าซุง หลวงพ่อฤาษีลิงดำ วัดอุโปสถาราม หลวงพ่อเงิน วัดเขาถ้ำประทุน ต้นไม้ยักษ์ หุบป่าตาด และบ้านชายเขา",
-    "pdf": "filepdf_2d1n/EGT-SP-05.1.pdf",
-    "desc_en": "Uthai Thani Tour 2 days 1 night: Explore Hup Pa Tat, take a boat trip along the Sakae Krang River, visit Wat Tha Sung, and enjoy the tranquil local way of life.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
+    "periodText_en": "June - December 2026",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ราชบุรี",
+        "title_en": "Bangkok • Ratchaburi",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ราชบุรี", "description_en": "Meet in Bangkok, depart to Ratchaburi" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "อุทยานหินเขางู", "description_en": "Khao Ngu Stone Park" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "ตลาดโอ๊ะป่อย และรับประทานอาหารกลางวัน", "description_en": "Oh Poi Market and lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "เช็คอินเวเนโต้ สวนผึ้ง", "description_en": "Check in at Vento, Suan Phueng" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ชมแกรนด์แคนยอนราชบุรี", "description_en": "Visit Grand Canyon Ratchaburi" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก รีสอร์ทเรือนชมดาว", "description_en": "Ruen Chom Dao Resort" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "สวนผึ้ง • ราชบุรี • กรุงเทพฯ",
+        "title_en": "Suan Phueng • Ratchaburi • Bangkok",
+        "items": [
+          { "time": "08:00", "time_en": "08:00 AM", "description": "รับประทานอาหารเช้า ณ โรงแรม", "description_en": "Breakfast at hotel" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "พักผ่อน ณ Phupha Coffee Camp และรับประทานอาหารกลางวัน", "description_en": "Relax at Phupha Coffee Camp and lunch" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ถ้ำเขาบิน", "description_en": "Khao Bin Cave" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "พิพิธภัณฑ์โอ่งเก่าราชบุรี", "description_en": "Ratchaburi Old Water Jar Museum" },
+          { "time": "15:00", "time_en": "03:00 PM", "description": "ณ สัทธา อุทยานไทย", "description_en": "Na Sattha Thai Park" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ถึงกรุงเทพฯ โดยสวัสดิภาพ", "description_en": "Arrive safely in Bangkok" }
+        ]
+      }
+    ]
   },
   {
     "id": "EGT-SP-01",
@@ -813,469 +1191,1644 @@
       "icon": "icons/van.png",
       "name_en": "VIP van 10 seats"
     },
-    "desc": "ทัวร์ตาก 2 วัน 1 คืน เที่ยวตลาดริมเมย ถ่ายรูปที่สุดประจิมที่ริมเมย อุทยานแห่งชาติน้ำตกพาเจริญ อุทยานแห่งชาติดอยสอยมาลัย ไม้กลายเป็นหิน ดอยป่าหวาย วัดแม่ตาว บ่อน้ำร้อนห้วยน้ำนัก และถ้ำสีฟ้า",
+    "desc": "ทัวร์ตาก เที่ยวตลาดริมเมย ถ่ายรูปที่สุดประจิมที่ริมเมย อุทยานแห่งชาติน้ำตกพาเจริญ อุทยานแห่งชาติดอยสอยมาลัย ไม้กลายเป็นหิน ดอยป่าหวาย วัดแม่ตาว บ่อน้ำร้อนห้วยน้ำนัก และถ้ำสีฟ้า",
     "pdf": "filepdf_2d1n/EGT-SP-01.pdf",
     "desc_en": "Tak tour 2 days 1 night, visit Rim Moei market ",
     "duration_en": "2 days 1 night",
-    "periodText_en": "Oct 2026 - Jan 2027"
+    "periodText_en": "Oct 2026 - Jan 2027",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "กรุงเทพฯ • ตาก",
+        "title_en": "Bangkok • Tak",
+        "items": [
+          { "time": "06:00", "time_en": "06:00 AM", "description": "นัดหมายที่กรุงเทพฯ ออกเดินทางสู่ตาก", "description_en": "Meet in Bangkok, depart to Tak" },
+          { "time": "12:00", "time_en": "12:00 PM", "description": "รับประทานอาหารกลางวัน ณ จังหวัดนครสวรรค์", "description_en": "Lunch in Nakhon Sawan Province" },
+          { "time": "13:00", "time_en": "01:00 PM", "description": "ถ้ำสีฟ้า", "description_en": "Blue Cave" },
+          { "time": "14:00", "time_en": "02:00 PM", "description": "ดอยป่าหวาย", "description_en": "Doi Pa Wai" },
+          { "time": "16:00", "time_en": "04:00 PM", "description": "รับประทานอาหารเย็น", "description_en": "Dinner" },
+          { "time": "18:00", "time_en": "06:00 PM", "description": "ที่พัก โฮมสเตย์ ดอยป่าหวาย", "description_en": "Doi Pa Wai Homestay" }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "ตาก • กรุงเทพฯ",
+        "title_en": "Tak • Bangkok",
+        "items": [
+          { "time": "07:00", "time_en": "07:00 AM", "description": "รับประทานอาหารเช้า", "description_en": "Breakfast" },
+          { "time": "08:00", "time_en": "08:00 AM", "description": "เช็คเอาต์", "description_en": "Check out" },
+          { "time": "09:00", "time_en": "09:00 AM", "description": "วัดแม่ตาว", "description_en": "Wat Mae Tao" },
+          { "time": "10:00", "time_en": "10:00 AM", "description": "ตลาดริมเมย", "description_en": "Rim Moei Market" },
+          { "time": "11:00", "time_en": "11:00 AM", "description": "พิพิธภัณฑ์ไม้กลายเป็นหิน", "description_en": "Petrified Wood Museum" },
+          { "time": "20:30", "time_en": "08:30 PM", "description": "เดินทางถึงกรุงเทพมหานคร", "description_en": "Arrive in Bangkok" }
+        ]
+      }
+    ]
   },
-  {
-    "id": "EGT-SP-41",
-    "type": "domestic",
-    "province": "เพชรบูรณ์",
-    "image": "banner2day/EGT-SP-41.png",
-    "price": "3,799",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "ก.พ. - มิ.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+ {
+  "id": "ZGYIH-26069H",
+  "type": "outbound",
+  "country": "จีน",
+  "city": "จางเจียเจี้ย",
+  "startMonth": "2026-04",
+  "endMonth": "2026-09",
+  "periodText": "เม.ย. - ก.ย. 2569",
+  "image": "Outbound/China/banner/ZGYIH-26069H.png",
+  "price": "9,990",
+  "duration": "5 วัน 4 คืน",
+  "airline": "9Air.png",
+  "shortDesc": "ทัวร์จีน จางเจียเจี้ย ซานเสีย ฝูหรงเจิ้น อุทยานฟงหลินซี",
+  "desc": "ทัวร์จีน จางเจียเจี้ย ซานเสีย ฝูหรงเจิ้น อุทยานฟงหลินซี เที่ยวล่องเรือไม้ไผ่ ชมการแสดงทางวัฒนธรรม ชมโชว์ชนเผ่าถู่เจีย ชมถ้ำเก้าสวรรค์ และอุทยานเขาอวตารน้อย ฟงหลินซี",
+  "pdf": "Outbound/China/pdf/ZGYIH-26069H.pdf",
+  "desc_en": "China tour: Zhangjiajie, Sanxia, Furongzhen, Fenglinxi Park, Nine Heavens Cave, Little Avatar Mountain",
+  "duration_en": "5 days 4 nights",
+  "periodText_en": "April - September 2026",
+  "transport": {
+    "name": "สายการบิน 9Air (เที่ยวบิน 9H8385 / 9H8386)",
+    "icon": "icons/plane.png",
+    "name_en": "9Air (Flight 9H8385 / 9H8386)"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินสุวรรณภูมิ • สนามบินซานเสีย • เมืองอี้ชาง",
+      "title_en": "Suvarnabhumi Airport • Sanxia Airport • Yichang",
+      "items": [
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "พร้อมกันที่ สนามบินสุวรรณภูมิ อาคารผู้โดยสารขาออก เคาน์เตอร์สายการบิน AIR CHANGAN",
+          "description_en": "Meet at Suvarnabhumi Airport, Departure Terminal, AIR CHANGAN counter"
+        },
+        {
+          "time": "19:40",
+          "time_en": "07:40 PM",
+          "description": "ออกเดินทางสู่ สนามบินซานเสีย เมืองอี้ชาง ประเทศจีน เที่ยวบินที่ 9H8385",
+          "description_en": "Depart to Sanxia Airport, Yichang, China by flight 9H8385"
+        },
+        {
+          "time": "23:35",
+          "time_en": "11:35 PM",
+          "description": "เดินทางถึง สนามบินซานเสีย เมืองอี้ชาง ผ่านด่านตรวจคนเข้าเมือง และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Arrive at Sanxia Airport, Yichang, pass through immigration, and transfer to hotel"
+        }
+      ]
     },
-    "desc": "ทัวร์เพชรบูรณ์-เขาค้อ 2 วัน 1 คืน เที่ยวทุ่งกังหันลมเขาค้อ วัดพระธาตุผาซ่อนแก้ว เขาค้อฟลาวเวอร์เทอเรส จุดชมวิวทะเลหมอก ม่อนแกะ เขาค้อ กอดหมอกคาเฟ่ จุดชมวิวผาซ่อนแก้ว สกายวอล์คภูเลิศ เขาค้อ และไฮเดรนเยีย คาเฟ่ เขาค้อ",
-    "pdf": "filepdf_2d1n/EGT-SP-41.pdf",
-    "desc_en": "Phetchabun-Khao Kho tour 2 days 1 night, visit Khao Kho windmill field. ",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
-  },
-  {
-    "id": "EGT-FP-07",
-    "type": "domestic",
-    "province": "เพชรบุรี",
-    "image": "banner2day/EGT-FP-07.png",
-    "price": "4,820",
-    "duration": "2 วัน 1 คืน",
-    "periodText": "ก.พ. - มิ.ย. 2569",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+    {
+      "day": 2,
+      "title": "หมู่บ้านวัฒนธรรมซานเสีย • ล่องเรือชมทัศนียภาพช่องเขาซานเสีย • การแสดงชนเผ่าถู่เจีย • บ้านเกิดชวีหยวน • เมืองจางเจียเจี้ย",
+      "title_en": "Sanxia Cultural Village • Sanxia Gorge Boat Cruise • Tujia Cultural Show • Qu Yuan Hometown • Zhangjiajie",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "ชมหมู่บ้านวัฒนธรรมซานเสีย ล่องเรือชมทัศนียภาพช่องเขาซานเสียในแม่น้ำแยงซีเกียง",
+          "description_en": "Visit Sanxia Cultural Village and cruise along the Sanxia Gorge in the Yangtze River"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "ชมการแสดงทางวัฒนธรรมชนเผ่าถู่เจีย พิธีแต่งงานโบราณและการร้องเพลงท้องถิ่น",
+          "description_en": "Watch the Tujia ethnic cultural performance, featuring traditional wedding ceremonies and songs"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เที่ยวชมบ้านเกิดชวีหยวน โบราณสถานและแหล่งท่องเที่ยวระดับ 5A",
+          "description_en": "Visit the Hometown of Qu Yuan, a historical national 5A-level tourist attraction"
+        },
+        {
+          "time": "16:00",
+          "time_en": "04:00 PM",
+          "description": "ออกเดินทางสู่ เมืองจางเจียเจี้ย",
+          "description_en": "Depart to Zhangjiajie"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "รับประทานอาหารค่ำ ณ ภัตตาคาร (พิเศษ... เมนูบุฟเฟ่ต์ปิ้งย่าง)",
+          "description_en": "Dinner at restaurant (Special Korean BBQ Buffet)"
+        }
+      ]
     },
-    "desc": "ทัวร์เพชรบุรี แก่งกระจาน-ถ้ำเขาหลวง 2 วัน 1 คืน เที่ยวอุทยานแห่งชาติแก่งกระจาน ตลาดริมน้ำจามจุรี Pribphree Cafe จุดชมวิวเขาพะเนินทุ่ง สะพานแขวนแก่งกระจาน ถ้ำเขาหลวง ตลาดเพชรบุรี วัดมหาธาตุวรวิหาร และพระนครคีรี เขาวัง",
-    "pdf": "filepdf_2d1n/EGT-FP-07.pdf",
-    "desc_en": "Phetchaburi Tour 2 days 1 night: Experience the blend of history and nature at Khao Wang, Kaeng Krachan National Park, and Chao Samran Beach.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "Feb. - June 2026"
-  },
-  {
-    "id": "EGT3D2N-FP-14",
-    "type": "domestic",
-    "province": [
-      "สุโขทัย",
-      "กำแพงเพชร"
-    ],
-    "duration": "3 วัน 2 คืน",
-    "price": "6899",
-    "image": "banner3d2n/EGT3D2N-FP-14.png",
-    "desc": "ทัวร์สุโขทัย บ้านต้นนาจั่น - กำแพงเพชร เที่ยวชมอุทยานประวัติศาสตร์ ชมวิถีชุมชน บ้านต้นนาจั่น บ่อน้ำพุร้อนพระร่วง และจุดชมวิวห้วยต้นไฮ",
-    "shortDesc": "สุโขทัย บ้านต้นนาจั่น กำแพงเพชร ชมอุทยานประวัติศาสตร์ วิถีชุมชน และจุดชมวิวห้วยต้นไฮ",
-    "periodText": "ก.พ. - มิ.ย. 2569",
-    "pdf": "filepdf_3d2n/EGT3D2N-FP-14.pdf",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+    {
+      "day": 3,
+      "title": "ร้านสมุนไพรจีน • ร้านยางพารา • ถ้ำเก้าสวรรค์ • อุทยานฟงหลินซี • ล่องเรือหมู่บ้านไม้ไผ่ • เมืองโบราณฝูหรงเจิ้น",
+      "title_en": "Chinese Herb Shop • Latex Shop • Nine Heavens Cave • Fenglinxi Park • Bamboo Village Boat Cruise • Furong Ancient Town",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "เยี่ยมชมร้านสมุนไพรจีน และร้านยางพารา",
+          "description_en": "Visit Chinese Herb Shop and Latex Product Shop"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "ชมความมหัศจรรย์ของ ถ้ำเก้าสวรรค์ (พระราชวังใต้ดิน)",
+          "description_en": "Explore the wonder of Nine Heavens Cave (The Underground Palace)"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "เดินทางสู่อุทยานแห่งชาติภูเขาและลำธารฟงหลินซี (เขาอวตารน้อย) พร้อมล่องเรือหมู่บ้านไม้ไผ่",
+          "description_en": "Visit Fenglinxi Park (Little Avatar Mountain) and take a boat cruise at Bamboo Village"
+        },
+        {
+          "time": "17:30",
+          "time_en": "05:30 PM",
+          "description": "เดินทางสู่ เมืองโบราณฝูหรงเจิ้น ชมบ้านเรือนโบราณและน้ำตกใจกลางเมือง",
+          "description_en": "Visit Furong Ancient Town, scenic ancient houses, and the iconic waterfall in town"
+        },
+        {
+          "time": "19:00",
+          "time_en": "07:00 PM",
+          "description": "รับประทานอาหารค่ำ ณ ภัตตาคาร และเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and check in to hotel"
+        }
+      ]
     },
-    "desc_en": "Sukhothai tour, Ban Ton Na Chan - Kamphaeng Phet, visit the historical park, see the way of life of the Ban Ton Na Chan community. ",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "Feb. - June 2026"
-  },
-  {
-    "id": "EGT3D2N-FP-13",
-    "type": "domestic",
-    "province": [
-      "ยโสธร",
-      "อุบลราชธานี"
-    ],
-    "duration": "3 วัน 2 คืน",
-    "price": "7150",
-    "image": "banner3d2n/EGT3D2N-FP-13.png",
-    "desc": "ทัวร์ยโสธร-อุบล งานบุญแห่มาลัยข้าวตอก 3 วัน 2 คืน เที่ยววัดพระธาตุหนองบัว วัดสิรินธรวรารามภูพร้าว ความทรงจำคาเฟ่ วัดไชยเจียม และแลนด์มาร์กสำคัญ",
-    "shortDesc": "ยโสธร อุบล งานบุญแห่มาลัยข้าวตอก เที่ยววัดดัง และแลนด์มาร์กสำคัญ",
-    "periodText": "26 - 28 ก.พ. 2569",
-    "pdf": "filepdf_3d2n/EGT3D2N-FP-13.pdf",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+    {
+      "day": 4,
+      "title": "ร้านชาจีน • ร้านหยก • พิพิธภัณฑ์ธรณีวิทยาจางเจียเจี้ย • เมืองอี้ชาง",
+      "title_en": "Chinese Tea Shop • Jade Shop • Zhangjiajie Geological Museum • Yichang",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "แวะชมและเลือกซื้อที่ ร้านชาจีน และร้านหยก",
+          "description_en": "Visit Chinese Tea Shop and Jade Craft Shop"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "ชมพิพิธภัณฑ์ธรณีวิทยาจางเจียเจี้ย เรียนรู้กำเนิดภูมิประเทศเขาหินทราย",
+          "description_en": "Visit Zhangjiajie Geological Museum"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร (พิเศษ... เมนูสุกี้เห็ด)",
+          "description_en": "Lunch at restaurant (Special Mushroom Hot Pot)"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "เดินทางกลับ เมืองอี้ชาง (ใช้เวลาประมาณ 4 ชั่วโมง)",
+          "description_en": "Transfer back to Yichang (approx. 4 hours)"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "รับประทานอาหารค่ำ ณ ภัตตาคาร และเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and check in to hotel"
+        }
+      ]
     },
-    "desc_en": "Yasothon-Ubon Tour 3 days 2 nights: Visit Pha Taem National Park, explore ancient rock paintings, and experience the cultural highlights of Isan.",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "26 - 28 Feb. 2026"
-  },
+    {
+      "day": 5,
+      "title": "สนามบินซานเสีย • สนามบินสุวรรณภูมิ",
+      "title_en": "Sanxia Airport • Suvarnabhumi Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "11:30",
+          "time_en": "11:30 AM",
+          "description": "เดินทางถึง สนามบินซานเสีย เพื่อเช็คอินสัมภาระ",
+          "description_en": "Arrive at Sanxia Airport for check-in"
+        },
+        {
+          "time": "14:55",
+          "time_en": "02:55 PM",
+          "description": "ออกเดินทางสู่ สนามบินสุวรรณภูมิ ประเทศไทย เที่ยวบินที่ 9H8386",
+          "description_en": "Depart to Suvarnabhumi Airport, Thailand by flight 9H8386"
+        },
+        {
+          "time": "18:40",
+          "time_en": "06:40 PM",
+          "description": "เดินทางถึง สนามบินสุวรรณภูมิ โดยสวัสดิภาพ",
+          "description_en": "Arrive safely at Suvarnabhumi Airport"
+        }
+      ]
+    }
+  ]
+},
   {
-    "id": "EGT4D3N-FP-05",
-    "type": "domestic",
-    "province": [
-      "นครศรีธรรมราช",
-      "ตรัง"
-    ],
-    "duration": "4 วัน 3 คืน",
-    "price": "12220",
-    "image": "banner4d3n/EGT4D3N-FP-05.png",
-    "shortDesc": "นครศรีธรรมราช ตรัง เที่ยวทะเล ถ้ำดัง และแลนด์มาร์กสำคัญ",
-    "desc": "ทัวร์นครศรีธรรมราช-ตรัง 4 วัน 3 คืน เที่ยวถ้ำเขาช้างหาย สถานีรถไฟกันตัง ถนนคนเดินสถานีรถไฟตรัง ท่าเทียบเรือหาดปากเมง เกาะมุก เกาะกระดาน เกาะแหวน เกาะเชือก มันคาเฟ่ แคมป์ปิ้ง ทุ่งสง และกันตังสตรีทอาร์ต",
-    "periodText": "เมษายน - มิถุนายน 2569",
-    "pdf": "filepdf_4d3n/EGT4D3N-FP-05.pdf",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+  "id": "ZGYH-26079H",
+  "type": "outbound",
+  "country": "จีน",
+  "city": "จางเจียเจี้ย",
+  "startMonth": "2026-04",
+  "endMonth": "2026-10",
+  "periodText": "เม.ย. - ต.ค. 2569",
+  "image": "Outbound/China/banner/ZGYH-26079H.png",
+  "price": "10,990",
+  "duration": "5 วัน 4 คืน",
+  "airline": "9Air.png",
+  "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น เทียนเหมินซาน",
+  "desc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น เทียนเหมินซาน เที่ยวล่องเรือชมวิว ชมหมู่บ้านวัฒนธรรมชาวถู่เจีย เมืองโบราณฝูหรงเจิ้น นั่งกระเช้าสู่เทียนเหมินซาน ชมระเบียงแก้วและแลนด์มาร์กชื่อดัง",
+  "pdf": "Outbound/China/pdf/ZGYH-26079H.pdf",
+  "desc_en": "China tour: Zhangjiajie, Furongzhen, Tianmenshan",
+  "duration_en": "5 days 4 nights",
+  "periodText_en": "Apr. - Oct. 2026",
+  "transport": {
+    "name": "สายการบิน Air Changan (เที่ยวบิน 9H8385 / 9H8386)",
+    "icon": "icons/plane.png",
+    "name_en": "Air Changan (Flight 9H8385 / 9H8386)"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินสุวรรณภูมิ • สนามบินซานเสีย • เมืองอี้ชาง",
+      "title_en": "Suvarnabhumi Airport • Sanxia Airport • Yichang",
+      "items": [
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "พร้อมกันที่ สนามบินสุวรรณภูมิ อาคารผู้โดยสารขาออก เคาน์เตอร์สายการบิน AIR CHANGAN โดยมีเจ้าหน้าที่ให้การต้อนรับและอำนวยความสะดวก",
+          "description_en": "Meet at Suvarnabhumi Airport, Departure Terminal, AIR CHANGAN counter"
+        },
+        {
+          "time": "19:35",
+          "time_en": "07:35 PM",
+          "description": "ออกเดินทางสู่ สนามบินซานเสีย เมืองอี้ชาง ประเทศจีน เที่ยวบินที่ 9H8385",
+          "description_en": "Depart to Sanxia Airport, Yichang, China by flight 9H8385"
+        },
+        {
+          "time": "23:30",
+          "time_en": "11:30 PM",
+          "description": "เดินทางถึง สนามบินซานเสีย เมืองอี้ชาง ผ่านพิธีตรวจคนเข้าเมือง และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Arrive at Sanxia Airport, Yichang, clear immigration, and transfer to hotel"
+        }
+      ]
     },
-    "desc_en": "Nakhon Si Thammarat-Trang tour 4 days 3 nights, visit Khao Chang Hai cave. ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "EGT4D3N-FP-06",
-    "type": "domestic",
-    "province": [
-      "เชียงใหม่",
-      "ปาย",
-      "อ่างขาง"
-    ],
-    "duration": "4 วัน 3 คืน",
-    "price": "9499",
-    "image": "banner4d3n/EGT4D3N-FP-06.png",
-    "shortDesc": "เชียงใหม่ ปาย อ่างขาง เที่ยวธรรมชาติ จุดชมวิว และแลนด์มาร์กดัง",
-    "desc": "ทัวร์เชียงใหม่ ปาย อ่างขาง 4 วัน 3 คืน เที่ยวดอยอ่างขาง จุดชมวิวหยุนไหล ถนนคนเดินปาย ถนนคนเดินท่าแพ ทะเลหมอกบนดอยอ่างขาง สถานีเกษตรหลวงอ่างขาง และสะพานประวัติศาสตร์ท่าปาย",
-    "periodText": "ตลอดเดือนมีนาคม 2569",
-    "pdf": "filepdf_4d3n/EGT4D3N-FP-06.pdf",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+    {
+      "day": 2,
+      "title": "หมู่บ้านวัฒนธรรมซานเสีย • ล่องเรือชมทัศนียภาพช่องเขาซานเสีย • ชมการแสดงชนเผ่าถู่เจีย • บ้านเกิดชวีหยวน • เมืองจางเจียเจี้ย",
+      "title_en": "Sanxia Cultural Village • Sanxia Gorge Cruise • Tujia Cultural Show • Qu Yuan Hometown • Zhangjiajie",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "ล่องเรือชมทัศนียภาพช่องเขาซานเสีย สัมผัสความยิ่งใหญ่ของแม่น้ำแยงซีเกียง และสัมผัสวิถีชีวิตริมน้ำ ณ หมู่บ้านวัฒนธรรมซานเสีย",
+          "description_en": "Sanxia Gorge cruise along the Yangtze River and visit the Sanxia Cultural Village"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "ชมการแสดงทางวัฒนธรรมชนเผ่าถู่เจีย พิธีแต่งงานโบราณและการร้องเพลงท้องถิ่น",
+          "description_en": "Watch Tujia ethnic traditional performances, ancient wedding ceremonies, and folk songs"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เที่ยวชมบ้านเกิดชวีหยวน โบราณสถานและแหล่งท่องเที่ยวระดับ 5A ของจีน",
+          "description_en": "Visit Hometown of Qu Yuan, a renowned national 5A-level historical and cultural attraction"
+        },
+        {
+          "time": "16:00",
+          "time_en": "04:00 PM",
+          "description": "เดินทางสู่ เมืองจางเจียเจี้ย",
+          "description_en": "Travel to Zhangjiajie"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "รับประทานอาหารค่ำ ณ ภัตตาคาร (พิเศษ... เมนูบุฟเฟ่ต์ปิ้งย่างเกาหลี) และเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant (Special Korean BBQ Buffet) and hotel check-in"
+        }
+      ]
     },
-    "desc_en": "Tour Chiang Mai, Pai, Ang Khang, 4 days 3 nights, visit Doi Ang Khang. ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "Throughout March 2026"
-  },
-  {
-    "id": "EGT4D3N-FP-07",
-    "type": "domestic",
-    "province": "สตูล",
-    "duration": "4 วัน 3 คืน",
-    "price": "10899",
-    "image": "banner4d3n/EGT4D3N-FP-07.png",
-    "shortDesc": "สตูล เที่ยวทะเล ถ้ำ จุดชมวิว และแลนด์มาร์กสำคัญ",
-    "desc": "ทัวร์สตูล 4 วัน 3 คืน เที่ยวปราสาทหินพันยอด แหลมเต๊ะปัน ผาไซหนี้ ถ้ำพับรัก สตรีทอาร์ตสตูล จุดชมวิวสะพานข้ามกาลเวลา หินตาหินยาย ถ้ำภูผาเพชร อ่าวฟอสซิล และสันหลังมังกร",
-    "periodText": "เมษายน - มิถุนายน 2569",
-    "pdf": "filepdf_4d3n/EGT4D3N-FP-07.pdf",
-    "transport": {
-      "name": "รถตู้ VIP 10 ที่นั่ง",
-      "icon": "icons/van.png",
-      "name_en": "VIP van 10 seats"
+    {
+      "day": 3,
+      "title": "ร้านสมุนไพรจีน • ร้านยางพารา • กระเช้าลอยฟ้าเขาเทียนเหมินซาน • ถ้ำประตูสวรรค์ • ระเบียงแก้ว • เมืองโบราณฝูหรงเจิ้น",
+      "title_en": "Chinese Herb Shop • Latex Shop • Tianmen Mountain Cable Car • Heaven's Gate Cave • Glass Skywalk • Furong Ancient Town",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "แวะชมผลิตภัณฑ์เพื่อสุขภาพที่ ร้านสมุนไพรจีน และ ร้านยางพารา",
+          "description_en": "Visit Chinese Herb Shop and Latex Product Shop"
+        },
+        {
+          "time": "11:30",
+          "time_en": "11:30 AM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "นั่งกระเช้าไฟฟ้าขึ้นสู่ เขาเทียนเหมินซาน กระเช้าที่ยาวที่สุดในโลก ชมถ้ำประตูสวรรค์ และท้าทายความสูงบนระเบียงแก้ว (ทางเดินกระจก)",
+          "description_en": "Ride the world's longest cable car to Tianmen Mountain, explore Heaven's Gate Cave, and walk the thrilling Glass Skywalk"
+        },
+        {
+          "time": "17:00",
+          "time_en": "05:00 PM",
+          "description": "เดินทางสู่ เมืองโบราณฝูหรงเจิ้น ชมความงดงามของน้ำตกกลางเมืองและบ้านเรือนโบราณยามค่ำคืน",
+          "description_en": "Travel to Furong Ancient Town, enjoy scenic night views and the famous waterfall in town"
+        },
+        {
+          "time": "19:00",
+          "time_en": "07:00 PM",
+          "description": "รับประทานอาหารค่ำ ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
     },
-    "desc_en": "Satun tour 4 days 3 nights, visit Prasat Hin Pan Yot, Laem Ta Pan, Pha Sai Nai, Phap Rak Cave, street art in Satun. ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "April - June 2026"
+    {
+      "day": 4,
+      "title": "ร้านชาจีน • ร้านหยกจีน • เมืองอี้ชาง • ถนนคนเดินเมืองอี้ชาง • ห้างสรรพสินค้า • POP MART",
+      "title_en": "Chinese Tea Shop • Jade Shop • Yichang • Yichang Walking Street • Shopping Mall • POP MART",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เรียนรู้วัฒนธรรมการดื่มชาที่ ร้านชาจีน และเลือกซื้องานหยกแกะสลักที่ ร้านหยกจีน",
+          "description_en": "Visit Chinese Tea Culture Shop and Jade Carving Shop"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร (พิเศษ... เมนูสุกี้เห็ด)",
+          "description_en": "Lunch at restaurant (Special Mushroom Hot Pot)"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เดินทางกลับสู่ เมืองอี้ชาง (ใช้เวลาประมาณ 4 ชั่วโมง)",
+          "description_en": "Transfer back to Yichang (approx. 4 hours)"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "ช้อปปิ้งและสัมผัสบรรยากาศ ณ ถนนคนเดินเมืองอี้ชาง ห้างสรรพสินค้าใจกลางเมือง และเลือกซื้อของสะสมที่ POP MART",
+          "description_en": "Stroll around Yichang Walking Street, modern shopping mall, and shop at POP MART"
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "รับประทานอาหารค่ำ ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "สนามบินซานเสีย • สนามบินสุวรรณภูมิ",
+      "title_en": "Sanxia Airport • Suvarnabhumi Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at hotel restaurant"
+        },
+        {
+          "time": "11:30",
+          "time_en": "11:30 AM",
+          "description": "เดินทางถึง สนามบินซานเสีย เพื่อเช็คอินสัมภาระและเตรียมตัวเดินทางกลับ",
+          "description_en": "Arrive at Sanxia Airport for flight check-in"
+        },
+        {
+          "time": "14:50",
+          "time_en": "02:50 PM",
+          "description": "ออกเดินทางสู่ สนามบินสุวรรณภูมิ ประเทศไทย เที่ยวบินที่ 9H8386",
+          "description_en": "Depart to Suvarnabhumi Airport, Thailand by flight 9H8386"
+        },
+        {
+          "time": "18:35",
+          "time_en": "06:35 PM",
+          "description": "เดินทางถึง สนามบินสุวรรณภูมิ โดยสวัสดิภาพพร้อมความประทับใจ",
+          "description_en": "Arrive safely at Suvarnabhumi Airport"
+        }
+      ]
+    }
+  ]
+},
+ {
+  "id": "ZQCAN-250AQ",
+  "type": "outbound",
+  "country": "จีน",
+  "city": "กวางโจว",
+  "startMonth": "2026-03",
+  "endMonth": "2026-10",
+  "periodText": "มี.ค. - ต.ค. 2569",
+  "image": "Outbound/China/banner/ZQCAN-250AQ.png",
+  "price": "10,990",
+  "duration": "4 วัน 2 คืน",
+  "airline": "9Air.png",
+  "shortDesc": "ทัวร์จีน กวางเจา จูไห่ สวนสนุก Chimelong Ocean Kingdom",
+  "desc": "ทัวร์จีน กวางเจา จูไห่ สวนสนุก Chimelong Ocean Kingdom เที่ยวชมการแสดงพลุ ขอพรวัดต้าฝอ ถ่ายรูปคู่แลนด์มาร์กเมืองกวางเจา แคนตันทาวเวอร์ เช็คอินจูไห่ฟิชเชอร์เกิร์ล โรงละครหอยไข่มุก และช้อปปิ้งถนนคนเดินเป่ยจิงลู่ + POP MART",
+  "pdf": "Outbound/China/pdf/ZQCAN-250AQ.pdf",
+  "desc_en": "China tour: Guangzhou, Zhuhai, Chimelong Ocean Kingdom, Canton Tower, Dafo Temple, Zhuhai Fisher Girl, Beijing Road Walking Street",
+  "duration_en": "4 days 2 nights",
+  "periodText_en": "March - October 2026",
+  "transport": {
+    "name": "สายการบิน 9 Air (เที่ยวบิน AQ1268 / AQ1267)",
+    "icon": "icons/plane.png",
+    "name_en": "9 Air (Flight AQ1268 / AQ1267)"
   },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินสุวรรณภูมิ",
+      "title_en": "Suvarnabhumi Airport",
+      "items": [
+        {
+          "time": "23:30",
+          "time_en": "11:30 PM",
+          "description": "นัดหมายพร้อมกันที่ สนามบินสุวรรณภูมิ ชั้น 4 เจ้าหน้าที่คอยต้อนรับและอำนวยความสะดวกในการเช็คอิน",
+          "description_en": "Meet at Suvarnabhumi Airport, 4th Floor, Departure Hall, assisted by staff for check-in"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "สนามบินกวางเจา • เมืองกวางเจา • สวนสนุก Chimelong Ocean Kingdom (ชมการแสดงพลุ)",
+      "title_en": "Guangzhou Airport • Guangzhou • Chimelong Ocean Kingdom (Fireworks Display)",
+      "items": [
+        {
+          "time": "02:30",
+          "time_en": "02:30 AM",
+          "description": "ออกเดินทางสู่ สนามบินกวางเจา (ประเทศจีน) โดยสายการบิน 9AIR เที่ยวบินที่ AQ1268",
+          "description_en": "Depart to Guangzhou Baiyun Airport by 9 Air flight AQ1268"
+        },
+        {
+          "time": "06:10",
+          "time_en": "06:10 AM",
+          "description": "เดินทางถึง สนามบินกวางเจา ผ่านพิธีการตรวจคนเข้าเมืองและรับสัมภาระ นำท่านเดินทางสู่เมืองกวางเจา",
+          "description_en": "Arrive at Guangzhou Airport, clear immigration and transfer to Guangzhou city"
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "บริการอาหารเช้า ณ ภัตตาคาร เสิร์ฟด้วยเมนูติ่มซำขึ้นชื่อ",
+          "description_en": "Breakfast at restaurant featuring famous Dim Sum"
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "เข้าชม สวนสนุกฉางหลง (Chimelong Ocean Kingdom) เพลิดเพลินกับ 8 โซนอวาเรียม เครื่องเล่นระดับโลก และการแสดงสัตว์น้ำ (อิสระอาหารกลางวันและค่ำตามอัธยาศัย)",
+          "description_en": "Explore Chimelong Ocean Kingdom, world-class aquarium zones, thrilling rides, and animal shows (Lunch and Dinner at leisure)"
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "ชมการแสดงดอกไม้ไฟและพลุสุดอลังการยามค่ำคืน จากนั้นนำท่านเข้าสู่ที่พัก ณ เมืองจูไห่",
+          "description_en": "Enjoy the spectacular evening fireworks and drone show, then transfer to hotel in Zhuhai"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "เมืองจูไห่ • จูไห่ฟิชเชอร์เกิร์ล • ร้านหยก • ร้านผ้าไหม • โรงละครหอยไข่มุก • ตลาดกงเป่ย",
+      "title_en": "Zhuhai • Zhuhai Fisher Girl • Jade Shop • Silk Shop • Zhuhai Opera House • Gongbei Market",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "ชมและถ่ายรูปคู่กับรูปปั้น จูไห่ฟิชเชอร์เกิร์ล (หวีหนี่) สัญลักษณ์ประจำเมืองจูไห่",
+          "description_en": "Visit and take photos at the Zhuhai Fisher Girl Statue, the iconic landmark of Zhuhai"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "เข้าชม ร้านหยก เลือกชมผลิตภัณฑ์หยกแกะสลักอันประณีต",
+          "description_en": "Visit Jade Shop and admire traditional Chinese jade crafts"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร (เมนูพิเศษ... SEAFOOD หอยเป๋าฮื้อ + ไวน์แดง)",
+          "description_en": "Lunch at restaurant (Special Seafood Abalone + Red Wine menu)"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เข้าชม ร้านผ้าไหม รับฟังบรรยายสรรพคุณและเลือกซื้อผลิตภัณฑ์ผ้าไหมจีน",
+          "description_en": "Visit Chinese Silk Shop and browse quality silk products"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "แวะถ่ายรูปแลนด์มาร์กสุดล้ำ โรงละครหอยไข่มุก (Zhuhai Opera House)",
+          "description_en": "Photo stop at the futuristic Zhuhai Opera House (Sun and Moon Shells)"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "อิสระช้อปปิ้งสินค้าแฟชั่นและของฝากราคาประหยัด ณ ตลาดใต้ดินกงเป่ย (อิสระอาหารค่ำตามอัธยาศัย) และเดินทางกลับสู่ที่พัก",
+          "description_en": "Shopping at Gongbei Underground Market (Dinner at leisure) and return to hotel"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "ร้านบัวหิมะ • จัตุรัสฮัวเฉิง • กวางเจาทาวเวอร์ • วัดต้าฝอ • ถนนคนเดินเป่ยจิงลู่ + POP MART • สนามบินสุวรรณภูมิ",
+      "title_en": "Bao Shu Tang • Huacheng Square • Canton Tower • Dafo Temple • Beijing Road Walking Street + POP MART • Suvarnabhumi Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรมและเช็คเอาต์",
+          "description_en": "Breakfast at the hotel restaurant and check out"
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "ชมผลิตภัณฑ์ยาและสมุนไพรขึ้นชื่อ ณ ร้านบัวหิมะ",
+          "description_en": "Visit Bao Shu Tang (Snow Lotus Cream shop)"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "เที่ยวชม จัตุรัสฮัวเฉิง และถ่ายรูปด้านนอกคู่กับ กวางเจาทาวเวอร์ (Canton Tower)",
+          "description_en": "Explore Huacheng Square and outdoor photo stop at Canton Tower"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "สักการะขอพรเรื่องการงาน การเงิน ณ วัดต้าฝอ (วัดพระใหญ่)",
+          "description_en": "Pay respect and pray for good fortune at Dafo Temple (Big Buddha Temple)"
+        },
+        {
+          "time": "15:30",
+          "time_en": "03:30 PM",
+          "description": "อิสระช้อปปิ้งสตรีทฟู้ดและร้านของสะสมอาร์ตทอย ณ ถนนคนเดินเป่ยจิงลู่ และร้าน POP MART (อิสระอาหารค่ำตามอัธยาศัย)",
+          "description_en": "Free time for shopping at Beijing Road Pedestrian Street and POP MART store (Dinner at leisure)"
+        },
+        {
+          "time": "20:00",
+          "time_en": "08:00 PM",
+          "description": "เดินทางถึง สนามบินกวางเจา เพื่อเช็คอินสัมภาระเดินทางกลับประเทศไทย",
+          "description_en": "Arrive at Guangzhou Airport for flight check-in"
+        },
+        {
+          "time": "23:30",
+          "time_en": "11:30 PM",
+          "description": "ออกเดินทางสู่ สนามบินสุวรรณภูมิ ประเทศไทย โดยสายการบิน 9AIR เที่ยวบินที่ AQ1267 (ถึงเวลา 01:25 น. ของวันถัดไป)",
+          "description_en": "Depart for Suvarnabhumi Airport by 9 Air flight AQ1267 (arriving at 01:25 AM next day)"
+        }
+      ]
+    }
+  ]
+},
+ {
+  "id": "ZGCKQ-2615FD",
+  "type": "outbound",
+  "country": "จีน",
+  "city": "ฉงชิ่ง",
+  "startMonth": "2026-05",
+  "endMonth": "2026-10",
+  "periodText": "พ.ค. - ต.ค. 2569",
+  "image": "Outbound/China/banner/ZGCKQ-2615FD.png",
+  "price": "12,990",
+  "duration": "4 วัน 3 คืน",
+  "airline": "airasia.png",
+  "shortDesc": "ทัวร์จีน มหานครฉงชิ่ง หมู่บ้านโบราณสือฉือโข่ว หงหยาต้ง",
+  "desc": "ทัวร์จีน มหานครฉงชิ่ง หงหยาต้ง เที่ยวหมู่บ้านโบราณสือฉือโข่ว มหาศาลาประชาคมต้าหลี่ถัง ชมรถไฟวิ่งทะลุตึกสถานีหลีจื่อป้า เช็คอินอาคารตะเกียบ ย่านศิลปะ Testbed 2 และช้อปปิ้งถนนคนเดินเจี๋ยฟางเป่ย",
+  "pdf": "Outbound/China/pdf/ZGCKQ-2615FD.pdf",
+  "desc_en": "China tour: Chongqing, Hongyadong, Ciqikou Ancient Town, Liziba Monorail, Guotai Arts Center, Jiefangbei Walking Street",
+  "duration_en": "4 days 3 nights",
+  "periodText_en": "May - October 2026",
+  "transport": {
+    "name": "สายการบิน AirAsia (เที่ยวบิน FD552 / FD553)",
+    "icon": "icons/plane.png",
+    "name_en": "AirAsia (Flight FD552 / FD553)"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินดอนเมือง • สนามบินฉงชิ่งเจียงเป่ย์ • เมืองฉงชิ่ง • หงหยาต้ง",
+      "title_en": "Don Mueang Airport • Chongqing Jiangbei Airport • Chongqing • Hongyadong",
+      "items": [
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "พร้อมกันที่ สนามบินดอนเมือง อาคารผู้โดยสารขาออก เคาน์เตอร์สายการบิน AIR ASIA เจ้าหน้าที่คอยให้การต้อนรับและอำนวยความสะดวก",
+          "description_en": "Meet at Don Mueang Airport, International Departure Terminal, AIR ASIA counter with staff assistance"
+        },
+        {
+          "time": "13:55",
+          "time_en": "01:55 PM",
+          "description": "ออกเดินทางสู่ สนามบินฉงชิ่งเจียงเป่ย์ ประเทศจีน โดยสายการบิน AIR ASIA เที่ยวบินที่ FD552",
+          "description_en": "Depart to Chongqing Jiangbei Airport, China by AIR ASIA flight FD552"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "เดินทางถึง สนามบินฉงชิ่งเจียงเป่ย์ ผ่านพิธีการตรวจคนเข้าเมืองและรับสัมภาระ",
+          "description_en": "Arrive at Chongqing Jiangbei Airport, clear customs and immigration"
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "เดินทางสู่ หงหยาต้ง ชมความงดงามของสถาปัตยกรรมไม้โบราณริมผาที่ประดับไฟยามค่ำคืน (อิสระอาหารค่ำตามอัธยาศัย) และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Visit Hongyadong, the stunning illuminated stilt house complex at night (Dinner at leisure) and check in to hotel"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "ร้านสมุนไพรจีน • หมู่บ้านโบราณสือฉือโข่ว • มหาศาลาประชาคมต้าหลี่ถัง • รถไฟทะลุตึก • เซียะห่าวหลี่ โอลด์สตรีท",
+      "title_en": "Chinese Herb Shop • Ciqikou Ancient Town • Great Hall of the People • Liziba Monorail Through Building • Xiahaoli Old Street",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เข้าชม ร้านสมุนไพรจีน เรียนรู้ศาสตร์การดูแลสุขภาพตามตำรับแพทย์แผนจีน",
+          "description_en": "Visit Chinese Herb Shop and learn about traditional Chinese medicine"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "เที่ยวชม หมู่บ้านโบราณสือฉือโข่ว สัมผัสวิถีชีวิตดั้งเดิม ชิมขนมพื้นเมือง และชมสถาปัตยกรรมเก่าแก่",
+          "description_en": "Explore Ciqikou Ancient Town, traditional wooden houses, and local snack street"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "ชมด้านนอก มหาศาลาประชาคมต้าหลี่ถัง อาคารทรงโดมขนาดใหญ่จำลองแบบจากหอเทียนถาน",
+          "description_en": "Photo stop outside the Great Hall of the People (Chongqing People's Auditorium)"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "ชมความมหัศจรรย์ของ รถไฟทะลุตึก ณ สถานีหลีจื่อป้า (Liziba Station) รถไฟฟ้าที่แล่นผ่านอาคารพักอาศัย",
+          "description_en": "Experience the famous Liziba Station monorail train passing directly through a residential building"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "เดินเล่นย่านคลาสสิก เซียะห่าวหลี่ โอลด์สตรีท แหล่งรวมคาเฟ่ บาร์ และร้านค้าย้อนยุค (อิสระอาหารค่ำตามอัธยาศัย)",
+          "description_en": "Stroll around Xiahaoli Old Street, enjoying romantic retro vibes, cafes, and local snacks (Dinner at leisure)"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "ร้านยางพาราจีน • ตึกไคว่ซิงโหล • ร้านหยกจีน • อาคารตะเกียบ • Testbed 2 • ถนนคนเดินเจี๋ยฟางเป่ย",
+      "title_en": "Latex Shop • Kuixing Tower • Jade Shop • Guotai Arts Center (Chopstick Building) • Testbed 2 • Jiefangbei Pedestrian Street",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เลือกซื้อเครื่องนอนเพื่อสุขภาพ ณ ร้านยางพาราจีน",
+          "description_en": "Visit Chinese Latex Product Shop for health bedding products"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "ชม ตึกไคว่ซิงโหล สถาปัตยกรรมเมืองสามมิติที่มีสะพานลอยเชื่อมระหว่างตึกชั้น 1 สู่ชั้น 22",
+          "description_en": "Visit Kuixing Tower and marvel at the 3D-city architecture with its high-level skybridges"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เลือกชมและเลือกซื้อหยกแท้เพื่อความเป็นสิริมงคล ณ ร้านหยกจีน",
+          "description_en": "Visit Chinese Jade Shop to browse authentic jade souvenirs and jewelry"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "ถ่ายรูปเช็คอิน อาคารตะเกียบ (ศูนย์ศิลปะกั๋วไท่) และเดินทางสู่ Testbed 2 ย่านศิลปะสุดชิคที่ดัดแปลงจากโรงงานเก่า",
+          "description_en": "Photo stop at Chopstick Building (Guotai Arts Center) and visit Testbed 2 cultural creative park"
+        },
+        {
+          "time": "17:00",
+          "time_en": "05:00 PM",
+          "description": "อิสระช้อปปิ้งใจกลางเมือง ณ ถนนคนเดินเจี๋ยฟางเป่ย และเลือกซื้อฟิกเกอร์ที่ร้าน POP MART (อิสระอาหารค่ำตามอัธยาศัย)",
+          "description_en": "Free time shopping at Jiefangbei Pedestrian Street and POP MART store (Dinner at leisure)"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "วัดหัวเหยียน • ถนนคนเดินสือปาที • ห้างเดอะริง • สนามบินดอนเมือง",
+      "title_en": "Huayan Temple • Shibati Walking Street • The Ring Mall • Don Mueang Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรมและเช็คเอาต์",
+          "description_en": "Breakfast at the hotel restaurant and check out"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เดินทางสู่ วัดหัวเหยียน วัดโบราณบนเขาต้าเหลาซาน ชมพระพุทธรูปแกะสลักและถ้ำหัวเหยียน",
+          "description_en": "Visit Huayan Temple on Mount Dalaoshan, exploring ancient caves and Buddha statues"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "รับประทานอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เดินเล่นย่านประวัติศาสตร์ ถนนคนเดินสือปาที (บันได 18 ขั้น)",
+          "description_en": "Visit Shibati (Eighteen Stairs) Traditional Old Street"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "ช้อปปิ้งและถ่ายรูปสวนพฤกษศาสตร์ในร่ม ณ ห้างสรรพสินค้าเดอะริง (The Ring)",
+          "description_en": "Explore The Ring Shopping Mall featuring its stunning indoor botanical garden"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "เดินทางถึง สนามบินฉงชิ่งเจียงเป่ย์ เพื่อเช็คอินสัมภาระเดินทางกลับประเทศไทย",
+          "description_en": "Arrive at Chongqing Jiangbei Airport for flight check-in"
+        },
+        {
+          "time": "18:55",
+          "time_en": "06:55 PM",
+          "description": "ออกเดินทางสู่ สนามบินดอนเมือง ประเทศไทย โดยสายการบิน AIR ASIA เที่ยวบินที่ FD553",
+          "description_en": "Depart to Don Mueang Airport, Thailand by AIR ASIA flight FD553"
+        },
+        {
+          "time": "21:00",
+          "time_en": "09:00 PM",
+          "description": "เดินทางถึง สนามบินดอนเมือง ประเทศไทย โดยสวัสดิภาพ",
+          "description_en": "Arrive safely at Don Mueang Airport, Thailand"
+        }
+      ]
+    }
+  ]
+},
   {
-    "id": "BT-TFU62_3U",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "เฉิงตู",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/China/banner/BT-TFU62_3U.png",
-    "price": "8,999",
-    "duration": "4 วัน 2 คืน",
-    "airline": "SichuanAirlines.png",
-    "shortDesc": "ทัวร์จีน เฉิงตู อุทยานปี้เผิงโกว",
-    "desc": "ทัวร์จีน เฉิงตู อุทยานปี้เผิงโกว ถนนชุนซีลู่ แพนด้ายักษ์ น้ำพุไม้ไผ่ เที่ยวครบไฮไลท์เฉิงตู",
-    "pdf": "Outbound/China/pdf/BT-TFU623U.pdf",
-    "desc_en": "China tour, Chengdu, Bi Pengguo Park, Chunxi Lu Road, giant panda, bamboo fountain, travel all the highlights of Chengdu.",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "April - June 2026"
+  "id": "BT-KMG50_FD",
+  "type": "outbound",
+  "country": "จีน",
+  "city": "คุนหมิง",
+  "startMonth": "2026-04",
+  "endMonth": "2026-10",
+  "periodText": "เม.ย. - ต.ค. 2569",
+  "image": "Outbound/China/banner/BT-KMG50_FD.png",
+  "price": "19,999",
+  "duration": "6 วัน 5 คืน",
+  "airline": "airasia.png",
+  "shortDesc": "ทัวร์จีน คุนหมิง ต้าหลี่ ลี่เจียง แชงกรีล่า (ไม่ลงร้าน)",
+  "desc": "ทัวร์จีน คุนหมิง ต้าหลี่ ลี่เจียง แชงกรีล่า พิชิตภูเขาหิมะมังกรหยก เที่ยวทะเลสาบไป๊สุยเหอ วัดซงจ้านหลิน ช่องแคบเสือกระโจน ชมโชว์ความประทับใจลี่เจียง (จางอี้โหมว) นั่งรถไฟความเร็วสูง (ทัวร์ไม่ลงร้านช้อป)",
+  "pdf": "Outbound/China/pdf/BT-KMG50_FD.pdf",
+  "desc_en": "China tour (No shopping): Kunming, Dali, Shangri-La, Lijiang, Jade Dragon Snow Mountain, Impression Lijiang Show, High-speed train",
+  "duration_en": "6 days 5 nights",
+  "periodText_en": "Apr. - Oct. 2026",
+  "transport": {
+    "name": "สายการบิน AirAsia (เที่ยวบิน FD582 / FD583) + รถไฟความเร็วสูง",
+    "icon": "icons/plane.png",
+    "name_en": "AirAsia (Flight FD582 / FD583) + High-Speed Train"
   },
-  {
-    "id": "ZGTFU-26113U",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "เฉิงตู",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/China/banner/ZGTFU-26113U.png",
-    "price": "9,990",
-    "duration": "4 วัน 2 คืน",
-    "airline": "SichuanAirlines.png",
-    "shortDesc": "ทัวร์จีน เฉิงตู ตูเจียงเอี้ยน หุบเขาแพนด้า",
-    "desc": "ทัวร์จีน เฉิงตู ตูเจียงเอี้ยน หุบเขาแพนด้า ถนนโบราณจินหลี่ ชมแพนด้า เช็คอินแลนด์มาร์กดัง พร้อมเที่ยวครบไฮไลท์",
-    "pdf": "Outbound/China/pdf/ZGTFU-26113U.pdf",
-    "desc_en": "China tour: Chengdu, Dujiangyan, Panda Valley, Jinli ancient street, see pandas, check in at famous landmarks. ",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "April - June 2026"
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินดอนเมือง • สนามบินคุนหมิงฉางสุ่ย • วัดหยวนทง • ประตูม้าทองไก่หยก • ถนนคนเดินหนานผิงเจีย",
+      "title_en": "Don Mueang Airport • Kunming Changshui Airport • Yuantong Temple • Golden Horse and Jade Rooster Archway • Nanping Pedestrian Street",
+      "items": [
+        {
+          "time": "05:00",
+          "time_en": "05:00 AM",
+          "description": "พร้อมกันที่ สนามบินดอนเมือง อาคารผู้โดยสารขาออก ชั้น 3 ประตู 1-2 เคาน์เตอร์สายการบินแอร์เอเชีย (FD) มีเจ้าหน้าที่คอยอำนวยความสะดวก",
+          "description_en": "Meet at Don Mueang Airport, Terminal 1, 3rd Floor, Gates 1-2, AirAsia counter with staff assistance"
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "ออกเดินทางสู่ เมืองคุนหมิง ประเทศจีน โดยเที่ยวบินที่ FD582",
+          "description_en": "Depart to Kunming, China by AirAsia flight FD582"
+        },
+        {
+          "time": "11:25",
+          "time_en": "11:25 AM",
+          "description": "เดินทางถึง สนามบินคุนหมิงฉางสุ่ย ผ่านพิธีการตรวจคนเข้าเมืองและรับสัมภาระ",
+          "description_en": "Arrive at Kunming Changshui Airport, clear immigration and customs"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "เข้าชม วัดหยวนทง วัดที่ใหญ่และเก่าแก่ที่สุดในคุนหมิง (ชมดอกจาคาแรนด้าบาน เฉพาะช่วงเดือน 5 หรือช่วงดอกไม้บาน)",
+          "description_en": "Visit Yuantong Temple, the oldest and largest temple in Kunming (Jacaranda flower viewing in May/season)"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "ชม ซุ้มประตูม้าทองและซุ้มประตูไก่หยก แลนด์มาร์กอายุกว่า 400 ปี และอิสระช้อปปิ้ง ถนนคนเดินหนานผิงเจีย + POP MART",
+          "description_en": "Visit Golden Horse and Jade Rooster Archway, free time shopping at Nanping Pedestrian Street and POP MART"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and transfer to hotel"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "เมืองต้าหลี่ • ทะเลสาบเอ๋อร์ไห่ โค้งตัว S • ผ่านชมเจดีย์สามองค์ • วัดเจ้าแม่กวนอิมแปลงกาย • เมืองโบราณต้าหลี่",
+      "title_en": "Dali • Erhai Lake S-Curve • Pass by Three Pagodas • Guanyin Temple • Dali Ancient Town",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "เดินทางสู่ เมืองต้าหลี่ (ใช้เวลาเดินทางประมาณ 3-4 ชั่วโมง) ชมวิวทุ่งหญ้าและเทือกเขาชางซาน",
+          "description_en": "Depart to Dali City (approx. 3-4 hours), enjoying scenic views along Cangshan Mountain"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "ชมวิว ทะเลสาบเอ๋อร์ไห่ และถ่ายรูปเช็คอินจุดไฮไลท์ โค้งตัว S ริมทะเลสาบ",
+          "description_en": "Visit Erhai Lake and take photos at the famous S-Curve scenic route"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "ผ่านชม เจดีย์สามองค์ สัญลักษณ์แห่งต้าหลี่ และแวะสักการะสิ่งศักดิ์สิทธิ์ที่ วัดเจ้าแม่กวนอิมแปลงกาย",
+          "description_en": "Pass by the Three Pagodas of Chongsheng Temple and visit Guanyin Temple"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "เดินเล่นสัมผัสบรรยากาศย้อนยุค ณ เมืองโบราณต้าหลี่ (ต้าหลี่กู่เฉิง) ชมกำแพงเมืองโบราณและวิถีชีวิตชนเผ่าไป๋",
+          "description_en": "Explore Dali Ancient City, admiring ancient city walls, Bai minority culture, and charming streets"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "เมืองแชงกรี-ล่า • โค้งแรกแม่น้ำแยงซีเกียง • ช่องแคบเสือกระโจน • เมืองเก่าจงเตี้ยน • กงล้อมนต์สีทองวัดกุยซาน",
+      "title_en": "Shangri-La • First Bend of Yangtze River • Tiger Leaping Gorge • Zhongdian Ancient Town • Guishan Temple Giant Prayer Wheel",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "ออกเดินทางสู่ ดินแดนสวรรค์บนดิน เมืองแชงกรี-ล่า (ใช้เวลาเดินทางประมาณ 5 ชั่วโมง)",
+          "description_en": "Depart for Shangri-La (approx. 5 hours journey)"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "ผ่านชมความยิ่งใหญ่ของ โค้งแรกแม่น้ำแยงซีเกียง และชม ช่องแคบเสือกระโจน หุบเขาช่องแคบที่ลึกที่สุดแห่งหนึ่งของโลก",
+          "description_en": "Pass the First Bend of Yangtze River and explore the breathtaking Tiger Leaping Gorge"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "14:30",
+          "time_en": "02:30 PM",
+          "description": "เดินเล่น เมืองเก่าจงเตี้ยน (เมืองโบราณแชงกรีล่า) ชมบ้านไม้สไตล์ทิเบต และสัมผัสวิถีชีวิตชาวทิเบต",
+          "description_en": "Stroll around Zhongdian Ancient Town (Dukezong), traditional Tibetan wooden architecture"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "ขึ้นสักการะ วัดกุยซาน (วัดต้าฝอ) ชมวิวเมืองและร่วมหมุน กงล้อมนต์สีทอง ขนาดยักษ์สูง 23 เมตรเพื่อความเป็นสิริมงคล",
+          "description_en": "Visit Guishan Temple, enjoy panoramic views, and turn the famous 23-meter Giant Golden Prayer Wheel"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "วัดซงจ้านหลิน • เมืองลี่เจียง • คาเฟ่ Yun Yi Tang • เมืองเก่าป้ายชา • สระมังกรดำ • เมืองโบราณลี่เจียง",
+      "title_en": "Songzanlin Monastery • Lijiang • Yun Yi Tang Cafe • Baisha Ancient Town • Black Dragon Pool • Lijiang Ancient Town",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "สักการะ วัดลามะซงจ้านหลิน (วัดโปตาลาน้อย) อารามทิเบตที่ใหญ่ที่สุดในยูนนาน",
+          "description_en": "Visit Songzanlin Monastery (Little Potala Palace), the largest Tibetan Buddhist monastery in Yunnan"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "ออกเดินทางสู่ เมืองลี่เจียง ตามเส้นทางค้าชาโบราณ Tea Horse Road",
+          "description_en": "Depart for Lijiang City along the ancient Tea Horse Road"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "เช็คอินคาเฟ่วิวภูเขาหิมะสุดอลังการ Yun Yi Tang Cafe (รวมเครื่องดื่มท่านละ 1 แก้ว) และเดินเล่น เมืองเก่าป้ายชา",
+          "description_en": "Relax at Yun Yi Tang Cafe with stunning Jade Dragon Snow Mountain backdrop (1 drink included) and visit Baisha Ancient Town"
+        },
+        {
+          "time": "16:00",
+          "time_en": "04:00 PM",
+          "description": "ชมความงดงามของ สระมังกรดำ (เฮยหลงถัน) ผืนน้ำใสมรกตสะท้อนเงาภูเขาหิมะมังกรหยก",
+          "description_en": "Visit Black Dragon Pool (Heillongtan), emerald pool with scenic reflection of snow mountain"
+        },
+        {
+          "time": "17:30",
+          "time_en": "05:30 PM",
+          "description": "เที่ยวชม เมืองโบราณลี่เจียง (ต้าเหยียนกู่เฉิง) มรดกโลกยูเนสโก เวนิสแห่งโลกตะวันออก",
+          "description_en": "Explore Lijiang Ancient Town (Dayan), a UNESCO World Heritage site known as the Venice of the East"
+        },
+        {
+          "time": "19:00",
+          "time_en": "07:00 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร (มื้อพิเศษ!! สุกี้แซลมอน) และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant (Special Salmon Hot Pot) and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "อุทยานมังกรหยก • กระเช้าใหญ่ขึ้นภูเขาหิมะมังกรหยก • โชว์ความประทับใจลี่เจียง • ทะเลสาบไป๊สุยเหอ • รถไฟความเร็วสูงสู่คุนหมิง",
+      "title_en": "Jade Dragon Snow Mountain • Cable Car to Glacier Park • Impression Lijiang Show • Blue Moon Valley (Baishuihe) • High-speed Train to Kunming",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "เดินทางสู่อุทยานมังกรหยก นั่งกระเช้าใหญ่ขึ้นสู่ จุดชมวิวภูเขาหิมะมังกรหยก ความสูง 4,506 เมตรเหนือระดับน้ำทะเล",
+          "description_en": "Visit Jade Dragon Snow Mountain, take the large cable car up to the Glacier Park viewing deck at 4,506 meters"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "ชมอัครการแสดงกลางแจ้งระดับโลก โชว์ความประทับใจลี่เจียง (IMPRESSION OF LIJIANG) กำกับโดย จางอี้โหมว",
+          "description_en": "Watch the Impression Lijiang outdoor musical show directed by Zhang Yimou"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร (มื้อพิเศษ... สุกี้เห็ด)",
+          "description_en": "Lunch at restaurant (Special Mushroom Hot Pot)"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "ชมน้ำใสสีฟ้าเทอร์ควอยซ์ ณ ทะเลสาบไป๊สุยเหอ (หุบเขาพระจันทร์สีน้ำเงิน รวมรถกอล์ฟไฟฟ้า)",
+          "description_en": "Visit Baishui River (Blue Moon Valley) with stunning turquoise water terraces (battery car included)"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "เดินทางสู่ สถานีรถไฟลี่เจียง ขึ้น รถไฟความเร็วสูง (ขบวน C452 เวลา 17:02 - 21:01 น.) เดินทางกลับสู่ เมืองคุนหมิง",
+          "description_en": "Transfer to Lijiang Railway Station and board the High-Speed Train (C452 17:02 - 21:01) to Kunming"
+        },
+        {
+          "time": "21:30",
+          "time_en": "09:30 PM",
+          "description": "บริการอาหารค่ำ ณ ภัตตาคาร (มื้อพิเศษ.. อาหารกวางตุ้ง) และนำท่านเข้าสู่ที่พัก ณ นครคุนหมิง",
+          "description_en": "Late dinner at restaurant (Special Cantonese Cuisine) and hotel check-in in Kunming"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "สนามบินคุนหมิงฉางสุ่ย • สนามบินดอนเมือง",
+      "title_en": "Kunming Changshui Airport • Don Mueang Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารโรงแรม และเตรียมตัวเดินทางสู่สนามบิน",
+          "description_en": "Breakfast at the hotel restaurant, check out, and transfer to airport"
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "เดินทางถึง สนามบินคุนหมิงฉางสุ่ย เช็คอินสัมภาระเพื่อเดินทางกลับประเทศไทย",
+          "description_en": "Arrive at Kunming Changshui Airport for flight check-in and departure procedures"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "ออกเดินทางสู่ สนามบินดอนเมือง ประเทศไทย โดยสายการบินแอร์เอเชีย เที่ยวบินที่ FD583",
+          "description_en": "Depart to Don Mueang Airport, Thailand by AirAsia flight FD583"
+        },
+        {
+          "time": "13:50",
+          "time_en": "01:50 PM",
+          "description": "เดินทางถึง สนามบินดอนเมือง กรุงเทพฯ โดยสวัสดิภาพพร้อมความประทับใจ",
+          "description_en": "Arrive safely at Don Mueang Airport, Bangkok with unforgettable memories"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "BT-TFU67_VZ",
+  "type": "outbound",
+  "country": "จีน",
+  "city": "เฉิงตู",
+  "startMonth": "2026-05",
+  "endMonth": "2026-09",
+  "periodText": "พ.ค. - ก.ย. 2569",
+  "image": "Outbound/China/banner/BT-TFU67_VZ.png",
+  "price": "22,999",
+  "duration": "6 วัน 5 คืน",
+  "airline": "VietJet.png",
+  "shortDesc": "ทัวร์จีน เฉิงตู จิ่วจ้ายโกว ภูเขาสี่ดรุณี (ไม่ลงร้าน)",
+  "desc": "ทัวร์จีน เฉิงตู จิ่วจ้ายโกว ภูเขาสี่ดรุณี เที่ยว 2 อุทยานสวรรค์ อุทยานแห่งชาติจิ่วจ้ายโกว หุบเขาซวงเฉียวโกว ถ่ายรูปแพนด้าเซลฟี่ นั่งรถไฟความเร็วสูง ช้อปปิ้งถนนคนเดินชุนซีลู่และถนนไท่กู่หลี่ (ทัวร์ไม่ลงร้านช้อป)",
+  "pdf": "Outbound/China/pdf/BT-TFU67VZ.pdf",
+  "desc_en": "China tour (No shopping): Chengdu, Jiuzhaigou, Mount Siguniang, Shuangqiaogou Valley, High-speed train, Chunxi Road",
+  "duration_en": "6 days 5 nights",
+  "periodText_en": "May - September 2026",
+  "transport": {
+    "name": "สายการบิน Thai Vietjet Air (เที่ยวบิน VZ3680 / VZ3681) + รถไฟความเร็วสูง",
+    "icon": "icons/plane.png",
+    "name_en": "Thai Vietjet Air (Flight VZ3680 / VZ3681) + High-Speed Train"
   },
-  {
-    "id": "ZGYIH-26069H",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "จางเจียเจี้ย",
-    "startMonth": "2026-04",
-    "endMonth": "2026-09",
-    "periodText": "เม.ย. - ก.ย. 2569",
-    "image": "Outbound/China/banner/ZGYIH-26069H.png",
-    "price": "9,990",
-    "duration": "5 วัน 4 คืน",
-    "airline": "ChinaEastern.png",
-    "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น อุทยานฟ่งหลินซี",
-    "desc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น อุทยานฟ่งหลินซี ล่องเรือฟ่งไห่ ชมการแสดงทางวัฒนธรรม ชมโชว์หมู่บ้านถู่เจีย ชมถ้ำกำมะลอรรค์ และอุทยานอวตารจางเจียเจี้ย",
-    "pdf": "Outbound/China/pdf/ZGYIH-26069H.pdf",
-    "desc_en": "China tour: Zhangjiajie, Furongzhen, Fenglinxi Park ",
-    "duration_en": "5 days 4 night",
-    "periodText_en": "April - September 2026"
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินสุวรรณภูมิ • สนามบินเฉิงตูเทียนฟู่",
+      "title_en": "Suvarnabhumi Airport • Chengdu Tianfu International Airport",
+      "items": [
+        {
+          "time": "14:50",
+          "time_en": "02:50 PM",
+          "description": "พร้อมกันที่ สนามบินสุวรรณภูมิ ชั้น 4 เคาน์เตอร์ D ประตู 2-3 เช็คอินสายการบินไทยเวียตเจ็ทแอร์ (VZ) มีเจ้าหน้าที่คอยอำนวยความสะดวก",
+          "description_en": "Meet at Suvarnabhumi Airport, 4th Floor, Row D, Gates 2-3, Thai Vietjet Air counter with staff assistance"
+        },
+        {
+          "time": "17:50",
+          "time_en": "05:50 PM",
+          "description": "ออกเดินทางสู่ เมืองเฉิงตู ประเทศจีน โดยเที่ยวบินที่ VZ3680",
+          "description_en": "Depart to Chengdu, China by Thai Vietjet Air flight VZ3680"
+        },
+        {
+          "time": "22:00",
+          "time_en": "10:00 PM",
+          "description": "เดินทางถึง สนามบินเฉิงตูเทียนฟู่ ผ่านขั้นตอนการตรวจคนเข้าเมืองและรับสัมภาระ จากนั้นนำท่านเข้าสู่ที่พัก",
+          "description_en": "Arrive at Chengdu Tianfu International Airport, clear immigration and customs, then transfer to hotel"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "เมืองตูเจียงเยี่ยน • จัตุรัสหย่างเทียนวู • หมีแพนด้าเซลฟี่ • เขตอุทยานภูเขาสี่ดรุณี",
+      "title_en": "Dujiangyan • Yangtianwo Square • Selfie Panda • Mount Siguniang Scenic Area",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "ออกเดินทางสู่ เมืองตูเจียงเยี่ยน เที่ยวชม จัตุรัสหย่างเทียนวู และถ่ายรูปคู่กับ ประติมากรรมหมีแพนด้าเซลฟี่",
+          "description_en": "Travel to Dujiangyan, explore Yangtianwo Square and take photos with the giant Selfie Panda sculpture"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "ออกเดินทางสู่ เขตอุทยานภูเขาสี่ดรุณี ชมทัศนียภาพสองข้างทางของเทือกเขาสูงและชุมชนชนกลุ่มน้อย",
+          "description_en": "Depart for Mount Siguniang Scenic Area, enjoying scenic views of valleys and ethnic villages"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "อุทยานภูเขาสี่ดรุณี • หุบเขาซวงเฉียวโกว • เมืองเม่าเสี้ยน",
+      "title_en": "Mount Siguniang • Shuangqiaogou Valley • Maoxian",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "เข้าชม อุทยานภูเขาสี่ดรุณี ฉายาเทือกเขาแอลป์แห่งดินแดนตะวันออก ชมเส้นทาง หุบเขาซวงเฉียวโกว (รวมรถอุทยานและล่องเรือยาง)",
+          "description_en": "Explore Mount Siguniang National Park (Eastern Alps), tour Shuangqiaogou Valley by sightseeing bus and rafting"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "ชมความงามของ ทุ่งหญ้าเหนี่ยนหยูป้า ภูเขาหยินหยาง และวิวทิวทัศน์ยอดเขาหิมะรูปทรงแปลกตา",
+          "description_en": "Admire Nianyuba Grassland, Yinyang Valley, and majestic snow-capped peaks"
+        },
+        {
+          "time": "15:30",
+          "time_en": "03:30 PM",
+          "description": "ออกเดินทางสู่ เมืองเม่าเสี้ยน (ใช้เวลาเดินทางประมาณ 4 ชั่วโมง)",
+          "description_en": "Transfer to Maoxian (approx. 4 hours journey)"
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "ทะเลสาบเตี๋ยซี • ผ่านชมเมืองโบราณซงพาน • หมู่บ้านโบราณชนเผ่าเชียง • เขตอุทยานจิ่วจ้ายโกว",
+      "title_en": "Diexi Lake • Pass by Songpan Ancient Town • Ancient Qiang Village • Jiuzhaigou Scenic Area",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "ออกเดินทางสู่ เขตอุทยานจิ่วจ้ายโกว ผ่านชม ทะเลสาบเตี๋ยซี ผืนน้ำสีมรกต และผ่านชม เมืองโบราณซงพาน ชายแดนประวัติศาสตร์จีน-ทิเบต",
+          "description_en": "Travel towards Jiuzhaigou, passing scenic emerald Diexi Lake and historic Songpan Ancient Town"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เยี่ยมชม หมู่บ้านโบราณชนเผ่าเชียง สัมผัสสถาปัตยกรรมป้อมปราการหินโบราณและวิถีชีวิตวัฒนธรรมชนเผ่า",
+          "description_en": "Visit the Ancient Qiang Village, discovering unique stone fortress architecture and minority heritage"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "เดินทางถึงจิ่วจ้ายโกว บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Arrive in Jiuzhaigou, dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "อุทยานแห่งชาติจิ่วจ้ายโกว • เมืองชวนจู่ซื่อ",
+      "title_en": "Jiuzhaigou Valley National Park • Chuanzhusi",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "เที่ยวชม อุทยานแห่งชาติธารสวรรค์จิ่วจ้ายโกว (รวมรถเวียนอุทยาน) ชมทะเลสาบกระจก ทะเลสาบนกยูง ทะเลสาบไผ่ลูกศร และทะเลสาบดอกไม้ห้าสี",
+          "description_en": "Full day tour in Jiuzhaigou National Park by park shuttle bus, visiting Mirror Lake, Peacock Lake, and Five Flower Lake"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "อิสระรับประทานอาหารกลางวัน ณ ศูนย์อาหารภายในอุทยาน (แจกคูปองอาหาร 80 หยวน/ท่าน)",
+          "description_en": "Lunch at leisure inside the park food court (coupon 80 RMB/person provided)"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "ชมความงดงามอลังการของ น้ำตกธารไข่มุก ทะเลสาบแรด และ ทะเลสาบยาว (Long Lake) ทะเลสาบที่ใหญ่ที่สุดในอุทยาน",
+          "description_en": "Visit the majestic Pearl Shoal Waterfall, Rhinoceros Lake, and Long Lake"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "ออกเดินทางสู่ เมืองชวนจู่ซื่อ (ใช้เวลาเดินทางประมาณ 2 ชั่วโมง)",
+          "description_en": "Depart to Chuanzhusi town (approx. 2 hours journey)"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "สถานีรถไฟความเร็วสูง • เมืองเฉิงตู • ถนนไท่กู่หลี่ • ถนนคนเดินชุนซีลู่ • แพนด้ายักษ์ปีนตึก IFS • สนามบินสุวรรณภูมิ",
+      "title_en": "High-Speed Railway Station • Chengdu • Taikoo Li • Chunxi Road • IFS Giant Panda • Suvarnabhumi Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรมและเช็คเอาต์",
+          "description_en": "Breakfast at the hotel restaurant and check out"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เดินทางไปยัง สถานีรถไฟความเร็วสูง นั่งรถไฟความเร็วสูงมุ่งหน้ากลับสู่ เมืองเฉิงตู (ใช้เวลาประมาณ 2.5 ชั่วโมง)",
+          "description_en": "Transfer to railway station and board the High-Speed Train back to Chengdu (approx. 2.5 hours)"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร (เมนูพิเศษ... ชาบูสุกี้หม่าล่าเฉิงตู)",
+          "description_en": "Lunch at restaurant (Special Chengdu Mala Hot Pot)"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "ช้อปปิ้งย่านโมเดิร์น ถนนไท่กู่หลี่ และ ถนนคนเดินชุนซีลู่ ถ่ายรูปคู่กับ ประติมากรรมแพนด้ายักษ์ปีนตึก IFS",
+          "description_en": "Explore Taikoo Li, Chunxi Road Pedestrian Street, and take photos with the iconic IFS Climbing Panda"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "อิสระอาหารค่ำตามอัธยาศัยเพื่อความสะดวกในการช้อปปิ้ง จากนั้นนำท่านเดินทางสู่สนามบินเฉิงตูเทียนฟู่",
+          "description_en": "Dinner at leisure for shopping convenience, then transfer to Chengdu Tianfu International Airport"
+        },
+        {
+          "time": "23:00",
+          "time_en": "11:00 PM",
+          "description": "ออกเดินทางสู่ สนามบินสุวรรณภูมิ ประเทศไทย โดยสายการบินไทยเวียตเจ็ทแอร์ เที่ยวบินที่ VZ3681 (ถึงเวลา 01:15 น.)",
+          "description_en": "Depart to Suvarnabhumi Airport, Thailand by Thai Vietjet Air flight VZ3681 (arriving at 01:15 AM)"
+        }
+      ]
+    }
+  ]
+},
+ {
+  "id": "BT-PVG50_VZ",
+  "type": "outbound",
+  "popular": true,
+  "country": "จีน",
+  "city": "เซี่ยงไฮ้",
+  "startMonth": "2026-03",
+  "endMonth": "2026-10",
+  "periodText": "มี.ค. - ต.ค. 2569",
+  "image": "Outbound/China/banner/BT-PVG50_VZ.png",
+  "price": "24,999",
+  "duration": "5 วัน 4 คืน",
+  "airline": "VietJet.png",
+  "shortDesc": "ทัวร์จีน เซี่ยงไฮ้ ดิสนีย์แลนด์ ชมแพนด้าแดง (ไม่ลงร้าน)",
+  "desc": "ทัวร์จีน เซี่ยงไฮ้ สวนสนุกดิสนีย์แลนด์ เที่ยวชมแพนด้าแดงสวนสัตว์ป่าเซี่ยงไฮ้ เช็คอินเรือหลุยส์วิตตอง ย่านซินเทียนตี้ หาดไว่ทาน สะพานไว่ไป่ตู้ อาคารพันต้นไม้ ถนนนานกิง และช้อปปิ้ง POP MART FLAGSHIP STORE (ทัวร์ไม่ลงร้าน)",
+  "pdf": "Outbound/China/pdf/BT-PVG50VZ.pdf",
+  "desc_en": "China tour (No shopping): Shanghai Disneyland full day, Shanghai Wild Animal Park, Red Panda, Louis Vuitton Ship, The Bund, Nanjing Road, Tian An 1,000 Trees",
+  "duration_en": "5 days 4 nights",
+  "periodText_en": "Mar. - Oct. 2026",
+  "transport": {
+    "name": "สายการบิน Thai Vietjet Air (เที่ยวบิน VZ3524 / VZ3525)",
+    "icon": "icons/plane.png",
+    "name_en": "Thai Vietjet Air (Flight VZ3524 / VZ3525)"
   },
-  {
-    "id": "ZGYH-26079H",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "จางเจียเจี้ย",
-    "startMonth": "2026-04",
-    "endMonth": "2026-10",
-    "periodText": "เม.ย. - ต.ค. 2569",
-    "image": "Outbound/China/banner/ZGYH-26079H.png",
-    "price": "10,990",
-    "duration": "5 วัน 4 คืน",
-    "airline": "ChinaEastern.png",
-    "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น เทียนเหมินซาน",
-    "desc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น เทียนเหมินซาน ล่องเรือชมวิว ชมหมู่บ้านวัฒนธรรมชาวถู่เจีย เที่ยวเมืองโบราณฝูหรงเจิ้น นั่งกระเช้าสู่เทียนเหมินซาน ชมระเบียงแก้วและแลนด์มาร์กชื่อดัง",
-    "pdf": "Outbound/China/pdf/ZGYH-26079H.pdf",
-    "desc_en": "China tour: Zhangjiajie, Furongzhen, Tianmenshan ",
-    "duration_en": "5 days 4 night",
-    "periodText_en": "Apr. - Oct. 2026"
-  },
-  {
-    "id": "ZQCAN-250AQ",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "กวางโจว",
-    "startMonth": "2026-06",
-    "endMonth": "2026-10",
-    "periodText": "มิ.ย. - ต.ค. 2569",
-    "image": "Outbound/China/banner/ZQCAN-250AQ.png",
-    "price": "10,990",
-    "duration": "4 วัน 2 คืน",
-    "airline": "9Air.png",
-    "shortDesc": "ทัวร์จีน กวางโจว Chimelong Ocean Kingdom",
-    "desc": "ทัวร์จีน กวางโจว ชิมลองโอเชียนคิงดอม สวนสนุกระดับโลก Chimelong Ocean Kingdom ชมแลนด์มาร์กเมืองกวางโจว เที่ยวครบทั้งความบันเทิงและจุดเช็กอินยอดนิยม",
-    "pdf": "Outbound/China/pdf/ZQCAN-250AQ.pdf",
-    "desc_en": "China tour: Guangzhou, try Ocean Kingdom ",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "June - October 2026"
-  },
-  {
-    "id": "BT-XIY19_9C",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "ซีอาน",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/China/banner/BT-XIY19_9C.png",
-    "price": "10,999",
-    "duration": "4 วัน 2 คืน",
-    "airline": "spring.png",
-    "shortDesc": "ทัวร์จีน ซีอาน สุสานทหารดินเผา",
-    "desc": "ทัวร์จีน ซีอาน ชมสุสานทหารดินเผา มรดกโลกชื่อดัง เที่ยวกำแพงเมืองซีอาน ถนนวัฒนธรรมย่านดัง ชมสถาปัตยกรรมจีนโบราณและแลนด์มาร์กสำคัญของเมือง",
-    "pdf": "Outbound/China/pdf/BT-XIY19_9C.pdf",
-    "desc_en": "Tour China, Xi'an, see the Terracotta Warriors' Tombs. ",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "ZGCKQ-2615FD",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "ฉงชิ่ง",
-    "startMonth": "2026-05",
-    "endMonth": "2026-09",
-    "periodText": "พ.ค. - ก.ย. 2569",
-    "image": "Outbound/China/banner/ZGCKQ-2615FD.png",
-    "price": "12,990",
-    "duration": "4 วัน 3 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์จีน ฉงชิ่ง หมู่บ้านโบราณสือป้าจ่ง",
-    "desc": "ทัวร์จีน ฉงชิ่ง หงหยาต้ง หมู่บ้านโบราณสือป้าจ่ง ชมเมืองกลางคืนสุดอลังการ เที่ยวครบแลนด์มาร์กดังของฉงชิ่ง",
-    "pdf": "Outbound/China/pdf/ZGCKQ-2615FD.pdf",
-    "desc_en": "China tour: Chongqing, Hongyadong, Shibazhong ancient village ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "May - September 2026"
-  },
-  {
-    "id": "BT-DYG25_FD",
-    "type": "outbound",
-    "popular": true,
-    "country": "จีน",
-    "city": "จางเจียเจี้ย",
-    "startMonth": "2026-06",
-    "endMonth": "2026-07",
-    "periodText": "มิ.ย. - ก.ค. 2569",
-    "image": "Outbound/China/banner/BT-DYG25_FD.png",
-    "price": "14,999",
-    "duration": "6 วัน 5 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น",
-    "desc": "ทัวร์จีน จางเจียเจี้ย ฝูหรงเจิ้น เมืองโบราณริมน้ำ นั่งกระเช้าขึ้นอุทยานภูเขาเจ็ดดาว เที่ยว ICE SNOW WORLD",
-    "pdf": "Outbound/China/pdf/BT-DYG25_FD.pdf",
-    "desc_en": "China tour: Zhangjiajie, Furongzhen, an ancient riverside city. ",
-    "duration_en": "6 days 5 nights",
-    "periodText_en": "June - July 2026"
-  },
-  {
-    "id": "BT-DYG31_FD",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "จางเจียเจี้ย",
-    "startMonth": "2026-06",
-    "endMonth": "2026-08",
-    "periodText": "มิ.ย. - ส.ค. 2569",
-    "image": "Outbound/China/banner/BT-DYG31_FD.png",
-    "price": "18,999",
-    "duration": "5 วัน 4 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์จีน จางเจียเจี้ย ฉงชิ่ง",
-    "desc": "ทัวร์จีน จางเจียเจี้ย ฉงชิ่ง เที่ยวเทียนเหมินซาน ช่องสวรรค์ สะพานกระจก และแลนด์มาร์กดัง",
-    "pdf": "Outbound/China/pdf/BT-DYG31_FD.pdf",
-    "desc_en": "China tour: Zhangjiajie, Chongqing, visit Tianmenshan, Heavenly Channel, Glass Bridge and famous landmarks.",
-    "duration_en": "5 days 4 night",
-    "periodText_en": "June - August 2026"
-  },
-  {
-    "id": "BT-KMG50_FD",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "คุนหมิง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-10",
-    "periodText": "เม.ย. - ต.ค. 2569",
-    "image": "Outbound/China/banner/BT-KMG50_FD.png",
-    "price": "19,999",
-    "duration": "6 วัน 5 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์จีน คุนหมิง ลี่เจียง แชงกรีล่า",
-    "desc": "ทัวร์จีน คุนหมิง ลี่เจียง แชงกรีล่า พิชิตภูเขาหิมะมังกรหยก เที่ยวครบแลนด์มาร์กดังของยูนนาน",
-    "pdf": "Outbound/China/pdf/BT-KMG50_FD.pdf",
-    "desc_en": "China tour: Kunming, Lijiang, Shangri-La, conquer the Jade Dragon Snow Mountain. ",
-    "duration_en": "6 days 5 nights",
-    "periodText_en": "Apr. - Oct. 2026"
-  },
-  {
-    "id": "BT-KMG51_KY",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "คุนหมิง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-08",
-    "periodText": "เม.ย. - ส.ค. 2569",
-    "image": "Outbound/China/banner/BT-KMG51_KY.png",
-    "price": "20,999",
-    "duration": "6 วัน 5 คืน",
-    "airline": "ChinaEastern.png",
-    "shortDesc": "ทัวร์จีน คุนหมิง ลี่เจียง แชงกรีล่า",
-    "desc": "ทัวร์จีน คุนหมิง ลี่เจียง แชงกรีล่า เที่ยวครบ 3 เมืองยอดนิยม ชมธรรมชาติสุดอลังการ",
-    "pdf": "Outbound/China/pdf/BT-KMG51_KY.pdf",
-    "desc_en": "China tour, Kunming, Lijiang, Shangri-La, visit all 3 popular cities, see the most magnificent nature.",
-    "duration_en": "6 days 5 nights",
-    "periodText_en": "April - August 2026"
-  },
-  {
-    "id": "BT-TFU67_VZ",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "เฉิงตู",
-    "startMonth": "2026-05",
-    "endMonth": "2026-09",
-    "periodText": "พ.ค. - ก.ย. 2569",
-    "image": "Outbound/China/banner/BT-TFU67_VZ.png",
-    "price": "22,999",
-    "duration": "6 วัน 5 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์จีน เฉิงตู อุทยานแพนด้า",
-    "desc": "ทัวร์จีน เฉิงตู อุทยานแพนด้า ถนนโบราณชื่อดัง เที่ยวธรรมชาติสุดอลังการ พร้อมแลนด์มาร์กสำคัญ",
-    "pdf": "Outbound/China/pdf/BT-TFU67VZ.pdf",
-    "desc_en": "China tour, Chengdu, Panda Park, famous ancient streets ",
-    "duration_en": "6 days 5 nights",
-    "periodText_en": "May - September 2026"
-  },
-  {
-    "id": "BT-PVG50_VZ",
-    "type": "outbound",
-    "popular": true,
-    "country": "จีน",
-    "city": "เซี่ยงไฮ้",
-    "startMonth": "2026-03",
-    "endMonth": "2026-10",
-    "periodText": "มี.ค. - ต.ค. 2569",
-    "image": "Outbound/China/banner/BT-PVG50_VZ.png",
-    "price": "24,999",
-    "duration": "5 วัน 4 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์จีน เซี่ยงไฮ้ ดิสนีย์แลนด์",
-    "desc": "ทัวร์จีน เซี่ยงไฮ้ ดิสนีย์แลนด์ Shanghai Wild Animal Park ชมการแสดงสุดสนุก เช็คอินย่านดังและแลนด์มาร์กเซี่ยงไฮ้",
-    "pdf": "Outbound/China/pdf/BT-PVG50VZ.pdf",
-    "desc_en": "China tour, Shanghai Disneyland, Shanghai Wild Animal Park, watch super fun shows ",
-    "duration_en": "5 days 4 night",
-    "periodText_en": "Mar. - Oct. 2026"
-  },
-  {
-    "id": "BT-TAO02_SC",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "ชิงเต่า",
-    "startMonth": "2026-03",
-    "endMonth": "2026-06",
-    "periodText": "มี.ค. - มิ.ย. 2569",
-    "image": "Outbound/China/banner/BT-TAO02_SC.png",
-    "price": "25,999",
-    "duration": "6 วัน 4 คืน",
-    "airline": "ShandongAirlines.png",
-    "shortDesc": "ทัวร์จีน ชิงเต่า หยานไถ เวยไห่",
-    "desc": "ทัวร์จีน ชิงเต่า หยานไถ เวยไห่ สายเมืองชายฝั่งทะเลจีน ชมวิวสวย ฟีลยุโรป เที่ยวจัตุรัส 54 หาดไซเบอร์พังค์ และโรงงานเบียร์ชิงเต่า",
-    "pdf": "Outbound/China/pdf/BT-TAO02SC.pdf",
-    "desc_en": "China tour: Qingdao, Yantai, Weihai, coastal cities of China, see beautiful views, European feel, visit Square 54, Cyberpunk Beach. ",
-    "duration_en": "6 days 4 nights",
-    "periodText_en": "March - June 2026"
-  },
-  {
-    "id": "ZGTFU-26203U",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "เฉิงตู",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/China/banner/ZGTFU-26203U.png",
-    "price": "11,990",
-    "duration": "4 วัน 2 คืน",
-    "airline": "SichuanAirlines.png",
-    "shortDesc": "ทัวร์จีน เฉิงตู อุทยานปี้เผิงโกว",
-    "desc": "ทัวร์จีน เฉิงตู อุทยานปี้เผิงโกว ตูเจียงเอี้ยน เมืองโบราณลั่วไต้ เปิดประสบการณ์หุบเขาสวรรค์แห่งเสฉวน ช้อปปิ้งถนนคนเดิน",
-    "pdf": "Outbound/China/pdf/ZGTFU-26203U.pdf",
-    "desc_en": "China tour, Chengdu, Pipengkou National Park ",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "BT-DSN05_VZ",
-    "type": "outbound",
-    "country": "จีน",
-    "city": "ออร์ดอส",
-    "startMonth": "2026-04",
-    "endMonth": "2026-07",
-    "periodText": "เม.ย. - ก.ค. 2569",
-    "image": "Outbound/China/banner/BT-DSN05_VZ.png",
-    "price": "20,999",
-    "duration": "5 วัน 4 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์จีน มองโกเลียใน ออร์ดอส",
-    "desc": "ทัวร์จีน มองโกเลียใน ออร์ดอส ท่องดินแดนแห่งทะเลทรายและทุ่งหญ้า สนุกกับกิจกรรมทะเลทราย ชมพระอาทิตย์ขึ้นและแลนด์มาร์กธรรมชาติ",
-    "pdf": "Outbound/China/pdf/BT-DSN05_VZ.pdf",
-    "desc_en": "China tour, Inner Mongolia, Ordos, exploring the land of deserts and grasslands. ",
-    "duration_en": "5 days 4 night",
-    "periodText_en": "April - July 2026"
-  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "สนามบินสุวรรณภูมิ • สนามบินซ่างไห่ผู่ตง • เมืองเซี่ยงไฮ้",
+      "title_en": "Suvarnabhumi Airport • Shanghai Pudong Airport • Shanghai",
+      "items": [
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "พร้อมกันที่ สนามบินสุวรรณภูมิ อาคารผู้โดยสารขาออก ชั้น 4 ประตู 3 เคาน์เตอร์สายการบินไทยเวียตเจ็ท (VZ) โดยมีเจ้าหน้าที่คอยอำนวยความสะดวก",
+          "description_en": "Meet at Suvarnabhumi Airport, Departure Terminal, 4th Floor, Gate 3, Thai Vietjet counter with staff assistance"
+        },
+        {
+          "time": "16:25",
+          "time_en": "04:25 PM",
+          "description": "ออกเดินทางสู่ มหานครเซี่ยงไฮ้ ประเทศจีน โดยเที่ยวบินที่ VZ3524",
+          "description_en": "Depart to Shanghai, China by Thai Vietjet flight VZ3524"
+        },
+        {
+          "time": "22:00",
+          "time_en": "10:00 PM",
+          "description": "เดินทางถึง สนามบินเซี่ยงไฮ้ผู่ตง ผ่านขั้นตอนการตรวจคนเข้าเมืองและรับสัมภาระ จากนั้นนำท่านเข้าสู่ที่พัก",
+          "description_en": "Arrive at Shanghai Pudong Airport, clear immigration and customs, then transfer to hotel"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "สวนสนุกดิสนีย์แลนด์เซี่ยงไฮ้ (เต็มวัน)",
+      "title_en": "Shanghai Disneyland (Full Day)",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เปิดประสบการณ์ความสนุกเต็มวัน ณ สวนสนุกเซี่ยงไฮ้ดิสนีย์แลนด์ เพลิดเพลินกับ 6 โซนเครื่องเล่น ปราสาท Enchanted Storybook Castle รถไฟเหาะ TRON Lightcycle Power Run และโซนใหม่ล่าสุด Zootopia (อิสระอาหารกลางวันและเย็นตามอัธยาศัย)",
+          "description_en": "Enjoy a full day at Shanghai Disneyland exploring Enchanted Storybook Castle, TRON Lightcycle Power Run, and the new Zootopia Land (Lunch and Dinner at leisure)"
+        },
+        {
+          "time": "20:30",
+          "time_en": "08:30 PM",
+          "description": "ชมการแสดงแสง สี เสียง และพลุไฟสุดตระการตายามค่ำคืนเหนือปราสาทดิสนีย์ จากนั้นนำท่านเดินทางกลับสู่ที่พัก",
+          "description_en": "Watch the spectacular nighttime fireworks and projection show at Disney Castle, then return to hotel"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "สวนสัตว์ป่าเซี่ยงไฮ้ • ถนนหวยไห่มิดเดิ้ลโร้ด • เรือหลุยส์วิตตอง • ซินเทียนตี้",
+      "title_en": "Shanghai Wild Animal Park • Middle Huaihai Road • Louis Vuitton Ship • Xintiandi",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เที่ยวชม สวนสัตว์ป่าเซี่ยงไฮ้ (Shanghai Wild Animal Park) สัมผัสความน่ารักของสัตว์ป่า และร่วมกิจกรรมใกล้ชิดให้อาหารแพนด้าแดง",
+          "description_en": "Visit Shanghai Wild Animal Park, see wildlife up close, and enjoy feeding red pandas"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "อิสระช้อปปิ้งย่านแฟชั่น ถนนหวยไห่มิดเดิ้ลโร้ด (Champs-Élysées แห่งตะวันออก) และถ่ายรูปแลนด์มาร์กใหม่สุดชิค เรือหลุยส์วิตตอง (Louis Vuitton Ship)",
+          "description_en": "Shopping along Middle Huaihai Road and photo stop at the iconic Louis Vuitton Ship landmark"
+        },
+        {
+          "time": "16:30",
+          "time_en": "04:30 PM",
+          "description": "เดินเล่นย่านฮิปสเตอร์ ซินเทียนตี้ (Xintiandi) ชื่นชมสถาปัตยกรรมผสมผสานจีน-ตะวันตกแบบซิกู่เหมิน",
+          "description_en": "Explore trendy Xintiandi, famous for its historic Shikumen architecture, cafes, and lifestyle shops"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "บริการอาหารเย็น ณ ภัตตาคาร (มื้อพิเศษ... เมนูเสี่ยวหลงเปา) และนำท่านเข้าสู่ที่พัก",
+          "description_en": "Dinner at restaurant (Special Xiaolongbao menu) and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "สวนนอร์ทบันด์กรีนแลนด์ • หอไข่มุก • สะพานไว่ไป่ตู้ • หาดไว่ทาน • ถนนนานกิง • POP MART FLAGSHIP STORE • MINISO LAND",
+      "title_en": "North Bund Greenland • Oriental Pearl Tower • Waibaidu Bridge • The Bund • Nanjing Road • POP MART Flagship Store • MINISO LAND",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรม",
+          "description_en": "Breakfast at the hotel restaurant"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "เช็คอินจุดถ่ายรูปมุมฮิต สวนนอร์ทบันด์กรีนแลนด์ ถ่ายรูปคู่ หอไข่มุก (ด้านนอก) และ สะพานไว่ไป่ตู้ สะพานเหล็กเก่าแก่กว่าร้อยปี",
+          "description_en": "Visit North Bund Greenland, photo stop at Oriental Pearl Tower (outside), and historic Waibaidu Bridge"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "เดินเล่นชมวิวตึกโบราณสไตล์ยุโรปริม หาดไว่ทาน (เดอะบันด์) ต้นกำเนิดตำนานเจ้าพ่อเซี่ยงไฮ้",
+          "description_en": "Stroll along The Bund, admiring European-style colonial buildings facing the Huangpu River"
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "อิสระช้อปปิ้ง ถนนคนเดินนานกิง ถนนสายช้อปปิ้งชื่อดัง แวะร้าน POP MART FLAGSHIP STORE สาขาใหญ่ 2 ชั้น และอาณาจักร MINISO LAND (อิสระอาหารค่ำตามอัธยาศัย)",
+          "description_en": "Free time shopping on Nanjing Road Pedestrian Street, visiting POP MART Flagship Store and MINISO LAND (Dinner at leisure)"
+        },
+        {
+          "time": "20:00",
+          "time_en": "08:00 PM",
+          "description": "นำท่านเดินทางกลับสู่ที่พัก",
+          "description_en": "Transfer back to hotel"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "อาคารพันต้นไม้ • ถนนอันฟู • อาคารอู่คัง • ตลาดร้อยปีเฉินหวังเมี่ยว • ถนนเทียนจื่อฟาง • สนามบินสุวรรณภูมิ",
+      "title_en": "Tian An 1,000 Trees • Anfu Road • Wukang Building • Chenghuangmiao Market • Tianzifang • Suvarnabhumi Airport",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "รับประทานอาหารเช้า ณ ห้องอาหารของโรงแรมและเช็คเอาต์",
+          "description_en": "Breakfast at the hotel restaurant and check out"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "ชมความล้ำของสถาปัตยกรรม อาคารพันต้นไม้ (Tian An 1,000 Trees) ริมแม่น้ำซูโจว",
+          "description_en": "Visit the hanging gardens of Tian An 1,000 Trees along Suzhou Creek"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "เดินเล่นย่านคาเฟ่สุดชิค ถนนอันฟู และถ่ายรูปเช็คอิน อาคารอู่คัง (Wukang Building) ตึกคลาสสิกร่วมสมัยทรงหัวเรือ",
+          "description_en": "Explore trendy Anfu Road and take photos at the iconic flatiron-style Wukang Building"
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "บริการอาหารกลางวัน ณ ภัตตาคาร",
+          "description_en": "Lunch at restaurant"
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "ย้อนอดีตชม ตลาดร้อยปีเฉินหวังเมี่ยว สถาปัตยกรรมจีนโบราณ ชิมขนมพื้นเมือง และเดินทางสู่ เทียนจื่อฟาง ตรอกศิลปะและงานคราฟต์สุดเก๋ (อิสระอาหารค่ำตามอัธยาศัย)",
+          "description_en": "Explore Chenghuangmiao Market and artsy Tianzifang alleyways (Dinner at leisure)"
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "เดินทางถึง สนามบินเซี่ยงไฮ้ผู่ตง เช็คอินสัมภาระเพื่อเดินทางกลับประเทศไทย",
+          "description_en": "Arrive at Shanghai Pudong Airport for flight check-in"
+        },
+        {
+          "time": "23:00",
+          "time_en": "11:00 PM",
+          "description": "ออกเดินทางสู่ สนามบินสุวรรณภูมิ ประเทศไทย โดยสายการบินไทยเวียตเจ็ท เที่ยวบินที่ VZ3525 (ถึงเวลา 02:30 น.)",
+          "description_en": "Depart to Suvarnabhumi Airport, Thailand by Thai Vietjet flight VZ3525 (arriving at 02:30 AM)"
+        }
+      ]
+    }
+  ]
+},
   {
     "id": "BT_NRT_S15_XJ",
     "type": "outbound",
@@ -1315,44 +2868,6 @@
     "periodText_en": "April - September 2026"
   },
   {
-    "id": "ZGFUK-2610VZ",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "ฟุกุโอกะ",
-    "startMonth": "2026-05",
-    "endMonth": "2026-06",
-    "periodText": "พ.ค. - มิ.ย. 2569",
-    "image": "Outbound/japan/banner/ZGFUK-2610VZ.png",
-    "price": "21,990",
-    "duration": "5 วัน 3 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์ญี่ปุ่น ฟุกุโอกะ เบปปุ ยูฟูอิน คุมาโมโตะ",
-    "desc": "ทัวร์ญี่ปุ่น ฟุกุโอกะ เบปปุ ยูฟูอิน คุมาโมโตะ เที่ยวหมู่บ้านยูฟูอิน ถ่ายรูปคู่ปราสาทคุมาโมโตะ วัดนันโซอิน ศาลเจ้าดาไซฟุ และแลนด์มาร์กสำคัญในคิวชู",
-    "pdf": "Outbound/japan/pdf/ZGFUK-2610VZ.pdf",
-    "desc_en": "Japan tour, Fukuoka, Beppu, Yufuin, Kumamoto, visit Yufuin village. ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "May - June 2026"
-  },
-  {
-    "id": "RJ-VZNRT002",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "โตเกียว",
-    "startMonth": "2026-05",
-    "endMonth": "2026-07",
-    "periodText": "พ.ค. - ก.ค. 2569",
-    "image": "Outbound/japan/banner/RJ-VZNRT002.png",
-    "price": "22,919",
-    "duration": "8 วัน 6 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์ญี่ปุ่น โตเกียว คามาคุระ เอโนชิมะ ฟูจิ",
-    "desc": "ทัวร์ญี่ปุ่น โตเกียว คามาคุระ เอโนชิมะ ฟูจิ อิสระท่องเที่ยว 1 วันเต็ม เที่ยวชมพระใหญ่คามาคุระ วัดอาซากุสะ Enoden Line โตเกียวดิสนีย์แลนด์ และแลนด์มาร์กสำคัญรอบโตเกียว",
-    "pdf": "Outbound/japan/pdf/RJ-VZNRT002.pdf",
-    "desc_en": "Japan tour: Tokyo, Kamakura, Enoshima, Fuji. Free travel for 1 full day. Visit the Big Buddha, Kamakura, Asakusa Temple, Enoden Line, Tokyo Disneyland. ",
-    "duration_en": "8 days 6 nights",
-    "periodText_en": "May - July 2026"
-  },
-  {
     "id": "ZGNRT-2613VZ",
     "type": "outbound",
     "country": "ญี่ปุ่น",
@@ -1389,25 +2904,6 @@
     "desc_en": "Japan tour, Osaka, Kyoto, Shinsaibashi, take photos with Osaka Castle. ",
     "duration_en": "5 days 3 nights",
     "periodText_en": "June - October 2026"
-  },
-  {
-    "id": "ZGNRT-2611VZ",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "โตเกียว",
-    "startMonth": "2026-04",
-    "endMonth": "2026-05",
-    "periodText": "เม.ย. - พ.ค. 2569",
-    "image": "Outbound/japan/banner/ZGNRT-2611VZ.png",
-    "price": "23,990",
-    "duration": "5 วัน 3 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์ญี่ปุ่น โตเกียว นาริตะ ฟูจิ คามาคุระ",
-    "desc": "ทัวร์ญี่ปุ่น โตเกียว นาริตะ ฟูจิ คามาคุระ นั่งรถไฟสายโรแมนติก ชมวิวทะเลเอโนชิมะ สักการะพระใหญ่ไดบุสึ ชมดอกพิงค์มอส Fuji Shibazakura Festival และเที่ยวแลนด์มาร์กยอดนิยม",
-    "pdf": "Outbound/japan/pdf/ZGNRT-2611VZ.pdf",
-    "desc_en": "Japan tour: Tokyo, Narita, Fuji, Kamakura, romantic train ride ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "April - May 2026"
   },
   {
     "id": "BT-FUK_S03_VZ",
@@ -1468,63 +2964,6 @@
     "periodText_en": "May - September 2026"
   },
   {
-    "id": "ZGHND-2626NH",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "โตเกียว",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/japan/banner/ZGHND-2626NH.png",
-    "price": "29,990",
-    "duration": "5 วัน 3 คืน",
-    "airline": "ANA.avif",
-    "shortDesc": "ทัวร์ญี่ปุ่น โตเกียว ฟูจิ ทะเลสาบยามานากาโกะ Pink Moss",
-    "desc": "ทัวร์ญี่ปุ่น โตเกียว ฟูจิ ชมเทศกาลดอกพิงค์มอส Fuji Shibazakura Festival ชมวิวภูเขาไฟฟูจิที่ทะเลสาบยามานากาโกะ เที่ยวหมู่บ้านน้ำใสโอชิโนะฮักไก และเที่ยวแลนด์มาร์กยอดนิยมในโตเกียว",
-    "pdf": "Outbound/japan/pdf/ZGHND-2626NH.pdf",
-    "desc_en": "Japan tour: Tokyo Fuji, see the pink moss festival Fuji Shibazakura Festival, see the view of Mount Fuji at Lake Yamanakako. ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "ZGHND-2614NH",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "โตเกียว",
-    "startMonth": "2026-04",
-    "endMonth": "2026-05",
-    "periodText": "เม.ย. - พ.ค. 2569",
-    "image": "Outbound/japan/banner/ZGHND-2614NH.png",
-    "price": "33,990",
-    "duration": "6 วัน 3 คืน",
-    "airline": "ANA.avif",
-    "shortDesc": "ทัวร์ญี่ปุ่น โตเกียว คาวาโกเอะ Pink Moss",
-    "desc": "ทัวร์ญี่ปุ่น โตเกียว คาวาโกเอะ ชมเทศกาลดอกพิงค์มอส Fuji Shibazakura Festival เที่ยวเมืองเก่าคาวาโกเอะ ขอพรศาลเจ้าเมจิ ช้อปปิ้งชินจูกุ และชมแลนด์มาร์กยอดนิยมของญี่ปุ่น",
-    "pdf": "Outbound/japan/pdf/ZGHND-2614NH.pdf",
-    "desc_en": "Japan tour: Tokyo, Kawagoe, see the pink moss festival, Fuji Shibazakura Festival, visit the old town of Kawagoe. ",
-    "duration_en": "6 days 3 nights",
-    "periodText_en": "April - May 2026"
-  },
-  {
-    "id": "BT-KIX_NRT_S02_XJ",
-    "type": "outbound",
-    "country": "ญี่ปุ่น",
-    "city": "โอซาก้า",
-    "startMonth": "2026-04",
-    "endMonth": "2026-05",
-    "periodText": "เม.ย. - พ.ค. 2569",
-    "image": "Outbound/japan/banner/BT-KIX_NRT_S02_XJ.png",
-    "price": "36,999",
-    "duration": "6 วัน 4 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์ญี่ปุ่น โอซาก้า ทาคายาม่า คามิโคจิ",
-    "desc": "ทัวร์ญี่ปุ่น โอซาก้า ทาคายาม่า คามิโคจิ ชมความงดงามของธรรมชาติที่คามิโคจิ เที่ยวหมู่บ้านมรดกโลกชิราคาวาโกะ แช่ออนเซ็นธรรมชาติ ชมปราสาทมัตสึโมโต้ และช้อปปิ้งย่านชินไซบาชิ",
-    "pdf": "Outbound/japan/pdf/BT-KIX-NRT_S02XJ.pdf",
-    "desc_en": "Japan tour, Osaka, Takayama, Kamikochi, see the beauty of nature at Kamikochi. ",
-    "duration_en": "6 days 4 nights",
-    "periodText_en": "April - May 2026"
-  },
-  {
     "id": "BT-NRT_A01_XJ",
     "type": "outbound",
     "country": "ญี่ปุ่น",
@@ -1542,26 +2981,6 @@
     "desc_en": "Japan tour: Tokyo, Kawaguchiko, Hakone, see the view of Mount Fuji, stop by AO Lakeside Cafe, see Hakone and Owakudani. ",
     "duration_en": "5 days 3 nights",
     "periodText_en": "October 2026"
-  },
-  {
-    "id": "KR-CNX-SEOUL-SPRING",
-    "type": "outbound",
-    "popular": true,
-    "country": "เกาหลีใต้",
-    "city": "โซล",
-    "startMonth": "2026-03",
-    "endMonth": "2026-05",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "image": "Outbound/Korea/banner/KR-CNX-SEOUL-SPRING.png",
-    "price": "15,900",
-    "duration": "5 วัน 3 คืน",
-    "airline": "JejuAir.png",
-    "shortDesc": "ทัวร์เกาหลีใต้ โซล เทศกาลดอกพ็อดกด",
-    "desc": "ทัวร์เกาหลีใต้ โซล ชมเทศกาลดอกพ็อดกด เดินเล่นถนนยออิโด ช้อปปิ้งย่านดังในโซล เยือนหมู่บ้านบุกชอน วัดโชเกซา และแลนด์มาร์กยอดนิยม",
-    "pdf": "Outbound/Korea/pdf/KR-CNX-SEOUL-SPRING.pdf",
-    "desc_en": "Tour South Korea, Seoul, see the Podkot Festival ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "March - May 2026"
   },
   {
     "id": "KR-SEOUL-SUMMER",
@@ -1621,82 +3040,6 @@
     "periodText_en": "June - September 2026"
   },
   {
-    "id": "3mmjj24412",
-    "type": "outbound",
-    "country": "เกาหลีใต้",
-    "city": "โซล",
-    "startMonth": "2026-03",
-    "endMonth": "2026-05",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "image": "Outbound/Korea/banner/3mmjj24412.png",
-    "price": "15,900",
-    "duration": "5 วัน 3 คืน",
-    "airline": "JejuAir.png",
-    "shortDesc": "ทัวร์เกาหลีใต้ โซล Blooming Bless เทศกาลดอกพ็อดกด",
-    "desc": "ทัวร์เกาหลีใต้ โซล ชมเทศกาลดอกพ็อดกด เที่ยวสวนป่าแห่งโซล หมู่บ้านวัฒนธรรมอึนพยอง Dior Cafe พระราชวังเคียงบกกุง และแลนด์มาร์กยอดนิยมของกรุงโซล",
-    "pdf": "Outbound/Korea/pdf/3mmjj24412.pdf",
-    "desc_en": "Tour South Korea, Seoul, see the Podkot Festival ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "March - May 2026"
-  },
-  {
-    "id": "jlt5T06605",
-    "type": "outbound",
-    "country": "เกาหลีใต้",
-    "city": "ปูซาน",
-    "startMonth": "2026-05",
-    "endMonth": "2026-06",
-    "periodText": "พ.ค. - มิ.ย. 2569",
-    "image": "Outbound/Korea/banner/jlt5T06605.png",
-    "price": "15,999",
-    "duration": "5 วัน 3 คืน",
-    "airline": "JejuAir.png",
-    "shortDesc": "ทัวร์เกาหลีใต้ ปูซาน Sea Sand Breeze",
-    "desc": "ทัวร์เกาหลีใต้ ปูซาน เที่ยวโอรยุกโดสกายวอล์ค วัดแฮดงยงกุงซา หมู่บ้านวัฒนธรรมคัมชอน ตลาดปลา และแลนด์มาร์กยอดนิยมของปูซาน",
-    "pdf": "Outbound/Korea/pdf/jlt5T06605.pdf",
-    "desc_en": "South Korea tour, Busan, visit Oryukdo Skywalk ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "May - June 2026"
-  },
-  {
-    "id": "qQJD318505",
-    "type": "outbound",
-    "country": "เกาหลีใต้",
-    "city": "ซอรัค",
-    "startMonth": "2026-03",
-    "endMonth": "2026-05",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "image": "Outbound/Korea/banner/qQJD318505.png",
-    "price": "17,900",
-    "duration": "5 วัน 3 คืน",
-    "airline": "JejuAir.png",
-    "shortDesc": "ทัวร์เกาหลีใต้ ซอรัค Spring Bloom",
-    "desc": "ทัวร์เกาหลีใต้ ซอรัค ชมเทศกาลดอกพ็อดกด นั่งกระเช้าชมวิวอุทยานแห่งชาติซอรัคซาน เที่ยว Sokcho Eye หมู่บ้านอึนพยองฮันอก และแลนด์มาร์กยอดนิยมของเกาหลี",
-    "pdf": "Outbound/Korea/pdf/qQJD318505.pdf",
-    "desc_en": "Tour South Korea, Seorak, see the Podkot Festival. ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "March - May 2026"
-  },
-  {
-    "id": "MulIk14703",
-    "type": "outbound",
-    "country": "เกาหลีใต้",
-    "city": "ซอรัค",
-    "startMonth": "2026-03",
-    "endMonth": "2026-05",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "image": "Outbound/Korea/banner/MulIk14703.png",
-    "price": "25,900",
-    "duration": "7 วัน 4 คืน",
-    "airline": "AsianaAirlines.png",
-    "shortDesc": "ทัวร์เกาหลีใต้ ซอรัค Grand Seorak Spring Bloom",
-    "desc": "ทัวร์เกาหลีใต้ ซอรัค ชมดอกพ็อดกด เที่ยวอุทยานแห่งชาติซอรัคซาน Sokcho Eye เกาะนามิ หมู่บ้านวัฒนธรรมอึนพยองฮันอก พระราชวังเคียงบกกุง และแลนด์มาร์กยอดนิยม",
-    "pdf": "Outbound/Korea/pdf/MulIk14703.pdf",
-    "desc_en": "South Korea tour, Seorak, see pod flowers, visit Seoraksan National Park, Sokcho Eye, Nami Island, Eunpyeong Hanok Village. ",
-    "duration_en": "7 days 4 nights",
-    "periodText_en": "March - May 2026"
-  },
-  {
     "id": "VZ-DAD01",
     "type": "outbound",
     "country": "เวียดนาม",
@@ -1754,25 +3097,6 @@
     "periodText_en": "Apr. - Oct. 2026"
   },
   {
-    "id": "DAD53",
-    "type": "outbound",
-    "country": "เวียดนาม",
-    "city": "ดานัง",
-    "startMonth": "2026-03",
-    "endMonth": "2026-08",
-    "periodText": "มีนาคม - สิงหาคม 2569",
-    "image": "Outbound/Vietnam/banner/DAD53.png",
-    "price": "10,999",
-    "duration": "4 วัน 3 คืน",
-    "airline": "Emirates.png",
-    "shortDesc": "ทัวร์เวียดนาม ดานัง บานาฮิลล์",
-    "desc": "ทัวร์เวียดนาม ดานัง บานาฮิลล์ ล่องเรือกระด้ง เที่ยวบานาฮิลล์เต็มวัน ชมสะพานมือยักษ์ Marina Cafe Eclipse Square ช้อปปิ้ง Pop Mart และแลนด์มาร์กยอดนิยม",
-    "pdf": "Outbound/Vietnam/pdf/DAD53.pdf",
-    "desc_en": "Vietnam tour, Danang, Ba Na Hills, basket boat cruise ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "March - August 2026"
-  },
-  {
     "id": "PVN-DAD21-VZ",
     "type": "outbound",
     "country": "เวียดนาม",
@@ -1809,24 +3133,6 @@
     "desc_en": "South Vietnam Tour, Phu Quoc, visit Aquatopia, VinWonders, Sun World Hon Thom, Kiss Bridge, The Bamboo Legend, Grand World and Colors of Venice.",
     "duration_en": "3 days 2 night",
     "periodText_en": "Mar. - Nov. 2026"
-  },
-  {
-    "id": "ZGDAD-2602VN",
-    "type": "outbound",
-    "country": "เวียดนาม",
-    "city": "ดานัง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/Vietnam/banner/ZGDAD-2602VN.png",
-    "price": "11,990",
-    "duration": "4 วัน 3 คืน",
-    "airline": "VietnamAirlines.png",
-    "shortDesc": "ทัวร์เวียดนาม ดานัง ฮอยอัน พักบานาฮิลล์",
-    "desc": "ทัวร์เวียดนาม ดานัง ฮอยอัน พักบานาฮิลล์ 1 คืน สัมผัสเมืองแห่งเทพนิยาย เช็คอิน Golden Bridge ล่องเรือกระด้ง ชมโชว์ Charming Danang พร้อมอาหารพิเศษซีฟู้ด",
-    "desc_en": "Vietnam tour, Danang, Hoi An, stay in Ba Na Hills for 1 night, experience the fairytale city, check in at the Golden Bridge, take a basket boat ride, watch the Charming Danang show with special seafood meals.",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "April - June 2026"
   },
   {
     "id": "VZ-BANA01",
@@ -1903,63 +3209,6 @@
     "desc_en": "Vietnam tour, Ho Chi Minh, Mui Ne, Dalat, have fun with VinWonders, take the cable car across the sea. ",
     "duration_en": "4 days 3 night",
     "periodText_en": "April - September 2026"
-  },
-  {
-    "id": "BT-HAN47_FD",
-    "type": "outbound",
-    "country": "เวียดนาม",
-    "city": "ฮานอย",
-    "startMonth": "2026-01",
-    "endMonth": "2026-03",
-    "periodText": "ม.ค. 2569 - มี.ค. 2569",
-    "image": "Outbound/Vietnam/banner/BT-HAN47_FD.png",
-    "price": "17,999",
-    "duration": "4 วัน 3 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์เวียดนาม ฮานอย ซาปา ฟานซิปัน",
-    "desc": "ทัวร์เวียดนาม ฮานอย ซาปา ฟานซิปัน เที่ยวเมืองซาปา นั่งรถไฟฟ้าโมโนเรล พิชิตยอดฟานซิปัน ล่องเรือ Cat Cat Village และเที่ยวแลนด์มาร์กเวียดนามเหนือ",
-    "pdf": "Outbound/Vietnam/pdf/BT-HAN47_FD.pdf",
-    "desc_en": "Vietnam tour, Hanoi, Sapa, Fansipan, visit Sapa city ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "Jan 2026 - Mar 2026"
-  },
-  {
-    "id": "BT-HAN01_FD",
-    "type": "outbound",
-    "country": "เวียดนาม",
-    "city": "ฮานอย",
-    "startMonth": "2026-02",
-    "endMonth": "2026-04",
-    "periodText": "ก.พ. - พ.ค. 2569",
-    "image": "Outbound/Vietnam/banner/BT-HAN01_FD.png",
-    "price": "17,999",
-    "duration": "4 วัน 3 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์เวียดนาม ฮานอย ตามด่าว",
-    "desc": "ทัวร์เวียดนาม ฮานอย ตามด่าว เช็กอินเมืองตามด่าว เวียดนามฟีลยุโรป ล่องเรือชม Ma Pi Leng Pass คาเฟ่ Gio Cafe Tam Dao และชม Tam Dao Stone Church",
-    "pdf": "Outbound/Vietnam/pdf/BT-HAN01_FD.pdf",
-    "desc_en": "Vietnam tour, Hanoi, Tam Dao, check in Tam Dao city ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "Feb. - May 2026"
-  },
-  {
-    "id": "2UDAD-VJ007",
-    "type": "outbound",
-    "country": "เวียดนาม",
-    "city": "ดานัง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-08",
-    "periodText": "เม.ย. - ส.ค. 2569",
-    "image": "Outbound/Vietnam/banner/2UDAD-VJ007.png",
-    "price": "15,800",
-    "duration": "4 วัน 3 คืน",
-    "airline": "VietJet.png",
-    "shortDesc": "ทัวร์เวียดนามกลาง ดานัง ฮอยอัน บานาฮิลล์",
-    "desc": "ทัวร์เวียดนามกลาง ดานัง ฮอยอัน พักบานาฮิลล์ 1 คืน พักเมืองดานัง 2 คืน เที่ยวบานาฮิลล์เต็มวัน ล่องเรือกระด้ง วัดลินห์อึ๋ง Son Tra Marina Cafe และแลนด์มาร์กยอดนิยม",
-    "pdf": "Outbound/Vietnam/pdf/2UDAD-VJ007.pdf",
-    "desc_en": "Central Vietnam tour, Danang, Hoi An, stay in Ba Na Hills for 1 night, stay in Danang city for 2 nights, visit Ba Na Hills full day. ",
-    "duration_en": "4 days 3 night",
-    "periodText_en": "April - August 2026"
   },
   {
     "id": "PVN-PQC32-VZ",
@@ -2066,44 +3315,6 @@
     "periodText_en": "March - October 2026"
   },
   {
-    "id": "R5-8TCX1",
-    "type": "outbound",
-    "country": "ฮ่องกง",
-    "city": "ฮ่องกง",
-    "startMonth": "2026-05",
-    "endMonth": "2026-05",
-    "periodText": "พฤษภาคม 2569",
-    "image": "Outbound/HongKong/banner/R5-8TCX1.png",
-    "price": "13,999",
-    "duration": "3 วัน 2 คืน",
-    "airline": "Cathaylogo.jpg",
-    "shortDesc": "ทัวร์ฮ่องกง ปักหมุดพิกัดมู 8 วัดดัง",
-    "desc": "ทัวร์ฮ่องกง ปักหมุดพิกัดมู 8 วัดดัง ขอพรเรื่องความรัก การงาน การเงิน พร้อมเที่ยวแลนด์มาร์กฮ่องกงและนั่งกระเช้านองปิง",
-    "pdf": "Outbound/HongKong/pdf/R5-8TCX1.pdf",
-    "desc_en": "Hong Kong tour, pin the coordinates of Mu 8 famous temples, ask for blessings in love, work, and finances, along with visiting Hong Kong landmarks and riding the Ngong Ping cable car.",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "May 2026"
-  },
-  {
-    "id": "R6-8TCX1",
-    "type": "outbound",
-    "country": "ฮ่องกง",
-    "city": "ฮ่องกง",
-    "startMonth": "2026-06",
-    "endMonth": "2026-06",
-    "periodText": "มิถุนายน 2569",
-    "image": "Outbound/HongKong/banner/R6-8TCX1.png",
-    "price": "12,999",
-    "duration": "3 วัน 2 คืน",
-    "airline": "Cathaylogo.jpg",
-    "shortDesc": "ทัวร์ฮ่องกง ปักหมุดพิกัดมู 8 วัดดัง",
-    "desc": "ทัวร์ฮ่องกง ปักหมุดพิกัดมู 8 วัดดัง ขอพรเรื่องความรัก การงาน การเงิน พร้อมช้อปปิ้งและเที่ยวแลนด์มาร์กสำคัญของฮ่องกง",
-    "pdf": "Outbound/HongKong/pdf/R6-8TCX1.pdf",
-    "desc_en": "Hong Kong tour, pin the coordinates of Mu 8 famous temples, ask for blessings in love, work, and finances, along with shopping and visiting important landmarks of Hong Kong.",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "June 2026"
-  },
-  {
     "id": "MRT-EK08",
     "type": "outbound",
     "country": "ฮ่องกง",
@@ -2186,25 +3397,6 @@
     "periodText_en": "April - October 2026"
   },
   {
-    "id": "BT-HKG62_CX",
-    "type": "outbound",
-    "country": "ฮ่องกง",
-    "city": "ฮ่องกง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/HongKong/banner/BT-HKG62_CX.png",
-    "price": "17,999",
-    "duration": "3 วัน 2 คืน",
-    "airline": "Cathaylogo.jpg",
-    "shortDesc": "ทัวร์ฮ่องกง นั่งรถรางพีคแทรม อิสระ 1 วัน",
-    "desc": "ทัวร์ฮ่องกง นั่งรถรางพีคแทรม ชมวิวอ่าววิคตอเรีย ไหว้พระใหญ่ นั่งกระเช้านองปิง และอิสระเที่ยว 1 วันเต็ม",
-    "pdf": "Outbound/HongKong/pdf/BT-HKG62_CX.pdf",
-    "desc_en": "Hong Kong tour, ride the Peak Tram ",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "April - June 2026"
-  },
-  {
     "id": "BT-HKG68_EK",
     "type": "outbound",
     "country": "ฮ่องกง",
@@ -2222,44 +3414,6 @@
     "desc_en": "Hong Kong tour, visit Hong Kong Disneyland, pay homage to 3 famous temples, Guan Yin Temple, Guan Yu Temple, and Che Kung Mew Temple. ",
     "duration_en": "3 days 2 night",
     "periodText_en": "May - September 2026"
-  },
-  {
-    "id": "ZGHKG-2633HB",
-    "type": "outbound",
-    "country": "ฮ่องกง",
-    "city": "ฮ่องกง",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/HongKong/banner/ZGHKG-2633HB.png",
-    "price": "19,990",
-    "duration": "4 วัน 2 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์ฮ่องกง ดิสนีย์แลนด์ รีพลัสเบย์",
-    "desc": "ทัวร์ฮ่องกง เที่ยว Hong Kong Disneyland รีพลัสเบย์ ไหว้พระ ขอพรเรื่องความรัก การงาน การเงิน พร้อมชมวิวอ่าววิคตอเรีย",
-    "pdf": "Outbound/HongKong/pdf/ZGHKG-2633HB.pdf",
-    "desc_en": "Hong Kong tour, visit Hong Kong Disneyland, RePlus Bay, pay homage to Buddha, ask for blessings in love, work, and finances, along with views of Victoria Harbor.",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "GO1-HKG-TG014",
-    "type": "outbound",
-    "country": "ฮ่องกง",
-    "city": "ฮ่องกง",
-    "startMonth": "2026-06",
-    "endMonth": "2026-08",
-    "periodText": "มิ.ย. - ส.ค. 2569",
-    "image": "Outbound/HongKong/banner/GO1-HKG-TG014.png",
-    "price": "21,900",
-    "duration": "3 วัน 2 คืน",
-    "airline": "ThaiAirways.png",
-    "shortDesc": "ทัวร์ฮ่องกง ไหว้พระ ขอพร นั่งกระเช้านองปิง แซกงหมิว",
-    "desc": "ทัวร์ฮ่องกง นั่งกระเช้านองปิง ไหว้พระใหญ่เทียนถาน วัดหวังต้าเซียน วัดแชกงหมิว และวัดเจ้าแม่กวนอิมพันมือ พร้อมช้อปปิ้ง Citygate Outlets",
-    "pdf": "Outbound/HongKong/pdf/GO1HKG-TG014.pdf",
-    "desc_en": "Hong Kong tour, Ngong Ping cable car ride ",
-    "duration_en": "3 days 2 night",
-    "periodText_en": "June - August 2026"
   },
   {
     "id": "2UMXP-EK031",
@@ -2284,48 +3438,6 @@
     "periodText_en": "June - November 2026"
   },
   {
-    "id": "PEU-BCN01-SV",
-    "type": "outbound",
-    "country": "สเปน",
-    "city": "บาร์เซโลนา, มาดริด, ซาราโกซา",
-    "startMonth": "2026-05",
-    "endMonth": "2026-06",
-    "periodText": "พฤษภาคม - มิถุนายน 2569",
-    "image": "Outbound/Europe/banner/PEU-BCN01-SV.png",
-    "price": "64,999",
-    "duration": "8 วัน 5 คืน",
-    "airline": "QatarAirways.png",
-    "shortDesc": "ทัวร์สเปน มหัศจรรย์สเปน",
-    "desc": "ทัวร์สเปน เที่ยวบาร์เซโลนา มาดริด ซาราโกซา ชมมหาวิหารซากราดาฟามิเลีย พระราชวังหลวงมาดริด และแลนด์มาร์กชื่อดังของสเปน",
-    "pdf": "Outbound/Europe/pdf/PEU-BCN01-SV.pdf",
-    "desc_en": "Spain tour, visit Barcelona, ​​Madrid, Zaragoza, see the Sagrada Familia cathedral. ",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "May - June 2026"
-  },
-  {
-    "id": "VMJUCMXP75WY-26",
-    "type": "outbound",
-    "country": [
-      "เยอรมนี",
-      "ออสเตรีย",
-      "อิตาลี"
-    ],
-    "city": "โดโลไมท์, เวนิส, อินส์บรุค, มิวนิก",
-    "startMonth": "2026-05",
-    "endMonth": "2026-06",
-    "periodText": "พ.ค. - มิ.ย. 2569",
-    "image": "Outbound/Europe/banner/VMJUCMXP75WY-26.png",
-    "price": "67,777",
-    "duration": "7 วัน 5 คืน",
-    "airline": "OmanAir.png",
-    "shortDesc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย อิตาลี",
-    "desc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย อิตาลี เที่ยวโดโลไมท์ เวนิส อินส์บรุค มิวนิก ชมเมืองสวยริมทะเลสาบและแลนด์มาร์กชื่อดังของยุโรป",
-    "pdf": "Outbound/Europe/pdf/VMUCMXP75WY-26.pdf",
-    "desc_en": "Europe tour: Germany, Austria, Italy, visit the Dolomites, Venice, Innsbruck, Munich, see beautiful cities along the lake and famous European landmarks.",
-    "duration_en": "7 days 5 nights",
-    "periodText_en": "May - June 2026"
-  },
-  {
     "id": "ZGMUC-2604SQ",
     "type": "outbound",
     "country": [
@@ -2346,146 +3458,6 @@
     "desc_en": "Europe tour: Germany, Austria, Switzerland ",
     "duration_en": "7 days 4 nights",
     "periodText_en": "April - September 2026"
-  },
-  {
-    "id": "VARNCPH85TK-5",
-    "type": "outbound",
-    "country": [
-      "สวีเดน",
-      "นอร์เวย์",
-      "เดนมาร์ก"
-    ],
-    "city": "สตอกโฮล์ม, โคเปนเฮเกน, ออสโล",
-    "startMonth": "2026-03",
-    "endMonth": "2026-05",
-    "periodText": "มี.ค. - พ.ค. 2569",
-    "image": "Outbound/Europe/banner/VARNCPH85TK-5.png",
-    "price": "73,333",
-    "duration": "8 วัน 5 คืน",
-    "airline": "TurkishAirlines.svg",
-    "shortDesc": "ทัวร์สแกนดิเนเวีย 3 ประเทศ",
-    "desc": "ทัวร์ยุโรป สวีเดน นอร์เวย์ เดนมาร์ก เที่ยวสตอกโฮล์ม โคเปนเฮเกน ออสโล ล่องเรือสำราญ DFDS และชมแลนด์มาร์กชื่อดังของสแกนดิเนเวีย",
-    "pdf": "Outbound/Europe/pdf/VARNCPH85TK-5.pdf",
-    "desc_en": "Europe tour, Sweden, Norway, Denmark, visit Stockholm, Copenhagen, Oslo, take a DFDS cruise and see famous Scandinavian landmarks.",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "March - May 2026"
-  },
-  {
-    "id": "GO3AMS-EK001",
-    "type": "outbound",
-    "country": [
-      "เนเธอร์แลนด์",
-      "ลักเซมเบิร์ก",
-      "เบลเยียม"
-    ],
-    "city": "อัมสเตอร์ดัม, บรูกก์, บรัสเซลส์",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/Europe/banner/GO3AMS-EK001.png",
-    "price": "73,900",
-    "duration": "8 วัน 5 คืน",
-    "airline": "Emirates.png",
-    "shortDesc": "ทัวร์เบเนลักซ์ เนเธอร์แลนด์ ลักเซมเบิร์ก เบลเยียม",
-    "desc": "ทัวร์ยุโรป เบเนลักซ์ เที่ยวอัมสเตอร์ดัม บรูกก์ บรัสเซลส์ ล่องเรือหลังคากระจก ชมทุ่งดอกไม้และหมู่บ้านกังหันลมชื่อดัง",
-    "pdf": "Outbound/Europe/pdf/GO3AMS-EK001.pdf",
-    "desc_en": "Europe tour, Benelux, visit Amsterdam, Brugge, Brussels, glass roof cruise ",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "GO3CDG-EK052",
-    "type": "outbound",
-    "country": [
-      "ฝรั่งเศส",
-      "อิตาลี",
-      "สวิตเซอร์แลนด์"
-    ],
-    "city": "ปารีส, ลูเซิร์น, มิลาน, เวนิส",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/Europe/banner/GO3CDG-EK052.png",
-    "price": "81,900",
-    "duration": "8 วัน 5 คืน",
-    "airline": "Emirates.png",
-    "shortDesc": "ทัวร์ฝรั่งเศส อิตาลี สวิตเซอร์แลนด์",
-    "desc": "ทัวร์ยุโรป ฝรั่งเศส อิตาลี สวิตเซอร์แลนด์ เที่ยวปารีส ลูเซิร์น มิลาน เวนิส ชมจุงเฟรา นั่งรถไฟสายโรแมนติก และแลนด์มาร์กชื่อดังของยุโรป",
-    "pdf": "Outbound/Europe/pdf/GO3CDG-EK052.pdf",
-    "desc_en": "Europe tour, France, Italy, Switzerland, travel to Paris, Lucerne, Milan, Venice, see the Jungfrau, take a romantic train ride. ",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "ZGBCN-2601SQ",
-    "type": "outbound",
-    "country": [
-      "สวีเดน",
-      "นอร์เวย์",
-      "เดนมาร์ก"
-    ],
-    "city": "สตอกโฮล์ม, ออสโล, โคเปนเฮเกน",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เมษายน - มิถุนายน 2569",
-    "image": "Outbound/Europe/banner/ZGBCN-2601SQ.png",
-    "price": "85,990",
-    "duration": "8 วัน 5 คืน",
-    "airline": "QatarAirways.png",
-    "shortDesc": "ทัวร์สแกนดิเนเวีย 3 ประเทศ",
-    "desc": "ทัวร์ยุโรป สวีเดน นอร์เวย์ เดนมาร์ก เที่ยวสตอกโฮล์ม ออสโล โคเปนเฮเกน ล่องเรือสำราญ DFDS และนั่งรถไฟสายฟลัมบานา",
-    "pdf": "Outbound/Europe/pdf/ZGBCN-2601SQ.pdf",
-    "desc_en": "Europe tour, Sweden, Norway, Denmark, visit Stockholm, Oslo, Copenhagen, DFDS cruise and Flambana train ride.",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "VBUDFRA96DE-21",
-    "type": "outbound",
-    "country": [
-      "ฮังการี",
-      "สโลวาเกีย",
-      "ออสเตรีย",
-      "เช็ก",
-      "เยอรมนี"
-    ],
-    "city": "บูดาเปสต์, บราติสลาวา, เวียนนา, ปราก, เดรสเดน",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/Europe/banner/VBUDFRA96DE-21.png",
-    "price": "89,999",
-    "duration": "9 วัน 6 คืน",
-    "airline": "Condor.png",
-    "shortDesc": "ทัวร์ยุโรปตะวันออก",
-    "desc": "ทัวร์ยุโรปตะวันออก เที่ยวบูดาเปสต์ บราติสลาวา เวียนนา ปราก เดรสเดน ชมสถาปัตยกรรมยุโรปคลาสสิกและแลนด์มาร์กชื่อดัง",
-    "pdf": "Outbound/Europe/pdf/VBUDFRA96DE-21.pdf",
-    "desc_en": "Eastern Europe Tour: Explore the enchanting cities of Austria, Czech Republic, Hungary, and Slovakia. Visit grand palaces, medieval old towns, and iconic landmarks across Central Europe.",
-    "duration_en": "9 days 6 nights",
-    "periodText_en": "April - June 2026"
-  },
-  {
-    "id": "ZGMXP-2604SQ",
-    "type": "outbound",
-    "country": [
-      "อิตาลี",
-      "สวิตเซอร์แลนด์",
-      "ฝรั่งเศส"
-    ],
-    "city": "มิลาน, อินเทอร์ลาเคน, ลูเซิร์น, ปารีส",
-    "startMonth": "2026-04",
-    "endMonth": "2026-06",
-    "periodText": "เม.ย. - มิ.ย. 2569",
-    "image": "Outbound/Europe/banner/ZGMXP-2604SQ.png",
-    "price": "80,990",
-    "duration": "8 วัน 5 คืน",
-    "airline": "SingaporeAirlines.png",
-    "shortDesc": "ทัวร์อิตาลี สวิตเซอร์แลนด์ ฝรั่งเศส",
-    "desc": "ทัวร์ยุโรป อิตาลี สวิตเซอร์แลนด์ ฝรั่งเศส เที่ยวมิลาน อินเทอร์ลาเคน ลูเซิร์น ปารีส นั่งรถไฟสายโรแมนติก ชมเมืองริมทะเลสาบและแลนด์มาร์กชื่อดัง",
-    "pdf": "Outbound/Europe/pdf/ZGMXP-2604SQ.pdf",
-    "desc_en": "Europe tour, Italy, Switzerland, France, travel to Milan, Interlaken, Lucerne, Paris, take a romantic train ride. ",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "April - June 2026"
   },
   {
     "id": "GO3LIS-EY004",
@@ -2510,206 +3482,6 @@
     "periodText_en": "June - September 2026"
   },
   {
-    "id": "BT-EUR32_EK",
-    "type": "outbound",
-    "country": [
-      "เยอรมนี",
-      "ออสเตรีย",
-      "เช็ก",
-      "สโลวาเกีย",
-      "ฮังการี"
-    ],
-    "city": "มิวนิก, ฮัลล์สตัทท์, ปราก, บราติสลาวา, บูดาเปสต์",
-    "startMonth": "2026-04",
-    "endMonth": "2026-08",
-    "periodText": "เม.ย. - ส.ค. 2569",
-    "image": "Outbound/Europe/banner/BT-EUR32_EK.png",
-    "price": "99,999",
-    "duration": "8 วัน 6 คืน",
-    "airline": "Emirates.png",
-    "shortDesc": "ทัวร์ยุโรปตะวันออก Best East Europe",
-    "desc": "ทัวร์ยุโรป เยอรมนี ออสเตรีย เช็ก สโลวาเกีย ฮังการี เที่ยวมิวนิก ฮัลล์สตัทท์ ปราก บราติสลาวา บูดาเปสต์ ชมเมืองสวยริมแม่น้ำและแลนด์มาร์กชื่อดัง",
-    "pdf": "Outbound/Europe/pdf/BT-EUR32_EK.pdf",
-    "desc_en": "Europe tour, Germany, Austria, Czech, Slovakia, Hungary, visit Munich, Hallstatt, Prague, Bratislava, Budapest, see beautiful cities along the river and famous landmarks.",
-    "duration_en": "8 days 6 nights",
-    "periodText_en": "April - August 2026"
-  },
-  {
-    "id": "BT-SNV006_EK",
-    "type": "outbound",
-    "country": [
-      "เดนมาร์ก",
-      "นอร์เวย์",
-      "สวีเดน"
-    ],
-    "city": "โคเปนเฮเกน, ฟลัม, เบอร์เกน, ออสโล, สตอกโฮล์ม",
-    "startMonth": "2026-06",
-    "endMonth": "2026-07",
-    "periodText": "มิ.ย. - ก.ค. 2569",
-    "image": "Outbound/Europe/banner/BT-SNV006_EK.png",
-    "price": "109,999",
-    "duration": "9 วัน 6 คืน",
-    "airline": "QatarAirways.png",
-    "shortDesc": "ทัวร์สแกนดิเนเวีย Scandinavian",
-    "desc": "ทัวร์สแกนดิเนเวีย เดนมาร์ก นอร์เวย์ สวีเดน เที่ยวโคเปนเฮเกน ฟลัม เบอร์เกน ออสโล สตอกโฮล์ม ล่องเรือสำราญและชมวิวฟยอร์ดสุดอลังการ",
-    "pdf": "Outbound/Europe/pdf/BT-SNV006_EK.pdf",
-    "desc_en": "Scandinavia tour, Denmark, Norway, Sweden, visit Copenhagen, Flam, Bergen, Oslo, Stockholm, take a cruise and see the spectacular fjord views.",
-    "duration_en": "9 days 6 nights",
-    "periodText_en": "June - July 2026"
-  },
-  {
-    "id": "2UIST-EK001",
-    "type": "outbound",
-    "country": "ตุรกี",
-    "city": "อิสตันบูล, คัปปาโดเกีย, ปามุคคาเล่",
-    "startMonth": "2026-04",
-    "endMonth": "2026-05",
-    "periodText": "เม.ย. - พ.ค. 2569",
-    "image": "Outbound/Turkey/banner/2UIST-EK001.png",
-    "price": "46,800",
-    "duration": "10 วัน 7 คืน",
-    "airline": "Emirates.png",
-    "shortDesc": "ทัวร์ตุรกี ดินแดนสองทวีป",
-    "desc": "ทัวร์ตุรกี เที่ยวอิสตันบูล คัปปาโดเกีย ปามุคคาเล่ ชมบอลลูนยักษ์ สุเหร่าสีน้ำเงิน ฮาเกียโซเฟีย และเมืองโบราณชื่อดัง",
-    "pdf": "Outbound/Turkey/pdf/2UIST-EK001.pdf",
-    "desc_en": "Türkiye tour, visit Istanbul, Cappadocia, Pamukkale, see giant balloons. ",
-    "duration_en": "10 days 7 nights",
-    "periodText_en": "April - May 2026"
-  },
-  {
-    "id": "BWHD250058",
-    "type": "outbound",
-    "country": "ออสเตรเลีย",
-    "city": "ซิดนีย์",
-    "startMonth": "2026-01",
-    "endMonth": "2026-06",
-    "periodText": "ม.ค. - มิ.ย. 2569",
-    "image": "Outbound/Australia/banner/BWHD250058.png",
-    "price": "57,900",
-    "duration": "5 วัน 3 คืน",
-    "airline": "PhilippineAirlines.png",
-    "shortDesc": "ทัวร์ออสเตรเลีย ซิดนีย์",
-    "desc": "ทัวร์ออสเตรเลีย ซิดนีย์ เที่ยว Sydney Opera House, Scenic World, Sydney Observatory Hill และล่องเรือชมอ่าวซิดนีย์",
-    "pdf": "Outbound/Australia/pdf/BWHD250058.pdf",
-    "desc_en": "Australia Sydney tour: visit the Sydney Opera House, Scenic World, Sydney Observatory Hill and cruise around Sydney Harbour.",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "Jan. - June 2026"
-  },
-  {
-    "id": "BWHD240043",
-    "type": "outbound",
-    "country": "ออสเตรเลีย",
-    "city": "แทสมาเนีย, ซิดนีย์",
-    "startMonth": "2026-02",
-    "endMonth": "2026-06",
-    "periodText": "ก.พ. - มิ.ย. 2569",
-    "image": "Outbound/Australia/banner/BWHD240043.png",
-    "price": "179,900",
-    "duration": "9 วัน 7 คืน",
-    "airline": "Qantas.png",
-    "shortDesc": "ทัวร์แทสมาเนีย ซิดนีย์",
-    "desc": "ทัวร์ออสเตรเลีย เที่ยวแทสมาเนีย ซิดนีย์ ชมธรรมชาติสุดอลังการ เที่ยว Hobart, Cradle Mountain และ Sydney Opera House",
-    "pdf": "Outbound/Australia/pdf/BWHD240043.pdf",
-    "desc_en": "Australia Tour: Discover Tasmania from Hobart to Cradle Mountain, then experience Sydney Opera House and Harbour Bridge.",
-    "duration_en": "9 days 7 nights",
-    "periodText_en": "Feb. - June 2026"
-  },
-  {
-    "id": "BWHD260024",
-    "type": "outbound",
-    "country": "ออสเตรเลีย",
-    "city": "ซิดนีย์",
-    "startMonth": "2026-05",
-    "endMonth": "2026-06",
-    "periodText": "พฤษภาคม - มิถุนายน 2569",
-    "image": "Outbound/Australia/banner/BWHD260024.png",
-    "price": "69,900",
-    "duration": "5 วัน 3 คืน",
-    "airline": "ThaiAirways.png",
-    "shortDesc": "ทัวร์ซิดนีย์ Vivid Festival",
-    "desc": "ทัวร์ออสเตรเลีย ซิดนีย์ ชมเทศกาลแสงสีเสียง Vivid Festival ล่องเรือชมอ่าวซิดนีย์ พร้อมรับประทานอาหารบน Sydney Tower",
-    "pdf": "Outbound/Australia/pdf/BWHD260024.pdf",
-    "desc_en": "Australia Sydney tour, see the Vivid Festival light and sound festival, cruise around Sydney Harbour. ",
-    "duration_en": "5 days 3 nights",
-    "periodText_en": "May - June 2026"
-  },
-  {
-    "id": "BWHD250082",
-    "type": "outbound",
-    "country": "ออสเตรเลีย",
-    "city": "เมลเบิร์น, ซิดนีย์",
-    "startMonth": "2026-01",
-    "endMonth": "2026-06",
-    "periodText": "ม.ค. - มิ.ย. 2569",
-    "image": "Outbound/Australia/banner/BWHD250082.png",
-    "price": "95,900",
-    "duration": "7 วัน 5 คืน",
-    "airline": "Qantas.png",
-    "shortDesc": "ทัวร์เมลเบิร์น ซิดนีย์",
-    "desc": "ทัวร์ออสเตรเลีย เที่ยวเมลเบิร์น ซิดนีย์ ชม Great Ocean Road, Twelve Apostles, Sydney Opera House และแลนด์มาร์กชื่อดัง",
-    "pdf": "Outbound/Australia/pdf/BWHD250082.pdf",
-    "desc_en": "Australia Tour: Drive the Great Ocean Road, marvel at the Twelve Apostles, and explore Sydney world-famous landmarks.",
-    "duration_en": "7 days 5 nights",
-    "periodText_en": "Jan. - June 2026"
-  },
-  {
-    "id": "BT-MMR19_8M",
-    "type": "outbound",
-    "country": "เมียนมา",
-    "city": "ย่างกุ้ง, สิเรียม",
-    "startMonth": "2026-03",
-    "endMonth": "2026-07",
-    "periodText": "มี.ค. - ก.ค. 2569",
-    "image": "Outbound/Myanmar/banner/BT-MMR19_8M.png",
-    "price": "7,999",
-    "duration": "2 วัน 1 คืน",
-    "airline": "MyanmarNationalAirlines.png",
-    "shortDesc": "ทัวร์เมียนมา ย่างกุ้ง สิเรียม",
-    "desc": "ทัวร์เมียนมา ย่างกุ้ง สิเรียม ไหว้พระมหาเจดีย์ชเวดากอง เทพทันใจ เทพกระซิบ และเที่ยวแลนด์มาร์กศักดิ์สิทธิ์ชื่อดัง",
-    "pdf": "Outbound/Myanmar/pdf/BT-MMR19_8M.pdf",
-    "desc_en": "Tour to Myanmar, Yangon, Siriam, pay homage to the Shwedagon Pagoda, the Instant God, the Whispering God, and visit famous sacred landmarks.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "March - July 2026"
-  },
-  {
-    "id": "BT-MMR92_8M",
-    "type": "outbound",
-    "country": "เมียนมา",
-    "city": "ย่างกุ้ง, สิเรียม",
-    "startMonth": "2026-03",
-    "endMonth": "2026-07",
-    "periodText": "พ.ค. - ก.ค. 2569",
-    "image": "Outbound/Myanmar/banner/BT-MMR92_8M.png",
-    "price": "8,999",
-    "duration": "2 วัน 1 คืน",
-    "airline": "MyanmarNationalAirlines.png",
-    "shortDesc": "ทัวร์เมียนมา สักการะพระสุพรรณกัลยา",
-    "desc": "ทัวร์เมียนมา ย่างกุ้ง สิเรียม สักการะพระสุพรรณกัลยา ไหว้เทพทันใจ เทพกระซิบ และพระอุปคุตมหาบารมีสิเรียม",
-    "pdf": "Outbound/Myanmar/pdf/BT-MMR92_8M.pdf",
-    "desc_en": "Tour to Myanmar, Yangon, Siriam, pay homage to Phra Suphankalaya, pay homage to the Thanjai god, whispering god and Phra Upakut Mahabarami Siriam.",
-    "duration_en": "2 days 1 night",
-    "periodText_en": "May - July 2026"
-  },
-  {
-    "id": "BT-JAI23_FD",
-    "type": "outbound",
-    "country": "อินเดีย",
-    "city": "ชัยปุระ, อัครา",
-    "startMonth": "2026-03",
-    "endMonth": "2026-06",
-    "periodText": "มี.ค. - มิ.ย. 2569",
-    "image": "Outbound/India/banner/BT-JAI23_FD.png",
-    "price": "18,999",
-    "duration": "4 วัน 2 คืน",
-    "airline": "airasia.png",
-    "shortDesc": "ทัวร์อินเดีย ชัยปุระ อัครา",
-    "desc": "ทัวร์อินเดีย เที่ยวชัยปุระ อัครา ชมทัชมาฮาล พระราชวังสายลม City Palace และนั่งรถจี๊ปขึ้นแอมเบอร์ฟอร์ต",
-    "pdf": "Outbound/Mongolia/pdf/BT-JAI23_FD.pdf",
-    "desc_en": "Tour of India, visit Jaipur, Agra, see the Taj Mahal, City Palace and take a jeep up Amber Fort.",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "March - June 2026"
-  },
-  {
     "id": "MRT-MNVZ01",
     "type": "outbound",
     "country": "มองโกเลีย",
@@ -2729,63 +3501,6 @@
     "periodText_en": "May - September 2026"
   },
   {
-    "id": "GO1CEB-5J102",
-    "type": "outbound",
-    "country": "ฟิลิปปินส์",
-    "city": "เซบู, โบโฮล",
-    "startMonth": "2026-03",
-    "endMonth": "2026-06",
-    "periodText": "มี.ค. - มิ.ย. 2569",
-    "image": "Outbound/Philippines/banner/GO1CEB-5J102.png",
-    "price": "28,900",
-    "duration": "4 วัน 2 คืน",
-    "airline": "CebuPacific.png",
-    "shortDesc": "ทัวร์ฟิลิปปินส์ เซบู โบโฮล",
-    "desc": "ทัวร์ฟิลิปปินส์ เที่ยวเซบู โบโฮล ชม Chocolate Hills ล่องเรือแม่น้ำโลบ็อก ดำน้ำชมฉลามวาฬ และสัมผัสธรรมชาติทะเลสวย",
-    "pdf": "Outbound/Philippines/pdf/GO1CEB-5J102.pdf",
-    "desc_en": "Philippines tour, visit Cebu, Bohol, see the Chocolate Hills, take a boat trip on the Loboc River. ",
-    "duration_en": "4 days 2 nights",
-    "periodText_en": "March - June 2026"
-  },
-  {
-    "id": "GO1DEL-AI002",
-    "type": "outbound",
-    "country": "อินเดีย",
-    "city": "เลห์, ลาดักห์, นูบร้าวัลเลย์",
-    "startMonth": "2026-05",
-    "endMonth": "2026-07",
-    "periodText": "พ.ค. - ก.ค. 2569",
-    "image": "Outbound/India/banner/GO1DEL-AI002.png",
-    "price": "37,900",
-    "duration": "7 วัน 5 คืน",
-    "airline": "AirIndia.png",
-    "shortDesc": "ทัวร์เลห์ ลาดักห์",
-    "desc": "ทัวร์อินเดีย เลห์ ลาดักห์ เที่ยวนูบร้าวัลเลย์ วัดดิสกิต พระราชวังเลห์ ขี่อูฐทะเลทราย และชมวิวเทือกเขาหิมาลัยสุดอลังการ",
-    "pdf": "Outbound/India/pdf/GO1DEL-AI002.pdf",
-    "desc_en": "India tour, Leh, Ladakh, visit Nubra Valley, Diskit Temple, Leh Palace ",
-    "duration_en": "7 days 5 nights",
-    "periodText_en": "May - July 2026"
-  },
-  {
-    "id": "GOBOM-TG001",
-    "type": "outbound",
-    "country": "อินเดีย",
-    "city": "มุมไบ, ปูเน่, ออรังกาบัด",
-    "startMonth": "2026-05",
-    "endMonth": "2026-07",
-    "periodText": "พ.ค. - ก.ค. 2569",
-    "image": "Outbound/India/banner/GOBOM-TG001.png",
-    "price": "42,500",
-    "duration": "6 วัน 4 คืน",
-    "airline": "ThaiAirways.png",
-    "shortDesc": "ทัวร์อินเดีย ถ้ำอชันตา เอลโลรา",
-    "desc": "ทัวร์อินเดีย มุมไบ ปูเน่ ออรังกาบัด ชมถ้ำอชันตา เอลโลรา มรดกโลกยูเนสโก วัดสิทธิวินายัก และสถานที่ศักดิ์สิทธิ์ชื่อดัง",
-    "pdf": "Outbound/India/pdf/GO1BOM-TG001.pdf",
-    "desc_en": "Tour India, Mumbai, Pune, Aurangabad, visit Ajanta Ellora Caves, UNESCO World Heritage Site. ",
-    "duration_en": "6 days 4 nights",
-    "periodText_en": "May - July 2026"
-  },
-  {
     "id": "TF-PBHB302",
     "type": "outbound",
     "country": "ภูฏาน",
@@ -2803,28 +3518,6 @@
     "desc_en": "Bhutan tour, travel to Paro, Thimphu, Punakha, visit Taktsang Temple, the Big Buddha of Luang Pho Satchatham. ",
     "duration_en": "5 days 4 night",
     "periodText_en": "April - October 2026"
-  },
-  {
-    "id": "GO3CAI-AMM-RJ003",
-    "type": "outbound",
-    "country": [
-      "อียิปต์",
-      "จอร์แดน"
-    ],
-    "city": "ไคโร, กีซา, เพตรา, เดดซี",
-    "startMonth": "2026-06",
-    "endMonth": "2026-08",
-    "periodText": "มิ.ย. - ส.ค. 2569",
-    "image": "Outbound/MiddleEast/banner/GO3CAI-AMM-RJ003.png",
-    "price": "83,900",
-    "duration": "8 วัน 5 คืน",
-    "airline": "RoyalJordanian.png",
-    "shortDesc": "ทัวร์อียิปต์ จอร์แดน",
-    "desc": "ทัวร์อียิปต์ จอร์แดน เที่ยวไคโร กีซา เพตรา เดดซี ชมมหาพีระมิด สฟิงซ์ เมืองเพตรา และลอยตัวในทะเลเดดซี",
-    "pdf": "Outbound/MiddleEast/pdf/GO3CAI-AMM-RJ003.pdf",
-    "desc_en": "Tour Egypt, Jordan, visit Cairo, Giza, Petra, Dead Sea, see the Great Pyramid, Sphinx, Petra, and float in the Dead Sea.",
-    "duration_en": "8 days 5 nights",
-    "periodText_en": "June - August 2026"
   },
   {
     "id": "BT-EUR733_AZ",
