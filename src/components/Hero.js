@@ -9,7 +9,7 @@ import { assetPath } from '@/lib/assets';
 
 const serviceImages = [
   'assets/images/backgrounds/service-hotel.jpg',
-  'assets/images/backgrounds/Home4.jpg',
+  'assets/images/backgrounds/service-van.jpg',
   'assets/images/backgrounds/service-custom-tour.jpg',
 ];
 
