@@ -1,20 +1,27 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Script from 'next/script';
 
 export function GoogleAnalytics({ gaId, consent }) {
+  const tracked = useRef(false);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (!window.gtag) return;
 
     if (consent) {
       window.gtag('consent', 'update', { analytics_storage: 'granted' });
-      window.gtag('event', 'page_view', { page_path: window.location.pathname });
+      if (!tracked.current) {
+        tracked.current = true;
+        window.gtag('event', 'page_view', { page_path: window.location.pathname });
+      }
     } else {
       window.gtag('consent', 'update', { analytics_storage: 'denied' });
     }
   }, [consent]);
+
+  if (!consent) return null;
 
   return (
     <>
@@ -27,7 +34,7 @@ export function GoogleAnalytics({ gaId, consent }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('consent', 'default', { analytics_storage: 'denied' });
+          gtag('consent', 'default', { analytics_storage: 'granted' });
           gtag('config', '${gaId}', { send_page_view: false });
         `}
       </Script>
