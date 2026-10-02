@@ -23,6 +23,8 @@ export interface Tour {
   type: TourType;
   popular?: boolean;
   popularOrder?: number;
+  popularEn?: boolean;
+  popularEnOrder?: number;
   country?: string | string[];
   city?: string;
   province?: string;

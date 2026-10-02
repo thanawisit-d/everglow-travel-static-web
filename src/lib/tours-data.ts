@@ -16,9 +16,14 @@ export function getTours(locale: Locale = 'th'): Tour[] {
 }
 
 export function getPopularTours(locale: Locale = 'th'): Tour[] {
-  return cache[locale]
-    .filter((t) => t.popular === true)
-    .sort((a, b) => (a.popularOrder ?? 999) - (b.popularOrder ?? 999))
+  const isEn = locale === 'en';
+  return [...cache.th]
+    .filter((t) => (isEn ? t.popularEn === true : t.popular === true))
+    .sort((a, b) =>
+      isEn
+        ? (a.popularEnOrder ?? 999) - (b.popularEnOrder ?? 999)
+        : (a.popularOrder ?? 999) - (b.popularOrder ?? 999),
+    )
     .slice(0, 5);
 }
 
