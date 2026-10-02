@@ -8,9 +8,9 @@ import config from '@/data/site-config.json';
 import { assetPath } from '@/lib/assets';
 
 const serviceImages = [
-  'assets/images/backgrounds/Home1.jpg',
+  'assets/images/backgrounds/service-hotel.jpg',
   'assets/images/backgrounds/Home4.jpg',
-  'assets/images/backgrounds/Home5.jpg',
+  'assets/images/backgrounds/service-custom-tour.jpg',
 ];
 
 export default function Hero({ locale }) {
