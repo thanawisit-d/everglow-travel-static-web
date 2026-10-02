@@ -1,7 +1,8 @@
 'use client';
 
-import { useMemo, useState, useEffect } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
+import { X } from 'lucide-react';
 import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
 import config from '@/data/site-config.json';
@@ -15,7 +16,48 @@ import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
 
+const TRAVEL_GALLERY_FALLBACKS = ['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'];
+const TRAVEL_GALLERY_EXTENSIONS = ['jpeg', 'jpg', 'png'];
+
+function TravelGalleryImage({ number, fallback, alt }) {
+  const [failure, setFailure] = useState(0);
+  if (failure > TRAVEL_GALLERY_EXTENSIONS.length) return null;
+
+  const src = failure < TRAVEL_GALLERY_EXTENSIONS.length
+    ? `travel_gallery/${String(number).padStart(2, '0')}.${TRAVEL_GALLERY_EXTENSIONS[failure]}`
+    : `assets/images/backgrounds/${fallback}`;
+
+  return (
+    <Image
+      key={failure}
+      src={assetPath(src)}
+      alt={alt}
+      fill
+      sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw"
+      loading="lazy"
+      onError={() => setFailure((previous) => Math.max(previous, failure + 1))}
+    />
+  );
+}
+
 export default function LocaleClient({ locale, monthlySnapshot }) {
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const galleryDialogRef = useRef(null);
+
+  useEffect(() => {
+    if (!selectedPhoto) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [selectedPhoto]);
+
+  function openGalleryPhoto(event) {
+    const image = event.currentTarget.querySelector('img');
+    if (!image || !image.naturalWidth) return;
+    setSelectedPhoto({ src: image.getAttribute('src'), alt: image.alt });
+    if (!galleryDialogRef.current.open) galleryDialogRef.current.showModal();
+  }
+
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
   const toursData = isEn ? toursDataEn : toursDataTh;
@@ -99,14 +141,45 @@ export default function LocaleClient({ locale, monthlySnapshot }) {
         <h2>{t.galleryTitle}</h2>
         <p className="subtitle">{t.gallerySubtitle}</p>
         <div className="gallery-grid">
-          {['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'].map((img, i) => (
-            <div className="gallery-item" key={i}>
-              <Image src={assetPath(`assets/images/backgrounds/${img}`)} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} fill sizes="(max-width: 600px) 100vw, (max-width: 992px) 50vw, 25vw" loading="lazy" />
+          {TRAVEL_GALLERY_FALLBACKS.map((img, i) => (
+            <button
+              type="button"
+              className="gallery-item"
+              key={i}
+              aria-haspopup="dialog"
+              aria-label={isEn ? `View photo ${i + 1}` : `ดูรูปที่ ${i + 1}`}
+              onClick={openGalleryPhoto}
+            >
+              <TravelGalleryImage number={i + 1} fallback={img} alt={isEn ? `Travel ${i + 1}` : `รูปเที่ยว ${i + 1}`} />
               <div className="overlay"><span>{t.viewPhoto}</span></div>
-            </div>
+            </button>
           ))}
         </div>
       </section>
+
+      <dialog
+        ref={galleryDialogRef}
+        className="travel-gallery-lightbox"
+        aria-label={selectedPhoto?.alt || t.galleryTitle}
+        onClose={() => setSelectedPhoto(null)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) event.currentTarget.close();
+        }}
+      >
+        <div className="travel-gallery-lightbox__image">
+          {selectedPhoto && (
+            <Image src={selectedPhoto.src} alt={selectedPhoto.alt} fill sizes="100vw" className="travel-gallery-lightbox__photo" />
+          )}
+          <button
+            type="button"
+            className="travel-gallery-lightbox__close"
+            aria-label={isEn ? 'Close photo' : 'ปิดรูปภาพ'}
+            onClick={() => galleryDialogRef.current.close()}
+          >
+            <X size={22} aria-hidden="true" />
+          </button>
+        </div>
+      </dialog>
 
       <ReviewSection locale={locale} />
     </div>
