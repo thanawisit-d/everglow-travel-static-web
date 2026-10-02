@@ -61,11 +61,10 @@ async function handleEvent(
     case 'message': {
       if (event.message?.type !== 'text' || !event.message.text) return;
 
-      const userId = event.source?.userId;
       const text = event.message.text;
 
       logger.info(`[${reqId}] LINE message received`, {
-        hasUser: Boolean(userId),
+        sourceType: event.source?.type,
         intent: null,
       });
 
@@ -89,12 +88,12 @@ async function handleEvent(
           { type: 'text', text: lineConfig.welcomeMessage },
         ]);
       }
-      logger.info(`[${reqId}] New follower`, { userId: event.source?.userId });
+      logger.info(`[${reqId}] New follower`, { sourceType: event.source?.type });
       return;
     }
 
     case 'unfollow':
-      logger.info('User unfollowed', { userId: event.source?.userId });
+      logger.info(`[${reqId}] User unfollowed`, { sourceType: event.source?.type });
       return;
 
     case 'postback':

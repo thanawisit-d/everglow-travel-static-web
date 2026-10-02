@@ -10,144 +10,25 @@ const content = {
     effectiveDate: 'ประกาศ ณ วันที่ 17 สิงหาคม 2569',
     sections: [
       {
-        heading: '1. บทนำ',
-        body: 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด ("บริษัท") เล็งเห็นถึงความสำคัญของการคุ้มครองข้อมูลส่วนบุคคลของลูกค้า ผู้เข้าชมเว็บไซต์ และผู้ใช้บริการทุกท่าน นโยบายคุ้มครองข้อมูลส่วนบุคคลฉบับนี้จัดทำขึ้นเพื่ออธิบายวิธีการที่บริษัทเก็บรวบรวม ใช้ เปิดเผย และคุ้มครองข้อมูลส่วนบุคคลของท่าน ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 ("พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล") การใช้บริการเว็บไซต์ www.everglowtravel.com ("เว็บไซต์") ถือว่าท่านได้อ่านและเข้าใจนโยบายคุ้มครองข้อมูลส่วนบุคคลฉบับนี้แล้ว',
+        body: 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด (สำนักงานใหญ่) ตั้งอยู่ที่ 25/163 หมู่ 4 ตำบลบางไผ่ อำเภอเมือง นนทบุรี จังหวัดนนทบุรี ตระหนักและเคารพในความเป็นส่วนตัวของบุคคล และให้ความสำคัญกับการปกป้องข้อมูลที่จัดเก็บ เพื่อความเป็นส่วนตัวของท่าน บริษัทฯ จึงได้กำหนดหลักการและนโยบายความเป็นส่วนตัวขึ้นมา เพื่อควบคุมการใช้ ปกป้อง และปกปิดข้อมูลของท่านจากบุคคลภายนอก นโยบายนี้ใช้กับเว็บไซต์ **www.everglowtravel.com** โดยเราจะจัดเก็บและรวบรวมข้อมูลที่จำเป็นเท่านั้น ซึ่งขึ้นอยู่กับบริการที่ท่านใช้งานผ่านเว็บไซต์ของเรา เช่น การค้นหาและดูรายละเอียดทัวร์ การติดต่อผ่านโทรศัพท์ อีเมล หรือ LINE Official Account ทั้งนี้การดำเนินการทั้งหมดเป็นไปตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562',
       },
       {
-        heading: '2. ข้อมูลผู้ควบคุมข้อมูลส่วนบุคคล',
-        table: [
-          ['ชื่อบริษัท', 'บริษัท เอเวอร์โกลว์ โกลบอล จำกัด'],
-          ['เลขทะเบียนนิติบุคคล', '[เลขทะเบียนบริษัท]'],
-          ['ที่อยู่สำนักงาน', '[ที่อยู่สำนักงานจดทะเบียน]'],
-          ['โทรศัพท์', '099-632-6146'],
-          ['อีเมล', 'everglowtravel@gmail.com'],
-        ],
+        body: 'เมื่อท่านเข้าใช้งานเว็บไซต์ เราจะมีการจัดเก็บข้อมูลการเข้า-ออกในการใช้งานโดยอัตโนมัติ เช่น หมายเลขไอพี (IP Address) และประเภทของโปรแกรมบราวเซอร์ (Browser) โดยหมายเลขไอพีถูกจัดเก็บโดยผู้ให้บริการโฮสติ้งของเว็บไซต์ ส่วนข้อมูลเกี่ยวกับอุปกรณ์ (Device Information) เช่น ประเภทอุปกรณ์ ระบบปฏิบัติการ และขนาดจอ รวมถึงข้อมูลการใช้งาน (Usage Information) เช่น หน้าเว็บที่เข้าชม และแหล่งที่มาของการเข้าชม จะถูกจัดเก็บก็ต่อเมื่อท่านได้ให้ความยินยอมผ่านแบบฟอร์มคุกกี้ โดยเราจะนำข้อมูลของท่านไปใช้ให้เป็นไปตามกฎหมายและกฎเกณฑ์ต่างๆ ที่เกี่ยวข้อง เพื่อสร้างสรรค์และปรับปรุงการให้บริการให้ดียิ่งขึ้น',
       },
       {
-        heading: '3. ข้อมูลส่วนบุคคลที่บริษัทเก็บรวบรวม',
-        body: 'บริษัทเก็บรวบรวมข้อมูลส่วนบุคคลของท่าน 2 ประเภท ดังนี้',
-        sub: [
-          {
-            title: '3.1 ข้อมูลที่เก็บรวบรวมโดยอัตโนมัติ',
-            body: 'เมื่อท่านเข้าใช้งานเว็บไซต์ บริษัทจะเก็บรวบรวมข้อมูลโดยอัตโนมัติ ได้แก่ ข้อมูลเกี่ยวกับอุปกรณ์ (Device Information) เช่น ประเภทอุปกรณ์ ระบบปฏิบัติการ ขนาดจอ ประเภทเบราว์เซอร์, ข้อมูลเกี่ยวกับการใช้งาน (Usage Information) เช่น หน้าเว็บที่เข้าชม ระยะเวลาที่เข้าชม แหล่งที่มาของการเข้าชม, ข้อมูล IP Address ของท่าน, Cookie และเทคโนโลยีที่คล้ายคลึงกัน',
-          },
-          {
-            title: '3.2 ข้อมูลที่ท่านให้แก่บริษัทโดยตรง',
-            body: 'ในกรณีที่ท่านติดต่อบริษัทผ่านช่องทางต่างๆ เช่น โทรศัพท์ หรือ LINE Official Account บริษัทอาจเก็บรวบรวมข้อมูล ได้แก่ ชื่อ-นามสกุล, หมายเลขโทรศัพท์, LINE ID, ข้อความหรือข้อมูลอื่นๆ ที่ท่านให้แก่บริษัท',
-          },
-        ],
+        body: 'เราเก็บรวบรวมข้อมูลส่วนบุคคลของท่านเพื่อประโยชน์ ดังนี้ (ก) เพื่อความสะดวกในการติดต่อและให้บริการจองทัวร์ (ข) เพื่อให้บริการและติดต่อสื่อสารผ่านช่องทาง LINE Official Account (ค) เพื่อตอบคำถามและแก้ไขปัญหาที่ท่านแจ้ง (ง) เพื่อวัดความสนใจและความพึงพอใจในการให้บริการต่างๆ ผ่านการวิเคราะห์การเข้าชม (จ) เพื่อใช้เป็นข้อมูลในการพัฒนาบริการใหม่ๆ ให้ตรงกับความต้องการของท่าน และเพื่อทำการตลาดผ่าน Facebook (ฉ) เพื่อปฏิบัติตามหน้าที่ตามกฎหมาย โดย (ง) และ (จ) จะดำเนินการเมื่อท่านได้ให้ความยินยอมเท่านั้น ส่วน (ก) (ข) (ค) และ (ฉ) เป็นฐานของสัญญาและหน้าที่ตามกฎหมาย',
       },
       {
-        heading: '4. วัตถุประสงค์ในการเก็บรวบรวมและใช้ข้อมูลส่วนบุคคล',
-        table: [
-          ['วัตถุประสงค์', 'ฐานทางกฎหมาย'],
-          ['เพื่อให้บริการจองทัวร์และติดต่อกลับ', 'สัญญา (มาตรา 24(1))'],
-          ['เพื่อวิเคราะห์จำนวนผู้เข้าชมและปรับปรุงเว็บไซต์', 'ความยินยอม (มาตรา 19)'],
-          ['เพื่อทำการตลาดผ่าน Facebook (Facebook Pixel)', 'ความยินยอม (มาตรา 19)'],
-          ['เพื่อปฏิบัติตามกฎหมายและระเบียบที่เกี่ยวข้อง', 'หน้าทางกฎหมาย (มาตรา 24(2))'],
-        ],
+        body: 'โดยข้อมูลที่เก็บอาจรวมถึงข้อมูลที่ต้องระบุตัวตนของท่าน ซึ่งได้รับจากท่านเมื่อท่านติดต่อเราผ่านโทรศัพท์ อีเมล หรือ LINE Official Account เช่น ชื่อ-นามสกุล หมายเลขโทรศัพท์ ที่อยู่อีเมล LINE ID และข้อความหรือข้อมูลที่ท่านส่งให้เรา ซึ่งจะถือเป็นข้อมูลที่เป็นความลับ โดยเราไม่ขาย และไม่ให้เช่าข้อมูลส่วนบุคคลของท่านแก่บุคคลที่ไม่เกี่ยวข้อง อย่างไรก็ตาม เพื่อให้บริการต่างๆ สามารถดำเนินการได้ จึงมีการเปิดเผยข้อมูลที่จำเป็นให้แก่ Google LLC (สหรัฐอเมริกา) เพื่อวิเคราะห์การเข้าชมเว็บไซต์, Meta Platforms Inc. (สหรัฐอเมริกา) เพื่อทำการตลาดผ่าน Facebook, LINE Corporation (ญี่ปุ่น) เพื่อติดต่อสื่อสารผ่าน LINE และ Vercel Inc. (สหรัฐอเมริกา) เพื่อจัดเก็บเว็บไซต์และบันทึกการทำงานของระบบ โดยการเปิดเผยข้อมูลแก่ Google LLC และ Meta Platforms Inc. จะเกิดขึ้นเฉพาะเมื่อท่านได้ให้ความยินยอม',
       },
       {
-        heading: '5. การเปิดเผยข้อมูลส่วนบุคคลแก่บุคคลภายนอก',
-        body: 'บริษัทอาจเปิดเผยข้อมูลส่วนบุคคลของท่านแก่บุคคลภายนอก ดังต่อไปนี้',
-        table: [
-          ['ผู้รับข้อมูล', 'วัตถุประสงค์', 'ประเทศที่รับข้อมูล'],
-          ['Google LLC (Google Analytics)', 'วิเคราะห์การเข้าชมเว็บไซต์', 'สหรัฐอเมริกา'],
-          ['Meta Platforms Inc. (Facebook Pixel)', 'ทำการตลาดผ่าน Facebook', 'สหรัฐอเมริกา'],
-          ['LINE Corporation', 'ติดต่อสื่อสารผ่าน LINE', 'ญี่ปุ่น'],
-        ],
-        footer: 'บริษัทจะดำเนินมาตรการที่เหมาะสมเพื่อคุ้มครองข้อมูลส่วนบุคคลของท่านตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล รวมถึงการดำเนินมาตรการรักษาความปลอดภัยของข้อมูลส่วนบุคคลตามมาตรา 37 และการโอนย้ายข้อมูลข้ามพรมแดนตามมาตรา 28-29',
+        body: 'เราจะเก็บรักษาข้อมูลของท่านเท่าที่จำเป็นเพื่อวัตถุประสงค์ดังกล่าว หรือจนกว่าท่านจะขอให้ลบข้อมูล เว้นแต่กฎหมายกำหนดให้เก็บรักษาไว้ต่อ อาทิ ข้อมูลการติดต่อและเอกสารการจองจะเก็บรักษาตามระยะเวลาที่กฎหมายบัญชีและภาษีกำหนด ข้อมูลการใช้งานเว็บไซต์จะเก็บรักษาตามระยะเวลาที่ Google Analytics กำหนด และบันทึกการทำงานของระบบจะเก็บรักษาตามระยะเวลาที่ผู้ให้บริการโฮสติ้งกำหนด ส่วนการตั้งค่าความยินยอมของท่านจะถูกบันทึกไว้ในอุปกรณ์ของท่านจนกว่าท่านจะล้างข้อมูลเบราว์เซอร์',
       },
       {
-        heading: '6. การเก็บรักษาข้อมูลส่วนบุคคล',
-        body: 'บริษัทจะเก็บรักษาข้อมูลส่วนบุคคลของท่านไว้ตราบเท่าที่จำเป็นเพื่อดำเนินการตามวัตถุประสงค์ที่ระบุไว้ในนโยบายฉบับนี้ หรือจนกว่าท่านจะขอให้ลบข้อมูล',
-        table: [
-          ['ประเภทข้อมูล', 'ระยะเวลาการเก็บรักษา'],
-          ['ข้อมูลการติดต่อ (ชื่อ, เบอร์โทร)', 'จนกว่าจะขอให้ลบ'],
-          ['ข้อมูลการใช้งานเว็บไซต์', 'สูงสุด 26 เดือน (ตาม Google Analytics)'],
-          ['บันทึกความยินยอม (Consent Log)', 'อย่างน้อย 12 เดือน'],
-        ],
+        body: 'คุกกี้ (Cookies) มีไว้เพื่อช่วยให้การให้บริการต่างๆ บนเว็บไซต์แก่ท่านสะดวกขึ้น โดยคุกกี้คือไฟล์ข้อมูลขนาดเล็กที่ระบบคอมพิวเตอร์ของเราจะติดตั้งไว้ที่อุปกรณ์ของท่านเมื่อท่านเปิดเว็บไซต์ คุกกี้จะช่วยให้เว็บไซต์จดจำการตั้งค่าของท่าน แต่ไม่สามารถใช้ระบุตัวตนของท่านได้โดยตรง เว็บไซต์ของเราใช้คุกกี้ _ga และ _gid ของ Google Analytics เพื่อระบุตัวตนผู้ใช้ และคุกกี้ _fbp ของ Facebook เพื่อติดตามพฤติกรรมผู้ใช้จากโฆษณา โดยคุกกี้เหล่านี้จะถูกตั้งค่าเมื่อท่านได้ให้ความยินยอมเท่านั้น ส่วนการตั้งค่าความยินยอมจะถูกบันทึกไว้ใน Local Storage ของเบราว์เซอร์ ท่านสามารถเปลี่ยนแปลงการตั้งค่าได้ทุกเมื่อโดยกดปุ่ม "ตั้งค่า Cookie" ที่ด้านล่างของเว็บไซต์',
       },
       {
-        heading: '7. สิทธิของเจ้าของข้อมูลส่วนบุคคล',
-        body: 'ท่านมีสิทธิดังต่อไปนี้ตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล',
-        table: [
-          ['สิทธิ', 'รายละเอียด'],
-          ['สิทธิ์เข้าถึง (Access)', 'ท่านมีสิทธิ์ขอเข้าถึงข้อมูลส่วนบุคคลของท่านที่อยู่ในความดูแลของบริษัท'],
-          ['สิทธิ์แก้ไข (Correction)', 'ท่านมีสิทธิ์ขอแก้ไขข้อมูลส่วนบุคคลของท่านให้ถูกต้องและเป็นปัจจุบัน'],
-          ['สิทธิ์ลบ (Deletion)', 'ท่านมีสิทธิ์ขอให้ลบข้อมูลส่วนบุคคลของท่าน เว้นแต่มีเหตุจำเป็นที่บริษัทต้องเก็บรักษาไว้'],
-          ['สิทธิ์คัดค้าน (Objection)', 'ท่านมีสิทธิ์คัดค้านการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่าน'],
-          ['สิทธิ์โอนย้าย (Portability)', 'ท่านมีสิทธิ์ขอรับข้อมูลส่วนบุคคลของท่านในรูปแบบที่สามารถโอนย้ายได้'],
-          ['สิทธิ์ถอนความยิน Consent', 'ท่านมีสิทธิ์ถอนความยิน Consent ที่ได้ให้ไว้แก่บริษัทได้ทุกเมื่อ'],
-        ],
-        footer: 'ท่านสามารถใช้สิทธิดังกล่าวได้โดยติดต่อบริษัทผ่านช่องทางที่ระบุในข้อ 10 บริษัทจะพิจารณาและดำเนินการตามคำขอภายใน 30 วันนับแต่วันที่ได้รับคำขอ',
-      },
-      {
-        heading: '8. มาตรการรักษาความปลอดภัย',
-        body: 'บริษัทดำเนินมาตรการรักษาความปลอดภัยที่เหมาะสมเพื่อป้องกันการสูญหาย การเข้าถึงโดยไม่ได้รับอนุญาต การใช้ การเปลี่ยนแปลง หรือการเปิดเผยข้อมูลส่วนบุคคลโดยไม่ชอบด้วยกฎหมาย ซึ่งสอดคล้องกับมาตรา 37 แห่ง พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล',
-      },
-      {
-        heading: '9. นโยบายคุกกี้ (Cookie Policy)',
-        sub: [
-          {
-            title: '9.1 คุกกี้คืออะไร',
-            body: 'คุกกี้ (Cookie) คือไฟล์ข้อความขนาดเล็กที่ถูกดาวน์โหลดไปยังอุปกรณ์ของท่านเมื่อท่านเข้าเยี่ยมชมเว็บไซต์ คุกกี้ช่วยให้เว็บไซต์จดจำการตั้งค่าและการเข้าชมครั้งก่อนๆ ของท่าน',
-          },
-          {
-            title: '9.2 คุกกี้ที่เว็บไซต์ใช้งาน',
-            body: 'เว็บไซต์ www.everglowtravel.com ใช้คุกกี้ดังต่อไปนี้',
-            table: [
-              ['ชื่อคุกกี้', 'ผู้ให้บริการ', 'วัตถุประสงค์', 'ระยะเวลา', 'ต้องขอ consent'],
-              ['everglow_consent', 'บริษัท', 'บันทึกความยินยอมในการใช้คุกกี้', '12 เดือน', 'ไม่ต้อง'],
-              ['_ga', 'Google Analytics', 'ระบุตัวตนผู้ใช้', '2 ปี', 'ต้องขอ'],
-              ['_gid', 'Google Analytics', 'ระบุตัวตนผู้ใช้', '24 ชั่วโมง', 'ต้องขอ'],
-              ['_fbp', 'Facebook (Meta)', 'ติดตามพฤติกรรมผู้ใช้จากโฆษณา Facebook', '3 เดือน', 'ต้องขอ'],
-            ],
-          },
-          {
-            title: '9.3 วิธีการจัดการคุกกี้',
-            body: 'ท่านสามารถจัดการคุกกี้ได้โดยการกดปุ่ม "ตั้งค่า Cookie" ที่ด้านล่างของเว็บไซต์ หรือเปลี่ยนแปลงการตั้งค่าได้ตลอดเวลาผ่าน Cookie Consent Banner ที่ปรากฏเมื่อท่านเข้าเว็บไซต์ครั้งแรก',
-          },
-          {
-            title: '9.4 คุกกี้ของบุคคลที่สาม',
-            table: [
-              ['ผู้ให้บริการ', 'วัตถุประสงค์', 'นโยบายคุกกี้'],
-              ['Google (Google Analytics)', 'วิเคราะห์การเข้าชม', 'https://policies.google.com/privacy'],
-              ['Meta (Facebook Pixel)', 'ทำการตลาด', 'https://www.facebook.com/privacy/policy'],
-            ],
-          },
-          {
-            title: '9.5 การโอนย้ายข้อมูลไปต่างประเทศ',
-            body: 'ข้อมูลที่รวบรวมผ่านคุกกี้อาจถูกโอนย้ายและจัดเก็บใน server 位于ต่างประเทศ ได้แก่ Google LLC (สหรัฐอเมริกา) และ Meta Platforms Inc. (สหรัฐอเมริกา) บริษัทดำเนินมาตรการที่เหมาะสมเพื่อคุ้มครองข้อมูลส่วนบุคคลของท่านตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล มาตรา 28-29',
-          },
-        ],
-      },
-      {
-        heading: '10. ช่องทางการติดต่อ',
-        body: 'หากท่านมีคำถาม ข้อเสนอแนะ หรือต้องการใช้สิทธิตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล ท่านสามารถติดต่อบริษัทได้ที่',
-        table: [
-          ['ช่องทาง', 'รายละเอียด'],
-          ['โทรศัพท์', '099-632-6146'],
-          ['อีเมล', 'everglowtravel@gmail.com'],
-          ['LINE Official Account', '@everglowtravel'],
-        ],
-      },
-      {
-        heading: '11. สิทธิในการร้องเรียน',
-        body: 'หากท่านเห็นว่าบริษัทไม่ได้ปฏิบัติตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล ท่านมีสิทธิ์ร้องเรียนต่อคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC) ได้',
-        table: [
-          ['ช่องทาง', 'รายละเอียด'],
-          ['เว็บไซต์', 'https://pdpc.th'],
-          ['โทรศัพท์', '02-141-6789'],
-        ],
-      },
-      {
-        heading: '12. การแก้ไขนโยบายคุ้มครองข้อมูลส่วนบุคคล',
-        body: 'บริษัทอาจแก้ไขนโยบายคุ้มครองข้อมูลส่วนบุคคลนี้เป็นครั้งคราว โดยจะแจ้งให้ท่านทราบผ่านเว็บไซต์หรือช่องทางการสื่อสารอื่นๆ ที่เหมาะสม',
-      },
-      {
-        heading: '13. ประสิทธิผลของนโยบายคุ้มครองข้อมูลส่วนบุคคล',
-        body: 'นโยบายคุ้มครองข้อมูลส่วนบุคคลนี้มีผลใช้บังคับตั้งแต่วันที่ 17 สิงหาคม 2569 เป็นต้นไป',
+        body: 'หากท่านมีคำถาม ข้อเสนอแนะ หรือต้องการใช้สิทธิตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล เช่น สิทธิ์เข้าถึง แก้ไข ลบ คัดค้าน หรือถอนความยินยอมเกี่ยวกับข้อมูลของท่าน ท่านสามารถติดต่อเราได้ทางโทรศัพท์หมายเลข 099-632-6146 อีเมล everglowtravel@gmail.com หรือ LINE Official Account @Everglowtravel โดยเราจะดำเนินการตามคำขอโดยทั่วไปภายใน 30 วัน และหากเห็นว่าเราปฏิบัติไม่ถูกต้องตามกฎหมาย ท่านสามารถร้องเรียนต่อคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC) ได้ที่ https://pdpc.th ทั้งนี้ เราดำเนินมาตรการที่เหมาะสมในการป้องกันข้อมูลส่วนบุคคลของท่านจากการสูญหาย การเข้าถึงโดยไม่ได้รับอนุญาต และการเปิดเผยโดยไม่ชอบด้วยกฎหมาย ตามมาตรา 37 แห่งพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562',
       },
     ],
   },
@@ -157,149 +38,60 @@ const content = {
     effectiveDate: 'Effective Date: August 17, 2026',
     sections: [
       {
-        heading: '1. Introduction',
-        body: 'Everglow Global Co., Ltd. ("the Company") recognizes the importance of protecting the personal data of our customers, website visitors, and all service users. This Privacy Policy explains how the Company collects, uses, discloses, and protects your personal data in accordance with the Personal Data Protection Act B.E. 2562 ("PDPA"). Your use of the website www.everglowtravel.com ("the Website") constitutes your acknowledgment that you have read and understood this Privacy Policy.',
+        body: 'Everglow Global Co., Ltd. (Head Office), located at 25/163 Moo 4, Bang Phai, Mueang Nonthaburi, Nonthaburi, recognizes and respects your privacy and is committed to protecting the data we hold. This Policy has been established to control the use of, protect and conceal your data from third parties. It applies to the Website **www.everglowtravel.com**, where we collect only the data necessary, depending on the services you use, such as searching for and viewing tour details, and contacting us by phone, email or LINE Official Account. All of this is carried out in accordance with the Personal Data Protection Act B.E. 2562.',
       },
       {
-        heading: '2. Data Controller',
-        table: [
-          ['Item', 'Details'],
-          ['Company Name', 'Everglow Global Co., Ltd.'],
-          ['Registration Number', '[Company Registration Number]'],
-          ['Registered Address', '[Registered Office Address]'],
-          ['Phone', '099-632-6146'],
-          ['Email', 'everglowtravel@gmail.com'],
-        ],
+        body: 'When you use the Website, certain usage data is collected automatically, such as your IP address and browser type. Your IP address is collected by the Website hosting provider. Device information such as device type, operating system and screen size, together with usage information such as the pages you visit and how you arrived at the Website, is collected only if you give your consent through the cookie banner. We will use your data in accordance with applicable laws and regulations, in order to improve and enhance our services.',
       },
       {
-        heading: '3. Personal Data We Collect',
-        body: 'The Company collects two types of personal data:',
-        sub: [
-          {
-            title: '3.1 Automatically Collected Data',
-            body: 'When you visit the Website, we automatically collect device information (device type, operating system, screen size, browser type), usage information (pages visited, duration, referral source), your IP address, and cookies and similar technologies.',
-          },
-          {
-            title: '3.2 Data You Provide Directly',
-            body: 'When you contact us via phone or LINE Official Account, we may collect your name, phone number, LINE ID, and any messages or information you provide.',
-          },
-        ],
+        body: 'We collect your personal data for the following purposes: (a) to make it convenient for you to contact us and for us to provide tour booking services; (b) to provide services and communicate through our LINE Official Account; (c) to answer your questions and resolve issues you report; (d) to measure interest in and satisfaction with our services through traffic analysis; (e) to use as a basis for developing new services that meet your needs, and to conduct marketing via Facebook; and (f) to comply with our legal obligations. Items (d) and (e) are carried out only with your consent, while items (a), (b), (c) and (f) are necessary for the performance of a contract or for compliance with legal obligations.',
       },
       {
-        heading: '4. Purpose of Collection and Use',
-        table: [
-          ['Purpose', 'Legal Basis'],
-          ['To provide tour booking services and contact you', 'Contract (Section 24(1))'],
-          ['To analyze visitor traffic and improve the Website', 'Consent (Section 19)'],
-          ['To conduct marketing via Facebook (Facebook Pixel)', 'Consent (Section 19)'],
-          ['To comply with applicable laws and regulations', 'Legal Obligation (Section 24(2))'],
-        ],
+        body: 'The data we hold may include information that identifies you, which we receive when you contact us by phone, email or LINE Official Account, such as your name, phone number, email address, LINE ID, and any messages or information you send us. This information will be treated as confidential. We do not sell or rent your personal data to unrelated third parties. However, in order to deliver our services, we disclose the necessary data to Google LLC (United States) for Website analytics, to Meta Platforms Inc. (United States) for Facebook marketing, to LINE Corporation (Japan) for communication via LINE, and to Vercel Inc. (United States) for Website hosting and system operation logs. Disclosure to Google LLC and Meta Platforms Inc. occurs only if you have given your consent.',
       },
       {
-        heading: '5. Disclosure to Third Parties',
-        body: 'The Company may disclose your personal data to the following third parties:',
-        table: [
-          ['Recipient', 'Purpose', 'Country'],
-          ['Google LLC (Google Analytics)', 'Website analytics', 'United States'],
-          ['Meta Platforms Inc. (Facebook Pixel)', 'Facebook marketing', 'United States'],
-          ['LINE Corporation', 'Communication via LINE', 'Japan'],
-        ],
-        footer: 'The Company will take appropriate measures to protect your personal data in accordance with the PDPA, including security measures under Section 37 and cross-border data transfer under Sections 28-29.',
+        body: 'We retain your data only as long as necessary for the purposes above, or until you request deletion, unless the law requires us to retain it longer. For example, contact information and booking documents are retained for the period required by accounting and tax law, Website usage data is retained for the period set by Google Analytics, and system operation logs are retained for the period set by the hosting provider. Your consent settings are stored on your device until you clear your browser storage.',
       },
       {
-        heading: '6. Data Retention',
-        body: 'The Company will retain your personal data only as long as necessary for the purposes described in this Policy, or until you request deletion.',
-        table: [
-          ['Data Type', 'Retention Period'],
-          ['Contact information (name, phone)', 'Until deletion is requested'],
-          ['Website usage data', 'Up to 26 months (per Google Analytics)'],
-          ['Consent logs', 'At least 12 months'],
-        ],
+        body: 'Cookies are used to make the services on the Website more convenient for you. A cookie is a small data file that our computer system stores on your device when you open the Website. Cookies help the Website remember your preferences, but cannot identify you directly. We use the _ga and _gid cookies of Google Analytics to identify users, and the _fbp cookie of Facebook to track user behaviour from advertisements. These cookies are only set if you give your consent. Your consent settings themselves are stored in your browser Local Storage. You can change your preferences at any time by clicking the "Cookie Settings" button at the bottom of the Website.',
       },
       {
-        heading: '7. Your Rights',
-        body: 'You have the following rights under the PDPA:',
-        table: [
-          ['Right', 'Description'],
-          ['Access', 'You may request access to your personal data held by the Company'],
-          ['Correction', 'You may request correction of your personal data to be accurate and up-to-date'],
-          ['Deletion', 'You may request deletion of your personal data, unless the Company has grounds to retain it'],
-          ['Objection', 'You may object to the collection, use, or disclosure of your personal data'],
-          ['Portability', 'You may request to receive your personal data in a portable format'],
-          ['Withdraw Consent', 'You may withdraw your consent at any time'],
-        ],
-        footer: 'You may exercise these rights by contacting the Company via the channels in Section 10. The Company will consider and process your request within 30 days of receipt.',
-      },
-      {
-        heading: '8. Security Measures',
-        body: 'The Company implements appropriate security measures to prevent loss, unauthorized access, use, alteration, or disclosure of personal data, in compliance with Section 37 of the PDPA.',
-      },
-      {
-        heading: '9. Cookie Policy',
-        sub: [
-          {
-            title: '9.1 What Are Cookies',
-            body: 'Cookies are small text files downloaded to your device when you visit a website. They help the website remember your preferences and previous visits.',
-          },
-          {
-            title: '9.2 Cookies We Use',
-            body: 'The Website www.everglowtravel.com uses the following cookies:',
-            table: [
-              ['Cookie', 'Provider', 'Purpose', 'Duration', 'Consent Required'],
-              ['everglow_consent', 'Company', 'Stores cookie consent preference', '12 months', 'No'],
-              ['_ga', 'Google Analytics', 'Identifies unique users', '2 years', 'Yes'],
-              ['_gid', 'Google Analytics', 'Identifies unique users', '24 hours', 'Yes'],
-              ['_fbp', 'Facebook (Meta)', 'Tracks user behavior from Facebook ads', '3 months', 'Yes'],
-            ],
-          },
-          {
-            title: '9.3 Managing Cookies',
-            body: 'You can manage cookies by clicking the "Cookie Settings" button at the bottom of the Website, or change your preferences at any time via the Cookie Consent Banner displayed on your first visit.',
-          },
-          {
-            title: '9.4 Third-Party Cookies',
-            table: [
-              ['Provider', 'Purpose', 'Privacy Policy'],
-              ['Google (Google Analytics)', 'Analytics', 'https://policies.google.com/privacy'],
-              ['Meta (Facebook Pixel)', 'Marketing', 'https://www.facebook.com/privacy/policy'],
-            ],
-          },
-          {
-            title: '9.5 International Data Transfers',
-            body: 'Data collected through cookies may be transferred and stored on servers in foreign countries, including Google LLC (United States) and Meta Platforms Inc. (United States). The Company implements appropriate safeguards in accordance with PDPA Sections 28-29.',
-          },
-        ],
-      },
-      {
-        heading: '10. Contact Us',
-        body: 'If you have questions, suggestions, or wish to exercise your rights under the PDPA, please contact us:',
-        table: [
-          ['Channel', 'Details'],
-          ['Phone', '099-632-6146'],
-          ['Email', 'everglowtravel@gmail.com'],
-          ['LINE Official Account', '@everglowtravel'],
-        ],
-      },
-      {
-        heading: '11. Complaints',
-        body: 'If you believe the Company has not complied with the PDPA, you have the right to file a complaint with the Personal Data Protection Committee (PDPC):',
-        table: [
-          ['Channel', 'Details'],
-          ['Website', 'https://pdpc.th'],
-          ['Phone', '02-141-6789'],
-        ],
-      },
-      {
-        heading: '12. Changes to This Policy',
-        body: 'The Company may update this Privacy Policy from time to time. Changes will be communicated via the Website or other appropriate channels.',
-      },
-      {
-        heading: '13. Effective Date',
-        body: 'This Privacy Policy is effective from August 17, 2026 onwards.',
+        body: 'If you have any questions, suggestions, or wish to exercise your rights under the Personal Data Protection Act, such as the right to access, correct, erase, object to the processing of, or withdraw consent for your data, please contact us on 099-632-6146, at everglowtravel@gmail.com, or via LINE Official Account @Everglowtravel. We will generally process your request within 30 days. If you believe we have not complied with the law, you may file a complaint with the Personal Data Protection Committee (PDPC) at https://pdpc.th. In doing so, we apply appropriate measures to protect your personal data against loss, unauthorized access and unlawful disclosure, in accordance with Section 37 of the Personal Data Protection Act B.E. 2562.',
       },
     ],
   },
 };
+
+function renderBody(text) {
+  if (!text) return null;
+  return String(text)
+    .split(/(\*\*[^*]+\*\*)/g)
+    .map((part, i) =>
+      part.startsWith('**') && part.endsWith('**') ? (
+        <strong key={i}>{part.slice(2, -2)}</strong>
+      ) : (
+        part
+      ),
+    );
+}
+
+function renderSection(section, index) {
+  return (
+    <div key={section.heading || index} className="privacy-section">
+      {section.heading && <h2 className="privacy-section-heading">{section.heading}</h2>}
+      {section.body && <p className="privacy-section-body">{renderBody(section.body)}</p>}
+      {section.table && renderTable(section.table)}
+      {section.footer && <p className="privacy-section-footer">{renderBody(section.footer)}</p>}
+      {section.sub?.map((sub) => (
+        <div key={sub.title} className="privacy-sub">
+          <h3 className="privacy-sub-heading">{sub.title}</h3>
+          {sub.body && <p className="privacy-sub-body">{renderBody(sub.body)}</p>}
+          {sub.table && renderTable(sub.table)}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function renderTable(table) {
   if (!table || table.length === 0) return null;
@@ -330,24 +122,6 @@ function renderTable(table) {
           ))}
         </tbody>
       </table>
-    </div>
-  );
-}
-
-function renderSection(section) {
-  return (
-    <div key={section.heading} className="privacy-section">
-      <h2 className="privacy-section-heading">{section.heading}</h2>
-      {section.body && <p className="privacy-section-body">{section.body}</p>}
-      {section.table && renderTable(section.table)}
-      {section.footer && <p className="privacy-section-footer">{section.footer}</p>}
-      {section.sub?.map((sub) => (
-        <div key={sub.title} className="privacy-sub">
-          <h3 className="privacy-sub-heading">{sub.title}</h3>
-          {sub.body && <p className="privacy-sub-body">{sub.body}</p>}
-          {sub.table && renderTable(sub.table)}
-        </div>
-      ))}
     </div>
   );
 }
