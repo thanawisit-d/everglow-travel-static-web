@@ -32,6 +32,23 @@ export default function OutboundClient({ locale, tours }) {
     minPrice, maxPrice, isEn, updateFilter, setPage,
   } = useToursFilter({ tours, locale, extraFilters: { country: '', continent: [] } });
 
+  const emptyContinentLabels = useMemo(() => {
+    const counts = {};
+    tours.forEach(tour => {
+      const countries = Array.isArray(tour.country) ? tour.country : [tour.country];
+      countries.forEach((c) => {
+        const continent = countryToContinent[c];
+        if (continent) counts[continent] = (counts[continent] ?? 0) + 1;
+      });
+    });
+    return filters.continent
+      .filter((c) => !counts[c])
+      .map((c) => {
+        const group = config.countryGroups.find((g) => g.label === c);
+        return isEn ? (group?.labelEn ?? c) : c;
+      });
+  }, [tours, countryToContinent, filters.continent, isEn]);
+
   const [isTransitioning, setIsTransitioning] = useState(false);
   const transitionTimer = useRef(null);
 
@@ -269,8 +286,17 @@ export default function OutboundClient({ locale, tours }) {
                       <path d="m21 21-4.35-4.35" />
                       <path d="M8 11h6" />
                     </svg>
-                    <p>{t.noTours}</p>
-                    <p className="no-result-hint">{t.noToursHint}</p>
+                    {emptyContinentLabels.length > 0 ? (
+                      <>
+                        <p>{t.noToursInContinent}</p>
+                        <p className="no-result-hint">{emptyContinentLabels.join(' · ')} — {t.noToursInContinentHint}</p>
+                      </>
+                    ) : (
+                      <>
+                        <p>{t.noTours}</p>
+                        <p className="no-result-hint">{t.noToursHint}</p>
+                      </>
+                    )}
                   </div>
                 ) : items.map((t) => (
                   <TourCard key={t.id} locale={locale} tour={t} href={`/${locale}/tours/${t.id}`} />

@@ -28,11 +28,8 @@ export default function LocaleClient({ locale, monthlySnapshot }) {
     setMonthly(selectMonthlyTours({ locale }));
   }, [locale]);
 
-  // Popular tours come straight from the data layer (same source as the LINE
-  // bot's monthly program), so editing `popular: true` in JSON updates both.
-  let popularTours = getPopularTours(locale);
-  if (isEn && popularTours.length === 0) popularTours = getPopularTours('th');
-  if (popularTours.length === 0) popularTours = toursData.slice(0, 6);
+  const popularFromData = getPopularTours(locale);
+  const popularTours = popularFromData.length ? popularFromData : toursData.slice(0, 6);
   const monthlyTours = monthly.tours;
   const monthlyTitle = monthly.sourceMonth
     ? `${t.monthlyTitle} ${formatMonthLabel(monthly.sourceMonth, isEn ? 'en' : 'th')}`
