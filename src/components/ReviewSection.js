@@ -110,16 +110,7 @@ export default function ReviewSection({ locale, standalone }) {
   if (standalone) {
     return (
       <section className="review-section review-section--standalone">
-        <div className="review-section__background">
-          <Image
-            src="/assets/images/backgrounds/Home1.jpg"
-            alt=""
-            fill
-            className="review-section__bg-image"
-            sizes="100vw"
-          />
-          <div className="review-section__overlay" />
-        </div>
+      
 
         <div className="review-section__content">
           <h1 className="review-section__heading">{t.reviewTitle}</h1>
@@ -150,16 +141,7 @@ export default function ReviewSection({ locale, standalone }) {
 
   return (
     <section className={`review-section${standalone ? ' review-section--standalone' : ' review-section--home'}`}>
-      <div className="review-section__background">
-        <Image
-          src="/assets/images/backgrounds/Home1.jpg"
-          alt=""
-          fill
-          className="review-section__bg-image"
-          sizes="100vw"
-        />
-        <div className="review-section__overlay" />
-      </div>
+    
 
       <div className="review-section__content">
         {standalone ? <h1 className="review-section__heading">{t.reviewTitle}</h1> : <h2 className="review-section__heading">{t.reviewTitle}</h2>}

@@ -21,7 +21,7 @@
 }
 
 .review-detail-body {
-  background: var(--bg-page);
+  background: transparent;
   padding: 28px 7% 56px;
 }
 

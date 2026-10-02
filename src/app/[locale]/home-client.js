@@ -16,7 +16,7 @@ import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
 
-const TRAVEL_GALLERY_FALLBACKS = ['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'];
+const TRAVEL_GALLERY_FALLBACKS = ['Home.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'];
 const TRAVEL_GALLERY_EXTENSIONS = ['jpeg', 'jpg', 'png'];
 
 function TravelGalleryImage({ number, fallback, alt }) {
