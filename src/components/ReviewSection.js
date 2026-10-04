@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import reviews from '@/data/reviews.json';
+import testimonials from '@/data/testimonials.json';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
@@ -18,6 +19,13 @@ const REVIEW_GALLERY_FOLDERS = {
 };
 
 const REVIEW_IMAGE_EXTENSIONS = ['jpeg', 'jpg', 'png'];
+
+const REVIEW_CATEGORIES = [
+  { id: 'thai-domestic', labelKey: 'reviewCatThaiDomestic' },
+  { id: 'thai-outbound', labelKey: 'reviewCatThaiOutbound' },
+  { id: 'inbound', labelKey: 'reviewCatInbound' },
+  { id: 'impressions', labelKey: 'reviewCatImpressions' },
+];
 
 function ReviewCover({ review, title, isEn, href, home = false }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -52,7 +60,7 @@ function ReviewCover({ review, title, isEn, href, home = false }) {
         ) : (
           <Image
             key={`${activeIndex}-${failure}`}
-            src={encodeURI(assetPath(failure < REVIEW_IMAGE_EXTENSIONS.length ? `reviews_gallery/${folder}/${String(activeIndex + 1).padStart(2, '0')}.${REVIEW_IMAGE_EXTENSIONS[failure]}` : review.image))}
+            src={encodeURI(assetPath(failure < REVIEW_IMAGE_EXTENSIONS.length ? `review_page/reviews_gallery/${folder}/${folder.split('/').pop()}_${String(activeIndex + 1).padStart(2, '0')}.${REVIEW_IMAGE_EXTENSIONS[failure]}` : review.image))}
             fill
             sizes={home ? '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw' : '(max-width: 640px) 86vw, (max-width: 1024px) 43vw, (max-width: 1720px) 29vw, 480px'}
             alt={`${title} — ${isEn ? 'photo' : 'รูปที่'} ${activeIndex + 1}`}
@@ -103,36 +111,91 @@ function ReviewCover({ review, title, isEn, href, home = false }) {
 export default function ReviewSection({ locale, standalone }) {
   const t = config[locale] || config.th;
   const isEn = locale === 'en';
-  const displayReviews = standalone ? reviews : reviews.slice(0, 3);
+  const [activeCategory, setActiveCategory] = useState('thai-domestic');
+  const displayReviews = standalone
+    ? reviews.filter((item) => item.category === activeCategory)
+    : reviews.slice(0, 3);
 
-  if (!reviews.length) return null;
+  if (!standalone && !reviews.length) return null;
 
   if (standalone) {
     return (
       <section className="review-section review-section--standalone">
-      
+
 
         <div className="review-section__content">
           <h1 className="review-section__heading">{t.reviewTitle}</h1>
-          <div className="review-destinations">
-            {reviews.map((item) => {
-              const tag = isEn && item.tag_en ? item.tag_en : item.tag;
-              const title = tag.includes(':') ? tag.slice(tag.indexOf(':') + 1).trim() : tag;
-              const tripType = item.tag.startsWith('2 DAY') ? '2 Day 1 Night Trip' : '1 Day Trip';
-
-              return (
-                <article key={item.id} className="review-destination">
-                  <ReviewCover review={item} title={title} isEn={isEn} href={`/${locale}/reviews/${item.id}`} />
-                  <a href={`/${locale}/reviews/${item.id}`} className="review-destination-link review-destination__body">
-                    <div className="review-destination__heading">
-                      <h2 className="review-destination__title">{title}</h2>
-                      <span className="review-destination__trip-type">{tripType}</span>
+          <div className="review-categories" role="tablist" aria-label={t.reviewCategoriesLabel}>
+            {REVIEW_CATEGORIES.map((category, index) => (
+              <button
+                key={category.id}
+                type="button"
+                role="tab"
+                id={`review-tab-${category.id}`}
+                aria-controls="review-category-panel"
+                aria-selected={activeCategory === category.id}
+                tabIndex={activeCategory === category.id ? 0 : -1}
+                className="review-categories__tab"
+                onClick={() => setActiveCategory(category.id)}
+                onKeyDown={(event) => {
+                  const lastIndex = REVIEW_CATEGORIES.length - 1;
+                  const nextIndex = {
+                    ArrowRight: (index + 1) % REVIEW_CATEGORIES.length,
+                    ArrowLeft: (index + lastIndex) % REVIEW_CATEGORIES.length,
+                    Home: 0,
+                    End: lastIndex,
+                  }[event.key];
+                  if (nextIndex === undefined) return;
+                  event.preventDefault();
+                  setActiveCategory(REVIEW_CATEGORIES[nextIndex].id);
+                  event.currentTarget.parentElement.querySelectorAll('[role="tab"]')[nextIndex].focus();
+                }}
+              >
+                {t[category.labelKey]}
+              </button>
+            ))}
+          </div>
+          <div id="review-category-panel" role="tabpanel" aria-labelledby={`review-tab-${activeCategory}`} tabIndex={0}>
+            {activeCategory === 'impressions' ? (
+              <div className="review-chats">
+                {testimonials.map((item) => (
+                  <figure key={item.image} className="review-chat">
+                    <div className="review-chat__image">
+                      <Image
+                        src={encodeURI(assetPath(item.image))}
+                        width={1250}
+                        height={1250}
+                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 400px"
+                        alt={t.chatReviewAlt}
+                      />
                     </div>
-                    <p className="review-destination__quote">{isEn && item.text_en ? item.text_en : item.text}</p>
-                  </a>
-                </article>
-              );
-            })}
+                  </figure>
+                ))}
+              </div>
+            ) : displayReviews.length === 0 ? (
+              <p className="review-categories__empty">{t.reviewComingSoon}</p>
+            ) : (
+              <div className="review-destinations">
+                {displayReviews.map((item) => {
+                  const tag = isEn && item.tag_en ? item.tag_en : item.tag;
+                  const title = tag.includes(':') ? tag.slice(tag.indexOf(':') + 1).trim() : tag;
+                  const tripType = item.tag.startsWith('2 DAY') ? '2 Day 1 Night Trip' : '1 Day Trip';
+
+                  return (
+                    <article key={item.id} className="review-destination">
+                      <ReviewCover review={item} title={title} isEn={isEn} href={`/${locale}/reviews/${item.id}`} />
+                      <a href={`/${locale}/reviews/${item.id}`} className="review-destination-link review-destination__body">
+                        <div className="review-destination__heading">
+                          <h2 className="review-destination__title">{title}</h2>
+                          <span className="review-destination__trip-type">{tripType}</span>
+                        </div>
+                        <p className="review-destination__quote">{isEn && item.text_en ? item.text_en : item.text}</p>
+                      </a>
+                    </article>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -1,5 +1,13 @@
 {
   "th": {
+    "reviewCatThaiDomestic": "ไทยเที่ยวไทย",
+    "reviewCatThaiOutbound": "ไทยเที่ยวต่างประเทศ",
+    "reviewCatInbound": "ต่างประเทศเที่ยวไทย",
+    "reviewCatImpressions": "ความประทับใจ",
+    "reviewCategoriesLabel": "หมวดหมู่รีวิว",
+    "reviewComingSoon": "รีวิวหมวดนี้กำลังจะมาเร็ว ๆ นี้",
+    "customerVoices": "เสียงจากลูกค้า",
+    "chatReviewAlt": "ข้อความรีวิวจากลูกค้า",
     "company": "บริษัท เอเวอร์โกลว์ โกลบอล จำกัด (สำนักงานใหญ่)",
     "license": "เลขทะเบียนผู้เสียภาษี : 0125568006295",
     "brand": "Everglow Travel",
@@ -147,6 +155,14 @@
     }
   },
   "en": {
+    "reviewCatThaiDomestic": "Thais touring Thailand",
+    "reviewCatThaiOutbound": "Thais touring abroad",
+    "reviewCatInbound": "International guests in Thailand",
+    "reviewCatImpressions": "Impressions",
+    "reviewCategoriesLabel": "Review categories",
+    "reviewComingSoon": "Reviews in this category are coming soon",
+    "customerVoices": "What our customers say",
+    "chatReviewAlt": "Customer review message",
     "company": "Everglow Global Co., Ltd. (Head Office)",
     "license": "Tax ID : 0125568006295",
     "brand": "Everglow Travel",

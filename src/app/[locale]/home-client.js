@@ -16,7 +16,7 @@ import TourGrid from '@/components/TourGrid';
 import Partners from '@/components/Partners';
 import ReviewSection from '@/components/ReviewSection';
 
-const TRAVEL_GALLERY_FALLBACKS = ['Home.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'];
+const TRAVEL_GALLERY_FALLBACKS = ['Home.jpg', 'Home1.jpg', 'Home3.jpg', 'Home4.jpg', 'Home5.jpg', 'Home6.jpg', 'Home7.jpg', 'Home8.jpg'];
 const TRAVEL_GALLERY_EXTENSIONS = ['jpeg', 'jpg', 'png'];
 
 function TravelGalleryImage({ number, fallback, alt }) {
@@ -24,7 +24,7 @@ function TravelGalleryImage({ number, fallback, alt }) {
   if (failure > TRAVEL_GALLERY_EXTENSIONS.length) return null;
 
   const src = failure < TRAVEL_GALLERY_EXTENSIONS.length
-    ? `travel_gallery/${String(number).padStart(2, '0')}.${TRAVEL_GALLERY_EXTENSIONS[failure]}`
+    ? `travel_gallery/travel_gallery_${String(number).padStart(2, '0')}.${TRAVEL_GALLERY_EXTENSIONS[failure]}`
     : `assets/images/backgrounds/${fallback}`;
 
   return (

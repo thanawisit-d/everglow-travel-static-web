@@ -267,3 +267,51 @@
     padding: 18px;
   }
 }
+
+.review-detail-voices {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.review-detail-voices__title {
+  margin-bottom: 20px;
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.review-detail-voices__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+.review-detail-voices__image {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+.review-detail-voices__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .review-detail-voices__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .review-detail-voices__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

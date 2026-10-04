@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
+import testimonials from '@/data/testimonials.json';
 
 const REVIEW_GALLERY_FOLDERS = {
   'khao-yai': '1D/เขาใหญ่',
@@ -23,9 +24,9 @@ function ReviewGallery({ review, displayTag, isEn }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [failedImages, setFailedImages] = useState({});
   const folder = REVIEW_GALLERY_FOLDERS[review.id] || review.id;
-  // Add photos 01–05 as .jpeg, .jpg, or .png in public/reviews_gallery/<1D or 2D1N>/<Thai place name>/.
+  // Add <Thai place name>_01–05 as .jpeg, .jpg, or .png in public/review_page/reviews_gallery/<1D or 2D1N>/<Thai place name>/.
   const images = Array.from({ length: 5 }, (_, index) =>
-    encodeURI(assetPath(`reviews_gallery/${folder}/${String(index + 1).padStart(2, '0')}`))
+    encodeURI(assetPath(`review_page/reviews_gallery/${folder}/${folder.split('/').pop()}_${String(index + 1).padStart(2, '0')}`))
   );
 
   function renderImage(index, sizes) {
@@ -101,6 +102,7 @@ export default function ReviewDetail({ review, locale }) {
   const displayTitle = displayTag.includes(':') ? displayTag.slice(displayTag.indexOf(':') + 1).trim() : displayTag;
   const tripType = review.tag.startsWith('2 DAY') ? '2 Day 1 Night Trip' : '1 Day Trip';
   const displayText = isEn && review.text_en ? review.text_en : review.text;
+  const chats = testimonials.filter((item) => item.reviewId === review.id);
 
   return (
     <div className="review-detail-page page active">
@@ -126,6 +128,24 @@ export default function ReviewDetail({ review, locale }) {
               <p className="review-detail-text">{displayText}</p>
             </article>
           </div>
+          {chats.length > 0 && (
+            <section className="review-detail-voices" aria-labelledby="review-detail-voices-title">
+              <h2 id="review-detail-voices-title" className="review-detail-voices__title">{t.customerVoices}</h2>
+              <div className="review-detail-voices__grid">
+                {chats.map((item) => (
+                  <div key={item.image} className="review-detail-voices__image">
+                    <Image
+                      src={encodeURI(assetPath(item.image))}
+                      width={1250}
+                      height={1250}
+                      sizes="(max-width: 640px) 86vw, (max-width: 1024px) 43vw, 480px"
+                      alt={t.chatReviewAlt}
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </div>
