@@ -1,8 +1,7 @@
 {
   "th": {
-    "reviewCatThaiDomestic": "ไทยเที่ยวไทย",
-    "reviewCatThaiOutbound": "ไทยเที่ยวต่างประเทศ",
-    "reviewCatInbound": "ต่างประเทศเที่ยวไทย",
+    "reviewCatDomestic": "เที่ยวในไทย",
+    "reviewCatOutbound": "ไทยเที่ยวต่างประเทศ",
     "reviewCatImpressions": "ความประทับใจ",
     "reviewCategoriesLabel": "หมวดหมู่รีวิว",
     "reviewComingSoon": "รีวิวหมวดนี้กำลังจะมาเร็ว ๆ นี้",
@@ -159,9 +158,8 @@
     }
   },
   "en": {
-    "reviewCatThaiDomestic": "Thais touring Thailand",
-    "reviewCatThaiOutbound": "Thais touring abroad",
-    "reviewCatInbound": "International guests in Thailand",
+    "reviewCatDomestic": "Travel in Thailand",
+    "reviewCatOutbound": "Thais touring abroad",
     "reviewCatImpressions": "Impressions",
     "reviewCategoriesLabel": "Review categories",
     "reviewComingSoon": "Reviews in this category are coming soon",

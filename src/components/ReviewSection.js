@@ -21,9 +21,8 @@ const REVIEW_GALLERY_FOLDERS = {
 const REVIEW_IMAGE_EXTENSIONS = ['jpeg', 'jpg', 'png'];
 
 const REVIEW_CATEGORIES = [
-  { id: 'thai-domestic', labelKey: 'reviewCatThaiDomestic', locales: ['th'] },
-  { id: 'thai-outbound', labelKey: 'reviewCatThaiOutbound', locales: ['th'] },
-  { id: 'inbound', labelKey: 'reviewCatInbound', locales: ['en'] },
+  { id: 'domestic', labelKey: 'reviewCatDomestic', locales: ['th', 'en'] },
+  { id: 'outbound', labelKey: 'reviewCatOutbound', locales: ['th'] },
   { id: 'impressions', labelKey: 'reviewCatImpressions', locales: ['th', 'en'] },
 ];
 
@@ -112,7 +111,7 @@ export default function ReviewSection({ locale, standalone }) {
   const t = config[locale] || config.th;
   const isEn = locale === 'en';
   const categories = REVIEW_CATEGORIES.filter((category) => category.locales.includes(locale));
-  const [activeCategory, setActiveCategory] = useState(() => (isEn ? 'inbound' : 'thai-domestic'));
+  const [activeCategory, setActiveCategory] = useState('domestic');
   // Impressions are locale-tagged: items without `locale` show in both languages.
   const impressions = testimonials.filter((item) => !item.locale || item.locale === locale);
   const displayReviews = standalone
