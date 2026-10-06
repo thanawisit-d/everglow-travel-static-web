@@ -21,10 +21,10 @@ const REVIEW_GALLERY_FOLDERS = {
 const REVIEW_IMAGE_EXTENSIONS = ['jpeg', 'jpg', 'png'];
 
 const REVIEW_CATEGORIES = [
-  { id: 'thai-domestic', labelKey: 'reviewCatThaiDomestic' },
-  { id: 'thai-outbound', labelKey: 'reviewCatThaiOutbound' },
-  { id: 'inbound', labelKey: 'reviewCatInbound' },
-  { id: 'impressions', labelKey: 'reviewCatImpressions' },
+  { id: 'thai-domestic', labelKey: 'reviewCatThaiDomestic', locales: ['th'] },
+  { id: 'thai-outbound', labelKey: 'reviewCatThaiOutbound', locales: ['th'] },
+  { id: 'inbound', labelKey: 'reviewCatInbound', locales: ['en'] },
+  { id: 'impressions', labelKey: 'reviewCatImpressions', locales: ['th', 'en'] },
 ];
 
 function ReviewCover({ review, title, isEn, href, home = false }) {
@@ -111,7 +111,10 @@ function ReviewCover({ review, title, isEn, href, home = false }) {
 export default function ReviewSection({ locale, standalone }) {
   const t = config[locale] || config.th;
   const isEn = locale === 'en';
-  const [activeCategory, setActiveCategory] = useState('thai-domestic');
+  const categories = REVIEW_CATEGORIES.filter((category) => category.locales.includes(locale));
+  const [activeCategory, setActiveCategory] = useState(() => (isEn ? 'inbound' : 'thai-domestic'));
+  // Impressions are locale-tagged: items without `locale` show in both languages.
+  const impressions = testimonials.filter((item) => !item.locale || item.locale === locale);
   const displayReviews = standalone
     ? reviews.filter((item) => item.category === activeCategory)
     : reviews.slice(0, 3);
@@ -124,9 +127,8 @@ export default function ReviewSection({ locale, standalone }) {
 
 
         <div className="review-section__content">
-          <h1 className="review-section__heading">{t.reviewTitle}</h1>
           <div className="review-categories" role="tablist" aria-label={t.reviewCategoriesLabel}>
-            {REVIEW_CATEGORIES.map((category, index) => (
+            {categories.map((category, index) => (
               <button
                 key={category.id}
                 type="button"
@@ -138,16 +140,16 @@ export default function ReviewSection({ locale, standalone }) {
                 className="review-categories__tab"
                 onClick={() => setActiveCategory(category.id)}
                 onKeyDown={(event) => {
-                  const lastIndex = REVIEW_CATEGORIES.length - 1;
+                  const lastIndex = categories.length - 1;
                   const nextIndex = {
-                    ArrowRight: (index + 1) % REVIEW_CATEGORIES.length,
-                    ArrowLeft: (index + lastIndex) % REVIEW_CATEGORIES.length,
+                    ArrowRight: (index + 1) % categories.length,
+                    ArrowLeft: (index + lastIndex) % categories.length,
                     Home: 0,
                     End: lastIndex,
                   }[event.key];
                   if (nextIndex === undefined) return;
                   event.preventDefault();
-                  setActiveCategory(REVIEW_CATEGORIES[nextIndex].id);
+                  setActiveCategory(categories[nextIndex].id);
                   event.currentTarget.parentElement.querySelectorAll('[role="tab"]')[nextIndex].focus();
                 }}
               >
@@ -158,7 +160,7 @@ export default function ReviewSection({ locale, standalone }) {
           <div id="review-category-panel" role="tabpanel" aria-labelledby={`review-tab-${activeCategory}`} tabIndex={0}>
             {activeCategory === 'impressions' ? (
               <div className="review-chats">
-                {testimonials.map((item) => (
+                {impressions.map((item) => (
                   <figure key={item.image} className="review-chat">
                     <div className="review-chat__image">
                       <Image
