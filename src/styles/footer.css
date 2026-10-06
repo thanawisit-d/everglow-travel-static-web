@@ -26,9 +26,11 @@
 }
 
 .footer-logo {
-  width: 84px;
+  width: 130px;
   height: auto;
   margin-bottom: 6px;
+  align-self: center;
+  transform: translateX(-50px);
 }
 
 .footer-company {

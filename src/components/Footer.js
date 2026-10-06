@@ -46,7 +46,7 @@ export default function Footer({ locale }) {
             <li>
               {t.footerPhoneLabel} :{' '}
               <a href={`tel:${s.phone}`} className="footer-link">
-                {t.phone}
+                {t.footerPhone || t.phone}
               </a>
             </li>
             <li>
@@ -64,19 +64,19 @@ export default function Footer({ locale }) {
             <li>
               Facebook :{' '}
               <a href={s.facebook} target="_blank" rel="noopener noreferrer" className="footer-link">
-                Everglow Travel
+                {t.footerFacebook || 'Everglow Travel'}
               </a>
             </li>
             <li>
               Instagram :{' '}
               <a href={s.instagram} target="_blank" rel="noopener noreferrer" className="footer-link">
-                Everglow_Travel
+                {t.footerInstagram || 'Everglow_Travel'}
               </a>
             </li>
             <li>
               TikTok :{' '}
               <a href={s.tiktok} target="_blank" rel="noopener noreferrer" className="footer-link">
-                Everglow.Travel
+                {t.footerTikTok || 'Everglow.Travel'}
               </a>
             </li>
           </ul>
