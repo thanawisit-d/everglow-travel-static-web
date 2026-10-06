@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { Search } from 'lucide-react';
 import DestinationCombobox from './DestinationCombobox';
 import MonthPicker from './MonthPicker';
-import { provinceNameMap } from '@/lib/i18n';
 
 const TEXT = {
   destinationLabel: 'Destination',
@@ -22,7 +21,7 @@ export default function SearchWidgetEN({ locale = 'en', destinations = [] }) {
   const [date, setDate] = useState('');
 
   const options = useMemo(
-    () => destinations.map((name) => ({ value: name, label: provinceNameMap[name] || name })),
+    () => destinations.map((name) => ({ value: name, label: name })),
     [destinations]
   );
 

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { fieldIncludes, countryNameMap } from '@/lib/i18n';
+import { fieldIncludes } from '@/lib/i18n';
 import TourCard from '@/components/TourCard';
 import TourCardSkeleton from '@/components/TourCardSkeleton';
 import Pagination from '@/components/Pagination';
@@ -15,11 +15,6 @@ import { parsePrice, paginate } from '@/lib/tour-utils';
 import { trackSearch, trackFilter } from '@/lib/tracking';
 import config from '@/data/site-config.json';
 import { buildCountryContinentMap } from '@/lib/continent';
-
-function getCountryLabel(countryTh, isEn) {
-  if (isEn) return countryNameMap[countryTh] || countryTh;
-  return countryTh;
-}
 
 export default function OutboundClient({ locale, tours }) {
   const searchParams = useSearchParams();
@@ -90,13 +85,8 @@ export default function OutboundClient({ locale, tours }) {
     const countries = [...new Set(tours.flatMap(t => {
       const c = t.country;
       return Array.isArray(c) ? c : [c];
-    }).filter(Boolean))].sort((a, b) => {
-      if (isEn) {
-        return getCountryLabel(a, true).localeCompare(getCountryLabel(b, true), 'en');
-      }
-      return a.localeCompare(b, 'th');
-    });
-    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
+    }).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
+    const durations = [...new Set(tours.map(t => t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
     return { countries, durations };
   }, [tours, isEn]);
 
@@ -106,7 +96,7 @@ export default function OutboundClient({ locale, tours }) {
     if (filters.search) {
       const kw = filters.search.toLowerCase();
       result = result.filter(t =>
-        (isEn ? (t.desc_en || t.desc || '') : (t.desc || t.desc_en || '')).toLowerCase().includes(kw) ||
+        (t.desc || '').toLowerCase().includes(kw) ||
         fieldIncludes(t.country, kw) ||
         (t.id || '').toLowerCase().includes(kw)
       );
@@ -134,7 +124,7 @@ export default function OutboundClient({ locale, tours }) {
     }
 
     if (filters.duration) {
-      result = result.filter(t => (isEn ? t.duration_en : t.duration) === filters.duration);
+      result = result.filter(t => t.duration === filters.duration);
     }
 
     const [minRaw, maxRaw] = filters.priceRange;
@@ -157,14 +147,14 @@ export default function OutboundClient({ locale, tours }) {
     }
 
     return result;
-  }, [tours, filters, isEn, countryToContinent]);
+  }, [tours, filters, countryToContinent]);
 
   const { items, totalPages } = paginate(filtered, page);
 
   const activeFilters = [
     { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => wrappedUpdateFilter('search', '') },
     { id: 'continent', label: filters.continent.join(', '), active: filters.continent.length > 0, onClear: () => wrappedUpdateFilter('continent', []) },
-    { id: 'country', label: getCountryLabel(filters.country, isEn), active: !!filters.country, onClear: () => wrappedUpdateFilter('country', '') },
+    { id: 'country', label: filters.country, active: !!filters.country, onClear: () => wrappedUpdateFilter('country', '') },
     { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => wrappedUpdateFilter('duration', '') },
     { id: 'date', label: formatMonthLabel(filters.date, isEn ? 'en' : 'th'), active: !!filters.date, onClear: () => wrappedUpdateFilter('date', '') },
     { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => wrappedUpdateFilter('priceRange', [minPrice, maxPrice]) },
@@ -212,7 +202,7 @@ export default function OutboundClient({ locale, tours }) {
       title: t.destinationTitle,
       type: 'select',
       useChoices: true,
-      options: filterOptions.countries.map(c => ({ value: c, label: getCountryLabel(c, isEn) })),
+      options: filterOptions.countries.map(c => ({ value: c, label: c })),
       value: filters.country,
       onChange: v => wrappedUpdateFilter('country', v),
     },

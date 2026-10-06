@@ -9,8 +9,23 @@ const THAI_MONTH = {
 
 const BUDDHIST_YEAR_OFFSET = 543;
 const pad = n => String(n).padStart(2, '0');
-const toGregorianYear = y => parseInt(y, 10) - BUDDHIST_YEAR_OFFSET;
-const monthOf = s => THAI_MONTH[s];
+const toGregorianYear = y => {
+  const n = parseInt(y, 10);
+  return n > 2400 ? n - BUDDHIST_YEAR_OFFSET : n;
+};
+
+const EN_MONTH = {
+  jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3, apr: 4, april: 4,
+  may: 5, jun: 6, june: 6, jul: 7, july: 7, aug: 8, august: 8,
+  sep: 9, sept: 9, september: 9, oct: 10, october: 10, nov: 11, november: 11,
+  dec: 12, december: 12,
+};
+
+const monthOf = s => {
+  if (!s) return undefined;
+  if (THAI_MONTH[s]) return THAI_MONTH[s];
+  return EN_MONTH[String(s).toLowerCase().replace(/\./g, '')];
+};
 
 /**
  * Parses domestic tours' free-text periodText (e.g. "ก.พ. - มิ.ย. 2569")

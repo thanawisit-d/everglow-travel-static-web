@@ -5,28 +5,19 @@ import TourDetail from '@/components/TourDetail';
 
 const TOURS_BY_LOCALE = { th: toursDataTh, en: toursDataEn };
 
-// Prefer the localized dataset; fall back to TH so tours that exist only in
-// Thai (not yet translated) still resolve instead of 404ing on /en.
+// Each locale has its own independent catalogue (TH vs international audience).
 function findTour(locale, id) {
   const localized = TOURS_BY_LOCALE[locale] || toursDataTh;
-  return (
-    localized.find((t) => t.id === id) ||
-    toursDataTh.find((t) => t.id === id) ||
-    null
-  );
+  return localized.find((t) => t.id === id) || null;
 }
 
 export function generateStaticParams() {
-  const locales = ['th', 'en'];
-  const ids = new Set([
-    ...toursDataTh.map((t) => t.id),
-    ...toursDataEn.map((t) => t.id),
-  ]);
   const params = [];
-  for (const locale of locales) {
-    for (const id of ids) {
-      params.push({ locale, id });
-    }
+  for (const id of toursDataTh.map((t) => t.id)) {
+    params.push({ locale: 'th', id });
+  }
+  for (const id of toursDataEn.map((t) => t.id)) {
+    params.push({ locale: 'en', id });
   }
   return params;
 }
@@ -40,7 +31,7 @@ export async function generateMetadata({ params }) {
     return { title: 'Tour Not Found' };
   }
   const isEn = locale === 'en';
-  const desc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
+  const desc = tour.desc;
   const raw = desc || tour.id;
   const name = raw.length > 70 ? `${raw.slice(0, 70).trimEnd()}…` : raw;
   const tourPath = `/tours/${tour.id}`;
@@ -100,10 +91,10 @@ function TourJSONLD({ tour, siteUrl, locale }) {
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
     name: tour.desc || tour.id,
-    description: tour.desc_en || tour.desc || '',
+    description: tour.desc || '',
     image: tour.image ? `${siteUrl}${tour.image.startsWith('/') ? '' : '/'}${tour.image}` : undefined,
     url: tourUrl,
-    duration: isoDurationFrom(tour.duration_en || tour.duration),
+    duration: isoDurationFrom(tour.duration),
     offers: {
       '@type': 'Offer',
       price: price,

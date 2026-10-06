@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { formatPrice } from '@/lib/pricing';
 import { assetPath } from '@/lib/assets';
-import { displayField, translateCountry, provinceNameMap } from '@/lib/i18n';
+import { displayField } from '@/lib/i18n';
 import config from '@/data/site-config.json';
 import TourProgram from './TourProgram';
 
@@ -12,14 +12,12 @@ export default function TourDetail({ tour, locale }) {
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
 
-  const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
-  const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
-  const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;
-  const displayCountry = isEn ? displayField(tour.country).split(', ').map(c => translateCountry(c)).join(', ') : displayField(tour.country);
-  const displayProvince = isEn
-    ? (tour.province_en || (tour.province ? displayField(tour.province).split(', ').map(p => provinceNameMap[p] || p).join(', ') : '-'))
-    : (tour.province ? displayField(tour.province) : '-');
-  const displayTransportName = isEn && tour.transport?.name_en ? tour.transport.name_en : (tour.transport?.name || '-');
+  const displayDesc = tour.desc;
+  const displayDuration = tour.duration;
+  const displayPeriod = tour.periodText;
+  const displayCountry = displayField(tour.country);
+  const displayProvince = tour.province ? displayField(tour.province) : '-';
+  const displayTransportName = tour.transport?.name || '-';
 
   const bookingLink = isEn
     ? { href: t.social?.whatsapp || 'https://wa.me/66996326146', icon: 'assets/images/social/whatsapp.png' }

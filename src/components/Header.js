@@ -220,11 +220,14 @@ export default function Header({ locale }) {
                     <>
                       <h3>{isEn ? activeDomesticGroupData.labelEn : activeDomesticGroupData.label}</h3>
                       <div className="mega-grid">
-                        {activeDomesticGroupData.items.map((item) => (
-                          <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(item.province)}`)}>
-                            {isEn ? (provinceNameMap[item.name] || item.name) : item.name}
-                          </button>
-                        ))}
+                        {activeDomesticGroupData.items.map((item) => {
+                          const provinceValue = isEn ? (provinceNameMap[item.province] || item.province) : item.province;
+                          return (
+                            <button key={item.name} type="button" role="menuitem" onClick={() => nav(`/${locale}/domestic?province=${encodeURIComponent(provinceValue)}`)}>
+                              {isEn ? (provinceNameMap[item.name] || item.name) : item.name}
+                            </button>
+                          );
+                        })}
                       </div>
                     </>
                   )}

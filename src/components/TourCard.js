@@ -11,9 +11,9 @@ export default function TourCard({ tour, href, badge, locale }) {
   if (!tour) return null;
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
-  const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
-  const displayDuration = isEn && tour.duration_en ? tour.duration_en : tour.duration;
-  const displayPeriod = isEn && tour.periodText_en ? tour.periodText_en : tour.periodText;
+  const displayDesc = tour.desc;
+  const displayDuration = tour.duration;
+  const displayPeriod = tour.periodText;
   const getDayCount = (duration, isEn) => {
     const pattern = isEn
       ? /(\d+)\s+days?/

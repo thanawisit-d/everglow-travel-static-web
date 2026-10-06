@@ -16,14 +16,9 @@ export function getTours(locale: Locale = 'th'): Tour[] {
 }
 
 export function getPopularTours(locale: Locale = 'th'): Tour[] {
-  const isEn = locale === 'en';
-  return [...cache.th]
-    .filter((t) => (isEn ? t.popularEn === true : t.popular === true))
-    .sort((a, b) =>
-      isEn
-        ? (a.popularEnOrder ?? 999) - (b.popularEnOrder ?? 999)
-        : (a.popularOrder ?? 999) - (b.popularOrder ?? 999),
-    )
+  return [...cache[locale]]
+    .filter((t) => t.popular === true)
+    .sort((a, b) => (a.popularOrder ?? 999) - (b.popularOrder ?? 999))
     .slice(0, 5);
 }
 
@@ -35,7 +30,6 @@ export function searchTours(keyword: string, locale: Locale = 'th'): Tour[] {
       tourCountryLabel(t),
       t.city,
       t.desc,
-      t.desc_en,
       t.shortDesc,
       t.id,
     ]

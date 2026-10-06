@@ -10,18 +10,9 @@ import FilterSidebar from '@/components/FilterSidebar';
 import ActiveFilters from '@/components/ActiveFilters';
 import useToursFilter from '@/lib/useToursFilter';
 import { parsePrice, paginate } from '@/lib/tour-utils';
-import { provinceNameMap } from '@/lib/i18n';
 import { tourMatchesMonth, formatMonthLabel } from '@/lib/dateFilter';
 import { trackSearch, trackFilter } from '@/lib/tracking';
 import config from '@/data/site-config.json';
-
-const durationMapEnToTh = {
-  '1 day': '1 วัน',
-  '2 days 1 night': '2 วัน 1 คืน',
-  '3 days 2 night': '3 วัน 2 คืน',
-  '4 days 3 night': '4 วัน 3 คืน',
-  '5 days 4 night': '5 วัน 4 คืน',
-};
 
 export default function DomesticClient({ locale, tours }) {
   const searchParams = useSearchParams();
@@ -59,8 +50,7 @@ export default function DomesticClient({ locale, tours }) {
     const q = searchParams.get('q') || '';
     const dt = searchParams.get('date') || '';
     if (d) {
-      const normalized = isEn ? (durationMapEnToTh[d] || d) : d;
-      updateFilter('duration', normalized);
+      updateFilter('duration', d);
     }
     if (p) {
       updateFilter('province', p);
@@ -75,14 +65,11 @@ export default function DomesticClient({ locale, tours }) {
   }, [searchParams, isEn]);
 
   const filterOptions = useMemo(() => {
-    const durations = [...new Set(tours.map(t => isEn ? t.duration_en : t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
+    const durations = [...new Set(tours.map(t => t.duration).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
     const provinces = [...new Set(tours.flatMap(t => {
       const p = t.province;
       return Array.isArray(p) ? p : [p];
-    }).filter(Boolean))].sort((a, b) => {
-      if (isEn) return provinceNameMap[a].localeCompare(provinceNameMap[b], 'en');
-      return a.localeCompare(b, 'th');
-    });
+    }).filter(Boolean))].sort((a, b) => a.localeCompare(b, isEn ? 'en' : 'th'));
     return { durations, provinces };
   }, [tours, isEn]);
 
@@ -93,15 +80,14 @@ export default function DomesticClient({ locale, tours }) {
       const kw = filters.search.toLowerCase();
       result = result.filter(t => {
         const prov = Array.isArray(t.province) ? t.province.join(' ') : (t.province || '');
-        const provEn = Array.isArray(t.province) ? t.province.map(p => provinceNameMap[p] || p).join(' ') : (provinceNameMap[t.province] || t.province || '');
-        return prov.toLowerCase().includes(kw) || provEn.toLowerCase().includes(kw) ||
-          (isEn ? (t.desc_en || '') : (t.desc || '')).toLowerCase().includes(kw) ||
+        return prov.toLowerCase().includes(kw) ||
+          (t.desc || '').toLowerCase().includes(kw) ||
           (t.id || '').toLowerCase().includes(kw);
       });
     }
 
     if (filters.duration) {
-      result = result.filter(t => (isEn ? t.duration_en : t.duration) === filters.duration);
+      result = result.filter(t => t.duration === filters.duration);
     }
 
     if (filters.province) {
@@ -135,13 +121,13 @@ export default function DomesticClient({ locale, tours }) {
     }
 
     return result;
-  }, [tours, filters, isEn]);
+  }, [tours, filters]);
 
   const { items, totalPages } = paginate(filtered, page);
 
   const activeFilters = [
     { id: 'search', label: `"${filters.search}"`, active: !!filters.search, onClear: () => wrappedUpdateFilter('search', '') },
-    { id: 'province', label: isEn ? (provinceNameMap[filters.province] || filters.province) : filters.province, active: !!filters.province, onClear: () => wrappedUpdateFilter('province', '') },
+    { id: 'province', label: filters.province, active: !!filters.province, onClear: () => wrappedUpdateFilter('province', '') },
     { id: 'duration', label: filters.duration, active: !!filters.duration, onClear: () => wrappedUpdateFilter('duration', '') },
     { id: 'date', label: formatMonthLabel(filters.date, isEn ? 'en' : 'th'), active: !!filters.date, onClear: () => wrappedUpdateFilter('date', '') },
     { id: 'price', label: isEn ? `฿${filters.priceRange[0].toLocaleString()} – ฿${filters.priceRange[1].toLocaleString()}` : `฿${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}`, active: filters.priceRange[0] !== minPrice || filters.priceRange[1] !== maxPrice, onClear: () => wrappedUpdateFilter('priceRange', [minPrice, maxPrice]) },
@@ -177,7 +163,7 @@ export default function DomesticClient({ locale, tours }) {
       title: t.destinationTitle,
       type: 'select',
       useChoices: true,
-      options: filterOptions.provinces.map(p => ({ value: p, label: isEn ? provinceNameMap[p] || p : p })),
+      options: filterOptions.provinces.map(p => ({ value: p, label: p })),
       value: filters.province,
       onChange: v => wrappedUpdateFilter('province', v),
     },

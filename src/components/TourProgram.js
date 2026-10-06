@@ -21,7 +21,7 @@ export default function TourProgram({ itinerary, locale }) {
       <div className="tour-program__list">
         {itinerary.map((day) => {
           const isOpen = openDay === day.day;
-          const dayTitle = isEn && day.title_en ? day.title_en : day.title;
+          const dayTitle = day.title;
 
           return (
             <div
@@ -54,10 +54,10 @@ export default function TourProgram({ itinerary, locale }) {
                   {day.items?.map((item, idx) => (
                     <div key={idx} className="tour-program__row">
                       <span className="tour-program__time">
-                        {isEn && item.time_en ? item.time_en : item.time}
+                        {item.time}
                       </span>
                       <span className="tour-program__desc">
-                        {isEn && item.description_en ? item.description_en : item.description}
+                        {item.description}
                       </span>
                     </div>
                   ))}
