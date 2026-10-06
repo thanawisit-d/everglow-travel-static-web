@@ -16,10 +16,10 @@ export function getTours(locale: Locale = 'th'): Tour[] {
 }
 
 export function getPopularTours(locale: Locale = 'th'): Tour[] {
-  return [...cache[locale]]
+  const marked = cache[locale]
     .filter((t) => t.popular === true)
-    .sort((a, b) => (a.popularOrder ?? 999) - (b.popularOrder ?? 999))
-    .slice(0, 5);
+    .sort((a, b) => (a.popularOrder ?? 999) - (b.popularOrder ?? 999));
+  return [...(marked.length ? marked : cache[locale])].slice(0, 5);
 }
 
 export function searchTours(keyword: string, locale: Locale = 'th'): Tour[] {
@@ -27,7 +27,7 @@ export function searchTours(keyword: string, locale: Locale = 'th'): Tour[] {
   if (!q) return getTours(locale);
   return cache[locale].filter((t) => {
     const haystack = [
-      tourCountryLabel(t),
+      tourCountryLabel(t, locale),
       t.city,
       t.desc,
       t.shortDesc,
@@ -50,8 +50,8 @@ export interface TourFilter {
 export function filterTours(filters: TourFilter, locale: Locale = 'th'): Tour[] {
   return cache[locale].filter((t) => {
     if (filters.country) {
-      const label = tourCountryLabel(t);
-      if (label !== filters.country) return false;
+      const label = tourCountryLabel(t, locale);
+      if (label.toLowerCase() !== filters.country.toLowerCase()) return false;
     }
     if (filters.type && t.type !== filters.type) return false;
     const price = toNumber(t.price);

@@ -15,9 +15,9 @@ export function GET(request: NextRequest): NextResponse<ToursResponse> {
   const minPriceParam = searchParams.get('minPrice');
   const maxPriceParam = searchParams.get('maxPrice');
 
-  let tours = q ? searchTours(q, locale) : getTours(locale);
+  const searched = q ? searchTours(q, locale) : getTours(locale);
 
-  tours = filterTours(
+  const allowed = filterTours(
     {
       country,
       minPrice: minPriceParam ? toNumber(minPriceParam) : undefined,
@@ -25,6 +25,8 @@ export function GET(request: NextRequest): NextResponse<ToursResponse> {
     },
     locale,
   );
+
+  const tours = searched.filter((tour) => allowed.includes(tour));
 
   return NextResponse.json({
     success: true,

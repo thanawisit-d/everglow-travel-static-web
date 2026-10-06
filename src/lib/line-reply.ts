@@ -2,7 +2,8 @@ import type { Intent } from '@/types/intent';
 import type { IntentResult, ReplyPayload } from '@/types/line';
 import type { Locale } from '@/types/api';
 import { lineConfig } from '@/lib/line-config';
-import { searchTours, getTours, getPopularTours, getCountryNames } from '@/lib/tours-data';
+import { searchTours, getTours, getCountryNames } from '@/lib/tours-data';
+import { selectMonthlyTours } from '@/lib/monthly-selector';
 import { extractSearchFilters, filterTours } from '@/lib/search-filters';
 import { tourCountryLabel, type SearchFilters, type Tour } from '@/types/tour';
 import { formatPrice, toNumber } from '@/utils/price';
@@ -83,9 +84,11 @@ const STOP_WORDS = [
 function parseSearchText(text: string) {
   const input = text.trim();
 
-  // หาเลข 4–6 หลัก เช่น 3000, 15900, 30000
-  const priceMatch = input.match(/\d{4,6}/);
-  const maxPrice = priceMatch ? Number(priceMatch[0]) : undefined;
+  // หางบประมาณ เช่น "ไม่เกิน 3000", "งบ 15000", "3000 บาท" (ไม่นับปี/เลขลอย ๆ อย่าง 2026)
+  const priceMatch =
+    input.match(/(?:ไม่เกิน|งบ(?:ประมาณ)?|ต่ำกว่า|ราคา|budget|under)\s*([0-9][0-9,]{2,6})/i) ||
+    input.match(/([0-9][0-9,]{2,6})\s*(?:บาท|฿|thb|baht)/i);
+  const maxPrice = priceMatch ? Number(priceMatch[1].replace(/,/g, '')) : undefined;
 
   // หาจำนวนวัน เช่น "5 วัน", "8วัน"
   const dayMatch = text.match(/(\d+)\s*วัน/);
@@ -98,7 +101,7 @@ function parseSearchText(text: string) {
   let keyword = input
     .replace(/ทัวร์/gi, '')
     .replace(/โปรโมชั่น|โปร|ลดราคา/gi, '')
-    .replace(/\d{4,6}/g, '')
+    .replace(/\d[\d,]{2,}/g, '')
     .replace(/\d+\s*วัน/g, '')
     .replace(city ?? '', '')
     .trim();
@@ -125,7 +128,12 @@ export function detectIntent(text: string): IntentResult {
   const t = (text || '').toLowerCase().trim();
 
   for (const kw of GREETING_KEYWORDS) {
-    if (t.includes(kw.toLowerCase())) return { intent: 'greeting' };
+    const k = kw.toLowerCase();
+    if (/^[a-z]+$/.test(k)) {
+      if (new RegExp(`\\b${k}\\b`).test(t)) return { intent: 'greeting' };
+    } else if (t.includes(k)) {
+      return { intent: 'greeting' };
+    }
   }
 
   if (text.includes('^')) return { intent: 'priceSearch', keyword: 'price' };
@@ -170,7 +178,9 @@ export function detectIntent(text: string): IntentResult {
   }
 
   const parsed = parseSearchText(text);
-  const containsPromotion = PROMOTION_KEYWORDS.some((kw) => t.includes(kw));
+  // กัน false positive: "โปรแกรม" และ "โปรตุเกส" ไม่ใช่โปรโมชั่น
+  const promoText = t.replace(/โปรแกรม/g, '').replace(/โปรตุเกส/g, '');
+  const containsPromotion = PROMOTION_KEYWORDS.some((kw) => promoText.includes(kw));
   const containsPriceKeyword = PRICE_KEYWORDS.some((kw) => t.includes(kw.toLowerCase()));
 
   // 1. Promotion มาก่อน
@@ -301,7 +311,7 @@ function buildSearchEngineReply(filters: SearchFilters, locale: Locale): ReplyPa
 }
 
 function buildMonthlyProgramReply(locale: Locale): ReplyPayload {
-  const tours = getPopularTours(locale);
+  const { tours } = selectMonthlyTours({ locale });
 
   if (tours.length === 0) {
     return {

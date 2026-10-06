@@ -1,7 +1,14 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import LocaleHtmlLang from '@/components/LocaleHtmlLang';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [{ locale: 'th' }, { locale: 'en' }];
+}
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -49,6 +56,7 @@ export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   return (
     <>
+      <LocaleHtmlLang locale={locale} />
       <Header locale={locale} />
       {children}
       <Footer locale={locale} />

@@ -5,7 +5,11 @@ function required(name: string): string {
 }
 
 export const env = {
-  accessToken: required('LINE_CHANNEL_ACCESS_TOKEN'),
-  channelSecret: required('LINE_CHANNEL_SECRET'),
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://everglow-travel-static-web.vercel.app',
+  get accessToken(): string {
+    return required('LINE_CHANNEL_ACCESS_TOKEN');
+  },
+  get channelSecret(): string {
+    return required('LINE_CHANNEL_SECRET');
+  },
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com',
 };

@@ -125,7 +125,7 @@ export default function Header({ locale }) {
   }, [router, closeMenu]);
 
   const text = config[locale] || config.th;
-  const s = config[locale].social;
+  const s = text.social;
   const activeGroupData = config.countryGroups.find(g => g.label === activeGroup);
   const activeDomesticGroupData = config.domesticGroups.find(g => g.label === activeDomesticGroup);
 

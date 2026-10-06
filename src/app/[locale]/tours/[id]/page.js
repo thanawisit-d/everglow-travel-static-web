@@ -11,6 +11,8 @@ function findTour(locale, id) {
   return localized.find((t) => t.id === id) || null;
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   const params = [];
   for (const id of toursDataTh.map((t) => t.id)) {
@@ -35,6 +37,12 @@ export async function generateMetadata({ params }) {
   const raw = desc || tour.id;
   const name = raw.length > 70 ? `${raw.slice(0, 70).trimEnd()}…` : raw;
   const tourPath = `/tours/${tour.id}`;
+  const inTh = toursDataTh.some((t) => t.id === id);
+  const inEn = toursDataEn.some((t) => t.id === id);
+  const languages = {};
+  if (inTh) languages.th = `/th${tourPath}`;
+  if (inEn) languages.en = `/en${tourPath}`;
+  languages['x-default'] = inTh ? `/th${tourPath}` : `/en${tourPath}`;
   return {
     title: name,
     description: desc ? `${desc} | ${isEn ? 'Price' : 'ราคา'} ${tour.price} บาท` : `Tour ${tour.id}`,
@@ -53,11 +61,7 @@ export async function generateMetadata({ params }) {
     },
     alternates: {
       canonical: `/${locale}${tourPath}`,
-      languages: {
-        th: `/th${tourPath}`,
-        en: `/en${tourPath}`,
-        'x-default': `/th${tourPath}`,
-      },
+      languages,
     },
   };
 }

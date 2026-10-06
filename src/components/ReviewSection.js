@@ -123,7 +123,7 @@ export default function ReviewSection({ locale, standalone }) {
   if (standalone) {
     return (
       <section className="review-section review-section--standalone">
-
+        <h1 className="review-section__heading">{t.reviewTitle}</h1>
 
         <div className="review-section__content">
           <div className="review-categories" role="tablist" aria-label={t.reviewCategoriesLabel}>

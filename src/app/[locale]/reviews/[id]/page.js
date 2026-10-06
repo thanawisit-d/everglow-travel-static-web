@@ -2,6 +2,8 @@ import reviewsData from '@/data/reviews.json';
 import ReviewDetail from '@/components/ReviewDetail';
 import config from '@/data/site-config.json';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   const ids = reviewsData.map((r) => r.id);
   const locales = ['th', 'en'];
@@ -19,8 +21,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com'
 export async function generateMetadata({ params }) {
   const { locale, id } = await params;
   const review = reviewsData.find((r) => r.id === id);
+  const t = config[locale] || config.th;
   if (!review) {
-    return { title: 'Review Not Found' };
+    return { title: t.tourNotFound };
   }
   const isEn = locale === 'en';
   const displayTag = isEn && review.tag_en ? review.tag_en : review.tag;
@@ -35,13 +38,13 @@ export async function generateMetadata({ params }) {
       description: desc,
       locale: isEn ? 'en_US' : 'th_TH',
       url: `/${locale}${reviewPath}`,
-      images: review.image ? [{ url: `${siteUrl}/${review.image}`, width: 800, height: 600 }] : [],
+      images: review.image ? [{ url: `${siteUrl}/${encodeURI(review.image)}`, width: 800, height: 600 }] : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: displayTag,
       description: desc,
-      images: review.image ? [`${siteUrl}/${review.image}`] : [],
+      images: review.image ? [`${siteUrl}/${encodeURI(review.image)}`] : [],
     },
     alternates: {
       canonical: `/${locale}${reviewPath}`,

@@ -2,8 +2,9 @@ import type { messagingApi } from "@line/bot-sdk";
 import type { Tour } from "@/types/tour";
 import { tourCountryLabel } from "@/types/tour";
 import { formatPrice } from "@/utils/price";
+import { env } from "@/lib/env";
 
-const SITE_URL = "https://everglow-travel-static-web.vercel.app";
+const SITE_URL = env.siteUrl;
 const DEFAULT_IMAGE = "assets/images/logos/Logo.jpg";
 
 const THAI_MONTHS = [

@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${locale}/domestic`,
       languages: {
-        'x-default': '/domestic',
+        'x-default': '/th/domestic',
         th: '/th/domestic',
         en: '/en/domestic',
       },
@@ -48,7 +48,7 @@ export default async function DomesticPage({ params }) {
   const tours = source.filter((t) => t.type === 'domestic');
   return (
     <Suspense fallback={<section className="page tour-list-page active"><h1>{locale === 'en' ? 'Thailand Tours' : 'ทัวร์ในประเทศ'}</h1></section>}>
-      <DomesticClient locale={locale} tours={tours} />
+      <DomesticClient key={locale} locale={locale} tours={tours} />
     </Suspense>
   );
 }

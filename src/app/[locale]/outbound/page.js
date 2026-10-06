@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${locale}/outbound`,
       languages: {
-        'x-default': '/outbound',
+        'x-default': '/th/outbound',
         th: '/th/outbound',
         en: '/en/outbound',
       },
@@ -48,7 +48,7 @@ export default async function OutboundPage({ params }) {
   const tours = source.filter((t) => t.type === 'outbound');
   return (
     <Suspense fallback={<section className="page tour-list-page active"><h1>{locale === 'en' ? 'Outbound Tours' : 'ทัวร์ต่างประเทศ'}</h1></section>}>
-      <OutboundClient locale={locale} tours={tours} />
+      <OutboundClient key={locale} locale={locale} tours={tours} />
     </Suspense>
   );
 }
