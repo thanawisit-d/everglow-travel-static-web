@@ -10,8 +10,8 @@ import { provinceNameMap } from '@/lib/i18n';
 const TEXT = {
   destinationLabel: 'Destination',
   destinationPlaceholder: 'Search a destination in Thailand',
-  dateLabel: 'Travel month',
-  datePlaceholder: 'Select travel month',
+  dateLabel: 'Travel date',
+  datePlaceholder: 'Select travel date',
   search: 'Search',
 };
 

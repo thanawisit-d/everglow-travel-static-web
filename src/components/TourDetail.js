@@ -21,6 +21,10 @@ export default function TourDetail({ tour, locale }) {
     : (tour.province ? displayField(tour.province) : '-');
   const displayTransportName = isEn && tour.transport?.name_en ? tour.transport.name_en : (tour.transport?.name || '-');
 
+  const bookingLink = isEn
+    ? { href: t.social?.whatsapp || 'https://wa.me/66996326146', icon: 'assets/images/social/whatsapp.png' }
+    : { href: t.social?.line || 'https://lin.ee/xXcNI1w', icon: 'assets/images/social/LINE.png' };
+
   const breadcrumbLabel = isOutbound ? t.breadcrumbOutbound : t.breadcrumbDomestic;
   const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
 
@@ -103,8 +107,8 @@ export default function TourDetail({ tour, locale }) {
               <Image src={assetPath('assets/images/icons/phone2 (1).png')} width={24} height={24} alt="" />
               {t.detailCall}
             </a>
-            <a href="https://lin.ee/xXcNI1w" target="_blank" rel="noopener noreferrer" className="line-btn">
-              <Image src={assetPath('assets/images/social/LINE.png')} width={24} height={24} alt="" />
+            <a href={bookingLink.href} target="_blank" rel="noopener noreferrer" className="line-btn">
+              <Image src={assetPath(bookingLink.icon)} width={24} height={24} alt="" />
               {t.detailLine}
             </a>
             {tour.pdf && (

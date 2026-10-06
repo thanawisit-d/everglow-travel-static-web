@@ -136,7 +136,6 @@ export default function Header({ locale }) {
           <Image src={assetPath('assets/images/logos/Logo.jpg')} width={50} height={50} className="logo" alt="Everglow Travel" />
           <div className="company">
             <h3>{text.company}</h3>
-            <p>{text.license}</p>
           </div>
         </div>
         <div className="right contact-icons">
@@ -152,7 +151,7 @@ export default function Header({ locale }) {
           </a>
           {isEn && (
             <a href={s.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <Image src={assetPath('assets/images/social/whatsapp.webp')} width={36} height={36} alt="" />
+              <Image src={assetPath('assets/images/social/whatsapp.png')} width={36} height={36} alt="" />
             </a>
           )}
           <a href={s.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">

@@ -126,7 +126,7 @@ export default function MonthPicker({ id, value = '', onChange, locale = 'th', p
       </div>
 
       {isOpen && (
-        <div className="month-picker-panel" id={panelId} role="dialog" aria-label={isEn ? 'Select month' : 'เลือกเดือนเดินทาง'}>
+        <div className="month-picker-panel" id={panelId} role="dialog" aria-label={isEn ? 'Select month' : 'เลือกวันเดินทาง'}>
           <div className="month-picker-nav">
             <button
               type="button"

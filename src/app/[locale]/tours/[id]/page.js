@@ -1,13 +1,31 @@
 import { notFound } from 'next/navigation';
 import toursDataTh from '@/data/tours-th.json';
+import toursDataEn from '@/data/tours-en.json';
 import TourDetail from '@/components/TourDetail';
+
+const TOURS_BY_LOCALE = { th: toursDataTh, en: toursDataEn };
+
+// Prefer the localized dataset; fall back to TH so tours that exist only in
+// Thai (not yet translated) still resolve instead of 404ing on /en.
+function findTour(locale, id) {
+  const localized = TOURS_BY_LOCALE[locale] || toursDataTh;
+  return (
+    localized.find((t) => t.id === id) ||
+    toursDataTh.find((t) => t.id === id) ||
+    null
+  );
+}
 
 export function generateStaticParams() {
   const locales = ['th', 'en'];
+  const ids = new Set([
+    ...toursDataTh.map((t) => t.id),
+    ...toursDataEn.map((t) => t.id),
+  ]);
   const params = [];
   for (const locale of locales) {
-    for (const tour of toursDataTh) {
-      params.push({ locale, id: tour.id });
+    for (const id of ids) {
+      params.push({ locale, id });
     }
   }
   return params;
@@ -17,7 +35,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com'
 
 export async function generateMetadata({ params }) {
   const { locale, id } = await params;
-  const tour = toursDataTh.find((t) => t.id === id);
+  const tour = findTour(locale, id);
   if (!tour) {
     return { title: 'Tour Not Found' };
   }
@@ -55,7 +73,7 @@ export async function generateMetadata({ params }) {
 
 export default async function TourDetailPage({ params }) {
   const { locale, id } = await params;
-  const tour = toursDataTh.find((t) => t.id === id) || null;
+  const tour = findTour(locale, id);
   if (!tour) {
     notFound();
   }

@@ -8,14 +8,14 @@ import MonthPicker from './MonthPicker';
 
 const TEXT = {
   destinationLabel: 'ปลายทาง',
-  destinationPlaceholder: 'พิมพ์ชื่อจังหวัดหรือประเทศ',
+  destinationPlaceholder: 'ค้นหาจังหวัดหรือประเทศ',
   typeLabel: 'ประเภททัวร์',
   typeDomestic: 'ในประเทศ',
   typeOutbound: 'ต่างประเทศ',
   groupDomestic: 'ในประเทศ',
   groupOutbound: 'ต่างประเทศ',
-  dateLabel: 'เดือนเดินทาง',
-  datePlaceholder: 'เลือกเดือนเดินทาง',
+  dateLabel: 'วันเดินทาง',
+  datePlaceholder: 'เลือกวันเดินทาง',
   search: 'ค้นหา',
 };
 
