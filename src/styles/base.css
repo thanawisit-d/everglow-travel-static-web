@@ -36,6 +36,10 @@ body {
   width: 100%;
 }
 
+.page {
+  min-height: 100vh;
+}
+
 .page.active {
   display: block;
 }
