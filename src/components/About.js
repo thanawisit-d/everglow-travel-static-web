@@ -243,8 +243,6 @@ export default function About({ locale, standalone }) {
           <div className="section-label">{t.visionTitle}</div>
 
           <div className="vision-content">
-            <div className="vision-mark">“</div>
-
             <div>
               <h2>{t.vision}</h2>
               <p>{t.visionText}</p>
