@@ -6,6 +6,7 @@ import { env } from "@/lib/env";
 
 const SITE_URL = env.siteUrl;
 const DEFAULT_IMAGE = "assets/images/logos/Logo.jpg";
+const PRIMARY_COLOR = "#2563EB";
 
 const THAI_MONTHS = [
   "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน",
@@ -47,22 +48,31 @@ const AIRLINE_NAMES: Record<string, string> = {
   "ITAAirways.png": "ITA Airways",
 };
 
+// Flag prefix shown on the card title for outbound destinations.
+const COUNTRY_FLAGS: Record<string, string> = {
+  "จีน": "🇨🇳",
+  "ญี่ปุ่น": "🇯🇵",
+  "เกาหลีใต้": "🇰🇷",
+  "เกาหลี": "🇰🇷",
+  "ไต้หวัน": "🇹🇼",
+  "ฮ่องกง": "🇭🇰",
+  "มาเก๊า": "🇲🇴",
+  "เวียดนาม": "🇻🇳",
+  "ภูฏาน": "🇧🇹",
+  "โปรตุเกส": "🇵🇹",
+  "สเปน": "🇪🇸",
+  "อิตาลี": "🇮🇹",
+  "ฝรั่งเศส": "🇫🇷",
+  "ตุรกี": "🇹🇷",
+  "อียิปต์": "🇪🇬",
+  "ออสเตรเลีย": "🇦🇺",
+  "อินเดีย": "🇮🇳",
+  "สิงคโปร์": "🇸🇬",
+  "มาเลเซีย": "🇲🇾",
+};
+
 function airlineName(filename: string): string {
   return AIRLINE_NAMES[filename] || filename.replace(/\.[^.]+$/, "");
-}
-
-// "2026-04" / "2026-05" --> "เมษายน – พฤษภาคม 2569" (Buddhist year)
-function travelMonthLabel(tour: Tour): string | null {
-  const start = parseFlyMonth(tour.startMonth);
-  if (!start) return null;
-  const end = parseFlyMonth(tour.endMonth);
-
-  if (!end) return `📅 เดินทาง ${start.month} ${start.year}`;
-  if (start.key === end.key) return `📅 เดินทาง ${start.month} ${start.year}`;
-
-  return end.year === start.year
-    ? `📅 เดินทาง ${start.month} – ${end.month} ${start.year}`
-    : `📅 เดินทาง ${start.month} ${start.year} – ${end.month} ${end.year}`;
 }
 
 function parseFlyMonth(
@@ -77,25 +87,42 @@ function parseFlyMonth(
   return { month: THAI_MONTHS[m - 1], year, key: value };
 }
 
+// Travel period label. Outbound tours carry startMonth/endMonth, while
+// domestic tours only carry a pre-formatted periodText — fall back to it so
+// domestic cards still show a period instead of nothing.
+function tourPeriodLabel(tour: Tour): string | null {
+  const start = parseFlyMonth(tour.startMonth);
+  if (!start) return tour.periodText?.trim() || null;
+
+  const end = parseFlyMonth(tour.endMonth);
+  if (!end || start.key === end.key) return `${start.month} ${start.year}`;
+
+  return end.year === start.year
+    ? `${start.month} – ${end.month} ${start.year}`
+    : `${start.month} ${start.year} – ${end.month} ${end.year}`;
+}
+
 function hasCity(tour: Tour): boolean {
   return Boolean(tour.city) && tour.city !== "-";
 }
 
 function tourImageUrl(tour: Tour): string {
-  if (tour.image?.startsWith("http")) return tour.image;
-  const image = tour.image || DEFAULT_IMAGE;
-  return `${SITE_URL}/${image.replace(/^\/+/, "")}`;
+  return `${SITE_URL}/${tour.image || DEFAULT_IMAGE}`;
 }
 
 export function buildTourFlex(
   tour: Tour,
   locale: "th" | "en" = "th"
 ): messagingApi.FlexMessage {
+  const titleName = tourCountryLabel(tour, locale);
+  const isOutbound = tour.type === "outbound";
+  const flag = isOutbound ? COUNTRY_FLAGS[tourCountryLabel(tour, "th")] : undefined;
+  const title = flag ? `${flag} ${titleName}` : titleName;
 
-  const title = tourCountryLabel(tour, locale);
-  const siteUrl = "https://everglow-travel-static-web.vercel.app";
-  const month = travelMonthLabel(tour);
+  const period = tourPeriodLabel(tour);
   const airline = tour.airline ? airlineName(tour.airline) : null;
+  const showCity = isOutbound && hasCity(tour);
+  const priceLabel = isOutbound ? "ราคาเริ่มต้น" : "ราคา";
 
   const bodyContents: messagingApi.FlexComponent[] = [
     {
@@ -104,13 +131,32 @@ export function buildTourFlex(
       weight: "bold",
       size: "xl",
       wrap: true,
+      maxLines: 2,
     },
   ];
 
-  if (month) {
+  if (showCity) {
     bodyContents.push({
       type: "text",
-      text: month,
+      text: `📍 ${tour.city}`,
+      size: "sm",
+      color: "#666666",
+      wrap: true,
+    });
+  }
+
+  bodyContents.push({
+    type: "text",
+    text: tour.duration,
+    size: "sm",
+    color: "#333333",
+    wrap: true,
+  });
+
+  if (period) {
+    bodyContents.push({
+      type: "text",
+      text: `📅 ${period}`,
       size: "sm",
       color: "#666666",
       wrap: true,
@@ -127,69 +173,44 @@ export function buildTourFlex(
     });
   }
 
-  if (hasCity(tour)) {
-    bodyContents.push({
-      type: "box",
-      layout: "baseline",
-      spacing: "sm",
-      contents: [
-        {
-          type: "text",
-          text: "📍",
-          flex: 0,
-          size: "sm",
-        },
-        {
-          type: "text",
-          text: tour.city as string,
-          size: "sm",
-          color: "#666666",
-          wrap: true,
-        },
-      ],
-    });
-  }
+  bodyContents.push({
+    type: "box",
+    layout: "vertical",
+    margin: "lg",
+    spacing: "xs",
+    contents: [
+      {
+        type: "text",
+        text: priceLabel,
+        size: "xs",
+        color: "#8b8b8b",
+      },
+      {
+        type: "text",
+        text: `฿${formatPrice(tour.price)}`,
+        weight: "bold",
+        size: "xxl",
+        color: PRIMARY_COLOR,
+      },
+    ],
+  });
 
-  bodyContents.push(
-    {
-      type: "text",
-      text: tour.duration,
-      size: "sm",
-      color: "#333333",
-    },
-    {
-      type: "box",
-      layout: "vertical",
-      spacing: "sm",
-      contents: [
-        {
-          type: "text",
-          text: "ราคาเริ่มต้น",
-          size: "xs",
-          color: "#8b8b8b",
-          wrap: true,
-        },
-        {
-          type: "text",
-          text: `฿${formatPrice(tour.price)}`,
-          weight: "bold",
-          size: "xxl",
-          color: "#2563EB",
-        },
-      ],
-    },
-  );
+  const altParts: string[] = [titleName];
+  if (showCity) altParts.push(tour.city as string);
+  altParts.push(tour.duration);
+  if (period) altParts.push(period);
+  altParts.push(`ราคา ${formatPrice(tour.price)} บาท`);
 
   return {
     type: "flex",
-    altText: `${title} (${tour.duration}) ราคา ${formatPrice(tour.price)} บาท`,
+    altText: altParts.join(" · "),
     contents: {
       type: "bubble",
       hero: {
         type: "image",
         url: tourImageUrl(tour),
         size: "full",
-        aspectRatio: "20:13",
+        aspectRatio: "2:1",
         aspectMode: "cover",
       },
       body: {
@@ -206,19 +227,19 @@ export function buildTourFlex(
           {
             type: "button",
             style: "primary",
-            color: "#2563EB",
+            color: PRIMARY_COLOR,
             action: {
               type: "uri",
-              label: "ดูรายละเอียด",
-              uri: `${siteUrl}/${locale}/tours/${tour.id}`,
+              label: "ดูรายละเอียดทัวร์",
+              uri: `${SITE_URL}/${locale}/tours/${tour.id}`,
             },
           },
           {
             type: "button",
-            style: "secondary",
+            style: "link",
             action: {
               type: "message",
-              label: "สอบถามแอดมิน",
+              label: "สอบถามทัวร์",
               text: `สนใจทัวร์ ${tour.id}`,
             },
           },
@@ -233,7 +254,7 @@ export function buildTourCarousel(
   locale: "th" | "en" = "th"
 ): messagingApi.FlexMessage {
   if (tours.length === 0) {
-    throw new Error('Cannot build carousel with zero tours.');
+    throw new Error("Cannot build carousel with zero tours.");
   }
 
   if (tours.length === 1) {
@@ -246,7 +267,7 @@ export function buildTourCarousel(
 
   return {
     type: "flex",
-    altText: `พบทัวร์ ${tours.length} รายการ`,
+    altText: `พบ ${tours.length} โปรแกรมทัวร์ เลื่อนดูโปรแกรมที่สนใจได้เลย`,
     contents: {
       type: "carousel",
       contents: bubbles,
