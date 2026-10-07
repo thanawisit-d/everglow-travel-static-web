@@ -9,16 +9,25 @@ import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
 
 const REVIEW_GALLERY_FOLDERS = {
-  'khao-yai': '1D/เขาใหญ่',
-  'wang-nam-khieo': '1D/วังน้ำเขียว',
-  'kaen-makud': '1D/แก่นมะกูด',
-  tak: '2D1N/ตาก',
-  'uthai-thani': '2D1N/อุทัยธานี',
-  'phu-lom-lo': '2D1N/ภูลมโล',
-  'kamphaeng-phet': '2D1N/กำแพงเพชร',
+  'domestic-khao-yai-1d': '1D/เขาใหญ่',
+  'domestic-wang-nam-khieo-1d': '1D/วังน้ำเขียว',
+  'domestic-kaen-makud-1d': '1D/แก่นมะกูด',
+  'domestic-tak-2d1n': '2D1N/ตาก',
+  'domestic-uthai-thani-2d1n': '2D1N/อุทัยธานี',
+  'domestic-phu-lom-lo-2d1n': '2D1N/ภูลมโล',
+  'domestic-kamphaeng-phet-2d1n': '2D1N/กำแพงเพชร',
+  'outbound-chongqing-4d3n': '4D3N/ฉงชิ่ง',
 };
 
 const REVIEW_IMAGE_EXTENSIONS = ['jpeg', 'jpg', 'png'];
+
+function getTripType(tag) {
+  const days = tag.match(/(\d+)\s*DAY/i);
+  const nights = tag.match(/(\d+)\s*NIGHT/i);
+  if (!days) return '1 Day Trip';
+  if (nights) return `${days[1]} Day ${nights[1]} Night Trip`;
+  return `${days[1]} Day Trip`;
+}
 
 const REVIEW_CATEGORIES = [
   { id: 'domestic', labelKey: 'reviewCatDomestic', locales: ['th', 'en'] },
@@ -180,7 +189,7 @@ export default function ReviewSection({ locale, standalone }) {
                 {displayReviews.map((item) => {
                   const tag = isEn && item.tag_en ? item.tag_en : item.tag;
                   const title = tag.includes(':') ? tag.slice(tag.indexOf(':') + 1).trim() : tag;
-                  const tripType = item.tag.startsWith('2 DAY') ? '2 Day 1 Night Trip' : '1 Day Trip';
+                  const tripType = getTripType(item.tag);
 
                   return (
                     <article key={item.id} className="review-destination">
@@ -214,7 +223,7 @@ export default function ReviewSection({ locale, standalone }) {
           {displayReviews.map((item, i) => {
             const tag = isEn && item.tag_en ? item.tag_en : item.tag;
             const title = tag.includes(':') ? tag.slice(tag.indexOf(':') + 1).trim() : tag;
-            const tripType = item.tag.startsWith('2 DAY') ? '2 Day 1 Night Trip' : '1 Day Trip';
+            const tripType = getTripType(item.tag);
 
             return (
               <article key={i} className="review-card">

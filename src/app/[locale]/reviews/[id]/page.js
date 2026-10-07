@@ -5,12 +5,11 @@ import config from '@/data/site-config.json';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  const ids = reviewsData.map((r) => r.id);
-  const locales = ['th', 'en'];
   const params = [];
-  for (const locale of locales) {
-    for (const id of ids) {
-      params.push({ locale, id });
+  for (const review of reviewsData) {
+    const locales = review.category === 'outbound' ? ['th'] : ['th', 'en'];
+    for (const locale of locales) {
+      params.push({ locale, id: review.id });
     }
   }
   return params;
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }) {
   const { locale, id } = await params;
   const review = reviewsData.find((r) => r.id === id);
   const t = config[locale] || config.th;
-  if (!review) {
+  if (!review || (locale === 'en' && review.category === 'outbound')) {
     return { title: t.tourNotFound };
   }
   const isEn = locale === 'en';
@@ -30,6 +29,7 @@ export async function generateMetadata({ params }) {
   const displayText = isEn && review.text_en ? review.text_en : review.text;
   const desc = displayText ? displayText.slice(0, 160) : displayTag;
   const reviewPath = `/reviews/${review.id}`;
+  const isThOnly = review.category === 'outbound';
   return {
     title: displayTag,
     description: desc,
@@ -46,14 +46,22 @@ export async function generateMetadata({ params }) {
       description: desc,
       images: review.image ? [`${siteUrl}/${encodeURI(review.image)}`] : [],
     },
-    alternates: {
-      canonical: `/${locale}${reviewPath}`,
-      languages: {
-        th: `/th${reviewPath}`,
-        en: `/en${reviewPath}`,
-        'x-default': `/th${reviewPath}`,
-      },
-    },
+    alternates: isThOnly
+      ? {
+          canonical: `/th${reviewPath}`,
+          languages: {
+            th: `/th${reviewPath}`,
+            'x-default': `/th${reviewPath}`,
+          },
+        }
+      : {
+          canonical: `/${locale}${reviewPath}`,
+          languages: {
+            th: `/th${reviewPath}`,
+            en: `/en${reviewPath}`,
+            'x-default': `/th${reviewPath}`,
+          },
+        },
   };
 }
 
@@ -61,7 +69,7 @@ export default async function ReviewDetailPage({ params }) {
   const { locale, id } = await params;
   const t = config[locale] || config.th;
   const review = reviewsData.find((r) => r.id === id) || null;
-  if (!review) {
+  if (!review || (locale === 'en' && review.category === 'outbound')) {
     return (
       <div className="page review-detail-page">
         <div className="review-detail-body not-found">

@@ -59,20 +59,24 @@ export default async function sitemap() {
     });
   }
 
-  const reviewIds = [...new Set(reviewsData.map((r) => r.id))];
-  for (const reviewId of reviewIds) {
-    for (const locale of locales) {
+  for (const review of reviewsData) {
+    const reviewLocales = review.category === 'outbound' ? ['th'] : locales;
+    for (const locale of reviewLocales) {
       entries.push({
-        url: `${siteUrl}/${locale}/reviews/${reviewId}`,
+        url: `${siteUrl}/${locale}/reviews/${review.id}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.5,
-        alternates: {
-          languages: {
-            th: `${siteUrl}/th/reviews/${reviewId}`,
-            en: `${siteUrl}/en/reviews/${reviewId}`,
-          },
-        },
+        ...(review.category === 'outbound'
+          ? {}
+          : {
+              alternates: {
+                languages: {
+                  th: `${siteUrl}/th/reviews/${review.id}`,
+                  en: `${siteUrl}/en/reviews/${review.id}`,
+                },
+              },
+            }),
       });
     }
   }
