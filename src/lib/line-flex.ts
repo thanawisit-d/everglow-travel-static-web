@@ -4,17 +4,25 @@ import { tourCountryLabel } from "@/types/tour";
 import { formatPrice } from "@/utils/price";
 import { env } from "@/lib/env";
 
-const SITE_URL = env.siteUrl;
+const SITE_URL = env.siteUrl.replace(/\/+$/, "");
 const DEFAULT_IMAGE = "assets/images/logos/Logo.jpg";
 const PRIMARY_COLOR = "#2563EB";
 
 const THAI_MONTHS = [
-  "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน",
-  "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม",
-  "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม",
+  "มกราคม",
+  "กุมภาพันธ์",
+  "มีนาคม",
+  "เมษายน",
+  "พฤษภาคม",
+  "มิถุนายน",
+  "กรกฎาคม",
+  "สิงหาคม",
+  "กันยายน",
+  "ตุลาคม",
+  "พฤศจิกายน",
+  "ธันวาคม",
 ];
 
-// Map airline logo filenames back to human-readable airline names.
 const AIRLINE_NAMES: Record<string, string> = {
   "Cathaylogo.jpg": "Cathay Pacific",
   "airasia.png": "AirAsia X",
@@ -48,7 +56,6 @@ const AIRLINE_NAMES: Record<string, string> = {
   "ITAAirways.png": "ITA Airways",
 };
 
-// Flag prefix shown on the card title for outbound destinations.
 const COUNTRY_FLAGS: Record<string, string> = {
   "จีน": "🇨🇳",
   "ญี่ปุ่น": "🇯🇵",
@@ -79,46 +86,113 @@ function parseFlyMonth(
   value: string | undefined,
 ): { month: string; year: number; key: string } | null {
   if (!value) return null;
+
   const match = value.match(/^(\d{4})-(\d{1,2})$/);
   if (!match) return null;
-  const year = Number(match[1]) + 543; // Buddhist calendar
-  const m = Number(match[2]);
-  if (m < 1 || m > 12) return null;
-  return { month: THAI_MONTHS[m - 1], year, key: value };
+
+  const year = Number(match[1]) + 543;
+  const monthNumber = Number(match[2]);
+
+  if (monthNumber < 1 || monthNumber > 12) {
+    return null;
+  }
+
+  return {
+    month: THAI_MONTHS[monthNumber - 1],
+    year,
+    key: value,
+  };
 }
 
-// Travel period label. Outbound tours carry startMonth/endMonth, while
-// domestic tours only carry a pre-formatted periodText — fall back to it so
-// domestic cards still show a period instead of nothing.
+/**
+ * Travel period:
+ * - Outbound: startMonth/endMonth
+ * - Domestic: periodText
+ */
 function tourPeriodLabel(tour: Tour): string | null {
   const start = parseFlyMonth(tour.startMonth);
-  if (!start) return tour.periodText?.trim() || null;
+
+  if (!start) {
+    return tour.periodText?.trim() || null;
+  }
 
   const end = parseFlyMonth(tour.endMonth);
-  if (!end || start.key === end.key) return `${start.month} ${start.year}`;
 
-  return end.year === start.year
-    ? `${start.month} – ${end.month} ${start.year}`
-    : `${start.month} ${start.year} – ${end.month} ${end.year}`;
+  if (!end || start.key === end.key) {
+    return `${start.month} ${start.year}`;
+  }
+
+  if (start.year === end.year) {
+    return `${start.month} – ${end.month} ${start.year}`;
+  }
+
+  return `${start.month} ${start.year} – ${end.month} ${end.year}`;
 }
 
 function hasCity(tour: Tour): boolean {
-  return Boolean(tour.city) && tour.city !== "-";
+  return Boolean(tour.city && tour.city !== "-");
 }
 
+/**
+ * Build a public image URL.
+ *
+ * encodeURI() preserves "/" while encoding spaces and other
+ * characters that are not safe inside a URL.
+ */
 function tourImageUrl(tour: Tour): string {
-  return `${SITE_URL}/${tour.image || DEFAULT_IMAGE}`;
+  const image = tour.image || DEFAULT_IMAGE;
+
+  if (image.startsWith("http")) {
+    return encodeURI(image);
+  }
+
+  const imagePath = image.replace(/^\/+/, "");
+
+  return `${SITE_URL}/${encodeURI(imagePath)}`;
+}
+
+function buildTitle(tour: Tour, locale: "th" | "en"): string {
+  const titleName = tourCountryLabel(tour, locale);
+
+  if (tour.type !== "outbound") {
+    return titleName;
+  }
+
+  const thaiCountry = tourCountryLabel(tour, "th");
+  const flag = COUNTRY_FLAGS[thaiCountry];
+
+  return flag ? `${flag} ${titleName}` : titleName;
+}
+
+function buildAltText(tour: Tour, locale: "th" | "en"): string {
+  const title = tourCountryLabel(tour, locale);
+  const parts: string[] = [title];
+
+  if (tour.type === "outbound" && hasCity(tour)) {
+    parts.push(tour.city as string);
+  }
+
+  if (tour.duration) {
+    parts.push(tour.duration);
+  }
+
+  const period = tourPeriodLabel(tour);
+
+  if (period) {
+    parts.push(period);
+  }
+
+  parts.push(`ราคา ${formatPrice(tour.price)} บาท`);
+
+  return parts.join(" · ");
 }
 
 export function buildTourFlex(
   tour: Tour,
-  locale: "th" | "en" = "th"
+  locale: "th" | "en" = "th",
 ): messagingApi.FlexMessage {
-  const titleName = tourCountryLabel(tour, locale);
+  const title = buildTitle(tour, locale);
   const isOutbound = tour.type === "outbound";
-  const flag = isOutbound ? COUNTRY_FLAGS[tourCountryLabel(tour, "th")] : undefined;
-  const title = flag ? `${flag} ${titleName}` : titleName;
-
   const period = tourPeriodLabel(tour);
   const airline = tour.airline ? airlineName(tour.airline) : null;
   const showCity = isOutbound && hasCity(tour);
@@ -130,6 +204,7 @@ export function buildTourFlex(
       text: title,
       weight: "bold",
       size: "xl",
+      color: "#222222",
       wrap: true,
       maxLines: 2,
     },
@@ -140,18 +215,21 @@ export function buildTourFlex(
       type: "text",
       text: `📍 ${tour.city}`,
       size: "sm",
-      color: "#666666",
+      color: "#555555",
       wrap: true,
+      maxLines: 2,
     });
   }
 
-  bodyContents.push({
-    type: "text",
-    text: tour.duration,
-    size: "sm",
-    color: "#333333",
-    wrap: true,
-  });
+  if (tour.duration) {
+    bodyContents.push({
+      type: "text",
+      text: tour.duration,
+      size: "sm",
+      color: "#333333",
+      wrap: true,
+    });
+  }
 
   if (period) {
     bodyContents.push({
@@ -160,6 +238,7 @@ export function buildTourFlex(
       size: "sm",
       color: "#666666",
       wrap: true,
+      maxLines: 2,
     });
   }
 
@@ -170,42 +249,39 @@ export function buildTourFlex(
       size: "sm",
       color: "#666666",
       wrap: true,
+      maxLines: 1,
     });
   }
 
   bodyContents.push({
     type: "box",
     layout: "vertical",
-    margin: "lg",
+    margin: "md",
     spacing: "xs",
     contents: [
       {
         type: "text",
         text: priceLabel,
         size: "xs",
-        color: "#8b8b8b",
+        color: "#8B8B8B",
       },
       {
         type: "text",
         text: `฿${formatPrice(tour.price)}`,
         weight: "bold",
-        size: "xxl",
+        size: "xl",
         color: PRIMARY_COLOR,
+        wrap: false,
       },
     ],
   });
 
-  const altParts: string[] = [titleName];
-  if (showCity) altParts.push(tour.city as string);
-  altParts.push(tour.duration);
-  if (period) altParts.push(period);
-  altParts.push(`ราคา ${formatPrice(tour.price)} บาท`);
-
   return {
     type: "flex",
-    altText: altParts.join(" · "),
+    altText: buildAltText(tour, locale),
     contents: {
       type: "bubble",
+
       hero: {
         type: "image",
         url: tourImageUrl(tour),
@@ -213,20 +289,28 @@ export function buildTourFlex(
         aspectRatio: "2:1",
         aspectMode: "cover",
       },
+
       body: {
         type: "box",
         layout: "vertical",
-        spacing: "md",
+        paddingAll: "md",
+        spacing: "sm",
         contents: bodyContents,
       },
+
       footer: {
         type: "box",
         layout: "vertical",
-        spacing: "sm",
+        paddingTop: "sm",
+        paddingBottom: "md",
+        paddingStart: "md",
+        paddingEnd: "md",
+        spacing: "xs",
         contents: [
           {
             type: "button",
             style: "primary",
+            height: "sm",
             color: PRIMARY_COLOR,
             action: {
               type: "uri",
@@ -237,6 +321,7 @@ export function buildTourFlex(
           {
             type: "button",
             style: "link",
+            height: "sm",
             action: {
               type: "message",
               label: "สอบถามทัวร์",
@@ -251,7 +336,7 @@ export function buildTourFlex(
 
 export function buildTourCarousel(
   tours: Tour[],
-  locale: "th" | "en" = "th"
+  locale: "th" | "en" = "th",
 ): messagingApi.FlexMessage {
   if (tours.length === 0) {
     throw new Error("Cannot build carousel with zero tours.");
@@ -261,9 +346,11 @@ export function buildTourCarousel(
     return buildTourFlex(tours[0], locale);
   }
 
-  const bubbles = tours
-    .slice(0, 5)
-    .map((tour) => buildTourFlex(tour, locale).contents as messagingApi.FlexBubble);
+  const visibleTours = tours.slice(0, 5);
+
+  const bubbles = visibleTours.map(
+    (tour) => buildTourFlex(tour, locale).contents as messagingApi.FlexBubble,
+  );
 
   return {
     type: "flex",
