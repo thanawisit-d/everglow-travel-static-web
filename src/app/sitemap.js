@@ -4,7 +4,7 @@ import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
 import reviewsData from '@/data/reviews.json';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglow-travel-static-web.vercel.app';
 const locales = ['th', 'en'];
 
 export default async function sitemap() {

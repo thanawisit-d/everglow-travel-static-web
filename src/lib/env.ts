@@ -11,5 +11,5 @@ export const env = {
   get channelSecret(): string {
     return required('LINE_CHANNEL_SECRET');
   },
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://everglowtravel.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://everglow-travel-static-web.vercel.app',
 };
