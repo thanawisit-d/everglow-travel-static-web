@@ -26,12 +26,21 @@ export default function TourDetail({ tour, locale }) {
   const breadcrumbLabel = isOutbound ? t.breadcrumbOutbound : t.breadcrumbDomestic;
   const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
 
-  const splitKeyword = isEn ? ' tour' : ' เที่ยว';
-  const descParts = displayDesc?.split(splitKeyword) || [];
-  const tourName = (descParts[0] || tour.id).trim();
-  const tourDetail = descParts.length > 1
-    ? (splitKeyword + descParts.slice(1).join(splitKeyword)).trim()
-    : '';
+  // New data model (e.g. TH catalogue): desc = short title, shortDesc = destinations.
+  // Legacy model (e.g. EN catalogue): desc = combined title + destinations.
+  let tourName;
+  let tourDetail;
+  if (tour.shortDesc) {
+    tourName = (displayDesc || tour.id).trim();
+    tourDetail = tour.shortDesc.trim();
+  } else {
+    const splitKeyword = isEn ? ' tour' : ' เที่ยว';
+    const descParts = displayDesc?.split(splitKeyword) || [];
+    tourName = (descParts[0] || tour.id).trim();
+    tourDetail = descParts.length > 1
+      ? (splitKeyword + descParts.slice(1).join(splitKeyword)).trim()
+      : '';
+  }
 
   return (
     <div className="tour-detail-page page active">
