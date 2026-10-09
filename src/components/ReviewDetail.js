@@ -119,8 +119,6 @@ export default function ReviewDetail({ review, locale }) {
         <nav className="breadcrumb" aria-label={isEn ? 'Breadcrumb' : 'เส้นทางนำทาง'}>
           <Link href={`/${locale}`}>{t.home}</Link>
           <span className="breadcrumb-sep">/</span>
-          <Link href={`/${locale}/reviews`}>{t.reviews}</Link>
-          <span className="breadcrumb-sep">/</span>
           <span className="breadcrumb-current" aria-current="page">{displayTitle}</span>
         </nav>
       </div>
@@ -133,7 +131,6 @@ export default function ReviewDetail({ review, locale }) {
           <div className="review-detail-layout">
             <ReviewGallery key={review.id} review={review} displayTag={displayTag} isEn={isEn} />
             <article className="review-detail-card">
-              <span className="review-detail-tag">{t.reviews}</span>
               <p className="review-detail-text">{displayText}</p>
             </article>
           </div>
