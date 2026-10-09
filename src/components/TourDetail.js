@@ -12,12 +12,12 @@ export default function TourDetail({ tour, locale }) {
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
 
-  const displayDesc = tour.desc;
+  const displayDesc = isEn && tour.desc_en ? tour.desc_en : tour.desc;
   const displayDuration = tour.duration;
   const displayPeriod = tour.periodText;
   const displayCountry = displayField(tour.country);
   const displayProvince = tour.province ? displayField(tour.province) : '-';
-  const displayTransportName = tour.transport?.name || '-';
+  const displayTransportName = isEn && tour.transport?.name_en ? tour.transport.name_en : (tour.transport?.name || '-');
 
   const bookingLink = isEn
     ? { href: t.social?.whatsapp || 'https://wa.me/66996326146', icon: 'assets/images/social/whatsapp.png' }
@@ -26,13 +26,14 @@ export default function TourDetail({ tour, locale }) {
   const breadcrumbLabel = isOutbound ? t.breadcrumbOutbound : t.breadcrumbDomestic;
   const listPath = isOutbound ? `/${locale}/outbound` : `/${locale}/domestic`;
 
-  // New data model (e.g. TH catalogue): desc = short title, shortDesc = destinations.
-  // Legacy model (e.g. EN catalogue): desc = combined title + destinations.
+  // New data model: desc/desc_en = short title, shortDesc/shortDesc_en = destinations.
+  // Legacy model: desc = combined title + destinations (split on keyword).
+  const localShort = isEn ? (tour.shortDesc_en || tour.shortDesc) : tour.shortDesc;
   let tourName;
   let tourDetail;
-  if (tour.shortDesc) {
+  if (localShort) {
     tourName = (displayDesc || tour.id).trim();
-    tourDetail = tour.shortDesc.trim();
+    tourDetail = localShort.trim();
   } else {
     const splitKeyword = isEn ? ' tour' : ' เที่ยว';
     const descParts = displayDesc?.split(splitKeyword) || [];

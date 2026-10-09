@@ -1,390 +1,1150 @@
 [
   {
-    "id": "EGT1D-02",
-    "type": "domestic",
-    "province": "Ratchaburi",
-    "image": "banner1day/Banner EGT1D-02.png",
-    "price": "1,499",
-    "duration": "1 day",
-    "periodText": "Feb. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Ratchaburi Tour: Khao Ngu Stone Park ",
-    "pdf": "filepdf_1day/EGT1D-02.pdf"
+  "id": "EGT1D-02",
+  "type": "domestic",
+  "province": "Ratchaburi",
+  "image": "banner-en1day/Ratchaburi.png",
+  "price": "2,659",
+  "duration": "1 Day",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
   },
-  {
-    "id": "EGT1D-22",
-    "type": "domestic",
-    "province": "Nakhon Ratchasima",
-    "image": "banner1day/EGT1D-22.png",
-    "price": "1,520",
-    "duration": "1 day",
-    "periodText": "March - May 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Nakhon Ratchasima tour, butterfly viewing, Khao Yai National Park",
-    "pdf": "filepdf_1day/EGT1D-22.pdf"
-  },
-  {
-    "id": "EGT1D-20",
-    "type": "domestic",
-    "province": "Sa Kaeo",
-    "image": "banner1day/EGT1D-20.png",
-    "price": "1,599",
-    "duration": "1 day",
-    "periodText": "March - May 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Sa Kaeo tour, butterfly watching, Pang Sida National Park",
-    "pdf": "filepdf_1day/EGT1D-20.pdf"
-  },
-  {
-    "id": "EGT1D-19",
-    "type": "domestic",
-    "province": "Phetchaburi",
-    "image": "banner1day/EGT1D-19.png",
-    "price": "1,640",
-    "duration": "1 day",
-    "periodText": "March - May 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Phetchaburi Tour, Butterfly Watching, Ban Krang",
-    "pdf": "filepdf_1day/EGT1D-19.pdf"
-  },
-  {
-    "id": "EGT1D-18",
-    "type": "domestic",
-    "province": "Chonburi",
-    "image": "banner1day/EGT1D-18.png",
-    "price": "1,699",
-    "duration": "1 day",
-    "periodText": "Feb. - Apr. 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Chonburi Tour, Koh Sichang",
-    "pdf": "filepdf_1day/EGT1D-18.pdf"
-  },
-  {
-    "id": "EGT1D-17",
-    "type": "domestic",
-    "province": "Ratchaburi",
-    "image": "banner1day/EGT1D-17.png",
-    "price": "1,640",
-    "duration": "1 day",
-    "periodText": "Feb. - Mar. 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Ratchaburi Tour: Heavenly Roses",
-    "pdf": "filepdf_1day/EGT1D-17.pdf"
-  },
-  {
-    "id": "EGT1D-14",
-    "type": "domestic",
-    "province": "Uthai Thani",
-    "image": "banner1day/EGT1D-14.png",
-    "price": "1,250",
-    "duration": "1 day",
-    "periodText": "Jan. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Uthai Thani Tour, Hup Pa Tat",
-    "pdf": "filepdf_1day/EGT1D-14.pdf"
-  },
-  {
-    "id": "EGT1D-06",
-    "type": "domestic",
-    "province": "Suphanburi",
-    "image": "banner1day/EGT1D-06.png",
-    "price": "1,399",
-    "duration": "1 day",
-    "periodText": "March - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Suphanburi Tour: Visit Don Wai Floating Market, pay homage to sacred temples, and enjoy the scenic beauty along the Tha Chin River.",
-    "pdf": "filepdf_1day/EGT1D-06.pdf"
-  },
-  {
-    "id": "EGT-FP-46",
-    "type": "domestic",
-    "province": "Phitsanulok",
-    "image": "banner2day/EGT-FP-46.png",
-    "price": "3,599",
-    "duration": "2 days 1 night",
-    "periodText": "Feb. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Phitsanulok-Nakhon Sawan tour 2 days 1 night, visit Sawan Park. ",
-    "pdf": "filepdf_2d1n/EGT-FP-46.pdf"
-  },
-  {
-    "id": "EGT-SP-44.1",
-    "type": "domestic",
-    "province": "Ratchaburi",
-    "image": "banner2day/EGT-SP-44.1.png",
-    "price": "2,999",
-    "duration": "2 days 1 night",
-    "periodText": "Feb. - May 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Ratchaburi tour, fire show at Sattatha, 2 days 1 night, visit Khao Ngu Stone Park, Oh Poi Market, Grand Canyon Ratchaburi at Sattatha, Thai Park, Ratchaburi Old Water Jar Museum, Phupha Coffee Camp, Vento, Suan Phueng, and Khao Bin Cave.",
-    "pdf": "filepdf_2d1n/EGT-SP-44.1.pdf"
-  },
-  {
-    "id": "EGT-SP-44",
-    "type": "domestic",
-    "province": "Ratchaburi",
-    "image": "banner2day/EGT-SP-44.png",
-    "price": "2,799",
-    "duration": "2 days 1 night",
-    "periodText": "June - December 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Ratchaburi Tour: Khao Ngu Stone Park ",
-    "pdf": "filepdf_2d1n/EGT-SP-44.pdf"
-  },
-  {
-    "id": "EGT-SP-43",
-    "type": "domestic",
-    "province": "Uttaradit",
-    "image": "banner2day/EGT-SP-43.png",
-    "price": "3,699",
-    "duration": "2 days 1 night",
-    "periodText": "May - July 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Uttaradit Tour 2 days 1 night: Explore the historic Phra Si Rattana Mahathat Temple, visit Than Sae Waterfall, and experience the natural beauty and local culture of Uttaradit.",
-    "pdf": "filepdf_2d1n/EGT-SP-43.pdf"
-  },
-  {
-    "id": "EGT-FP-42",
-    "type": "domestic",
-    "province": "Uthai Thani",
-    "image": "banner2day/EGT-FP-42.png",
-    "price": "4,950",
-    "duration": "2 days 1 night",
-    "periodText": "June - July 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Uthai Thani Tour 2 days 1 night: Discover the charming Sakae Krang River community, visit Wat Tha Sung, explore Hup Pa Tat, and immerse in the peaceful atmosphere of this hidden gem province.",
-    "pdf": "filepdf_2d1n/EGT-FP-42.pdf"
-  },
-  {
-    "id": "EGT-SP-29.2",
-    "type": "domestic",
-    "province": "Loei",
-    "image": "banner2day/EGT-SP-29.2.png",
-    "price": "3,899",
-    "duration": "2 days 1 night",
-    "periodText": "20 - 22 June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Tour Loei, Phi Ta Khon Festival, 2 days 1 night, visit Kaeng Khut Khu rapids. ",
-    "pdf": "filepdf_2d1n/EGT-SP-29.2.pdf"
-  },
-  {
-    "id": "EGT-SP-28",
-    "type": "domestic",
-    "province": "Chaiyaphum",
-    "image": "banner2day/EGT-SP-28.png",
-    "price": "3,699",
-    "duration": "2 days 1 night",
-    "periodText": "May - August 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Chaiyaphum tour, hunt 4 national parks, see butterflies and Krachiew flower fields, 2 days 1 night, visit Mo Hin Khao. ",
-    "pdf": "filepdf_2d1n/EGT-SP-28.pdf"
-  },
-  {
-    "id": "EGT-FP-07.1",
-    "type": "domestic",
-    "province": "Phetchaburi",
-    "image": "banner2day/EGT-FP-07.1.png",
-    "price": "5,250",
-    "duration": "2 days 1 night",
-    "periodText": "Feb. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Phetchaburi Tour 2 days 1 night: Visit Khao Wang (Phra Nakhon Khiri Historical Park), explore Kaeng Krachan National Park, and enjoy the famous Phetchaburi sweets and local cuisine.",
-    "pdf": "filepdf_2d1n/EGT-FP-07.1.pdf"
-  },
-  {
-    "id": "EGT-SP-05.1",
-    "type": "domestic",
-    "province": "Uthai Thani",
-    "image": "banner2day/EGT-SP-05.1.png",
-    "price": "2,999",
-    "duration": "2 days 1 night",
-    "periodText": "Feb. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Uthai Thani Tour 2 days 1 night: Explore Hup Pa Tat, take a boat trip along the Sakae Krang River, visit Wat Tha Sung, and enjoy the tranquil local way of life.",
-    "pdf": "filepdf_2d1n/EGT-SP-05.1.pdf"
-  },
-  {
-    "id": "EGT-SP-01",
-    "type": "domestic",
-    "province": "Tak",
-    "image": "banner2day/EGT-SP-01.png",
-    "price": "4,999",
-    "duration": "2 days 1 night",
-    "periodText": "Oct 2026 - Jan 2027",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Tak tour 2 days 1 night, visit Rim Moei market ",
-    "pdf": "filepdf_2d1n/EGT-SP-01.pdf"
-  },
-  {
-    "id": "EGT-SP-41",
-    "type": "domestic",
-    "province": "Phetchabun",
-    "image": "banner2day/EGT-SP-41.png",
-    "price": "3,799",
-    "duration": "2 days 1 night",
-    "periodText": "Feb. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Phetchabun-Khao Kho tour 2 days 1 night, visit Khao Kho windmill field. ",
-    "pdf": "filepdf_2d1n/EGT-SP-41.pdf"
-  },
-  {
-    "id": "EGT-FP-07",
-    "type": "domestic",
-    "province": "Phetchaburi",
-    "image": "banner2day/EGT-FP-07.png",
-    "price": "4,820",
-    "duration": "2 days 1 night",
-    "periodText": "Feb. - June 2026",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
-    },
-    "desc": "Phetchaburi Tour 2 days 1 night: Experience the blend of history and nature at Khao Wang, Kaeng Krachan National Park, and Chao Samran Beach.",
-    "pdf": "filepdf_2d1n/EGT-FP-07.pdf"
-  },
-  {
-    "id": "EGT3D2N-FP-14",
-    "type": "domestic",
-    "province": [
-      "Sukhothai",
-      "Kamphaeng Phet"
-    ],
-    "duration": "3 days 2 night",
-    "price": "6899",
-    "image": "banner3d2n/EGT3D2N-FP-14.png",
-    "desc": "Sukhothai tour, Ban Ton Na Chan - Kamphaeng Phet, visit the historical park, see the way of life of the Ban Ton Na Chan community. ",
-    "periodText": "Feb. - June 2026",
-    "pdf": "filepdf_3d2n/EGT3D2N-FP-14.pdf",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
+  "desc": "Ratchaburi Khao Ngu Stone Park and Old Jar Museum visit Khao Bin Cave, Buffalo Market, and Veneto Suanphueng",
+  "shortDesc_en": "Explore Khao Bin Cave, Buffalo Market, and Veneto Suanphueng",
+  "pdf": "filepdf-en1day/Ratchaburi.pdf",
+  "desc_en": "Ratchaburi Khao Ngu Stone Park and Old Jar Museum",
+  "duration_en": "1 Day",
+  "periodText_en": "Apr. - Jun. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Ratchaburi Old Jar Museum • Khao Ngu Stone Park • Khao Bin Cave • Buffalo Market Ratchaburi • Veneto Suanphueng",
+      "title_en": "Ratchaburi Old Jar Museum • Khao Ngu Stone Park • Khao Bin Cave • Buffalo Market Ratchaburi • Veneto Suanphueng",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "Hotel Pickup: Depart from BTS Mo Chit with a breakfast stop.",
+          "description_en": "Hotel Pickup: Depart from BTS Mo Chit with a breakfast stop."
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Tao Hong Tai Old Pottery Museum: Discover dragon jar history.",
+          "description_en": "Tao Hong Tai Old Pottery Museum: Discover dragon jar history."
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "Khao Ngu Stone Park: Enjoy scenic limestone views.",
+          "description_en": "Khao Ngu Stone Park: Enjoy scenic limestone views."
+        },
+        {
+          "time": "11:30",
+          "time_en": "11:30 AM",
+          "description": "Khao Bin Cave: Explore natural stalactite formations.",
+          "description_en": "Khao Bin Cave: Explore natural stalactite formations."
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "Buffalo Market: Lunch at a cowboy-style lifestyle market.",
+          "description_en": "Buffalo Market: Lunch at a cowboy-style lifestyle market."
+        },
+        {
+          "time": "14:30",
+          "time_en": "02:30 PM",
+          "description": "Veneto Suanphueng: Visit a European-style mountain village.",
+          "description_en": "Veneto Suanphueng: Visit a European-style mountain village."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Return Transfer: Arrive back in Bangkok safely.",
+          "description_en": "Return Transfer: Arrive back in Bangkok safely."
+        }
+      ]
     }
+  ]
+},
+ {
+  "id": "EGT1D-14",
+  "type": "domestic",
+  "province": "Uthai Thani",
+  "image": "banner-en1day/Hup Pa Tat.png",
+  "price": "2,899",
+  "duration": "1 Day",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
   },
-  {
-    "id": "EGT3D2N-FP-13",
-    "type": "domestic",
-    "province": [
-      "Yasothon",
-      "Ubon Ratchathani"
-    ],
-    "duration": "3 days 2 night",
-    "price": "7150",
-    "image": "banner3d2n/EGT3D2N-FP-13.png",
-    "desc": "Yasothon-Ubon Tour 3 days 2 nights: Visit Pha Taem National Park, explore ancient rock paintings, and experience the cultural highlights of Isan.",
-    "periodText": "26 - 28 Feb. 2026",
-    "pdf": "filepdf_3d2n/EGT3D2N-FP-13.pdf",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
+  "desc": "Thailand 1 Day Trip: Wat Tham Khao Wong, Giant Tree, Chao Hai Market, and Hup Pa Tat",
+  "pdf": "filepdf-en1day/Hup Pa Tat.pdf",
+  "desc_en": "Hup Pa Tat",
+  "shortDesc_en":"Explore Wat Tham Khao Wong, Giant Tree, Chao Hai Market, and Hup Pa Tat",
+  "duration_en": "1 Day",
+  "periodText_en": "Apr. - Jun. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Wat Tham Khao Wong • Giant Tree • Chao Hai Market • Hup Pa Tat",
+      "title_en": "Wat Tham Khao Wong • Giant Tree • Chao Hai Market • Hup Pa Tat",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "Hotel Pickup: Depart from BTS Mo Chit to Uthai Thani.",
+          "description_en": "Hotel Pickup: Depart from BTS Mo Chit to Uthai Thani."
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "Breakfast Stop: Enjoy a morning meal along the way.",
+          "description_en": "Breakfast Stop: Enjoy a morning meal along the way."
+        },
+        {
+          "time": "10:00",
+          "time_en": "10:00 AM",
+          "description": "Wat Tham Khao Wong: Visit a unique wooden temple by the mountain.",
+          "description_en": "Wat Tham Khao Wong: Visit a unique wooden temple by the mountain."
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "Giant Tree: See the historic 400-year-old ancient giant tree.",
+          "description_en": "Giant Tree: See the historic 400-year-old ancient giant tree."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Chao Hai Market: Lunch and local delicacies.",
+          "description_en": "Chao Hai Market: Lunch and local delicacies."
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Hup Pa Tat: Explore the prehistoric hidden forest cavern.",
+          "description_en": "Hup Pa Tat: Explore the prehistoric hidden forest cavern."
+        },
+        {
+          "time": "14:30",
+          "time_en": "02:30 PM",
+          "description": "Return Journey: Depart Uthai Thani heading back to Bangkok.",
+          "description_en": "Return Journey: Depart Uthai Thani heading back to Bangkok."
+        },
+        {
+          "time": "19:00",
+          "time_en": "07:00 PM",
+          "description": "Return Transfer: Arrive back in Bangkok safely.",
+          "description_en": "Return Transfer: Arrive back in Bangkok safely."
+        }
+      ]
     }
+  ]
+},
+  {
+  "id": "EGT1D-23",
+  "type": "domestic",
+  "province": "Bangkok",
+  "image": "banner-en1day/The Royal Heritage & River Wonders.png",
+  "price": "4,599",
+  "duration": "1 Day",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
   },
-  {
-    "id": "EGT4D3N-FP-05",
-    "type": "domestic",
-    "province": [
-      "Nakhon Si Thammarat",
-      "Trang"
-    ],
-    "duration": "4 days 3 night",
-    "price": "12220",
-    "image": "banner4d3n/EGT4D3N-FP-05.png",
-    "desc": "Nakhon Si Thammarat-Trang tour 4 days 3 nights, visit Khao Chang Hai cave. ",
-    "periodText": "April - June 2026",
-    "pdf": "filepdf_4d3n/EGT4D3N-FP-05.pdf",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
+  "desc": "Thailand 1 Day Trip: The Grand Palace, Wat Phra Kaew, Wat Pho, Long-tail Boat Canal Tour, and Wat Arun",
+  "pdf": "filepdf-en1day/The Royal Heritage & River Wonders.pdf",
+  "desc_en": "The Royal Heritage and River Wonders",
+  "shortDesc_en": "Explore The Grand Palace, Wat Phra Kaew, Wat Pho, Long-tail Boat Canal Tour, and Wat Arun",
+  "duration_en": "1 Day",
+  "periodText_en": "Apr. - Jun. 2026",
+ "itinerary": [
+    {
+      "day": 1,
+      "title": "The Grand Palace & Emerald Buddha (Wat Phra Kaew) • Wat Pho • Long-tail Boat Canal Tour • Wat Arun",
+      "title_en": "The Grand Palace & Emerald Buddha (Wat Phra Kaew) • Wat Pho • Long-tail Boat Canal Tour • Wat Arun",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "Hotel Pickup: Depart by van with complimentary water.",
+          "description_en": "Hotel Pickup: Depart by van with complimentary water."
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Grand Palace & Wat Pho: Visit the Emerald Buddha and Reclining Buddha.",
+          "description_en": "Grand Palace & Wat Pho: Visit the Emerald Buddha and Reclining Buddha."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Lunch: Enjoy a meal at a local restaurant.",
+          "description_en": "Lunch: Enjoy a meal at a local restaurant."
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Canal Tour & Wat Arun: Take a long-tail boat ride and visit Wat Arun.",
+          "description_en": "Canal Tour & Wat Arun: Take a long-tail boat ride and visit Wat Arun."
+        },
+        {
+          "time": "16:00",
+          "time_en": "04:00 PM",
+          "description": "Return Transfer: Arrive back at the hotel safely.",
+          "description_en": "Return Transfer: Arrive back at the hotel safely."
+        }
+      ]
     }
+  ]
+},
+{
+  "id": "EGT1D-24",
+  "type": "domestic",
+  "province": "Bangkok",
+  "image": "banner-en1day/Jim Thompson House - Mahanakhon Skywalk.png",
+  "price": "4,499",
+  "duration": "1 Day",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
   },
-  {
-    "id": "EGT4D3N-FP-06",
-    "type": "domestic",
-    "province": [
-      "Chiang Mai",
-      "Pai",
-      "Ang Khang"
-    ],
-    "duration": "4 days 3 night",
-    "price": "9499",
-    "image": "banner4d3n/EGT4D3N-FP-06.png",
-    "desc": "Tour Chiang Mai, Pai, Ang Khang, 4 days 3 nights, visit Doi Ang Khang. ",
-    "periodText": "Throughout March 2026",
-    "pdf": "filepdf_4d3n/EGT4D3N-FP-06.pdf",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
+  "desc": "Jim Thompson House, Pak Khlong Talat, Chinatown, and Mahanakhon Skywalk",
+   "pdf": "filepdf-en1day/Jim Thompson House - Mahanakhon Skywalk.pdf",
+  "desc_en": "Jim Thompson House & Mahanakhon Skywalk",
+"shortDesc_en": "Explore Jim Thomson Pak Khlong Talat Mahanakhon Skywalk and Chinatown",
+ "duration_en": "1 Day",
+  "periodText_en": "Apr. - Jun. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Pak Khlong Talat • Jim Thompson House • Chinatown • Mahanakhon Skywalk",
+      "title_en": "Pak Khlong Talat • Jim Thompson House • Chinatown • Mahanakhon Skywalk",
+      "items": [
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "Hotel Pickup: Depart by van with complimentary water.",
+          "description_en": "Hotel Pickup: Depart by van with complimentary water."
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Pak Khlong Talat & Jim Thompson House: Visit the flower market and historic teak house.",
+          "description_en": "Pak Khlong Talat & Jim Thompson House: Visit the flower market and historic teak house."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Chinatown: Lunch and street food exploration in Yaowarat.",
+          "description_en": "Chinatown: Lunch and street food exploration in Yaowarat."
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "Mahanakhon Skywalk: Enjoy 360-degree views from Thailand's highest observation deck.",
+          "description_en": "Mahanakhon Skywalk: Enjoy 360-degree views from Thailand's highest observation deck."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Return Transfer: Arrive back at the hotel safely.",
+          "description_en": "Return Transfer: Arrive back at the hotel safely."
+        }
+      ]
     }
+  ]
+},
+{
+  "id": "EGT1D-26",
+  "type": "domestic",
+  "province": "Nonthaburi",
+  "image": "banner-en1day/Nonthaburi.png",
+  "price": "3,199",
+  "duration": "1 Day",
+  "periodText": "May - June 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
   },
-  {
-    "id": "EGT4D3N-FP-07",
-    "type": "domestic",
-    "province": "Satun",
-    "duration": "4 days 3 night",
-    "price": "10899",
-    "image": "banner4d3n/EGT4D3N-FP-07.png",
-    "desc": "Satun tour 4 days 3 nights, visit Prasat Hin Pan Yot, Laem Ta Pan, Pha Sai Nai, Phap Rak Cave, street art in Satun. ",
-    "periodText": "April - June 2026",
-    "pdf": "filepdf_4d3n/EGT4D3N-FP-07.pdf",
-    "transport": {
-      "name": "VIP van 10 seats",
-      "icon": "icons/van.png"
+  "desc": "Wat Chalo, Nonthaburi Museum, Nonthaburi Clock Tower, Nonthaburi Pier, and Koh Kret Exploration",
+  "pdf": "filepdf-en1day/Nonthaburi.pdf",
+  "desc_en": "Nonthaburi Koh Kret",
+  "shortDesc_en": "Explore Koh Kret Island & Activities Wat Chalo Nonthaburi Clock Tower and Nonthaburi Museum",
+  "duration_en": "1 Day",
+  "periodText_en": "May - June 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Wat Chalo • Nonthaburi Museum • Nonthaburi Clock Tower • Nonthaburi Pier • Koh Kret Exploration",
+      "title_en": "Wat Chalo • Nonthaburi Museum • Nonthaburi Clock Tower • Nonthaburi Pier • Koh Kret Exploration",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "Hotel Pickup: Depart from BTS Mo Chit by van.",
+          "description_en": "Hotel Pickup: Depart from BTS Mo Chit by van."
+        },
+        {
+          "time": "08:00",
+          "time_en": "08:00 AM",
+          "description": "Wat Chalo: Visit the stunning temple with a royal barge-shaped chapel.",
+          "description_en": "Wat Chalo: Visit the stunning temple with a royal barge-shaped chapel."
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "Nonthaburi Museum: Explore local history in a 100-year-old teak building.",
+          "description_en": "Nonthaburi Museum: Explore local history in a 100-year-old teak building."
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "Nonthaburi Clock Tower: Photo stop at the iconic riverside landmark.",
+          "description_en": "Nonthaburi Clock Tower: Photo stop at the iconic riverside landmark."
+        },
+        {
+          "time": "11:30",
+          "time_en": "11:30 AM",
+          "description": "Nonthaburi Pier: Enjoy local street food and classic Thai desserts.",
+          "description_en": "Nonthaburi Pier: Enjoy local street food and classic Thai desserts."
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Koh Kret Exploration: Visit the leaning pagoda, pottery workshops, and local cafes.",
+          "description_en": "Koh Kret Exploration: Visit the leaning pagoda, pottery workshops, and local cafes."
+        },
+        {
+          "time": "17:00",
+          "time_en": "05:00 PM",
+          "description": "Return Transfer: Arrive back in Bangkok safely.",
+          "description_en": "Return Transfer: Arrive back in Bangkok safely."
+        }
+      ]
     }
-  }
+  ]
+},
+{
+  "id": "EGT1D-27",
+  "type": "domestic",
+  "province": "Bangkok",
+  "image": "banner-en1day/Wat Arun.png",
+  "price": "5,599",
+  "duration": "1 Day",
+  "periodText": "May - June 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Wat Arun, Thai Costume Experience, Riverside Thai Restaurant, SENSE Massage, ICONSIAM, and Meridian River Cruise",
+  "pdf": "filepdf-en1day/Wat Arun.pdf",
+  "desc_en": "Wat Arun & River Cruise",
+  "shortDesc_en": "Explore Wat Arun Thai Costume Experience Thai Massage Dinner Cruise Buffet ICONSIAM",
+  "duration_en": "1 Day",
+  "periodText_en": "May - June 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Wat Arun • Thai Costume • Riverside Thai Restaurant • SENSE Massage • ICONSIAM • Meridian River Cruise",
+      "title_en": "Wat Arun • Thai Costume • Riverside Thai Restaurant • SENSE Massage • ICONSIAM • Meridian River Cruise",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Hotel Pickup: Transfer to Wat Arun area.",
+          "description_en": "Hotel Pickup: Transfer to Wat Arun area."
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Thai Costume Rental (Optional): Dress in traditional Thai attire for photos.",
+          "description_en": "Thai Costume Rental (Optional): Dress in traditional Thai attire for photos."
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "Wat Arun: Visit the iconic riverside temple and take photos.",
+          "description_en": "Wat Arun: Visit the iconic riverside temple and take photos."
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "Costume Return: Return to shop and change clothes.",
+          "description_en": "Costume Return: Return to shop and change clothes."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Riverside Lunch: Enjoy authentic Thai cuisine by the river.",
+          "description_en": "Riverside Lunch: Enjoy authentic Thai cuisine by the river."
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "SENSE Massage: Relax with a traditional Thai or foot massage.",
+          "description_en": "SENSE Massage: Relax with a traditional Thai or foot massage."
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "ICONSIAM: Free time for shopping and café hopping.",
+          "description_en": "ICONSIAM: Free time for shopping and café hopping."
+        },
+        {
+          "time": "17:30",
+          "time_en": "05:30 PM",
+          "description": "Cruise Check-in: Register at ICONSIAM Pier for dinner cruise.",
+          "description_en": "Cruise Check-in: Register at ICONSIAM Pier for dinner cruise."
+        },
+        {
+          "time": "19:00",
+          "time_en": "07:00 PM",
+          "description": "Meridian Cruise Dinner: Enjoy a buffet dinner and live music along the river.",
+          "description_en": "Meridian Cruise Dinner: Enjoy a buffet dinner and live music along the river."
+        },
+        {
+          "time": "21:00",
+          "time_en": "09:00 PM",
+          "description": "Return Transfer: Transfer back to the hotel safely.",
+          "description_en": "Return Transfer: Transfer back to the hotel safely."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "EGT1D-29",
+  "type": "domestic",
+  "province": "Bangkok",
+  "image": "banner-en1day/King the Land Bangkok Trail.png",
+  "price": "3,299",
+  "duration": "1 Day",
+  "periodText": "June - December 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Wat Arun, Daeng Guay Jub Yuan, Loha Prasat, Giant Swing, ICONSIAM River Park, and Ong Ang Walking Street",
+  "pdf": "filepdf-en1day/King the Land Bangkok Trail.pdf",
+  "desc_en": "King The Land Bangkok Trail",
+  "shortDesc_en": "Explore Wat Arun Daeng Guay Jub Yuan Loha Prasat Giant Swing ICONSIAM River Park and Ong Ang Walking Street",
+  "duration_en": "1 Day",
+  "periodText_en": "June - December 2026",
+ "itinerary": [
+    {
+      "day": 1,
+      "title": "Wat Arun • Daeng Guay Jub Yuan • Loha Prasat • Giant Swing • ICONSIAM River Park • Ong Ang Walking Street",
+      "title_en": "Wat Arun • Daeng Guay Jub Yuan • Loha Prasat • Giant Swing • ICONSIAM River Park • Ong Ang Walking Street",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Hotel Pickup: Pick up at BTS Mo Chit Station.",
+          "description_en": "Hotel Pickup: Pick up at BTS Mo Chit Station."
+        },
+        {
+          "time": "09:15",
+          "time_en": "09:15 AM",
+          "description": "Wat Arun: Visit the iconic riverside temple for sightseeing and photos.",
+          "description_en": "Wat Arun: Visit the iconic riverside temple for sightseeing and photos."
+        },
+        {
+          "time": "11:15",
+          "time_en": "11:15 AM",
+          "description": "Local Lunch: Enjoy Vietnamese-style noodle soup at Daeng Guay Jub Yuan.",
+          "description_en": "Local Lunch: Enjoy Vietnamese-style noodle soup at Daeng Guay Jub Yuan."
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "Loha Prasat & Giant Swing: Explore the metal castle and old town landmarks.",
+          "description_en": "Loha Prasat & Giant Swing: Explore the metal castle and old town landmarks."
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "ICONSIAM River Park: Free time for shopping and relaxing by the river.",
+          "description_en": "ICONSIAM River Park: Free time for shopping and relaxing by the river."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Ong Ang Walking Street: Explore evening street art, shops, and food.",
+          "description_en": "Ong Ang Walking Street: Explore evening street art, shops, and food."
+        },
+        {
+          "time": "20:00",
+          "time_en": "08:00 PM",
+          "description": "Return Transfer: Transfer back to the hotel safely.",
+          "description_en": "Return Transfer: Transfer back to the hotel safely."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "EGT1D-30",
+  "type": "domestic",
+  "province": "Pathum Thani",
+  "image": "banner-en1day/Dream World.png",
+  "price": "4,399",
+  "duration": "1 Day",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "National Science Museum and Dream World",
+  "pdf": "filepdf-en1day/Dream World.pdf",
+  "desc_en": "Dream World",
+  "shortDesc_en": "Explore National Science Museum and Dream World",
+  "duration_en": "1 Day",
+  "periodText_en": "Apr. - Jun. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "National Science Museum • Dream World",
+      "title_en": "National Science Museum • Dream World",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Hotel Pickup: Pick up at BTS Mo Chit Station.",
+          "description_en": "Hotel Pickup: Pick up at BTS Mo Chit Station."
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "National Science Museum: Explore interactive exhibitions and technology zones.",
+          "description_en": "National Science Museum: Explore interactive exhibitions and technology zones."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Dream World: Enjoy amusement park rides, Snow Town, and lunch inside.",
+          "description_en": "Dream World: Enjoy amusement park rides, Snow Town, and lunch inside."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Departure: Leave Dream World.",
+          "description_en": "Departure: Leave Dream World."
+        },
+        {
+          "time": "20:30",
+          "time_en": "08:30 PM",
+          "description": "Return Transfer: Transfer back to the hotel safely.",
+          "description_en": "Return Transfer: Transfer back to the hotel safely."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "EGT1D-31",
+  "type": "domestic",
+  "province": "Bangkok",
+  "image": "banner-en1day/Museum Siam.png",
+  "price": "3,350",
+  "duration": "1 Day",
+  "periodText": "May - June 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Wat Suthat Thepwararam, Giant Swing, Pak Khlong Talat, Ros Tipp Yod Pak Restaurant, Museum Siam, Wat Pho, and Chao Phraya Sky Park",
+  "pdf": "filepdf-en1day/Museum Siam.pdf",
+  "desc_en": "Museum Siam",
+  "shortDesc_en": "Explore Wat Suthat Thepwararam Pak Khlong Talat Museum Siam Wat Pho and Chao Phraya Sky Park",
+  "duration_en": "1 Day",
+  "periodText_en": "May - June 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Wat Suthat Thepwararam • Giant Swing • Pak Khlong Talat • Ros Tipp Yod Pak Restaurant • Museum Siam • Wat Pho • Chao Phraya Sky Park",
+      "title_en": "Wat Suthat Thepwararam • Giant Swing • Pak Khlong Talat • Ros Tipp Yod Pak Restaurant • Museum Siam • Wat Pho • Chao Phraya Sky Park",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Hotel Pickup: Pick up at BTS Mo Chit Station.",
+          "description_en": "Hotel Pickup: Pick up at BTS Mo Chit Station."
+        },
+        {
+          "time": "08:50",
+          "time_en": "08:50 AM",
+          "description": "Wat Suthat & Giant Swing: Visit the historic temple and giant swing.",
+          "description_en": "Wat Suthat & Giant Swing: Visit the historic temple and giant swing."
+        },
+        {
+          "time": "10:00",
+          "time_en": "10:00 AM",
+          "description": "Pak Khlong Talat: Explore Bangkok's vibrant flower market.",
+          "description_en": "Pak Khlong Talat: Explore Bangkok's vibrant flower market."
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "Local Lunch: Enjoy Thai vegetarian cuisine at Ros Tipp Yod Pak.",
+          "description_en": "Local Lunch: Enjoy Thai vegetarian cuisine at Ros Tipp Yod Pak."
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Museum Siam: Discover Thai history through interactive exhibitions.",
+          "description_en": "Museum Siam: Discover Thai history through interactive exhibitions."
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "Wat Pho: Visit the famous Reclining Buddha temple.",
+          "description_en": "Wat Pho: Visit the famous Reclining Buddha temple."
+        },
+        {
+          "time": "16:00",
+          "time_en": "04:00 PM",
+          "description": "Chao Phraya Sky Park: Enjoy panoramic riverside views.",
+          "description_en": "Chao Phraya Sky Park: Enjoy panoramic riverside views."
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "Return Transfer: Transfer back to the hotel safely.",
+          "description_en": "Return Transfer: Transfer back to the hotel safely."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "EGT1D-32",
+  "type": "domestic",
+  "province": "Bangkok",
+  "image": "banner-en1day/Romaneenart park.png",
+  "price": "3,350",
+  "duration": "1 Day",
+  "periodText": "May - June 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Rommaninat Park, Wat Suthat Thepwararam, Giant Swing, Rattanakosin Exhibition Hall, Yu Tai Moo Rong Mai, Golden Mount (Wat Saket), and Bangkok National Museum",
+  "pdf": "filepdf-en1day/Rommaninat Park.pdf",
+  "desc_en": "Rommaninat Park Bangkok",
+  "shortDesc_en": "Explore Rommaninat Park Wat Suthat Golden Mount Rattanakosin Exhibition Hall and Bangkok National Museum",
+  "duration_en": "1 Day",
+  "periodText_en": "May - June 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Rommaninat Park • Wat Suthat Thepwararam • Giant Swing • Rattanakosin Exhibition Hall • Yu Tai Moo Rong Mai • Golden Mount (Wat Saket) • Bangkok National Museum",
+      "title_en": "Rommaninat Park • Wat Suthat Thepwararam • Giant Swing • Rattanakosin Exhibition Hall • Yu Tai Moo Rong Mai • Golden Mount (Wat Saket) • Bangkok National Museum",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Hotel Pickup: Pick up at BTS Mo Chit Station.",
+          "description_en": "Hotel Pickup: Pick up at BTS Mo Chit Station."
+        },
+        {
+          "time": "08:50",
+          "time_en": "08:50 AM",
+          "description": "Rommaninat Park: Explore the historic public park and old prison landmarks.",
+          "description_en": "Rommaninat Park: Explore the historic public park and old prison landmarks."
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "Wat Suthat & Giant Swing: Visit the historic temple and giant swing.",
+          "description_en": "Wat Suthat & Giant Swing: Visit the historic temple and giant swing."
+        },
+        {
+          "time": "10:00",
+          "time_en": "10:00 AM",
+          "description": "Rattanakosin Exhibition Hall: Discover old Bangkok history through exhibits.",
+          "description_en": "Rattanakosin Exhibition Hall: Discover old Bangkok history through exhibits."
+        },
+        {
+          "time": "12:30",
+          "time_en": "12:30 PM",
+          "description": "Local Lunch: Enjoy Thai cuisine at Yu Tai Moo Rong Mai restaurant.",
+          "description_en": "Local Lunch: Enjoy Thai cuisine at Yu Tai Moo Rong Mai restaurant."
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "Golden Mount: Walk up Wat Saket for panoramic city views.",
+          "description_en": "Golden Mount: Walk up Wat Saket for panoramic city views."
+        },
+        {
+          "time": "14:30",
+          "time_en": "02:30 PM",
+          "description": "Bangkok National Museum: Explore royal treasures and ancient artifacts.",
+          "description_en": "Bangkok National Museum: Explore royal treasures and ancient artifacts."
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "Return Transfer: Transfer back to the hotel safely.",
+          "description_en": "Return Transfer: Transfer back to the hotel safely."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "F4",
+  "type": "domestic",
+  "province": "Nakhon Ratchasima",
+  "image": "banner-en1day/F4.png",
+  "price": "1,999",
+  "duration": "1 Day",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Hokkaido Flower Park, Toscana Valley, Khmong Alpaca Khaoyai, Take Me Home Park, and Floryday Khaoyai Cafe & Flower",
+  "pdf": "filepdf-en1day/F4.pdf",
+  "desc_en": "Khao Yai Thailand 1 Day Trip",
+  "shortDesc_en": "Explore Hokkaido Flower Park, Toscana Valley, Khmong Alpaca, and Floryday Khaoyai",
+  "duration_en": "1 Day",
+  "periodText_en": "Apr. - Jun. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Hokkaido Flower Park • Toscana Valley • Khmong Alpaca Khaoyai • Take Me Home Park • Floryday Khaoyai",
+      "title_en": "Hokkaido Flower Park • Toscana Valley • Khmong Alpaca Khaoyai • Take Me Home Park • Floryday Khaoyai",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "Hotel Pickup: Pick up at Platinum Mall (near McDonald's)[cite: 66].",
+          "description_en": "Hotel Pickup: Pick up at Platinum Mall (near McDonald's)[cite: 66]."
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Hokkaido Flower Park: Morning transfer and photo stop at the flower gardens[cite: 66].",
+          "description_en": "Hokkaido Flower Park: Morning transfer and photo stop at the flower gardens[cite: 66]."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Lunch: Enjoy lunch at your own expense[cite: 66].",
+          "description_en": "Lunch: Enjoy lunch at your own expense[cite: 66]."
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Toscana Valley: Photo stop at the iconic European-style landmark[cite: 66].",
+          "description_en": "Toscana Valley: Photo stop at the iconic European-style landmark[cite: 66]."
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "Khmong Alpaca: Visit and feed cute animals at the farm[cite: 66].",
+          "description_en": "Khmong Alpaca: Visit and feed cute animals at the farm[cite: 66]."
+        },
+        {
+          "time": "15:00",
+          "time_en": "03:00 PM",
+          "description": "Take Me Home Park & Floryday: Explore the scenic park and floral cafe[cite: 66].",
+          "description_en": "Take Me Home Park & Floryday: Explore the scenic park and floral cafe[cite: 66]."
+        },
+        {
+          "time": "17:00",
+          "time_en": "05:00 PM",
+          "description": "Return Journey: Depart from Khao Yai heading back to Bangkok[cite: 66].",
+          "description_en": "Return Journey: Depart from Khao Yai heading back to Bangkok[cite: 66]."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "EGT-SP-03",
+  "type": "domestic",
+  "province": "Kamphaeng Phet",
+  "image": "banner-en2day/EGT-SP-03.png",
+  "price": "2,999",
+  "duration": "2 Days 1 Night",
+  "periodText": "Jan. - Mar. 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Kamphaeng Phet Historical Park, Khlong Lan Waterfall, Khlong Nam Lai Waterfall, Nakhon Chum Retro Market, Kamphaeng Phet Museum, Cha Kuay Cha Kang Rao, and Banana Station",
+  "pdf": "filepdf-en2d1n/EGT-SP-03.pdf",
+  "desc_en": "Kamphaeng Phet Thailand 2 Days 1 Night",
+  "shortDesc_en": "Explore Khlong Lan Waterfall, Kamphaeng Phet Historical Park, and Nakhon Chum Retro Market",
+  "duration_en": "2 Days 1 Night",
+  "periodText_en": "Jan. - Mar. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Khlong Lan Waterfall • Khlong Nam Lai Waterfall • Nakhon Chum Retro Market",
+      "title_en": "Khlong Lan Waterfall • Khlong Nam Lai Waterfall • Nakhon Chum Retro Market",
+      "items": [
+        {
+          "time": "07:00",
+          "time_en": "07:00 AM",
+          "description": "Hotel Pickup: Depart from BTS Mo Chit by van with bottled water provided.",
+          "description_en": "Hotel Pickup: Depart from BTS Mo Chit by van with bottled water provided."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Lunch: Stop for lunch at a local restaurant.",
+          "description_en": "Lunch: Stop for lunch at a local restaurant."
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "Waterfalls: Explore Khlong Lan and Khlong Nam Lai waterfalls.",
+          "description_en": "Waterfalls: Explore Khlong Lan and Khlong Nam Lai waterfalls."
+        },
+        {
+          "time": "17:00",
+          "time_en": "05:00 PM",
+          "description": "Hotel Check-in: Check in at FIG Boutique Hotel or equivalent.",
+          "description_en": "Hotel Check-in: Check in at FIG Boutique Hotel or equivalent."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Nakhon Chum Retro Market: Explore local street food and handicrafts.",
+          "description_en": "Nakhon Chum Retro Market: Explore local street food and handicrafts."
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "Return to Hotel: Return to the hotel for a rest.",
+          "description_en": "Return to Hotel: Return to the hotel for a rest."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Kamphaeng Phet Museum • Historical Park • Cha Kuay Cha Kang Rao • Banana Station",
+      "title_en": "Kamphaeng Phet Museum • Historical Park • Cha Kuay Cha Kang Rao • Banana Station",
+      "items": [
+        {
+          "time": "07:30",
+          "time_en": "07:30 AM",
+          "description": "Breakfast: Enjoy breakfast at the hotel.",
+          "description_en": "Breakfast: Enjoy breakfast at the hotel."
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Kamphaeng Phet Museum: Explore local heritage and history.",
+          "description_en": "Kamphaeng Phet Museum: Explore local heritage and history."
+        },
+        {
+          "time": "10:00",
+          "time_en": "10:00 AM",
+          "description": "Historical Park: Tour the UNESCO heritage site via tram.",
+          "description_en": "Historical Park: Tour the UNESCO heritage site via tram."
+        },
+        {
+          "time": "11:30",
+          "time_en": "11:30 AM",
+          "description": "Cha Kuay Cha Kang Rao: Taste famous local grass jelly.",
+          "description_en": "Cha Kuay Cha Kang Rao: Taste famous local grass jelly."
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Lunch: Enjoy noodles at Cha Kang Rao Noodle Restaurant.",
+          "description_en": "Lunch: Enjoy noodles at Cha Kang Rao Noodle Restaurant."
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Banana Station: Shop for local snacks and traditional sweets.",
+          "description_en": "Banana Station: Shop for local snacks and traditional sweets."
+        },
+        {
+          "time": "14:00",
+          "time_en": "02:00 PM",
+          "description": "Return Journey: Depart from Kamphaeng Phet to Bangkok.",
+          "description_en": "Return Journey: Depart from Kamphaeng Phet to Bangkok."
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Return Transfer: Arrive safely back in Bangkok.",
+          "description_en": "Return Transfer: Arrive safely back in Bangkok."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "EGT2D1N-49",
+  "type": "domestic",
+  "province": "Prachuap Khiri Khan",
+  "image": "banner-en2day/EGT2D1N-49.png",
+  "price": "7,599",
+  "duration": "2 Days 1 Night",
+  "periodText": "May - June 2026",
+  "transport": {
+    "name": "VIP Van 10 Seats",
+    "icon": "icons/van.png",
+    "name_en": "VIP van 10 seats"
+  },
+  "desc": "Vana Nava Water Jungle Hua Hin, Wat Khao Takiab, Khao Takiab Beach, Hua Hin Night Market, Wat Hua Hin, Hom Chui Restaurant, and Queen Sirikit in King Rama IX Park",
+  "pdf": "filepdf-en2d1n/EGT2D1N-49.pdf",
+  "desc_en": "Vana Nava Water Jungle Hua Hin",
+  "shortDesc_en": "Explore Vana Nava Water Jungle Wat Khao Takiab Khao Takiab Beach and Hua Hin Night Market",
+  "duration_en": "2 Days 1 Night",
+  "periodText_en": "May - June 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Queen Sirikit Park • Vana Nava Water Jungle • Hua Hin Night Market",
+      "title_en": "Queen Sirikit Park • Vana Nava Water Jungle • Hua Hin Night Market",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Hotel Pickup: Pick up at BTS Mo Chit Station and transfer to Hua Hin",
+          "description_en": "Hotel Pickup: Pick up at BTS Mo Chit Station and transfer to Hua Hin"
+        },
+        {
+          "time": "10:40",
+          "time_en": "10:40 AM",
+          "description": "Queen Sirikit Park: Relax at the seaside public park and beach",
+          "description_en": "Queen Sirikit Park: Relax at the seaside public park and beach"
+        },
+        {
+          "time": "11:10",
+          "time_en": "11:10 AM",
+          "description": "Vana Nava Water Jungle: Enjoy water slides, wave pools, and lunch inside",
+          "description_en": "Vana Nava Water Jungle: Enjoy water slides, wave pools, and lunch inside"
+        },
+        {
+          "time": "17:00",
+          "time_en": "05:00 PM",
+          "description": "Hotel Check-in: Check in and relax at ibis Hua Hin or similar",
+          "description_en": "Hotel Check-in: Check in and relax at ibis Hua Hin or similar"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Hua Hin Night Market: Explore local street food and shopping",
+          "description_en": "Hua Hin Night Market: Explore local street food and shopping"
+        },
+        {
+          "time": "19:30",
+          "time_en": "07:30 PM",
+          "description": "Overnight Stay: Rest at the hotel",
+          "description_en": "Overnight Stay: Rest at the hotel"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Khao Takiab Beach • Wat Khao Takiab • Wat Hua Hin • Hom Chui Restaurant • Hua Hin Railway Station",
+      "title_en": "Khao Takiab Beach • Wat Khao Takiab • Wat Hua Hin • Hom Chui Restaurant • Hua Hin Railway Station",
+      "items": [
+        {
+          "time": "08:30",
+          "time_en": "08:30 AM",
+          "description": "Breakfast: Enjoy breakfast at the hotel",
+          "description_en": "Breakfast: Enjoy breakfast at the hotel"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Khao Takiab Beach & Temple: Visit the famous seaside temple and viewpoint",
+          "description_en": "Khao Takiab Beach & Temple: Visit the famous seaside temple and viewpoint"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "Horse Riding (Optional): Enjoy riding horses along Hua Hin beach",
+          "description_en": "Horse Riding (Optional): Enjoy riding horses along Hua Hin beach"
+        },
+        {
+          "time": "11:00",
+          "time_en": "11:00 AM",
+          "description": "Wat Hua Hin: Visit a local temple in the heart of town",
+          "description_en": "Wat Hua Hin: Visit a local temple in the heart of town"
+        },
+        {
+          "time": "12:00",
+          "time_en": "12:00 PM",
+          "description": "Local Lunch: Enjoy a meal at Hom Chui restaurant",
+          "description_en": "Local Lunch: Enjoy a meal at Hom Chui restaurant"
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Hua Hin Railway Station: Photo stop at the iconic historic station",
+          "description_en": "Hua Hin Railway Station: Photo stop at the iconic historic station"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "Return Journey: Depart from Hua Hin back to Bangkok",
+          "description_en": "Return Journey: Depart from Hua Hin back to Bangkok"
+        },
+        {
+          "time": "18:30",
+          "time_en": "06:30 PM",
+          "description": "Return Transfer: Arrive safely back in Bangkok",
+          "description_en": "Return Transfer: Arrive safely back in Bangkok"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "BBK01",
+  "type": "domestic",
+  "province": "Bangkok - Pattaya",
+  "image": "banner-en4d3n/BBK01.png",
+  "price": "6,599",
+  "duration": "4 Days 3 Nights",
+  "periodText": "Apr. - Jun. 2026",
+  "transport": {
+    "name": "VIP Van / Bus",
+    "icon": "icons/van.png",
+    "name_en": "VIP Van / Bus"
+  },
+  "desc": "Bangkok, Pattaya, Nongnooch Village, Laser Buddha Hill, Wat Arun, Icon Siam, and Asiatique",
+  "pdf": "filepdf-en4d3n/BBK01.pdf",
+  "desc_en": "Bangkok - Pattaya Tour",
+  "shortDesc_en": "Explore Bangkok, Pattaya, Nongnooch Village, Laser Buddha Hill, Wat Arun, Icon Siam, and Asiatique",
+  "duration_en": "4 Days 3 Nights",
+  "periodText_en": "Apr. - Jun. 2026",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival in Bangkok • Hotel Check-in",
+      "title_en": "Arrival in Bangkok • Hotel Check-in",
+      "items": [
+        {
+          "time": "All Day",
+          "time_en": "All Day",
+          "description": "Airport Pickup: Airport pickup and hotel check-in",
+          "description_en": "Airport Pickup: Airport pickup and hotel check-in"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Honey Bee Farm • Dinosaurs Park • Nongnooch Village • Laser Buddha Hill • Pattaya Beach • Cabaret Show",
+      "title_en": "Honey Bee Farm • Dinosaurs Park • Nongnooch Village • Laser Buddha Hill • Pattaya Beach • Cabaret Show",
+      "items": [
+        {
+          "time": "Morning",
+          "time_en": "Morning",
+          "description": "Hotel Check-out: Breakfast at hotel and depart for Pattaya",
+          "description_en": "Hotel Check-out: Breakfast at hotel and depart for Pattaya"
+        },
+        {
+          "time": "09:00",
+          "time_en": "09:00 AM",
+          "description": "Honey Bee Farm & Sweet Destination: Learn about honey and explore local snacks",
+          "description_en": "Honey Bee Farm & Sweet Destination: Learn about honey and explore local snacks"
+        },
+        {
+          "time": "10:30",
+          "time_en": "10:30 AM",
+          "description": "Dinosaurs Park & Nongnooch Village: Visit dinosaur sculptures and tropical gardens with lunch buffet",
+          "description_en": "Dinosaurs Park & Nongnooch Village: Visit dinosaur sculptures and tropical gardens with lunch buffet"
+        },
+        {
+          "time": "13:30",
+          "time_en": "01:30 PM",
+          "description": "Laser Buddha Hill & Herb Shop: View the cliffside Buddha and shop for Thai herbal products"
+        },
+        {
+          "time": "15:30",
+          "time_en": "03:30 PM",
+          "description": "Pattaya Beach & Hard Rock Cafe: Relax by the beach or enjoy drinks",
+          "description_en": "Pattaya Beach & Hard Rock Cafe: Relax by the beach or enjoy drinks"
+        },
+        {
+          "time": "Evening",
+          "time_en": "Evening",
+          "description": "Cabaret Show (Optional): Enjoy a dazzling performance show",
+          "description_en": "Cabaret Show (Optional): Enjoy a dazzling performance show"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Gems Gallery • Platinum Fashion Mall • Wat Arun • River Cruise • Icon Siam • Asiatique",
+      "title_en": "Gems Gallery • Platinum Fashion Mall • Wat Arun • River Cruise • Icon Siam • Asiatique",
+      "items": [
+        {
+          "time": "Morning",
+          "time_en": "Morning",
+          "description": "Hotel Breakfast: Breakfast at the hotel and return to Bangkok",
+          "description_en": "Hotel Breakfast: Breakfast at the hotel and return to Bangkok"
+        },
+        {
+          "time": "09:30",
+          "time_en": "09:30 AM",
+          "description": "Gems Gallery & Platinum Mall: Explore precious stones and enjoy budget shopping with lunch",
+          "description_en": "Gems Gallery & Platinum Mall: Explore precious stones and enjoy budget shopping with lunch"
+        },
+        {
+          "time": "13:00",
+          "time_en": "01:00 PM",
+          "description": "Wat Arun & River Cruise: Visit the Temple of Dawn and take a scenic boat cruise",
+          "description_en": "Wat Arun & River Cruise: Visit the Temple of Dawn and take a scenic boat cruise"
+        },
+        {
+          "time": "15:30",
+          "time_en": "03:30 PM",
+          "description": "Icon Siam & Sook Siam: Shop and explore the indoor floating market",
+          "description_en": "Icon Siam & Sook Siam: Shop and explore the indoor floating market"
+        },
+        {
+          "time": "18:00",
+          "time_en": "06:00 PM",
+          "description": "Asiatique Night Market: Dinner and shopping by the riverside night market",
+          "description_en": "Asiatique Night Market: Dinner and shopping by the riverside night market"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Departure from Bangkok",
+      "title_en": "Departure from Bangkok",
+      "items": [
+        {
+          "time": "All Day",
+          "time_en": "All Day",
+          "description": "Airport Transfer: Breakfast at hotel, free time, and transfer to airport",
+          "description_en": "Airport Transfer: Breakfast at hotel, free time, and transfer to airport"
+        }
+      ]
+    }
+  ]
+}
 ]

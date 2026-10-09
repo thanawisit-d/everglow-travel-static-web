@@ -97,7 +97,9 @@ export default function OutboundClient({ locale, tours }) {
       const kw = filters.search.toLowerCase();
       result = result.filter(t =>
         (t.desc || '').toLowerCase().includes(kw) ||
+        (t.desc_en || '').toLowerCase().includes(kw) ||
         (t.shortDesc || '').toLowerCase().includes(kw) ||
+        (t.shortDesc_en || '').toLowerCase().includes(kw) ||
         fieldIncludes(t.country, kw) ||
         (t.id || '').toLowerCase().includes(kw)
       );
