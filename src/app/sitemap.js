@@ -2,7 +2,8 @@ export const dynamic = 'force-static';
 
 import toursDataTh from '@/data/tours-th.json';
 import toursDataEn from '@/data/tours-en.json';
-import reviewsData from '@/data/reviews.json';
+import reviewsTh from '@/data/reviews-th.json';
+import reviewsEn from '@/data/reviews-en.json';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglow-travel-static-web.vercel.app';
 const locales = ['th', 'en'];
@@ -59,26 +60,28 @@ export default async function sitemap() {
     });
   }
 
-  for (const review of reviewsData) {
-    const reviewLocales = review.category === 'outbound' ? ['th'] : locales;
-    for (const locale of reviewLocales) {
-      entries.push({
-        url: `${siteUrl}/${locale}/reviews/${review.id}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.5,
-        ...(review.category === 'outbound'
-          ? {}
-          : {
-              alternates: {
-                languages: {
-                  th: `${siteUrl}/th/reviews/${review.id}`,
-                  en: `${siteUrl}/en/reviews/${review.id}`,
-                },
-              },
-            }),
-      });
-    }
+  const reviewEnIds = new Set(reviewsEn.map((r) => r.id));
+  for (const review of reviewsTh) {
+    const hasEn = reviewEnIds.has(review.id);
+    entries.push({
+      url: `${siteUrl}/th/reviews/${review.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+      ...(hasEn
+        ? { alternates: { languages: { th: `${siteUrl}/th/reviews/${review.id}`, en: `${siteUrl}/en/reviews/${review.id}` } } }
+        : {}),
+    });
+  }
+
+  for (const review of reviewsEn) {
+    entries.push({
+      url: `${siteUrl}/en/reviews/${review.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+      alternates: { languages: { th: `${siteUrl}/th/reviews/${review.id}`, en: `${siteUrl}/en/reviews/${review.id}` } },
+    });
   }
 
   return entries;

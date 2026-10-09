@@ -1,0 +1,51 @@
+[
+  {
+    "id": "domestic-khao-yai-1d",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/1D/เขาใหญ่/เขาใหญ่_01.jpeg",
+    "tag": "1 DAY TRIP : Khao Yai",
+    "text": "Photos of the impressive atmosphere from a day trip to Khao Yai (ONE DAY TRIP) for a group of 12 customers. This trip focuses on convenient travel, checking in at highlight points and experiencing nature up close."
+  },
+  {
+    "id": "domestic-wang-nam-khieo-1d",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/1D/วังน้ำเขียว/วังน้ำเขียว_01.jpeg",
+    "tag": "1 DAY 1 TRIP : Wang Nam Khieo",
+    "text": "A relaxing program visiting flower gardens and sacred sites near Bangkok, trusted by many travelers. Designed for those seeking an escape from the city to breathe fresh air, enjoy seasonal blooms, and make merit for good fortune."
+  },
+  {
+    "id": "domestic-kaen-makud-1d",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/1D/แก่นมะกูด/แก่นมะกูด_01.jpeg",
+    "tag": "1 DAY 1 TRIP : Kaen Makut",
+    "text": "A route to experience the agricultural community lifestyle in Uthai Thani Province. Take a walk through a strawberry garden and buy produce from the villagers."
+  },
+  {
+    "id": "domestic-tak-2d1n",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/2D1N/ตาก/ตาก_01.jpeg",
+    "tag": "2 DAY 1 NIGHT TRIP : Tak",
+    "text": "An overnight nature travel program in Tak Province, visiting sacred temples, checking in with flower fields, and relaxing by waterfalls — perfect for families and group trips."
+  },
+  {
+    "id": "domestic-uthai-thani-2d1n",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/2D1N/อุทัยธานี/อุทัยธานี_01.jpg",
+    "tag": "2 DAY 1 NIGHT TRIP : Uthai Thani",
+    "text": "Spend a comfortable night experiencing the charm of riverside life along the Sakae Krang River. Visit Wat Tha Sung for blessings and stroll through local markets. 2 days 1 night of peace and simplicity in the hidden gem of Uthai Thani."
+  },
+  {
+    "id": "domestic-phu-lom-lo-2d1n",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/2D1N/ภูลมโล/ภูลมโล_01.jpg",
+    "tag": "2 DAY 1 NIGHT TRIP : Phu Lom Lo",
+    "text": "Experience the cold weather and sea of mist at Phu Lom Lo, Loei Province, a viewpoint with beautiful scenery. Stay in a cozy homestay, enjoy sunrise activities, and take nature walks. Perfect for adventure lovers and those seeking tranquility."
+  },
+  {
+    "id": "domestic-kamphaeng-phet-2d1n",
+    "category": "domestic",
+    "image": "review_page/reviews_gallery/2D1N/กำแพงเพชร/กำแพงเพชร_01.jpg",
+    "tag": "2 DAY 1 NIGHT TRIP : Kamphaeng Phet",
+    "text": "A historical and nature tourism trip in Kamphaeng Phet Province, visiting the historical park, learning about the ancient city's rich heritage, and enjoying nature along the Ping River."
+  }
+]

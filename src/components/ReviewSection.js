@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import reviews from '@/data/reviews.json';
+import reviewsTh from '@/data/reviews-th.json';
+import reviewsEn from '@/data/reviews-en.json';
 import testimonials from '@/data/testimonials.json';
 import { assetPath } from '@/lib/assets';
 import config from '@/data/site-config.json';
@@ -119,6 +120,7 @@ function ReviewCover({ review, title, isEn, href, home = false }) {
 export default function ReviewSection({ locale, standalone }) {
   const t = config[locale] || config.th;
   const isEn = locale === 'en';
+  const reviews = isEn ? reviewsEn : reviewsTh;
   const categories = REVIEW_CATEGORIES.filter((category) => category.locales.includes(locale));
   const [activeCategory, setActiveCategory] = useState('domestic');
   // Impressions are locale-tagged: items without `locale` show in both languages.
@@ -185,7 +187,7 @@ export default function ReviewSection({ locale, standalone }) {
             ) : (
               <div className="review-destinations">
                 {displayReviews.map((item) => {
-                  const tag = isEn && item.tag_en ? item.tag_en : item.tag;
+                  const tag = item.tag;
                   const title = tag.includes(':') ? tag.slice(tag.indexOf(':') + 1).trim() : tag;
                   const tripType = getTripType(item.tag);
 
@@ -197,7 +199,7 @@ export default function ReviewSection({ locale, standalone }) {
                           <h2 className="review-destination__title">{title}</h2>
                           <span className="review-destination__trip-type">{tripType}</span>
                         </div>
-                        <p className="review-destination__quote">{isEn && item.text_en ? item.text_en : item.text}</p>
+                        <p className="review-destination__quote">{item.text}</p>
                       </a>
                     </article>
                   );
@@ -219,7 +221,7 @@ export default function ReviewSection({ locale, standalone }) {
 
         <div className="review-section__track">
           {displayReviews.map((item, i) => {
-            const tag = isEn && item.tag_en ? item.tag_en : item.tag;
+            const tag = item.tag;
             const title = tag.includes(':') ? tag.slice(tag.indexOf(':') + 1).trim() : tag;
             const tripType = getTripType(item.tag);
 
@@ -231,7 +233,7 @@ export default function ReviewSection({ locale, standalone }) {
                     <h3 className="review-destination__title">{title}</h3>
                     <span className="review-destination__trip-type">{tripType}</span>
                   </div>
-                  <p className="review-card__quote">{isEn && item.text_en ? item.text_en : item.text}</p>
+                  <p className="review-card__quote">{item.text}</p>
                 </a>
               </article>
             );

@@ -107,10 +107,10 @@ export default function ReviewDetail({ review, locale }) {
   const isEn = locale === 'en';
   const t = config[locale] || config.th;
 
-  const displayTag = isEn && review.tag_en ? review.tag_en : review.tag;
+  const displayTag = review.tag;
   const displayTitle = displayTag.includes(':') ? displayTag.slice(displayTag.indexOf(':') + 1).trim() : displayTag;
   const tripType = getTripType(review.tag);
-  const displayText = isEn && review.text_en ? review.text_en : review.text;
+  const displayText = review.text;
   const chats = testimonials.filter((item) => item.reviewId === review.id);
 
   return (

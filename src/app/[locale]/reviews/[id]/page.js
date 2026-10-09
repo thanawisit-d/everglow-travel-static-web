@@ -1,17 +1,16 @@
-import reviewsData from '@/data/reviews.json';
+import reviewsTh from '@/data/reviews-th.json';
+import reviewsEn from '@/data/reviews-en.json';
 import ReviewDetail from '@/components/ReviewDetail';
 import config from '@/data/site-config.json';
+
+const REVIEWS_BY_LOCALE = { th: reviewsTh, en: reviewsEn };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   const params = [];
-  for (const review of reviewsData) {
-    const locales = review.category === 'outbound' ? ['th'] : ['th', 'en'];
-    for (const locale of locales) {
-      params.push({ locale, id: review.id });
-    }
-  }
+  for (const review of reviewsTh) params.push({ locale: 'th', id: review.id });
+  for (const review of reviewsEn) params.push({ locale: 'en', id: review.id });
   return params;
 }
 
@@ -19,14 +18,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://everglow-travel-sta
 
 export async function generateMetadata({ params }) {
   const { locale, id } = await params;
-  const review = reviewsData.find((r) => r.id === id);
+  const review = (REVIEWS_BY_LOCALE[locale] || reviewsTh).find((r) => r.id === id);
   const t = config[locale] || config.th;
-  if (!review || (locale === 'en' && review.category === 'outbound')) {
+  if (!review) {
     return { title: t.tourNotFound };
   }
   const isEn = locale === 'en';
-  const displayTag = isEn && review.tag_en ? review.tag_en : review.tag;
-  const displayText = isEn && review.text_en ? review.text_en : review.text;
+  const displayTag = review.tag;
+  const displayText = review.text;
   const desc = displayText ? displayText.slice(0, 160) : displayTag;
   const reviewPath = `/reviews/${review.id}`;
   const isThOnly = review.category === 'outbound';
@@ -68,8 +67,8 @@ export async function generateMetadata({ params }) {
 export default async function ReviewDetailPage({ params }) {
   const { locale, id } = await params;
   const t = config[locale] || config.th;
-  const review = reviewsData.find((r) => r.id === id) || null;
-  if (!review || (locale === 'en' && review.category === 'outbound')) {
+  const review = (REVIEWS_BY_LOCALE[locale] || reviewsTh).find((r) => r.id === id) || null;
+  if (!review) {
     return (
       <div className="page review-detail-page">
         <div className="review-detail-body not-found">
