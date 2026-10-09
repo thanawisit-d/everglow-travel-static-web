@@ -82,9 +82,7 @@ export default function DomesticClient({ locale, tours }) {
         const prov = Array.isArray(t.province) ? t.province.join(' ') : (t.province || '');
         return prov.toLowerCase().includes(kw) ||
           (t.desc || '').toLowerCase().includes(kw) ||
-          (t.desc_en || '').toLowerCase().includes(kw) ||
           (t.shortDesc || '').toLowerCase().includes(kw) ||
-          (t.shortDesc_en || '').toLowerCase().includes(kw) ||
           (t.id || '').toLowerCase().includes(kw);
       });
     }

@@ -2,7 +2,6 @@ export type TourType = 'domestic' | 'outbound';
 
 export interface TransportInfo {
   name?: string;
-  name_en?: string;
   icon?: string;
 }
 
@@ -29,13 +28,9 @@ export interface Tour {
   image: string;
   price: string | number;
   duration: string;
-  duration_en?: string;
   airline?: string;
   shortDesc?: string;
-  shortDesc_en?: string;
   desc: string;
-  desc_en?: string;
-  periodText_en?: string;
   pdf?: string;
   transport?: TransportInfo;
   itinerary?: ItineraryDay[];
